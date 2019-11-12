@@ -1,0 +1,15 @@
+﻿<Window x:Class="GUI_Demo.Topology"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Demo"
+        mc:Ignorable="d"
+        Title="Topology" Height="350" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <Button Width="150" Height="30" Margin="10" Content="Choose topology to show"/>
+            <Image Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUI Demo\GUI Demo\googlenet"/>
+        </StackPanel>
+    </Grid>
+</Window>

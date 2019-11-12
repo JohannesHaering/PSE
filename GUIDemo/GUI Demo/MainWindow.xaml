@@ -1,0 +1,17 @@
+﻿<Window x:Class="GUI_Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Demo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <Button Content="Image classification" Name="btn_classification" Click="btn_classification_Click" Width="200" Height="30" Margin="10"/>
+            <Button Content="Object detection" Name="btn_detection" Click="btn_detection_Click" Width="200" Height="30" Margin="10"/>
+            <Button Content="Train a neural network" Name="btn_train" Click="btn_train_Click" Width="200" Height="30" Margin="10"/>
+            <Button Content="Show topology of a neural network" Name="btn_topology" Click="btn_topology_Click" Width="200" Height="30" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
