@@ -68,9 +68,9 @@ Image classification
 \item [MFR060]: Showing results
 \end{itemize}
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{FR070} & \textbf{Choosing image for classification in format .jpg, .png, .bmp}\\
+\textbf{FR070} & \textbf{Choosing image for classification}\\
 & Testet with: Implements: \\
-& The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed.\\
+& The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed. That also are the only valid formats.\\
 \textbf{FR080} & \textbf{Choosing platform/hardware}\\
 & Testet with: Implements: \\
 & The GUI has a dropdown which lists the devices on which the classification can be done. The devices which can be theoretically be accessed but aren't connected to the host pc or the communication with them doesn't work are grayed out. \\
@@ -81,9 +81,9 @@ Image classification
 
 \section{Functional Requirements Can}
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{FR100} & \textbf{Choosing between different models for example AlexNet, GoogleNet}\\
+\textbf{FR100} & \textbf{Choosing between different models}\\
 & Testet with: Implements: \\
-& The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed.\\
+& The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
 \textbf{FR110} & \textbf{Train nn for classification of imageset (with transfer learning)}\\
 & Testet with: Implements: \\
 & The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.
@@ -135,6 +135,40 @@ Image classification
 \begin{itemize}[nosep]
 \item[NF10] 
 \end{itemize}
+
+\section{Test cases}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{T070} & \textbf{Choosing image for classification}\\
+T070.1 & \textbf{State:} The user is on the page for image classification \\
+& \textbf{Action:} The user clicks on the button \glqq Choose image\grqq .\\
+& \textbf{Reaction:} The file explorer opens with the filter for .png, .jpg, .bmp\\
+T070.2 & \textbf{State:} The file explorer is open\\
+& \textbf{Action:} The user selects an image with a valid format\\
+& \textbf{Reaction:} The file explorer closes and image is as preview shown\\
+& \\
+\textbf{T080} & \textbf{Choosing platform/hardware}\\
+T080.1 & \textbf{State:} The user is on the page for image classification\\
+& \textbf{Action:} The user chooses with the dropdown the desired platform\\
+& \textbf{Reaction:} An internal flag is set to the desired platform and the dropdown shows the chosen platform.\\
+& \\
+\textbf{T090} & \textbf{Choosing mode}\\
+T090.1 & \textbf{State:} The user is on the page for image classification\\
+& \textbf{Action:} The user chooses with the dropdown the desired mode\\
+& \textbf{Reaction:} An internal flag is set to the desired mode and the dropdown shows the chosen mode\\
+& \\
+\textbf{T100} & \textbf{Choosing between different models}\\
+T100.1 & \textbf{State:} The user is on the page for image classification\\
+& \textbf{Action:} The user clicks on the button \glqq Choose neural network\grqq\\
+& \textbf{Reaction:} The file explorer opens\\
+T100.2 & \textbf{State:} The file explorer is open\\
+& \textbf{Action:} The user selects an config/weight file\\
+& \textbf{Reaction:} The file explorer closes and the software loads the input and parses it. If it is loaded there is success message\\
+& \\
+\textbf{T110} & \textbf{Train neural network for classification of imageset}\\
+T110.1 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
+& \textbf{Action:} The user clicks on the button \glqq Train\grqq\\
+& \textbf{Reaction:} The software starts to train the selected network with the selected configuration and shows the progress in line graph.\\
+\end{tabular}
 
 \section{System models}
 
