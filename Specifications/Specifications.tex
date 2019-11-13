@@ -3,10 +3,6 @@
 \usepackage[T1]{fontenc}    % avoid garbled Unicode text in pdf
 \usepackage[german]{babel}  % german hyphenation, quotes, etc
 \usepackage{hyperref}       % detailed hyperlink/pdf configuration
-\hypersetup{                % ‘texdoc hyperref‘ for options
-pdftitle={SWT1: Lastenheftvorlage},%
-bookmarks=true,%
-}
 \usepackage{graphicx}       % provides commands for including figures
 \usepackage{csquotes}       % provides \enquote{} macro for "quotes"
 \usepackage[nonumberlist]{glossaries}     % provides glossary commands
@@ -70,18 +66,29 @@ Image classification
 \item [MFR042]: Receive result
 \item [MFR050]: GUI
 \item [MFR060]: Showing results
-\item [MFR070]: Choosing image for classification in format .jpg, .png, .bmp
-\item [MFR080]: Choosing platform/hardware
-\item [MFR081]: Look which devices are avaiable
-\item [MFR082]: Testing communication
-\item [MFR090]:	Choosing mode
-\item [MFR091]: Show how much energy and power on which platform one needs/has
 \end{itemize}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{FR070} & \textbf{Choosing image for classification in format .jpg, .png, .bmp}\\
+& Testet with: Implements: \\
+& The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed.\\
+\textbf{FR080} & \textbf{Choosing platform/hardware}\\
+& Testet with: Implements: \\
+& The GUI has a dropdown which lists the devices on which the classification can be done. The devices which can be theoretically be accessed but aren't connected to the host pc or the communication with them doesn't work are grayed out. \\
+\textbf{FR090} & \textbf{Choosing mode}\\
+& Testet with: Implements: \\
+& The GUI has dropdown which lists the modes (high performance mode, low power consumption mode and best energy effiency mode). The power consumption in Watts and performance in FLOPs are also stated behind the mode names.
+\end{tabular}
 
 \section{Functional Requirements Can}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{FR100} & \textbf{Choosing between different models for example AlexNet, GoogleNet}\\
+& Testet with: Implements: \\
+& The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed.\\
+\textbf{FR110} & \textbf{Train nn for classification of imageset (with transfer learning)}\\
+& Testet with: Implements: \\
+& The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.
+\end{tabular}
 \begin{itemize}[nosep]
-\item [KFR100]: Choosing between different models for example AlexNet, GoogleNet
-\item [KFR110]: Train nn for classification of imageset (with transfer learning)
 \item [KFR111]: Saving new trained nn (config an weights)
 \item [KFR112]: Choosing/Reading data set
 \item [KFR032]: Support GPU for calculation
