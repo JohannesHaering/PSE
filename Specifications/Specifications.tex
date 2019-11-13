@@ -110,18 +110,25 @@ Image classification
 \end{itemize}
 
 \section{Productdata}
-\begin{itemize}[nosep]
-\item [PD010]: Images for classification
-\item [PD020]: Labeled image set for training
-\item [PD030]: Config/weight file of pretrained model
-\end{itemize}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{PD010} & \textbf{Images for classification}\\
+& The user can choose images of the format .jpg, .png, .bmp. The images are chosen by the user with the file explorer.\\
+\textbf{PD020} & \textbf{Config/weight file of pretrained model}\\
+& It is a .cfg file. In the beginning are hyperparameters described with the format \textit{name = value}. Then the layers are described in their order with the following format\\
+& \textit{\lbrack kind of layer\rbrack}\\
+& list of parameters in the format \textit{name = value}\\
+\textbf{PD030} & \textbf{Labeled image set for classification training}\\
+& The dataset is chosen by the user. The dataset is a directory with images and the name of the image is the label.\\
+\textbf{PD040} & \textbf{Labeled set of images for object detection training}\\
+& It is a .txt file and a directory with images. The images are labeled with their name. The bounding box for each image are described in the .txt file, in the format \textit{imagename, x,y,width,height}. (X,Y) are the coordinates in pixel of the left bottom corner, the width and height are in pixel.
+\end{tabular}
 
 \section{Demarcation}
 \begin{itemize}[nosep]
 \item [D010]: No real time / no performance optimization
 \item [D020]: No mobile support
 \item [D030]: No neural network size optimization
-\item [DO40]: No low-level (Assembler) optimization
+\item [D040]: No low-level (Assembler) optimization
 \end{itemize}
 
 \section{Non-functional requirements}
