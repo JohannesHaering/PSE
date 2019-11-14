@@ -10,6 +10,12 @@
 
 \makenoidxglossaries
 
+\newglossaryentry{nn}
+{
+	name={NN},
+	description={neural network},
+}
+
 \title{Specifications}
 \author{}
 \begin{document}
@@ -50,14 +56,6 @@ Image classification
 
 \section{Functional Requirements Must}
 \begin{itemize}[nosep]
-\item [MFR010]: Use neural network for image classification
-\item [MFR011]: Deploy pre-trained nn with the corresponding layers
-\item [MFR012]: Reading and parsing nn config/weight file
-\item [MFR020]: Have high perfomance mode
-\item [MFR021]: Have low power consumption mode
-\item [MFR022]: Have high energy efficiency mode
-\item [MFR023]: Calculator for power consumption
-\item [MFR024]: Calculator for performance
 \item [MFR025]: Dispatching the calculation process defined from the mode
 \item [MFR030]: Support CPU for calculation
 \item [MFR031]: Support FPGA for calculation
@@ -68,6 +66,24 @@ Image classification
 \item [MFR060]: Showing results
 \end{itemize}
 \begin{tabular}{p{2cm}p{12cm}}
+
+\textbf{MFR010} & \textbf{Use \gls{nn} for image classification}\\                                     
+& A \gls{nn} should be used in order to classify images based on what is shown on them. As output for each image a list of possible classes it could belong to along with degree of confidence should be given as output.\\
+\textbf{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\                                     
+& A pre-trained \gls{nn} should be deployed to with all the corresponding layers in order to fulfil MFR010.\\
+\textbf{MFR012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\                                     
+& --\\
+\textbf{MFR020} & \textbf{Have high performance mode}\\                                     
+& --\\
+\textbf{MFR021} & \textbf{Have low power consumption mode}\\                                     
+& --\\
+\textbf{MFR022} & \textbf{Have high energy efficiency mode}\\                                     
+& --\\
+\textbf{MFR023} & \textbf{Calculator for power consumption}\\                                     
+& --\\
+\textbf{MFR024} & \textbf{Calculator for performance}\\                                     
+& --\\
+
 \textbf{FR070} & \textbf{Choosing image for classification}\\
 & Testet with: Implements: \\
 & The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed. That also are the only valid formats.\\
@@ -175,5 +191,7 @@ T110.1 & \textbf{State:} The user is on the page for training, has selected a ne
 \subsection{Scenarios}
 \subsection{Usecases}
 \subsubsection{Seminarorganisation}
+
+\printnoidxglossaries
 
 \end{document}
