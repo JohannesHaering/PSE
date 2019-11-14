@@ -12,8 +12,16 @@
 
 \newglossaryentry{nn}
 {
-	name={NN},
-	description={neural network},
+	name={neural network},
+	description={a network or a circuit of neuron used for information processing inspired by the way biological neural systems process data},
+	plural=neural networks
+}
+
+\newglossaryentry{img}
+{
+	name={image},
+	description={a two dimensional matrix of red,green,glue (RGB) values that can be visualized as each cell represents a single pixel on the monitor. (ex.: a photo)},
+	plural=images
 }
 
 \title{Specifications}
@@ -67,23 +75,26 @@ Image classification
 \end{itemize}
 \begin{tabular}{p{2cm}p{12cm}}
 
-\textbf{MFR010} & \textbf{Use \gls{nn} for image classification}\\                                     
-& A \gls{nn} should be used in order to classify images based on what is shown on them. As output for each image a list of possible classes it could belong to along with degree of confidence should be given as output.\\
-\textbf{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\                                     
-& A pre-trained \gls{nn} should be deployed to with all the corresponding layers in order to fulfil MFR010.\\
-\textbf{MFR012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\                                     
-& --\\
-\textbf{MFR020} & \textbf{Have high performance mode}\\                                     
-& --\\
-\textbf{MFR021} & \textbf{Have low power consumption mode}\\                                     
-& --\\
-\textbf{MFR022} & \textbf{Have high energy efficiency mode}\\                                     
-& --\\
+\textbf{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\                                     
+& A \gls{nn} should be used in order to classify \glspl{img} based on what is shown on them. For each \gls{img} a list of possible classes it could belong to along with degree of confidence should be given as output.\\
+& \\
+\textbf{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
+& A pre-trained \gls{nn} should be deployed to with all the corresponding layers in order to fulfill MFR010.\\
+& \\
+\textbf{MFR020} & \textbf{Have high performance operating mode}\\                                     
+& An option to perform calculations fast with low regard for power consumption.\\
+\textbf{MFR021} & \textbf{Have low power consumption operating mode}\\                                     
+& An option to perform calculations with low power consumption and low regard for speed.\\
+& \\
+\textbf{MFR022} & \textbf{Have high energy efficiency operating mode}\\                                     
+& An option to perform calculations at an adequate balance between speed and power consumption.\\
+& \\
 \textbf{MFR023} & \textbf{Calculator for power consumption}\\                                     
-& --\\
+& Calculations for the possible power consumption running the \gls{img} classifications would result in based on the \gls{nn}, platform and operating mode used.\\
+& \\
 \textbf{MFR024} & \textbf{Calculator for performance}\\                                     
-& --\\
-
+& Calculations for the possible performance running the \gls{img} classifications would result in based on the \gls{nn}, platform and operating mode used.\\
+& \\
 \textbf{FR070} & \textbf{Choosing image for classification}\\
 & Testet with: Implements: \\
 & The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed. That also are the only valid formats.\\
@@ -97,6 +108,9 @@ Image classification
 
 \section{Functional Requirements Can}
 \begin{tabular}{p{2cm}p{12cm}}
+\textbf{CFR012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\
+& Having the ability to import/export different (external) \glspl{nn} to use for the \gls{img} classification.\\
+& \\
 \textbf{FR100} & \textbf{Choosing between different models}\\
 & Testet with: Implements: \\
 & The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
@@ -154,6 +168,45 @@ Image classification
 
 \section{Test cases}
 \begin{tabular}{p{2cm}p{12cm}}
+\textbf{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
+& \textbf{State:} A \gls{img} is given as an input.\\
+& \textbf{Action:} Calculations are performed on hand of the \gls{img} and a \gls{nn}.\\
+& \textbf{Reaction:} A list of possible classes the given \gls{img} could belong to along with degree of confidence for each class are given as output.\\
+& \\
+
+\textbf{T011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
+& \textbf{State:} There is a \gls{nn} (already trained).\\
+& \textbf{Action:} Calculations are performed cased on a given \gls{img} and the given \gls{nn}.\\
+& \textbf{Reaction:} A list of possible classes the given \gls{img} could belong to along with degree of confidence for each class are given as output.\\
+& \\
+
+\textbf{T012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\
+T012.1 & \textbf{State:}  The user is on the page to select a \gls{nn} to use for the \gls{img} classification.\\
+& \textbf{Action:} The user selects the option to import a \gls{nn}.\\
+& \textbf{Reaction:} The file explorer opens.\\
+T012.2 & \textbf{State:} The file explorer is open\\
+& \textbf{Action:} The user selects an \gls{nn} to import\\
+& \textbf{Reaction:} The file explorer closes and \gls{nn} is imported and selected for the classification calculations.\\
+& \\
+
+\textbf{T020} & \textbf{Have high performance operating mode}\\
+& \textbf{State:} The user is ready to start the calculations.\\
+& \textbf{Action:} The user chooses to perform the calculations in high performance operating mode.\\
+& \textbf{Reaction:} The calculations run considerably faster than in the other possible modes with the same conditions.\\
+& \\
+
+\textbf{T021} & \textbf{Have low power consumption operating mode}\\
+& \textbf{State:} The user is ready to start the calculations.\\
+& \textbf{Action:} The user chooses to perform the calculations in low power consumption operating mode.\\
+& \textbf{Reaction:} The calculations run with considerably lower power consumption than with the other possible modes in the same conditions.\\
+& \\
+
+\textbf{T022} & \textbf{Have high energy efficiency operating mode}\\
+& \textbf{State:} The user is ready to start the calculations.\\
+& \textbf{Action:} The user chooses to perform the calculations in high energy efficiency operating mode.\\
+& \textbf{Reaction:} The calculations run with regard to balance between power consumption and speed.\\
+& \\
+
 \textbf{T070} & \textbf{Choosing image for classification}\\
 T070.1 & \textbf{State:} The user is on the page for image classification \\
 & \textbf{Action:} The user clicks on the button \glqq Choose image\grqq .\\
