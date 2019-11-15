@@ -7,6 +7,9 @@
 \usepackage{csquotes}       % provides \enquote{} macro for "quotes"
 \usepackage[nonumberlist]{glossaries}     % provides glossary commands
 \usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{pgf}
 
 \makenoidxglossaries
 
@@ -41,6 +44,12 @@ Image classification
 
 \section{Acceptance criteria}
 \subsection{Must}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{AC30} & \textbf{Different operating modes} \\
+& The software has three modes. One mode for high perfomance, one for low power consumption and one for high energy effiency. \\
+\textbf{AC50} & \textbf{Performance and power consumption prediction}\\
+& The software can predict the performance with a certain powerconsumption an also the powerconsumption for a certain performance.
+\end{tabular}
 \begin{itemize}[nosep]
 \item [MAC010]: Image classification
 \item [MAC020]: Running NN on heterogenous platforms, CPU and FPGA
@@ -243,8 +252,29 @@ T110.1 & \textbf{State:} The user is on the page for training, has selected a ne
 
 \subsection{Scenarios}
 \subsection{Usecases}
-\subsubsection{Seminarorganisation}
-
+\subsection{GUI}
+\begin{figure}[htb!]\centering
+\includegraphics[width=\textwidth]{MainPageGUI}
+\caption{Main page of our software}
+\end{figure}
+\begin{figure}[htb!]\centering
+\includegraphics[width=\textwidth]{ImageClassificationGUI}
+\caption{Image classification page of our software}
+\end{figure}
+\begin{figure}[htb!]\centering
+\includegraphics[width=\textwidth]{DetectionGUI}
+\caption{Object detection page of our software}
+\end{figure}
+\begin{figure}[htb!]\centering
+\includegraphics[width=\textwidth]{TrainGUI}
+\caption{Training page of our software}
+\end{figure}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{TopoGUI}
+\caption{Page which shows the topology of a selected NN of our software}
+\end{figure}
+\newpage
 \printnoidxglossaries
 
 \end{document}
