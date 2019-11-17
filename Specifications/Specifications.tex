@@ -116,11 +116,14 @@ Image classification
 & The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
 \textbf{FR110} & \textbf{Train nn for classification of imageset (with transfer learning)}\\
 & Testet with: Implements: \\
-& The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.
+& The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.\\
+%\newpage
+
+
 \end{tabular}
 \begin{itemize}[nosep]
-\item [KFR111]: Saving new trained nn (config an weights)
-\item [KFR112]: Choosing/Reading data set
+%\item [KFR111]: Saving new trained nn (config an weights)
+%\item [KFR112]: Choosing/Reading data set
 \item [KFR032]: Support GPU for calculation
 \item [KFR113]: Backpropagation
 \item [KFR114]: Choosing parameters like learning rate
@@ -128,16 +131,18 @@ Image classification
 \item [KFR130]: Object detection algorithm
 \item [KFR131]: Showing detected object
 \item [KFR132]: Choosing between detection and classification mode
-\item [KFR140]: Creating new topology
-\item [KFR150]: Choosing between training and interference mode
-\item [KFR160]: Choosing video in format .avi
-\item [KFR161]: Apply classification for a certain amount of frames
-\item [KFR170]: Connect with camera 
-\item [KFR171]: Receive video stream from camera
-\item [KFR180]: Detecting object
-\item [KFR181]: Drawing bounding box 
+%\item [KFR140]: Creating new topology
+%\item [KFR150]: Choosing between training and interference mode
+%\item [KFR160]: Choosing video in format .avi
+%\item [KFR161]: Apply classification for a certain amount of frames
+%\item [KFR170]: Connect with camera 
+%\item [KFR171]: Receive video stream from camera
+%\item [KFR180]: Detecting object
+%\item [KFR181]: Drawing bounding box
 
 \end{itemize}
+
+
 
 \section{Productdata}
 \begin{tabular}{p{2cm}p{12cm}}
@@ -208,13 +213,16 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \\
 
 \textbf{T070} & \textbf{Choosing image for classification}\\
-T070.1 & \textbf{State:} The user is on the page for image classification \\
+T070.1 & \textbf{State:} The user is on the page for image classification. \\
 & \textbf{Action:} The user clicks on the button \glqq Choose image\grqq .\\
 & \textbf{Reaction:} The file explorer opens with the filter for .png, .jpg, .bmp\\
 T070.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects an image with a valid format\\
 & \textbf{Reaction:} The file explorer closes and image is as preview shown\\
-& \\
+%Manu quick fix:
+\end{tabular}
+\begin{tabular}{p{2cm}p{12cm}}
+\newpage
 \textbf{T080} & \textbf{Choosing platform/hardware}\\
 T080.1 & \textbf{State:} The user is on the page for image classification\\
 & \textbf{Action:} The user chooses with the dropdown the desired platform\\
@@ -237,8 +245,77 @@ T100.2 & \textbf{State:} The file explorer is open\\
 T110.1 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
 & \textbf{Action:} The user clicks on the button \glqq Train\grqq\\
 & \textbf{Reaction:} The software starts to train the selected network with the selected configuration and shows the progress in line graph.\\
-\end{tabular}
+& \\
+%Manuel
+\textbf{T111} & \textbf{Saving a NN after training}\\
+T111.1 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
+& The training finishes.\\
+& \textbf{Action:} No action required\\
+& \textbf{Reaction:} The software stores the trained network weights in a predifined format and with a usefull name in a fixed location.\\
+& \\
+\textbf{T112} & \textbf{Choosing/Reading data set}\\
+T112.1 & \textbf{State:} A folder containing images is provided by the user.\\
+& \textbf{Action:} No action required\\
+& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
 
+& \\
+\textbf{T140} & \textbf{Creating new topology}\\
+T140.1 & \textbf{State:} \\
+& \textbf{Action:} No action required\\
+& \textbf{Reaction:} \\
+& A folder containing images is provided by the user.\\
+& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
+
+%Manu quick fix:
+\end{tabular}
+\begin{tabular}{p{2cm}p{12cm}}
+& \\
+\textbf{T150} & \textbf{Choosing between training and interference mode}\\
+T150.1 & \textbf{State:} \\
+& \textbf{Action:} No action required\\
+& \textbf{Reaction:} \\
+& A folder containing images is provided by the user.\\
+& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
+
+& \\
+\textbf{T160} & \textbf{Choosing video in format .avi}\\
+T160.1 & \textbf{State:} The software is running. \\
+& \textbf{Action:} The user selects a .avi video file.\\
+& \textbf{Reaction:} The system stores the path to the selected video and is \\
+& available to process single images from this video.\\
+
+& \\
+\textbf{T161} & \textbf{Apply classification for a certain amount of frames}\\
+T161.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
+& \textbf{Action:} The user clicks on the button ``start classification''\\
+& \textbf{Reaction:} The system processes the video file imagewise\\
+
+& \\
+\textbf{T170} & \textbf{Connect with camera}\\
+T170.1 & \textbf{State:} The software is running\\
+& \textbf{Action:} The user connects a usb camera to the pc\\
+& \textbf{Reaction:} The system dynamically detects the camera and allows the user to select the camera as an image source\\
+
+& \\
+\textbf{T171} & \textbf{Receive video stream from camera}\\
+T171.1 & \textbf{State:} The software is running, a camera is connected to the host pc.\\
+& \textbf{Action:} The user chooses the camera as image source.\\
+& \textbf{Reaction:} The first camera image is provided as a preview, the continuous image stream is available for further processing.\\
+
+& \\
+\textbf{T180} & \textbf{Detecting object}\\
+T180.1 & \textbf{State:} The software is running, a network including all parameters and weights was provided. An image was provided. Detection mode was picked by the user\\
+& \textbf{Action:} The user clicks on the button ``start detection''\\
+& \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
+
+& \\
+\textbf{T181} & \textbf{Drawing bounding box}\\
+T181.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen neural network predicted bounding boxes.\\
+& \textbf{Action:} No action required\\
+& \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
+
+\end{tabular}
+\newpage
 \section{System models}
 
 \subsection{Scenarios}
@@ -248,3 +325,4 @@ T110.1 & \textbf{State:} The user is on the page for training, has selected a ne
 \printnoidxglossaries
 
 \end{document}
+
