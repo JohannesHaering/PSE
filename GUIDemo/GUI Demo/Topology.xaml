@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10">
             <Button Width="150" Height="30" Margin="10" Content="Choose topology to show"/>
-            <Image Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUI Demo\GUI Demo\googlenet"/>
+            <Image Margin="10" Source="C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\googlenet"/>
         </StackPanel>
     </Grid>
 </Window>

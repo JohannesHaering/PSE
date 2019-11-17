@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GUI_Demo"
         xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
         mc:Ignorable="d"
-        Title="ImageClassification" Height="300" Width="730">
+        Title="ImageClassification" Height="350" Width="730">
     <Grid>
         <StackPanel Orientation="Horizontal">
             <GroupBox Header="Choose the configuration and input" Margin="10">
@@ -18,13 +18,18 @@
                         <ComboBoxItem>Low Power consumption mode - 120 GFLOPs, 50W</ComboBoxItem>
                         <ComboBoxItem>Best energy effiency mode - 140 GFLOPs, 70W</ComboBoxItem>
                     </ComboBox>
+                    <ComboBox Width="150" Margin="10" SelectedIndex="0">
+                        <ComboBoxItem>CPU</ComboBoxItem>
+                        <ComboBoxItem>FPGA</ComboBoxItem>
+                        <ComboBoxItem>GPU</ComboBoxItem>
+                    </ComboBox>
                     <Button Width="150" Height="40" Margin="10,30,10,10" Content="Start classification"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Result" Margin="10">
                 <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Top">
-                    <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUI Demo\GUI Demo\Koala_climbing_tree.jpg"/>
-                    <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUI Demo\GUI Demo\graph.JPG"/>                                       
+                    <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\Koala_climbing_tree.jpg"/>
+                    <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\graph.JPG"/>                                       
                 </StackPanel>
             </GroupBox>
         </StackPanel>
