@@ -182,12 +182,30 @@ Image classification
 \end{tabular}
 
 \section{Demarcation}
-\begin{itemize}[nosep]
-\item [D010]: No real time / no performance optimization
-\item [D020]: No mobile support
-\item [D030]: No neural network size optimization
-\item [D040]: No low-level (Assembler) optimization
-\end{itemize}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{D010} & \textbf{No low-level optimization}\\
+& Optimizations to reduce the execution time of object classification and detection will mainly be carried out in OpenCL.\\
+& No optimizations including low-level languages or assembly intrinsics will be implemented.\\
+&\\
+\textbf{D020} & \textbf{No real time optimization}\\
+& Common code optimizations will be done where possible to reduce the running time of the network per image classification/detection task.\\
+& They do not have to lead to real-time reactions of the system.\\
+& A computation time of multiple seconds per image is acceptable.\\
+&\\
+\textbf{D030} & \textbf{No neural network size optimization}\\
+&No techniques for memory usage reduction like parameter sharing, prunning or binarization will be implemented.\\
+&\\
+\textbf{D040} & \textbf{No mobile support}\\
+& There are no intentations to run any parts of this code on a mobile device like a smartphone or Augmented Reality glass.\\
+& Mobile device requirements are not taken into consideration when choosing Techniques, languages and hardware used in this project. \\
+&\\
+\end{tabular}
+%\begin{itemize}[nosep]
+%\item [D020]: No real time / no performance optimization
+%\item [D040]: No mobile support
+%\item [D030]: No neural network size optimization
+%\item [D010]: No low-level (Assembler) optimization
+%\end{itemize}
 
 \section{Non-functional requirements}
 \begin{itemize}[nosep]
