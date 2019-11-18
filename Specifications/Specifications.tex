@@ -59,18 +59,27 @@ Image classification
 \section{Acceptance criteria}
 \subsection{Must}
 \begin{tabular}{p{2cm}p{12cm}}
+\textbf{AC10} & \textbf{Image classification} \\
+& The software can take a single image as input and tell the user to which predifined class, if any, this image belongs.\\
+\textbf{AC20} & \textbf{Running NN on a heterogeneous platform} \\
+& The software is able to do the execution of a given neural network (inference) on different compute devices. At least one CPU and one FPGA should be supported.
+The user is able to choose which compute device should be used for his image.\\
 \textbf{AC30} & \textbf{Different operating modes} \\
 & The software has three modes. One mode for high perfomance, one for low power consumption and one for high energy effiency. \\
+\textbf{AC40} & \textbf{GUI for interacting with software} \\
+& The user should be able to access the entire functionality described in AC10-AC50 just by using the functional GUI.\\ 
+& No coding or command line usage is required.\\
 \textbf{AC50} & \textbf{Performance and power consumption prediction}\\
 & The software can predict the performance with a certain powerconsumption and also the powerconsumption for a certain performance.
+
 \end{tabular}
-\begin{itemize}[nosep]
-\item [MAC010]: Image classification
-\item [MAC020]: Running NN on heterogenous platforms, CPU and FPGA
-\item [MAC030]: Different operating modes
-\item [MAC040]: GUI for interacting with software
-\item [MAC050]: Performance/power prediction
-\end{itemize}
+%\begin{itemize}[nosep]
+%\item [MAC010]: Image classification
+%\item [MAC020]: Running NN on heterogenous platforms, CPU and FPGA
+%\item [MAC030]: Different operating modes
+%\item [MAC040]: GUI for interacting with software
+%\item [MAC050]: Performance/power prediction
+%\end{itemize}
 
 \subsection{Can}
 \begin{tabular}{p{2cm}p{12cm}}
@@ -88,6 +97,7 @@ Image classification
 \item [KAC120]: Using video for classification
 \item [KAC130]: Using camera for classification input
 \item [KAC140]: Running NN on GPU
+\item [KAC150]: The GUI covers all implemented features in 4.1 and 4.2
 \end{itemize}
 
 \section{Functional Requirements Must}
@@ -95,6 +105,7 @@ Image classification
 \item [MFR025]: Dispatching the calculation process defined from the mode
 \item [MFR030]: Support CPU for calculation
 \item [MFR031]: Support FPGA for calculation
+\item [MFR032]: Support GPU for calculation
 \item [MFR040]: Communication between Host-PC and platform
 \item [MFR041]: Send image for classification
 \item [MFR042]: Receive result
