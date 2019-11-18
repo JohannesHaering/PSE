@@ -23,7 +23,7 @@
 \newglossaryentry{img}
 {
 	name={image},
-	description={a two dimensional matrix of red,green,glue (RGB) values that can be visualized as each cell represents a single pixel on the monitor. (ex.: a photo)},
+	description={a two dimensional matrix of red,green,blue (RGB) values that can be visualized as each cell represents a single pixel on the monitor. (ex.: a photo)},
 	plural=images
 }
 
@@ -73,9 +73,14 @@ Image classification
 \end{itemize}
 
 \subsection{Can}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{KAC70} & \textbf{Illustration of the topology of a nn} \\
+& The software is able to visualize the topology of a given nn in a usefull way without requirering additional information. \\
+& The visualized nn can be saved as a .png file\\
+\end{tabular}
 \begin{itemize}[nosep]
 \item [KAC060]: Training a nn for classification
-\item [KAC070]: Illustration of a topology of the nn
+%\item [KAC070]: Illustration of the topology of a nn
 \item [KAC080]: Object detection
 \item [KAC090]: Choosing between different models
 \item [KAC100]: Creating new models
@@ -364,6 +369,12 @@ T181.1 & \textbf{State:} Inferencing was executed on an image given by the user,
 The user U1 wants to classificate the image of a cat. He goes on the classifcation page and he clicks on the dropdown and sees the three modes \glqq low power consumption\grqq , \glqq high perfomance\grqq and \glqq high energy effiency\grqq , he can also see the predicted power consumption and performance. He chooses to classificate in the low power mode and runs the programm. The results are shown.
 \subsubsection{Scenario 2}
 The user U2 goes to the classification page and chooses the image of coala and the high power performance mode and CPU mode. The software states that it would take 86 watts with 166 GFLOPs. U2 decides he would rather use the high energy effiency mode with 140 GFLOPs and 70 watts. He sets the other parameters and clicks on Start image classification. The result is that the image is a coala and shows this result. 
+\subsubsection{Scenario 3}
+The user U3 created the blueprint for a new nn.
+He wants to train a network based on this config file but computation time is shared and expensive. U3 has to convince his boss therefore.
+U3 uses the software as input and select the visualization toolkit.
+U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
+
 \subsection{Usecases}
 \subsubsection{Training page}
 \begin{figure}[htb!]
