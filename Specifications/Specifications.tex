@@ -112,6 +112,12 @@ The user is able to choose which compute device should be used for his \gls{img}
 \textbf{KAC070} & \textbf{Illustration of the topology of a nn} \\
 & The software is able to visualize the topology of a given nn in a usefull way without requirering additional information. \\
 & The visualized nn can be saved as a .png file\\
+\textbf{KAC100} & \textbf{Creating new models} \\
+& The software allows the user to train a neural network based on an architecture which the user developed.\\
+& Neural networks created and trained by the user will be executed the same way neural networks provided with the software are executed.\\
+\textbf{KAC110} & \textbf{Voting of multiple nn} \\
+& The user is able to choose multiple nn for classification.\\
+& The software will then execute all selected neural networks sequentially. The result presented to the User will be based on the weighted opinions of the different neural networks.\\
 \textbf{KAC120} & \textbf{Using video for classification} \\
 & The software is able to take a video, divide it in frames and perform image classification for each frame.\\
 & The classified video can be viewed side by side as if changing to the next image at a constant rate and the classification could be saved as a \gls{json} or an \gls{xml} file.\\
@@ -124,8 +130,8 @@ The user is able to choose which compute device should be used for his \gls{img}
 %\item [KAC070]: Illustration of the topology of a nn
 \item [KAC080]: Object detection
 \item [KAC090]: Choosing between different models
-\item [KAC100]: Creating new models
-\item [KAC110]: Voting of multiple nn
+%\item [KAC100]: Creating new models
+%\item [KAC110]: Voting of multiple nn
 %\item [KAC120]: Using video for classification
 %\item [KAC130]: Using camera for classification input
 \item [KAC140]: Running NN on GPU
@@ -417,7 +423,12 @@ The user U3 created the blueprint for a new nn.
 He wants to train a network based on this config file but computation time is shared and expensive. U3 has to convince his boss therefore.
 U3 uses the software as input and select the visualization toolkit.
 U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
-
+\subsubsection{Scenario 4}
+User U4 has to categorize a large dataset of plants from a biology excursion. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to pick manualy for every image which network to use. He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
+\subsubsection{Scenario 5}
+User U5 has heared about this software and wants to test it.
+U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
+Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
 \subsection{Usecases}
 \subsubsection{Training page}
 \begin{figure}[htb!]
