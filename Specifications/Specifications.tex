@@ -27,6 +27,32 @@
 	plural=images
 }
 
+\newglossaryentry{cpu}
+{
+	name={CPU},
+	description={Central Processing Unit},
+	plural=CPUs
+}
+
+\newglossaryentry{fpga}
+{
+	name={FPGA},
+	description={Field Programmable Gate Array},
+	plural=FPGAs
+}
+
+\newglossaryentry{json}
+{
+	name={JSON},
+	description={JavaScript Object Notation},
+}
+
+\newglossaryentry{xml}
+{
+	name={XML},
+	description={Extensible Markup Language},
+}
+
 \title{Specifications}
 \author{}
 \begin{document}
@@ -61,9 +87,9 @@ Image classification
 \begin{tabular}{p{2cm}p{12cm}}
 \textbf{AC10} & \textbf{Image classification} \\
 & The software can take a single image as input and tell the user to which predifined class, if any, this image belongs.\\
-\textbf{AC20} & \textbf{Running NN on a heterogeneous platform} \\
-& The software is able to do the execution of a given neural network (inference) on different compute devices. At least one CPU and one FPGA should be supported.
-The user is able to choose which compute device should be used for his image.\\
+\textbf{MAC020} & \textbf{Running \gls{nn} on a heterogeneous platform} \\
+& The software is able to do the execution of a given neural network (inference) on different compute devices. At least one \gls{cpu} and one \gls{fpga} should be supported.
+The user is able to choose which compute device should be used for his \gls{img}.\\
 \textbf{AC30} & \textbf{Different operating modes} \\
 & The software has three modes. One mode for high perfomance, one for low power consumption and one for high energy effiency. \\
 \textbf{AC40} & \textbf{GUI for interacting with software} \\
@@ -83,9 +109,15 @@ The user is able to choose which compute device should be used for his image.\\
 
 \subsection{Can}
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{KAC70} & \textbf{Illustration of the topology of a nn} \\
+\textbf{KAC070} & \textbf{Illustration of the topology of a nn} \\
 & The software is able to visualize the topology of a given nn in a usefull way without requirering additional information. \\
 & The visualized nn can be saved as a .png file\\
+\textbf{KAC120} & \textbf{Using video for classification} \\
+& The software is able to take a video, divide it in frames and perform image classification for each frame.\\
+& The classified video can be viewed side by side as if changing to the next image at a constant rate and the classification could be saved as a \gls{json} or an \gls{xml} file.\\
+\textbf{KAC130} & \textbf{Using camera for classification input} \\
+& The software is able to take frames captured with a camera as an input and classify them.\\
+& The process could take the current frame, classify it, display the results and then when ready, take the next available frame.
 \end{tabular}
 \begin{itemize}[nosep]
 \item [KAC060]: Training a nn for classification
@@ -94,8 +126,8 @@ The user is able to choose which compute device should be used for his image.\\
 \item [KAC090]: Choosing between different models
 \item [KAC100]: Creating new models
 \item [KAC110]: Voting of multiple nn
-\item [KAC120]: Using video for classification
-\item [KAC130]: Using camera for classification input
+%\item [KAC120]: Using video for classification
+%\item [KAC130]: Using camera for classification input
 \item [KAC140]: Running NN on GPU
 \item [KAC150]: The GUI covers all implemented features in 4.1 and 4.2
 \end{itemize}
@@ -119,6 +151,9 @@ The user is able to choose which compute device should be used for his image.\\
 & \\
 \textbf{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
 & A pre-trained \gls{nn} should be deployed to with all the corresponding layers in order to fulfill MFR010.\\
+& \\
+\textbf{MFR012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\
+& The software is able to a configuration file of a speciffic \gls{nn} and parse it for use in the classification.\\
 & \\
 \textbf{MFR020} & \textbf{Have high performance operating mode}\\                                     
 & An option to perform calculations fast with low regard for power consumption.\\
@@ -147,9 +182,6 @@ The user is able to choose which compute device should be used for his image.\\
 
 \section{Functional Requirements Can}
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{CFR012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\
-& Having the ability to import/export different (external) \glspl{nn} to use for the \gls{img} classification.\\
-& \\
 \textbf{FR100} & \textbf{Choosing between different models}\\
 & Testet with: Implements: \\
 & The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
