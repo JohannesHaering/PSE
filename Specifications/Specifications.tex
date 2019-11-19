@@ -73,14 +73,16 @@
 \newpage
 \tableofcontents
 \newpage
-\section{Preface}
+\section{Introduction}
+In todays world of globalisation and digtalisation, to keep up with the rapidly growing economy, one important challenge is the automisation of tasks. One aspect of this is the classification of visual input. Whether it is to check for broken parts in production , the quality of a product or surveillance of public places. In the following project we want to build a functioning neural network that can classify images. To speed up the process of classification we will use different hardware that is more suitable for these kind of calculations. To further adjust the neural network to its task it should have different modes to function on. High performance, low power consumption and a mix of both. Because this is only a concept the classes do not play a big role. In the following specification book we will now refer to the neural network with NN.
 
 \section{Goal}
-The goal is a software which performs image classification and is able to switch between deploy platforms and working modes.
-It also should have a GUI to control the software and to show the results.
+The goal of this project is a program which performs accurate image classification and is able to switch between deploy platforms and working modes.
+It should also have a GUI to interact with the program and to visualise the results.
+Because it is just the base for a bigger specific task it should also be easily changeble to suit the right tasks. To achieve this clean code and good documentation is necessary.
 
 \section{Product use}
-Image classification
+The program does not have a specific use as there is no real automisation happening apart of the classification. It should function as a base for further more complicated tasks that can later for example be used for surveillance or error detection. The GUI should for illustration purposes, that anybody with minimal knowledge of the topic can use to try the classification.
 
 \section{Acceptance criteria}
 \subsection{Must}
@@ -99,13 +101,6 @@ The user is able to choose which compute device should be used for his \gls{img}
 & The software can predict the performance with a certain powerconsumption and also the powerconsumption for a certain performance.
 
 \end{tabular}
-%\begin{itemize}[nosep]
-%\item [MAC010]: Image classification
-%\item [MAC020]: Running NN on heterogenous platforms, CPU and FPGA
-%\item [MAC030]: Different operating modes
-%\item [MAC040]: GUI for interacting with software
-%\item [MAC050]: Performance/power prediction
-%\end{itemize}
 
 \subsection{Can}
 \begin{tabular}{p{2cm}p{11.4cm}}
@@ -129,31 +124,16 @@ The user is able to choose which compute device should be used for his \gls{img}
 \end{tabular}
 \begin{itemize}[nosep]
 \item [KAC060]: Training a nn for classification
-%\item [KAC070]: Illustration of the topology of a nn
-%\item [KAC080]: Object detection
 \item [KAC090]: Choosing between different models
-%\item [KAC100]: Creating new models
-%\item [KAC110]: Voting of multiple nn
-%\item [KAC120]: Using video for classification
-%\item [KAC130]: Using camera for classification input
 \item [KAC140]: Running NN on GPU
 \item [KAC150]: The GUI covers all implemented features in 4.1 and 4.2
 \end{itemize}
 
-\section{Functional Requirements Must}
-\begin{itemize}[nosep]
-\item [MFR025]: Dispatching the calculation process defined from the mode
-\item [MFR030]: Support CPU for calculation
-\item [MFR031]: Support FPGA for calculation
-\item [MFR032]: Support GPU for calculation
-\item [MFR040]: Communication between Host-PC and platform
-\item [MFR041]: Send image for classification
-\item [MFR042]: Receive result
-\item [MFR050]: GUI
-\item [MFR060]: Showing results
-\end{itemize}
-\begin{tabular}{p{2cm}p{11.4cm}}
+\section{Product environment}
+The program should run on a computer in the lab. It should have a CPU and an external FPGA. Additionally there can be a GPU.
 
+\section{Functional Requirements Must}
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\                                     
 & A \gls{nn} should be used in order to classify \glspl{img} based on what is shown on them. For each \gls{img} a list of possible classes it could belong to along with degree of confidence should be given as output.\\
 & \\
@@ -177,48 +157,94 @@ The user is able to choose which compute device should be used for his \gls{img}
 \textbf{MFR024} & \textbf{Calculator for performance}\\                                     
 & Calculations for the possible performance running the \gls{img} classifications would result in based on the \gls{nn}, platform and operating mode used.\\
 & \\
-\textbf{FR070} & \textbf{Choosing image for classification}\\
+\textbf {MFR025} & \textbf{Dispatching the calculation process defined from the mode}\\
+& Tested with: Implements: \\
+& The program should be able to control the tact clock rate of the processor and synchronise it to the chosen mode. \\
+& \\
+\textbf {MFR030} & \textbf{Support CPU for calculation} \\
+& Tested with: Implements \\
+& The program should support CPU for calculation. \\
+& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf {MFR031} & \textbf{Support FPGA for calculation} \\
+& Tested with: Implements \\
+& The program should support FPGA for calculation. \\
+& \\
+\textbf {MFR040} & \textbf{Send image for classification} \\
+& Tested with: Implements \\
+& The GUI has a button Image Classification which opens a new window on click, where the user can choose different modes and platforms. \\
+& \\
+\textbf {MFR041} & \textbf{Receive result} \\
+& Tested with: Implements \\
+& The program should be able to receive results of the executed Image Classification from different platforms. \\
+& \\
+\textbf {MFR050} & \textbf{GUI} \\
+& Tested with: Implements: \\
+& The program has a Graphical User Interface to display all functions to the user \\
+& \\
+\textbf {MFR060} & \textbf{Showing results} \\
+& Tested with: Implements\\
+& After executing the Image Classification, the user should be able to see the results from the execution. \\
+& \\
+\textbf{MFR070} & \textbf{Choosing image for classification}\\
 & Testet with: Implements: \\
 & The GUI has a button with an on click event which opens a file explorer. The explorer filters the files so that only files of the format .jpg, .png, .bmp are listed. That also are the only valid formats.\\
-\textbf{FR080} & \textbf{Choosing platform/hardware}\\
+& \\
+\textbf{MFR080} & \textbf{Choosing platform/hardware}\\
 & Testet with: Implements: \\
 & The GUI has a dropdown which lists the devices on which the classification can be done. The devices which can be theoretically be accessed but aren't connected to the host pc or the communication with them doesn't work are grayed out. \\
-\textbf{FR090} & \textbf{Choosing mode}\\
+& \\
+\textbf{MFR090} & \textbf{Choosing mode}\\
 & Testet with: Implements: \\
-& The GUI has dropdown which lists the modes (high performance mode, low power consumption mode and best energy effiency mode). The power consumption in Watts and performance in FLOPs are also stated behind the mode names.
+& The GUI has dropdown which lists the different modes (high performance mode, low power consumption mode and best energy effiency mode). The power consumption in Watts and performance in FLOPs are also stated behind the mode names.
 \end{tabular}
-
 \section{Functional Requirements Can}
-\begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{FR100} & \textbf{Choosing between different models}\\
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{CFR100} & \textbf{Choosing between different models}\\
 & Testet with: Implements: \\
 & The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
-\textbf{FR110} & \textbf{Train nn for classification of imageset (with transfer learning)}\\
+& \\
+\textbf{CFR110} & \textbf{Train nn for classification of imageset (with transfer learning)}\\
 & Testet with: Implements: \\
 & The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.\\
-%\newpage
-
+& \\
+\textbf {CFR111} & \textbf{Saving newly trained NN (config and weights)} \\
+& Tested with: Implements\\
+& The program should be able to take the weights and configs of an already existing NN and save it for later uses without reading the data again. \\
+& \\
+\textbf {CFR112} & \textbf{Choosing and reading data set} \\
+& Tested with: Implements\\
+& The program has an option to select a set of labeled images it can use to train and improve its performance. \\
+& \\
+\textbf {CFR113} & \textbf{Backpropagation} \\
+& Tested with: Implements\\
+& The program is able to adjust its weights and biases to improve the classification and get more accurate predictions by backpropagation.\\
+& \\
 \end{tabular}
-\begin{itemize}[nosep]
-%\item [KFR111]: Saving new trained nn (config an weights)
-%\item [KFR112]: Choosing/Reading data set
-\item [KFR032]: Support GPU for calculation
-\item [KFR113]: Backpropagation
-\item [KFR114]: Choosing parameters like learning rate
-\item [KFR120]: Illustrating nn topology
-\item [KFR130]: Object detection algorithm
-\item [KFR131]: Showing detected object
-\item [KFR132]: Choosing between detection and classification mode
-%\item [KFR140]: Creating new topology
-%\item [KFR150]: Choosing between training and interference mode
-%\item [KFR160]: Choosing video in format .avi
-%\item [KFR161]: Apply classification for a certain amount of frames
-%\item [KFR170]: Connect with camera 
-%\item [KFR171]: Receive video stream from camera
-%\item [KFR180]: Detecting object
-%\item [KFR181]: Drawing bounding box
-\end{itemize}
-
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf {CFR114} & \textbf{Change the learning rate} \\
+& Tested with: Implements\\
+& To adjust the learning proccess of the neural network you can change the speed of how fast the weights and biases will be changed.\\
+& \\
+\textbf {CFR120} & \textbf{Illustrating NN topology.} \\
+& Tested with: Implements\\
+& To make the program more intuitive for the user it should be able to illustrate the topology of the NN.\\
+& \\
+\textbf {CFR130} & \textbf{Object detection algorithm} \\
+& Tested with: Implements\\
+& Not only should the program classify an image it should also detect the objects/ classes in the picture. \\
+& \\
+\textbf {CFR131} & \textbf{Showing detected object} \\
+& Tested with: Implements\\
+& The found objects should be marked by a box and shown to the user. \\
+& \\
+\textbf {CFR140} & \textbf{Support GPU for calculation} \\
+& Tested with: Implements\\
+& To speed up the calculations the program should be able to use a additional GPU to speed up the calculations.\\
+\end{tabular}
 \section{Productdata}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{PD010} & \textbf{Images for classification}\\
@@ -234,35 +260,33 @@ The user is able to choose which compute device should be used for his \gls{img}
 \end{tabular}
 
 \section{Demarcation}
-\begin{tabular}{p{2cm}p{11.4cm}}
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{D010} & \textbf{No low-level optimization}\\
-& Optimizations to reduce the execution time of object classification and detection will mainly be carried out in OpenCL.\\
+& Optimizations to reduce the execution time of object classification and detection will  be carried out in OpenCL.\\
 & No optimizations including low-level languages or assembly intrinsics will be implemented.\\
 &\\
-\textbf{D020} & \textbf{No real time optimization}\\
+\textbf{D020} & \textbf{No real time requirements}\\
+& The software doesn't have to react in realtime. \\
 & Common code optimizations will be done where possible to reduce the running time of the network per image classification/detection task.\\
-& They do not have to lead to real-time reactions of the system.\\
-& A computation time of multiple seconds per image is acceptable.\\
 &\\
 \textbf{D030} & \textbf{No neural network size optimization}\\
 &No techniques for memory usage reduction like parameter sharing, prunning or binarization will be implemented.\\
 &\\
 \textbf{D040} & \textbf{No mobile support}\\
-& There are no intentations to run any parts of this code on a mobile device like a smartphone or Augmented Reality glass.\\
-& Mobile device requirements are not taken into consideration when choosing Techniques, languages and hardware used in this project. \\
-&\\
+& Our software doesn't work on mobile devices, like smartphones or wearabels.
 \end{tabular}
-%\begin{itemize}[nosep]
-%\item [D020]: No real time / no performance optimization
-%\item [D040]: No mobile support
-%\item [D030]: No neural network size optimization
-%\item [D010]: No low-level (Assembler) optimization
-%\end{itemize}
 
 \section{Non-functional requirements}
-\begin{itemize}[nosep]
-\item[NF10] 
-\end{itemize}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{D010} & \textbf{Project size}\\
+& The project should have around ten thousand (10,000) lines of code \\
+& \\
+\textbf{D020} & \textbf{Code size}\\
+& The project should be done with Object-Orientated programming. The whole project should have around fourty (40) to eighty (80) classes excluding interfaces. \\
+& \\
+\textbf{D030} & \textbf{Model-View-Controller}\\
+& The project should be based on the design pattern model-view-controller. \\
+\end{tabular}
 
 \section{Test cases}
 \begin{tabular}{p{2cm}p{11.4cm}}
@@ -299,24 +323,65 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency operating mode.\\
 & \textbf{Reaction:} The calculations run with regard to balance between power consumption and speed.\\
 & \\
-%Manu quick fix:
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{T025} & \textbf{Dispatching the calculation process defined from the mode} \\
+& \textbf{Warming up:} Run the Software for each Case 10 times with the same data set. \\
+T025.1 & \textbf{High performance mode} :  \\
+& \textbf{State:} The user in on the page for image classification  \\
+& \textbf{Action:} The user selects High performance mode  \\
+& \textbf{Reaction:} The calcutation is expected to be faster than the other modes. \\ 
+T025.2 & \textbf{Low power consumption mode} :  \\
+& \textbf{State:} The user in on the page for image classification  \\
+& \textbf{Action:} The user selects low power consumption mode  \\
+& \textbf{Reaction:} The calculation is expected to be using lower amount of power than the other modes. \\
+T025.3 & \textbf{High energy efficiency mode} :  \\
+& \textbf{State:} The user in on the page for image classification  \\
+& \textbf{Action:} The user selects high energy efficiency mode  \\
+& \textbf{Reaction:} The calculation is expected to be using lower amount of energy than the other modes. \\
+& \\
+\textbf{T030} & \textbf{Support CPU for calculation} \\
+T030.1 & \textbf{State:} The user chooses an elephant, CPU as a platform and performance mode. \\
+& \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
+& \textbf{Reaction:} Elephant. \\
+& \\
+\textbf{T031} & \textbf{Support FPGA for calculation} \\
+T031.1 & \textbf{State:} The user chooses an elephant, FPGA as a platform and performance mode. \\
+& \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
+& \textbf{Reaction:} Elephant. \\
+& \\
 \textbf{T040} & \textbf{Send image for classification} \\
-T040.1 & \textbf{State:} The user in on the page for image classification \\
+T040.1 & \textbf{State:} The user in on the page for image classification  \\
 & \textbf{Action:} The user selects an image to be classificated.  \\
-& \textbf{Reaction:} The software sends an array of pixels to the selected platform.\\
-T040.2 & \textbf{State:} The software is awaiting result \\
+& \textbf{Reaction:} The software sends an image to the selected platform.\\
+& \\
+\textbf{T041} & \textbf{Receive result}\\
+T041.1 & \textbf{State:} The software is awaiting result \\
 & \textbf{Action:} Platform sends results \\
-& \textbf{Reaction:} The software is expected to receive an array of changed pixels from the platform. \\ 
+& \textbf{Reaction:} The software receives the results from the platform. \\
+& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{T050} & \textbf{GUI} \\
+T050.1 & \textbf{State:} The user wants to use the software.\\
+& \textbf{Action:} The user starts the program.  \\
+& \textbf{Reaction:} The users sees the Graphical User Interface showed on Figure 1. \\
+& \\
+\textbf{T060} & \textbf{Showing results} \\
+T060.1 & \textbf{State:} The user has send an image for classification \\
+& \textbf{Action:} \\
+& \textbf{Reaction:} The Graphical user interface shows the finished image. \\ 
+& \\
 \textbf{T070} & \textbf{Choosing image for classification}\\
-T070.1 & \textbf{State:} The user is on the page for image classification. \\
+T070.1 & \textbf{State:} The user is on the page for image classification \\
 & \textbf{Action:} The user clicks on the button \glqq Choose image\grqq .\\
 & \textbf{Reaction:} The file explorer opens with the filter for .png, .jpg, .bmp\\
 T070.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects an image with a valid format\\
 & \textbf{Reaction:} The file explorer closes and image is as preview shown\\
+& \\
 \textbf{T080} & \textbf{Choosing platform/hardware}\\
 T080.1 & \textbf{State:} The user is on the page for image classification\\
 & \textbf{Action:} The user chooses with the dropdown the desired platform\\
@@ -334,85 +399,100 @@ T100.1 & \textbf{State:} The user is on the page for image classification\\
 T100.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects an config/weight file\\
 & \textbf{Reaction:} The file explorer closes and the software loads the input and parses it. If it is loaded there is success message\\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T110} & \textbf{Train neural network for classification of imageset}\\
-T110.1 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
+T110.1 & \textbf{State:} The user is on the main page\\
+& \textbf{Action:} The user clicks the button \glqq Train a neural network\grqq\\
+& \textbf{Reaction:}The user is redirected to a new page with further options.\\
+T110.2 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
 & \textbf{Action:} The user clicks on the button \glqq Train\grqq\\
 & \textbf{Reaction:} The software starts to train the selected network with the selected configuration and shows the progress in line graph.\\
+T110.3 & \textbf{State:} The user chose the dataset and chose all options: dataset, model\\
+& \textbf{Action:} The user clicks the train button.\\
+& \textbf{Reaction:} The NN is training and after training the new topology and results of the NN is shown on a new site, that has a back button to go to the main page and a save button to save new trained NN\\
 & \\
-%Manuel
 \textbf{T111} & \textbf{Saving a NN after training}\\
 T111.1 & \textbf{State:} The user is on the page for training, has selected a neural network, a dataset for training, the kind of training, the learning rate and the desired precision.\\
 & The training finishes.\\
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The software stores the trained network weights in a predifined format and with a usefull name in a fixed location.\\
 & \\
-%Manu quick fix:
+\textbf{T112} & \textbf{Choosinf and reading dataset}\\
+T112.1 & \textbf{Step 1: Folder} :  \\
+& \textbf{State:} The user has a folder with labeled images and already clicked on the train button.\\
+& \textbf{Action:} The user clicks the input button. \\
+& \textbf{Reaction:} A file explorer opens.\\
+T112.2 & \textbf{Step 2: Folder} :  \\
+& \textbf{State:} The file explorer is openend.\\
+& \textbf{Action:} The user chooses the folder with the images. \\
+& \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used according to the users later actions.\\
+& \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{T112} & \textbf{Choosing/Reading data set}\\
-T112.1 & \textbf{State:} A folder containing images is provided by the user.\\
-& \textbf{Action:} No action required\\
-& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
-
-& \\
-\textbf{T140} & \textbf{Creating new topology}\\
-T140.1 & \textbf{State:} \\
-& \textbf{Action:} No action required\\
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{T113} & \textbf{Saving the trained NN}\\
+T113.1 & \textbf{State:} \\
+& \textbf{Action:} \\
 & \textbf{Reaction:} \\
-& A folder containing images is provided by the user.\\
-& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
-
 & \\
-\textbf{T150} & \textbf{Choosing between training and interference mode}\\
-T150.1 & \textbf{State:} \\
-& \textbf{Action:} No action required\\
+\textbf{T114} & \textbf{Backpropagation}\\
+T113.1 & \textbf{State:} \\
+& \textbf{Action:} \\
 & \textbf{Reaction:} \\
-& A folder containing images is provided by the user.\\
-& The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
-
+&\\
+\textbf{T115} & \textbf{Changing parameters}\\
+T115.1 & \textbf{State:} \\
+& \textbf{Action:} \\
+& \textbf{Reaction:} \\
 & \\
-\textbf{T160} & \textbf{Choosing video in format .avi}\\
-T160.1 & \textbf{State:} The software is running. \\
+\textbf{T120} & \textbf{Showing topology of a NN}\\
+T140.1 & \textbf{State:} The user is on the main page\\
+& \textbf{Action:} The user clicks the \glqq Show topology of a neural network\grqq button.\\
+& \textbf{Reaction:} The user is redirected to a new page where he has to choose the neural network to display by a dropdown menu\\
+& \\
+\textbf{T130} & \textbf{Object detection}\\
+T130.1 & \textbf{State:} The software is running, a network including all parameters and weights was provided. An image was provided. Detection mode was picked by the user\\
+& \textbf{Action:} The user clicks on the button \glqq start detection\grqq\\
+& \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
+& \\
+\textbf{T131} & \textbf{Marking objects}\\
+T131.1 & \textbf{State:} The program found the location of object.\\
+& \textbf{Action:} none \\
+& \textbf{Reaction:} The picture is shown with a red square around the classified object.\\
+& \\
+\textbf{T132} & \textbf{Drawing bounding box}\\
+T132.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen neural network predicted bounding boxes.\\
+& \textbf{Action:} No action required\\
+& \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
+& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{T180} & \textbf{Choosing video in format .avi}\\
+T180.1 & \textbf{State:} The software is running. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
 & available to process single images from this video.\\
-
 & \\
-\textbf{T161} & \textbf{Apply classification for a certain amount of frames}\\
-T161.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
-& \textbf{Action:} The user clicks on the button ``start classification''\\
-& \textbf{Reaction:} The system processes the video file imagewise\\
-
-& \\
-\textbf{T170} & \textbf{Connect with camera}\\
-T170.1 & \textbf{State:} The software is running\\
+\textbf{T190} & \textbf{Connect with camera}\\
+T190.1 & \textbf{State:} The software is running\\
 & \textbf{Action:} The user connects a usb camera to the pc\\
 & \textbf{Reaction:} The system dynamically detects the camera and allows the user to select the camera as an image source\\
-
 & \\
-\textbf{T171} & \textbf{Receive video stream from camera}\\
-T171.1 & \textbf{State:} The software is running, a camera is connected to the host pc.\\
+\textbf{T191} & \textbf{Receive video stream from camera}\\
+T191.1 & \textbf{State:} The software is running, a camera is connected to the host pc.\\
 & \textbf{Action:} The user chooses the camera as image source.\\
 & \textbf{Reaction:} The first camera image is provided as a preview, the continuous image stream is available for further processing.\\
-
 & \\
-\textbf{T180} & \textbf{Detecting object}\\
-T180.1 & \textbf{State:} The software is running, a network including all parameters and weights was provided. An image was provided. Detection mode was picked by the user\\
-& \textbf{Action:} The user clicks on the button ``start detection''\\
-& \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
-
-& \\
-\textbf{T181} & \textbf{Drawing bounding box}\\
-T181.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen neural network predicted bounding boxes.\\
-& \textbf{Action:} No action required\\
-& \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
-
+\textbf{T192} & \textbf{Apply classification for a certain amount of frames}\\
+T192.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
+& \textbf{Action:} The user clicks on the button \glqq start classification\grqq\\
+& \textbf{Reaction:} The system processes the video file imagewise\\
 \end{tabular}
 \newpage
 \section{System models}
-
 \subsection{Scenarios}
 \subsubsection{Scenario 1}
 The user U1 wants to classificate the image of a cat. He goes on the classifcation page and he clicks on the dropdown and sees the three modes \glqq low power consumption\grqq , \glqq high perfomance\grqq and \glqq high energy effiency\grqq , he can also see the predicted power consumption and performance. He chooses to classificate in the low power mode and runs the programm. The results are shown.
