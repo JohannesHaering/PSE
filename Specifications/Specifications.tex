@@ -56,6 +56,7 @@
 \title{Specifications}
 \author{}
 \begin{document}
+\renewcommand{\figurename}{Figure}
 \begin{titlepage}
 \centering
 	\vspace{3cm}
@@ -84,8 +85,8 @@ Because it is just the base for a bigger specific task it should also be easily 
 \section{Product use}
 The program does not have a specific use as there is no real automisation happening apart of the classification. It should function as a base for further more complicated tasks that can later for example be used for surveillance or error detection. The GUI should for illustration purposes, that anybody with minimal knowledge of the topic can use to try the classification.
 
-\section{Acceptance criteria}
-\subsection{Must}
+\section{Criterias}
+\subsection{Must Acceptance criterias}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{AC10} & \textbf{Image classification} \\
 & The software can take a single image as input and tell the user to which predifined class, if any, this image belongs.\\
@@ -102,7 +103,7 @@ The user is able to choose which compute device should be used for his \gls{img}
 
 \end{tabular}
 
-\subsection{Can}
+\subsection{Can Acceptance criterias}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{KAC070} & \textbf{Illustration of the topology of a nn} \\
 & The software is able to visualize the topology of a given nn in a usefull way without requirering additional information. \\
@@ -128,6 +129,22 @@ The user is able to choose which compute device should be used for his \gls{img}
 \item [KAC140]: Running NN on GPU
 \item [KAC150]: The GUI covers all implemented features in 4.1 and 4.2
 \end{itemize}
+\subsection{Criteria of demarcation}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{D010} & \textbf{No low-level optimization}\\
+& Optimizations to reduce the execution time of object classification and detection will  be carried out in OpenCL.\\
+& No optimizations including low-level languages or assembly intrinsics will be implemented.\\
+&\\
+\textbf{D020} & \textbf{No real time requirements}\\
+& The software doesn't have to react in realtime. \\
+& Common code optimizations will be done where possible to reduce the running time of the network per image classification/detection task.\\
+&\\
+\textbf{D030} & \textbf{No neural network size optimization}\\
+&No techniques for memory usage reduction like parameter sharing, prunning or binarization will be implemented.\\
+&\\
+\textbf{D040} & \textbf{No mobile support}\\
+& Our software doesn't work on mobile devices, like smartphones or wearabels.
+\end{tabular}
 
 \section{Product environment}
 The program should run on a computer in the lab. It should have a CPU and an external FPGA. Additionally there can be a GPU.
@@ -268,23 +285,6 @@ The program should run on a computer in the lab. It should have a CPU and an ext
 & The dataset is chosen by the user. The dataset is a directory with images and the name of the image is the label.\\
 \textbf{PD040} & \textbf{Labeled set of images for object detection training}\\
 & It is a .txt file and a directory with images. The images are labeled with their name. The bounding box for each image are described in the .txt file, in the format \textit{imagename, x,y,width,height}. (X,Y) are the coordinates in pixel of the left bottom corner, the width and height are in pixel.
-\end{tabular}
-
-\section{Demarcation}
-\begin{tabular}{p{2cm}p{12cm}}
-\textbf{D010} & \textbf{No low-level optimization}\\
-& Optimizations to reduce the execution time of object classification and detection will  be carried out in OpenCL.\\
-& No optimizations including low-level languages or assembly intrinsics will be implemented.\\
-&\\
-\textbf{D020} & \textbf{No real time requirements}\\
-& The software doesn't have to react in realtime. \\
-& Common code optimizations will be done where possible to reduce the running time of the network per image classification/detection task.\\
-&\\
-\textbf{D030} & \textbf{No neural network size optimization}\\
-&No techniques for memory usage reduction like parameter sharing, prunning or binarization will be implemented.\\
-&\\
-\textbf{D040} & \textbf{No mobile support}\\
-& Our software doesn't work on mobile devices, like smartphones or wearabels.
 \end{tabular}
 
 \section{Non-functional requirements}
