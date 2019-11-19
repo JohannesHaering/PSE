@@ -221,7 +221,6 @@ The program should run on a computer in the lab. It should have a CPU and an ext
 \textbf {CFR113} & \textbf{Backpropagation} \\
 & Tested with: Implements\\
 & The program is able to adjust its weights and biases to improve the classification and get more accurate predictions by backpropagation.\\
-& \\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
@@ -241,7 +240,19 @@ The program should run on a computer in the lab. It should have a CPU and an ext
 & Tested with: Implements\\
 & The found objects should be marked by a box and shown to the user. \\
 & \\
-\textbf {CFR140} & \textbf{Support GPU for calculation} \\
+\textbf{CFR140} & \textbf{Choosing and reading video}\\
+& The user can choose a video in .avi format and the software can use it as input for the classification process\\
+& \\
+\textbf{CFR150} & \textbf{Connect with camera}\\
+& The software can connect with a connected camera\\
+& \\
+\textbf{CFR151} & \textbf{Receive video stream from camera}\\
+& The software can receive a video stream from the camera.\\
+& \\
+\textbf{CFR152} & \textbf{Apply classifcation for a certain amount of frames}\\
+& The software can devide a video or videostream into frames and is able to apply image classification on those.\\
+& \\
+\textbf {CFR160} & \textbf{Support GPU for calculation} \\
 & Tested with: Implements\\
 & To speed up the calculations the program should be able to use a additional GPU to speed up the calculations.\\
 \end{tabular}
@@ -344,12 +355,12 @@ T025.3 & \textbf{High energy efficiency mode} :  \\
 \textbf{T030} & \textbf{Support CPU for calculation} \\
 T030.1 & \textbf{State:} The user chooses an elephant, CPU as a platform and performance mode. \\
 & \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
-& \textbf{Reaction:} Elephant. \\
+& \textbf{Reaction:} Elephant is the resultt. \\
 & \\
 \textbf{T031} & \textbf{Support FPGA for calculation} \\
 T031.1 & \textbf{State:} The user chooses an elephant, FPGA as a platform and performance mode. \\
 & \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
-& \textbf{Reaction:} Elephant. \\
+& \textbf{Reaction:} Elephant is the result. \\
 & \\
 \textbf{T040} & \textbf{Send image for classification} \\
 T040.1 & \textbf{State:} The user in on the page for image classification  \\
@@ -419,7 +430,7 @@ T111.1 & \textbf{State:} The user is on the page for training, has selected a ne
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The software stores the trained network weights in a predifined format and with a usefull name in a fixed location.\\
 & \\
-\textbf{T112} & \textbf{Choosinf and reading dataset}\\
+\textbf{T112} & \textbf{Choosing and reading dataset}\\
 T112.1 & \textbf{Step 1: Folder} :  \\
 & \textbf{State:} The user has a folder with labeled images and already clicked on the train button.\\
 & \textbf{Action:} The user clicks the input button. \\
@@ -470,26 +481,31 @@ T132.1 & \textbf{State:} Inferencing was executed on an image given by the user,
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T180} & \textbf{Choosing video in format .avi}\\
-T180.1 & \textbf{State:} The software is running. \\
+\textbf{T140} & \textbf{Choosing video}\\
+T140.1 & \textbf{State:} The software is running. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
 & available to process single images from this video.\\
 & \\
-\textbf{T190} & \textbf{Connect with camera}\\
-T190.1 & \textbf{State:} The software is running\\
+\textbf{T150} & \textbf{Connect with camera}\\
+T150.1 & \textbf{State:} The software is running\\
 & \textbf{Action:} The user connects a usb camera to the pc\\
 & \textbf{Reaction:} The system dynamically detects the camera and allows the user to select the camera as an image source\\
 & \\
-\textbf{T191} & \textbf{Receive video stream from camera}\\
-T191.1 & \textbf{State:} The software is running, a camera is connected to the host pc.\\
+\textbf{T151} & \textbf{Receive video stream from camera}\\
+T151.1 & \textbf{State:} The software is running, a camera is connected to the host pc.\\
 & \textbf{Action:} The user chooses the camera as image source.\\
 & \textbf{Reaction:} The first camera image is provided as a preview, the continuous image stream is available for further processing.\\
 & \\
-\textbf{T192} & \textbf{Apply classification for a certain amount of frames}\\
-T192.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
+\textbf{T152} & \textbf{Apply classification for a certain amount of frames}\\
+T152.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
 & \textbf{Action:} The user clicks on the button \glqq start classification\grqq\\
 & \textbf{Reaction:} The system processes the video file imagewise\\
+& \\
+\textbf{T160} & \textbf{Support GPU for classification}\\
+& \textbf{State:} The user chooses an elephant, GPU as a platform and performance mode. \\
+& \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
+& \textbf{Reaction:} Elephant is the result. \\
 \end{tabular}
 \newpage
 \section{System models}
