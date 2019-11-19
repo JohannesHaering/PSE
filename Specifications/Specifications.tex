@@ -84,7 +84,7 @@ Image classification
 
 \section{Acceptance criteria}
 \subsection{Must}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{AC10} & \textbf{Image classification} \\
 & The software can take a single image as input and tell the user to which predifined class, if any, this image belongs.\\
 \textbf{MAC020} & \textbf{Running \gls{nn} on a heterogeneous platform} \\
@@ -108,10 +108,12 @@ The user is able to choose which compute device should be used for his \gls{img}
 %\end{itemize}
 
 \subsection{Can}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{KAC070} & \textbf{Illustration of the topology of a nn} \\
 & The software is able to visualize the topology of a given nn in a usefull way without requirering additional information. \\
 & The visualized nn can be saved as a .png file\\
+\textbf{KAC80} & \textbf{Object Detection} \\
+&The software is able to not only say what kind of species there is on the picture, but also detect its outer points and draw a bounding box around it. \\ 
 \textbf{KAC100} & \textbf{Creating new models} \\
 & The software allows the user to train a neural network based on an architecture which the user developed.\\
 & Neural networks created and trained by the user will be executed the same way neural networks provided with the software are executed.\\
@@ -128,7 +130,7 @@ The user is able to choose which compute device should be used for his \gls{img}
 \begin{itemize}[nosep]
 \item [KAC060]: Training a nn for classification
 %\item [KAC070]: Illustration of the topology of a nn
-\item [KAC080]: Object detection
+%\item [KAC080]: Object detection
 \item [KAC090]: Choosing between different models
 %\item [KAC100]: Creating new models
 %\item [KAC110]: Voting of multiple nn
@@ -150,7 +152,7 @@ The user is able to choose which compute device should be used for his \gls{img}
 \item [MFR050]: GUI
 \item [MFR060]: Showing results
 \end{itemize}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 
 \textbf{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\                                     
 & A \gls{nn} should be used in order to classify \glspl{img} based on what is shown on them. For each \gls{img} a list of possible classes it could belong to along with degree of confidence should be given as output.\\
@@ -187,7 +189,7 @@ The user is able to choose which compute device should be used for his \gls{img}
 \end{tabular}
 
 \section{Functional Requirements Can}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{FR100} & \textbf{Choosing between different models}\\
 & Testet with: Implements: \\
 & The GUI has a button which opens the file explorer which filters for .txt files, there you choose the config file of the neural network with which you want to use. The program loads this config and parses it so it can be deployed. Possible models are GoogLeNet or AlexNet.\\
@@ -195,7 +197,6 @@ The user is able to choose which compute device should be used for his \gls{img}
 & Testet with: Implements: \\
 & The user chooses a pretrained neural network and a new imageset and then can train the neural network on this new imageset with transfer learning.\\
 %\newpage
-
 
 \end{tabular}
 \begin{itemize}[nosep]
@@ -216,13 +217,10 @@ The user is able to choose which compute device should be used for his \gls{img}
 %\item [KFR171]: Receive video stream from camera
 %\item [KFR180]: Detecting object
 %\item [KFR181]: Drawing bounding box
-
 \end{itemize}
 
-
-
 \section{Productdata}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{PD010} & \textbf{Images for classification}\\
 & The user can choose images of the format .jpg, .png, .bmp. The images are chosen by the user with the file explorer.\\
 \textbf{PD020} & \textbf{Config/weight file of pretrained model}\\
@@ -236,7 +234,7 @@ The user is able to choose which compute device should be used for his \gls{img}
 \end{tabular}
 
 \section{Demarcation}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{D010} & \textbf{No low-level optimization}\\
 & Optimizations to reduce the execution time of object classification and detection will mainly be carried out in OpenCL.\\
 & No optimizations including low-level languages or assembly intrinsics will be implemented.\\
@@ -267,19 +265,17 @@ The user is able to choose which compute device should be used for his \gls{img}
 \end{itemize}
 
 \section{Test cases}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
 & \textbf{State:} A \gls{img} is given as an input.\\
 & \textbf{Action:} Calculations are performed on hand of the \gls{img} and a \gls{nn}.\\
 & \textbf{Reaction:} A list of possible classes the given \gls{img} could belong to along with degree of confidence for each class are given as output.\\
 & \\
-
 \textbf{T011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
 & \textbf{State:} There is a \gls{nn} (already trained).\\
 & \textbf{Action:} Calculations are performed cased on a given \gls{img} and the given \gls{nn}.\\
 & \textbf{Reaction:} A list of possible classes the given \gls{img} could belong to along with degree of confidence for each class are given as output.\\
 & \\
-
 \textbf{T012} & \textbf{Reading and parsing \gls{nn} configuration/weight file}\\
 T012.1 & \textbf{State:}  The user is on the page to select a \gls{nn} to use for the \gls{img} classification.\\
 & \textbf{Action:} The user selects the option to import a \gls{nn}.\\
@@ -288,25 +284,32 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects an \gls{nn} to import\\
 & \textbf{Reaction:} The file explorer closes and \gls{nn} is imported and selected for the classification calculations.\\
 & \\
-
 \textbf{T020} & \textbf{Have high performance operating mode}\\
 & \textbf{State:} The user is ready to start the calculations.\\
 & \textbf{Action:} The user chooses to perform the calculations in high performance operating mode.\\
 & \textbf{Reaction:} The calculations run considerably faster than in the other possible modes with the same conditions.\\
 & \\
-
 \textbf{T021} & \textbf{Have low power consumption operating mode}\\
 & \textbf{State:} The user is ready to start the calculations.\\
 & \textbf{Action:} The user chooses to perform the calculations in low power consumption operating mode.\\
 & \textbf{Reaction:} The calculations run with considerably lower power consumption than with the other possible modes in the same conditions.\\
 & \\
-
 \textbf{T022} & \textbf{Have high energy efficiency operating mode}\\
 & \textbf{State:} The user is ready to start the calculations.\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency operating mode.\\
 & \textbf{Reaction:} The calculations run with regard to balance between power consumption and speed.\\
 & \\
-
+%Manu quick fix:
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
+\textbf{T040} & \textbf{Send image for classification} \\
+T040.1 & \textbf{State:} The user in on the page for image classification \\
+& \textbf{Action:} The user selects an image to be classificated.  \\
+& \textbf{Reaction:} The software sends an array of pixels to the selected platform.\\
+T040.2 & \textbf{State:} The software is awaiting result \\
+& \textbf{Action:} Platform sends results \\
+& \textbf{Reaction:} The software is expected to receive an array of changed pixels from the platform. \\ 
 \textbf{T070} & \textbf{Choosing image for classification}\\
 T070.1 & \textbf{State:} The user is on the page for image classification. \\
 & \textbf{Action:} The user clicks on the button \glqq Choose image\grqq .\\
@@ -314,10 +317,6 @@ T070.1 & \textbf{State:} The user is on the page for image classification. \\
 T070.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects an image with a valid format\\
 & \textbf{Reaction:} The file explorer closes and image is as preview shown\\
-%Manu quick fix:
-\end{tabular}
-\begin{tabular}{p{2cm}p{12cm}}
-\newpage
 \textbf{T080} & \textbf{Choosing platform/hardware}\\
 T080.1 & \textbf{State:} The user is on the page for image classification\\
 & \textbf{Action:} The user chooses with the dropdown the desired platform\\
@@ -348,6 +347,10 @@ T111.1 & \textbf{State:} The user is on the page for training, has selected a ne
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The software stores the trained network weights in a predifined format and with a usefull name in a fixed location.\\
 & \\
+%Manu quick fix:
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T112} & \textbf{Choosing/Reading data set}\\
 T112.1 & \textbf{State:} A folder containing images is provided by the user.\\
 & \textbf{Action:} No action required\\
@@ -361,9 +364,6 @@ T140.1 & \textbf{State:} \\
 & A folder containing images is provided by the user.\\
 & The software is able to read all images matching the allowed formats and allows training and inferencing on these images.\\
 
-%Manu quick fix:
-\end{tabular}
-\begin{tabular}{p{2cm}p{12cm}}
 & \\
 \textbf{T150} & \textbf{Choosing between training and interference mode}\\
 T150.1 & \textbf{State:} \\
@@ -423,12 +423,21 @@ The user U3 created the blueprint for a new nn.
 He wants to train a network based on this config file but computation time is shared and expensive. U3 has to convince his boss therefore.
 U3 uses the software as input and select the visualization toolkit.
 U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
+\clearpage
 \subsubsection{Scenario 4}
 User U4 has to categorize a large dataset of plants from a biology excursion. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to pick manualy for every image which network to use. He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
 \subsubsection{Scenario 5}
 User U5 has heared about this software and wants to test it.
 U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
 Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
+\subsubsection{Scenario 7}
+Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different sorts of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, what our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
+\subsubsection{Scenario 8}
+The firm GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal is it seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
+\clearpage
+\subsubsection{Scenario 9}
+The firm EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
+\clearpage
 \subsection{Usecases}
 \subsubsection{Training page}
 \begin{figure}[htb!]
@@ -442,6 +451,8 @@ Afterwards U5 creates a folder with new pokemon images and uses his new network 
 \includegraphics[width=\textwidth]{TrainUsecase}
 \caption{Usecase of the trainingspage}
 \end{figure}
+\clearpage
+
 \subsection{GUI}
 \begin{figure}[htb!]\centering
 \includegraphics[width=\textwidth]{MainPageGUI}
@@ -464,8 +475,8 @@ Afterwards U5 creates a folder with new pokemon images and uses his new network 
 \includegraphics[width=\textwidth]{TopoGUI}
 \caption{Page which shows the topology of a selected NN of our software}
 \end{figure}
-\newpage
-\printnoidxglossaries
+\clearpage
+
 \section{Stage responsibilities}
 \begin{tabular}{p{4cm}p{8cm}}
 \textbf{Requirements:} & Paul Stangel\\
@@ -474,5 +485,8 @@ Afterwards U5 creates a folder with new pokemon images and uses his new network 
 \textbf{Quality insurance:}& Stefani Guneshka\\
 \textbf{Deployment:} & Dimitar Dimitrov
 \end{tabular}
+\clearpage
+
+\printnoidxglossaries
 \end{document}
 
