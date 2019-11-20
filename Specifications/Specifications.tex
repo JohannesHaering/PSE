@@ -191,7 +191,7 @@ The program should run on a computer in the lab. It should have a CPU and an ext
 & \\
 \textbf {MFR040} & \textbf{Send image for classification} \\
 & Tested with: Implements \\
-& The GUI has a button Image Classification which opens a new window on click, where the user can choose different modes and platforms. \\
+& The software should be able to send information about chosen image to different platforms. \\
 & \\
 \textbf {MFR041} & \textbf{Receive result} \\
 & Tested with: Implements \\
@@ -363,9 +363,13 @@ T031.1 & \textbf{State:} The user chooses an elephant, FPGA as a platform and pe
 & \textbf{Reaction:} Elephant is the result. \\
 & \\
 \textbf{T040} & \textbf{Send image for classification} \\
-T040.1 & \textbf{State:} The user in on the page for image classification  \\
+\textbf{T040} & \textbf{Send image for classification} \\
+T040.1 & \textbf{State:} The user in on the page for image classification \\
 & \textbf{Action:} The user selects an image to be classificated.  \\
-& \textbf{Reaction:} The software sends an image to the selected platform.\\
+& \textbf{Reaction:} The software sends an array of pixels to the selected platform.\\
+T040.2 & \textbf{State:} The software is awaiting result \\
+& \textbf{Action:} Platform sends results \\
+& \textbf{Reaction:} The software is expected to receive an array of changed pixels from the platform. \\
 & \\
 \textbf{T041} & \textbf{Receive result}\\
 T041.1 & \textbf{State:} The software is awaiting result \\
@@ -526,13 +530,15 @@ User U4 has to categorize a large dataset of plants from a biology excursion. U4
 User U5 has heared about this software and wants to test it.
 U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
 Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
-\subsubsection{Scenario 7}
+\subsubsection{Scenario 6}
 Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different sorts of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, what our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
-\subsubsection{Scenario 8}
+\subsubsection{Scenario 7}
 The firm GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal is it seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
 \clearpage
-\subsubsection{Scenario 9}
+\subsubsection{Scenario 8}
 The firm EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
+\subsubsection{Scenario 9}
+The user U9 wants to classify his pictures for easy search. He has a ridiculously huge amount of images, so he wants to accelerate the classification as much as possible. U9 opens the Application, selects the set of pictures he wants to classify and finds selects the hardware he wants to use for it (for example FPGA). As a result the classifications are accelerated on the FPGA.
 \clearpage
 \subsection{Usecases}
 \subsubsection{Training page}
