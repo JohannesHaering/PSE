@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>28</x>
+      <y>236</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Actor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>296</x>
+      <y>16</y>
+      <w>156</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>FileExplorer
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>112</x>
+      <y>92</y>
+      <w>120</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>DetectionPage
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>308</x>
+      <y>32</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Choose file
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>380</x>
+      <y>32</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Choose folder
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>108</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Choose input par.
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>200</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Choose Neural Network
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>248</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Dropdown Modes
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>356</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Start Detection
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>296</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Dropdown platform
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>140</x>
+      <y>152</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Choose output par.
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>340</x>
+      <y>420</y>
+      <w>88</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PlatformList
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>348</x>
+      <y>440</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>CPU
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>348</x>
+      <y>484</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>GPU
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>348</x>
+      <y>524</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>FPGA
+valign=center
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>480</x>
+      <y>372</y>
+      <w>88</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>ModeList
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>488</x>
+      <y>396</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>HighestPerformance
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>488</x>
+      <y>436</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>HighestEfficiency
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>488</x>
+      <y>476</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>LowestPower
+valign=center
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>484</x>
+      <y>244</y>
+      <w>88</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>OutputList
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>484</x>
+      <y>68</y>
+      <w>88</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>InputList
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>88</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>SingleImage
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>124</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ImageFolder
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>160</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Camera
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>196</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>File with Image Paths
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>264</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Save Result
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>492</x>
+      <y>308</y>
+      <w>64</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Show Result
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
