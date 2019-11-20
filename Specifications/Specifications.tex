@@ -75,7 +75,7 @@
 \tableofcontents
 \newpage
 \section{Introduction}
-In todays world of globalisation and digtalisation, to keep up with the rapidly growing economy, one important challenge is the automisation of tasks. One aspect of this is the classification of visual input. Whether it is to check for broken parts in production , the quality of a product or surveillance of public places. In the following project we want to build a functioning neural network that can classify images. To speed up the process of classification we will use different hardware that is more suitable for these kind of calculations. To further adjust the neural network to its task it should have different modes to function on. High performance, low power consumption and a mix of both. Because this is only a concept the classes do not play a big role. In the following specification book we will now refer to the neural network with NN.
+In todays world of globalisation and digtalisation, to keep up with the rapidly growing economy, one important challenge is the automisation of tasks. One aspect of this is the classification of visual input. Whether it is to check for broken parts in production , the quality of a product or surveillance of public places. With the rapidly growing power of computers, neural networks are becoming more popular for these kind of tasks as they need a lot of computanial power but deliver accurate results. In the following project we want to build a functioning neural network that can classify images. To speed up the process of classification we will use different hardware that is more suitable for these kind of calculations. To further adjust the neural network to its task it should have different modes to function on. High performance, low power consumption and a mix of both. Because this is only a concept the classes do not play a big role. In the following specification book we will now refer to the neural network with NN.
 
 \section{Goal}
 The goal of this project is a program which performs accurate image classification and is able to switch between deploy platforms and working modes.
@@ -83,23 +83,24 @@ It should also have a GUI to interact with the program and to visualise the resu
 Because it is just the base for a bigger specific task it should also be easily changeble to suit the right tasks. To achieve this clean code and good documentation is necessary.
 
 \section{Product use}
-The program does not have a specific use as there is no real automisation happening apart of the classification. It should function as a base for further more complicated tasks that can later for example be used for surveillance or error detection. The GUI should for illustration purposes, that anybody with minimal knowledge of the topic can use to try the classification.
+The program does not have a specific use as there is no real automisation happening apart of the classification. It should function as a base for further more complicated tasks that can for example be used for surveillance or error detection. The GUI should be for illustration purposes, that anybody with minimal knowledge of the topic can use to try the classification.
 
 \section{Criterias}
 \subsection{Must Acceptance criterias}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{AC10} & \textbf{Image classification} \\
-& The software can take a single image as input and tell the user to which predifined class, if any, this image belongs.\\
+& The software can take a single image as input and tell the user to which predefined class, if any, this image belongs.\\
 \textbf{MAC020} & \textbf{Running \gls{nn} on a heterogeneous platform} \\
 & The software is able to do the execution of a given neural network (inference) on different compute devices. At least one \gls{cpu} and one \gls{fpga} should be supported.
 The user is able to choose which compute device should be used for his \gls{img}.\\
 \textbf{AC30} & \textbf{Different operating modes} \\
 & The software has three modes. One mode for high perfomance, one for low power consumption and one for high energy effiency. \\
-\textbf{AC40} & \textbf{GUI for interacting with software} \\
-& The user should be able to access the entire functionality described in AC10-AC50 just by using the functional GUI.\\ 
-& No coding or command line usage is required.\\
-\textbf{AC50} & \textbf{Performance and power consumption prediction}\\
+\textbf{AC40} & \textbf{Performance and power consumption prediction}\\
 & The software can predict the performance with a certain powerconsumption and also the powerconsumption for a certain performance.
+\textbf{AC50} & \textbf{GUI for interacting with software} \\
+& The user should be able to access the entire functionality described in AC10-AC40 just by using the functional GUI.\\ 
+& No coding or command line usage is required.\\
+
 
 \end{tabular}
 
@@ -444,19 +445,19 @@ T112.2 & \textbf{Step 2: Folder} :  \\
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
 \textbf{T113} & \textbf{Saving the trained NN}\\
-T113.1 & \textbf{State:} \\
-& \textbf{Action:} \\
-& \textbf{Reaction:} \\
+T113.1 & \textbf{State:} The user clicks on train NN. \\
+& \textbf{Action:} The user submits a folder with labeled images. \\
+& \textbf{Reaction:} The adjusted weights are saved in a file that can be reused at later times. \\
 & \\
 \textbf{T114} & \textbf{Backpropagation}\\
-T113.1 & \textbf{State:} \\
-& \textbf{Action:} \\
-& \textbf{Reaction:} \\
+T113.1 & \textbf{State:} The neural network is saved with the corresponding weights and biases.\\
+& \textbf{Action:} The user clicks the learning button. Chooses a directory with labeled images and submits. \\
+& \textbf{Reaction:} The software adjusts the weights and biases of the corresponding NN via backpropagation to improve its performance. These changes are then shown with a diagram.\\
 &\\
 \textbf{T115} & \textbf{Changing parameters}\\
-T115.1 & \textbf{State:} \\
-& \textbf{Action:} \\
-& \textbf{Reaction:} \\
+T115.1 & \textbf{State:} The user chose a NN and the labeled images. \\
+& \textbf{Action:} The user changes the learning rate to a smaller number and submits. \\
+& \textbf{Reaction:} The neural network adjusts its weights but with smaller significance of one image. \\
 & \\
 \textbf{T120} & \textbf{Showing topology of a NN}\\
 T140.1 & \textbf{State:} The user is on the main page\\
@@ -511,28 +512,28 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 \section{System models}
 \subsection{Scenarios}
 \subsubsection{Scenario 1}
-The user U1 wants to classificate the image of a cat. He goes on the classifcation page and he clicks on the dropdown and sees the three modes \glqq low power consumption\grqq , \glqq high perfomance\grqq and \glqq high energy effiency\grqq , he can also see the predicted power consumption and performance. He chooses to classificate in the low power mode and runs the programm. The results are shown.
+The user U1 wants to classify the image of a cat. He goes on the classifcation page and he clicks on the dropdown and sees the three modes \glqq low power consumption\grqq , \glqq high perfomance\grqq and \glqq high energy effiency\grqq , he can also see the predicted power consumption and performance. He chooses to classificate in the low power mode and runs the programm. The results are shown.
 \subsubsection{Scenario 2}
 The user U2 goes to the classification page and chooses the image of coala and the high power performance mode and CPU mode. The software states that it would take 86 watts with 166 GFLOPs. U2 decides he would rather use the high energy effiency mode with 140 GFLOPs and 70 watts. He sets the other parameters and clicks on Start image classification. The result is that the image is a coala and shows this result. 
 \subsubsection{Scenario 3}
 The user U3 created the blueprint for a new nn.
-He wants to train a network based on this config file but computation time is shared and expensive. U3 has to convince his boss therefore.
-U3 uses the software as input and select the visualization toolkit.
+He wants to train a network based on this config file but computation time is shared and expensive. Therefore U3 has to convince his boss.
+U3 uses the software as input and selects the visualization toolkit.
 U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
 \clearpage
 \subsubsection{Scenario 4}
-User U4 has to categorize a large dataset of plants from a biology excursion. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to pick manualy for every image which network to use. He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
+User U4 has to categorize a large dataset of plants from a biology field trip. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to manually decide which network to use for every image . He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
 \subsubsection{Scenario 5}
 User U5 has heared about this software and wants to test it.
 U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
 Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
 \subsubsection{Scenario 7}
-Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different sorts of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, what our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
+Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different species of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, that our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
 \subsubsection{Scenario 8}
-The firm GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal is it seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
+The company GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal it is seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
 \clearpage
 \subsubsection{Scenario 9}
-The firm EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
+The company EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
 \clearpage
 \subsection{Usecases}
 \subsubsection{Training page}
