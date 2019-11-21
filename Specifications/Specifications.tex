@@ -92,8 +92,8 @@ The software is used to classify images on different deployment platforms with d
 Additionally, the software can be extended to be used for image detection, classification of frames from a videostream and training of a \gls{nn}.\\
 
 
-\section{Criterias}
-\subsection{Must Acceptance criterias}
+\section{Criteria}
+\subsection{Must Acceptance criteria}
 \begin{tabular}{p{2cm}p{12cm}}
 \textbf{MAC10} & \textbf{Image classification} \\
 & The software can take a single image as input and returns the possiblities for each predefined image class. The prediction is based on a pretrained neural network.\\
@@ -107,7 +107,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The user should be able to access the entire functionality described in MAC10-MAC40 just by using the GUI. No coding or command line usage is required.
 \end{tabular}
 
-\subsection{Can Acceptance criterias}
+\subsection{Can Acceptance criteria}
 \begin{tabular}{p{2cm}p{12cm}}
 \textbf{CAC070} & \textbf{Illustration of the topology of a nn} \\
 & The software is able to visualize the topology of a given \gls{nn}, see figure 7. \\
@@ -348,15 +348,14 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a deployment platform is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in low power consumption operating mode and starts the classification.\\
 & \textbf{Reaction:} The calculations run with considerably lower power consumption than with the other possible modes in the same conditions.\\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T022} & \textbf{High energy efficiency operating mode}\\
 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a deployment platform is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency operating mode and starts the classification.\\
 & \textbf{Reaction:} The calculations run with regard to balance between power consumption and speed.\\
-& \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
+&\\
 \textbf{T030} & \textbf{Support CPU for calculation} \\
 T030.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, CPU as deployment platform and an operating mode is given. \\
 & \textbf{Action:} Click on the button \glqq Start image classification\grqq \\
@@ -377,14 +376,14 @@ T041.1 & \textbf{State:} The software is awaiting result. \\
 & \textbf{Action:} Platform sends results. \\
 & \textbf{Reaction:} The software receives the results from the platform and shows it. \\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
 & \textbf{Action:} The user starts the program.  \\
-& \textbf{Reaction:} The users sees the Graphical User Interface showed on Figure 1. \\
-& \\
+& \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
+& Figure 1. \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T060} & \textbf{Showing results} \\
 T060.1 & \textbf{State:} The software awaits result. \\
 & \textbf{Action:} The deployment platform sends result.\\
@@ -442,14 +441,13 @@ T112.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user chooses the folder with the images. \\
 & \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used for training.\\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T113} & \textbf{Backpropagation}\\
 T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}, learning rate and desired precision are given.\\
 & \textbf{Action:} The user clicks on \glqq Train\grqq.\\
 & \textbf{Reaction:} The software adjusts the weights and biases of the corresponding NN via backpropagation to improve its precision. These changes are then shown with a diagram.\\
-&\\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T114} & \textbf{Changing parameters}\\
 T114.1 & \textbf{State:} The user chose a NN, the dataset and the desired precision. \\
 & \textbf{Action:} The user changes the learning rate to a smaller number and starts training. \\
@@ -476,15 +474,14 @@ T131.1 & \textbf{State:} Inferencing was executed on an image given by the user,
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T140} & \textbf{Choosing video}\\
 T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a deployment platform and an operating mode is given. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
 & available to process images from this video sequentially.\\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T150} & \textbf{Connect with camera}\\
 T150.1 & \textbf{State:} The software is running.\\
 & \textbf{Action:} The user connects a usb camera to the host.\\
@@ -512,28 +509,28 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 \section{System models}
 \subsection{Scenarios}
 \subsubsection{Scenario 1}
-The user U1 wants to classify the image of a cat. He goes on the classifcation page and he clicks on the dropdown and sees the three modes \glqq low power consumption\grqq , \glqq high perfomance\grqq and \glqq high energy effiency\grqq , he can also see the predicted power consumption and performance. He chooses to classificate in the low power mode and runs the programm. The results are shown.
+The user U1 wants to classify the image of a cat. He goes on the classifcation page and he clicks on the dropdown. He sees the three modes \glqq low power consumption\grqq, \glqq high perfomance\grqq and \glqq high energy effiency\grqq. He can also see the predicted power consumption and performance. He chooses to classify in the low power mode and runs the classification. The results are shown. He is pleased with the result.
 \subsubsection{Scenario 2}
-The user U2 goes to the classification page and chooses the image of coala and the high power performance mode and CPU mode. The software states that it would take 86 watts with 166 GFLOPs. U2 decides he would rather use the high energy effiency mode with 140 GFLOPs and 70 watts. He sets the other parameters and clicks on Start image classification. The result is that the image is a coala and shows this result. 
+The user U2 goes to the classification page and chooses the image of a coala and the high power performance mode and CPU mode. The software states that it would take 86 watts with 166 GFLOPs. U2 decides he would rather use the high energy effiency mode with 140 GFLOPs and 70 watts. He sets the other parameters and clicks on Start image classification. The result is that the image is a coala and shows this result. 
 \subsubsection{Scenario 3}
-The user U3 created the blueprint for a new nn.
-He wants to train a network based on this config file but computation time is shared and expensive. Therefore U3 has to convince his boss.
-U3 uses the software as input and selects the visualization toolkit.
-U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
+The user U3 created the blueprint for a new neural network in .cfg.\\
+She wants to train a network based on this config file but computation time is shared and expensive. Therefore U3 has to convince her boss.
+U3 uses the software with her neural network as input and selects the visualisation toolkit.\\
+U3 saves the output and uses it during the discussion to demonstrate the advantages of her new neural network.
 \clearpage
 \subsubsection{Scenario 4}
-User U4 has to categorize a large dataset of plants from a biology field trip. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to manually decide which network to use for every image . He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
+User U4 has to categorise a large dataset of plants from a biology field trip. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to manually decide which network to use for every image. He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
 \subsubsection{Scenario 5}
-User U5 has heared about this software and wants to test it.
-U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
-Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
+User U5 has heared about this software and wants to test it. \\
+U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds a 5 fully connected layers in between, to create a larger neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. \\
+Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them. He is pleased by the results.
+\subsubsection{Scenario 6}
+Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different species of animals he saw and took photos of. Alex does not know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, that our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. He realises he only saw elephants.
+\newpage
 \subsubsection{Scenario 7}
-Alex had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different species of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, that our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
+The company GoZoo wants to develop an AI to feed the animals at Zoos. The company does not have enough labelers to label all of the frames they need to teach the software which animal it is seeing at the moment. GoZoo decides to use Tucs's object detection. An employee goes on the detection page of the software and uses it to label the frames required for the AI.
 \subsubsection{Scenario 8}
-The company GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal it is seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
-\clearpage
-\subsubsection{Scenario 9}
-The company EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
+The company EducationFirst wants to teach kids parallel to read, recognise percents and animals. Tucs is just right for the job, because of the Image Classification option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the Image Classification page of Tucs, the kids are able to learn and also having fun at the same time.
 \clearpage
 \subsection{Usecases}
 \subsubsection{Image classification page}
@@ -542,6 +539,7 @@ The company EducationFirst wants to teach small kids parallel to read, recognize
 \includegraphics[width=\textwidth]{ClassificationUsecase}
 \caption{Usecase of the image classification page}
 \end{figure}
+\newpage
 \subsubsection{Training page}
 \begin{figure}[htb!]
 \centering
@@ -549,6 +547,20 @@ The company EducationFirst wants to teach small kids parallel to read, recognize
 \caption{Usecase of the trainingspage}
 \end{figure}
 \clearpage
+\subsubsection{Image detection page}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{objectDetectionUsecase}
+\caption{Usecase of the image detection page}
+\end{figure}
+\newpage
+\subsubsection{Show topology page}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{ShowTopoUsecase}
+\caption{Usecase of the image classification page}
+\end{figure}
+\newpage
 
 \subsection{GUI}
 \begin{figure}[htb!]\centering
