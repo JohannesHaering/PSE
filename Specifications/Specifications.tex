@@ -147,6 +147,7 @@ Additionally, the software can be extended to be used for image detection, class
 \section{Criteria}
 \subsection{Must Acceptance criteria}
 \begin{tabular}{p{2cm}p{12cm}}
+<<<<<<< HEAD
 \textbf{MAC010} & \textbf{Image classification} \\
 & The software can take a single image as input and returns the possiblities for each predefined \gls{ic}. The prediction is based on a pretrained neural network.\\
 \textbf{MAC020} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
@@ -182,8 +183,6 @@ Additionally, the software can be extended to be used for image detection, class
 & The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame.\\
 \textbf{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
 & MAC20 is extended by \gls{gpu}.\\
-\textbf{CAC150} & \textbf{Extend GUI coverage}\\
-& The GUI covers all implemented features in 4.1 and 4.2 and shown in the section GUI.
 \end{tabular}
 
 \subsection{Criteria of demarcation}
@@ -238,10 +237,9 @@ The operating system is XUbuntu 18.04.
 & A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
 \textbf{MFR012} & \textbf{Reading and parsing a \gls{nn} configuration/weight file}\\
 & The software is able to read a configuration file of a \gls{nn} and parse it for MFR011.\\
-
-\textbf{MFR013} & \textbf{Nodes with correct calculations}\\
 & \\
-
+\textbf{MFR013} & \textbf{Implementation of layers}\\
+& A \gls{nn} uses different layers with different properties. Convolutional, normalisation, dropout, fully connected, max pooling, softmax, depth concation layers have to be implemented. \\
 & \\
 \textbf{MFR020} & \textbf{High \gls{performance} operating mode}\\                                     
 & An operating mode to perform calculations as fast as possible.\\
@@ -253,6 +251,60 @@ The operating system is XUbuntu 18.04.
 & The software can calculate the \gls{power consumption} of a given \gls{nn}, operating mode and \gls{dp}.\\
 \textbf{MFR024} & \textbf{Calculator for \gls{performance}}\\                                     
 & The software can calculate the \gls{performance} of a given \gls{nn}, operating mode and \gls{dp}.\\
+\end{tabular}
+
+
+\section{Productdata}
+\begin{tabular}{p{2cm}p{11.4cm}}
+\textbf{PD010} & \textbf{Images for classification}\\
+& The user can choose images of the format .jpg, .png, .bmp. The images are chosen by the user with the file explorer.\\
+& \\
+\textbf{PD020} & \textbf{Config/weight file of pretrained model}\\
+& The config file is a .cfg file.\\
+& In the beginning the classes and output nodes are mapped. In the format \textit{number of output node = classname}\\
+& Then the hyperparameters are described with the format \textit{<name> = <value>}. Then the layers are described in their order with the following format\\
+& \textit{\lbrack kind of layer\rbrack}\\
+& list of parameters in the format \textit{<name> = <value>}\\
+& Then the weights and biases for each layer are listed.\\
+& \\
+\textbf{PD030} & \textbf{Labeled image set for classification training}\\
+& The dataset is chosen by the user. The dataset is a directory with images and the image name has the format \textit{<id of image>\_<image class>}.\\
+& \\
+\textbf{PD040} & \textbf{Labeled set of images for object detection training}\\
+& It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
+& \\
+\textbf{PD050} & Output format of image classification results if saved\\
+& If the output result of the classification is saved this is saved as a .txt file with the name of the image. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
+& If multiple images are classified, there are multiple .txt files.\\
+& \\
+\textbf{PD060} & Output format of image detection results if saved\\
+& If the output result of the detection is saved this is saved as a .txt file with the name of the image. The format is \textit{<image class name> = <prohability>, <X>, <Y>, <width>, <height>}, one row for each image class.\\
+& If multiple images are detected, there are multiple .txt files.\\
+& \\
+\textbf{PD070} & \textbf{Video input}\\
+& The input video is a .avi format.
+\end{tabular}
+
+
+\section{Functional Requirements Must}
+\begin{tabular}{p{2cm}p{12cm}}
+\textbf{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\                                     
+& A \gls{nn} is used to classify \glspl{img}. The result is a list of prohabilities per image class.\\
+\textbf{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
+& A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
+\textbf{MFR012} & \textbf{Reading and parsing a \gls{nn} configuration/weight file}\\
+& The software is able to read a configuration file of a \gls{nn} and parse it for MFR011.\\
+& \\
+\textbf{MFR020} & \textbf{High performance operating mode}\\                                     
+& An operating mode to perform calculations as fast as possible.\\
+\textbf{MFR021} & \textbf{Low power consumption operating mode}\\                                     
+& An operating mode to perform calculations with low power consumption.\\
+\textbf{MFR022} & \textbf{Have high energy efficiency operating mode}\\                                     
+& An operating mode to perform calculations at an optimal ratio between performance and power consumption.\\
+\textbf{MFR023} & \textbf{Calculator for power consumption}\\                                     
+& The software can calculate the power consumption on a given \gls{nn}, operating mode and deployment platform.\\
+\textbf{MFR024} & \textbf{Calculator for performance}\\                                     
+& The software can calculate the performance on a given \gls{nn}, operating mode and deployment platform.\\
 \textbf {MFR025} & \textbf{Dispatching the calculation process defined from the mode}\\
 & Tested with: Implements: \\
 & The software is able to control the clock rate of the processor according to chosen operating mode. \\
@@ -275,6 +327,7 @@ The operating system is XUbuntu 18.04.
 \textbf {MFR041} & \textbf{Receive result} \\
 & Tested with: Implements \\
 & The program should be able to receive results of the executed \gls{image classification} from the \glspl{dp}. \\
+& The software gives the image as input for the {nn} to the chosen deployment platform. \\
 & \\
 \textbf {MFR050} & \textbf{GUI} \\
 & Tested with: Implements: \\
@@ -358,7 +411,6 @@ The operating system is XUbuntu 18.04.
 & \\
 \textbf{CFR170} & \textbf{Voting of multiple \glspl{nn}}\\
 & The user can choose multiple \glspl{nn}. The \gls{image classification} is done on every \gls{nn} seperately and the results are weighted and accumulated.\\
-
 \end{tabular}
 
 \section{Non-functional requirements}
@@ -435,14 +487,14 @@ T041.1 & \textbf{State:} The software is awaiting result. \\
 & \textbf{Action:} Platform sends results. \\
 & \textbf{Reaction:} The software receives the results from the platform and shows it. \\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
 & \textbf{Action:} The user starts the program.  \\
-& \textbf{Reaction:} The users sees the Graphical User Interface showed on Figure 1. \\
-& \\
+& \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
+& Figure 1. \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T060} & \textbf{Showing results} \\
 T060.1 & \textbf{State:} The software awaits result. \\
 & \textbf{Action:} The \gls{dp} sends result.\\
@@ -499,14 +551,13 @@ T111.1 & \textbf{State:} The training finishes.\\
 T112.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user chooses the folder with the images. \\
 & \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used for training.\\
-& \\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
 \textbf{T113} & \textbf{Backpropagation}\\
 T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}, learning rate and desired precision are given.\\
 & \textbf{Action:} The user clicks on \glqq Train\grqq.\\
-& \textbf{Reaction:} The software adjusts the weights and biases of the corresponding NN via backpropagation to improve its precision. These changes are then shown with a diagram.\\
+& \textbf{Reaction:} The software adjusts the weights and biases of the corresponding \gls{nn} via backpropagation to improve its precision. These changes are then shown with a diagram.\\
 &\\
 \textbf{T114} & \textbf{Changing parameters}\\
 T114.1 & \textbf{State:} The user chose a NN, the dataset and the desired precision. \\
@@ -534,15 +585,15 @@ T131.1 & \textbf{State:} Inferencing was executed on an image given by the user,
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T140} & \textbf{Choosing video}\\
 T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a \gls{dp} and an operating mode is given. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
 & available to process images from this video sequentially.\\
 & \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{12cm}}
 \textbf{T150} & \textbf{Connect with camera}\\
 T150.1 & \textbf{State:} The software is running.\\
 & \textbf{Action:} The user connects a usb camera to the host.\\
@@ -565,7 +616,6 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 & \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an operating mode is given.\\
 & \textbf{Action:} The user chooses \gls{gpu} as a \gls{dp}. The user clicks on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Reaction:} \gls{image classification} is performed.\\
-\end{tabular}
 \newpage
 \section{System models}
 \subsection{Scenarios}
@@ -574,23 +624,23 @@ The user U1 wants to classify the image of a cat. He goes on the classifcation p
 \subsubsection{Scenario 2}
 The user U2 goes to the classification page and chooses the image of a coala and the high power \gls{performance} mode and CPU mode. The software states that it would take 86 watts with 166 GFLOPs. U2 decides he would rather use the high energy effiency mode with 140 GFLOPs and 70 watts. He sets the other parameters and clicks on Start \gls{image classification}. The result is that the image is a coala and shows this result. 
 \subsubsection{Scenario 3}
-The user U3 created the blueprint for a new nn.
-He wants to train a network based on this config file but computation time is shared and expensive. Therefore U3 has to convince his boss.
-U3 uses the software as input and selects the visualization toolkit.
-U3 saves the output and uses it during the discussion to demonstrate the advantages of his new neural network.
+The user U3 created the blueprint for a new neural network in .cfg.\\
+She wants to train a network based on this config file but computation time is shared and expensive. Therefore U3 has to convince her boss.
+U3 uses the software with her neural network as input and selects the visualisation toolkit.\\
+U3 saves the output and uses it during the discussion to demonstrate the advantages of her new neural network.
 \clearpage
 \subsubsection{Scenario 4}
-User U4 has to categorize a large dataset of plants from a biology field trip. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to manually decide which network to use for every image . He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
+User U4 has to categorise a large dataset of plants from a biology field trip. U4 has two trained neural networks for this task. The first with a good accuracy and high confidence on leaves. The second with a high confidence and accuracy on flowers. On unknown objects they both tend to have a low confidence. U4 does not want to manually decide which network to use for every image. He also does not want to train a new neural network. Therefore U4 selects both networks and the folder with the new images inside, as well as the parameters save-result and dont-show results. The software classifies all images in a few minutes and he is able to handover the dataset for further documentation.
 \subsubsection{Scenario 5}
 User U5 has heared about this software and wants to test it.
 U5 is a pokemon fan, therefore he decides to use a new neural network to classify the newest generation pokemon. None of the provided networks was trained for that task, so U5 decides to train a new neural network. U5 copies an existing neural network layout file and adds five (5) fully connected layers in between to create a larget neural network. U5 uses his large pokemon image dataset, his new neural network layout file and the software, to train a new neural network. 
 Afterwards U5 creates a folder with new pokemon images and uses his new network and the software to classify them.
-\subsubsection{Scenario 7}
+\subsubsection{Scenario 6}
 U6 had a trip in Africa and made a lot of pictures of animals. He looks for an easy way to know how many different species of animals he saw and took photos of. Alex doesn't know how to code or to run a program thus he needs a friendly and understandable Graphical User Interface, that our software offers. Alex opens the main menu of the software where he sees that it's possible to finish his task, without any knowledge, because of the GUI. 
-\subsubsection{Scenario 8}
+\subsubsection{Scenario 7}
 The company GoZoo wants to develop an AI to feed the animals at Zoos. The Firm doesn't have enough labelers to label all of the frames they need to teach the software which animal it is seeing at the moment. GoZoo decides to use Tucs's object detection.An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
 \clearpage
-\subsubsection{Scenario 9}
+\subsubsection{Scenario 8}
 The company EducationFirst wants to teach small kids parallel to read, recognize percents and animals. Tucs is just right for the job, because of the \gls{image classification} option of the software. The CEO of EducationFirst hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the \gls{image classification} page of Tucs, the kids are able to learn and also having fun at the same time.
 \clearpage
 \subsection{Usecases}
@@ -600,6 +650,7 @@ The company EducationFirst wants to teach small kids parallel to read, recognize
 \includegraphics[width=\textwidth]{ClassificationUsecase}
 \caption{Usecase of the \gls{image classification} page}
 \end{figure}
+\newpage
 \subsubsection{Training page}
 \begin{figure}[htb!]
 \centering
@@ -607,6 +658,20 @@ The company EducationFirst wants to teach small kids parallel to read, recognize
 \caption{Usecase of the trainingspage}
 \end{figure}
 \clearpage
+\subsubsection{Image detection page}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{objectDetectionUsecase}
+\caption{Usecase of the image detection page}
+\end{figure}
+\newpage
+\subsubsection{Show topology page}
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{ShowTopoUsecase}
+\caption{Usecase of the image classification page}
+\end{figure}
+\newpage
 
 \subsection{GUI}
 \begin{figure}[htb!]\centering
@@ -639,6 +704,23 @@ The company EducationFirst wants to teach small kids parallel to read, recognize
 \textbf{Implementation:} & Manuel Drehwald\\
 \textbf{Quality insurance:}& Stefani Guneshka\\
 \textbf{Deployment:} & Dimitar Dimitrov
+\end{tabular}
+
+\section{Quality requirements}
+\begin{tabular}{|p{3cm}|c|c|c|c|}
+\hline
+\textbf{Name} & \textbf{Very relevant} & \textbf{Relevant} & \textbf{Less relevant} & \textbf{Not relevant}\\
+\hline
+Failure tolerance & & & & \\
+\hline
+Security & & & & X \\
+\hline
+Usability & & X & & \\
+\hline
+Time requirement classification& X & & &\\
+\hline
+Time requirement detection& & X & &\\
+\hline
 \end{tabular}
 \clearpage
 

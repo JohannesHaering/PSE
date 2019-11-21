@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
+<<<<<<< HEAD
   <zoom_level>11</zoom_level>
   <element>
     <id>UMLActor</id>
@@ -8,6 +9,16 @@
       <y>605</y>
       <w>66</w>
       <h>121</h>
+=======
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>196</x>
+      <y>469</y>
+      <w>42</w>
+      <h>77</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Actor</panel_attributes>
     <additional_attributes/>
@@ -15,10 +26,17 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>0</x>
       <y>55</y>
       <w>429</w>
       <h>187</h>
+=======
+      <x>84</x>
+      <y>217</y>
+      <w>273</w>
+      <h>119</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>FileExplorer
 halign=left</panel_attributes>
@@ -27,10 +45,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>451</x>
       <y>209</y>
       <w>330</w>
       <h>858</h>
+=======
+      <x>406</x>
+      <y>161</y>
+      <w>315</w>
+      <h>686</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>DetectionPage
 halign=left</panel_attributes>
@@ -39,10 +64,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>33</x>
       <y>99</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>105</x>
+      <y>245</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Choose file
 valign=center</panel_attributes>
@@ -52,9 +84,15 @@ valign=center</panel_attributes>
     <id>UMLUseCase</id>
     <coordinates>
       <x>231</x>
+<<<<<<< HEAD
       <y>99</y>
       <w>176</w>
       <h>99</h>
+=======
+      <y>245</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Choose folder
 valign=center</panel_attributes>
@@ -63,10 +101,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>253</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>189</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Choose input par.
 valign=center</panel_attributes>
@@ -75,10 +120,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>506</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>406</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Choose Neural Network
 valign=center</panel_attributes>
@@ -87,10 +139,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>638</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>490</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Dropdown Modes
 valign=center</panel_attributes>
@@ -99,22 +158,36 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>935</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>749</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
-    <panel_attributes>Start Detection
+    <panel_attributes>Show result
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>770</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>567</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Dropdown platform
 valign=center</panel_attributes>
@@ -123,10 +196,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>528</x>
       <y>374</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>448</x>
+      <y>329</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Choose output par.
 valign=center</panel_attributes>
@@ -135,10 +215,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1078</x>
       <y>1111</y>
       <w>242</w>
       <h>418</h>
+=======
+      <x>798</x>
+      <y>644</y>
+      <w>154</w>
+      <h>266</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>PlatformList
 halign=left</panel_attributes>
@@ -147,10 +234,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>1166</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>679</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>CPU
 valign=center</panel_attributes>
@@ -159,10 +253,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>1287</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>756</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>GPU
 valign=center</panel_attributes>
@@ -171,10 +272,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>1397</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>826</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>FPGA
 valign=center
@@ -184,10 +292,17 @@ valign=center
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1078</x>
       <y>671</y>
       <w>242</w>
       <h>418</h>
+=======
+      <x>798</x>
+      <y>364</y>
+      <w>154</w>
+      <h>266</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>ModeList
 halign=left</panel_attributes>
@@ -196,10 +311,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>737</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>406</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>HighestPerformance
 valign=center</panel_attributes>
@@ -208,10 +330,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>847</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>476</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>HighestEfficiency
 valign=center</panel_attributes>
@@ -220,10 +349,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1100</x>
       <y>957</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>812</x>
+      <y>546</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>LowestPower
 valign=center
@@ -233,10 +369,17 @@ valign=center
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1474</x>
       <y>627</y>
       <w>242</w>
       <h>319</h>
+=======
+      <x>798</x>
+      <y>147</y>
+      <w>154</w>
+      <h>203</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>OutputList
 halign=left</panel_attributes>
@@ -245,10 +388,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1474</x>
       <y>143</y>
       <w>242</w>
       <h>462</h>
+=======
+      <x>406</x>
+      <y>0</y>
+      <w>546</w>
+      <h>119</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>InputList
 halign=left</panel_attributes>
@@ -257,10 +407,17 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>198</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>413</x>
+      <y>35</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>SingleImage
 valign=center</panel_attributes>
@@ -269,10 +426,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>297</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>539</x>
+      <y>35</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>ImageFolder
 valign=center</panel_attributes>
@@ -281,10 +445,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>396</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>672</x>
+      <y>35</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Camera
 valign=center</panel_attributes>
@@ -293,10 +464,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>495</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>791</x>
+      <y>35</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>File with Image Paths
 valign=center</panel_attributes>
@@ -305,10 +483,17 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>682</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>819</x>
+      <y>175</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Save Result
 valign=center</panel_attributes>
@@ -317,13 +502,342 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
+<<<<<<< HEAD
       <x>1496</x>
       <y>803</y>
       <w>176</w>
       <h>99</h>
+=======
+      <x>819</x>
+      <y>252</y>
+      <w>112</w>
+      <h>63</h>
+>>>>>>> f8135c34066ebbb64b60422e683f7fe871322a9a
     </coordinates>
     <panel_attributes>Show Result
 valign=center</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>301</y>
+      <w>98</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>120.0;260.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>301</y>
+      <w>63</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;260.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>476</y>
+      <w>238</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>476</y>
+      <w>238</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>476</y>
+      <w>238</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>434</y>
+      <w>238</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>357</y>
+      <w>238</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;180.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>210</y>
+      <w>238</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;390.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>182</x>
+      <y>294</y>
+      <w>280</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>380.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>700</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>448</x>
+      <y>644</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Start detection
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>448</x>
+      <y>259</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Choose file/s
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>294</y>
+      <w>245</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;270.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>273</y>
+      <w>126</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>160.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>147</y>
+      <w>294</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>400.0;220.0;10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>91</y>
+      <w>63</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>70.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>91</y>
+      <w>105</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;140.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>84</y>
+      <w>210</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;150.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>84</y>
+      <w>329</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;150.0;450.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>203</y>
+      <w>280</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;220.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>273</y>
+      <w>280</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;120.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>427</y>
+      <w>273</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;130.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>497</y>
+      <w>273</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;30.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>511</y>
+      <w>266</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>574</x>
+      <y>749</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Save result
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>700</y>
+      <w>140</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>588</y>
+      <w>280</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>588</y>
+      <w>280</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>588</y>
+      <w>273</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;370.0</additional_attributes>
   </element>
 </diagram>
