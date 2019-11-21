@@ -253,16 +253,16 @@ The operating system is XUbuntu 18.04.
 & The user can choose images of the format .jpg, .png, .bmp. The images are chosen by the user with the file explorer.\\
 & \\
 \textbf{PD020} & \textbf{Config/weight file of pretrained model}\\
-& The config file is a .cfg file.\\
-& In the beginning the classes and output nodes are mapped. In the format \textit{number of output node = classname}\\
-& Then the hyperparameters are described with the format \textit{<name> = <value>}. Then the layers are described in their order with the following format\\
-& \textit{\lbrack kind of layer\rbrack}\\
-& list of parameters in the format \textit{<name> = <value>}\\
-& Then the weights and biases for each layer are listed.\\
+& The config file is a .cfg file with four sections, separated by <section>:\\
+& In the first the classnames are given, one per line.\\
+& In the second hyperparameters are described as \textit{<name> = <value>}. \\
+& In the third layers are described in their order with the following format \textit{\lbrack kind of layer\rbrack}, 
+each followed by a list of layer-parameters in the format \textit{<name> = <value>}\\
+& In the last section the weights and biases for each layer are listed.\\
 & \\
-\textbf{PD030} & \textbf{Labeled image set for classification training}\\
-& The dataset is a directory with images and the image name has the format \textit{<id of image>\_<image class>}.\\
-& \\
+\textbf{D030} & \textbf{No neural network size optimization}\\
+& No techniques for memory usage reduction like \gls{prunning} or \gls{binarisation} will be implemented.\\
+&\\
 \textbf{PD040} & \textbf{Labeled set of images for object detection training}\\
 & It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
 & \\
@@ -300,13 +300,13 @@ The operating system is XUbuntu 18.04.
 \textbf{MFR022} \hypertarget{MFR022}& \textbf{Have high energy efficiency \gls{om}}\\      
 & Tested with: \hyperlink{T022}{T022}  Implements: \hyperlink{MAC30}{MAC30} MAC30 \\                              
 & An \gls{om} to perform calculations at an optimal ratio between \gls{performance} and \gls{power consumption}.\\
-\textbf{MFR023}\hypertarget{MFR023} & \textbf{Calculator for \gls{power consumption}}\\ & Tested with:  Implements:  \hyperlink{MAC40}{MAC40} \\                                   
+\textbf{MFR023}\hypertarget{MFR023} & \textbf{Calculator for \gls{power consumption}}\\ & Tested with: \hyperlink{T023}{T023} Implements:  \hyperlink{MAC40}{MAC40} \\                                   
 & The software can calculate the \gls{power consumption} on a given \gls{nn}, \gls{om} and \gls{dp}.\\
 \textbf{MFR024}\hypertarget{MFR024} & \textbf{Calculator for \gls{performance}}\\
-& Tested with: Implements: \hyperlink{MAC40}{MAC40} \\                                    
+& Tested with: \hyperlink{T024}{T024} Implements: \hyperlink{MAC40}{MAC40} \\                                    
 & The software can calculate the \gls{performance} on a given \gls{nn}, \gls{om} and \gls{dp}.\\
 \textbf {MFR025} \hypertarget{MFR025}& \textbf{Dispatching the calculation process defined from the \gls{om}}\\
-& Tested with: Implements: \\
+& Tested with: \hyperlink{T020}{T020}, \hyperlink{T021}{T021}, \hyperlink{T021}{T021} Implements: \hyperlink{MAC30}{MAC030}\\
 & The software is able to control the clock rate of the processor according to chosen \gls{om}. \\
 \end{tabular}
 \newpage
@@ -360,15 +360,12 @@ The operating system is XUbuntu 18.04.
 \textbf{CFR110} \hypertarget{CFR110} & \textbf{Train \gls{nn} for classification of imageset}\\
 & Tested with: \hyperlink{T110}{T110} Implements: \hyperlink{CAC100}{CAC100} \\
 & The user chooses a \gls{nn} and a new imageset and trains the \gls{nn} on this new imageset. If it is pretrained it uses transfer learning with the existing weights otherwise random values.\\
-& \\
 \textbf {CFR111} \hypertarget{CFR111} & \textbf{Saving newly trained \gls{nn}} \\
 & Tested with: \hyperlink{T111}{T111} Implements: \hyperlink{CAC100}{CAC100} \\
 & The software is able to take the weights and config of an newly trained \glspl{nn} and save it as .cfg file. \\
-& \\
 \textbf {CFR112} \hypertarget{CFR112} & \textbf{Choosing and loading data set} \\
 & Tested with: \hyperlink{T112}{T112} Implements: \hyperlink{CAC100}{CAC100}\\
 & The software has an option to select a set of labeled images and for loading those.\\
-& \\
 \textbf {CFR113} \hypertarget{CFR113} & \textbf{Backpropagation} \\
 & Tested with: \hyperlink{T113}{T113} Implements: \hyperlink{CAC100}{CAC100} \\
 & The software is able to adjust the weights and biases of the \gls{nn} in the training process with backpropagation.\\
@@ -391,7 +388,6 @@ The operating system is XUbuntu 18.04.
 \textbf {CFR130} \hypertarget{CFR130} & \textbf{Object detection} \\
 & Tested with: \hyperlink{T130}{T130} Implements: \hyperlink{CAC080}{CAC080} \\
 & The software can detect the position and \gls{ic} of objects in an image.\\
-& \\
 \textbf {CFR131} \hypertarget{CFR131} & \textbf{Showing detected object} \\
 & Tested with: \hyperlink{T131}{T131} Implements: \hyperlink{CAC080}{CAC080}\\
 & The found objects are marked by a \gls{bb}. The \gls{bb} is drawn on the image. This picture is shown.\\
@@ -403,11 +399,9 @@ The operating system is XUbuntu 18.04.
 \textbf{CFR150} \hypertarget{CFR150} & \textbf{Connect with camera}\\
 & Tested with: \hyperlink{T150}{T150} Implements: \hyperlink{CAC130}{CAC130} \\
 & The software can connect with a camera connected to the \gls{host pc}.\\
-& \\
 \textbf{CFR151} \hypertarget{CFR151} & \textbf{Receive video stream from camera}\\
 & Tested with: \hyperlink{T151}{T151} Implements: \hyperlink{CAC130}{CAC130}\\
 & The software can receive a video stream from the camera.\\
-& \\
 \textbf{CFR152} \hypertarget{CFR152} & \textbf{Apply classifcation/detection for a certain amount of frames}\\
 & Tested with: \hyperlink{T152}{T152} Implements: \hyperlink{CAC130}{CAC130}\\
 & The software can devide a video or videostream into frames and is able to apply \gls{image classification} and detection on those.\\
@@ -441,19 +435,20 @@ The operating system is XUbuntu 18.04.
 & The software works with a dataset with a minimum of 100 images.
 \end{tabular}
 
+
 \section{Test cases}
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
+\textbf{T010} \hypertarget{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
 T010.1& \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
 & \textbf{Reaction:} The image is classified by the \gls{nn} and results are shown.\\
 & \\
-\textbf{T011} & \textbf{Deploy pre-trained \gls{nn}}\\
-T011.1& \textbf{State:} The pretrained \gls{nn} is loaded and parsed.\\
+\textbf{T011} \hypertarget{T011} & \textbf{Deploy pre-trained \gls{nn}}\\
+T011.1 & \textbf{State:} The pretrained \gls{nn} is loaded and parsed.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
 & \textbf{Reaction:} The software loads the model to the \gls{dp}.\\
 & \\
-\textbf{T012} & \textbf{Reading and parsing \gls{nn} configuration file}\\
+\textbf{T012} \hypertarget{T012} & \textbf{Reading and parsing \gls{nn} configuration file}\\
 T012.1 & \textbf{State:} A .cfg file with the configuration of a pretrained \gls{nn} is given.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
 & \textbf{Reaction:} The software loads the model and parses it .\\
@@ -461,12 +456,12 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Action:} The user selects a \gls{nn} to import\\
 & \textbf{Reaction:} The file explorer closes and the \gls{nn} is imported and selected for the classification.\\
 & \\
-\textbf{T020} & \textbf{High \gls{performance} \gls{om}}\\
+\textbf{T020} \hypertarget{T020} & \textbf{High \gls{performance} \gls{om}}\\
 T020.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given .\\
 & \textbf{Action:} The user chooses to perform the calculations in high \gls{performance} \gls{om} and starts the classification.\\
 & \textbf{Reaction:} The calculations run considerably faster than in the other possible modes with the same conditions.\\
 & \\
-\textbf{T021} & \textbf{Low \gls{power consumption} \gls{om}}\\
+\textbf{T021} \hypertarget{T021} & \textbf{Low \gls{power consumption} \gls{om}}\\
 T021.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in low \gls{power consumption} \gls{om} and starts the classification.\\
 & \textbf{Reaction:} The calculations run with considerably lower \gls{power consumption} than with the other possible modes in the same conditions.\\
@@ -474,32 +469,42 @@ T021.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T022} & \textbf{High energy efficiency \gls{om}}\\
+\textbf{T022} \hypertarget{T022} & \textbf{High energy efficiency \gls{om}}\\
 T022.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency \gls{om} and starts the classification.\\
 & \textbf{Reaction:} The calculations run with regard to balance between \gls{power consumption} and speed.\\
 & \\
-\textbf{T030} & \textbf{Support CPU for calculation} \\
+\textbf{T023} \hypertarget{T023} & \textbf{Calculator for \gls{power consumption}}\\
+T022.1 & \textbf{State:} A pretrained \gls{nn}, a \gls{dp}  and the \gls{om} is given.\\
+& \textbf{Action:} The user chooses another \gls{om}.\\
+& \textbf{Reaction:} The new \gls{power consumption} is calculated automatically and then shown.\\
+& \\
+\textbf{T024} \hypertarget{T024} & \textbf{Calculator for \gls{performance}}\\
+T022.1 & \textbf{State:} A pretrained \gls{nn}, a \gls{dp}  and the \gls{om} is given.\\
+& \textbf{Action:} The user chooses another \gls{om}.\\
+& \textbf{Reaction:} The new \gls{performance} is calculated automatically and then shown.\\
+& \\
+\textbf{T030} \hypertarget{T030} & \textbf{Support CPU for calculation} \\
 T030.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, CPU as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Reaction:} Elephant has the highest probability. \\
 & \\
-\textbf{T031} & \textbf{Support FPGA for calculation} \\
+\textbf{T031} \hypertarget{T031} & \textbf{Support FPGA for calculation} \\
 T031.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, FPGA as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Reaction:} Elephant has the highest probability. \\
 & \\
-\textbf{T040} & \textbf{Send image for classification} \\
+\textbf{T040} \hypertarget{T040} & \textbf{Send image for classification} \\
 T040.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} The user starts \gls{image classification}  \\
 & \textbf{Reaction:} The software sends the image as array to the selected platform.\\
 & \\
-\textbf{T041} & \textbf{Receive result}\\
+\textbf{T041} \hypertarget{T041} & \textbf{Receive result}\\
 T041.1 & \textbf{State:} The software is awaiting result. \\
 & \textbf{Action:} Platform sends results. \\
 & \textbf{Reaction:} The software receives the results from the platform and shows it. \\
 & \\
-\textbf{T050} & \textbf{GUI} \\
+\textbf{T050} \hypertarget{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
 & \textbf{Action:} The user starts the program.  \\
 & \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
@@ -507,12 +512,12 @@ T050.1 & \textbf{State:} The user wants to use the software.\\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T060} & \textbf{Showing results} \\
+\textbf{T060} \hypertarget{T060} & \textbf{Showing results} \\
 T060.1 & \textbf{State:} The software awaits result. \\
 & \textbf{Action:} The \gls{dp} sends result.\\
-& \textbf{Reaction:} The Graphical User Interface shows the result in a bar chart as shown in figure 4. \\ 
+& \textbf{Reaction:} The Graphical User Interface shows the result in a bar chart as shown in figure 4. \\
 & \\
-\textbf{T070} & \textbf{Choosing image for classification}\\
+\textbf{T070} \hypertarget{T070} & \textbf{Choosing image for classification}\\
 T070.1 & \textbf{State:} The user is on the page for \gls{image classification}. \\
 & \textbf{Action:} The user clicks on the button \glqq Choose image\grqq.\\
 & \textbf{Reaction:} The file explorer opens with the filter for .png, .jpg, .bmp.\\
@@ -520,17 +525,17 @@ T070.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user selects an image with a valid format.\\
 & \textbf{Reaction:} The file explorer closes and image is loaded and shown as preview.\\
 & \\
-\textbf{T080} & \textbf{Choosing platform/hardware}\\
+\textbf{T080} \hypertarget{T080} & \textbf{Choosing platform/hardware}\\
 T080.1 & \textbf{State:} The user is on the page for \gls{image classification}.\\
 & \textbf{Action:} The user chooses the desired \gls{dp} with the dropdown.\\
 & \textbf{Reaction:} An internal flag is set to the desired platform and the dropdown shows the chosen \gls{dp}.\\
 & \\
-\textbf{T090} & \textbf{Choosing \gls{om}}\\
+\textbf{T090} \hypertarget{T090} & \textbf{Choosing \gls{om}}\\
 T090.1 & \textbf{State:} The user is on the page for \gls{image classification}.\\
 & \textbf{Action:} The user chooses the desired \gls{om} with the dropdown.\\
 & \textbf{Reaction:} An internal flag is set to the desired \gls{om} and the dropdown shows the chosen \gls{om}\\
 & \\
-\textbf{T100} & \textbf{Choosing between different \gls{nn}}\\
+\textbf{T100} \hypertarget{T100} & \textbf{Choosing between different \gls{nn}}\\
 T100.1 & \textbf{State:} The user is on the page for \gls{image classification}.\\
 & \textbf{Action:} The user clicks on the button \glqq Choose \gls{nn}\grqq.\\
 & \textbf{Reaction:} The file explorer opens.\\
@@ -540,7 +545,7 @@ T100.2 & \textbf{State:} The file explorer is open.\\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T110} & \textbf{Train \gls{nn} for classification of imageset}\\
+\textbf{T110} \hypertarget{T110} & \textbf{Train \gls{nn} for classification of imageset}\\
 T110.1 & \textbf{State:} The user is on the main page.\\
 & \textbf{Action:} The user clicks the button \glqq Train a \gls{nn}\grqq.\\
 & \textbf{Reaction:}The user is redirected to a new page for training, shown in figure 6.\\
@@ -551,24 +556,24 @@ T110.3 & \textbf{State:} The training is in process.\\
 & \textbf{Action:} The precision reaches the desired precision.\\
 & \textbf{Reaction:} The training stops.\\
 & \\
-\textbf{T111} & \textbf{Saving a \gls{nn} after training}\\
+\textbf{T111} \hypertarget{T111}& \textbf{Saving a \gls{nn} after training}\\
 T111.1 & \textbf{State:} The training finishes.\\
 & \textbf{Action:} No action required.\\
 & \textbf{Reaction:} The software stores the trained \gls{nn} in the directory of the selected .cfg file as a .cfg file.\\
 & \\
-\textbf{T112} & \textbf{Choosing and reading dataset}\\
+\textbf{T112} \hypertarget{T112} & \textbf{Choosing and reading dataset}\\
 112.1 & \textbf{State:} The user is on the training page.\\
 & \textbf{Action:} The user clicks on \glqq Choose dataset\grqq. \\
 & \textbf{Reaction:} A file explorer opens.\\
 T112.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user chooses the folder with the images. \\
 & \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used for training.\\
-\textbf{T113} & \textbf{Backpropagation}\\
+\textbf{T113} \hypertarget{T131}& \textbf{Backpropagation}\\
 T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}, learning rate and desired precision are given.\\
 & \textbf{Action:} The user clicks on \glqq Train\grqq.\\
 & \textbf{Reaction:} The software adjusts the weights and biases of the corresponding \gls{nn} via backpropagation to improve its precision. These changes are then shown with a diagram.\\
 &\\
-\textbf{T114} & \textbf{Changing parameters}\\
+\textbf{T114} \hypertarget{T114}& \textbf{Changing parameters}\\
 T114.1 & \textbf{State:} The user chose a \gls{nn}, the dataset and the desired precision. \\
 & \textbf{Action:} The user changes the learning rate to a smaller number and starts training. \\
 & \textbf{Reaction:} The \gls{nn} adjusts its weights but with smaller significance of one image. \\
@@ -576,7 +581,7 @@ T114.1 & \textbf{State:} The user chose a \gls{nn}, the dataset and the desired 
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
 & \\
-\textbf{T120} & \textbf{Showing topology of a \gls{nn}}\\
+\textbf{T120} \hypertarget{T120}& \textbf{Showing topology of a \gls{nn}}\\
 T120.1 & \textbf{State:} The user is on the main page.\\
 & \textbf{Action:} The user clicks the \glqq Show topology of a \gls{nn}\grqq button.\\
 & \textbf{Reaction:} The user is redirected to a new page for showing a topology.\\
@@ -588,17 +593,17 @@ T120.3 & \textbf{State:} The file explorer is open.\\
 & \textbf{Reaction:} The file explorer closes and the topology is shown as in \\
 & figure 9. \\
 & \\
-\textbf{T130} & \textbf{Object detection}\\
+\textbf{T130} \hypertarget{T130}& \textbf{Object detection}\\
 T130.1 & \textbf{State:} The detection window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user clicks on the button \glqq Start detection\grqq\\
 & \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
 & \\
-\textbf{T131} & \textbf{Drawing \gls{bb}}\\
+\textbf{T131} \hypertarget{T131} & \textbf{Drawing \gls{bb}}\\
 T131.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen \gls{nn} predicted \glspl{bb}.\\
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
 & \\
-\textbf{T140} & \textbf{Choosing video}\\
+\textbf{T140} \hypertarget{T140} & \textbf{Choosing video}\\
 T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
@@ -607,7 +612,7 @@ T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a \gls{
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{12cm}}
-\textbf{T150} & \textbf{Connect with camera}\\
+\textbf{T150} \hypertarget{T150} & \textbf{Connect with camera}\\
 T150.1 & \textbf{State:} The software is running.\\
 & \textbf{Action:} The user connects a usb camera to the host.\\
 & \textbf{Reaction:} The system dynamically detects the camera and allows the user to select the camera as an image source\\
@@ -615,21 +620,22 @@ T150.2 & \textbf{State:} A usb camera is connected to the host. The software is 
 & \textbf{Action:} The user starts the software.\\
 & \textbf{Reaction:} The system dynamically detects the camera and allows the user to select the camera as an image source\\
 & \\
-\textbf{T151} & \textbf{Receive video stream from camera}\\
+\textbf{T151} \hypertarget{T151} & \textbf{Receive video stream from camera}\\
 T151.1 & \textbf{State:} The software is running, a camera is available as image source.\\
 & \textbf{Action:} The user chooses the camera as image source.\\
 & \textbf{Reaction:} The first camera image is provided as a preview, the continuous image stream is available for further processing.\\
 & \\
-\textbf{T152} & \textbf{Apply classification for a certain amount of frames}\\
+\textbf{T152} \hypertarget{T152}& \textbf{Apply classification for a certain amount of frames}\\
 T152.1 & \textbf{State:} The software is running. A video source was choosen by the user. All network details were provided by the user. Classification was choosen by the user.\\
 & \textbf{Action:} The user clicks on the button \glqq start classification\grqq\\
 & \textbf{Reaction:} The system processes the video file imagewise\\
 & \\
-\textbf{T160} & \textbf{Support \gls{gpu} for classification}\\
+\textbf{T160} \hypertarget{T160}& \textbf{Support \gls{gpu} for classification}\\
 & \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user chooses \gls{gpu} as a \gls{dp}. The user clicks on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Reaction:} \gls{image classification} is performed.\\
 \end{tabular}
+
 \newpage
 \section{System models}
 \subsection{Scenarios}
