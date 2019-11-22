@@ -173,7 +173,7 @@ Additionally, the software can be extended to be used for image detection, class
 
 \section{Criteria}
 \subsection{Must Acceptance criteria}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MAC010} & \textbf{Image classification} \\
 & The software can take a single image as input and returns the possiblities for each predefined \gls{ic}. The prediction is based on a pretrained \gls{nn}.\\
 & \\
@@ -191,7 +191,7 @@ Additionally, the software can be extended to be used for image detection, class
 \end{tabular}
 
 \subsection{Can Acceptance criteria}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CAC070} & \textbf{Illustration of the topology of a \gls{nn}} \\
 & The software is able to visualise the topology of a given \gls{nn} (see figure 9). \\
 \textbf{CAC071} & \textbf{The visualised \gls{nn} can be saved}\\
@@ -223,7 +223,7 @@ Additionally, the software can be extended to be used for image detection, class
 \end{tabular}
 
 \subsection{Criteria of demarcation}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{D010} & \textbf{No low-level optimization}\\
 & Optimisations to reduce the execution time of object classification and detection will  be carried out in OpenCL.\\
 & No optimizations including low-level languages or assembly intrinsics will be implemented.\\
@@ -280,7 +280,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \newpage
 
 \section{Functional Requirements Must}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR010}\hypertarget{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
 & Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC10}{MAC10} MAC10 \\                                    
 & A \gls{nn} is used to classify \glspl{img}. The result is a list of prohabilities per image class.\\
@@ -310,7 +310,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & The software is able to control the clock rate of the processor according to chosen \gls{om}. \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf {MFR030}\hypertarget{MFR030} & \textbf{Support CPU for calculation} \\
 & Tested with: \hyperlink{T030}{T030} Implements: \hyperlink{MAC20}{MAC20} \\
 & The software supports CPU for calculation. \\
@@ -341,7 +341,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & The GUI has a button with an on click event which opens a file explorer. The explorer filters the files that only files of the format .jpg, .png, .bmp are listed.\\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR080} \hypertarget{MFR080}& \textbf{Choosing \gls{dp}}\\
 & Tested with: \hyperlink{T080}{T080} Implements: \hyperlink{MAC50}{MAC50} \\
 & The GUI has a dropdown which lists the devices which are supported. The devices which can be theoretically be accessed but are not connected to the \gls{host pc} or the communication with them does not work are grayed out and not clickable. \\
@@ -352,7 +352,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \end{tabular}
 \newpage
 \section{Functional Requirements Can}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CFR100} \hypertarget{CFR100} & \textbf{Choosing between different \glspl{nn}}\\
 & Tested with: \hyperlink{T100}{T100} Implements: \hyperlink{CAC090}{CAC090} \\
 & The GUI has a button which opens the file explorer which filters for .cfg files. There you choose the config file of the \gls{nn} which you want to use. The program loads this config and parses it so it can be deployed. Possible models would be GoogLeNet or AlexNet.\\
@@ -377,7 +377,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & If the user trains a \gls{nn} with a dataset, the number of output nodes are adapted to the number of \glspl{ic}.\\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf {CFR120} \hypertarget{CFR120} & \textbf{Visualisiaton of \gls{nn}} \\
 & Tested with: \hyperlink{T120}{T120} Implements: \hyperlink{CA070}{CA070} \\
 & The software is able to visualise the topology of a \glspl{nn} (see figure 9) \\
@@ -417,7 +417,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 
 
 \section{Non-functional requirements}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{NFR010} & \textbf{Project size}\\
 & The project should have around ten thousand (10,000) lines of code \\
 & \\
@@ -437,7 +437,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 
 
 \section{Test cases}
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T010} \hypertarget{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
 T010.1& \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
@@ -468,7 +468,7 @@ T021.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp
 & \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T022} \hypertarget{T022} & \textbf{High energy efficiency \gls{om}}\\
 T022.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency \gls{om} and starts the classification.\\
@@ -511,7 +511,7 @@ T050.1 & \textbf{State:} The user wants to use the software.\\
 & Figure 1. \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T060} \hypertarget{T060} & \textbf{Showing results} \\
 T060.1 & \textbf{State:} The software awaits result. \\
 & \textbf{Action:} The \gls{dp} sends result.\\
@@ -544,7 +544,7 @@ T100.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Reaction:} The file explorer closes and the software loads the input and parses it. If it is loaded there is a success message shown.\\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T110} \hypertarget{T110} & \textbf{Train \gls{nn} for classification of imageset}\\
 T110.1 & \textbf{State:} The user is on the main page.\\
 & \textbf{Action:} The user clicks the button \glqq Train a \gls{nn}\grqq.\\
@@ -579,7 +579,7 @@ T114.1 & \textbf{State:} The user chose a \gls{nn}, the dataset and the desired 
 & \textbf{Reaction:} The \gls{nn} adjusts its weights but with smaller significance of one image. \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 & \\
 \textbf{T120} \hypertarget{T120}& \textbf{Showing topology of a \gls{nn}}\\
 T120.1 & \textbf{State:} The user is on the main page.\\
@@ -611,7 +611,7 @@ T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a \gls{
 & \\
 \end{tabular}
 \newpage
-\begin{tabular}{p{2cm}p{12cm}}
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T150} \hypertarget{T150} & \textbf{Connect with camera}\\
 T150.1 & \textbf{State:} The software is running.\\
 & \textbf{Action:} The user connects a usb camera to the host.\\
