@@ -174,63 +174,63 @@ Additionally, the software can be extended to be used for image detection, class
 \section{Criteria}
 \subsection{Must Acceptance criteria}
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{MAC010} & \textbf{Image classification} \\
+\textbf{MAC010} \hypertarget{MAC10} & \textbf{Image classification} \\
 & The software can take a single image as input and returns the possiblities for each predefined \gls{ic}. The prediction is based on a pretrained \gls{nn}.\\
 & \\
-\textbf{MAC020} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
+\textbf{MAC020}\hypertarget{MAC20} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
 & The software is able to communicate with \gls{cpu} and \gls{fpga}. The software is able to offload calculations to the different \glspl{dp} and receive the results.\\
 & \\
-\textbf{MAC030} & \textbf{Different \glspl{om}} \\
+\textbf{MAC030}\hypertarget{MAC30} & \textbf{Different \glspl{om}} \\
 & The software has three \glspl{om}. One mode for high perfomance, one for low \gls{power consumption} and one for high energy efficiency. \\
 & \\
-\textbf{MAC040} & \textbf{Performance and \gls{power consumption} prediction}\\
+\textbf{MAC040}\hypertarget{MAC40} & \textbf{Performance and \gls{power consumption} prediction}\\
 & The software can predict the \gls{performance} with a certain \gls{power consumption} and also the \gls{power consumption} for a certain \gls{performance}.\\
 & \\
-\textbf{MAC050} & \textbf{GUI for interacting with software} \\
+\textbf{MAC050} \hypertarget{MAC50}& \textbf{GUI for interacting with software} \\
 & The user is able to access the entire functionality described in MAC10-MAC40 just by using the GUI. No coding or command line usage is required.
 \end{tabular}
 
 \subsection{Can Acceptance criteria}
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{CAC070} & \textbf{Illustration of the topology of a \gls{nn}} \\
+\textbf{CAC070} \hypertarget{CAC70}& \textbf{Illustration of the topology of a \gls{nn}} \\
 & The software is able to visualise the topology of a given \gls{nn} (see figure 9). \\
-\textbf{CAC071} & \textbf{The visualised \gls{nn} can be saved}\\
+\textbf{CAC071} \hypertarget{CAC71} & \textbf{The visualised \gls{nn} can be saved}\\
 & The visualized \gls{nn} is saved as a .png file in a chosen directory.\\
 & \\
-\textbf{CAC080} & \textbf{Object Detection} \\
+\textbf{CAC080}  \hypertarget{CAC80}& \textbf{Object Detection} \\
 & The software can detect the \gls{bb} of an object. \\ 
 & \\
-\textbf{CAC090} &  \textbf{Using different models}\\
+\textbf{CAC090} \hypertarget{CAC90} &  \textbf{Using different models}\\
 & The user is able to use different pretrained \glspl{nn} before an \gls{image classification} process. \\
 & \\
-\textbf{CAC100} & \textbf{Training \glspl{nn}} \\
+\textbf{CAC100} \hypertarget{CAC100} & \textbf{Training \glspl{nn}} \\
 & The software allows the user to train a \gls{nn} based on an predefined architecture.\\
 & Neural networks trained by the user will be executed the same way \glspl{nn} provided with the software are executed.\\
 & \\
-\textbf{CAC110} & \textbf{Voting of multiple \glspl{nn}} \\
+\textbf{CAC110} \hypertarget{CAC110} & \textbf{Voting of multiple \glspl{nn}} \\
 & The user is able to choose multiple \glspl{nn} for classification.\\
 & The software will then execute all selected \glspl{nn} sequentially. The result presented to the user will be based on the weighted results of the different \glspl{nn}.\\
 & \\
-\textbf{CAC120} & \textbf{Using video for classification} \\
+\textbf{CAC120} \hypertarget{CAC120} & \textbf{Using video for classification} \\
 & The software is able to take a video, divide it into a certain amount of frames and perform \gls{image classification} for each frame.\\
 & The classified frames are shown and can be iterated by the user. \\
 & \\
-\textbf{CAC130} & \textbf{Using camera for classification as input} \\
+\textbf{CAC130} \hypertarget{CAC130} & \textbf{Using camera for classification as input} \\
 & The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame.\\
 & \\
-\textbf{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
+\textbf{CAC140} \hypertarget{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
 & MAC20 is extended by \gls{gpu}.\\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{CAC150} & \textbf{Dropdown Menu for input mode selection}\\
+\textbf{CAC150} \hypertarget{CAC150} & \textbf{Dropdown Menu for input mode selection}\\
 & The software allows the user to select his preferred image input method using a dropdown menu.\\
-& The dropdown menu entries are: ``Single Image'', ``Folder'', ``Camera'', ``TXT file with img paths''\\
+& The dropdown menu entries are: \glqq Single Image'', \glqq Folder\grqq, \glqq Camera\grqq, \glqq .txt file with \gls{img} paths\grqq.\\
 & \\
-\textbf{CAC160} & \textbf{Output parameter ``save all results''}\\
+\textbf{CAC160} \hypertarget{CAC160} & \textbf{Output parameter \glqq save all results\grqq}\\
 & The software allows the user to select if the classification/detection output of each processed image should automatically be saved.\\
 & \\
-\textbf{CAC170} & \textbf{Output parameter ``show all results''}\\
+\textbf{CAC170} \hypertarget{CAC170} & \textbf{Output parameter \glqq show all results \grqq}\\
 & The software allows the user to select if the software should wait for a user input after each image.\\
 & If selected, the classification/ detection output for an image will be shown and the user has to click a button to continue with the next image.\\
 & If not choosen, all selected images should be processed in the background and detached from the gui.\\
@@ -421,23 +421,24 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CFR180} \hypertarget{CFR180} & \textbf{Dropdown menu for input selection}\\
-& Tested with: Implements:  \\
+& Tested with: Implements: \hyperlink{CAC160}{CAC160} \\
 & A dropdown menu is part of the classification and detection page.\\
-& It contains the four options: Single Image, Image folder, Camera, TXT File with Img Paths\\
-& Single Image sets the file selector on the same page to search for .jpg, .png, .bmp images\\
+& It contains the four options: Single Image, Image folder, Camera, .txt File with Img Paths\\
+& Single \gls{img} sets the file selector on the same page to search for .jpg, .png, .bmp images\\
 & Image Folder sets the file explorer on the same page to search for folder\\
-& txt File with Img Paths sets the file explorer on the same page to search for .txt files\\
+& .txt File with \gls{img} Paths sets the file explorer on the same page to search for .txt files\\
 & Camera sets the file explorer to beeing inactive and automatically stores the path to the connected webcam, if existing.\\
 & \\
-\textbf{CFR190} \hypertarget{CFR190} & \textbf{Selector for output parameter ``save all results''}\\
-& Tested with: Implements:  \\
+\textbf{CFR190} \hypertarget{CFR190} & \textbf{Selector for output parameter \glqq save all results\grqq}\\
+& Tested with: Implements: \hyperlink{CAC160}{CAC160} \\
 & A checkbox is part of the classification and detection page.\\
 & If selected, for each image which has been selected by the user, the classification/ detection output will be stored as described in PD050 and PD060. Each output file will be stored in the same folder as the input file.\\
-& If a camera is choosen as input, the output will be stored in a ``camera'' folder\\
-\textbf{CFR200} \hypertarget{CFR200} & \textbf{Selector for output parameter ``show all images''}\\
-& Tested with: Implements:  \\
+& If a camera is choosen as input, the output will be stored in a \glqq camera\grqq folder\\
+& \\
+\textbf{CFR200} \hypertarget{CFR200} & \textbf{Selector for output parameter \glqq show all images\grqq}\\
+& Tested with: Implements:  \hyperlink{CAC170}{CAC170}\\
 & If selected, the output for each image processed will be shown as described in CFR131 and MFR060.\\
-& The user has to manually select ``continue`` before the software will continue with processing the next image.\\
+& The user has to manually select \glqq continue\grqq before the software will continue with processing the next image.\\
 & If not selected, all images choosen by the user will be processed continuesly without showing classification/ detection output in the gui.\\
 \end{tabular}
 
@@ -566,7 +567,9 @@ T031.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, FPGA as \
 T040.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} The user starts \gls{image classification}  \\
 & \textbf{Reaction:} The software sends the image as array to the selected platform.\\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T041} \hypertarget{T041} & \textbf{Receive result}\\
 T041.1 & \textbf{State:} The software is awaiting result. \\
 & \textbf{Action:} Platform sends results. \\
@@ -577,9 +580,7 @@ T050.1 & \textbf{State:} The user wants to use the software.\\
 & \textbf{Action:} The user starts the program.  \\
 & \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
 & Figure 1. \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
+& \\
 \textbf{T060} \hypertarget{T060} & \textbf{Showing results} \\
 T060.1 & \textbf{State:} The software awaits result. \\
 & \textbf{Action:} The \gls{dp} sends result.\\
@@ -603,6 +604,9 @@ T090.1 & \textbf{State:} The user is on the page for \gls{image classification}.
 & \textbf{Action:} The user chooses the desired \gls{om} with the dropdown.\\
 & \textbf{Reaction:} An internal flag is set to the desired \gls{om} and the dropdown shows the chosen \gls{om}\\
 & \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T100} \hypertarget{T100} & \textbf{Choosing between different \gls{nn}}\\
 T100.1 & \textbf{State:} The user is on the page for \gls{image classification}.\\
 & \textbf{Action:} The user clicks on the button \glqq Choose \gls{nn}\grqq.\\
@@ -610,9 +614,7 @@ T100.1 & \textbf{State:} The user is on the page for \gls{image classification}.
 T100.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user selects a config file.\\
 & \textbf{Reaction:} The file explorer closes and the software loads the input and parses it. If it is loaded there is a success message shown.\\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
+& \\
 \textbf{T110} \hypertarget{T110} & \textbf{Train \gls{nn} for classification of imageset}\\
 T110.1 & \textbf{State:} The user is on the main page.\\
 & \textbf{Action:} The user clicks the button \glqq Train a \gls{nn}\grqq.\\
@@ -636,6 +638,9 @@ T111.1 & \textbf{State:} The training finishes.\\
 T112.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user chooses the folder with the images. \\
 & \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used for training.\\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T113} \hypertarget{T131}& \textbf{Backpropagation}\\
 T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}, learning rate and desired precision are given.\\
 & \textbf{Action:} The user clicks on \glqq Train\grqq.\\
@@ -645,9 +650,6 @@ T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}
 T114.1 & \textbf{State:} The user chose a \gls{nn}, the dataset and the desired precision. \\
 & \textbf{Action:} The user changes the learning rate to a smaller number and starts training. \\
 & \textbf{Reaction:} The \gls{nn} adjusts its weights but with smaller significance of one image. \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
 & \\
 \textbf{T120} \hypertarget{T120}& \textbf{Showing topology of a \gls{nn}}\\
 T120.1 & \textbf{State:} The user is on the main page.\\
@@ -670,16 +672,15 @@ T130.1 & \textbf{State:} The detection window is open. An \gls{img} as input, a 
 T131.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen \gls{nn} predicted \glspl{bb}.\\
 & \textbf{Action:} No action required\\
 & \textbf{Reaction:} The original image, given by the user, is overlayed with the boxes predicted by the network, the updated image is presented to the user.\\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T140} \hypertarget{T140} & \textbf{Choosing video}\\
 T140.1 & \textbf{State:} The software is running. A pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} The user selects a .avi video file.\\
 & \textbf{Reaction:} The system stores the path to the selected video and is \\
 & available to process images from this video sequentially.\\
 & \\
-\end{tabular}
-\newpage
-\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T150} \hypertarget{T150} & \textbf{Connect with camera}\\
 T150.1 & \textbf{State:} The software is running.\\
 & \textbf{Action:} The user connects a usb camera to the host.\\
