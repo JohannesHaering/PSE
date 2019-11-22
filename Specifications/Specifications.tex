@@ -580,7 +580,7 @@ T041.1 & \textbf{State:} The software is awaiting result. \\
 & \\
 \textbf{T050} \hypertarget{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
-& \textbf{Action:} The user starts the program.  \\
+& \textbf{Action:} The user starts the program. \\
 & \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
 & Figure 1. \\
 & \\
@@ -680,7 +680,7 @@ T121.1 & \textbf{State:} The user is on the show topology page and a topology is
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T130} \hypertarget{T130}& \textbf{Object detection}\\
 T130.1 & \textbf{State:} The detection window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
-& \textbf{Action:} The user clicks on the button \glqq Start detection\grqq\\
+& \textbf{Action:} The user clicks on the button \glqq start detection\grqq\\
 & \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
 & \\
 \textbf{T131} \hypertarget{T131} & \textbf{Drawing \gls{bb}}\\
@@ -717,11 +717,11 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 \textbf{T160} \hypertarget{T160}& \textbf{Support \gls{gpu} for classification}\\
 & \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user chooses \gls{gpu} as a \gls{dp}. The user clicks on the button \glqq Start \gls{image classification}\grqq \\
-& \textbf{Reaction:} \gls{image classification} is performed.\\
+& \textbf{Reaction:} \gls{image classification} is performed on the gpu.\\
 & \\
-\textbf{T170} \hypertarget{170} & \textbf{Voting of multiple \gls{nn}}\\
-T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \gls{nn}, an \gls{img}, an mode, a \gls{dp}.\\
-& \textbf{Action:} User starts image classification\\
+\textbf{T170} \hypertarget{T170} & \textbf{Voting of multiple \gls{nn}}\\
+T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \glspl{nn}, one \gls{img}, a mode, a \gls{dp}.\\
+& \textbf{Action:} The user clicks on the button \glqq start classification\grqq.\\
 & \textbf{Reaction:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
 & \\
 \textbf{T180} \hypertarget{T180} & \textbf{Choosing Input Mode}\\
