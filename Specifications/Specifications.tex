@@ -285,21 +285,12 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
 & \\
 \textbf{PD050}\hypertarget{PD050} & \textbf{Output format of image classification results if saved}\\
-<<<<<<< HEAD
 & If the output result of the classification is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
 & If multiple images are classified, there are multiple .txt files.\\
 & \\
 \textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
 & If the output result of the detection is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>, <X>, <Y>, <width>, <height>}, one row for each image class.\\
 & If multiple images are detected, there are multiple .txt files.\\
-=======
-& If stored, the classification output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
-& If multiple images are processed, multiple .txt files will be created.\\
-& \\
-\textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
-& If stored, the detection output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <probability>, <X>, <Y>, <width>, <height>}, one row for each detected object.\\
-& If multiple images are processed, multiple .txt files will be created.\\
->>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{PD070\hypertarget{PD070}} & \textbf{Video input}\\
 & The input video is in a .avi format.
@@ -310,13 +301,8 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR010}\hypertarget{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
-<<<<<<< HEAD
 & Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010} MAC010 \\                                    
 & A \gls{nn} is used to classify \gls{img}. The result is a list of prohabilities per image class.\\
-=======
-& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010}  \\                                    
-& A \gls{nn} is used to classify \glspl{img}. The result is a list of probabilities per image class.\\
->>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 \textbf{MFR011}\hypertarget{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
 & Tested with: \hyperlink{T011}{T011} Implements: \hyperlink{MAC010}{MAC010} \\
 & A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
@@ -595,13 +581,8 @@ T041.1 & \textbf{State:} The software is awaiting result. \\
 & \\
 \textbf{T050} \hypertarget{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
-<<<<<<< HEAD
 & \textbf{Action:} The user starts the program.  \\
 & \textbf{Result:} The users sees the Graphical User Interface showed on \\
-=======
-& \textbf{Action:} The user starts the program. \\
-& \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
->>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & Figure 1. \\
 & \\
 \textbf{T060} \hypertarget{T060} & \textbf{Showing results} \\
@@ -700,13 +681,8 @@ T121.1 & \textbf{State:} The user is on the show topology page and a topology is
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T130} \hypertarget{T130}& \textbf{Object detection}\\
 T130.1 & \textbf{State:} The detection window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
-<<<<<<< HEAD
 & \textbf{Action:} The user clicks on the button \glqq Start detection\grqq\\
 & \textbf{Result:} The network is run for inferencing and the network output is shown to the user.\\
-=======
-& \textbf{Action:} The user clicks on the button \glqq start detection\grqq\\
-& \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
->>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{T131} \hypertarget{T131} & \textbf{Drawing \gls{bb}}\\
 T131.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen \gls{nn} predicted \glspl{bb}.\\
@@ -740,23 +716,14 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 & \textbf{Result:} The software devides the video into frames and saves them. The software sequentially classifies the pictures and outputs the result as set.\\
 & \\
 \textbf{T160} \hypertarget{T160}& \textbf{Support \gls{gpu} for classification}\\
-& \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
+T160.1 & \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user chooses \gls{gpu} as a \gls{dp}. The user clicks on the button \glqq Start \gls{image classification}\grqq \\
-<<<<<<< HEAD
 & \textbf{Result:} \gls{image classification} is performed.\\
 & \\
 \textbf{T170} \hypertarget{170} & \textbf{Voting of multiple \gls{nn}}\\
 T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \gls{nn}, an \gls{img}, an mode, a \gls{dp}.\\
 & \textbf{Action:} User starts image classification\\
 & \textbf{Result:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
-=======
-& \textbf{Reaction:} \gls{image classification} is performed on the gpu.\\
-& \\
-\textbf{T170} \hypertarget{T170} & \textbf{Voting of multiple \gls{nn}}\\
-T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \glspl{nn}, one \gls{img}, a mode, a \gls{dp}.\\
-& \textbf{Action:} The user clicks on the button \glqq start classification\grqq.\\
-& \textbf{Reaction:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
->>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{T180} \hypertarget{T180} & \textbf{Choosing Input Mode}\\
 T180.1 & \textbf{State:} The classification window is open. \\
