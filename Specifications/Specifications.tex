@@ -157,7 +157,7 @@
 \tableofcontents
 \newpage
 \section{Introduction}
-In todays world of globalisation and digitalisation, to keep up with the rapidly growing economy, one important challenge is the automatisation of tasks. One aspect of this is the classification of visual inputs. Whether it is to check for broken parts in production or surveillance of public places. With the rapidly growing power of computers, \glspl{nn} are becoming more popular for tasks like this, as they need a lot of computational power but deliver sufficiently accurate results.\\
+In todays world of globalisation and digitalisation, to keep up with the rapidly growing economy, one important challenge is the automatisation of tasks. One aspect of this is the classification of visual inputs. Whether it is to check for broken parts in production or surveillance of public places. With the quickly increasing power of computers, \glspl{nn} are becoming more popular for tasks like this, as they need a lot of computational power but deliver sufficiently accurate results.\\
 In the following project we want to build a framework with an intuitive graphical user interface to achieve these kinds of tasks.\\
 To speed up the process of classification the software will be able to use different hardware that is more efficient for specific calculations. To further adjust the \gls{nn} to its task it should have different \glspl{om} to function on. High \gls{performance}, low \gls{power consumption} and a high energy effiency mode.
 
@@ -204,7 +204,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The software can detect the \gls{bb} of an object. \\ 
 & \\
 \textbf{CAC090} \hypertarget{CAC090} &  \textbf{Using different models}\\
-& The user is able to use different pretrained \glspl{nn} before an \gls{image classification} process. \\
+& The user is able to choose different pretrained \glspl{nn} to use, before an \gls{image classification} process. \\
 & \\
 \textbf{CAC100} \hypertarget{CAC100} & \textbf{Training \glspl{nn}} \\
 & The software allows the user to train a \gls{nn} based on an predefined architecture.\\
@@ -219,7 +219,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The classified frames are shown and can be iterated by the user. \\
 & \\
 \textbf{CAC130} \hypertarget{CAC130} & \textbf{Using camera for classification as input} \\
-& The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame.\\
+& The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame and processes it.\\
 & \\
 \textbf{CAC140} \hypertarget{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
 & \hyperlink{MAC020}{MAC020} is extended by \gls{gpu}.\\
@@ -271,25 +271,35 @@ The operating system is XUbuntu 18.04.
 & \\
 \textbf{PD020} \hypertarget{PD020} & \textbf{Config/weight file of pretrained model}\\
 & The config file is a .cfg file with four sections, separated by <section>:\\
-& In the first the classnames are given, one per line.\\
-& In the second hyperparameters are described as \textit{<name> = <value>}. \\
-& In the third layers are described in their order with the following format \textit{\lbrack kind of layer\rbrack}, 
+& In the first, the class names are given, one per line.\\
+& In the second, hyperparameters are described as \textit{<name> = <value>}. \\
+& In the third, layers are described in their order with the following format \textit{\lbrack kind of layer\rbrack}, 
 each followed by a list of layer-parameters in the format \textit{<name> = <value>}\\
 & In the last section the weights and biases for each layer are listed.\\
 & \\
-\textbf{PD030}\hypertarget{PD030} & \textbf{No neural network size optimization}\\
-& No techniques for memory usage reduction like \gls{prunning} or \gls{binarisation} will be implemented.\\
+\textbf{PD030}\hypertarget{PD030} & \textbf{Labeled image set for classification training}\\
+& The dataset is chosen by the user. The dataset is a directory with images and each image name has the format \\
+& \textit{<id of image>\_<image class>}.\\
 &\\
 \textbf{PD040}\hypertarget{PD040} & \textbf{Labeled set of images for object detection training}\\
 & It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
 & \\
 \textbf{PD050}\hypertarget{PD050} & \textbf{Output format of image classification results if saved}\\
+<<<<<<< HEAD
 & If the output result of the classification is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
 & If multiple images are classified, there are multiple .txt files.\\
 & \\
 \textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
 & If the output result of the detection is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>, <X>, <Y>, <width>, <height>}, one row for each image class.\\
 & If multiple images are detected, there are multiple .txt files.\\
+=======
+& If stored, the classification output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
+& If multiple images are processed, multiple .txt files will be created.\\
+& \\
+\textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
+& If stored, the detection output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <probability>, <X>, <Y>, <width>, <height>}, one row for each detected object.\\
+& If multiple images are processed, multiple .txt files will be created.\\
+>>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{PD070\hypertarget{PD070}} & \textbf{Video input}\\
 & The input video is in a .avi format.
@@ -300,8 +310,13 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR010}\hypertarget{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
+<<<<<<< HEAD
 & Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010} MAC010 \\                                    
 & A \gls{nn} is used to classify \gls{img}. The result is a list of prohabilities per image class.\\
+=======
+& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010}  \\                                    
+& A \gls{nn} is used to classify \glspl{img}. The result is a list of probabilities per image class.\\
+>>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 \textbf{MFR011}\hypertarget{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
 & Tested with: \hyperlink{T011}{T011} Implements: \hyperlink{MAC010}{MAC010} \\
 & A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
@@ -328,7 +343,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & Tested with: \hyperlink{T021}{T021} Implements: \hyperlink{MAC030}{MAC030} \\                                   
 & An \gls{om} to perform calculations with low \gls{power consumption}.\\
 \textbf{MFR022} \hypertarget{MFR022}& \textbf{Have high energy efficiency \gls{om}}\\      
-& Tested with: \hyperlink{T022}{T022}  Implements: \hyperlink{MAC030}{MAC030} MAC030 \\                              
+& Tested with: \hyperlink{T022}{T022}  Implements: \hyperlink{MAC030}{MAC030} \\                              
 & An \gls{om} to perform calculations at an optimal ratio between \gls{performance} and \gls{power consumption}.\\
 \textbf{MFR023}\hypertarget{MFR023} & \textbf{Calculator for \gls{power consumption}}\\ & Tested with: \hyperlink{T023}{T023} Implements:  \hyperlink{MAC040}{MAC040} \\                                   
 & The software can calculate the \gls{power consumption} on a given \gls{nn} and \gls{dp}.\\
@@ -435,13 +450,13 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & Tested with: \hyperlink{T190}{T190} Implements: \hyperlink{CAC160}{CAC160} \\
 & A checkbox is part of the classification and detection page.\\
 & If selected, for each image which has been selected by the user, the classification/ detection output will be stored as described in PD050 and PD060. Each output file is saved in the same folder as the input file.\\
-& If a camera is choosen as input, the output will be stored in a \glqq camera\grqq folder\\
+& If a camera is chosen as input, the output will be stored in a \glqq camera\grqq folder\\
 & \\
 \textbf{CFR200} \hypertarget{CFR200} & \textbf{Selector for output parameter \glqq show all images\grqq}\\
 & Tested with: \hyperlink{T200}{T200} Implements:  \hyperlink{CAC170}{CAC170}\\
 & If selected, the output for each image processed will be shown as described in CFR131 and MFR060.\\
-& The user has to manually select \glqq continue\grqq  before the software will continue with processing the next image.\\
-& If not selected, all images choosen by the user will be processed continuesly without showing classification/ detection output in the GUI.\\
+& The user has to manually select \glqq continue \grqq  before the software will continue with processing the next image.\\
+& If not selected, all images chosen by the user will be processed continuously without showing classification/ detection output in the GUI.\\
 \end{tabular}
 
 \subsection{Training}
@@ -479,12 +494,12 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \textbf{CFR151} \hypertarget{CFR151} & \textbf{Receive video stream from camera}\\
 & Tested with: \hyperlink{T151}{T151} Implements: \hyperlink{CAC130}{CAC130}\\
 & The software can receive a video stream from the camera.\\
-\textbf{CFR152} \hypertarget{CFR152} & \textbf{Apply classifcation/detection for a certain amount of frames}\\
+\textbf{CFR152} \hypertarget{CFR152} & \textbf{Apply classification/detection for a certain amount of frames}\\
 & Tested with: \hyperlink{T152}{T152} Implements: \hyperlink{CAC130}{CAC130}\\
-& The software can devide a video or videostream into frames and is able to apply \gls{image classification} and detection on those.\\
+& The software can divide a video or video stream into frames and is able to apply \gls{image classification} and detection on those.\\
 \textbf{CFR153} \hypertarget{CFR153} & \textbf{Saving the frames}\\
 & Tested with: \hyperlink{T152}{T152} Implements: \hyperlink{CAC120}{CAC120}\\
-& The software devides the video into frames which are saved to the file system.
+& The software divides the video into frames which are saved to the file system.
 \end{tabular}
 
 
@@ -580,8 +595,13 @@ T041.1 & \textbf{State:} The software is awaiting result. \\
 & \\
 \textbf{T050} \hypertarget{T050} & \textbf{GUI} \\
 T050.1 & \textbf{State:} The user wants to use the software.\\
+<<<<<<< HEAD
 & \textbf{Action:} The user starts the program.  \\
 & \textbf{Result:} The users sees the Graphical User Interface showed on \\
+=======
+& \textbf{Action:} The user starts the program. \\
+& \textbf{Reaction:} The users sees the Graphical User Interface showed on \\
+>>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & Figure 1. \\
 & \\
 \textbf{T060} \hypertarget{T060} & \textbf{Showing results} \\
@@ -680,8 +700,13 @@ T121.1 & \textbf{State:} The user is on the show topology page and a topology is
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T130} \hypertarget{T130}& \textbf{Object detection}\\
 T130.1 & \textbf{State:} The detection window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
+<<<<<<< HEAD
 & \textbf{Action:} The user clicks on the button \glqq Start detection\grqq\\
 & \textbf{Result:} The network is run for inferencing and the network output is shown to the user.\\
+=======
+& \textbf{Action:} The user clicks on the button \glqq start detection\grqq\\
+& \textbf{Reaction:} The network is run for inferencing and the network output is shown to the user.\\
+>>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{T131} \hypertarget{T131} & \textbf{Drawing \gls{bb}}\\
 T131.1 & \textbf{State:} Inferencing was executed on an image given by the user, the choosen \gls{nn} predicted \glspl{bb}.\\
@@ -717,12 +742,21 @@ T152.1 & \textbf{State:} The software is running. A video source was choosen by 
 \textbf{T160} \hypertarget{T160}& \textbf{Support \gls{gpu} for classification}\\
 & \textbf{State:} The classification window is open. An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user chooses \gls{gpu} as a \gls{dp}. The user clicks on the button \glqq Start \gls{image classification}\grqq \\
+<<<<<<< HEAD
 & \textbf{Result:} \gls{image classification} is performed.\\
 & \\
 \textbf{T170} \hypertarget{170} & \textbf{Voting of multiple \gls{nn}}\\
 T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \gls{nn}, an \gls{img}, an mode, a \gls{dp}.\\
 & \textbf{Action:} User starts image classification\\
 & \textbf{Result:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
+=======
+& \textbf{Reaction:} \gls{image classification} is performed on the gpu.\\
+& \\
+\textbf{T170} \hypertarget{T170} & \textbf{Voting of multiple \gls{nn}}\\
+T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \glspl{nn}, one \gls{img}, a mode, a \gls{dp}.\\
+& \textbf{Action:} The user clicks on the button \glqq start classification\grqq.\\
+& \textbf{Reaction:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
+>>>>>>> 820a8e0d2cfeb958ece7475689a82bebf8bf52fb
 & \\
 \textbf{T180} \hypertarget{T180} & \textbf{Choosing Input Mode}\\
 T180.1 & \textbf{State:} The classification window is open. \\
@@ -792,7 +826,7 @@ U6 had a trip in Africa and made a lot of pictures of animals. He looks for an e
 \subsubsection{Scenario 7}
 U7, a company, wants to develop an AI to feed the animals at Zoos. The company does not have enough labelers to label all of the frames they need to teach the software which animal it is seeing at the moment. U7 decides to use the software for object detection. An employee goes on the Detection page of the software and uses it to label the frames required for the AI.
 \subsubsection{Scenario 8}
-The company U8 wants to teach small kids parallel to read, recognize percents and animals. The software is just right for the job, because of the \gls{image classification} option of the software. The CEO of U8 hears about Tucs and now wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the \gls{image classification} page of the software, the kids are able to learn and also having fun at the same time.
+The company U8 wants to teach children parallel to read, recognize percents and animals. The software is just right for the job, because of the \gls{image classification} option of the software. The CEO of U8 hears about the software and wants to test it. He assigns a few employees with their kids to try the software. The results are outstanding! Because of the intuitive layout and the structure of the \gls{image classification} page of the software, the kids are able to learn and also have fun at the same time.
 \clearpage
 \subsection{Usecases}
 \subsubsection{Image classification page}

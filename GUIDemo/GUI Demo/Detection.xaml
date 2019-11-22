@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_Demo"
         mc:Ignorable="d"
-        Title="Detection" Height="380" Width="730">
+        Title="Detection" Height="450" Width="780">
     <Grid>
         <StackPanel Orientation="Horizontal">
             <GroupBox Header="Choose the configuration and input" Margin="10">
@@ -19,26 +19,41 @@
                     <CheckBox Content="Show results" Margin="10,0,0,0" IsChecked="True"/>
                     <CheckBox Content="Save results" Margin="10,0,0,0"/>
                     <Button Width="150" Content="Choose neural network" Margin="10"/>
+                    <CheckBox Content="CPU" Margin="10,0,0,0" IsChecked="True"/>
+                    <CheckBox Content="FPGA 1" Margin="10,0,0,0" IsChecked="True"/>
+                    <CheckBox Content="FPGA 2" Margin="10,0,0,0" IsChecked="false"/>
+                    <CheckBox Content="GPU" Margin="10,0,0,0" IsChecked="True"/>
+                    <CheckBox Content="Neural network stick" Margin="10,0,0,0" IsChecked="True"/>
                     <ComboBox Width="150" Margin="10" SelectedIndex="0">
                         <ComboBoxItem>High Performance mode - 166 GFLOPs, 86W</ComboBoxItem>
                         <ComboBoxItem>Low Power consumption mode - 120 GFLOPs, 50W</ComboBoxItem>
                         <ComboBoxItem>Best energy effiency mode - 140 GFLOPs, 70W</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox Width="150" Margin="10" SelectedIndex="0">
-                        <ComboBoxItem>CPU</ComboBoxItem>
-                        <ComboBoxItem>FPGA</ComboBoxItem>
-                        <ComboBoxItem>GPU</ComboBoxItem>
-                    </ComboBox>
+                    <CheckBox Content="Append results" Margin="10,0,0,0"/>
                     <Button Width="150"  Height="40" Margin="10,30,10,10" Content="Start object detection"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Result" Margin="10">
                 <StackPanel Orientation="Vertical">
+                    <Label Content="Image name: Coal"/>
+                    <Label Content=" Neural network: AlexNet"/>
                     <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Top">
-                        <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\koala_bounding.jpg"/>
-                        <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\graph.JPG"/>
+                        <StackPanel Orientation="Vertical">
+                            <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\koala_bounding.jpg"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Content="Previous image" Width="100" Margin="10"/>
+                                <Button Content="Next image" Margin="10" Width="100"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Image Height="200" Width="200" Margin="10" Source="C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\graph.JPG"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Content="Previous nn" Width="100" Margin="10"/>
+                                <Button Content="Next nn" Margin="10" Width="100"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
-                    <Button Content="Continue with next result" Width="200"/>
+                    <Button Width="100" Content="Save this result" Margin="10"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
