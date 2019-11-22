@@ -187,7 +187,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The software can predict the \gls{performance} with a certain \gls{power consumption} and also the \gls{power consumption} for a certain \gls{performance}.\\
 & \\
 \textbf{MAC050} & \textbf{GUI for interacting with software} \\
-& The user is able to access the entire functionality described in MAC10-MAC40 just by using the GUI. No coding or command line usage is required.
+& The user is able to access the entire functionality described in MAC010-MAC040 just by using the GUI. No coding or command line usage is required.
 \end{tabular}
 
 \subsection{Can Acceptance criteria}
@@ -219,7 +219,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame.\\
 & \\
 \textbf{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
-& MAC20 is extended by \gls{gpu}.\\
+& MAC020 is extended by \gls{gpu}.\\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
@@ -297,13 +297,13 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR010}\hypertarget{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
-& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC10}{MAC10} MAC10 \\                                    
+& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010} MAC010 \\                                    
 & A \gls{nn} is used to classify \glspl{img}. The result is a list of prohabilities per image class.\\
 \textbf{MFR011}\hypertarget{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
-& Tested with: \hyperlink{T011}{T011} Implements: \hyperlink{MAC10}{MAC10} \\
+& Tested with: \hyperlink{T011}{T011} Implements: \hyperlink{MAC010}{MAC010} \\
 & A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
 \textbf{MFR012} \hypertarget{MFR012}& \textbf{Reading and parsing a \gls{nn} configuration/weight file}\\
-& Tested with: \hyperlink{T012}{T012} Implements: \hyperlink{MAC10}{MAC10} \\
+& Tested with: \hyperlink{T012}{T012} Implements: \hyperlink{MAC010}{MAC010} \\
 & The software is able to read a configuration file of a \gls{nn} and parse it for MFR011.\\
 & \\
 \end{tabular}
@@ -320,21 +320,21 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR020} \hypertarget{MFR020} & \textbf{High \gls{performance} \gls{om}}\\         
-& Tested with: \hyperlink{T020}{T020} Implements: \hyperlink{MAC30}{MAC30} \\                           
+& Tested with: \hyperlink{T020}{T020} Implements: \hyperlink{MAC030}{MAC030} \\                           
 & An \gls{om} to perform calculations as fast as possible.\\
 \textbf{MFR021} \hypertarget{MFR021}& \textbf{Low \gls{power consumption} \gls{om}}\\ 
-& Tested with: \hyperlink{T021}{T021} Implements: \hyperlink{MAC30}{MAC30} \\                                   
+& Tested with: \hyperlink{T021}{T021} Implements: \hyperlink{MAC030}{MAC030} \\                                   
 & An \gls{om} to perform calculations with low \gls{power consumption}.\\
 \textbf{MFR022} \hypertarget{MFR022}& \textbf{Have high energy efficiency \gls{om}}\\      
-& Tested with: \hyperlink{T022}{T022}  Implements: \hyperlink{MAC30}{MAC30} MAC30 \\                              
+& Tested with: \hyperlink{T022}{T022}  Implements: \hyperlink{MAC030}{MAC030} MAC030 \\                              
 & An \gls{om} to perform calculations at an optimal ratio between \gls{performance} and \gls{power consumption}.\\
-\textbf{MFR023}\hypertarget{MFR023} & \textbf{Calculator for \gls{power consumption}}\\ & Tested with: \hyperlink{T023}{T023} Implements:  \hyperlink{MAC40}{MAC40} \\                                   
+\textbf{MFR023}\hypertarget{MFR023} & \textbf{Calculator for \gls{power consumption}}\\ & Tested with: \hyperlink{T023}{T023} Implements:  \hyperlink{MAC040}{MAC040} \\                                   
 & The software can calculate the \gls{power consumption} on a given \gls{nn}, \gls{om} and \gls{dp}.\\
 \textbf{MFR024}\hypertarget{MFR024} & \textbf{Calculator for \gls{performance}}\\
-& Tested with: \hyperlink{T024}{T024} Implements: \hyperlink{MAC40}{MAC40} \\                                    
+& Tested with: \hyperlink{T024}{T024} Implements: \hyperlink{MAC040}{MAC040} \\                                    
 & The software can calculate the \gls{performance} on a given \gls{nn}, \gls{om} and \gls{dp}.\\
 \textbf {MFR025} \hypertarget{MFR025}& \textbf{Dispatching the calculation process defined from the \gls{om}}\\
-& Tested with: \hyperlink{T020}{T020}, \hyperlink{T021}{T021}, \hyperlink{T021}{T021} Implements: \hyperlink{MAC30}{MAC030}\\
+& Tested with: \hyperlink{T020}{T020}, \hyperlink{T021}{T021}, \hyperlink{T021}{T021} Implements: \hyperlink{MAC030}{MAC030}\\
 & The software is able to control the clock rate of the processor according to chosen \gls{om}. \\
 \end{tabular}
 
@@ -342,19 +342,19 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf {MFR030}\hypertarget{MFR030} & \textbf{Support CPU for calculation} \\
-& Tested with: \hyperlink{T030}{T030} Implements: \hyperlink{MAC20}{MAC20} \\
+& Tested with: \hyperlink{T030}{T030} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software supports CPU for calculation. \\
 & \\
 \textbf {MFR031}\hypertarget{MFR031}  & \textbf{Support FPGA for calculation} \\
-& Tested with: \hyperlink{T031}{T031} Implements: \hyperlink{MAC20}{MAC20} \\
+& Tested with: \hyperlink{T031}{T031} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software supports FPGA for calculation. \\
 & \\
 \textbf {MFR040} \hypertarget{MFR040}& \textbf{Send image for classification} \\
-& Tested with: \hyperlink{T040}{T040} Implements: \hyperlink{MAC20}{MAC20} \\
+& Tested with: \hyperlink{T040}{T040} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software gives the image as input for the \gls{nn} to the chosen \gls{dp}. \\
 & \\
 \textbf {MFR041} \hypertarget{MFR041}& \textbf{Receive result} \\
-& Tested with: \hyperlink{T041}{T041} Implements: \hyperlink{MAC20}{MAC20} \\
+& Tested with: \hyperlink{T041}{T041} Implements: \hyperlink{MAC020}{MAC020} \\
 & The program should be able to receive results of the executed \gls{image classification} from the \glspl{dp}. \\
 & The software gives the image as input for the {nn} to the chosen \gls{dp}. \\
 & \\
@@ -371,23 +371,23 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf {MFR050} \hypertarget{MFR050}& \textbf{GUI} \\
-& Tested with: \hyperlink{T050}{T050} Implements: \hyperlink{MAC50}{MAC50} \\
+& Tested with: \hyperlink{T050}{T050} Implements: \hyperlink{MAC050}{MAC050} \\
 & The program has a Graphical User Interface to display all functions to the user. \\
 & \\
 \textbf {MFR060}\hypertarget{MFR060}  & \textbf{Showing results} \\
-& Tested with: \hyperlink{T060}{T060} Implements: \hyperlink{MAC50}{MAC50} \\
+& Tested with: \hyperlink{T060}{T060} Implements: \hyperlink{MAC050}{MAC050} \\
 & After executing the \gls{image classification}, the results are shown in a bar chart. \\
 & \\
 \textbf{MFR070} \hypertarget{MFR070}& \textbf{Choosing image for classification}\\
-& Tested with: \hyperlink{T070}{T070} Implements: \hyperlink{MAC50}{MAC50} \\
+& Tested with: \hyperlink{T070}{T070} Implements: \hyperlink{MAC050}{MAC050} \\
 & The GUI has a button with an on click event which opens a file explorer. The explorer filters the files that only files of the format .jpg, .png, .bmp are listed.\\
 & \\
 \textbf{MFR080} \hypertarget{MFR080}& \textbf{Choosing \gls{dp}}\\
-& Tested with: \hyperlink{T080}{T080} Implements: \hyperlink{MAC50}{MAC50} \\
+& Tested with: \hyperlink{T080}{T080} Implements: \hyperlink{MAC050}{MAC050} \\
 & The GUI has a dropdown which lists the devices which are supported. The devices which can be theoretically be accessed but are not connected to the \gls{host pc} or the communication with them does not work are grayed out and not clickable. \\
 & \\
 \textbf{MFR090}\hypertarget{MFR090} & \textbf{Choosing \gls{om}}\\
-& Tested with: \hyperlink{T090}{T090} Implements: \hyperlink{MAC50}{MAC50}  \\
+& Tested with: \hyperlink{T090}{T090} Implements: \hyperlink{MAC050}{MAC050}  \\
 & The GUI has dropdown which lists the different modes (high \gls{performance} mode, low \gls{power consumption} mode and high energy effiency mode). The \gls{power consumption} in Watts and \gls{performance} in \gls{flops} are also stated behind the operating mode names.
 \end{tabular}
 \subsubsection{Can}
