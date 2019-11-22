@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\obj\Debug\
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\
 GUI_Demo
 none
 false
 DEBUG;TRACE
-C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\App.xaml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\App.xaml
 5-1686496705
 
-9-1420641055
-18523579984
+10-979096384
+18761770565
 Detection.xaml;ImageClassification.xaml;MainWindow.xaml;Topology.xaml;Train.xaml;
 
-False
+True
 

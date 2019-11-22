@@ -10,7 +10,12 @@
         <StackPanel Orientation="Horizontal">
             <GroupBox Header="Choose the configuration and input" Margin="10">
                 <StackPanel Orientation="Vertical" Margin="10">
-                    <Button Width="150" Content="Choose image" Margin="10"/>
+                    <ComboBox Width="150" Margin="10" SelectedIndex="0">
+                        <ComboBoxItem>Single Image</ComboBoxItem>
+                        <ComboBoxItem>Image folder</ComboBoxItem>
+                        <ComboBoxItem>Video</ComboBoxItem>
+                        <ComboBoxItem>Camera</ComboBoxItem>
+                    </ComboBox>
                     <Button Width="150" Content="Choose neural network" Margin="10"/>
                     <ComboBox Width="150" Margin="10" SelectedIndex="0">
                         <ComboBoxItem>High Performance mode - 166 GFLOPs, 86W</ComboBoxItem>
