@@ -28,8 +28,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>156</x>
-      <y>192</y>
+      <x>150</x>
+      <y>264</y>
       <w>96</w>
       <h>54</h>
     </coordinates>
@@ -189,19 +189,19 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>246</x>
-      <y>216</y>
-      <w>48</w>
-      <h>210</h>
+      <x>240</x>
+      <y>288</y>
+      <w>54</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>60.0;330.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;210.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>156</x>
-      <y>258</y>
+      <x>150</x>
+      <y>192</y>
       <w>96</w>
       <h>54</h>
     </coordinates>
@@ -212,35 +212,24 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>222</x>
-      <y>252</y>
-      <w>72</w>
-      <h>174</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;270.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>246</x>
+      <x>240</x>
       <y>210</y>
-      <w>228</w>
-      <h>84</h>
+      <w>234</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>360.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>370.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>246</x>
-      <y>216</y>
-      <w>228</w>
-      <h>96</h>
+      <x>240</x>
+      <y>288</y>
+      <w>234</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>360.0;140.0;10.0;10.0</additional_attributes>
+    <additional_attributes>370.0;20.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
