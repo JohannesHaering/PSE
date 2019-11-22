@@ -277,19 +277,20 @@ The operating system is XUbuntu 18.04.
 each followed by a list of layer-parameters in the format \textit{<name> = <value>}\\
 & In the last section the weights and biases for each layer are listed.\\
 & \\
-\textbf{PD030}\hypertarget{PD030} & \textbf{No neural network size optimization}\\
-& No techniques for memory usage reduction like \gls{prunning} or \gls{binarisation} will be implemented.\\
+\textbf{PD030}\hypertarget{PD030} & \textbf{Labeled image set for classification training}\\
+& The dataset is chosen by the user. The dataset is a directory with images and each image name has the format \\
+& \textit{<id of image>\_<image class>}.\\
 &\\
 \textbf{PD040}\hypertarget{PD040} & \textbf{Labeled set of images for object detection training}\\
 & It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
 & \\
 \textbf{PD050}\hypertarget{PD050} & \textbf{Output format of image classification results if saved}\\
-& If the output result of the classification is saved this is saved as a .txt file with the name of the image. The format is \textit{<image class name> = <probability>}, one row for each image class.\\
-& If multiple images are classified, there are multiple .txt files.\\
+& If stored, the classification output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <probability>}, one row for each image class.\\
+& If multiple images are processed, multiple .txt files will be created.\\
 & \\
 \textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
-& If the output result of the detection is saved this is saved as a .txt file with the name of the image. The format is \textit{<image class name> = <probability>, <X>, <Y>, <width>, <height>}, one row for each image class.\\
-& If multiple images are detected, there are multiple .txt files.\\
+& If stored, the detection output will be saved in a <image name>.txt file. The format is \textit{<image class name> = <probability>, <X>, <Y>, <width>, <height>}, one row for each detected object.\\
+& If multiple images are processed, multiple .txt files will be created.\\
 & \\
 \textbf{PD070\hypertarget{PD070}} & \textbf{Video input}\\
 & The input video is in a .avi format.
