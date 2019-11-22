@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLActor</id>
@@ -7,7 +6,7 @@
       <x>196</x>
       <y>469</y>
       <w>42</w>
-      <h>77</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Actor</panel_attributes>
     <additional_attributes/>
@@ -29,10 +28,10 @@ halign=left</panel_attributes>
     <coordinates>
       <x>406</x>
       <y>161</y>
-      <w>315</w>
+      <w>217</w>
       <h>686</h>
     </coordinates>
-    <panel_attributes>DetectionPage
+    <panel_attributes>ClassificationPage
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
@@ -68,7 +67,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Choose input par.
+    <panel_attributes>Dropdown
+Input Mode
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -80,7 +80,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Choose Neural Network
+    <panel_attributes>Choose 
+Neural Network/s
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -92,7 +93,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Dropdown Modes
+    <panel_attributes>Dropdown 
+Hardware Mode
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -104,7 +106,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Show result
+    <panel_attributes>Save 
+single result
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -116,7 +119,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Dropdown platform
+    <panel_attributes>Dropdown 
+Hardware Platform
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -128,7 +132,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Choose output par.
+    <panel_attributes>Choose 
+Output Modes
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -310,7 +315,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Save Result
+    <panel_attributes>Save 
+all results
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -322,7 +328,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Show Result
+    <panel_attributes>Show 
+all results
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -456,7 +463,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Choose file/s
+    <panel_attributes>Choose 
+file/s
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -591,29 +599,6 @@ valign=center</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;360.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>574</x>
-      <y>749</y>
-      <w>112</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>Save result
-valign=center</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>490</x>
-      <y>700</y>
-      <w>140</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
