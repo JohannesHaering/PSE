@@ -56,3 +56,32 @@ C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.csp
 C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.csproj.CopyComplete
 C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.exe
 C:\Users\Johannes\Documents\Projekte\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.pdb
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\GUI Demo.exe.config
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\GUI Demo.exe
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\GUI Demo.pdb
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\InteractiveDataDisplay.WPF.dll
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\System.Reactive.dll
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\InteractiveDataDisplay.WPF.pdb
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\bin\Debug\System.Reactive.xml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.csprojAssemblyReference.cache
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Detection.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\ImageClassification.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\MainWindow.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Topology.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Train.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\App.g.cs
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo_MarkupCompile.cache
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo_MarkupCompile.lref
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Detection.baml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\ImageClassification.baml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\MainWindow.baml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Topology.baml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\Train.baml
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.g.resources
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI_Demo.Properties.Resources.resources
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.csproj.GenerateResource.cache
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.csproj.CopyComplete
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.exe
+C:\Users\Johannes\Documents\Projekte\Uni\PSE\GUIDemo\GUI Demo\obj\Debug\GUI Demo.pdb
