@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc} % use utf8 file encoding for TeX sources
 \usepackage[T1]{fontenc}    % avoid garbled Unicode text in pdf
 \usepackage[german]{babel}  % german hyphenation, quotes, etc
-\usepackage{hyperref}       % detailed hyperlink/pdf configuration
+%\usepackage{bookmark}       % http://ctan.org/pkg/bookmark % fix has been ref. but does not exist error
 \usepackage{graphicx}       % provides commands for including figures
 \usepackage{csquotes}       % provides \enquote{} macro for "quotes"
 \usepackage[nonumberlist]{glossaries}     % provides glossary commands
@@ -10,7 +10,8 @@
 \usepackage{setspace}
 \usepackage{subfigure}
 \usepackage{pgf}
-
+\usepackage{hyperref}       % detailed hyperlink/pdf configuration %should be loaded as last package
+ 
 \makenoidxglossaries
 
 \newglossaryentry{nn}
@@ -174,63 +175,63 @@ Additionally, the software can be extended to be used for image detection, class
 \section{Criteria}
 \subsection{Must Acceptance criteria}
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{MAC010} & \textbf{Image classification} \\
+\textbf{MAC010} \hypertarget{MAC010} & \textbf{Image classification} \\
 & The software can take a single image as input and returns the possiblities for each predefined \gls{ic}. The prediction is based on a pretrained \gls{nn}.\\
 & \\
-\textbf{MAC020} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
+\textbf{MAC020} \hypertarget{MAC020} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
 & The software is able to communicate with \gls{cpu} and \gls{fpga}. The software is able to offload calculations to the different \glspl{dp} and receive the results.\\
 & \\
-\textbf{MAC030} & \textbf{Different \glspl{om}} \\
+\textbf{MAC030} \hypertarget{MAC030} & \textbf{Different \glspl{om}} \\
 & The software has three \glspl{om}. One mode for high perfomance, one for low \gls{power consumption} and one for high energy efficiency. \\
 & \\
-\textbf{MAC040} & \textbf{Performance and \gls{power consumption} prediction}\\
+\textbf{MAC040} \hypertarget{MAC040} & \textbf{Performance and \gls{power consumption} prediction}\\
 & The software can predict the \gls{performance} with a certain \gls{power consumption} and also the \gls{power consumption} for a certain \gls{performance}.\\
 & \\
-\textbf{MAC050} & \textbf{GUI for interacting with software} \\
+\textbf{MAC050} \hypertarget{MAC050} & \textbf{GUI for interacting with software} \\
 & The user is able to access the entire functionality described in MAC010-MAC040 just by using the GUI. No coding or command line usage is required.
 \end{tabular}
 
 \subsection{Can Acceptance criteria}
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{CAC070} & \textbf{Illustration of the topology of a \gls{nn}} \\
+\textbf{CAC070} \hypertarget{CAC070} & \textbf{Illustration of the topology of a \gls{nn}} \\
 & The software is able to visualise the topology of a given \gls{nn} (see figure 9). \\
-\textbf{CAC071} & \textbf{The visualised \gls{nn} can be saved}\\
+\textbf{CAC071} \hypertarget{CAC071} & \textbf{The visualised \gls{nn} can be saved}\\
 & The visualized \gls{nn} is saved as a .png file in a chosen directory.\\
 & \\
-\textbf{CAC080} & \textbf{Object Detection} \\
+\textbf{CAC080} \hypertarget{CAC080} & \textbf{Object Detection} \\
 & The software can detect the \gls{bb} of an object. \\ 
 & \\
-\textbf{CAC090} &  \textbf{Using different models}\\
+\textbf{CAC090} \hypertarget{CAC090} &  \textbf{Using different models}\\
 & The user is able to use different pretrained \glspl{nn} before an \gls{image classification} process. \\
 & \\
-\textbf{CAC100} & \textbf{Training \glspl{nn}} \\
+\textbf{CAC100} \hypertarget{CAC100} & \textbf{Training \glspl{nn}} \\
 & The software allows the user to train a \gls{nn} based on an predefined architecture.\\
 & Neural networks trained by the user will be executed the same way \glspl{nn} provided with the software are executed.\\
 & \\
-\textbf{CAC110} & \textbf{Voting of multiple \glspl{nn}} \\
+\textbf{CAC110} \hypertarget{CAC110} & \textbf{Voting of multiple \glspl{nn}} \\
 & The user is able to choose multiple \glspl{nn} for classification.\\
 & The software will then execute all selected \glspl{nn} sequentially. The result presented to the user will be based on the weighted results of the different \glspl{nn}.\\
 & \\
-\textbf{CAC120} & \textbf{Using video for classification} \\
+\textbf{CAC120} \hypertarget{CAC120} & \textbf{Using video for classification} \\
 & The software is able to take a video, divide it into a certain amount of frames and perform \gls{image classification} for each frame.\\
 & The classified frames are shown and can be iterated by the user. \\
 & \\
-\textbf{CAC130} & \textbf{Using camera for classification as input} \\
+\textbf{CAC130} \hypertarget{CAC130} & \textbf{Using camera for classification as input} \\
 & The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame.\\
 & \\
-\textbf{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
-& MAC020 is extended by \gls{gpu}.\\
+\textbf{CAC140} \hypertarget{CAC140} & \textbf{Running \gls{nn} on \gls{gpu}}\\
+& \hyperlink{MAC020}{MAC020} is extended by \gls{gpu}.\\
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{CAC150} & \textbf{Dropdown Menu for input mode selection}\\
+\textbf{CAC150} \hypertarget{CAC150} & \textbf{Dropdown Menu for input mode selection}\\
 & The software allows the user to select his preferred image input method using a dropdown menu.\\
 & The dropdown menu entries are: ``Single Image'', ``Folder'', ``Camera'', ``TXT file with img paths''\\
 & \\
-\textbf{CAC160} & \textbf{Output parameter ``save all results''}\\
+\textbf{CAC160} \hypertarget{CAC160} & \textbf{Output parameter ``save all results''}\\
 & The software allows the user to select if the classification/detection output of each processed image should automatically be saved.\\
 & \\
-\textbf{CAC170} & \textbf{Output parameter ``show all results''}\\
+\textbf{CAC170} \hypertarget{CAC170} & \textbf{Output parameter ``show all results''}\\
 & The software allows the user to select if the software should wait for a user input after each image.\\
 & If selected, the classification/ detection output for an image will be shown and the user has to click a button to continue with the next image.\\
 & If not choosen, all selected images should be processed in the background and detached from the gui.\\
@@ -310,7 +311,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Can}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CFR170} \hypertarget{CFR170} & \textbf{Voting of multiple \glspl{nn}}\\
-& Tested with: \hyperlink{T170}{T170} T170 Implements: \hyperlink{CAC110}{CAC110} \\
+& Tested with: \hyperlink{T170}{T170} Implements: \hyperlink{CAC110}{CAC110} \\
 & The user can choose multiple \glspl{nn}. The \gls{image classification} is done on every \gls{nn} seperately and the results are weighted and accumulated.\\
 
 \end{tabular}
@@ -404,7 +405,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & To adjust the learning proccess of the \gls{nn} the user can change the speed of how fast the weights and biases will be changed with a textbox. Only floats are valid.\\
 & \\
 \textbf {CFR120} \hypertarget{CFR120} & \textbf{Visualisiaton of \gls{nn}} \\
-& Tested with: \hyperlink{T120}{T120} Implements: \hyperlink{CA070}{CA070} \\
+& Tested with: \hyperlink{T120}{T120} Implements: \hyperlink{CAC070}{CAC070} \\
 & The software is able to visualise the topology of a \glspl{nn} (see figure 9) \\
 \textbf{CFR121} \hypertarget{CFR121} & \textbf{Saving the visualisation}\\
 & Tested with: Implements: \hyperlink{CAC071}{CAC071} \\
@@ -636,7 +637,7 @@ T111.1 & \textbf{State:} The training finishes.\\
 T112.2 & \textbf{State:} The file explorer is open.\\
 & \textbf{Action:} The user chooses the folder with the images. \\
 & \textbf{Reaction:} The program automatically iterates over all images and reads the given data that can be used for training.\\
-\textbf{T113} \hypertarget{T131}& \textbf{Backpropagation}\\
+\textbf{T113} \hypertarget{T113}& \textbf{Backpropagation}\\
 T113.1 & \textbf{State:} The user is on the training page, a dataset, a \gls{nn}, learning rate and desired precision are given.\\
 & \textbf{Action:} The user clicks on \glqq Train\grqq.\\
 & \textbf{Reaction:} The software adjusts the weights and biases of the corresponding \gls{nn} via backpropagation to improve its precision. These changes are then shown with a diagram.\\
