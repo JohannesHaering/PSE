@@ -313,7 +313,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & Tested with: \hyperlink{T012}{T012} Implements: \hyperlink{MAC010}{MAC010} \\
 & The software is able to read a configuration file of a \gls{nn} and parse for MFR011.\\
 \textbf{MFR013} & \textbf{Layerimplementation}\\
-& Tested with: Implements: \hyperlink{MAC010}{MAC010}\\
+& Tested with: \hypertarget{T010}{T010} Implements: \hyperlink{MAC010}{MAC010}\\
 & The software implements \gls{nn} layers needed for deploying convolutional networks. Those are layers such as convolutional, dropout, fully-connected, depth-concat layer.
 \end{tabular}
 \subsubsection{Can}
@@ -513,10 +513,10 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 
 \section{Test cases}
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{T010} \hypertarget{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
+\textbf{T010} \hypertarget{T010} & \textbf{Use a \gls{nn} for \gls{img} classification}\\
 T010.1& \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
-& \textbf{Result:} The image is classified as elephant by the \gls{nn} and results are shown.\\
+& \textbf{Result:} The image is classified as elephant by the \gls{nn} and the results are shown.\\
 & \\
 \textbf{T011} \hypertarget{T011} & \textbf{Deploy pre-trained \gls{nn}}\\
 T011.1 & \textbf{State:} The pretrained \gls{nn} is loaded and parsed.\\
