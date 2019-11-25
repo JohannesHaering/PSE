@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLActor</id>
@@ -6,7 +7,7 @@
       <x>182</x>
       <y>469</y>
       <w>42</w>
-      <h>70</h>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Actor</panel_attributes>
     <additional_attributes/>
@@ -28,7 +29,7 @@ halign=left</panel_attributes>
     <coordinates>
       <x>378</x>
       <y>161</y>
-      <w>231</w>
+      <w>259</w>
       <h>686</h>
     </coordinates>
     <panel_attributes>DetectionPage
@@ -81,7 +82,7 @@ valign=center</panel_attributes>
       <h>63</h>
     </coordinates>
     <panel_attributes>Choose 
-Neural Network
+neural network
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -94,15 +95,15 @@ valign=center</panel_attributes>
       <h>63</h>
     </coordinates>
     <panel_attributes>Dropdown 
-Hardware Mode
+operating mode
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>434</x>
-      <y>756</y>
+      <x>385</x>
+      <y>770</y>
       <w>112</w>
       <h>63</h>
     </coordinates>
@@ -119,8 +120,8 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>Dropdown 
-Hardware Platform
+    <panel_attributes>Checkboxes for
+deployment platform
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -206,7 +207,7 @@ halign=left</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>HighestPerformance
+    <panel_attributes>HighPerformance
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -218,7 +219,7 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>HighestEfficiency
+    <panel_attributes>HighEfficiency
 valign=center</panel_attributes>
     <additional_attributes/>
   </element>
@@ -230,7 +231,7 @@ valign=center</panel_attributes>
       <w>112</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>LowestPower
+    <panel_attributes>LowPower
 valign=center
 </panel_attributes>
     <additional_attributes/>
@@ -435,13 +436,13 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>476</x>
+      <x>427</x>
       <y>700</y>
-      <w>21</w>
-      <h>70</h>
+      <w>70</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -632,5 +633,40 @@ valign=center</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;370.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>511</x>
+      <y>770</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Show 
+single result
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>700</y>
+      <w>98</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>476</y>
+      <w>231</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;420.0</additional_attributes>
   </element>
 </diagram>

@@ -1,4 +1,4 @@
-\documentclass[parskip=full]{scrartcl}
+ \documentclass[parskip=full]{scrartcl}
 \usepackage[utf8]{inputenc} % use utf8 file encoding for TeX sources
 \usepackage[T1]{fontenc}    % avoid garbled Unicode text in pdf
 \usepackage[english]{babel}  % german hyphenation, quotes, etc
@@ -178,7 +178,7 @@ Additionally, the software can be extended to be used for image detection, class
 \subsection{Must Acceptance criteria}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MAC010} \hypertarget{MAC010} & \textbf{Image classification} \\
-& The software can take multiple \glspl{img} as input and returns the possiblities for each class for each predefined \gls{ic}. The prediction is based on a pretrained \gls{nn}.\\
+& The software can take multiple \glspl{img} as input and returns the possiblities for each predefined \gls{ic} for each \gls{img}. The prediction is based on a pretrained \gls{nn}.\\
 & \\
 \textbf{MAC020} \hypertarget{MAC020} & \textbf{Running \gls{nn} on heterogeneous platforms} \\
 & The software is able to communicate with \gls{cpu} and \gls{fpga}. The software is able to offload calculations to the different \glspl{dp} and receive the results.\\
@@ -197,7 +197,7 @@ Additionally, the software can be extended to be used for image detection, class
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CAC070} \hypertarget{CAC070} & \textbf{Illustration of the topology of a \gls{nn}} \\
 & The software is able to visualise the topology of a given \gls{nn} (see figure 9). \\
-\textbf{CAC071} \hypertarget{CAC071} & \textbf{The visualised \gls{nn} can be saved}\\
+\textbf{CAC071} \hypertarget{CAC071} & \textbf{The visualisation of the \gls{nn} can be saved}\\
 & The visualized \gls{nn} is saved as a .png file in a chosen directory.\\
 & \\
 \textbf{CAC080} \hypertarget{CAC080} & \textbf{Object Detection} \\
@@ -207,7 +207,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The user is able to choose different pretrained \glspl{nn} to use, before an \gls{image classification} process. \\
 & \\
 \textbf{CAC100} \hypertarget{CAC100} & \textbf{Training \glspl{nn}} \\
-& The software allows the user to train a \gls{nn} based on an predefined architecture.\\
+& The software allows the user to train a \gls{nn} based on an predefined topology.\\
 & Neural networks trained by the user will be executed the same way \glspl{nn} provided with the software are executed.\\
 & \\
 \textbf{CAC110} \hypertarget{CAC110} & \textbf{Voting of multiple \glspl{nn}} \\
@@ -216,7 +216,7 @@ Additionally, the software can be extended to be used for image detection, class
 & \\
 \textbf{CAC120} \hypertarget{CAC120} & \textbf{Using video for classification} \\
 & The software is able to take a video, divide it into a certain amount of frames and perform \gls{image classification} for each frame.\\
-& The classified frames are shown and can be iterated by the user. \\
+& The classified frames with their results are shown and can be iterated by the user. \\
 & \\
 \textbf{CAC130} \hypertarget{CAC130} & \textbf{Using camera for classification as input} \\
 & The software takes the current frame from the camera connected to the \gls{host pc}, classifies it, displays the results and then when ready, takes the next available frame and processes it.\\
@@ -231,7 +231,7 @@ Additionally, the software can be extended to be used for image detection, class
 & The dropdown menu entries are: \glqq Image(s)\grqq, \glqq Camera\grqq, \glqq .txt file with \gls{img} paths\grqq.\\
 & \\
 \textbf{CAC160} \hypertarget{CAC160} & \textbf{Output parameter \glqq save all results\grqq}\\
-& The software allows the user to select if the classification/detection output of each processed image should automatically be saved.\\
+& The software allows the user to select if the classification/detection output of each processed image should automatically be saved or not.\\
 & \\
 \textbf{CAC170} \hypertarget{CAC170} & \textbf{Output parameter \glqq show all results \grqq}\\
 & The software allows the user to select if the software should wait for a user input after each image.\\
@@ -258,6 +258,7 @@ Additionally, the software can be extended to be used for image detection, class
 \textbf{D050} & \textbf{No input from commandline}\\
 & The software does not support commandline input. The features are only useable with the GUI.
 \end{tabular}
+\newpage
 
 \section{Product environment}
 The software runs on a computer in the lab at the CDNC institute. It has a CPU and an external FPGA connected via USB. Additionally, there is a \gls{gpu}.\\ 
@@ -270,7 +271,7 @@ The operating system is XUbuntu 18.04.
 & The user can choose images of the format .jpg, .png, .bmp. The images are chosen by the user with the file explorer.\\
 & \\
 \textbf{PD020} \hypertarget{PD020} & \textbf{Config/weight file of pretrained model}\\
-& The config file is a .cfg file with four sections, separated by <section>:\\
+& The config file is a .cfg file with four sections, separated by \textit{<section>:}\\
 & In the first, the class names are given, one per line.\\
 & In the second, hyperparameters are described as \textit{<name> = <value>}. \\
 & In the third, layers are described in their order with the following format \textit{\lbrack kind of layer\rbrack}, 
@@ -283,14 +284,16 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 &\\
 \textbf{PD040}\hypertarget{PD040} & \textbf{Labeled set of images for object detection training}\\
 & It is a .txt file in the same directory as the images. The images are labeled with their name. The bounding box for each image are described in the .txt file with the same name as the image, in the format \textit{image class, x, y, width, height}. (X,Y) are the coordinates of the left bottom corner. (X, Y), width and height are relative. \\
-& \\
+\end{tabular}
+\newpage
+\begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{PD050}\hypertarget{PD050} & \textbf{Output format of image classification results if saved}\\
 & If the output result of the classification is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
 & If multiple images are classified, there are multiple .txt files.\\
 & \\
 \textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
 & If the output result of the detection is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>, <X>, <Y>, <width>, <height>}, one row for each image class.\\
-& If multiple images are detected, there are multiple .txt files.\\
+& If multiple images are detected, there is one .txt file for each input image.\\
 & \\
 \textbf{PD070\hypertarget{PD070}} & \textbf{Video input}\\
 & The input video is in a .avi format.
@@ -301,21 +304,23 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \subsubsection{Must}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{MFR010}\hypertarget{MFR010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
-& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010} MAC010 \\                                    
-& A \gls{nn} is used to classify \gls{img}. The result is a list of prohabilities per image class.\\
+& Tested with: \hyperlink{T010}{T010} Implements: \hyperlink{MAC010}{MAC010} \\                                    
+& A \gls{nn} is used to classify \glspl{img}. The result is a list of prohabilities per image class.\\
 \textbf{MFR011}\hypertarget{MFR011} & \textbf{Deploy pre-trained \gls{nn} with the corresponding layers}\\
 & Tested with: \hyperlink{T011}{T011} Implements: \hyperlink{MAC010}{MAC010} \\
 & A pre-trained \gls{nn} is deployed with its layers to a specified platform. The deployed \gls{nn} is used for MFR010.\\
-\textbf{MFR012} \hypertarget{MFR012}& \textbf{Reading and parsing a \gls{nn} configuration/weight file}\\
+\textbf{MFR012} \hypertarget{MFR012}& \textbf{Reading and parsing a \gls{nn} configuration file}\\
 & Tested with: \hyperlink{T012}{T012} Implements: \hyperlink{MAC010}{MAC010} \\
-& The software is able to read a configuration file of a \gls{nn} and parse it for MFR011.\\
-& \\
+& The software is able to read a configuration file of a \gls{nn} and parse for MFR011.\\
+\textbf{MFR013} & \textbf{Layerimplementation}\\
+& Tested with: Implements: \hyperlink{MAC010}{MAC010}\\
+& The software implements \gls{nn} layers needed for deploying convolutional networks. Those are layers such as convolutional, dropout, fully-connected, depth-concat layer.
 \end{tabular}
 \subsubsection{Can}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CFR170} \hypertarget{CFR170} & \textbf{Voting of multiple \glspl{nn}}\\
 & Tested with: \hyperlink{T170}{T170} Implements: \hyperlink{CAC110}{CAC110} \\
-& The user can choose multiple \glspl{nn}. The \gls{image classification} is done on every \gls{nn} seperately and the results are weighted and accumulated.\\
+& The user can choose multiple \glspl{nn}. The \gls{image classification} is done on every \gls{nn} seperately and the results are weighted and accumulated. The accumulated result is shown.\\
 \end{tabular}
 
 
@@ -391,13 +396,13 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & \\
 \textbf{MFR090}\hypertarget{MFR090} & \textbf{Choosing \gls{om}}\\
 & Tested with: \hyperlink{T090}{T090} Implements: \hyperlink{MAC050}{MAC050}  \\
-& The GUI has dropdown which lists the different modes (high \gls{performance} mode, low \gls{power consumption} mode and high energy effiency mode). The \gls{power consumption} in Watts and \gls{performance} in \gls{flops} are also stated behind the operating mode names.
+& The GUI has a dropdown which lists the different modes (high \gls{performance} mode, low \gls{power consumption} mode and high energy effiency mode). The \gls{power consumption} in Watts and \gls{performance} in \gls{flops} are also stated behind the operating mode names.
 \end{tabular}
 \subsubsection{Can}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{CFR100} \hypertarget{CFR100} & \textbf{Choosing between different \glspl{nn}}\\
 & Tested with: \hyperlink{T100}{T100} Implements: \hyperlink{CAC090}{CAC090} \\
-& The GUI has a button which opens the file explorer which filters for .cfg files. There you choose the config file of the \gls{nn} which you want to use. The program loads this config and parses it so it can be deployed. Possible models would be GoogLeNet or AlexNet.\\
+& The GUI has a button which opens the file explorer which filters for .cfg files. There you choose the config file of the \gls{nn} which you want to use. The program loads this config and parses it so it can be deployed. Possible models would be GoogLeNet or AlexNet. If multiple \glspl{nn} are chosen the software uses the voting mode.\\
 & \\
 \textbf {CFR112} \hypertarget{CFR112} & \textbf{Choosing and loading data set} \\
 & Tested with: \hyperlink{T112}{T112} Implements: \hyperlink{CAC100}{CAC100}\\
@@ -503,7 +508,6 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \textbf{NFR040} & \textbf{Programming language}\\
 & The software is written in C++ and OpenCL.\\
 & \\
-& \\
 \textbf{NFR050} & \textbf{Minimal size of training dataset}\\
 & The software works with a dataset with a minimum of 100 images.
 \end{tabular}
@@ -512,9 +516,9 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \section{Test cases}
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T010} \hypertarget{T010} & \textbf{Use \gls{nn} for \gls{img} classification}\\
-T010.1& \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
+T010.1& \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given.\\
 & \textbf{Action:} The user clicks on \glqq Start \gls{image classification}\grqq.\\
-& \textbf{Result:} The image is classified by the \gls{nn} and results are shown.\\
+& \textbf{Result:} The image is classified as elephant by the \gls{nn} and results are shown.\\
 & \\
 \textbf{T011} \hypertarget{T011} & \textbf{Deploy pre-trained \gls{nn}}\\
 T011.1 & \textbf{State:} The pretrained \gls{nn} is loaded and parsed.\\
@@ -530,12 +534,12 @@ T012.2 & \textbf{State:} The file explorer is open\\
 & \textbf{Result:} The file explorer closes and the \gls{nn} is imported and selected for the classification.\\
 & \\
 \textbf{T020} \hypertarget{T020} & \textbf{High \gls{performance} \gls{om}}\\
-T020.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given .\\
+T020.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} is given .\\
 & \textbf{Action:} The user chooses to perform the calculations in high \gls{performance} \gls{om} and starts the classification.\\
 & \textbf{Result:} The calculations run considerably faster than in the other possible modes with the same conditions.\\
 & \\
 \textbf{T021} \hypertarget{T021} & \textbf{Low \gls{power consumption} \gls{om}}\\
-T021.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
+T021.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in low \gls{power consumption} \gls{om} and starts the classification.\\
 & \textbf{Result:} The calculations run with considerably lower \gls{power consumption} than with the other possible modes in the same conditions.\\
 & \\
@@ -543,9 +547,9 @@ T021.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{T022} \hypertarget{T022} & \textbf{High energy efficiency \gls{om}}\\
-T022.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} is given.\\
+T022.1 & \textbf{State:} An \gls{img} as input of an elephant, a pretrained \gls{nn}, a \gls{dp} is given.\\
 & \textbf{Action:} The user chooses to perform the calculations in high energy efficiency \gls{om} and starts the classification.\\
-& \textbf{Result:} The calculations run with regard to balance between \gls{power consumption} and speed.\\
+& \textbf{Result:} The calculations run with regard to balance between \gls{power consumption} and \gls{performance}.\\
 & \\
 \textbf{T023} \hypertarget{T023} & \textbf{Calculator for \gls{power consumption}}\\
 T022.1 & \textbf{State:} A pretrained \gls{nn}, a \gls{dp}  and the \gls{om} is given.\\
@@ -558,17 +562,17 @@ T022.1 & \textbf{State:} A pretrained \gls{nn}, a \gls{dp}  and the \gls{om} is 
 & \textbf{Result:} The new \gls{performance} is calculated automatically and then shown.\\
 & \\
 \textbf{T030} \hypertarget{T030} & \textbf{Support CPU for calculation} \\
-T030.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, CPU as \gls{dp} and an \gls{om} is given. \\
+T030.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, CPU as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Result:} Elephant has the highest probability. \\
 & \\
 \textbf{T031} \hypertarget{T031} & \textbf{Support FPGA for calculation} \\
-T031.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, FPGA as \gls{dp} and an \gls{om} is given. \\
+T031.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, FPGA as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \glqq Start \gls{image classification}\grqq \\
 & \textbf{Result:} Elephant has the highest probability. \\
 & \\
 \textbf{T040} \hypertarget{T040} & \textbf{Send image for classification} \\
-T040.1 & \textbf{State:} An \gls{img} as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
+T040.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} The user starts \gls{image classification}  \\
 & \textbf{Result:} The software sends the image as array to the selected platform.\\
 \end{tabular}
@@ -655,7 +659,7 @@ T114.1 & \textbf{State:} The user chose a \gls{nn}, the dataset and the desired 
 & \textbf{Action:} The user changes the learning rate to a smaller number and starts training. \\
 & \textbf{Result:} The \gls{nn} adjusts its weights but with smaller significance of one image. \\
 &\\
-\textbf{T115} \hypertarget{T115}& \textbf{Fit the output layer to the maount of image classes}\\
+\textbf{T115} \hypertarget{T115}& \textbf{Fit the output layer to the amount of image classes}\\
 T115.1 & \textbf{State:} The user chose a \gls{nn} with ten output nodes and a dataset with 12 image classes.\\
 & \textbf{Action:} The user starts the training\\
 & \textbf{Result:} The output layer is extended by two nodes as well as weights for the new connections are initilised. \\
