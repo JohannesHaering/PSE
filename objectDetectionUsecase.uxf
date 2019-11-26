@@ -27,9 +27,9 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>378</x>
+      <x>364</x>
       <y>161</y>
-      <w>259</w>
+      <w>273</w>
       <h>686</h>
     </coordinates>
     <panel_attributes>DetectionPage
@@ -484,23 +484,13 @@ valign=center</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>273</y>
-      <w>126</w>
-      <h>42</h>
+      <y>259</y>
+      <w>133</w>
+      <h>35</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>160.0;40.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>154</x>
-      <y>147</y>
-      <w>294</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>400.0;220.0;10.0;10.0;10.0;140.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+&lt;&lt;opens&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -668,5 +658,17 @@ valign=center</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;310.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>105</y>
+      <w>301</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+&lt;&lt;opens&gt;&gt;</panel_attributes>
+    <additional_attributes>410.0;240.0;270.0;20.0;160.0;20.0;10.0;200.0</additional_attributes>
   </element>
 </diagram>
