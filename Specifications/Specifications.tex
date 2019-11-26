@@ -413,6 +413,9 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \textbf{CFR132} \hypertarget{CFR115} & \textbf{Change desired prediction}\\
 & Tested with: \hyperlink{T114}{T114} Implements: \hyperlink{CAC100}{CAC100}\\
 & To adujust the precision of a newly trainend \gls{nn} the user can enter the desired precision of the \gls{nn}. If the \gls{nn} achieves the desired precision on the test set it stops and displays a message to the user. Valid values are floating point numbers between 0 and 1.\\
+\textbf{CFR133} \hypertarget{CFR116} & \textbf{Choose output name}\\
+& Tested with: \hyperlink{T111}{T111} Implements: \hyperlink{CAC100}{CAC100}\\
+& The user can choose with a textbox the name of the newly trained \gls{nn}.\\
 & \\
 \textbf {CFR140} \hypertarget{CFR120} & \textbf{Visualisiaton of \gls{nn}} \\
 & Tested with: \hyperlink{T120}{T120} Implements: \hyperlink{CAC070}{CAC070} \\
@@ -460,7 +463,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & The user chooses a \gls{nn} and a new imageset and trains the \gls{nn} on this new imageset. If it is pretrained it uses transfer learning with the existing weights otherwise random values.\\
 \textbf {CFR191} \hypertarget{CFR111} & \textbf{Saving newly trained \gls{nn}} \\
 & Tested with: \hyperlink{T111}{T111} Implements: \hyperlink{CAC100}{CAC100} \\
-& The software is able to take the weights and config of an newly trained \glspl{nn} and save it as .cfg file. \\
+& The software is able to take the weights and config of an newly trained \glspl{nn} and save it as .cfg file in the same directory as the chosen \gls{nn}. \\
 \textbf {CFR192} \hypertarget{CFR113} & \textbf{Backpropagation} \\
 & Tested with: \hyperlink{T113}{T113} Implements: \hyperlink{CAC100}{CAC100} \\
 & The software is able to adjust the weights and biases of the \gls{nn} in the training process with backpropagation.\\
