@@ -226,7 +226,7 @@ Additionally, the software can be extended to be used for image detection, class
 \end{tabular}
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
-\textbf{CAC150} \hypertarget{CAC150} & \textbf{Dropdown Menu for input mode selection}\\
+\textbf{CAC150} \hypertarget{CAC150} & \textbf{Input mode selection}\\
 & The software allows the user to select his preferred image input method using a dropdown menu.\\
 & The dropdown menu entries are: \grqq Image(s)\grqq, \grqq Camera\grqq, \grqq .txt file with \gls{img} paths\grqq.\\
 & \\
@@ -288,7 +288,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 \newpage
 \begin{tabular}{p{2cm}p{11.4cm}}
 \textbf{PD050}\hypertarget{PD050} & \textbf{Output format of image classification results if saved}\\
-& If the output result of the classification is saved this is saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
+& If the output result of the classification is saved, the results are saved as a .txt file with the name format \textit{<image name>\_<neural network name>\_<number>}. The format is \textit{<image class name> = <prohability>}, one row for each image class.\\
 & If multiple images are classified, there are multiple .txt files.\\
 & \\
 \textbf{PD060}\hypertarget{PD060} & \textbf{Output format of image detection results if saved}\\
@@ -833,7 +833,7 @@ If the user clicks the save button the file explorer opens. The user can choose 
 \includegraphics[width=\textwidth]{objectDetectionUsecase}
 \caption{Usecase of the image detection page}
 \end{figure}
-The description is nearly the same as for image detection, see 10.2.1. Image classification is substituted by object detection.
+The interaction with the software is the same as in the use case with classification. Only the result differs, as the \gls{bb} are also calculated.
 \newpage
 \subsubsection{Show topology page}
 \begin{figure}[htb!]
