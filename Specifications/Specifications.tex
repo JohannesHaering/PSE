@@ -431,7 +431,7 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & Tested with: \hyperlink{T140}{T140} Implements: \hyperlink{CAC120}{CAC120} CAC120 \\
 & The user can choose a video and the software can use it as input for the classification/detection process.\\
 & \\
-\textbf{CFR170} \hypertarget{CFR180} & \textbf{Dropdown menu for input selection}\\
+\textbf{CFR170} \hypertarget{CFR180} & \textbf{Input selection}\\
 & Tested with: \hyperlink{T180}{T180} Implements: \hyperlink{CAC160}{CAC160} \\
 & A dropdown menu is part of the classification and detection page.\\
 & It contains the four options: Single Images, Image folder, Camera, .txt File with Img Paths\\
@@ -440,13 +440,13 @@ each followed by a list of layer-parameters in the format \textit{<name> = <valu
 & .txt File with \gls{img} paths opens the file explorer with filter for .txt files. \\
 & Camera opens a connection to a connected camera and receives the video stream.\\
 & \\
-\textbf{CFR180} \hypertarget{CFR190} & \textbf{Selector for output parameter \grqq save all results\grqq}\\
+\textbf{CFR180} \hypertarget{CFR190} & \textbf{Output parameter \grqq save all results\grqq}\\
 & Tested with: \hyperlink{T190}{T190} Implements: \hyperlink{CAC160}{CAC160} \\
 & A checkbox is part of the classification and detection page.\\
 & If selected, for each image which has been selected by the user, the classification/ detection output will be stored as described in \hyperlink{PD050}{PD050} and \hyperlink{PD060}{PD060}. Each output file is saved in the same folder as the input file.\\
 & If a camera is chosen as input, the output will be stored in a \grqq camera\grqq folder\\
 & \\
-\textbf{CFR181} \hypertarget{CFR200} & \textbf{Selector for output parameter \grqq show all images\grqq}\\
+\textbf{CFR181} \hypertarget{CFR200} & \textbf{Output parameter \grqq show all images\grqq}\\
 & Tested with: \hyperlink{T200}{T200} Implements:  \hyperlink{CAC170}{CAC170}\\
 & If selected, the results can be skipped through. One image with its result is shown at a time.\\
 & If not selected, all images chosen by the user will be processed continuously without showing classification/ detection output in the GUI.\\
@@ -565,12 +565,12 @@ T022.1 & \textbf{State:} A pretrained \gls{nn}, a \gls{dp}  and the \gls{om} is 
 \textbf{T030} \hypertarget{T030} & \textbf{Support CPU for calculation} \\
 T030.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, CPU as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \grqq Start \gls{image classification}\grqq \\
-& \textbf{Result:} Elephant has the highest probability. \\
+& \textbf{Result:} The \gls{ic} elephant has the highest probability. \\
 & \\
 \textbf{T031} \hypertarget{T031} & \textbf{Support FPGA for calculation} \\
 T031.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, FPGA as \gls{dp} and an \gls{om} is given. \\
 & \textbf{Action:} Click on the button \grqq Start \gls{image classification}\grqq \\
-& \textbf{Result:} Elephant has the highest probability. \\
+& \textbf{Result:} The \gls{ic} elephant has the highest probability. \\
 & \\
 \textbf{T040} \hypertarget{T040} & \textbf{Send image for classification} \\
 T040.1 & \textbf{State:} An \gls{img} of an elephant as input, a pretrained \gls{nn}, a \gls{dp} and an \gls{om} is given. \\
@@ -728,7 +728,7 @@ T160.1 & \textbf{State:} The classification window is open. An \gls{img} as inpu
 \textbf{T170} \hypertarget{170} & \textbf{Voting of multiple \gls{nn}}\\
 T170.1 & \textbf{State:} The user is on the classification page. He has chosen three different \gls{nn}, an \gls{img}, an mode, a \gls{dp}.\\
 & \textbf{Action:} User starts image classification\\
-& \textbf{Result:} The software starts the calculations. When those finished, the software receives three lists of the result. Elephant has the highest prohability in any results list. It is shown as result.\\
+& \textbf{Result:} The software starts the calculations. When those finished, the software receives three lists of the result. The \gls{ic} elephant has the highest prohability in any results list. It is shown as result.\\
 & \\
 \textbf{T180} \hypertarget{T180} & \textbf{Choosing Input Mode}\\
 T180.1 & \textbf{State:} The classification window is open. \\
@@ -807,20 +807,30 @@ The company U8 wants to teach children parallel to read, recognize percents and 
 \includegraphics[width=\textwidth]{ClassificationUsecase}
 \caption{Usecase of the \gls{image classification} page}
 \end{figure}
-\newpage
+The user can choose the kind of input with a dropdown menu. The user has the options \grqq Single Image\grqq, \grqq Image Folder\grqq, \grqq Camera\grqq and \grqq File with Image paths\grqq. Then the file explorer opens and the user can choose the input accordingly to the chosen kind of input.\\
+The user can check if he wants to save all results and show all results.\\
+The user clicks on the button \grqq Chose neural network/s\grqq and the file explorer opens. The user chooses the neural network/s.\\
+The user can choose between three operating modes \grqq HighPerformance\grqq, \grqq HighEffiency\grqq and \grqq LowPower\grqq.\\
+The user can check/ uncheck the useable deployment plattforms from a list of checkboxes, for example CPU, FPGA and GPU. \\
+The user starts the classification process. If the calculations are finished the result is shown and the user can save the single result. If he saves the result the file explorer will open and the user can choose the output directory. 
 \subsubsection{Training page}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{TrainUsecase}
-\caption{Usecase of the trainingspage}
+\caption{Usecase of the training page}
 \end{figure}
+The user can choose which neural network he wants to see. 
+A file explorer opens where he can choose the .cfg file of a \gls{nn}.
+\\The topology is displayed and the user is able to save the topology.
+If the user clicks the save button the file explorer opens. The user can choose a file driectory.
 \clearpage
-\subsubsection{Image detection page}
+\subsubsection{Object detection page}
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{objectDetectionUsecase}
 \caption{Usecase of the image detection page}
 \end{figure}
+The description is nearly the same as for image detection, see 10.2.1. Image classification is substituted by object detection.
 \newpage
 \subsubsection{Show topology page}
 \begin{figure}[htb!]
@@ -828,6 +838,14 @@ The company U8 wants to teach children parallel to read, recognize percents and 
 \includegraphics[width=\textwidth]{ShowTopoUsecase}
 \caption{Usecase of the image classification page}
 \end{figure}
+The user must complete each of the following steps to train a \gls{nn}.
+\\ The user must choose a .cfg file of a \gls{nn}. A file explorer is opened where he can choose the file.
+\\ The user must enter a valid name for the new .cfg file.
+\\ The user must choose a dataset in a file explorer. 
+\\ The user must enter a valid learning rate.
+\\ The user must enter a learning mode. 
+\\ The user must enter a valid desired presicion.
+\\ The user can then start the training process. The learning process is displayed.
 \newpage
 
 
@@ -838,7 +856,7 @@ The company U8 wants to teach children parallel to read, recognize percents and 
 \end{figure}
 \begin{figure}[htb!]\centering
 \includegraphics[width=\textwidth]{ImageClassificationGUI}
-\caption{\gls{image classification} page of our software}
+\caption{Image classification page of our software}
 \end{figure}
 \begin{figure}[htb!]\centering
 \includegraphics[width=\textwidth]{DetectionGUI}
