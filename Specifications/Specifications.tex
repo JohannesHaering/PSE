@@ -375,7 +375,6 @@ The operating system is XUbuntu 18.04.
 \textbf {MFR040}\hypertarget{MFR040} & \textbf{Support CPU for calculation} \\
 & Tested with: \hyperlink{T030}{T030} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software supports CPU for calculation. \\
-& \\
 \textbf {MFR041}\hypertarget{MFR041}  & \textbf{Support FPGA for calculation} \\
 & Tested with: \hyperlink{T031}{T031} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software supports FPGA for calculation. \\
@@ -383,7 +382,6 @@ The operating system is XUbuntu 18.04.
 \textbf {MFR050} \hypertarget{MFR050}& \textbf{Send image for classification} \\
 & Tested with: \hyperlink{T040}{T040} Implements: \hyperlink{MAC020}{MAC020} \\
 & The software gives the image as input for the \gls{nn} to the chosen \gls{dp}. \\
-& \\
 \textbf {MFR051} \hypertarget{MFR051}& \textbf{Receive result} \\
 & Tested with: \hyperlink{T041}{T041} Implements: \hyperlink{MAC020}{MAC020} \\
 & The program should be able to receive results of the executed \gls{image classification} from the \glspl{dp}. \\
@@ -395,7 +393,6 @@ The operating system is XUbuntu 18.04.
 \textbf {CFR060} \hypertarget{CFR060} & \textbf{Support \gls{gpu} for calculation} \\
 & Tested with: \hyperlink{T160}{T160} Implements: \hyperlink{CAC140}{CAC140} \\
 & To speed up the calculations the program is able to use an additional \gls{gpu}.\\
-& \\
 \textbf {CFR061} \hypertarget{CFR061} & \textbf{Support \gls{asic} for calculation} \\
 & Tested with: \hyperlink{T161}{T161} Implements: \hyperlink{CAC141}{CAC141} \\
 & To speed up the calculations the program is able to use an additional \gls{asic}.\\
@@ -479,9 +476,7 @@ The operating system is XUbuntu 18.04.
 \textbf{CFR180} \hypertarget{CFR180} & \textbf{Output parameter \grqq save all results\grqq}\\
 & Tested with: \hyperlink{T190}{T190} Implements: \hyperlink{CAC160}{CAC160} \\
 & A checkbox is part of the classification and detection page.\\
-& If selected, for each image which has been selected by the user, the classification/ detection output will be stored as described in \hyperlink{PD050}{PD050} and \hyperlink{PD060}{PD060}. Each output file is saved in the same folder as the input file.\\
-& If a camera is chosen as input, the output will be stored in a \grqq camera\grqq folder\\
-& \\
+& If selected, for each image which has been selected by the user, the classification/ detection output will be stored as described in \hyperlink{PD050}{PD050} and \hyperlink{PD060}{PD060}. Each output file is saved in the same folder as the input file. If a camera is chosen as input, the output will be stored in a \grqq camera\grqq\ folder\\
 \textbf{CFR181} \hypertarget{CFR181} & \textbf{Output parameter \grqq show all images\grqq}\\
 & Tested with: \hyperlink{T200}{T200} Implements:  \hyperlink{CAC170}{CAC170}\\
 & If selected, the results can be skipped through. One image with its result is shown at a time.\\
@@ -881,10 +876,10 @@ The user can choose a file driectory.
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{objectDetectionUsecase}
-\caption{Usecase of the image detection page}
+\caption{Usecase of the object detection page}
 \end{figure}
 The interaction with the software is the same as in the use case with classification. \\
-Only the result differs, as the \gls{bb} are also calculated.
+Only the result differs, as the \glspl{bb} are also calculated.
 \newpage
 \subsubsection{Show topology page}
 \begin{figure}[htb!]
