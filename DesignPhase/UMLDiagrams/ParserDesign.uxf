@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>84</y>
+      <w>126</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;IParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), E /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>408</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ImageLocationsParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), string /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>408</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;NeuralNetworkParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), NeuralNetwork /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>408</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;LayerParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), ILayer /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>576</y>
+      <w>168</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DatasetParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), DetectionData /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>918</x>
+      <y>570</y>
+      <w>156</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DetectionDatasetParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), DetectionData[] /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>732</x>
+      <y>228</y>
+      <w>198</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;LineBreakParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), E /
+# SplitIntoLines(string text), string[]
+# SplitBySymbol(string text, char symbol), string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1098</x>
+      <y>408</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ImageDetectionResultParser&gt;&gt;
+Package::Parser
+{}
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>144</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>336</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>366</y>
+      <w>174</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;270.0;20.0;270.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>366</y>
+      <w>174</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>270.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>366</y>
+      <w>204</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>320.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>162</y>
+      <w>510</w>
+      <h>426</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>830.0;20.0;10.0;20.0;10.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>162</y>
+      <w>354</w>
+      <h>258</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>426</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>624</y>
+      <w>504</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;820.0;10.0</additional_attributes>
+  </element>
+</diagram>
