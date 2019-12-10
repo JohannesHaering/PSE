@@ -4,27 +4,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>966</x>
-      <y>246</y>
-      <w>246</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;IFileIO&gt;&gt;
-Package::I/O
-{interface}
---
-
---
-/+ ReadFile(filePath : string), IData/
-/+ WriteFile(filePath : string, data : IData), boolean/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1014</x>
-      <y>402</y>
-      <w>126</w>
+      <x>786</x>
+      <y>324</y>
+      <w>210</w>
       <h>114</h>
     </coordinates>
     <panel_attributes>&lt;&lt;FileIO&gt;&gt;
@@ -35,6 +17,8 @@ Package::I/O
 - FileStream, IFileStream
 --
 - FileIO(), FileIO
+/+ ReadFile(filePath : string), IData/
+/+ WriteFile(filePath : string, data : IData), boolean/
 + GetInstance(), IFileIO
 </panel_attributes>
     <additional_attributes/>
@@ -42,8 +26,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
-      <y>606</y>
+      <x>612</x>
+      <y>528</y>
       <w>270</w>
       <h>78</h>
     </coordinates>
@@ -58,21 +42,10 @@ Package::I/O
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1068</x>
-      <y>324</y>
-      <w>18</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1134</x>
-      <y>726</y>
+      <x>942</x>
+      <y>648</y>
       <w>222</w>
       <h>84</h>
     </coordinates>
@@ -89,8 +62,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>510</y>
+      <x>738</x>
+      <y>432</y>
       <w>156</w>
       <h>108</h>
     </coordinates>
@@ -100,25 +73,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>426</y>
-      <w>126</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Data&gt;&gt;
-Package::I/O
-{}
---
-
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>804</x>
-      <y>726</y>
+      <x>612</x>
+      <y>648</y>
       <w>282</w>
       <h>84</h>
     </coordinates>
@@ -135,8 +91,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>930</x>
-      <y>678</y>
+      <x>738</x>
+      <y>600</y>
       <w>18</w>
       <h>60</h>
     </coordinates>
@@ -146,8 +102,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1134</x>
-      <y>606</y>
+      <x>942</x>
+      <y>528</y>
       <w>222</w>
       <h>78</h>
     </coordinates>
@@ -164,8 +120,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1242</x>
-      <y>678</y>
+      <x>1050</x>
+      <y>600</y>
       <w>18</w>
       <h>60</h>
     </coordinates>
@@ -175,8 +131,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1056</x>
-      <y>540</y>
+      <x>864</x>
+      <y>462</y>
       <w>204</w>
       <h>78</h>
     </coordinates>
@@ -186,8 +142,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1392</x>
-      <y>606</y>
+      <x>1200</x>
+      <y>528</y>
       <w>228</w>
       <h>78</h>
     </coordinates>
@@ -204,8 +160,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1242</x>
-      <y>540</y>
+      <x>1050</x>
+      <y>462</y>
       <w>282</w>
       <h>78</h>
     </coordinates>
@@ -215,8 +171,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>252</y>
+      <x>318</x>
+      <y>348</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -232,8 +188,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>780</y>
+      <x>228</x>
+      <y>702</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -247,21 +203,10 @@ Package::I/O
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>564</x>
-      <y>360</y>
-      <w>18</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>582</x>
-      <y>600</y>
+      <x>390</x>
+      <y>522</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -277,8 +222,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>780</y>
+      <x>72</x>
+      <y>702</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -294,8 +239,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>600</y>
+      <x>72</x>
+      <y>522</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -312,8 +257,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>600</y>
+      <x>228</x>
+      <y>522</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -329,8 +274,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>318</x>
-      <y>534</y>
+      <x>126</x>
+      <y>456</y>
       <w>264</w>
       <h>78</h>
     </coordinates>
@@ -340,8 +285,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>570</y>
+      <x>288</x>
+      <y>492</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -351,8 +296,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>564</x>
-      <y>564</y>
+      <x>372</x>
+      <y>486</y>
       <w>102</w>
       <h>48</h>
     </coordinates>
@@ -362,8 +307,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>318</x>
-      <y>708</y>
+      <x>126</x>
+      <y>630</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
@@ -373,31 +318,19 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>474</x>
-      <y>708</y>
+      <x>282</x>
+      <y>630</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>630</x>
-      <y>264</y>
-      <w>348</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1</panel_attributes>
-    <additional_attributes>10.0;10.0;560.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>342</x>
-      <y>198</y>
+      <x>150</x>
+      <y>300</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -409,25 +342,12 @@ from the file I/O</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
-      <y>234</y>
+      <x>240</x>
+      <y>318</y>
       <w>108</w>
-      <h>48</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>10.0;10.0;160.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>762</x>
-      <y>138</y>
-      <w>90</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>DesignPatterns:
-Bridge
-Strategy</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>10.0;10.0;160.0;80.0</additional_attributes>
   </element>
 </diagram>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>4</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>0</y>
-      <w>84</w>
-      <h>44</h>
+      <x>1160</x>
+      <y>280</y>
+      <w>168</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;IParser&gt;&gt;
 Package::Parser
-{}
+{abstract}
 --
 
 --
@@ -22,10 +22,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>216</y>
-      <w>84</w>
-      <h>76</h>
+      <x>1160</x>
+      <y>712</y>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ImageLocationsParser&gt;&gt;
 Package::Parser
@@ -39,10 +39,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>412</x>
-      <y>216</y>
-      <w>108</w>
-      <h>76</h>
+      <x>920</x>
+      <y>712</y>
+      <w>216</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;NeuralNetworkParser&gt;&gt;
 Package::Parser
@@ -56,10 +56,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
-      <y>216</y>
-      <w>84</w>
-      <h>76</h>
+      <x>704</x>
+      <y>712</y>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;LayerParser&gt;&gt;
 Package::Parser
@@ -73,10 +73,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>328</y>
-      <w>112</w>
-      <h>76</h>
+      <x>496</x>
+      <y>936</y>
+      <w>224</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;SingleDatasetParser&gt;&gt;
 Package::Parser
@@ -90,10 +90,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>636</x>
-      <y>324</y>
-      <w>104</w>
-      <h>76</h>
+      <x>1368</x>
+      <y>928</y>
+      <w>208</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;DetectionDatasetParser&gt;&gt;
 Package::Parser
@@ -107,14 +107,14 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>512</x>
-      <y>96</y>
-      <w>132</w>
-      <h>76</h>
+      <x>1120</x>
+      <y>472</y>
+      <w>264</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;LineBreakParser&gt;&gt;
 Package::Parser
-{}
+{abstract}
 --
 
 --
@@ -126,10 +126,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>724</x>
-      <y>216</y>
-      <w>116</w>
-      <h>76</h>
+      <x>1544</x>
+      <y>712</y>
+      <w>232</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ClassificationResultParser&gt;&gt;
 Package::Parser
@@ -143,10 +143,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>40</y>
-      <w>12</w>
-      <h>64</h>
+      <x>1232</x>
+      <y>360</y>
+      <w>24</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -154,10 +154,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>168</y>
-      <w>12</w>
-      <h>56</h>
+      <x>1232</x>
+      <y>616</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -165,10 +165,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>188</y>
-      <w>116</w>
-      <h>144</h>
+      <x>1232</x>
+      <y>656</y>
+      <w>232</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;270.0;20.0;270.0;340.0</additional_attributes>
@@ -176,10 +176,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
-      <y>188</y>
-      <w>116</w>
-      <h>36</h>
+      <x>1024</x>
+      <y>656</y>
+      <w>232</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>270.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
@@ -187,10 +187,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
-      <y>188</y>
-      <w>136</w>
-      <h>36</h>
+      <x>776</x>
+      <y>656</y>
+      <w>272</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>320.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
@@ -198,10 +198,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>52</y>
-      <w>340</w>
-      <h>284</h>
+      <x>576</x>
+      <y>384</y>
+      <w>680</w>
+      <h>568</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>830.0;20.0;10.0;20.0;10.0;690.0</additional_attributes>
@@ -209,10 +209,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>556</x>
-      <y>52</y>
-      <w>236</w>
-      <h>172</h>
+      <x>1208</x>
+      <y>384</y>
+      <w>472</w>
+      <h>344</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
@@ -220,10 +220,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
-      <y>360</y>
-      <w>336</w>
-      <h>16</h>
+      <x>712</x>
+      <y>1000</y>
+      <w>672</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -232,10 +232,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4</x>
-      <y>224</y>
-      <w>172</w>
-      <h>76</h>
+      <x>104</x>
+      <y>728</y>
+      <w>344</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ImageParser&gt;&gt;
 Package::Parser
@@ -253,10 +253,10 @@ channelNumb : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>216</y>
-      <w>112</w>
-      <h>76</h>
+      <x>1824</x>
+      <y>712</y>
+      <w>224</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;DetectionResultParser&gt;&gt;
 Package::Parser
@@ -270,10 +270,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>52</y>
-      <w>236</w>
-      <h>172</h>
+      <x>1488</x>
+      <y>384</y>
+      <w>472</w>
+      <h>344</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
@@ -281,10 +281,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>84</x>
-      <y>52</y>
-      <w>340</w>
-      <h>180</h>
+      <x>264</x>
+      <y>384</y>
+      <w>680</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>830.0;20.0;10.0;20.0;10.0;430.0</additional_attributes>
@@ -292,10 +292,10 @@ Package::Parser
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>568</y>
-      <w>176</w>
-      <h>76</h>
+      <x>816</x>
+      <y>1416</y>
+      <w>352</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;NeuralNetworkFactory&gt;&gt;
 Package::Parser
@@ -309,10 +309,10 @@ _+ buildNeuralNetwork(layers : List&lt;ILayer&gt;) : NeuralNetwork_</panel_attri
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>576</y>
-      <w>228</w>
-      <h>76</h>
+      <x>1568</x>
+      <y>1432</y>
+      <w>456</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;PoolingLayerFactory&gt;&gt;
 Package::Parser
@@ -326,10 +326,10 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>972</x>
-      <y>576</y>
-      <w>228</w>
-      <h>76</h>
+      <x>2040</x>
+      <y>1432</y>
+      <w>456</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ConvolutionalLayerFactory&gt;&gt;
 Package::Parser
@@ -343,10 +343,10 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>468</y>
-      <w>228</w>
-      <h>76</h>
+      <x>1824</x>
+      <y>1216</y>
+      <w>456</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;LayerFactory&gt;&gt;
 Package::Parser
@@ -360,10 +360,10 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>844</x>
-      <y>540</y>
-      <w>136</w>
-      <h>44</h>
+      <x>1784</x>
+      <y>1360</y>
+      <w>272</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
@@ -371,10 +371,10 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>968</x>
-      <y>540</y>
-      <w>128</w>
-      <h>44</h>
+      <x>2032</x>
+      <y>1360</y>
+      <w>256</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;300.0;50.0;300.0;90.0</additional_attributes>
@@ -382,10 +382,10 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>564</y>
-      <w>328</w>
-      <h>76</h>
+      <x>96</x>
+      <y>1408</y>
+      <w>656</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ClassificationResultFactory&gt;&gt;
 Package::Parser
@@ -400,10 +400,10 @@ _+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>476</y>
-      <w>328</w>
-      <h>76</h>
+      <x>96</x>
+      <y>1232</y>
+      <w>656</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;DetectionResultFactory&gt;&gt;
 Package::Parser
@@ -418,10 +418,10 @@ _+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxe
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>476</y>
-      <w>328</w>
-      <h>76</h>
+      <x>816</x>
+      <y>1232</y>
+      <w>656</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;BoundingBoxFactory&gt;&gt;
 Package::Parser
@@ -435,10 +435,10 @@ _+ buildBoundingBox(imageClass : string, probabilities : List&lt;Probabilities&g
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>652</y>
-      <w>328</w>
-      <h>76</h>
+      <x>96</x>
+      <y>1584</y>
+      <w>656</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;BoundingBoxFactory&gt;&gt;
 Package::Parser
@@ -452,10 +452,10 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
-      <y>216</y>
-      <w>112</w>
-      <h>76</h>
+      <x>2160</x>
+      <y>712</y>
+      <w>224</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ProbabilityParser&gt;&gt;
 Package::Parser
@@ -469,10 +469,10 @@ Package::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>52</y>
-      <w>268</w>
-      <h>172</h>
+      <x>1752</x>
+      <y>384</y>
+      <w>536</w>
+      <h>344</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;650.0;20.0;650.0;410.0</additional_attributes>
