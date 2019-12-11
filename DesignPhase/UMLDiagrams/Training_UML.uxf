@@ -4,8 +4,29 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>495</x>
-      <y>195</y>
+      <x>870</x>
+      <y>90</y>
+      <w>540</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;LayerBackPropagation&gt;&gt;
+Package::Training
+{abstract}
+--
+-layer : NeuralNetwork::NetworkLayer
+-input_is : double[][][]
+-output_is : double[][][]
+-output_should : double[][][]
+-learning_rate : double
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>90</y>
       <w>495</w>
       <h>330</h>
     </coordinates>
@@ -13,7 +34,9 @@
 Package::Training
 {abstract}
 --
-
+-neural_network : NeuralNetwork::NeuralNetwork
+-result_is : Results::ResultModel
+-result_correct : Results::ResultModel
 --
 </panel_attributes>
     <additional_attributes/>
