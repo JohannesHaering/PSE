@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>786</x>
-      <y>324</y>
+      <x>798</x>
+      <y>330</y>
       <w>210</w>
       <h>114</h>
     </coordinates>
@@ -26,8 +26,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>612</x>
-      <y>528</y>
+      <x>624</x>
+      <y>534</y>
       <w>270</w>
       <h>78</h>
     </coordinates>
@@ -44,8 +44,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>942</x>
-      <y>648</y>
+      <x>954</x>
+      <y>654</y>
       <w>222</w>
       <h>84</h>
     </coordinates>
@@ -55,15 +55,15 @@ Package::I/O
 --
 
 --
-+ ReadFile(filePath : string), IData
++ ReadFile(filePaths : string[]), IData
 + WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>432</y>
+      <x>750</x>
+      <y>438</y>
       <w>156</w>
       <h>108</h>
     </coordinates>
@@ -73,8 +73,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>612</x>
-      <y>648</y>
+      <x>624</x>
+      <y>654</y>
       <w>282</w>
       <h>84</h>
     </coordinates>
@@ -91,8 +91,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
-      <y>600</y>
+      <x>750</x>
+      <y>606</y>
       <w>18</w>
       <h>60</h>
     </coordinates>
@@ -102,8 +102,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>942</x>
-      <y>528</y>
+      <x>954</x>
+      <y>534</y>
       <w>222</w>
       <h>78</h>
     </coordinates>
@@ -120,8 +120,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>600</y>
+      <x>1062</x>
+      <y>606</y>
       <w>18</w>
       <h>60</h>
     </coordinates>
@@ -131,8 +131,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>864</x>
-      <y>462</y>
+      <x>876</x>
+      <y>468</y>
       <w>204</w>
       <h>78</h>
     </coordinates>
@@ -142,8 +142,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1200</x>
-      <y>528</y>
+      <x>1212</x>
+      <y>534</y>
       <w>228</w>
       <h>78</h>
     </coordinates>
@@ -160,8 +160,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>462</y>
+      <x>1062</x>
+      <y>468</y>
       <w>282</w>
       <h>78</h>
     </coordinates>
@@ -171,14 +171,14 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>318</x>
-      <y>348</y>
+      <x>330</x>
+      <y>354</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
     <panel_attributes>&lt;&lt;IData&gt;&gt;
 Package::I/O
-{}
+{abstract}
 --
 
 --
@@ -188,8 +188,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>702</y>
+      <x>240</x>
+      <y>708</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -205,8 +205,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>522</y>
+      <x>402</x>
+      <y>528</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -214,16 +214,16 @@ Package::I/O
 Package::I/O
 {}
 --
-
+video : Video
 --
-+ GetData(), video</panel_attributes>
++ GetData(), Video</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>702</y>
+      <x>84</x>
+      <y>708</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -239,8 +239,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>522</y>
+      <x>84</x>
+      <y>528</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -248,7 +248,7 @@ Package::I/O
 Package::I/O
 {}
 --
-
+stringData : string[]
 --
 + GetData(), string
 </panel_attributes>
@@ -257,8 +257,8 @@ Package::I/O
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>522</y>
+      <x>240</x>
+      <y>528</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -266,7 +266,7 @@ Package::I/O
 Package::I/O
 {}
 --
-
+imageData : Image[]
 --
 + GetData(), image</panel_attributes>
     <additional_attributes/>
@@ -274,8 +274,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>456</y>
+      <x>138</x>
+      <y>462</y>
       <w>264</w>
       <h>78</h>
     </coordinates>
@@ -285,8 +285,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>492</y>
+      <x>300</x>
+      <y>498</y>
       <w>18</w>
       <h>42</h>
     </coordinates>
@@ -296,8 +296,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>372</x>
-      <y>486</y>
+      <x>384</x>
+      <y>492</y>
       <w>102</w>
       <h>48</h>
     </coordinates>
@@ -307,8 +307,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>630</y>
+      <x>138</x>
+      <y>636</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
@@ -318,8 +318,8 @@ Package::I/O
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>282</x>
-      <y>630</y>
+      <x>294</x>
+      <y>636</y>
       <w>18</w>
       <h>84</h>
     </coordinates>
@@ -329,8 +329,8 @@ Package::I/O
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>150</x>
-      <y>300</y>
+      <x>162</x>
+      <y>306</y>
       <w>108</w>
       <h>54</h>
     </coordinates>
@@ -342,8 +342,8 @@ from the file I/O</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>318</y>
+      <x>252</x>
+      <y>324</y>
       <w>108</w>
       <h>60</h>
     </coordinates>
