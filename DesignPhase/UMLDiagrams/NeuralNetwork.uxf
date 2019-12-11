@@ -1,49 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>9</zoom_level>
+  <zoom_level>2</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>81</x>
-      <y>108</y>
-      <w>189</w>
-      <h>99</h>
+      <x>178</x>
+      <y>416</y>
+      <w>66</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>&lt;&lt;NeuralNetwork&gt;&gt;
 Package::NeuralNetwork
 {abstract}
 --
-
+-name : string
+-current_layer : &lt;pointer&gt;
 --
-+importWeigths()
-</panel_attributes>
+&lt;&lt;constructor&gt;&gt;+NeuralNetwork()
+&lt;&lt;constructor&gt;&gt;+NeuralNetwork(name : string)
++add_layer(layer : NetworkLayer)
++get_first_layer() : NetworkLayer
++get_last_layer() : NetworkLayer
++get_next_layer() : NetworkLayer
++get_previous_layer() : NetworkLayer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>621</x>
-      <y>117</y>
-      <w>189</w>
-      <h>99</h>
+      <x>402</x>
+      <y>432</y>
+      <w>100</w>
+      <h>38</h>
     </coordinates>
     <panel_attributes>&lt;&lt;NetworkLayer&gt;&gt;
 Package::NeuralNetwork
 {abstract}
 --
-
+#name : string
+#input_dimensions : int[]
 --
-
-</panel_attributes>
++set_name(name : string)
++set_input_dimensions(input_dimensions : int[])
++get_name() : string
++get_input_dimensions() : int[]
++get_tensor_dimenssions() : int[]
+group=8</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>306</y>
-      <w>243</w>
-      <h>162</h>
+      <x>254</x>
+      <y>490</y>
+      <w>176</w>
+      <h>46</h>
     </coordinates>
     <panel_attributes>&lt;&lt;ConvolutionLayer&gt;&gt;
 Package::NeuralNetwork
@@ -51,112 +62,348 @@ Package::NeuralNetwork
 -weigths_tensor : double[][][][]
 -stride : int
 -padding : int
--activation : int (?)
 --
+&lt;&lt;constructor&gt;&gt;+ConvolutionLayer()
+&lt;&lt;constructor&gt;&gt;+ConvolutionLayer(name : string, input_dimensions : int[], weights : double[][][][], stride : int, padding : int)
 +set_tensor(weights : double[][][][])
 +set_stride(stride : int)
 +set_padding(padding : int)
-+set_activation(activation : int)</panel_attributes>
++get_tensor() : double[][][][]
++get_stride() : int
++get_padding() : int
+
+group=8</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>702</x>
-      <y>306</y>
-      <w>189</w>
-      <h>162</h>
+      <x>562</x>
+      <y>490</y>
+      <w>148</w>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;PolingLayer&gt;&gt;
+    <panel_attributes>&lt;&lt;Poling_layer&gt;&gt;
 Package::NeuralNetwork
 --
--type : int //?
--size : int //asymetric support?
+-type : int
+-size : int
 -stride : int
--with_LRN : bool
 --
+&lt;&lt;constructor&gt;&gt;+Poling_layer()
+&lt;&lt;constructor&gt;&gt;+Poling_layer(name : string, input_dimensions : int[], size : int, stride : int, type : int)
 +set_type(type : int)
 +set_size(size : int)
 +set_stride(stride : int)
-+set_LRN(withLRN : bool)</panel_attributes>
++get_type() : int
++get_size() : int
++get_stride() : int
+
+group=8</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>918</x>
-      <y>306</y>
-      <w>189</w>
-      <h>99</h>
+      <x>830</x>
+      <y>490</y>
+      <w>126</w>
+      <h>28</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;FCLayer&gt;&gt;
+    <panel_attributes>&lt;&lt;DenseLayer&gt;&gt;
 Package::NeuralNetwork
 --
-
+-matrix : double[][]
 --
+&lt;&lt;constructor&gt;&gt;+DenseLayer()
+&lt;&lt;constructor&gt;&gt;+DenseLayer(name : string, input_dimensions : int[], matrix : double[][])
++set_matrix(matrix : double[][])
++get_matrix() : double[][]
 
-</panel_attributes>
+
+group=8</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1134</x>
-      <y>306</y>
-      <w>189</w>
-      <h>99</h>
+      <x>1300</x>
+      <y>490</y>
+      <w>106</w>
+      <h>36</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;LayerStructure&gt;&gt;
+    <panel_attributes>&lt;&lt;InceptionLayer&gt;&gt;
 Package::NeuralNetwork
 --
-
+-current_chain : &lt;pointer&gt;
 --
-
-</panel_attributes>
+&lt;&lt;constructor&gt;&gt;+InceptionLayer()
+&lt;&lt;constructor&gt;&gt;+InceptionLayer(name : string, input_dimensions : int[])
++add_layer_chain(chain : NeuralNetwork)
++get_first_chain() : NeuralNetwork
++get_next_chain() : NeuralNetwork
+group=8</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>234</y>
-      <w>684</w>
-      <h>90</h>
+      <x>340</x>
+      <y>474</y>
+      <w>1010</w>
+      <h>20</h>
     </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;80.0;10.0;20.0;740.0;20.0;740.0;80.0</additional_attributes>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;5030.0;20.0;5030.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>783</x>
-      <y>243</y>
-      <w>27</w>
-      <h>81</h>
+      <x>632</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes/>
+    <panel_attributes>
+group=8</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>243</y>
-      <w>27</w>
-      <h>81</h>
+      <x>888</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes/>
+    <panel_attributes>
+group=8</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>711</x>
-      <y>207</y>
-      <w>27</w>
-      <h>63</h>
+      <x>448</x>
+      <y>468</y>
+      <w>6</w>
+      <h>14</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;-
+group=8</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>242</x>
+      <y>446</y>
+      <w>164</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+layers</panel_attributes>
+    <additional_attributes>10.0;20.0;800.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>190</x>
+      <y>500</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Aliases_NN&gt;&gt;
+Package::NeuralNetwork
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>212</x>
+      <y>458</y>
+      <w>16</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>490</y>
+      <w>124</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ActivationLayer&gt;&gt;
+Package::NeuralNetwork
+--
+-function : int
+--
+&lt;&lt;constructor&gt;&gt;+ActivationLayer()
+&lt;&lt;constructor&gt;&gt;+ActivationLayer(name : string, input_dimensions : int[], function : int)
++set_function(function : int)
++get_function() : int
+
+group=8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>490</y>
+      <w>90</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;FlattenLayer&gt;&gt;
+Package::NeuralNetwork
+--
+
+--
+&lt;&lt;constructor&gt;&gt;+FlattenLayer()
+&lt;&lt;constructor&gt;&gt;+FlattenLayer(name : string, input_dimensions)
+
+group=8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1054</x>
+      <y>490</y>
+      <w>130</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DropoutLayer&gt;&gt;
+Package::NeuralNetwork
+--
+-dropout_rate : float
+--
+&lt;&lt;constructor&gt;&gt;+DropoutLayer()
+&lt;&lt;constructor&gt;&gt;+DropoutLayer(name : string, input_dimensions : int[], dropout_rate : float)
+
+group=8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1004</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>716</x>
+      <y>490</y>
+      <w>108</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;LRNLayer&gt;&gt;
+Package::NeuralNetwork
+--
+-type : int
+--
+&lt;&lt;constructor&gt;&gt;+LRNLayer()
+&lt;&lt;constructor&gt;&gt;+LRNLayer(name : string, input_dimensions : int[], type : int)
++set_type(type : int)
++get_type() : int
+
+group=8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>242</x>
+      <y>418</y>
+      <w>1140</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+chains
+</panel_attributes>
+    <additional_attributes>5640.0;360.0;5640.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>490</y>
+      <w>108</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;CollectResultsLayer&gt;&gt;
+Package::NeuralNetwork
+--
+
+--
+&lt;&lt;constructor&gt;&gt;+CollectResultsLayer()
+&lt;&lt;constructor&gt;&gt;+CollectResultsLayer(name : string, input_dimensions : int[])
+
+group=8</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1238</x>
+      <y>476</y>
+      <w>6</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+group=8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>

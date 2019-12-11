@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>15</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>195</y>
+      <w>495</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Trainer&gt;&gt;
+Package::Training
+{abstract}
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
