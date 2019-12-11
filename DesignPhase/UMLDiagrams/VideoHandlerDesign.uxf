@@ -4,110 +4,106 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>602</y>
+      <x>469</x>
+      <y>553</y>
       <w>308</w>
-      <h>133</h>
+      <h>77</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;IVideoCutter&gt;&gt;
-Package::VideoHandler
+    <panel_attributes>VideoHandler::IVideoCutter
 {abstract}
 --
 
 --
-/+ CutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]/</panel_attributes>
+/+ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1043</x>
-      <y>203</y>
+      <x>966</x>
+      <y>371</y>
       <w>231</w>
       <h>133</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;CameraHandler&gt;&gt;
-Package::VideoHandler
-{}
+    <panel_attributes>VideoHandler::CameraHandler
 --
-DeviceId : int
-Timeout . int
+deviceId : int
+timeout : int
+frameInterval : int
 --
 + CameraHandler(deviceId : int, timeout : int)
-+ GetNextFrame()</panel_attributes>
++ getNextFrame()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1043</x>
-      <y>609</y>
+      <x>966</x>
+      <y>560</y>
       <w>224</w>
-      <h>126</h>
+      <h>77</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;VideoHandler&gt;&gt;
-Package::VideoHandler
+    <panel_attributes>VideoHandler::IVideoHandler
 {abstract}
 --
 FrameInterval : int
 --
-+ VideoHandler(frameInterbal : int)
-/+ HandleVideo(stream . VideoStream) : Image[]/</panel_attributes>
+/+ handleVideo(stream : VideoStream) : Image[]/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>805</y>
+      <x>469</x>
+      <y>679</y>
       <w>308</w>
-      <h>133</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;VideoCutter&gt;&gt;
-Package::VideoHandler
+VideoHandler::VideoHandler
 {}
 --
 
 --
-+ CutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]</panel_attributes>
++ VideoCutter()
++ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>133</x>
-      <y>364</y>
+      <x>56</x>
+      <y>315</y>
       <w>308</w>
-      <h>133</h>
+      <h>98</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;IVideoLibAdapter&gt;&gt;
-Package::VideoHandler
+    <panel_attributes>VideoHandler::IVideoLibAdapter
 {abstract}
 --
 
 --
-/ + CutIntoFrames(stream, VideoStream, frameInterval int) : Image[]/
-/ + LoadFrameFromCamera(cameraId : int) : Image /
-/ + OpenCamera(cameraID : int) : boolean /
+/ + cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]/
+/ + loadFrameFromCamera(cameraId : int) : Image /
+/ + openCamera(cameraID : int) : boolean /
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>679</x>
-      <y>728</y>
+      <x>602</x>
+      <y>623</y>
       <w>21</w>
-      <h>91</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>847</x>
-      <y>616</y>
+      <x>770</x>
+      <y>567</y>
       <w>210</w>
       <h>56</h>
     </coordinates>
@@ -118,44 +114,43 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1050</x>
-      <y>798</y>
+      <x>973</x>
+      <y>749</y>
       <w>217</w>
-      <h>133</h>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;HandleAviVideos&gt;&gt;
-Package::VideoHandler
-{}
+    <panel_attributes>VideoHandler::AviVideosHandler
 --
-
+frameInterval : int
 --
-+ HandleVideo(stream . VideoStream) : Image[]</panel_attributes>
++ VideoHandler(frameInterbal : int)
++ handleVideo(stream . VideoStream) : Image[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>133</x>
-      <y>567</y>
+      <x>56</x>
+      <y>518</y>
       <w>308</w>
-      <h>133</h>
+      <h>105</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;OpenCWAdapter&gt;&gt;
-Package::VideoHandler
-{}
+    <panel_attributes>VideoHandler::OpenCWAdapter
 --
-
+_- videoLibAdapter : IVideoLibAdapter 
 --
-+ CutIntoFrames(stream, VideoStream, frameInterval int) : Image[]
-+ LoadFrameFromCamera(cameraId : int) : Image 
-+ OpenCamera(cameraID : int) : boolean</panel_attributes>
+- OpenCWAdapter()
++ cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]
++ loadFrameFromCamera(cameraId : int) : Image 
++ openCamera(cameraID : int) : boolean
+_ + getInstance() : OpenCWAdapter_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
-      <y>385</y>
+      <x>357</x>
+      <y>336</y>
       <w>126</w>
       <h>280</h>
     </coordinates>
@@ -166,64 +161,157 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
-      <y>490</y>
+      <x>196</x>
+      <y>406</y>
       <w>21</w>
-      <h>91</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1043</x>
-      <y>0</y>
+      <x>966</x>
+      <y>168</y>
       <w>231</w>
       <h>133</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;ICameraHandler&gt;&gt;
-Package::VideoHandler
-{abstract}
+    <panel_attributes>VideoHandler::ICameraHandler
 --
 
 --
-/+ CameraHandler(deviceId : int, timeout : int)/
 /+ GetNextFrame()/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1148</x>
-      <y>728</y>
+      <x>1071</x>
+      <y>630</y>
       <w>21</w>
-      <h>84</h>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
-      <y>252</y>
+      <x>357</x>
+      <y>322</y>
       <w>623</w>
-      <h>147</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;180.0;670.0;180.0;670.0;10.0;870.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;670.0;10.0;670.0;120.0;870.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>126</y>
+      <x>1057</x>
+      <y>294</y>
       <w>21</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1239</x>
+      <y>70</y>
+      <w>168</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Is responsible for
+opening/ closing the connection to 
+the camera
+As well as taking pictures</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>119</y>
+      <w>84</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1232</x>
+      <y>511</y>
+      <w>98</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Is responsible for 
+cutting the video 
+into frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1169</x>
+      <y>546</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>728</x>
+      <y>455</y>
+      <w>98</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Cuts the video into 
+frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>490</y>
+      <w>35</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;110.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>210</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Adapter to video library 
+to support the needed 
+functionality</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>35</x>
+      <y>245</y>
+      <w>63</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>70.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
