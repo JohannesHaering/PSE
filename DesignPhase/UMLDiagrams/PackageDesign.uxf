@@ -4,7 +4,7 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
+      <x>868</x>
       <y>210</y>
       <w>70</w>
       <h>49</h>
@@ -18,7 +18,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>889</x>
+      <x>875</x>
       <y>147</y>
       <w>21</w>
       <h>77</h>
@@ -29,7 +29,7 @@ Fassade</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>175</x>
+      <x>161</x>
       <y>378</y>
       <w>448</w>
       <h>287</h>
@@ -41,7 +41,7 @@ fontsize=25</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>210</x>
+      <x>196</x>
       <y>553</y>
       <w>70</w>
       <h>49</h>
@@ -54,7 +54,7 @@ I/O</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>504</x>
+      <x>490</x>
       <y>532</y>
       <w>70</w>
       <h>49</h>
@@ -67,7 +67,7 @@ NeuralNetwork</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>294</x>
+      <x>280</x>
       <y>553</y>
       <w>70</w>
       <h>49</h>
@@ -80,7 +80,7 @@ Parser</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>343</x>
+      <x>329</x>
       <y>427</y>
       <w>91</w>
       <h>49</h>
@@ -94,7 +94,7 @@ Fassade</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>378</x>
+      <x>364</x>
       <y>553</y>
       <w>70</w>
       <h>49</h>
@@ -107,7 +107,7 @@ VideoHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>259</x>
+      <x>245</x>
       <y>469</y>
       <w>112</w>
       <h>112</h>
@@ -118,7 +118,7 @@ VideoHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>329</x>
+      <x>315</x>
       <y>469</y>
       <w>56</w>
       <h>112</h>
@@ -129,7 +129,7 @@ VideoHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
+      <x>371</x>
       <y>469</y>
       <w>49</w>
       <h>112</h>
@@ -140,7 +140,7 @@ VideoHandler</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>665</x>
+      <x>651</x>
       <y>364</y>
       <w>504</w>
       <h>427</h>
@@ -152,7 +152,7 @@ fontsize=25</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>966</x>
+      <x>952</x>
       <y>588</y>
       <w>98</w>
       <h>56</h>
@@ -166,7 +166,7 @@ Dispatcher</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>966</x>
+      <x>952</x>
       <y>504</y>
       <w>98</w>
       <h>49</h>
@@ -179,7 +179,7 @@ Inferencing</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>966</x>
+      <x>952</x>
       <y>714</y>
       <w>98</w>
       <h>49</h>
@@ -192,7 +192,7 @@ Communication</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>504</x>
+      <x>490</x>
       <y>595</y>
       <w>70</w>
       <h>49</h>
@@ -205,7 +205,7 @@ Results</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>819</x>
+      <x>805</x>
       <y>637</y>
       <w>70</w>
       <h>56</h>
@@ -218,7 +218,7 @@ Training</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>847</x>
+      <x>833</x>
       <y>399</y>
       <w>105</w>
       <h>56</h>
@@ -232,7 +232,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1008</x>
+      <x>994</x>
       <y>546</y>
       <w>21</w>
       <h>70</h>
@@ -243,7 +243,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1015</x>
+      <x>1001</x>
       <y>637</y>
       <w>21</w>
       <h>105</h>
@@ -254,7 +254,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
+      <x>917</x>
       <y>448</y>
       <w>98</w>
       <h>84</h>
@@ -265,7 +265,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
+      <x>728</x>
       <y>448</y>
       <w>140</w>
       <h>133</h>
@@ -276,7 +276,7 @@ Fassade</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>882</x>
+      <x>868</x>
       <y>448</y>
       <w>49</w>
       <h>238</h>
@@ -287,7 +287,7 @@ Fassade</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>175</x>
+      <x>161</x>
       <y>728</y>
       <w>210</w>
       <h>133</h>
@@ -300,7 +300,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>245</x>
+      <x>231</x>
       <y>595</y>
       <w>70</w>
       <h>168</h>
@@ -311,7 +311,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
+      <x>896</x>
       <y>252</y>
       <w>21</w>
       <h>175</h>
@@ -322,7 +322,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>427</x>
+      <x>413</x>
       <y>455</y>
       <w>553</w>
       <h>91</h>
@@ -333,7 +333,7 @@ fontsize=25
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>826</x>
+      <x>812</x>
       <y>49</y>
       <w>189</w>
       <h>231</h>
@@ -345,7 +345,7 @@ fontsize=25</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>875</x>
+      <x>861</x>
       <y>105</y>
       <w>70</w>
       <h>49</h>
@@ -358,7 +358,7 @@ ViewPages</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>406</x>
+      <x>392</x>
       <y>728</y>
       <w>210</w>
       <h>133</h>
@@ -371,7 +371,7 @@ fontsize=25
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>399</x>
+      <x>385</x>
       <y>595</y>
       <w>140</w>
       <h>168</h>
@@ -382,7 +382,7 @@ fontsize=25
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>679</x>
+      <x>665</x>
       <y>637</y>
       <w>70</w>
       <h>56</h>
@@ -397,7 +397,7 @@ Adapter</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>679</x>
+      <x>665</x>
       <y>539</y>
       <w>70</w>
       <h>56</h>
@@ -412,7 +412,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>427</x>
+      <x>413</x>
       <y>455</y>
       <w>553</w>
       <h>182</h>
@@ -423,7 +423,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>427</x>
+      <x>413</x>
       <y>455</y>
       <w>553</w>
       <h>301</h>
@@ -434,7 +434,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
+      <x>553</x>
       <y>553</y>
       <w>126</w>
       <h>35</h>
@@ -445,7 +445,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
+      <x>553</x>
       <y>616</y>
       <w>126</w>
       <h>63</h>
@@ -456,7 +456,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>721</x>
+      <x>707</x>
       <y>686</y>
       <w>259</w>
       <h>84</h>
@@ -467,7 +467,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>721</x>
+      <x>707</x>
       <y>532</y>
       <w>406</w>
       <h>252</h>
@@ -478,7 +478,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>721</x>
+      <x>707</x>
       <y>623</y>
       <w>406</w>
       <h>161</h>
@@ -489,18 +489,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>7</x>
-      <y>0</y>
-      <w>105</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>742</x>
+      <x>728</x>
       <y>560</y>
       <w>91</w>
       <h>126</h>
@@ -511,7 +500,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
+      <x>728</x>
       <y>560</y>
       <w>238</w>
       <h>84</h>
@@ -522,7 +511,7 @@ Adapter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
+      <x>728</x>
       <y>560</y>
       <w>238</w>
       <h>189</h>
