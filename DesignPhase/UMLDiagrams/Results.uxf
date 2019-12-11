@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>385</y>
+      <w>225</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ResultManager&gt;&gt;
+Package::ResultModel
+{}
+--
+- neuralNetworkMap : map&lt;string , result&gt;
+- imageMap : map&lt;string , result&gt;
+--
++ getResultsByImage(imageID : string) : List&lt;Result&gt;
++ getResultsByNeuralNetwork(neuralNetworkID : string) : List&lt;Result&gt;
++ getSingleResult(imageID : string, neuralNetworkID : string) : Result
++ addResult(result : Result) : void
++ addResults(results : List&lt;Result&gt;) : void
+- organizeResults(result : Results) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>390</y>
+      <w>225</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Result&gt;&gt;
+Package::ResultModel
+{}
+--
+- imageID : string
+- neuralNetworkID : string
+--
++ Result(imageID : string, neuralNetworkID : string)
++ GetImageID() : string
++ GetNeuralNetworkID() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>790</y>
+      <w>225</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ClassProbability&gt;&gt;
+Package::ResultModel
+{}
+--
+- className : string
+- probability : float
+--
++ NetworkPredicition( name : string, probability : float)
++ getClassName() : string
++ getProbability() : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>445</x>
+      <y>595</y>
+      <w>285</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Result&gt;&gt;
+Package::DetectionResultModel
+{}
+--
+
+--
++ DetectionResult(imageID : string, neuralNetworkID : string, boundingBox : BoundingBox)
++ getBoundingBoxes() : List&lt;BoundingBox&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>490</y>
+      <w>140</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;260.0;110.0;10.0;110.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>175</x>
+      <y>615</y>
+      <w>225</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;BoundingBox&gt;&gt;
+Package::ResultModel
+{}
+--
+- x : float
+- y : float
+- width : float
+- height : float
+--
++ BoundingBox( x : float, y : float, width : float, height : float)
++ getX() : float
++ getY() : float
++ getWidth() : float
++ getHeight() : float
++ getProbabilities() : List&lt;ClassProbabilities&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>595</y>
+      <w>255</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Result&gt;&gt;
+Package::ClassificationResultModel
+{}
+--
+
+--
++ ClassificationResultModel(imageID : string, neuralNetworkID : string)
++ GetProbablities() : List&lt;ClassProbalities&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>490</y>
+      <w>135</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;250.0;110.0;250.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>395</x>
+      <y>620</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>665</y>
+      <w>310</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>600.0;270.0;10.0;270.0;10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>625</y>
+      <w>370</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>10.0;350.0;720.0;350.0;720.0;10.0;680.0;10.0</additional_attributes>
+  </element>
+</diagram>

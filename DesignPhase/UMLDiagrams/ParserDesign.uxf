@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>243</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Parser::IParser
+{abstract}
+--
+
+--
+/+ Parse(string toParse), E /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>405</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageLocationsParser
+--
+
+--
+/+ Parse(string toParse), string /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>405</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::NeuralNetworkParser
+--
+
+--
+/+ Parse(string toParse), NeuralNetwork /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>489</x>
+      <y>405</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::LayerParser
+--
+
+--
+/+ Parse(string toParse), ILayer /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>411</x>
+      <y>489</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;SingleDetectionDatasetParser&gt;&gt;
+Parser::Parser
+{}
+--
+
+--
+/+ Parse(string toParse), DetectionData /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>486</y>
+      <w>78</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionDatasetParser
+--
+
+--
++ Parse(string toParse), DetectionData[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>645</x>
+      <y>315</y>
+      <w>99</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::LineBreakParser
+{abstract}
+--
+
+--
+/+ Parse(string toParse), E /
+# SplitIntoLines(string text), string[]
+# SplitBySymbol(string text, char symbol), string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>405</y>
+      <w>87</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::ClassificationResultParser
+--
+
+--
++ Parse(string toParse), ClassificationResult </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>687</x>
+      <y>273</y>
+      <w>9</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>687</x>
+      <y>369</y>
+      <w>9</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>687</x>
+      <y>384</y>
+      <w>87</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;270.0;20.0;270.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>384</y>
+      <w>87</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>270.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>384</y>
+      <w>102</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>320.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>282</y>
+      <w>255</w>
+      <h>213</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>830.0;20.0;10.0;20.0;10.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>678</x>
+      <y>282</y>
+      <w>177</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>492</x>
+      <y>492</y>
+      <w>252</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;820.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>411</y>
+      <w>129</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParser
+{abstract}
+--
+width : int
+height : int
+channelNumb : int
+--
++ ImageParser(width : int, height : int, channelNumb : int)
++ Parse(image : int[]), image
+/# resize(image : int[], width : int, height : int, channelnumb : int), int[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>909</x>
+      <y>405</y>
+      <w>84</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionResultParser
+--
+
+--
++ Parse(string toParse): DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>282</y>
+      <w>177</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>282</y>
+      <w>255</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>830.0;20.0;10.0;20.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>681</y>
+      <w>246</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Parser::NeuralNetworkFactoryr
+--
+
+--
+_+ buildNeuralNetwork(layers : List&lt;ILayer&gt;) : NeuralNetwork_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>813</x>
+      <y>681</y>
+      <w>171</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Parser::PoolingLayerFactory
+--
+
+--
+_+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : float[]) : ILayer_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>681</y>
+      <w>171</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Parser::ConvolutionalLayerFactory
+--
+
+--
+_+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : float[]) : ILayer_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>909</x>
+      <y>594</y>
+      <w>171</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::LayerFactory
+{abstract}
+--
+
+--
+_+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : float[]) : ILayer_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>894</x>
+      <y>648</y>
+      <w>102</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>987</x>
+      <y>648</y>
+      <w>96</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;300.0;50.0;300.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>642</y>
+      <w>246</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::ClassificationResultFactory
+--
+
+--
+_+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabilities : float[]) : ClassificationResult _
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>600</y>
+      <w>246</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionResultFactory
+--
+
+--
+_+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxes : List&lt;BoundingBox&gt;) : ClassificationResult _
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>642</y>
+      <w>246</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Parser::BoundingBoxFactory
+--
+
+--
+_+ buildBoundingBox(imageClass : string, probabilities : List&lt;Probabilities&gt;) : Probability_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>681</y>
+      <w>246</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Parser::BoundingBoxFactory
+--
+
+--
+_+ buildBoundingBox(x : float, y : float, width : float, height : float, probabilities : List&lt;Probabilities&gt;) : BoundingBox_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>405</y>
+      <w>84</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>Parser::ProbabilityParser
+--
+
+--
++ Parse(string toParse): DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>282</y>
+      <w>201</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;650.0;20.0;650.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>729</x>
+      <y>207</y>
+      <w>57</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Generic abstract parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>219</y>
+      <w>36</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;90.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>489</y>
+      <w>129</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParserWithCropping
+{}
+--
+
+--
+- resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>489</y>
+      <w>129</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParserWithPadding
+{}
+--
+
+--
+- resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>465</y>
+      <w>9</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>465</y>
+      <w>153</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>490.0;10.0;490.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>771</x>
+      <y>297</y>
+      <w>57</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>One abstraction layer deeper
+parses all input with 
+line breaks</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>312</y>
+      <w>48</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;30.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>657</x>
+      <y>582</y>
+      <w>66</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Factories for encapsulate the 
+creating of the concrete objects
+from the input parsing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>174</x>
+      <y>543</y>
+      <w>1050</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
