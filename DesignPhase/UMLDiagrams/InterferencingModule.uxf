@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>198</y>
+      <w>372</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;InferencingDistributor&gt;&gt;
+Package::Inferencing
+{abstract}
+--
+-imagedata : List&lt;int[]&gt;
+-renderer : ResultRenderer 
+-dispatcher : Dispatcher
+-neuralnetworks : NeuralNetwork[]
+-resultmanager : ResultManager 
+--
++ Inferencing(renderer : ResultRendrer, dispatcher : Dispatcher, resultmanager : ResultManager)
++ addNN(nn : NeuralNetwork): void
++ removeNN(name : String): void 
++ setInput(images : Image[]): void
++ startProcess(): void
++ setSettings(setting : Setting): void
++ getSettings() : Setting
++ saveResult(nn_id : int, input_id : int): void
++ getResult(nn_id : int, input_id : int): Result
++ drawResult(nn_id : int, input_id : int): void
+/- drawResult()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>0</y>
+      <w>306</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;NNSetter&gt;&gt;
+Package::Inferencing
+{}
+--
+- parser : NeuralNetworkParser
+--
++ NNSetter(distributor : InterferencingDistributor, parser : NeuralNetworkParser)
++ setNN(directory): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>126</y>
+      <w>78</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>90</y>
+      <w>306</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;InputSetter&gt;&gt;
+Package::Inferencing
+{}
+--
+- parser : ImageParser
+--
++ InputSetter(parser : ImageParser, distributor : InferencingDistributor)
++ setInput(directory): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>36</y>
+      <w>78</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>498</y>
+      <w>312</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;PlatformSetter&gt;&gt;
+Package::Inferencing
+{}
+--
+- checkboxes : List&lt;Checkboxes&gt;
+--
++ PlatformSetter(checkboxes : List&lt;Checkboxes&gt;, 
+						distributor : InferencingDistributor)
++ setPlatform() : void
++ setPlatform(platforms : List&lt;String&gt;)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>198</y>
+      <w>72</w>
+      <h>354</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;570.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>180</y>
+      <w>306</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;SettingSetter&gt;&gt;
+Package::Inferencing
+{}
+--
+- showresultcb : Checkbox
+--
++ SettingSetter(showresult : Checkbox, InferencingDistributor : distributor)
++ setSetting(Setting): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>198</y>
+      <w>78</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>606</y>
+      <w>312</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ModeCalculator&gt;&gt;
+Package::Inferencing
+{}
+--
+
+--
++ ModeCalculator()
++ setMode() : void
+- calculateOptimal() : List&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>258</x>
+      <y>588</y>
+      <w>18</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>432</y>
+      <w>168</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;InferencingDistributorClassification&gt;&gt;
+Package::Inferencing
+{}
+--
+-drawResult()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>432</y>
+      <w>168</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;InferencingDistributorDetection&gt;&gt;
+Package::Inferencing
+{}
+--
+-boxthreshold
+--
+-drawResult()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>396</y>
+      <w>120</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>654</x>
+      <y>396</y>
+      <w>120</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>114</x>
+      <y>276</y>
+      <w>306</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Pager&gt;&gt;
+Package::Inferencing
+{}
+--
+- currentnn
+- currentinput
+- maxnn
+- prevnnbutton
+- nextnnbutton
+- maximage
+- previmagebutton
+- nextimagebutton
+--
++ Pager(prevnnbutton : Button, 
+			nextnnbutton : Button,
+			previmagebutton : Button,
+			nextimagebutton : Button)
++ nextImg(): void 
++ prevImg(): void
++ nextNN(): void
++ prevNN(): void 
++ saveResult(): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>414</x>
+      <y>198</y>
+      <w>78</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>198</y>
+      <w>144</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;PlatformSetting&gt;&gt;
+Package::Inferencing
+{}
+--
+- hardwarelist : List&lt;String&gt;
+--
++ PlatformSetting(List&lt;String&gt;) 
++ getHardwareList() : List&lt;String&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>282</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;OutputSetting&gt;&gt;
+Package::Inferencing
+{}
+--
+-bool showresults
+-bool saveresults
+--
++ createSetting(showresults : bool, saveresults : bool)
++ showResultsEnabled() : bool
++ saveResultsEnabled() : bool </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>246</y>
+      <w>78</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>210</y>
+      <w>78</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>

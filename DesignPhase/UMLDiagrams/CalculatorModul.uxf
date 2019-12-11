@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>152</y>
+      <w>192</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;IPerformancePredictor&gt;&gt;
+Package::Prediction
+{abstract}
+--
+/+ calculatePerformance(): float/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>152</y>
+      <w>192</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;IPowerPredictor&gt;&gt;
+Package::Prediction
+{abstract}
+--
+/+ calculatePower(List&lt;String&gt;): float/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>352</y>
+      <w>200</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;PowerPredictor&gt;&gt;
+Package::Prediction
+{}
+--
+_- powerconsumptionmap : Hashmap_
+_- data : directory_
+--
++ PowerPredictor() 
++ calculatePower(List&lt;String&gt;) : float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>352</y>
+      <w>200</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;PerformancePredictor&gt;&gt;
+Package::Prediction
+{}
+--
+_- performancemap : Hashmap_
+_- data : directory_
+--
++ PerformancePredictor() 
++ calculatePerformance(List&lt;String&gt;) : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>216</y>
+      <w>24</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>216</y>
+      <w>24</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+</diagram>
