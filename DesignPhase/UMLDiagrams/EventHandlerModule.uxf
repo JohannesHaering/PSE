@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1278</x>
+      <y>612</y>
+      <w>138</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+StartHandler
+--
+- distributor : InferencingDistributor
+--
+- startProcess() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>612</y>
+      <w>138</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NextPrevHandler
+{abstract}
+--
+- pager : Pager
+--
+&lt;&lt;constructor&gt;&gt;+ NextPrevHandler(pager : Pager)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>534</x>
+      <y>714</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+PrevHandler
+--
+--
+- prev() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>714</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NextHandler
+--
+--
+- next() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>672</y>
+      <w>84</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>672</y>
+      <w>90</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1434</x>
+      <y>612</y>
+      <w>138</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+SaveResultHandler
+--
+- distributor : InferencingDistributor
+- modelfacade : ModelFacade
+--
+- fetchResults() : void
+- saveResults() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>612</y>
+      <w>138</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+FileExplorerHandler
+{abstract}
+--
+- fileexplorer : Fileexplorer
+- filetypes : string[]
+- distributor : InferencingDistributor
+--
+&lt;&lt;construcotr&gt;&gt;&gt; + FileExplorerHandler(inputtypes : string[])
+- fetchDirectory() : string
+- sendDirectory() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>732</y>
+      <w>138</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+InputImageHandler
+--
+
+--
+- getInputOption() : void
+- setInput() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>702</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>516</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+EventHandler
+{abstract}
+--
+--
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>948</x>
+      <y>564</y>
+      <w>204</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>564</y>
+      <w>492</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>800.0;10.0;800.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>564</y>
+      <w>378</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;610.0;50.0;610.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>564</y>
+      <w>222</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;350.0;50.0;350.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>732</y>
+      <w>138</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NeuralNetworkHandler
+--
+- modelfacade : ModelFacade
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>942</x>
+      <y>702</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;130.0;30.0;130.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1134</x>
+      <y>612</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+MainHandler
+--
+- view : ViewFacade
+--
++ main(String[] args) : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>564</y>
+      <w>78</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;110.0;50.0;110.0;80.0</additional_attributes>
+  </element>
+</diagram>
