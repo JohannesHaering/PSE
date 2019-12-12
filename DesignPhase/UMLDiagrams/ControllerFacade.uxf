@@ -4,18 +4,24 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>250</x>
-      <y>90</y>
-      <w>260</w>
-      <h>190</h>
+      <x>200</x>
+      <y>60</y>
+      <w>330</w>
+      <h>240</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;ControllerFassade&gt;&gt;
-Package::Controller
-{}
+    <panel_attributes>Controller::ControllerFassade
 --
-- Distributor distributor
+- distributor : Distributor
+- resultHandler : SaveResultHandler
+- inputHandler : InputImageHandler
+- neuralNetworkHandler : NeuralNetworkHandler
 --
-+ getResults(nn_id : int, img_id : int)</panel_attributes>
++ startProcess() :void
++ saveResults() : void
++ nextNeuralNetwork() : void
++ prevNeuralNetwork() : void
++ nextImage() : void
++ prevImage() : void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

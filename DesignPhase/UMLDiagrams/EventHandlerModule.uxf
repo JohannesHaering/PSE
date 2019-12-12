@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>744</x>
-      <y>354</y>
+      <y>336</y>
       <w>138</w>
       <h>114</h>
     </coordinates>
@@ -14,7 +14,7 @@
 --
 - distributor : InferencingDistributor
 --
-- startProcess(): void
+-startProcess(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -22,7 +22,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>66</x>
-      <y>354</y>
+      <y>336</y>
       <w>138</w>
       <h>66</h>
     </coordinates>
@@ -40,14 +40,13 @@ NextPrevHandler
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>456</y>
+      <y>438</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PrevHandler
 --
-
 --
 - prev() : void</panel_attributes>
     <additional_attributes/>
@@ -56,14 +55,13 @@ PrevHandler
     <id>UMLClass</id>
     <coordinates>
       <x>138</x>
-      <y>456</y>
+      <y>438</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextHandler
 --
-
 --
 - next() : void</panel_attributes>
     <additional_attributes/>
@@ -72,7 +70,7 @@ NextHandler
     <id>Relation</id>
     <coordinates>
       <x>60</x>
-      <y>414</y>
+      <y>396</y>
       <w>84</w>
       <h>54</h>
     </coordinates>
@@ -83,7 +81,7 @@ NextHandler
     <id>Relation</id>
     <coordinates>
       <x>126</x>
-      <y>414</y>
+      <y>396</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -94,7 +92,7 @@ NextHandler
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>354</y>
+      <y>336</y>
       <w>138</w>
       <h>114</h>
     </coordinates>
@@ -113,7 +111,7 @@ SaveResultHandler
     <id>UMLClass</id>
     <coordinates>
       <x>348</x>
-      <y>354</y>
+      <y>336</y>
       <w>138</w>
       <h>96</h>
     </coordinates>
@@ -134,7 +132,7 @@ FileExplorerHandler
     <id>UMLClass</id>
     <coordinates>
       <x>270</x>
-      <y>474</y>
+      <y>456</y>
       <w>138</w>
       <h>72</h>
     </coordinates>
@@ -151,7 +149,7 @@ InputImageHandler
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>444</y>
+      <y>426</y>
       <w>90</w>
       <h>42</h>
     </coordinates>
@@ -162,7 +160,7 @@ InputImageHandler
     <id>UMLClass</id>
     <coordinates>
       <x>546</x>
-      <y>258</y>
+      <y>240</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -178,30 +176,29 @@ EventHandler
     <id>Relation</id>
     <coordinates>
       <x>414</x>
-      <y>306</y>
+      <y>288</y>
       <w>204</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
-
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>126</x>
-      <y>306</y>
+      <y>288</y>
       <w>492</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>1070.0;10.0;1070.0;50.0;10.0;50.0;10.0;100.0</additional_attributes>
+    <additional_attributes>800.0;10.0;800.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>600</x>
-      <y>306</y>
+      <y>288</y>
       <w>378</w>
       <h>60</h>
     </coordinates>
@@ -212,7 +209,7 @@ EventHandler
     <id>Relation</id>
     <coordinates>
       <x>600</x>
-      <y>306</y>
+      <y>288</y>
       <w>222</w>
       <h>60</h>
     </coordinates>
@@ -223,7 +220,7 @@ EventHandler
     <id>UMLClass</id>
     <coordinates>
       <x>420</x>
-      <y>474</y>
+      <y>456</y>
       <w>138</w>
       <h>60</h>
     </coordinates>
@@ -239,7 +236,7 @@ NeuralNetworkHandler
     <id>Relation</id>
     <coordinates>
       <x>408</x>
-      <y>444</y>
+      <y>426</y>
       <w>90</w>
       <h>42</h>
     </coordinates>
@@ -250,7 +247,7 @@ NeuralNetworkHandler
     <id>UMLClass</id>
     <coordinates>
       <x>600</x>
-      <y>354</y>
+      <y>336</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -267,7 +264,7 @@ MainHandler
     <id>Relation</id>
     <coordinates>
       <x>600</x>
-      <y>306</y>
+      <y>288</y>
       <w>78</w>
       <h>60</h>
     </coordinates>
