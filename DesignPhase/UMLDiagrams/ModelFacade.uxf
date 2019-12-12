@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>875</x>
+      <y>415</y>
+      <w>295</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ImageFacade
+--
+
+--
++ getImage(filePath : string, width : int, height : int, channelNumb : int) : int[]
++ getImages(filePaths : string[], width : int, height : int, channelNumb : int) : int[][]
++ getImagesFromTxtFile(filePath : string, width : int, height : int, channelNumb : int) : int[][]
++ getImageFromCamera(deviceId : int, width : int, height : int, channelNumb : int) : int[]
++ getImagesFromVideo(filePath : string, width : int, height : int, channelNumb : int) : int[][] 
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>275</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::Facade
+{abstract}
+--
+fileIO : FileIO
+parser : Parser
+videoHandler : VideoHandler
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>415</y>
+      <w>300</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::DetectionDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : DetectionDatset</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>415</y>
+      <w>310</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ClassificationDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : ClassificationDataset
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>415</y>
+      <w>240</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ParseResultFacade
+--
+
+--
++ parseClassificationResult(resultString : string) : ClassificatiomResult
++ parseDetectionResult(resultString : string) : DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>375</x>
+      <y>335</y>
+      <w>500</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>335</y>
+      <w>450</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>335</y>
+      <w>185</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>335</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;160.0</additional_attributes>
+  </element>
+</diagram>
