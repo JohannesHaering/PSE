@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
-      <y>312</y>
+      <x>1020</x>
+      <y>348</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -22,8 +22,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
-      <y>174</y>
+      <x>78</x>
+      <y>210</y>
       <w>138</w>
       <h>66</h>
     </coordinates>
@@ -40,8 +40,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>276</y>
+      <x>12</x>
+      <y>312</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -56,8 +56,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>276</y>
+      <x>150</x>
+      <y>312</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -66,14 +66,14 @@ Package::EventHandlerModule
 {}
 --
 --
--next() : void</panel_attributes>
+- next() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>60</x>
-      <y>234</y>
+      <x>72</x>
+      <y>270</y>
       <w>84</w>
       <h>54</h>
     </coordinates>
@@ -83,8 +83,8 @@ Package::EventHandlerModule
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>234</y>
+      <x>138</x>
+      <y>270</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -94,8 +94,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1014</x>
-      <y>174</y>
+      <x>1026</x>
+      <y>210</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -113,8 +113,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>174</y>
+      <x>876</x>
+      <y>210</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -132,19 +132,19 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
-      <y>174</y>
+      <x>360</x>
+      <y>210</y>
       <w>138</w>
       <h>96</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;FEHandler&gt;&gt;
+    <panel_attributes>&lt;&lt;FileExplorerHandler&gt;&gt;
 Package::EventHandlerModule
 {abstract}
 --
 -fileexplorer : Fileexplorer
 -filetypes : string[]
 --
-+ FEHandler(string[])
++ FEHandler(inputtypes : string[])
 - fetchDirectory(): void
 - sendDirectory(): void</panel_attributes>
     <additional_attributes/>
@@ -152,9 +152,9 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>282</x>
-      <y>306</y>
-      <w>126</w>
+      <x>360</x>
+      <y>342</y>
+      <w>138</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;InputImageHandler&gt;&gt;
@@ -163,52 +163,26 @@ Package::EventHandlerModule
 --
 -InputSetter
 --
--getInputOption(): void
--setInput(): void</panel_attributes>
+- getInputOption(): void
+- setInput(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>342</x>
-      <y>264</y>
-      <w>84</w>
+      <x>426</x>
+      <y>300</y>
+      <w>18</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>306</y>
-      <w>126</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;NNHandler&gt;&gt;
-Package::EventHandlerModule
-{}
---
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>408</x>
-      <y>264</y>
-      <w>90</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>864</x>
-      <y>312</y>
+      <x>876</x>
+      <y>348</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -225,8 +199,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>636</x>
-      <y>174</y>
+      <x>648</x>
+      <y>210</y>
       <w>126</w>
       <h>66</h>
     </coordinates>
@@ -242,8 +216,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>78</y>
+      <x>558</x>
+      <y>114</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -258,8 +232,8 @@ Package::EventHandlerModule
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>564</x>
-      <y>264</y>
+      <x>576</x>
+      <y>300</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
@@ -268,14 +242,14 @@ Package::EventHandlerModule
 {}
 --
 --
-openPage() : void </panel_attributes>
+# openPage() : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>564</x>
-      <y>342</y>
+      <x>576</x>
+      <y>378</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
@@ -284,14 +258,14 @@ Package::EventHandlerModule
 {}
 --
 --
-openPage() : void </panel_attributes>
+# openPage() : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>714</x>
-      <y>264</y>
+      <x>726</x>
+      <y>300</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
@@ -300,14 +274,14 @@ Package::EventHandlerModule
 {}
 --
 --
-openPage() : void </panel_attributes>
+# openPage() : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>714</x>
-      <y>342</y>
+      <x>726</x>
+      <y>378</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
@@ -316,14 +290,14 @@ Package::EventHandlerModule
 {}
 --
 --
-openPage() : void </panel_attributes>
+# openPage() : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>636</x>
-      <y>414</y>
+      <x>648</x>
+      <y>450</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
@@ -332,14 +306,14 @@ Package::EventHandlerModule
 {}
 --
 --
-openPage() : void </panel_attributes>
+# openPage() : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>234</y>
+      <x>708</x>
+      <y>270</y>
       <w>18</w>
       <h>192</h>
     </coordinates>
@@ -349,8 +323,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>618</x>
-      <y>234</y>
+      <x>630</x>
+      <y>270</y>
       <w>96</w>
       <h>42</h>
     </coordinates>
@@ -360,8 +334,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>234</y>
+      <x>708</x>
+      <y>270</y>
       <w>90</w>
       <h>42</h>
     </coordinates>
@@ -371,8 +345,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>618</x>
-      <y>234</y>
+      <x>630</x>
+      <y>270</y>
       <w>96</w>
       <h>120</h>
     </coordinates>
@@ -382,8 +356,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>234</y>
+      <x>708</x>
+      <y>270</y>
       <w>90</w>
       <h>120</h>
     </coordinates>
@@ -393,19 +367,19 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>126</y>
-      <w>210</w>
+      <x>426</x>
+      <y>162</y>
+      <w>204</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>330.0;10.0;330.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>126</y>
+      <x>138</x>
+      <y>162</y>
       <w>492</w>
       <h>60</h>
     </coordinates>
@@ -415,8 +389,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>126</y>
+      <x>612</x>
+      <y>162</y>
       <w>120</w>
       <h>60</h>
     </coordinates>
@@ -426,8 +400,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>126</y>
+      <x>612</x>
+      <y>162</y>
       <w>342</w>
       <h>60</h>
     </coordinates>
@@ -437,8 +411,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>126</y>
+      <x>612</x>
+      <y>162</y>
       <w>492</w>
       <h>60</h>
     </coordinates>
@@ -448,8 +422,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>126</y>
+      <x>612</x>
+      <y>162</y>
       <w>414</w>
       <h>198</h>
     </coordinates>
@@ -459,8 +433,8 @@ openPage() : void </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>126</y>
+      <x>612</x>
+      <y>162</y>
       <w>486</w>
       <h>198</h>
     </coordinates>
