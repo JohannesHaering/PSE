@@ -4,23 +4,22 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>50</y>
-      <w>210</w>
-      <h>190</h>
+      <x>370</x>
+      <y>550</y>
+      <w>370</w>
+      <h>200</h>
     </coordinates>
-    <panel_attributes>ResultAdapter::
-NeuralNetworkAdapter
+    <panel_attributes>NeuralNetworkModelAdapter::NeuralNetworkAdapter
 --
 - neuralNetwork : NeuralNetwork
 --
 &lt;&lt;constructor&gt;&gt;+ NeuralNetwork()
 &lt;&lt;constructor&gt;&gt;+ NeuralNetwork(name : string)
-+ add_layer(layer : NetworkLayer)
-+ get_first_layer() : NetworkLayer
-+ get_last_layer() : NetworkLayer
-+ get_next_layer() : NetworkLayer
-+ get_previous_layer() : NetworkLayer
++ addLayer(layer : NetworkLayer)
++ getFirstLayer() : NetworkLayer
++ getLastLayer() : NetworkLayer
++ getNextLayer() : NetworkLayer
++ getPreviousLayer() : NetworkLayer
 </panel_attributes>
     <additional_attributes/>
   </element>

@@ -4,25 +4,25 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
-      <y>336</y>
+      <x>1278</x>
+      <y>612</y>
       <w>138</w>
       <h>114</h>
     </coordinates>
-    <panel_attributes>EventHandlerModule::StartHandler
-
+    <panel_attributes>EventHandlerModule::
+StartHandler
 --
 - distributor : InferencingDistributor
 --
--startProcess(): void
+- startProcess() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
-      <y>336</y>
+      <x>600</x>
+      <y>612</y>
       <w>138</w>
       <h>66</h>
     </coordinates>
@@ -32,15 +32,15 @@ NextPrevHandler
 --
 - pager : Pager
 --
-+ NextPrevHandler(pager : Pager)
+&lt;&lt;constructor&gt;&gt;+ NextPrevHandler(pager : Pager)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>438</y>
+      <x>534</x>
+      <y>714</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -54,8 +54,8 @@ PrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>438</y>
+      <x>672</x>
+      <y>714</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -69,8 +69,8 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>60</x>
-      <y>396</y>
+      <x>594</x>
+      <y>672</y>
       <w>84</w>
       <h>54</h>
     </coordinates>
@@ -80,8 +80,8 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>396</y>
+      <x>660</x>
+      <y>672</y>
       <w>90</w>
       <h>54</h>
     </coordinates>
@@ -91,8 +91,8 @@ NextHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>336</y>
+      <x>1434</x>
+      <y>612</y>
       <w>138</w>
       <h>114</h>
     </coordinates>
@@ -102,16 +102,16 @@ SaveResultHandler
 - distributor : InferencingDistributor
 - modelfacade : ModelFacade
 --
-- fetchResults(): void
-- saveResults(): void
+- fetchResults() : void
+- saveResults() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
-      <y>336</y>
+      <x>882</x>
+      <y>612</y>
       <w>138</w>
       <h>96</h>
     </coordinates>
@@ -123,16 +123,16 @@ FileExplorerHandler
 - filetypes : string[]
 - distributor : InferencingDistributor
 --
-+ FileExplorerHandler(inputtypes : string[])
-- fetchDirectory(): directory
-- sendDirectory(): void</panel_attributes>
+&lt;&lt;construcotr&gt;&gt;&gt; + FileExplorerHandler(inputtypes : string[])
+- fetchDirectory() : string
+- sendDirectory() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>456</y>
+      <x>804</x>
+      <y>732</y>
       <w>138</w>
       <h>72</h>
     </coordinates>
@@ -141,15 +141,15 @@ InputImageHandler
 --
 
 --
-- getInputOption(): void
-- setInput(): void</panel_attributes>
+- getInputOption() : void
+- setInput() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>426</y>
+      <x>870</x>
+      <y>702</y>
       <w>90</w>
       <h>42</h>
     </coordinates>
@@ -159,8 +159,8 @@ InputImageHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>240</y>
+      <x>1080</x>
+      <y>516</y>
       <w>126</w>
       <h>54</h>
     </coordinates>
@@ -175,8 +175,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>288</y>
+      <x>948</x>
+      <y>564</y>
       <w>204</w>
       <h>60</h>
     </coordinates>
@@ -186,8 +186,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>288</y>
+      <x>660</x>
+      <y>564</y>
       <w>492</w>
       <h>60</h>
     </coordinates>
@@ -197,8 +197,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
+      <x>1134</x>
+      <y>564</y>
       <w>378</w>
       <h>60</h>
     </coordinates>
@@ -208,8 +208,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
+      <x>1134</x>
+      <y>564</y>
       <w>222</w>
       <h>60</h>
     </coordinates>
@@ -219,10 +219,10 @@ EventHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>456</y>
+      <x>954</x>
+      <y>732</y>
       <w>138</w>
-      <h>60</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NeuralNetworkHandler
@@ -235,8 +235,8 @@ NeuralNetworkHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>426</y>
+      <x>942</x>
+      <y>702</y>
       <w>90</w>
       <h>42</h>
     </coordinates>
@@ -246,8 +246,8 @@ NeuralNetworkHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>336</y>
+      <x>1134</x>
+      <y>612</y>
       <w>126</w>
       <h>114</h>
     </coordinates>
@@ -263,8 +263,8 @@ MainHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
+      <x>1134</x>
+      <y>564</y>
       <w>78</w>
       <h>60</h>
     </coordinates>

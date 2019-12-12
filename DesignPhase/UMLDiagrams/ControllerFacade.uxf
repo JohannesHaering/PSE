@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>60</y>
+      <x>350</x>
+      <y>430</y>
       <w>330</w>
       <h>240</h>
     </coordinates>
@@ -16,7 +16,7 @@
 - inputHandler : InputImageHandler
 - neuralNetworkHandler : NeuralNetworkHandler
 --
-+ startProcess() :void
++ startProcess() : void
 + saveResults() : void
 + nextNeuralNetwork() : void
 + prevNeuralNetwork() : void
