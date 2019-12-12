@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>1</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>721</y>
+      <w>35</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+I/O::FileIO
+--
+- singleton, FileIO
+- sileStream, fileStream
+--
+- fileIO(), FileIO
+/+ readFile(filePath : string), IData/
+/+ writeFile(filePath : string, data : IData), boolean/
++ getInstance(), IFileIO
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>401</x>
+      <y>755</y>
+      <w>45</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::TextFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>775</y>
+      <w>37</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleImageFileIO
+--
+
+--
++ ReadFile(filePaths : string[]), IData
++ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>422</x>
+      <y>739</y>
+      <w>26</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;240.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>401</x>
+      <y>775</y>
+      <w>47</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleTextFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>422</x>
+      <y>767</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>755</y>
+      <w>37</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::ImageFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>767</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>443</x>
+      <y>744</y>
+      <w>34</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;320.0;20.0;320.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>499</x>
+      <y>755</y>
+      <w>38</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::VideoFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>744</y>
+      <w>47</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;450.0;20.0;450.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>298</x>
+      <y>725</y>
+      <w>21</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+I/O::Data
+--
+
+--
+/+ getData(), E/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>315</x>
+      <y>754</y>
+      <w>35</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/Oge::MultipleImageData
+--
+- data : image[]
+--
+&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ getData(), image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>353</x>
+      <y>754</y>
+      <w>30</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::VideoData
+--
+- video : Video
+--
+&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ getData(), video</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>213</x>
+      <y>754</y>
+      <w>32</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleStringData
+--
+- stringData : string
+--
+&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ getData(), string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>754</y>
+      <w>30</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::StringData
+--
+- stringData : string
+--
+&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ getData(), string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>283</x>
+      <y>754</y>
+      <w>28</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::ImageData
+--
+- imageData : Image
+--
+&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ getData(), image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>743</y>
+      <w>44</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>293</x>
+      <y>749</y>
+      <w>3</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>307</x>
+      <y>748</y>
+      <w>60</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;580.0;20.0;580.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>743</y>
+      <w>78</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>760.0;10.0;760.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>307</x>
+      <y>743</y>
+      <w>26</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;240.0;70.0;240.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>270</x>
+      <y>717</y>
+      <w>18</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Stores the abstractly 
+and independently 
+from the file I/O</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>284</x>
+      <y>721</y>
+      <w>20</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>474</x>
+      <y>711</y>
+      <w>18</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Generic abstract IO class
+The inherited classes
+implement the concrete IO
+for the concrete classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>718</y>
+      <w>16</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>367</x>
+      <y>614</y>
+      <w>59</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ImageFacade
+--
+
+--
++ getImage(filePath : string, width : int, height : int, channelNumb : int) : int[]
++ getImages(filePaths : string[], width : int, height : int, channelNumb : int) : int[][]
++ getImagesFromTxtFile(filePath : string, width : int, height : int, channelNumb : int) : int[][]
++ getImageFromCamera(deviceId : int, width : int, height : int, channelNumb : int) : int[]
++ getImagesFromVideo(filePath : string, width : int, height : int, channelNumb : int) : int[][] 
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>354</x>
+      <y>586</y>
+      <w>21</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::Facade
+{abstract}
+--
+- fileIO : FileIO
+- parser : Parser
+- videoHandler : VideoHandler
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>614</y>
+      <w>60</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::DetectionDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : DetectionDatset</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>236</x>
+      <y>614</y>
+      <w>62</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ClassificationDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : ClassificationDataset
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>428</x>
+      <y>614</y>
+      <w>48</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ParseResultFacade
+--
+
+--
++ parseClassificationResult(resultString : string) : ClassificatiomResult
++ parseDetectionResult(resultString : string) : DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>267</x>
+      <y>598</y>
+      <w>100</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>364</x>
+      <y>598</y>
+      <w>90</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>598</y>
+      <w>37</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>364</x>
+      <y>598</y>
+      <w>32</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>67</x>
+      <y>755</y>
+      <w>44</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoCutter
+{abstract}
+--
+
+--
+/+ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>729</y>
+      <w>33</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::CameraHandler
+--
+deviceId : int
+timeout : int
+frameInterval : int
+--
++ CameraHandler(deviceId : int, timeout : int)
++ getNextFrame()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>756</y>
+      <w>32</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoHandler
+{abstract}
+--
+FrameInterval : int
+--
+/+ handleVideo(stream : VideoStream) : Image[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>67</x>
+      <y>773</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;VideoCutter&gt;&gt;
+VideoHandler::VideoHandler
+{}
+--
+
+--
++ VideoCutter()
++ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>721</y>
+      <w>44</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoLibAdapter
+{abstract}
+--
+
+--
+/ + cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]/
+/ + loadFrameFromCamera(cameraId : int) : Image /
+/ + openCamera(cameraID : int) : boolean /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>86</x>
+      <y>765</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>757</y>
+      <w>30</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;60.0;280.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>139</x>
+      <y>783</y>
+      <w>31</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::AviVideosHandler
+--
+frameInterval : int
+--
++ VideoHandler(frameInterbal : int)
++ handleVideo(stream . VideoStream) : Image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>750</y>
+      <w>44</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::OpenCWAdapter
+--
+_- videoLibAdapter : IVideoLibAdapter 
+--
+- OpenCWAdapter()
++ cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]
++ loadFrameFromCamera(cameraId : int) : Image 
++ openCamera(cameraID : int) : boolean
+_ + getInstance() : OpenCWAdapter_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>51</x>
+      <y>724</y>
+      <w>18</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;380.0;160.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>28</x>
+      <y>734</y>
+      <w>3</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>138</x>
+      <y>700</y>
+      <w>33</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::ICameraHandler
+--
+
+--
+/+ GetNextFrame()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>153</x>
+      <y>766</y>
+      <w>3</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>51</x>
+      <y>722</y>
+      <w>89</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;670.0;10.0;670.0;120.0;870.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>151</x>
+      <y>718</y>
+      <w>3</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>177</x>
+      <y>686</y>
+      <w>24</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Is responsible for
+opening/ closing the connection to 
+the camera
+As well as taking pictures</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>693</y>
+      <w>12</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>176</x>
+      <y>749</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Is responsible for 
+cutting the video 
+into frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>167</x>
+      <y>754</y>
+      <w>12</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>104</x>
+      <y>741</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Cuts the video into 
+frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>104</x>
+      <y>746</y>
+      <w>5</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;110.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>706</y>
+      <w>17</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Adapter to video library 
+to support the needed 
+functionality</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5</x>
+      <y>711</y>
+      <w>9</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>70.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>799</x>
+      <y>217</y>
+      <w>25</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>MainMenu
+--
+ 
+--
++ imageClassificationClicked(): void
++ objectDetectionClicked(): void
++ trainingClicked(): void
++ showTopologyClicked(): void
++ openPage(View page): void
++ showPage() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>225</y>
+      <w>43</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>ImageClassificationControlPanel
+--
+- checkBoxesDevice : map&lt;string, boolean&gt;
+- checkBoxAppendResult : boolean
+# startButtonContent : string
+--
++ dropDownChanged(string name) : void 
++ addImageClicked() : Image
++ checkBoxChanged(flag : bool, name: sting) : void
++ modeChanged(name : sting) : void
++ imageChanged(img : Image) : void
++ neuronalNetworkChanged(nn : NeuralNetwork) : void
++ startButtonClicked() : void
++ showPage() : void
++ getCheckBoxesDevice() : map&lt;string : boolean&gt;
++ setPossibleDevices(devices : string[]) : void
++ getCheckBoxAppendResults() : bool
+# resultsChanged(result: Result) : void
+# setCheckBoxAppendResults(flag : bool) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>961</x>
+      <y>217</y>
+      <w>30</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Topology
+--
+
+--
++ chooseTopologyClicked() : void
++ saveVisualisationClicked() : string
++ showPage() : void
+- drawTopology(nn: NeuralNetwork) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>158</y>
+      <w>21</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+View
+--
+- controller : Controller
+--
+/+ setController() : void/
+/+ showPage() : void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>909</x>
+      <y>217</y>
+      <w>36</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>InferencePage
+--
+
+--
++ getOperatingMode() : OperatingMode
++ getDevices() : string[]
++ getInputMode() : string
++ getNeuralNetworkPath() : string
++ getInputPathes() : string[]
++ getAppendResult : string[]
++ start() : void
++ showPage() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>911</x>
+      <y>158</y>
+      <w>21</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+Observer
+--
+
+--
+/+ update()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>813</x>
+      <y>169</y>
+      <w>75</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>730.0;10.0;730.0;100.0;10.0;100.0;10.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>885</x>
+      <y>202</y>
+      <w>3</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>885</x>
+      <y>202</y>
+      <w>43</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;410.0;60.0;410.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>885</x>
+      <y>202</y>
+      <w>89</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;870.0;60.0;870.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>896</x>
+      <y>159</y>
+      <w>17</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>239</y>
+      <w>30</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;130.0;10.0;130.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>165</y>
+      <w>85</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+Renderer
+--
+- resultImage : Image
+--
+/+ drawGraphic() : E/
+# drawRectangle(img : Image, x : double, y : double, width : double, height : double, fillingColor : string, strokeColor : string) : Image
+# drawText(img : Image, text : string, , x : double, y : double, width : double, height : double) : Image
+# drawLine(img : Image, x : double, y : double, fillingColor : string, strokeColor : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>826</x>
+      <y>217</y>
+      <w>29</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>ClassificationResultPanel
+--
+- currentImage : Image
+--
++ showPage() : void
++ saveButtonClicked() : void
++ previousImgClicked() : void
++ nextImgClicked() : void
++ previousNNClicked() : void
++ nextNNClicked() : void
++ getImage() : Image
++ setImage(img : Image) : void 
++ setResult(result : Result) : void
+# resultsChanged(result: Result) : void
+# getRenderedResult(result : Result) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>838</x>
+      <y>202</y>
+      <w>50</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>480.0;10.0;480.0;60.0;10.0;60.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>791</x>
+      <y>262</y>
+      <w>50</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>DetectionResultPanel
+--
+
+--
+# resultsChanged(result: Result) : void
+# getRenderedResult(result : Result)
+- drawBoundingBoxes(boundingBoxes : BoundingBox[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1091</x>
+      <y>223</y>
+      <w>35</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>DetectionResultRender
+--
+
+--
++ drawGraphic(result : DetectionResult) : Image
+- combineBoundingBoxProbabilities(boundingBoxes : BoundingBox[]) : Probability[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>197</y>
+      <w>34</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>DiagramRender
+--
+
+--
++ drawGraphic(probabilities : Probability[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1091</x>
+      <y>197</y>
+      <w>35</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>ClassificationResultRender
+--
+
+--
++ drawGraphic(result : ClassificationResult) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1107</x>
+      <y>183</y>
+      <w>21</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>183</y>
+      <w>35</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;330.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1107</x>
+      <y>215</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>267</y>
+      <w>43</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>ClassificationControlPanel
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>877</x>
+      <y>258</y>
+      <w>3</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>875</x>
+      <y>184</y>
+      <w>21</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+ContentView
+--
+
+--
+/+ getDataFromExplorer() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>885</x>
+      <y>169</y>
+      <w>3</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1179</x>
+      <y>197</y>
+      <w>37</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>TopologyRenderer
+--
+
+--
++ drawGraphic(neuralNetwork : NeuralNetwork) : Image
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>183</y>
+      <w>73</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>220</y>
+      <w>11</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;60.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>854</x>
+      <y>217</y>
+      <w>57</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;550.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>374</x>
+      <y>592</y>
+      <w>119</w>
+      <h>131</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>720.0;1290.0;720.0;710.0;1170.0;710.0;1170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>591</y>
+      <w>186</w>
+      <h>113</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;1100.0;450.0;1100.0;450.0;10.0;1840.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>895</x>
+      <y>169</y>
+      <w>197</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>1950.0;10.0;1320.0;10.0;1320.0;200.0;10.0;200.0</additional_attributes>
+  </element>
+</diagram>
