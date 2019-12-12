@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>243</y>
+      <x>741</x>
+      <y>396</y>
       <w>63</w>
       <h>33</h>
     </coordinates>
@@ -14,15 +14,15 @@
 --
 
 --
-/+ Parse(string toParse), E /
+/+ parse(toParse : string), E /
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>405</y>
+      <x>741</x>
+      <y>558</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -30,14 +30,14 @@
 --
 
 --
-/+ Parse(string toParse), string /</panel_attributes>
++ Parse(toParse : string), string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>405</y>
+      <x>651</x>
+      <y>558</y>
       <w>81</w>
       <h>27</h>
     </coordinates>
@@ -45,14 +45,14 @@
 --
 
 --
-/+ Parse(string toParse), NeuralNetwork /</panel_attributes>
++ parse(toParse : string), NeuralNetwork</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>489</x>
-      <y>405</y>
+      <x>570</x>
+      <y>558</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -60,14 +60,14 @@
 --
 
 --
-/+ Parse(string toParse), ILayer /</panel_attributes>
++ parse(toParse : string), ILayer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>411</x>
-      <y>489</y>
+      <x>492</x>
+      <y>642</y>
       <w>84</w>
       <h>36</h>
     </coordinates>
@@ -77,14 +77,14 @@ Parser::Parser
 --
 
 --
-/+ Parse(string toParse), DetectionData /</panel_attributes>
+/+ parse(string toParse), DetectionData /</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>738</x>
-      <y>486</y>
+      <x>819</x>
+      <y>639</y>
       <w>78</w>
       <h>27</h>
     </coordinates>
@@ -92,14 +92,14 @@ Parser::Parser
 --
 
 --
-+ Parse(string toParse), DetectionData[]</panel_attributes>
++ parse(toParse : string), DetectionData[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>645</x>
-      <y>315</y>
+      <x>726</x>
+      <y>468</y>
       <w>99</w>
       <h>57</h>
     </coordinates>
@@ -108,16 +108,16 @@ Parser::Parser
 --
 
 --
-/+ Parse(string toParse), E /
-# SplitIntoLines(string text), string[]
-# SplitBySymbol(string text, char symbol), string[]</panel_attributes>
+/+ parse(toParse : string), E /
+# splitIntoLines(string text), string[]
+# splitBySymbol(string text, char symbol), string[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
-      <y>405</y>
+      <x>885</x>
+      <y>558</y>
       <w>87</w>
       <h>57</h>
     </coordinates>
@@ -125,14 +125,14 @@ Parser::Parser
 --
 
 --
-+ Parse(string toParse), ClassificationResult </panel_attributes>
++ parse(toParse : string), ClassificationResult </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>687</x>
-      <y>273</y>
+      <x>768</x>
+      <y>426</y>
       <w>9</w>
       <h>48</h>
     </coordinates>
@@ -142,8 +142,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>687</x>
-      <y>369</y>
+      <x>768</x>
+      <y>522</y>
       <w>9</w>
       <h>42</h>
     </coordinates>
@@ -153,8 +153,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>687</x>
-      <y>384</y>
+      <x>768</x>
+      <y>537</y>
       <w>87</w>
       <h>108</h>
     </coordinates>
@@ -164,8 +164,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>609</x>
-      <y>384</y>
+      <x>690</x>
+      <y>537</y>
       <w>87</w>
       <h>27</h>
     </coordinates>
@@ -175,8 +175,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>516</x>
-      <y>384</y>
+      <x>597</x>
+      <y>537</y>
       <w>102</w>
       <h>27</h>
     </coordinates>
@@ -186,8 +186,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>282</y>
+      <x>522</x>
+      <y>435</y>
       <w>255</w>
       <h>213</h>
     </coordinates>
@@ -197,8 +197,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>678</x>
-      <y>282</y>
+      <x>759</x>
+      <y>435</y>
       <w>177</w>
       <h>129</h>
     </coordinates>
@@ -208,8 +208,8 @@ Parser::Parser
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>492</x>
-      <y>492</y>
+      <x>573</x>
+      <y>645</y>
       <w>252</w>
       <h>12</h>
     </coordinates>
@@ -220,9 +220,9 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>411</y>
-      <w>129</w>
+      <x>336</x>
+      <y>564</y>
+      <w>138</w>
       <h>57</h>
     </coordinates>
     <panel_attributes>Parser::ImageParser
@@ -232,16 +232,16 @@ width : int
 height : int
 channelNumb : int
 --
-+ ImageParser(width : int, height : int, channelNumb : int)
-+ Parse(image : int[]), image
+&lt;&lt;consturctor&gt;&gt; + ImageParser(width : int, height : int, channelNumb : int)
++ parse(image : int[]), image
 /# resize(image : int[], width : int, height : int, channelnumb : int), int[]/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>909</x>
-      <y>405</y>
+      <x>990</x>
+      <y>558</y>
       <w>84</w>
       <h>57</h>
     </coordinates>
@@ -249,14 +249,14 @@ channelNumb : int
 --
 
 --
-+ Parse(string toParse): DetectionResult</panel_attributes>
++ parse(toParse : string): DetectionResult</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>783</x>
-      <y>282</y>
+      <x>864</x>
+      <y>435</y>
       <w>177</w>
       <h>129</h>
     </coordinates>
@@ -266,8 +266,8 @@ channelNumb : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>282</y>
+      <x>405</x>
+      <y>435</y>
       <w>255</w>
       <h>135</h>
     </coordinates>
@@ -277,8 +277,8 @@ channelNumb : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>681</y>
+      <x>612</x>
+      <y>834</y>
       <w>246</w>
       <h>30</h>
     </coordinates>
@@ -286,14 +286,14 @@ channelNumb : int
 --
 
 --
-_+ buildNeuralNetwork(layers : List&lt;ILayer&gt;) : NeuralNetwork_</panel_attributes>
+_+ buildNeuralNetwork(layers : list&lt;ILayer&gt;) : NeuralNetwork_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>813</x>
-      <y>681</y>
+      <x>894</x>
+      <y>834</y>
       <w>171</w>
       <h>30</h>
     </coordinates>
@@ -307,8 +307,8 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>681</y>
+      <x>1071</x>
+      <y>834</y>
       <w>171</w>
       <h>30</h>
     </coordinates>
@@ -322,8 +322,8 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>909</x>
-      <y>594</y>
+      <x>990</x>
+      <y>747</y>
       <w>171</w>
       <h>57</h>
     </coordinates>
@@ -338,8 +338,8 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>894</x>
-      <y>648</y>
+      <x>975</x>
+      <y>801</y>
       <w>102</w>
       <h>39</h>
     </coordinates>
@@ -349,8 +349,8 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>987</x>
-      <y>648</y>
+      <x>1068</x>
+      <y>801</y>
       <w>96</w>
       <h>39</h>
     </coordinates>
@@ -360,8 +360,8 @@ _+ buildLayer(layerName : string, nodeNumb : int, weights : float[,], biases : f
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>261</x>
-      <y>642</y>
+      <x>342</x>
+      <y>795</y>
       <w>246</w>
       <h>27</h>
     </coordinates>
@@ -376,8 +376,8 @@ _+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>261</x>
-      <y>600</y>
+      <x>342</x>
+      <y>753</y>
       <w>246</w>
       <h>27</h>
     </coordinates>
@@ -385,15 +385,15 @@ _+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabi
 --
 
 --
-_+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxes : List&lt;BoundingBox&gt;) : ClassificationResult _
+_+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxes : list&lt;BoundingBox&gt;) : ClassificationResult _
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>642</y>
+      <x>612</x>
+      <y>795</y>
       <w>246</w>
       <h>27</h>
     </coordinates>
@@ -401,14 +401,14 @@ _+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxe
 --
 
 --
-_+ buildBoundingBox(imageClass : string, probabilities : List&lt;Probabilities&gt;) : Probability_</panel_attributes>
+_+ buildBoundingBox(imageClass : string, probabilities : list&lt;Probabilities&gt;) : Probability_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>261</x>
-      <y>681</y>
+      <x>342</x>
+      <y>834</y>
       <w>246</w>
       <h>30</h>
     </coordinates>
@@ -416,14 +416,14 @@ _+ buildBoundingBox(imageClass : string, probabilities : List&lt;Probabilities&g
 --
 
 --
-_+ buildBoundingBox(x : float, y : float, width : float, height : float, probabilities : List&lt;Probabilities&gt;) : BoundingBox_</panel_attributes>
+_+ buildBoundingBox(x : float, y : float, width : float, height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1035</x>
-      <y>405</y>
+      <x>1116</x>
+      <y>558</y>
       <w>84</w>
       <h>57</h>
     </coordinates>
@@ -431,14 +431,14 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
 --
 
 --
-+ Parse(string toParse): DetectionResult</panel_attributes>
++ parse(toParse : string): DetectionResult</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>882</x>
-      <y>282</y>
+      <x>963</x>
+      <y>435</y>
       <w>201</w>
       <h>129</h>
     </coordinates>
@@ -448,8 +448,8 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>729</x>
-      <y>207</y>
+      <x>810</x>
+      <y>360</y>
       <w>57</w>
       <h>21</h>
     </coordinates>
@@ -459,8 +459,8 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>711</x>
-      <y>219</y>
+      <x>792</x>
+      <y>372</y>
       <w>36</w>
       <h>33</h>
     </coordinates>
@@ -470,24 +470,26 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>489</y>
+      <x>201</x>
+      <y>642</y>
       <w>129</w>
-      <h>30</h>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Parser::ImageParserWithCropping
 {}
 --
 
 --
+&lt;&lt;consturctor&gt;&gt; + ImageParserWithCropping
+                          (width : int, height : int, channelNumb : int)
 - resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>489</y>
+      <x>345</x>
+      <y>642</y>
       <w>129</w>
       <h>33</h>
     </coordinates>
@@ -496,14 +498,16 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
 --
 
 --
+&lt;&lt;consturctor&gt;&gt; + ImageParserWithPadding
+                          (width : int, height : int, channelNumb : int)
 - resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>465</y>
+      <x>405</x>
+      <y>618</y>
       <w>9</w>
       <h>30</h>
     </coordinates>
@@ -513,8 +517,8 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>465</y>
+      <x>261</x>
+      <y>618</y>
       <w>153</w>
       <h>30</h>
     </coordinates>
@@ -524,8 +528,8 @@ _+ buildBoundingBox(x : float, y : float, width : float, height : float, probabi
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>771</x>
-      <y>297</y>
+      <x>852</x>
+      <y>450</y>
       <w>57</w>
       <h>21</h>
     </coordinates>
@@ -537,8 +541,8 @@ line breaks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>312</y>
+      <x>813</x>
+      <y>465</y>
       <w>48</w>
       <h>15</h>
     </coordinates>
@@ -548,8 +552,8 @@ line breaks</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>657</x>
-      <y>582</y>
+      <x>738</x>
+      <y>735</y>
       <w>66</w>
       <h>21</h>
     </coordinates>
@@ -561,8 +565,8 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>174</x>
-      <y>543</y>
+      <x>252</x>
+      <y>696</y>
       <w>1050</w>
       <h>234</h>
     </coordinates>
