@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>400</y>
+      <w>560</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Resultadapter::ResultsmanagerAdapter
+--
+- resultManager : ResultManager
+--
+&lt;&lt;constructor&gt;&gt; + ResultAdapter()
++ getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
++ getImageList() : list&lt;image&gt;
++ getResults() : list&lt;NeuralNetwork,image,result)
++ getResultsPerNeuralNetwork(neuralNetwork : NeuralNetwork) : list&lt;Image,Result&gt;
++ getResultsPerImage(image : image): list&lt;NeuralNetwork,Result&gt;
++ getResult(image : image,neuralNetwork : NeuralNetwork): Result
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
