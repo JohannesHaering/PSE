@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>765</x>
-      <y>450</y>
-      <w>175</w>
-      <h>95</h>
+      <x>1640</x>
+      <y>264</y>
+      <w>280</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 I/O::FileIO
 --
-- Singleton, IFileIO
-- FileStream, IFileStream
+- singleton, FileIO
+- sileStream, fileStream
 --
-- FileIO(), FileIO
-/+ ReadFile(filePath : string), IData/
-/+ WriteFile(filePath : string, data : IData), boolean/
-+ GetInstance(), IFileIO
+- fileIO(), FileIO
+/+ readFile(filePath : string), IData/
+/+ writeFile(filePath : string, data : IData), boolean/
++ getInstance(), IFileIO
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>620</y>
-      <w>225</w>
-      <h>65</h>
+      <x>1408</x>
+      <y>536</y>
+      <w>360</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>I/O::TextFileIO
 --
 
 --
-+ ReadFile(filePath : string), IData
-+ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>895</x>
-      <y>720</y>
-      <w>185</w>
-      <h>50</h>
+      <x>1848</x>
+      <y>696</y>
+      <w>296</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>I/O::MultipleImageFileIO
 --
@@ -57,10 +57,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>725</x>
-      <y>540</y>
-      <w>130</w>
-      <h>90</h>
+      <x>1576</x>
+      <y>408</y>
+      <w>208</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>240.0;10.0;240.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
@@ -68,26 +68,26 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>720</y>
-      <w>235</w>
-      <h>50</h>
+      <x>1408</x>
+      <y>696</y>
+      <w>376</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>I/O::MultipleTextFileIO
 --
 
 --
-+ ReadFile(filePath : string), IData
-+ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>725</x>
-      <y>680</y>
-      <w>15</w>
-      <h>50</h>
+      <x>1576</x>
+      <y>632</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -95,26 +95,26 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>895</x>
-      <y>620</y>
-      <w>185</w>
-      <h>65</h>
+      <x>1848</x>
+      <y>536</y>
+      <w>296</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>I/O::ImageFileIO
 --
 
 --
-+ ReadFile(filePath : string), IData
-+ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>985</x>
-      <y>680</y>
-      <w>15</w>
-      <h>50</h>
+      <x>1992</x>
+      <y>632</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -122,10 +122,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>565</y>
-      <w>170</w>
-      <h>65</h>
+      <x>1744</x>
+      <y>448</y>
+      <w>272</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;320.0;20.0;320.0;110.0</additional_attributes>
@@ -133,26 +133,26 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>620</y>
-      <w>190</w>
-      <h>65</h>
+      <x>2192</x>
+      <y>536</y>
+      <w>304</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>I/O::VideoFileIO
 --
 
 --
-+ ReadFile(filePath : string), IData
-+ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>985</x>
-      <y>565</y>
-      <w>235</w>
-      <h>65</h>
+      <x>1992</x>
+      <y>448</y>
+      <w>376</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;450.0;20.0;450.0;110.0</additional_attributes>
@@ -160,102 +160,107 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>375</x>
-      <y>470</y>
-      <w>105</w>
-      <h>95</h>
+      <x>680</x>
+      <y>304</y>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
-I/O::IData
+I/O::Data
 --
 
 --
-/+ GetData(), E/</panel_attributes>
+/+ getData(), E/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>695</y>
-      <w>105</w>
-      <h>40</h>
+      <x>816</x>
+      <y>536</y>
+      <w>280</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>I/Oge::MultipleImageData
 --
-
+- data : image[]
 --
-+ GetData(), image[]</panel_attributes>
+&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ getData(), image[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>435</x>
-      <y>615</y>
-      <w>105</w>
-      <h>55</h>
+      <x>1120</x>
+      <y>536</y>
+      <w>240</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>I/O::VideoData
 --
-video : Video
+- video : Video
 --
-+ GetData(), Video</panel_attributes>
+&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ getData(), video</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>695</y>
-      <w>105</w>
-      <h>40</h>
+      <x>0</x>
+      <y>536</y>
+      <w>256</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>I/O::MultipleStringData
 --
-
+- stringData : string
 --
-+ GetData(), string[]</panel_attributes>
+&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ getData(), string[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>615</y>
-      <w>105</w>
-      <h>55</h>
+      <x>280</x>
+      <y>536</y>
+      <w>240</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>I/O::StringData
 --
-stringData : string[]
+- stringData : string
 --
-+ GetData(), string
+&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ getData(), string
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>615</y>
-      <w>105</w>
-      <h>55</h>
+      <x>560</x>
+      <y>536</y>
+      <w>224</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>I/O::ImageData
 --
-imageData : Image[]
+- imageData : Image
 --
-+ GetData(), image</panel_attributes>
+&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ getData(), image</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>215</x>
-      <y>560</y>
-      <w>220</w>
-      <h>65</h>
+      <x>424</x>
+      <y>448</y>
+      <w>352</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>420.0;10.0;420.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
@@ -263,10 +268,10 @@ imageData : Image[]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>590</y>
-      <w>15</w>
-      <h>35</h>
+      <x>640</x>
+      <y>496</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -274,43 +279,43 @@ imageData : Image[]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>585</y>
-      <w>85</w>
-      <h>40</h>
+      <x>752</x>
+      <y>488</y>
+      <w>480</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;20.0;150.0;20.0;150.0;60.0</additional_attributes>
+    <additional_attributes>10.0;20.0;580.0;20.0;580.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>215</x>
-      <y>665</y>
-      <w>15</w>
-      <h>40</h>
+      <x>152</x>
+      <y>448</y>
+      <w>624</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>760.0;10.0;760.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>665</y>
-      <w>15</w>
-      <h>40</h>
+      <x>752</x>
+      <y>448</y>
+      <w>208</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;240.0;70.0;240.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>235</x>
-      <y>430</y>
-      <w>90</w>
-      <h>45</h>
+      <x>456</x>
+      <y>240</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Stores the abstractly 
 and independently 
@@ -320,46 +325,10 @@ from the file I/O</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>135</x>
-      <y>545</y>
-      <w>65</w>
-      <h>85</h>
-    </coordinates>
-    <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;150.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>65</x>
-      <y>520</y>
-      <w>90</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>The single ones only 
-return the first element
-The multiple ones 
-return all</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>135</x>
-      <y>545</y>
-      <w>190</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>10.0;10.0;360.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>305</x>
-      <y>450</y>
-      <w>100</w>
-      <h>45</h>
+      <x>568</x>
+      <y>272</y>
+      <w>160</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
@@ -367,10 +336,10 @@ return all</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>985</x>
-      <y>400</y>
-      <w>90</w>
-      <h>45</h>
+      <x>1992</x>
+      <y>184</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Generic abstract IO class
 The inherited classes
@@ -381,10 +350,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>925</x>
-      <y>435</y>
-      <w>80</w>
-      <h>40</h>
+      <x>1896</x>
+      <y>240</y>
+      <w>128</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;60.0</additional_attributes>
