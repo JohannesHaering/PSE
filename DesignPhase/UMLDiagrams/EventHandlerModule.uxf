@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
@@ -14,7 +14,7 @@
 --
 - distributor : InferencingDistributor
 --
--startProcess(): void
+- startProcess(): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -47,6 +47,7 @@ NextPrevHandler
     <panel_attributes>EventHandlerModule::
 PrevHandler
 --
+
 --
 - prev() : void</panel_attributes>
     <additional_attributes/>
@@ -62,6 +63,7 @@ PrevHandler
     <panel_attributes>EventHandlerModule::
 NextHandler
 --
+
 --
 - next() : void</panel_attributes>
     <additional_attributes/>
@@ -182,6 +184,7 @@ EventHandler
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+
   </element>
   <element>
     <id>Relation</id>
@@ -192,7 +195,7 @@ EventHandler
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>800.0;10.0;800.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+    <additional_attributes>1070.0;10.0;1070.0;50.0;10.0;50.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

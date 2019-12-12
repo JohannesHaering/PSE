@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
@@ -31,6 +31,7 @@
 + getResult(nn_id : int, input_id : int): Result
 + drawResult(nn_id : int, input_id : int): void
 /- drawResult() : void /
+
 </panel_attributes>
     <additional_attributes/>
   </element>
