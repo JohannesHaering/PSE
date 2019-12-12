@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>875</x>
-      <y>415</y>
-      <w>295</w>
-      <h>65</h>
+      <x>917</x>
+      <y>525</y>
+      <w>413</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ImageFacade
 --
@@ -26,17 +26,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>275</y>
-      <w>105</w>
-      <h>65</h>
+      <x>826</x>
+      <y>329</y>
+      <w>147</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::Facade
 {abstract}
 --
-fileIO : FileIO
-parser : Parser
-videoHandler : VideoHandler
+- fileIO : FileIO
+- parser : Parser
+- videoHandler : VideoHandler
 --
 </panel_attributes>
     <additional_attributes/>
@@ -44,10 +44,10 @@ videoHandler : VideoHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>415</y>
-      <w>300</w>
-      <h>65</h>
+      <x>476</x>
+      <y>525</y>
+      <w>420</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::DetectionDatasetFacade
 --
@@ -59,10 +59,10 @@ videoHandler : VideoHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>415</y>
-      <w>310</w>
-      <h>65</h>
+      <x>0</x>
+      <y>525</y>
+      <w>434</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ClassificationDatasetFacade
 --
@@ -75,10 +75,10 @@ videoHandler : VideoHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1180</x>
-      <y>415</y>
-      <w>240</w>
-      <h>65</h>
+      <x>1344</x>
+      <y>525</y>
+      <w>336</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ParseResultFacade
 --
@@ -91,10 +91,10 @@ videoHandler : VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>375</x>
-      <y>335</y>
-      <w>500</w>
-      <h>90</h>
+      <x>217</x>
+      <y>413</y>
+      <w>700</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -102,10 +102,10 @@ videoHandler : VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>335</y>
-      <w>450</w>
-      <h>90</h>
+      <x>896</x>
+      <y>413</y>
+      <w>630</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
@@ -113,10 +113,10 @@ videoHandler : VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>335</y>
-      <w>185</w>
-      <h>90</h>
+      <x>658</x>
+      <y>413</y>
+      <w>259</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -124,10 +124,10 @@ videoHandler : VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>335</y>
-      <w>160</w>
-      <h>90</h>
+      <x>896</x>
+      <y>413</y>
+      <w>224</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;160.0</additional_attributes>
