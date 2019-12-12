@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>198</y>
-      <w>372</w>
-      <h>204</h>
+      <x>488</x>
+      <y>408</y>
+      <w>496</w>
+      <h>272</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;InferencingDistributor&gt;&gt;
-Package::Inferencing
+    <panel_attributes>Inferencing::InferencingDistributor
 {abstract}
 --
 -imagedata : List&lt;int[]&gt;
 -renderer : ResultRenderer 
 -dispatcher : Dispatcher
--neuralnetworks : NeuralNetwork[]
+-neuralNetworks : NeuralNetwork[]
 -resultmanager : ResultManager 
 --
 + Inferencing(renderer : ResultRendrer, dispatcher : Dispatcher, resultmanager : ResultManager)
@@ -26,26 +25,24 @@ Package::Inferencing
 + startProcess(): void
 + setSettings(setting : Setting): void
 + getSettings() : Setting
-+ saveResult(nn_id : int, input_id : int): void
-+ getResult(nn_id : int, input_id : int): Result
-+ drawResult(nn_id : int, input_id : int): void
-/- drawResult()/
++ saveResult(nn_id : int, image_id : int): void
++ getResult(nn_id : int, image_id : int): Result
++ drawResult(nn_id : int, image_id : int): void
+/# drawResult()/
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>0</y>
-      <w>306</w>
-      <h>78</h>
+      <x>0</x>
+      <y>144</y>
+      <w>408</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;NNSetter&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::NNSetter
 --
-- parser : NeuralNetworkParser
+- parser : Parser
 --
 + NNSetter(distributor : InterferencingDistributor, parser : NeuralNetworkParser)
 + setNN(directory): void </panel_attributes>
@@ -54,10 +51,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>126</y>
-      <w>78</w>
-      <h>90</h>
+      <x>400</x>
+      <y>312</y>
+      <w>104</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;130.0;10.0;10.0</additional_attributes>
@@ -65,16 +62,14 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>90</y>
-      <w>306</w>
-      <h>78</h>
+      <x>0</x>
+      <y>264</y>
+      <w>408</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;InputSetter&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::InputSetter
 --
-- parser : ImageParser
+- parser : Parser
 --
 + InputSetter(parser : ImageParser, distributor : InferencingDistributor)
 + setInput(directory): void </panel_attributes>
@@ -83,10 +78,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>36</y>
-      <w>78</w>
-      <h>180</h>
+      <x>400</x>
+      <y>192</y>
+      <w>104</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;280.0;10.0;10.0</additional_attributes>
@@ -94,14 +89,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>498</y>
-      <w>312</w>
-      <h>96</h>
+      <x>0</x>
+      <y>808</y>
+      <w>416</w>
+      <h>128</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;PlatformSetter&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::PlatformSetter
 --
 - checkboxes : List&lt;Checkboxes&gt;
 --
@@ -114,10 +107,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>198</y>
-      <w>72</w>
-      <h>354</h>
+      <x>408</x>
+      <y>408</y>
+      <w>96</w>
+      <h>472</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>100.0;10.0;10.0;570.0</additional_attributes>
@@ -125,14 +118,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>180</y>
-      <w>306</w>
-      <h>78</h>
+      <x>0</x>
+      <y>384</y>
+      <w>408</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;SettingSetter&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::SettingSetter
 --
 - showresultcb : Checkbox
 --
@@ -143,10 +134,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>198</y>
-      <w>78</w>
-      <h>30</h>
+      <x>400</x>
+      <y>408</y>
+      <w>104</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;30.0</additional_attributes>
@@ -154,14 +145,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>606</y>
-      <w>312</w>
-      <h>90</h>
+      <x>0</x>
+      <y>952</y>
+      <w>416</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;ModeCalculator&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::ModeCalculator
 --
 
 --
@@ -173,10 +162,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>258</x>
-      <y>588</y>
-      <w>18</w>
-      <h>30</h>
+      <x>192</x>
+      <y>928</y>
+      <w>24</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -184,44 +173,40 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>432</y>
-      <w>168</w>
-      <h>60</h>
+      <x>488</x>
+      <y>720</y>
+      <w>224</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;InferencingDistributorClassification&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::InferencingDistributorClassification
 --
--drawResult()
+# drawResult()
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>432</y>
-      <w>168</w>
-      <h>72</h>
+      <x>760</x>
+      <y>720</y>
+      <w>224</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;InferencingDistributorDetection&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::InferencingDistributorDetection
 --
 -boxthreshold
 --
--drawResult()
+# drawResult()
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>396</y>
-      <w>120</w>
-      <h>48</h>
+      <x>584</x>
+      <y>672</y>
+      <w>160</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;60.0</additional_attributes>
@@ -229,10 +214,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>654</x>
-      <y>396</y>
-      <w>120</w>
-      <h>48</h>
+      <x>720</x>
+      <y>672</y>
+      <w>160</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;60.0</additional_attributes>
@@ -240,13 +225,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>114</x>
-      <y>276</y>
-      <w>306</w>
-      <h>210</h>
+      <x>0</x>
+      <y>512</y>
+      <w>408</w>
+      <h>280</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Pager&gt;&gt;
-Package::Inferencing
+    <panel_attributes>Inferencing::Pager
 {}
 --
 - currentnn
@@ -272,10 +256,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>198</y>
-      <w>78</w>
-      <h>138</h>
+      <x>400</x>
+      <y>408</y>
+      <w>104</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;210.0</additional_attributes>
@@ -283,14 +267,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>198</y>
-      <w>144</w>
-      <h>72</h>
+      <x>1064</x>
+      <y>408</y>
+      <w>192</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;PlatformSetting&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::PlatformSetting
 --
 - hardwarelist : List&lt;String&gt;
 --
@@ -303,14 +285,12 @@ Package::Inferencing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>282</y>
-      <w>210</w>
-      <h>90</h>
+      <x>1064</x>
+      <y>520</y>
+      <w>280</w>
+      <h>120</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;OutputSetting&gt;&gt;
-Package::Inferencing
-{}
+    <panel_attributes>Inferencing::OutputSetting
 --
 -bool showresults
 -bool saveresults
@@ -323,10 +303,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>246</y>
-      <w>78</w>
-      <h>66</h>
+      <x>976</x>
+      <y>472</y>
+      <w>104</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;90.0;10.0;10.0</additional_attributes>
@@ -334,10 +314,10 @@ Package::Inferencing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>210</y>
-      <w>78</w>
-      <h>42</h>
+      <x>976</x>
+      <y>424</y>
+      <w>104</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;50.0</additional_attributes>
