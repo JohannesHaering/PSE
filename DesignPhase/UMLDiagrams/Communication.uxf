@@ -18,7 +18,7 @@ Communication::Channel
 + &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device)
 + &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetwork&gt;)
 + setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
-/+ sendImageList(imageList : list&lt;Image&gt;) : Result/</panel_attributes>
+/+ sendImageList(imageList : list&lt;image&gt;) : Result/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
