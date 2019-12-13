@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -8,7 +9,7 @@
       <w>680</w>
       <h>170</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Communication::Channel
 --
 - deviceHandler : Device
@@ -93,18 +94,6 @@ Communication::Channel
     <additional_attributes>10.0;10.0;10.0;170.0;700.0;170.0;700.0;100.0;780.0;100.0</additional_attributes>
   </element>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>30</x>
-      <y>40</y>
-      <w>1510</w>
-      <h>890</h>
-    </coordinates>
-    <panel_attributes>Communication
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>310</x>
@@ -123,7 +112,7 @@ Communication::Channel
       <w>680</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Communication::AbstractFactory
 --
 
