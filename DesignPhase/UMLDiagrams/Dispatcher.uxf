@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>340</y>
+      <w>450</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::DispatchManager
+--
+_- dispatcher : DispatchManager_
+- mode : Mode
+- deviceList : list&lt;Device&gt;
+- deviceChannelMap : map&lt;(Device, Channel)&gt;
+--
+- &lt;&lt;Constructor&gt;&gt; DispatchManager()
+_+ getInstance() : DispatchManager_
++ setMode(operatingMode : Mode) : void
++ getMode() : Mode
++ getModeList() : list&lt;Mode&gt;
++ setNeuralNetworkList(list&lt;NeuralNetwork&gt; : void
++ getNeuralNetworkList() : list&lt;NeuralNetwork&gt;
++ dispatchImages(imageList : list&lt;Image&gt;) : Resultmanager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>50</y>
+      <w>530</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Dispatcher::Mode
+--
+- modeName: string
+- deviceList : list&lt;Device&gt;
+- neuralNetworkList : list&lt;NeuralNetwork&gt;
+--
++ &lt;&lt;constructor&gt;&gt; Mode()
++ getModeName() : string
++ setAllowedDeviceList(deviceList : list&lt;Device&gt;) : void
++ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
++ setImageList(imageList : list&lt;image&gt;) : void
+/+ distributeImages() : ResultManager/
+/# calculate(deviceList : list&lt;Device&gt;) : (float, float)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>570</y>
+      <w>260</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+Dispatcher::Device
+--
+- name : string
+- type : string
+- ram : long
+- performance : double
+--
++ &lt;&lt;constructor&gt;&gt; Device()
++ getType() : string
++ getName() : string
++ getRAM() : long
++ getPerformance() : double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>160</y>
+      <w>530</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::HighPerformanceMode
+--
+- modeName : string
+--
++ distributeImages() : ResultManager
+# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>260</y>
+      <w>530</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::HighEfficiencyMode
+--
+- modeName : string
+--
++ distributeImages() : ResultManager
+# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>350</y>
+      <w>530</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::LowPowerMode
+--
+- modeName : string
+--
++ distributeImages() : ResultManager
+# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>880</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::FPGADevice
+--
+- name : string
+- type : string
+- ram : long
+- performance : double
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>880</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::ASICDevice
+--
+- name : string
+- type : string
+- ram : long
+- performance : double
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>880</y>
+      <w>300</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::CPUDevice
+--
+- name : string
+- type : string
+- ram : long
+- performance : double
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>880</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::GPUDevice
+--
+- name : string
+- type : string
+- ram : long
+- performance : double
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1500</w>
+      <h>1130</h>
+    </coordinates>
+    <panel_attributes>Dispatcher
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>250</y>
+      <w>490</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;30.0;470.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>250</y>
+      <w>490</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;120.0;470.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>180</y>
+      <w>490</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;140.0;420.0;140.0;420.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>760</y>
+      <w>430</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;10.0;410.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>760</y>
+      <w>140</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>760</y>
+      <w>460</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;440.0;70.0;440.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>760</y>
+      <w>130</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;110.0;70.0;110.0;120.0</additional_attributes>
+  </element>
+</diagram>
