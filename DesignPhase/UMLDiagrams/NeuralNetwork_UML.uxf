@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
+      <x>272</x>
       <y>0</y>
       <w>312</w>
       <h>176</h>
@@ -18,7 +18,7 @@ NeuralNetworkPkg::NeuralNetwork
 --
 + &lt;&lt;constructor&gt;&gt; NeuralNetwork() : void
 + &lt;&lt;constructor&gt;&gt; NeuralNetwork(name : string) : void
-+ addLayeraddLayer(layer : NetworkLayer) : void
++ addLayera(layer : NetworkLayer) : void
 + getFirstLayer() : NetworkLayer
 + getLastLayer() : NetworkLayer
 + getNextLayer() : NetworkLayer
@@ -28,12 +28,12 @@ NeuralNetworkPkg::NeuralNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1416</x>
+      <x>1168</x>
       <y>64</y>
       <w>400</w>
       <h>152</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+    <panel_attributes>
 NeuralNetworkPkg::NetworkLayer
 
 --
@@ -51,7 +51,7 @@ NeuralNetworkPkg::NetworkLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
+      <x>544</x>
       <y>296</y>
       <w>736</w>
       <h>208</h>
@@ -78,13 +78,13 @@ NeuralNetworkPkg::ConvolutionLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2128</x>
+      <x>1880</x>
       <y>296</y>
-      <w>592</w>
+      <w>648</w>
       <h>208</h>
     </coordinates>
     <panel_attributes>
-NeuralNetworkPkg::polingLayer
+NeuralNetworkPkg::PollingLayer
 
 --
 - type : PollingType
@@ -106,10 +106,10 @@ NeuralNetworkPkg::polingLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3464</x>
+      <x>3272</x>
       <y>296</y>
       <w>536</w>
-      <h>128</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DenseLayer
@@ -129,10 +129,10 @@ NeuralNetworkPkg::DenseLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5488</x>
+      <x>5800</x>
       <y>296</y>
       <w>424</w>
-      <h>144</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionLayer
@@ -150,19 +150,19 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1168</x>
+      <x>920</x>
       <y>232</y>
-      <w>4520</w>
+      <w>5080</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;20.0;5630.0;20.0;5630.0;80.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;6330.0;20.0;6330.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2408</x>
+      <x>2160</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -173,7 +173,7 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3696</x>
+      <x>3504</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -185,7 +185,7 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1600</x>
+      <x>1352</x>
       <y>208</y>
       <w>24</w>
       <h>56</h>
@@ -196,7 +196,7 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>824</x>
+      <x>576</x>
       <y>120</y>
       <w>608</w>
       <h>40</h>
@@ -204,13 +204,13 @@ NeuralNetworkPkg::InceptionLayer
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
-layers</panel_attributes>
+list &lt;layers&gt;</panel_attributes>
     <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
+      <x>272</x>
       <y>168</y>
       <w>136</w>
       <h>136</h>
@@ -222,10 +222,10 @@ layers</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1544</x>
+      <x>1296</x>
       <y>296</y>
       <w>568</w>
-      <h>128</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationLayer
@@ -244,10 +244,10 @@ NeuralNetworkPkg::ActivationLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4016</x>
+      <x>3824</x>
       <y>296</y>
       <w>400</w>
-      <h>96</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenLayer
@@ -263,10 +263,10 @@ NeuralNetworkPkg::FlattenLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4432</x>
+      <x>4240</x>
       <y>296</y>
       <w>552</w>
-      <h>96</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutLayer
@@ -283,7 +283,7 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1776</x>
+      <x>1528</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -294,7 +294,7 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4192</x>
+      <x>4000</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -306,7 +306,7 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4680</x>
+      <x>4488</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -318,10 +318,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2736</x>
+      <x>2544</x>
       <y>296</y>
       <w>712</w>
-      <h>168</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationLayer
@@ -343,7 +343,7 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3080</x>
+      <x>2888</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -355,25 +355,25 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>824</x>
+      <x>576</x>
       <y>8</y>
-      <w>4992</w>
+      <w>5592</w>
       <h>304</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
-chains
+list &lt;chains&gt;
 </panel_attributes>
-    <additional_attributes>6180.0;360.0;6180.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>6880.0;360.0;6880.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5000</x>
+      <x>4808</x>
       <y>296</y>
       <w>472</w>
-      <h>96</h>
+      <h>208</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsLayer
@@ -389,7 +389,7 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5200</x>
+      <x>5008</x>
       <y>240</y>
       <w>24</w>
       <h>72</h>
@@ -401,7 +401,7 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
+      <x>72</x>
       <y>264</y>
       <w>208</w>
       <h>144</h>
@@ -410,20 +410,19 @@ NeuralNetworkPkg::CollectResultsLayer
 NeuralNetworkPkg::Activation
 
 --
-sigmoid
-tanh
-relu
-lRelu
-pRelu
-softmax
-swish
-</panel_attributes>
+SIGMOID
+TANH
+RELU
+L_RELU
+P_RELU
+SOFTMAX
+SWISH</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
+      <x>72</x>
       <y>416</y>
       <w>208</w>
       <h>80</h>
@@ -432,14 +431,14 @@ swish
 NeuralNetworkPkg::PollingType
 
 --
-max
-avereage</panel_attributes>
+MAX
+AVEREAGE</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>256</x>
+      <x>72</x>
       <y>504</y>
       <w>208</w>
       <h>80</h>
@@ -448,14 +447,14 @@ avereage</panel_attributes>
 NeuralNetworkPkg::LRNType
 
 --
-interChannel
-intraChannel</panel_attributes>
+INTER_CHANNEL
+INTRA_CHANNEL</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
+      <x>272</x>
       <y>280</y>
       <w>96</w>
       <h>176</h>
@@ -467,7 +466,7 @@ intraChannel</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
+      <x>272</x>
       <y>432</y>
       <w>96</w>
       <h>112</h>
@@ -479,314 +478,112 @@ intraChannel</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>528</x>
-      <y>1216</y>
-      <w>336</w>
-      <h>176</h>
+      <x>352</x>
+      <y>752</y>
+      <w>520</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NetworkOperations
 
 --
-
+- platformName : string
 --
 + &lt;&lt;constructor&gt;&gt; NetworkOperations() : void
-+ &lt;&lt;constructor&gt;&gt; NetworkOperations(name : string) : void
-+ addLayer(layer : NetworkLayer) : void
-+ getFirstLayer() : NetworkLayer
-+ getLastLayer() : NetworkLayer
-+ getNextLayer() : NetworkLayer
-+ getPreviousLayer() : NetworkLayer</panel_attributes>
++ &lt;&lt;constructor&gt;&gt; NetworkOperations(platformName : string) : void
++ addKernelCode(layerType : Layertype, kernelCode : string[]) : void
++ executeCalculation(layer : NetworkLayer, inputData : double[][][]) : double[][][]
++ executeBackPropagation(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>920</y>
-      <w>704</w>
-      <h>208</h>
+      <x>712</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>
-NeuralNetworkPkg::ConvolutionLayer
+NeuralNetworkPkg::ConvolutionCode
 
 --
-- stride : int
-- padding : int
---
-+ &lt;&lt;constructor&gt;&gt; ConvolutionLayer() : void
-+ &lt;&lt;constructor&gt;&gt; ConvolutionLayer(name : string, inputDimensions : int[], weights : double[][][][], stride : int, padding : int) : void
-+ setTensor(weights : double[][][][]) : void
-+ setStride(stride : int) : void
-+ setPadding(padding : int) : void
-+ getTensor() : double[][][][]
-+ getStride() : int
-+ getPadding() : int
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2064</x>
-      <y>920</y>
-      <w>592</w>
-      <h>208</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::polingLayer
 
 --
-- type : PollingType
-- size : int
-- stride : int
---
-+ &lt;&lt;constructor&gt;&gt; polingLayer() : void
-+ &lt;&lt;constructor&gt;&gt; polingLayer(name : string, inputDimensions : int[], size : int, stride : int, type : PollingType) : void
-+ setType(type : PollingType) : void
-+ setSize(size : int) : void
-+ setStride(stride : int) : void
-+ getType() : PollingType
-+ getSize() : int
-+ getStride() : int
-
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>3376</x>
-      <y>920</y>
-      <w>504</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::DenseLayer
-
---
-- matrix : double[][]
---
-+ &lt;&lt;constructor&gt;&gt; DenseLayer() : void
-+ &lt;&lt;constructor&gt;&gt; DenseLayer(name : string, inputDimensions : int[], matrix : double[][]) : void
-+ setMatrix(matrix : double[][]) : void
-+ getMatrix() : double[][]
-
-
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>5256</x>
-      <y>920</y>
-      <w>424</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::InceptionLayer
-
---
-- currentChain : &lt;pointer&gt;
---
-+ &lt;&lt;constructor&gt;&gt; InceptionLayer() : void
-+ &lt;&lt;constructor&gt;&gt; InceptionLayer(name : string, inputDimensions : int[]) : void
-+ addLayer_chain(chain : NeuralNetwork) : void
-+ getFirstChain() : NeuralNetwork
-+ getNextChain() : NeuralNetwork
-group=9</panel_attributes>
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2344</x>
-      <y>864</y>
+      <x>1968</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>
-group=9</panel_attributes>
+    <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1608</x>
-      <y>832</y>
+      <x>1368</x>
+      <y>912</y>
       <w>24</w>
-      <h>56</h>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=9</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1552</x>
-      <y>920</y>
-      <w>496</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::ActivationLayer
-
---
-- function : Activation
---
-+ &lt;&lt;constructor&gt;&gt; ActivationLayer() : void
-+ &lt;&lt;constructor&gt;&gt; ActivationLayer(name : string, inputDimensions : int[], function : Activation) : void
-+ setFunction(function : Activation) : void
-+ getFunction() : Activation
-
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>3896</x>
-      <y>920</y>
-      <w>360</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::FlattenLayer
-
---
-
---
-+ &lt;&lt;constructor&gt;&gt; FlattenLayer() : void
-+ &lt;&lt;constructor&gt;&gt; FlattenLayer(name : string, inputDimensions) : void
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>4272</x>
-      <y>920</y>
-      <w>520</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::DropoutLayer
-
---
-- dropoutRate : float
---
-+ &lt;&lt;constructor&gt;&gt; DropoutLayer() : void
-+ &lt;&lt;constructor&gt;&gt; DropoutLayer(name : string, inputDimensions : int[], dropoutRate : float) : void
-
-
-group=9</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1784</x>
-      <y>864</y>
+      <x>1440</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>
-group=9</panel_attributes>
+    <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2672</x>
-      <y>920</y>
-      <w>680</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::LocalResponseNormalizationLayer
-
---
-- type : LRNType
-- depth : int
---
-+ &lt;&lt;constructor&gt;&gt; LocalResponseNormalizationLayer() : void
-+ &lt;&lt;constructor&gt;&gt; LocalResponseNormalizationLayer(name : string, inputDimensions : int[], type : LRNType, depth : int) : void
-+ setType(type : LRNType) : void
-+ setDepth(depth : int) : void
-+ getType() : LRNType
-+ getDepth() : int
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>4808</x>
-      <y>920</y>
-      <w>432</w>
+      <x>1152</x>
+      <y>824</y>
+      <w>488</w>
       <h>96</h>
-    </coordinates>
-    <panel_attributes>
-NeuralNetworkPkg::CollectResultsLayer
-
---
-
---
-+ &lt;&lt;constructor&gt;&gt; CollectResultsLayer() : void
-+ &lt;&lt;constructor&gt;&gt; CollectResultsLayer(name : string, inputDimensions : int[]) : void
-
-group=9</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1424</x>
-      <y>688</y>
-      <w>400</w>
-      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
-NeuralNetworkPkg::NetworkLayer
+/NeuralNetworkPkg::NetworkLayer/
 
 --
-# name : string
-# codeData : double[][][][]
+# kernelCode : string[]
 --
-+ setName(name : string) : void
-+ setInputDimensions(inputDimensions : int[]) : void
-+ getName() : string
-+ getInputDimensions() : int[]
-+ getTensorDimenssions() : int[]
-
-group=9</panel_attributes>
+/+ setKernelCode(kernelCode : string[]) : void/
+/+ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]/
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1176</x>
-      <y>856</y>
-      <w>4280</w>
+      <x>936</x>
+      <y>952</y>
+      <w>4080</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;20.0;5330.0;20.0;5330.0;80.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;5080.0;20.0;5080.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3608</x>
-      <y>864</y>
+      <x>2968</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -797,8 +594,8 @@ group=9</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4072</x>
-      <y>864</y>
+      <x>3464</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -809,8 +606,8 @@ group=9</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4520</x>
-      <y>864</y>
+      <x>3976</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -821,8 +618,8 @@ group=9</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3016</x>
-      <y>864</y>
+      <x>2440</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -833,8 +630,8 @@ group=9</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5008</x>
-      <y>864</y>
+      <x>4488</x>
+      <y>960</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
@@ -845,61 +642,286 @@ group=9</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>520</y>
-      <w>24</w>
-      <h>712</h>
-    </coordinates>
-    <panel_attributes>lt=.
-</panel_attributes>
-    <additional_attributes>10.0;870.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>856</x>
-      <y>1120</y>
-      <w>528</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-convolutionCode</panel_attributes>
-    <additional_attributes>520.0;10.0;520.0;190.0;10.0;190.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1264</x>
-      <y>1040</y>
-      <w>656</w>
-      <h>248</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-convolutionCode</panel_attributes>
-    <additional_attributes>680.0;10.0;680.0;290.0;10.0;290.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1800</x>
-      <y>1120</y>
-      <w>656</w>
-      <h>168</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-convolutionCode</panel_attributes>
-    <additional_attributes>680.0;10.0;680.0;190.0;10.0;190.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2336</x>
-      <y>1080</y>
-      <w>816</w>
+      <x>0</x>
+      <y>632</y>
+      <w>368</w>
       <h>208</h>
     </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;uses&gt;&gt;
+</panel_attributes>
+    <additional_attributes>440.0;240.0;10.0;240.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5296</x>
+      <y>296</y>
+      <w>488</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageLayer
+
+--
+outputData : double[][][]
+--
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer() : void
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer(name : string, outputData : double[][][]) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5544</x>
+      <y>240</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>592</y>
+      <w>208</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+NeuralNetworkPkg::LayerType
+
+--
+CONVOLUTION
+ACTIVATION
+POLING
+LRN
+DENSE
+FLATTEN
+DROPOUT
+COLLECT_RESULTS
+INCEPTION
+OUTPUT_STORAGE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>536</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>440</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>344</y>
+      <w>88</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>840</y>
+      <w>304</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=10
+layer</panel_attributes>
+    <additional_attributes>10.0;20.0;360.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1216</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2224</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2728</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3232</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3736</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4240</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4744</x>
+      <y>1016</y>
+      <w>488</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>760</y>
+      <w>4312</w>
+      <h>272</h>
+    </coordinates>
     <panel_attributes>lt=&lt;-
-convolutionCode</panel_attributes>
-    <additional_attributes>880.0;10.0;880.0;240.0;10.0;240.0</additional_attributes>
+operations</panel_attributes>
+    <additional_attributes>10.0;20.0;5370.0;20.0;5370.0;320.0</additional_attributes>
   </element>
 </diagram>
