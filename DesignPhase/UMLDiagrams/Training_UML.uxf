@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>238</y>
+      <w>623</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>
+Training::Trainer
+
+--
+- neuralNetwork : NeuralNetwork
+- trainedNetwork : NeuralNetwork
+- inputData : IData[]
+- trainingData : Result[]
+- learningRate : double
+- testAccuracyGraph : double[]
+- trainingAccuracyGraph : double[]
+--
++ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, IData[], trainingData : Result[], learningRate : double, ) : void
++ start() : void
++ getTrainedNetwork() : NeuralNetwork
++ getTestAccuracyGraph() : double[]
++ getTrainAccuracyGraph() : double[] </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>532</y>
+      <w>721</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>
+Training::SingleTrainer
+
+--
+- neuralNetwork : NeuralNetwork
+- internalResults : NeuralNetwork
+- trainedNetwork : NeuralNetwork
+- inputData : double[][][]
+- trainingData : double[][][]
+- cacheData : double[][][]
+- learningRate : double
+- testAccuracy : double
+- trainingAccuracy : double
+- trainingOperations : NetworkOperations
+- calculatingOperations : NetworkOperations
+--
++ &lt;&lt;constructor&gt;&gt; SingleTrainer(learningRate : double, trainingOperations : NetworkOperations, calculatingOperations : NetworkOperations) : void
++ init(neuralNetwork : NeuralNetwork, inputData : double[][][], trainingData : double[][][]) : void
+- calculateLayer(layer : NetworkLayer, inputData : double[][][]) : double [][][]
+- calculateResults() : void
+- trainLayer(layer : NetworkLayer, data : double[][][][]) : NetworkLayer
+- performTraining() : void
++ train() : NeuralNetwork
++ getTestAccuracy() : double
++ getTrainAccuracy() : double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>420</y>
+      <w>84</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+singleTrainer</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
