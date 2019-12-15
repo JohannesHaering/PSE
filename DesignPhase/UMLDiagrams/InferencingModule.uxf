@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>204</y>
-      <w>372</w>
-      <h>204</h>
+      <x>427</x>
+      <y>168</y>
+      <w>434</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>Inferencing::InferencingDistributor
 {abstract}
 --
 - imagedir : Directory[]
-- renderer : ResultRenderer 
+- view : ViewFacade 
 - dispatcher : Dispatcher
-- neuralnetworks : NeuralNetwork[]
+- neuralnetworks : NeuralNetworkAdapter[]
 - resultmanager : ResultManager 
 --
 + &lt;&lt;constructor&gt;&gt; Inferencing(renderer : ResultRendrer, 
     dispatcher : Dispatcher,
     resultmanager : ResultManager)
-+ addNN(nn : NeuralNetwork): void
-+ removeNN(name : String): void 
++ addNeuralNetwork(nn : NeuralNetworkAdapter) : void
++ addNeuralNetwork(nn : NeuralNetworkAdapter[]): void
++ removeNeuralNetwork(name : String): void 
 + setInput(directorys : Directory[]): void
 + startProcess(): void
 + setSettings(setting : Setting): void
@@ -37,10 +38,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>168</y>
-      <w>306</w>
-      <h>78</h>
+      <x>0</x>
+      <y>126</y>
+      <w>357</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Inferencing::NeuralNetworkSetter
 --
@@ -54,10 +55,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>318</x>
-      <y>204</y>
-      <w>78</w>
-      <h>18</h>
+      <x>350</x>
+      <y>168</y>
+      <w>91</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
@@ -65,10 +66,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>480</y>
-      <w>312</w>
-      <h>96</h>
+      <x>0</x>
+      <y>490</y>
+      <w>364</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Inferencing::PlatformSetter
 --
@@ -83,10 +84,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>204</y>
-      <w>72</w>
-      <h>330</h>
+      <x>357</x>
+      <y>168</y>
+      <w>84</w>
+      <h>385</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>100.0;10.0;60.0;10.0;60.0;530.0;10.0;530.0</additional_attributes>
@@ -94,10 +95,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>588</y>
-      <w>312</w>
-      <h>90</h>
+      <x>0</x>
+      <y>616</y>
+      <w>364</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Inferencing::ModeCalculator
 --
@@ -111,10 +112,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>162</x>
-      <y>570</y>
-      <w>18</w>
-      <h>30</h>
+      <x>168</x>
+      <y>595</y>
+      <w>21</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -122,14 +123,18 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>438</y>
-      <w>168</w>
-      <h>54</h>
+      <x>406</x>
+      <y>448</y>
+      <w>224</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorClassification
 --
+&lt;&lt;constructor&gt;&gt; InferencingDistributorClassification(
+                       viewFacade : ViewFacade, 
+                       dispatcher : Dispatcher,
+                       resultManager : ResultManager)                  
 -drawResult() : void
 </panel_attributes>
     <additional_attributes/>
@@ -137,16 +142,20 @@ InferencingDistributorClassification
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>438</y>
-      <w>168</w>
-      <h>54</h>
+      <x>651</x>
+      <y>448</y>
+      <w>210</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorDetection
 --
 - boxthreshold : int
 --
+&lt;&lt;constructor&gt;&gt;InferencingDistributorDetection(
+                       viewFacade : ViewFacade, 
+                       dispatcher : Dispatcher,
+                       resultManager : ResultManager)
 - drawResult() : void
 </panel_attributes>
     <additional_attributes/>
@@ -154,32 +163,32 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>402</y>
-      <w>120</w>
-      <h>48</h>
+      <x>490</x>
+      <y>413</y>
+      <w>161</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;60.0</additional_attributes>
+    <additional_attributes>210.0;10.0;210.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>402</y>
-      <w>120</w>
-      <h>48</h>
+      <x>630</x>
+      <y>413</y>
+      <w>126</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;160.0;30.0;160.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>258</y>
-      <w>306</w>
-      <h>210</h>
+      <x>0</x>
+      <y>231</y>
+      <w>357</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>Inferencing::Pager
 --
@@ -206,10 +215,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>318</x>
-      <y>204</y>
-      <w>78</w>
-      <h>114</h>
+      <x>350</x>
+      <y>168</y>
+      <w>91</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;70.0;10.0;70.0;170.0;10.0;170.0</additional_attributes>
@@ -217,10 +226,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
-      <y>204</y>
-      <w>210</w>
-      <h>72</h>
+      <x>931</x>
+      <y>168</y>
+      <w>245</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Inferencing::PlatformSetting
 --
@@ -235,10 +244,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
-      <y>288</y>
-      <w>210</w>
-      <h>102</h>
+      <x>931</x>
+      <y>266</y>
+      <w>245</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Inferencing::OutputSetting
 --
@@ -254,10 +263,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
-      <y>252</y>
-      <w>78</w>
-      <h>66</h>
+      <x>854</x>
+      <y>224</y>
+      <w>91</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;90.0;80.0;90.0;80.0;10.0;10.0;10.0</additional_attributes>
@@ -265,10 +274,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
-      <y>216</y>
-      <w>78</w>
-      <h>42</h>
+      <x>854</x>
+      <y>182</y>
+      <w>91</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>

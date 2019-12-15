@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
+      <x>992</x>
       <y>336</y>
-      <w>138</w>
-      <h>114</h>
+      <w>184</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::StartHandler
 
@@ -21,10 +21,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
+      <x>88</x>
       <y>336</y>
-      <w>138</w>
-      <h>66</h>
+      <w>184</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextPrevHandler
@@ -40,9 +40,9 @@ NextPrevHandler
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>438</y>
-      <w>126</w>
-      <h>54</h>
+      <y>472</y>
+      <w>168</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PrevHandler
@@ -54,10 +54,10 @@ PrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>138</x>
-      <y>438</y>
-      <w>126</w>
-      <h>54</h>
+      <x>184</x>
+      <y>472</y>
+      <w>168</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextHandler
@@ -69,10 +69,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>60</x>
-      <y>396</y>
-      <w>84</w>
-      <h>54</h>
+      <x>80</x>
+      <y>416</y>
+      <w>112</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
@@ -80,10 +80,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>396</y>
-      <w>90</w>
-      <h>54</h>
+      <x>168</x>
+      <y>416</y>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;70.0</additional_attributes>
@@ -91,10 +91,10 @@ NextHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
+      <x>1200</x>
       <y>336</y>
-      <w>138</w>
-      <h>114</h>
+      <w>184</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 SaveResultHandler
@@ -110,10 +110,10 @@ SaveResultHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>464</x>
       <y>336</y>
-      <w>138</w>
-      <h>96</h>
+      <w>184</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 FileExplorerHandler
@@ -131,10 +131,10 @@ FileExplorerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>456</y>
-      <w>138</w>
-      <h>72</h>
+      <x>360</x>
+      <y>496</y>
+      <w>184</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 InputImageHandler
@@ -148,10 +148,10 @@ InputImageHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>426</y>
-      <w>90</w>
-      <h>42</h>
+      <x>448</x>
+      <y>456</y>
+      <w>120</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>130.0;10.0;130.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
@@ -159,10 +159,10 @@ InputImageHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>240</y>
-      <w>126</w>
-      <h>54</h>
+      <x>728</x>
+      <y>208</y>
+      <w>168</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 EventHandler
@@ -175,10 +175,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>288</y>
-      <w>204</w>
-      <h>60</h>
+      <x>552</x>
+      <y>272</y>
+      <w>272</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
@@ -186,10 +186,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>288</y>
-      <w>492</w>
-      <h>60</h>
+      <x>168</x>
+      <y>272</y>
+      <w>656</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>800.0;10.0;800.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
@@ -197,10 +197,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
-      <w>378</w>
-      <h>60</h>
+      <x>800</x>
+      <y>272</y>
+      <w>504</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;610.0;50.0;610.0;80.0</additional_attributes>
@@ -208,10 +208,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
-      <w>222</w>
-      <h>60</h>
+      <x>800</x>
+      <y>272</y>
+      <w>296</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;350.0;50.0;350.0;80.0</additional_attributes>
@@ -219,10 +219,10 @@ EventHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>456</y>
-      <w>138</w>
-      <h>60</h>
+      <x>560</x>
+      <y>496</y>
+      <w>184</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NeuralNetworkHandler
@@ -235,10 +235,10 @@ NeuralNetworkHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>426</y>
-      <w>90</w>
-      <h>42</h>
+      <x>544</x>
+      <y>456</y>
+      <w>120</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;130.0;30.0;130.0;50.0</additional_attributes>
@@ -246,10 +246,10 @@ NeuralNetworkHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
+      <x>800</x>
       <y>336</y>
-      <w>126</w>
-      <h>114</h>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 MainHandler
@@ -263,10 +263,10 @@ MainHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>288</y>
-      <w>78</w>
-      <h>60</h>
+      <x>800</x>
+      <y>272</y>
+      <w>104</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;110.0;50.0;110.0;80.0</additional_attributes>
