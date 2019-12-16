@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
-  <zoom_level>10</zoom_level>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>340</y>
-      <w>450</w>
-      <h>230</h>
+      <x>300</x>
+      <y>378</y>
+      <w>270</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>Dispatcher::DispatchManager
 --
@@ -29,10 +30,10 @@ _+ getInstance() : DispatchManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>50</y>
-      <w>530</w>
-      <h>210</h>
+      <x>474</x>
+      <y>204</y>
+      <w>318</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 Dispatcher::Mode
@@ -53,10 +54,10 @@ Dispatcher::Mode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>570</y>
-      <w>260</w>
-      <h>200</h>
+      <x>600</x>
+      <y>516</y>
+      <w>156</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 Dispatcher::Device
@@ -76,10 +77,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
-      <y>160</y>
-      <w>530</w>
-      <h>80</h>
+      <x>834</x>
+      <y>270</y>
+      <w>318</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Dispatcher::HighPerformanceMode
 --
@@ -92,10 +93,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
-      <y>260</y>
-      <w>530</w>
-      <h>80</h>
+      <x>834</x>
+      <y>330</y>
+      <w>318</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Dispatcher::HighEfficiencyMode
 --
@@ -108,10 +109,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
-      <y>350</y>
-      <w>530</w>
-      <h>80</h>
+      <x>834</x>
+      <y>384</y>
+      <w>318</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Dispatcher::LowPowerMode
 --
@@ -124,10 +125,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>940</x>
-      <y>880</y>
-      <w>290</w>
-      <h>120</h>
+      <x>828</x>
+      <y>702</y>
+      <w>174</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Dispatcher::FPGADevice
 --
@@ -142,10 +143,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>880</y>
-      <w>290</w>
-      <h>120</h>
+      <x>654</x>
+      <y>702</y>
+      <w>174</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Dispatcher::ASICDevice
 --
@@ -159,10 +160,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>880</y>
-      <w>300</w>
-      <h>120</h>
+      <x>474</x>
+      <y>702</y>
+      <w>180</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Dispatcher::CPUDevice
 --
@@ -177,10 +178,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>880</y>
-      <w>280</w>
-      <h>120</h>
+      <x>306</x>
+      <y>702</y>
+      <w>168</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Dispatcher::GPUDevice
 --
@@ -192,24 +193,12 @@ Dispatcher::Device
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>1500</w>
-      <h>1130</h>
-    </coordinates>
-    <panel_attributes>Dispatcher
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>250</y>
-      <w>490</w>
-      <h>90</h>
+      <x>552</x>
+      <y>324</y>
+      <w>294</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;30.0;470.0;30.0</additional_attributes>
@@ -217,10 +206,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>250</y>
-      <w>490</w>
-      <h>140</h>
+      <x>552</x>
+      <y>324</y>
+      <w>294</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;120.0;470.0;120.0</additional_attributes>
@@ -228,10 +217,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>180</y>
-      <w>490</w>
-      <h>160</h>
+      <x>552</x>
+      <y>282</y>
+      <w>294</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;140.0;420.0;140.0;420.0;10.0;470.0;10.0</additional_attributes>
@@ -239,10 +228,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>760</y>
-      <w>430</w>
-      <h>140</h>
+      <x>408</x>
+      <y>630</y>
+      <w>258</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>410.0;10.0;410.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
@@ -250,10 +239,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>760</y>
-      <w>140</w>
-      <h>140</h>
+      <x>582</x>
+      <y>630</y>
+      <w>84</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
@@ -261,10 +250,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>760</y>
-      <w>460</w>
-      <h>140</h>
+      <x>648</x>
+      <y>630</y>
+      <w>276</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;440.0;70.0;440.0;120.0</additional_attributes>
@@ -272,10 +261,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>760</y>
-      <w>130</w>
-      <h>140</h>
+      <x>648</x>
+      <y>630</y>
+      <w>78</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;110.0;70.0;110.0;120.0</additional_attributes>
