@@ -1,141 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>354</y>
-      <w>168</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>Prediction::SinglePowerPredictor
-{abstract}
---
-
---
-+ predict(): float
-- openCommunication() : boolean
-- startTest() : float
-/# calculatePower(deviceID : string) : float/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>804</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
+      <x>435</x>
+      <y>645</y>
+      <w>155</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Prediction::FPGAPerformancePredictor
 --
 
 --
-+ FPGAPerformancePredictor() 
-+ calculatePerformance(deviceID : string) : float
+&lt;&lt;constructor&gt;&gt; + FPGAPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>804</x>
-      <y>354</y>
-      <w>186</w>
-      <h>78</h>
+      <x>435</x>
+      <y>500</y>
+      <w>155</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>Prediction::SinglePerformancePredictor
 {abstract}
 --
 
 --
-+ predict(): float
-- openCommunication() : boolean
-- startTest() : float
++ predict(deviceID : string): float
+/# openCommunication(deviceID : string) : bool/
 /# calculatePerformance(deviceID : string) : float/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>426</y>
-      <w>18</w>
-      <h>90</h>
+      <x>490</x>
+      <y>590</y>
+      <w>15</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>192</y>
-      <w>192</w>
-      <h>102</h>
-    </coordinates>
-    <panel_attributes>Prediction::ISinglePredictor
-{abstract}
---
-# testNN : NeuralNetwork
-# testImage : Image
---
-/+ predict(): float/
-/# openCommunication() : boolean/
-/# startTest() : boolean/
-/# getDeviceID() : string /
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>690</x>
-      <y>288</y>
-      <w>96</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>140.0;10.0;140.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>768</x>
-      <y>288</y>
-      <w>120</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0;180.0;50.0;180.0;110.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1632</x>
-      <y>318</y>
-      <w>168</w>
-      <h>54</h>
+      <x>955</x>
+      <y>465</y>
+      <w>140</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Prediction::PerformancePredictorFromFile
 --
 - path : string
 --
 + predict(ids : string[]): map&lt;string, float&gt;
-- loadFromFile() : string[]</panel_attributes>
+- loadFromFile() : string[]
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1338</x>
-      <y>168</y>
-      <w>168</w>
-      <h>54</h>
+      <x>710</x>
+      <y>340</y>
+      <w>140</w>
+      <h>45</h>
     </coordinates>
-    <panel_attributes>Prediction::IPredictor
+    <panel_attributes>Prediction::Predictor
 {abstract}
+--
+
 --
 /+ predict(ids : string[]): map&lt;string, float&gt;/</panel_attributes>
     <additional_attributes/>
@@ -143,220 +82,104 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
+      <x>605</x>
+      <y>645</y>
+      <w>155</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Prediction::CPUPerformancePredictor
 --
 
 --
-+ CPUPerformancePredictor() 
-+ calculatePerformance(deviceID : string) : float
+&lt;&lt;constructor&gt;&gt; + CPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1206</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
+      <x>770</x>
+      <y>645</y>
+      <w>155</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Prediction::GPUPerformancePredictor
 --
 
 --
-+ GPUPerformancePredictor() 
-+ calculatePerformance(deviceID : string) : float
+&lt;&lt;constructor&gt;&gt; + GPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1404</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
+      <x>935</x>
+      <y>645</y>
+      <w>155</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Prediction::ASICPerformancePredictor
 --
 
 --
-+ ASICPerformancePredictor() 
-+ calculatePerformance(deviceID : string) : float
+&lt;&lt;constructor&gt;&gt; + ASICPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>426</y>
-      <w>252</w>
-      <h>90</h>
+      <x>490</x>
+      <y>590</y>
+      <w>210</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;400.0;70.0;400.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;400.0;50.0;400.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>426</y>
-      <w>432</w>
-      <h>90</h>
+      <x>490</x>
+      <y>590</y>
+      <w>360</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;700.0;70.0;700.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;700.0;50.0;700.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>426</y>
-      <w>642</w>
-      <h>90</h>
+      <x>490</x>
+      <y>590</y>
+      <w>535</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0;1050.0;70.0;1050.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>Prediction::FPGAPowerPredictor
---
-
---
-+ FPGAPowerPredictor() 
-+ calculatePower(deviceID : string) : float
-# calculatePower(deviceID : string) : float
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>204</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>Prediction::CPUPowerPredictor
---
-
---
-+ FPGAPowerPredictor() 
-+ calculatePower(deviceID : string) : float
-# calculatePower(deviceID : string) : float</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>402</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>Prediction::GPUPowerPredictor
---
-
---
-+ FPGAPowerPredictor() 
-+ calculatePower(deviceID : string) : float
-# calculatePower(deviceID : string) : float</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>600</x>
-      <y>504</y>
-      <w>186</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>Prediction::ASICPowerPredictor
---
-
---
-+ FPGAPowerPredictor() 
-+ calculatePower(deviceID : string) : float
-# calculatePower(deviceID : string) : float</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>690</x>
-      <y>432</y>
-      <w>18</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>432</y>
-      <w>228</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>360.0;10.0;360.0;50.0;10.0;50.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>300</x>
-      <y>432</y>
-      <w>408</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>660.0;10.0;660.0;50.0;10.0;50.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>66</x>
-      <y>432</y>
-      <w>642</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>1050.0;10.0;1050.0;50.0;10.0;50.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;1050.0;50.0;1050.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>576</x>
-      <y>120</y>
-      <w>114</w>
-      <h>42</h>
+      <x>335</x>
+      <y>435</y>
+      <w>95</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Predict for a single device 
-power or performance
+performance
 Uses a prototype function</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>144</y>
-      <w>42</w>
-      <h>72</h>
+      <x>415</x>
+      <y>455</y>
+      <w>35</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;100.0</additional_attributes>
@@ -364,10 +187,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1452</x>
-      <y>318</y>
-      <w>168</w>
-      <h>54</h>
+      <x>805</x>
+      <y>465</y>
+      <w>140</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Prediction::PowerPredictorFromFile
 --
@@ -380,63 +203,26 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1266</x>
-      <y>390</y>
-      <w>168</w>
-      <h>54</h>
+      <x>950</x>
+      <y>555</y>
+      <w>140</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Prediction::CurrentPerformancePredictor
 --
 
 --
-+ predict(): map&lt;string, float&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1086</x>
-      <y>318</y>
-      <w>168</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>Prediction::CurrentPowerPredictor
---
-
---
 + predict(): map&lt;string, float&gt;
-</panel_attributes>
+- updateFile(valuePairs : map&lt;string, float&gt;) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1164</x>
-      <y>216</y>
-      <w>264</w>
-      <h>114</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>420.0;10.0;420.0;100.0;10.0;100.0;10.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1344</x>
-      <y>216</y>
-      <w>84</w>
-      <h>186</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;120.0;100.0;10.0;100.0;10.0;290.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1410</x>
-      <y>216</y>
-      <w>132</w>
-      <h>114</h>
+      <x>770</x>
+      <y>380</y>
+      <w>110</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;200.0;100.0;200.0;170.0</additional_attributes>
@@ -444,10 +230,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1410</x>
-      <y>216</y>
-      <w>318</w>
-      <h>114</h>
+      <x>770</x>
+      <y>380</y>
+      <w>265</w>
+      <h>95</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;510.0;100.0;510.0;170.0</additional_attributes>
@@ -455,34 +241,22 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>876</x>
-      <y>192</y>
-      <w>222</w>
-      <h>156</h>
+      <x>585</x>
+      <y>510</y>
+      <w>375</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;270.0;10.0;270.0;240.0;350.0;240.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>876</x>
-      <y>204</y>
-      <w>402</w>
-      <h>216</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;10.0;200.0;340.0;650.0;340.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0;200.0;120.0;730.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1518</x>
-      <y>96</y>
-      <w>114</w>
-      <h>42</h>
+      <x>860</x>
+      <y>280</y>
+      <w>95</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>Is responsible to provide
 the predicted hardware data
@@ -492,12 +266,34 @@ for each device</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1482</x>
-      <y>126</y>
-      <w>90</w>
-      <h>66</h>
+      <x>830</x>
+      <y>305</y>
+      <w>75</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>505</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1085</x>
+      <y>475</y>
+      <w>55</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;90.0;190.0;90.0;10.0;20.0;10.0</additional_attributes>
   </element>
 </diagram>
