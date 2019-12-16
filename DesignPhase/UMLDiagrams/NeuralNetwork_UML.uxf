@@ -7,7 +7,7 @@
       <x>374</x>
       <y>0</y>
       <w>429</w>
-      <h>308</h>
+      <h>297</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NeuralNetwork
@@ -25,8 +25,7 @@ NeuralNetworkPkg::NeuralNetwork
 + getFirstLayer() : NetworkLayer
 + getLastLayer() : NetworkLayer
 + getNextLayer() : NetworkLayer
-+ getPreviousLayer() : NetworkLayer
-+ resetIterator() : void</panel_attributes>
++ getPreviousLayer() : NetworkLayer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -218,13 +217,13 @@ layers</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>374</x>
-      <y>297</y>
+      <y>286</y>
       <w>187</w>
-      <h>121</h>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;10.0;100.0;90.0;10.0;90.0</additional_attributes>
+    <additional_attributes>100.0;10.0;100.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
