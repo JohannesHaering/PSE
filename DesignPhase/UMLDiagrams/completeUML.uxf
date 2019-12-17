@@ -825,15 +825,16 @@ functionality</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9261</x>
+      <x>9296</x>
       <y>602</y>
       <w>301</w>
       <h>238</h>
     </coordinates>
     <panel_attributes>View::ImageClassificationControlPanel
 --
-- checkBoxesDevice : map&lt;string, boolean&gt;
-- checkBoxAppendResult : boolean
+- checkBoxesDevice : map&lt;string, bool&gt;
+- checkBoxAppendResult : bool
+- checkBoxes : list&lt;checkBox&gt;
 # startButtonContent : string
 --
 + dropDownChanged(string name) : void 
@@ -942,11 +943,11 @@ View::Observer
     <coordinates>
       <x>9450</x>
       <y>441</y>
-      <w>21</w>
+      <w>56</w>
       <h>175</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;230.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1069,7 +1070,7 @@ Renderer::ImageRenderer
     <coordinates>
       <x>10521</x>
       <y>721</y>
-      <w>245</w>
+      <w>371</w>
       <h>133</h>
     </coordinates>
     <panel_attributes>Renderer::DetectionResultRender
@@ -1163,11 +1164,11 @@ Renderer::ImageRenderer
     <coordinates>
       <x>9394</x>
       <y>833</y>
-      <w>21</w>
+      <w>56</w>
       <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1225,14 +1226,14 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>9555</x>
+      <x>9590</x>
       <y>567</y>
-      <w>77</w>
+      <w>42</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
-    <additional_attributes>10.0;60.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -4507,7 +4508,7 @@ _- dispatcher : DispatchManager_
 - deviceList : list&lt;Device&gt;
 - deviceChannelMap : map&lt;(Device, Channel)&gt;
 --
-- &lt;&lt;Constructor&gt;&gt; DispatchManager()
+- &lt;&lt;constructor&gt;&gt; DispatchManager()
 _+ getInstance() : DispatchManager_
 + setMode(operatingMode : Mode) : void
 + getMode() : Mode
@@ -4531,15 +4532,15 @@ Dispatcher::Mode
 --
 - modeName: string
 - deviceList : list&lt;Device&gt;
-- neuralNetworkList : list&lt;NeuralNetwork&gt;
+- neuralNetworkList : list&lt;NeuralNetworkAdapter&gt;
 --
 + &lt;&lt;constructor&gt;&gt; Mode()
 + getModeName() : string
 + setAllowedDeviceList(deviceList : list&lt;Device&gt;) : void
 + setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
 + setImageList(imageList : list&lt;image&gt;) : void
-/+ distributeImages() : ResultManager/
-/# calculate(deviceList : list&lt;Device&gt;) : (float, float)/</panel_attributes>
++ getImageDistribution() : list&lt;Device, list&lt;NeuralNetwork&gt;, list&lt;image&gt;) 
+/# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -4577,7 +4578,6 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
 # calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -4593,7 +4593,6 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
 # calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -4609,7 +4608,6 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
 # calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
@@ -4787,10 +4785,10 @@ Communication::Channel
 - NeuralNetworkList : list&lt;NeuralNetwork&gt;
 - ImageList : list&lt;image&gt;
 --
-+ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device)
-+ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetwork&gt;)
-+ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
-/+ sendImageList(imageList : list&lt;image&gt;) : Result/</panel_attributes>
++ &lt;&lt;constructor&gt;&gt; Channel(connectedDevice : Device)
++ &lt;&lt;constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetworkAdapter&gt;)
++ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetworkAdapter&gt;) : void
+/+ sendImageList(imageList : list&lt;image&gt;) : list&lt;ResultAdapter&gt;/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -4888,7 +4886,7 @@ Communication::AbstractFactory
 --
 
 --
-/getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork/
+/+ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork/
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -4904,7 +4902,7 @@ Communication::AbstractFactory
 --
 
 --
-getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
++ getOpenclCode(networkDescription : NeuralNetworkAdapter) : DeviceNetwork
 
 </panel_attributes>
     <additional_attributes/>
@@ -4921,7 +4919,7 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
 --
 
 --
-getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
++ getOpenclCode(networkDescription : NeuralNetworkAdapter) : DeviceNetwork
 
 </panel_attributes>
     <additional_attributes/>
@@ -4938,7 +4936,7 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
 --
 
 --
-getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
++ getOpenclCode(networkDescription : NeuralNetworkAdapter) : DeviceNetwork
 
 </panel_attributes>
     <additional_attributes/>
@@ -4955,7 +4953,7 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
 --
 
 --
-getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
++ getOpenclCode(networkDescription : NeuralNetworkAdapter) : DeviceNetwork
 
 </panel_attributes>
     <additional_attributes/>
@@ -6167,9 +6165,9 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>8358</x>
+      <x>8456</x>
       <y>3010</y>
-      <w>1141</w>
+      <w>1043</w>
       <h>721</h>
     </coordinates>
     <panel_attributes>Training
@@ -6335,8 +6333,8 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>7539</x>
-      <y>1127</y>
+      <x>7595</x>
+      <y>1134</y>
       <w>4935</w>
       <h>3626</h>
     </coordinates>
@@ -6353,6 +6351,18 @@ fontsize=40</panel_attributes>
       <h>4655</h>
     </coordinates>
     <panel_attributes>Model
+fontsize=40</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>7553</x>
+      <y>1141</y>
+      <w>4935</w>
+      <h>3626</h>
+    </coordinates>
+    <panel_attributes>Controller
 fontsize=40</panel_attributes>
     <additional_attributes/>
   </element>
