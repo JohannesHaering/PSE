@@ -7,21 +7,26 @@
       <x>200</x>
       <y>60</y>
       <w>330</w>
-      <h>240</h>
+      <h>300</h>
     </coordinates>
     <panel_attributes>Controller::ControllerFassade
 --
 - distributor : Distributor
-- resultHandler : SaveResultHandler
+- saveResultHandler : SaveResultHandler
 - inputHandler : InputImageHandler
 - neuralNetworkHandler : NeuralNetworkHandler
+- startHandler : StartHandler
+- neuralNetworkPager : PagerHandler
+- imagePager : PagerHandler
 --
 + startProcess() :void
 + saveResults() : void
 + nextNeuralNetwork() : void
 + prevNeuralNetwork() : void
 + nextImage() : void
-+ prevImage() : void</panel_attributes>
++ prevImage() : void
++ getImageInput() : void
++ getNeuralNetworkInput() : void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
