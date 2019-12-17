@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>1</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>895</x>
-      <y>582</y>
-      <w>35</w>
-      <h>19</h>
+      <x>6265</x>
+      <y>4074</y>
+      <w>245</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 I/O::FileIO
@@ -25,10 +25,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>866</x>
-      <y>616</y>
-      <w>45</w>
-      <h>13</h>
+      <x>6062</x>
+      <y>4312</y>
+      <w>315</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>I/O::TextFileIO
 --
@@ -41,10 +41,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>921</x>
-      <y>636</y>
-      <w>37</w>
-      <h>10</h>
+      <x>6447</x>
+      <y>4452</y>
+      <w>259</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>I/O::MultipleImageFileIO
 --
@@ -57,10 +57,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>887</x>
-      <y>600</y>
-      <w>26</w>
-      <h>18</h>
+      <x>6209</x>
+      <y>4200</y>
+      <w>182</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>240.0;10.0;240.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
@@ -68,10 +68,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>866</x>
-      <y>636</y>
-      <w>47</w>
-      <h>10</h>
+      <x>6062</x>
+      <y>4452</y>
+      <w>329</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>I/O::MultipleTextFileIO
 --
@@ -84,10 +84,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>887</x>
-      <y>628</y>
-      <w>3</w>
-      <h>10</h>
+      <x>6209</x>
+      <y>4396</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -95,10 +95,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>921</x>
-      <y>616</y>
-      <w>37</w>
-      <h>13</h>
+      <x>6447</x>
+      <y>4312</y>
+      <w>259</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>I/O::ImageFileIO
 --
@@ -111,10 +111,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>939</x>
-      <y>628</y>
-      <w>3</w>
-      <h>10</h>
+      <x>6573</x>
+      <y>4396</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -122,10 +122,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>908</x>
-      <y>605</y>
-      <w>34</w>
-      <h>13</h>
+      <x>6356</x>
+      <y>4235</y>
+      <w>238</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;320.0;20.0;320.0;110.0</additional_attributes>
@@ -133,10 +133,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>964</x>
-      <y>616</y>
-      <w>38</w>
-      <h>13</h>
+      <x>6748</x>
+      <y>4312</y>
+      <w>266</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>I/O::VideoFileIO
 --
@@ -149,10 +149,10 @@ I/O::FileIO
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>939</x>
-      <y>605</y>
-      <w>47</w>
-      <h>13</h>
+      <x>6573</x>
+      <y>4235</y>
+      <w>329</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;450.0;20.0;450.0;110.0</additional_attributes>
@@ -160,10 +160,10 @@ I/O::FileIO
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>774</x>
-      <y>586</y>
-      <w>21</w>
-      <h>19</h>
+      <x>5418</x>
+      <y>4102</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 I/O::Data
@@ -176,10 +176,10 @@ I/O::Data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>791</x>
-      <y>615</y>
-      <w>35</w>
-      <h>11</h>
+      <x>5537</x>
+      <y>4305</y>
+      <w>245</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>I/Oge::MultipleImageData
 --
@@ -192,10 +192,10 @@ I/O::Data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>829</x>
-      <y>615</y>
-      <w>30</w>
-      <h>11</h>
+      <x>5803</x>
+      <y>4305</y>
+      <w>210</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>I/O::VideoData
 --
@@ -208,10 +208,10 @@ I/O::Data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>689</x>
-      <y>615</y>
-      <w>32</w>
-      <h>11</h>
+      <x>4823</x>
+      <y>4305</y>
+      <w>224</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>I/O::MultipleStringData
 --
@@ -224,10 +224,10 @@ I/O::Data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>724</x>
-      <y>615</y>
-      <w>30</w>
-      <h>11</h>
+      <x>5068</x>
+      <y>4305</y>
+      <w>210</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>I/O::StringData
 --
@@ -241,10 +241,10 @@ I/O::Data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>759</x>
-      <y>615</y>
-      <w>28</w>
-      <h>11</h>
+      <x>5313</x>
+      <y>4305</y>
+      <w>196</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>I/O::ImageData
 --
@@ -257,10 +257,10 @@ I/O::Data
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
-      <y>604</y>
-      <w>44</w>
-      <h>13</h>
+      <x>5194</x>
+      <y>4228</y>
+      <w>308</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>420.0;10.0;420.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
@@ -268,10 +268,10 @@ I/O::Data
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>769</x>
-      <y>610</y>
-      <w>3</w>
-      <h>7</h>
+      <x>5383</x>
+      <y>4270</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -279,10 +279,10 @@ I/O::Data
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>783</x>
-      <y>609</y>
-      <w>60</w>
-      <h>8</h>
+      <x>5481</x>
+      <y>4263</y>
+      <w>420</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;580.0;20.0;580.0;60.0</additional_attributes>
@@ -290,10 +290,10 @@ I/O::Data
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>708</x>
-      <y>604</y>
-      <w>78</w>
-      <h>13</h>
+      <x>4956</x>
+      <y>4228</y>
+      <w>546</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>760.0;10.0;760.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
@@ -301,10 +301,10 @@ I/O::Data
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>783</x>
-      <y>604</y>
-      <w>26</w>
-      <h>13</h>
+      <x>5481</x>
+      <y>4228</y>
+      <w>182</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;240.0;70.0;240.0;110.0</additional_attributes>
@@ -312,10 +312,10 @@ I/O::Data
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>746</x>
-      <y>578</y>
-      <w>18</w>
-      <h>9</h>
+      <x>5222</x>
+      <y>4046</y>
+      <w>126</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Stores the abstractly 
 and independently 
@@ -325,10 +325,10 @@ from the file I/O</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>582</y>
-      <w>20</w>
-      <h>9</h>
+      <x>5320</x>
+      <y>4074</y>
+      <w>140</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
@@ -336,10 +336,10 @@ from the file I/O</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>939</x>
-      <y>572</y>
-      <w>18</w>
-      <h>9</h>
+      <x>6573</x>
+      <y>4004</y>
+      <w>126</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Generic abstract IO class
 The inherited classes
@@ -350,10 +350,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
-      <y>579</y>
-      <w>16</w>
-      <h>8</h>
+      <x>6489</x>
+      <y>4053</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;60.0</additional_attributes>
@@ -361,10 +361,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>475</y>
-      <w>59</w>
-      <h>13</h>
+      <x>5824</x>
+      <y>3325</y>
+      <w>413</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ImageFacade
 --
@@ -383,10 +383,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>819</x>
-      <y>447</y>
-      <w>21</w>
-      <h>13</h>
+      <x>5733</x>
+      <y>3129</y>
+      <w>147</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::Facade
 {abstract}
@@ -401,10 +401,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>769</x>
-      <y>475</y>
-      <w>60</w>
-      <h>13</h>
+      <x>5383</x>
+      <y>3325</y>
+      <w>420</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::DetectionDatasetFacade
 --
@@ -416,10 +416,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>701</x>
-      <y>475</y>
-      <w>62</w>
-      <h>13</h>
+      <x>4907</x>
+      <y>3325</y>
+      <w>434</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ClassificationDatasetFacade
 --
@@ -432,10 +432,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>893</x>
-      <y>475</y>
-      <w>48</w>
-      <h>13</h>
+      <x>6251</x>
+      <y>3325</y>
+      <w>336</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>ModelFacade::ParseResultFacade
 --
@@ -448,10 +448,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>459</y>
-      <w>100</w>
-      <h>18</h>
+      <x>5124</x>
+      <y>3213</y>
+      <w>700</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -459,10 +459,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>829</x>
-      <y>459</y>
-      <w>90</w>
-      <h>18</h>
+      <x>5803</x>
+      <y>3213</y>
+      <w>630</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
@@ -470,10 +470,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>795</x>
-      <y>459</y>
-      <w>37</w>
-      <h>18</h>
+      <x>5565</x>
+      <y>3213</y>
+      <w>259</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -481,10 +481,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>829</x>
-      <y>459</y>
-      <w>32</w>
-      <h>18</h>
+      <x>5803</x>
+      <y>3213</y>
+      <w>224</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;160.0</additional_attributes>
@@ -492,10 +492,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>616</y>
-      <w>44</w>
-      <h>11</h>
+      <x>3724</x>
+      <y>4312</y>
+      <w>308</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>VideoHandler::IVideoCutter
 {abstract}
@@ -508,10 +508,10 @@ for the concrete classes</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>603</x>
-      <y>590</y>
-      <w>33</w>
-      <h>19</h>
+      <x>4221</x>
+      <y>4130</y>
+      <w>231</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>VideoHandler::CameraHandler
 --
@@ -526,10 +526,10 @@ frameInterval : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>603</x>
-      <y>617</y>
-      <w>32</w>
-      <h>11</h>
+      <x>4221</x>
+      <y>4319</y>
+      <w>224</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>VideoHandler::IVideoHandler
 {abstract}
@@ -542,10 +542,10 @@ FrameInterval : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>634</y>
-      <w>44</w>
-      <h>12</h>
+      <x>3724</x>
+      <y>4438</y>
+      <w>308</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;VideoCutter&gt;&gt;
 VideoHandler::VideoHandler
@@ -560,10 +560,10 @@ VideoHandler::VideoHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>473</x>
-      <y>582</y>
-      <w>44</w>
-      <h>14</h>
+      <x>3311</x>
+      <y>4074</y>
+      <w>308</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>VideoHandler::IVideoLibAdapter
 {abstract}
@@ -579,10 +579,10 @@ VideoHandler::VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>551</x>
-      <y>626</y>
-      <w>3</w>
-      <h>10</h>
+      <x>3857</x>
+      <y>4382</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -590,10 +590,10 @@ VideoHandler::VideoHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>575</x>
-      <y>618</y>
-      <w>30</w>
-      <h>8</h>
+      <x>4025</x>
+      <y>4326</y>
+      <w>210</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -602,10 +602,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>604</x>
-      <y>644</y>
-      <w>31</w>
-      <h>8</h>
+      <x>4228</x>
+      <y>4508</y>
+      <w>217</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>VideoHandler::AviVideosHandler
 --
@@ -618,10 +618,10 @@ frameInterval : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>473</x>
-      <y>611</y>
-      <w>44</w>
-      <h>15</h>
+      <x>3311</x>
+      <y>4277</y>
+      <w>308</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>VideoHandler::OpenCVAdapter
 --
@@ -637,10 +637,10 @@ _ + getInstance() : OpenCVAdapter_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>516</x>
-      <y>585</y>
-      <w>18</w>
-      <h>40</h>
+      <x>3612</x>
+      <y>4095</y>
+      <w>126</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -649,10 +649,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>493</x>
-      <y>595</y>
-      <w>3</w>
-      <h>18</h>
+      <x>3451</x>
+      <y>4165</y>
+      <w>21</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
@@ -660,10 +660,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>603</x>
-      <y>561</y>
-      <w>33</w>
-      <h>19</h>
+      <x>4221</x>
+      <y>3927</y>
+      <w>231</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>VideoHandler::ICameraHandler
 --
@@ -675,10 +675,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>618</x>
-      <y>627</y>
-      <w>3</w>
-      <h>19</h>
+      <x>4326</x>
+      <y>4389</y>
+      <w>21</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -686,10 +686,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>516</x>
-      <y>583</y>
-      <w>89</w>
-      <h>14</h>
+      <x>3612</x>
+      <y>4081</y>
+      <w>623</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -698,10 +698,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>579</y>
-      <w>3</w>
-      <h>13</h>
+      <x>4312</x>
+      <y>4053</y>
+      <w>21</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -709,10 +709,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>642</x>
-      <y>547</y>
-      <w>24</w>
-      <h>9</h>
+      <x>4494</x>
+      <y>3829</y>
+      <w>168</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Is responsible for
 opening/ closing the connection to 
@@ -723,10 +723,10 @@ As well as taking pictures</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>633</x>
-      <y>554</y>
-      <w>12</w>
-      <h>10</h>
+      <x>4431</x>
+      <y>3878</y>
+      <w>84</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
@@ -734,10 +734,10 @@ As well as taking pictures</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>641</x>
-      <y>610</y>
-      <w>14</w>
-      <h>7</h>
+      <x>4487</x>
+      <y>4270</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Is responsible for 
 cutting the video 
@@ -747,10 +747,10 @@ into frames</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>632</x>
-      <y>615</y>
-      <w>12</w>
-      <h>6</h>
+      <x>4424</x>
+      <y>4305</y>
+      <w>84</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
@@ -758,10 +758,10 @@ into frames</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>569</x>
-      <y>602</y>
-      <w>14</w>
-      <h>7</h>
+      <x>3983</x>
+      <y>4214</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Cuts the video into 
 frames</panel_attributes>
@@ -770,10 +770,10 @@ frames</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>569</x>
-      <y>607</y>
-      <w>5</w>
-      <h>13</h>
+      <x>3983</x>
+      <y>4249</y>
+      <w>35</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;110.0;30.0;10.0</additional_attributes>
@@ -781,10 +781,10 @@ frames</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>465</x>
-      <y>567</y>
-      <w>17</w>
-      <h>7</h>
+      <x>3255</x>
+      <y>3969</y>
+      <w>119</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Adapter to video library 
 to support the needed 
@@ -794,10 +794,10 @@ functionality</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>572</y>
-      <w>9</w>
-      <h>14</h>
+      <x>3290</x>
+      <y>4004</y>
+      <w>63</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>70.0;120.0;10.0;10.0</additional_attributes>
@@ -805,10 +805,10 @@ functionality</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1264</x>
-      <y>78</y>
-      <w>25</w>
-      <h>19</h>
+      <x>8848</x>
+      <y>546</y>
+      <w>175</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>View::MainMenu
 --
@@ -825,10 +825,10 @@ functionality</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1323</x>
-      <y>86</y>
-      <w>43</w>
-      <h>34</h>
+      <x>9261</x>
+      <y>602</y>
+      <w>301</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>View::ImageClassificationControlPanel
 --
@@ -854,10 +854,10 @@ functionality</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1426</x>
-      <y>78</y>
-      <w>30</w>
-      <h>24</h>
+      <x>9982</x>
+      <y>546</y>
+      <w>210</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>View::Topology
 --
@@ -872,10 +872,10 @@ functionality</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1341</x>
-      <y>19</y>
-      <w>21</w>
-      <h>12</h>
+      <x>9387</x>
+      <y>133</y>
+      <w>147</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>{abstract}
 View::ViewPage
@@ -890,10 +890,10 @@ View::ViewPage
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1374</x>
-      <y>78</y>
-      <w>36</w>
-      <h>34</h>
+      <x>9618</x>
+      <y>546</y>
+      <w>252</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>View::InferencePage
 --
@@ -913,10 +913,10 @@ View::ViewPage
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1389</x>
-      <y>19</y>
-      <w>21</w>
-      <h>12</h>
+      <x>9723</x>
+      <y>133</y>
+      <w>147</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>{abstract}
 View::Observer
@@ -929,10 +929,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1278</x>
-      <y>30</y>
-      <w>75</w>
-      <h>50</h>
+      <x>8946</x>
+      <y>210</y>
+      <w>525</w>
+      <h>350</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>730.0;10.0;730.0;100.0;10.0;100.0;10.0;480.0</additional_attributes>
@@ -940,10 +940,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>63</y>
-      <w>3</w>
-      <h>25</h>
+      <x>9450</x>
+      <y>441</y>
+      <w>21</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
@@ -951,10 +951,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>63</y>
-      <w>43</w>
-      <h>17</h>
+      <x>9450</x>
+      <y>441</y>
+      <w>301</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0;410.0;60.0;410.0;150.0</additional_attributes>
@@ -962,10 +962,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>63</y>
-      <w>89</w>
-      <h>17</h>
+      <x>9450</x>
+      <y>441</y>
+      <w>623</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0;870.0;60.0;870.0;150.0</additional_attributes>
@@ -973,10 +973,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1361</x>
-      <y>20</y>
-      <w>30</w>
-      <h>3</h>
+      <x>9527</x>
+      <y>140</y>
+      <w>210</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
@@ -984,10 +984,10 @@ View::Observer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1277</x>
-      <y>100</y>
-      <w>30</w>
-      <h>25</h>
+      <x>8939</x>
+      <y>700</y>
+      <w>210</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>280.0;10.0;280.0;130.0;10.0;130.0;10.0;230.0</additional_attributes>
@@ -995,10 +995,10 @@ View::Observer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1502</x>
-      <y>45</y>
-      <w>85</w>
-      <h>19</h>
+      <x>10514</x>
+      <y>315</y>
+      <w>595</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>{abstract}
 Renderer::ImageRenderer
@@ -1014,10 +1014,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1291</x>
-      <y>78</y>
-      <w>29</w>
-      <h>23</h>
+      <x>9037</x>
+      <y>546</y>
+      <w>203</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>View::ClassificationResultPanel
 --
@@ -1039,10 +1039,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1303</x>
-      <y>63</y>
-      <w>50</w>
-      <h>17</h>
+      <x>9121</x>
+      <y>441</y>
+      <w>350</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>480.0;10.0;480.0;60.0;10.0;60.0;10.0;150.0</additional_attributes>
@@ -1050,10 +1050,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1256</x>
-      <y>123</y>
-      <w>50</w>
-      <h>18</h>
+      <x>8792</x>
+      <y>861</y>
+      <w>350</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>View::DetectionResultPanel
 --
@@ -1067,10 +1067,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1503</x>
-      <y>103</y>
-      <w>35</w>
-      <h>19</h>
+      <x>10521</x>
+      <y>721</y>
+      <w>245</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Renderer::DetectionResultRender
 --
@@ -1083,10 +1083,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1552</x>
-      <y>77</y>
-      <w>34</w>
-      <h>19</h>
+      <x>10864</x>
+      <y>539</y>
+      <w>238</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Renderer::DiagramRender
 --
@@ -1098,10 +1098,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1503</x>
-      <y>77</y>
-      <w>35</w>
-      <h>19</h>
+      <x>10521</x>
+      <y>539</y>
+      <w>245</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Renderer::ClassificationResultRender
 --
@@ -1113,10 +1113,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1519</x>
-      <y>63</y>
-      <w>21</w>
-      <h>16</h>
+      <x>10633</x>
+      <y>441</y>
+      <w>147</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
@@ -1124,10 +1124,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1537</x>
-      <y>63</y>
-      <w>35</w>
-      <h>16</h>
+      <x>10759</x>
+      <y>441</y>
+      <w>245</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;330.0;140.0</additional_attributes>
@@ -1135,10 +1135,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1519</x>
-      <y>95</y>
-      <w>3</w>
-      <h>10</h>
+      <x>10633</x>
+      <y>665</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -1146,10 +1146,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1323</x>
-      <y>128</y>
-      <w>43</w>
-      <h>8</h>
+      <x>9261</x>
+      <y>896</y>
+      <w>301</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>View::DetectionControlPanel
 --
@@ -1161,10 +1161,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1342</x>
-      <y>119</y>
-      <w>3</w>
-      <h>11</h>
+      <x>9394</x>
+      <y>833</y>
+      <w>21</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
@@ -1172,10 +1172,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1340</x>
-      <y>45</y>
-      <w>21</w>
-      <h>19</h>
+      <x>9380</x>
+      <y>315</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>View::ContentView
 --
@@ -1187,10 +1187,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>30</y>
-      <w>3</w>
-      <h>17</h>
+      <x>9450</x>
+      <y>210</y>
+      <w>21</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
@@ -1198,10 +1198,10 @@ Renderer::ImageRenderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1591</x>
-      <y>77</y>
-      <w>37</w>
-      <h>19</h>
+      <x>11137</x>
+      <y>539</y>
+      <w>259</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Renderer::TopologyRenderer
 --
@@ -1214,10 +1214,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1537</x>
-      <y>63</y>
-      <w>73</w>
-      <h>16</h>
+      <x>10759</x>
+      <y>441</y>
+      <w>511</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
@@ -1225,10 +1225,10 @@ Renderer::ImageRenderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1365</x>
-      <y>81</y>
-      <w>11</w>
-      <h>8</h>
+      <x>9555</x>
+      <y>567</y>
+      <w>77</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1</panel_attributes>
@@ -1237,10 +1237,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1319</x>
-      <y>78</y>
-      <w>57</w>
-      <h>5</h>
+      <x>9233</x>
+      <y>546</y>
+      <w>399</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -1249,10 +1249,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>839</x>
-      <y>453</y>
-      <w>119</w>
-      <h>131</h>
+      <x>5873</x>
+      <y>3171</y>
+      <w>833</w>
+      <h>917</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -1261,10 +1261,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>635</x>
-      <y>452</y>
-      <w>186</w>
-      <h>113</h>
+      <x>4445</x>
+      <y>3164</y>
+      <w>1302</w>
+      <h>791</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -1273,10 +1273,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1360</x>
-      <y>49</y>
-      <w>144</w>
-      <h>4</h>
+      <x>9520</x>
+      <y>343</y>
+      <w>1008</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..n</panel_attributes>
@@ -1285,10 +1285,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1317</x>
-      <y>326</y>
-      <w>62</w>
-      <h>34</h>
+      <x>9219</x>
+      <y>2282</y>
+      <w>434</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>Inferencing::InferencingDistributor
 {abstract}
@@ -1316,10 +1316,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1256</x>
-      <y>320</y>
-      <w>51</w>
-      <h>13</h>
+      <x>8792</x>
+      <y>2240</y>
+      <w>357</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Inferencing::NeuralNetworkSetter
 --
@@ -1332,10 +1332,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1306</x>
-      <y>326</y>
-      <w>13</w>
-      <h>3</h>
+      <x>9142</x>
+      <y>2282</y>
+      <w>91</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
@@ -1343,10 +1343,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1256</x>
-      <y>372</y>
-      <w>52</w>
-      <h>16</h>
+      <x>8792</x>
+      <y>2604</y>
+      <w>364</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Inferencing::PlatformSetter
 --
@@ -1361,10 +1361,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1307</x>
-      <y>326</y>
-      <w>12</w>
-      <h>55</h>
+      <x>9149</x>
+      <y>2282</y>
+      <w>84</w>
+      <h>385</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>100.0;10.0;60.0;10.0;60.0;530.0;10.0;530.0</additional_attributes>
@@ -1372,10 +1372,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1256</x>
-      <y>390</y>
-      <w>52</w>
-      <h>15</h>
+      <x>8792</x>
+      <y>2730</y>
+      <w>364</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Inferencing::ModeCalculator
 --
@@ -1389,10 +1389,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1280</x>
-      <y>387</y>
-      <w>3</w>
-      <h>5</h>
+      <x>8960</x>
+      <y>2709</y>
+      <w>21</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -1400,10 +1400,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1317</x>
-      <y>365</y>
-      <w>28</w>
-      <h>9</h>
+      <x>9219</x>
+      <y>2555</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorClassification
@@ -1415,10 +1415,10 @@ InferencingDistributorClassification
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1351</x>
-      <y>365</y>
-      <w>28</w>
-      <h>9</h>
+      <x>9457</x>
+      <y>2555</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorDetection
@@ -1432,10 +1432,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1329</x>
-      <y>359</y>
-      <w>20</w>
-      <h>8</h>
+      <x>9303</x>
+      <y>2513</y>
+      <w>140</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;60.0</additional_attributes>
@@ -1443,10 +1443,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1346</x>
-      <y>359</y>
-      <w>20</w>
-      <h>8</h>
+      <x>9422</x>
+      <y>2513</y>
+      <w>140</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;60.0</additional_attributes>
@@ -1454,10 +1454,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1256</x>
-      <y>335</y>
-      <w>51</w>
-      <h>32</h>
+      <x>8792</x>
+      <y>2345</y>
+      <w>357</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>Inferencing::Pager
 --
@@ -1482,10 +1482,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1306</x>
-      <y>326</y>
-      <w>13</w>
-      <h>19</h>
+      <x>9142</x>
+      <y>2282</y>
+      <w>91</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;70.0;10.0;70.0;170.0;10.0;170.0</additional_attributes>
@@ -1493,10 +1493,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1389</x>
-      <y>326</y>
-      <w>35</w>
-      <h>12</h>
+      <x>9723</x>
+      <y>2282</y>
+      <w>245</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Inferencing::PlatformSetting
 --
@@ -1511,10 +1511,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1389</x>
-      <y>340</y>
-      <w>35</w>
-      <h>17</h>
+      <x>9723</x>
+      <y>2380</y>
+      <w>245</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Inferencing::OutputSetting
 --
@@ -1530,10 +1530,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1378</x>
-      <y>334</y>
-      <w>13</w>
-      <h>11</h>
+      <x>9646</x>
+      <y>2338</y>
+      <w>91</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;90.0;80.0;90.0;80.0;10.0;10.0;10.0</additional_attributes>
@@ -1541,10 +1541,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1378</x>
-      <y>328</y>
-      <w>13</w>
-      <h>7</h>
+      <x>9646</x>
+      <y>2296</y>
+      <w>91</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
@@ -1552,10 +1552,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1375</x>
-      <y>183</y>
-      <w>33</w>
-      <h>24</h>
+      <x>9625</x>
+      <y>1281</y>
+      <w>231</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>Controller::ControllerFacade
 --
@@ -1574,10 +1574,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1379</x>
-      <y>244</y>
-      <w>23</w>
-      <h>19</h>
+      <x>9653</x>
+      <y>1708</y>
+      <w>161</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 StartHandler
@@ -1591,10 +1591,10 @@ StartHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1266</x>
-      <y>244</y>
-      <w>23</w>
-      <h>11</h>
+      <x>8862</x>
+      <y>1708</y>
+      <w>161</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextPrevHandler
@@ -1609,10 +1609,10 @@ NextPrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1255</x>
-      <y>261</y>
-      <w>21</w>
-      <h>9</h>
+      <x>8785</x>
+      <y>1827</y>
+      <w>147</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PrevHandler
@@ -1624,10 +1624,10 @@ PrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1278</x>
-      <y>261</y>
-      <w>21</w>
-      <h>9</h>
+      <x>8946</x>
+      <y>1827</y>
+      <w>147</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextHandler
@@ -1639,10 +1639,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1265</x>
-      <y>254</y>
-      <w>14</w>
-      <h>9</h>
+      <x>8855</x>
+      <y>1778</y>
+      <w>98</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
@@ -1650,10 +1650,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1276</x>
-      <y>254</y>
-      <w>15</w>
-      <h>9</h>
+      <x>8932</x>
+      <y>1778</y>
+      <w>105</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;70.0</additional_attributes>
@@ -1661,10 +1661,10 @@ NextHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1408</x>
-      <y>244</y>
-      <w>23</w>
-      <h>19</h>
+      <x>9856</x>
+      <y>1708</y>
+      <w>161</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 SaveResultHandler
@@ -1680,10 +1680,10 @@ SaveResultHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1313</x>
-      <y>244</y>
-      <w>23</w>
-      <h>16</h>
+      <x>9191</x>
+      <y>1708</y>
+      <w>161</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 FileExplorerHandler
@@ -1700,10 +1700,10 @@ FileExplorerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1300</x>
-      <y>264</y>
-      <w>23</w>
-      <h>12</h>
+      <x>9100</x>
+      <y>1848</y>
+      <w>161</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 InputImageHandler
@@ -1717,10 +1717,10 @@ InputImageHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1311</x>
-      <y>259</y>
-      <w>15</w>
-      <h>7</h>
+      <x>9177</x>
+      <y>1813</y>
+      <w>105</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>130.0;10.0;130.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
@@ -1728,10 +1728,10 @@ InputImageHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1346</x>
-      <y>228</y>
-      <w>21</w>
-      <h>9</h>
+      <x>9422</x>
+      <y>1596</y>
+      <w>147</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 EventHandler
@@ -1744,10 +1744,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1324</x>
-      <y>236</y>
-      <w>34</w>
-      <h>10</h>
+      <x>9268</x>
+      <y>1652</y>
+      <w>238</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
@@ -1755,10 +1755,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1276</x>
-      <y>236</y>
-      <w>82</w>
-      <h>10</h>
+      <x>8932</x>
+      <y>1652</y>
+      <w>574</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>800.0;10.0;800.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
@@ -1766,10 +1766,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1355</x>
-      <y>236</y>
-      <w>66</w>
-      <h>10</h>
+      <x>9485</x>
+      <y>1652</y>
+      <w>462</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;640.0;50.0;640.0;80.0</additional_attributes>
@@ -1777,10 +1777,10 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1355</x>
-      <y>236</y>
-      <w>37</w>
-      <h>10</h>
+      <x>9485</x>
+      <y>1652</y>
+      <w>259</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;350.0;50.0;350.0;80.0</additional_attributes>
@@ -1788,10 +1788,10 @@ EventHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1325</x>
-      <y>264</y>
-      <w>23</w>
-      <h>12</h>
+      <x>9275</x>
+      <y>1848</y>
+      <w>161</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NeuralNetworkHandler
@@ -1804,10 +1804,10 @@ NeuralNetworkHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1323</x>
-      <y>259</y>
-      <w>15</w>
-      <h>7</h>
+      <x>9261</x>
+      <y>1813</y>
+      <w>105</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;130.0;30.0;130.0;50.0</additional_attributes>
@@ -1815,10 +1815,10 @@ NeuralNetworkHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1355</x>
-      <y>244</y>
-      <w>21</w>
-      <h>19</h>
+      <x>9485</x>
+      <y>1708</y>
+      <w>147</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 MainHandler
@@ -1832,10 +1832,10 @@ MainHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1355</x>
-      <y>236</y>
-      <w>13</w>
-      <h>10</h>
+      <x>9485</x>
+      <y>1652</y>
+      <w>91</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;110.0;50.0;110.0;80.0</additional_attributes>
@@ -1843,10 +1843,10 @@ MainHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1098</x>
-      <y>472</y>
-      <w>58</w>
-      <h>20</h>
+      <x>7686</x>
+      <y>3304</y>
+      <w>406</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkModelAdapter::NeuralNetworkAdapter
@@ -1867,10 +1867,10 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1167</x>
-      <y>389</y>
-      <w>56</w>
-      <h>19</h>
+      <x>8169</x>
+      <y>2723</y>
+      <w>392</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Resultadapter::ResultsmanagerAdapter
 --
@@ -1889,10 +1889,10 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1407</x>
-      <y>80</y>
-      <w>14</w>
-      <h>106</h>
+      <x>9849</x>
+      <y>560</y>
+      <w>98</w>
+      <h>742</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;1040.0;120.0;1040.0;120.0;10.0;30.0;10.0</additional_attributes>
@@ -1900,10 +1900,10 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1335</x>
-      <y>251</y>
-      <w>20</w>
-      <h>77</h>
+      <x>9345</x>
+      <y>1757</y>
+      <w>140</w>
+      <h>539</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -1912,10 +1912,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>803</x>
-      <y>265</y>
-      <w>563</w>
-      <h>186</h>
+      <x>5621</x>
+      <y>1855</y>
+      <w>3941</w>
+      <h>1302</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>160.0;1840.0;10.0;1840.0;20.0;510.0;5610.0;510.0;5610.0;10.0;5450.0;10.0</additional_attributes>
@@ -1923,10 +1923,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1232</x>
-      <y>250</y>
-      <w>36</w>
-      <h>89</h>
+      <x>8624</x>
+      <y>1750</y>
+      <w>252</w>
+      <h>623</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -1935,10 +1935,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1351</x>
-      <y>248</y>
-      <w>89</w>
-      <h>80</h>
+      <x>9457</x>
+      <y>1736</y>
+      <w>623</w>
+      <h>560</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;780.0;10.0;730.0;870.0;730.0;870.0;10.0;800.0;10.0</additional_attributes>
@@ -1946,10 +1946,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1333</x>
-      <y>249</y>
-      <w>103</w>
-      <h>69</h>
+      <x>9331</x>
+      <y>1743</y>
+      <w>721</w>
+      <h>483</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;670.0;1010.0;670.0;1010.0;10.0;980.0;10.0</additional_attributes>
@@ -1957,10 +1957,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1351</x>
-      <y>248</y>
-      <w>57</w>
-      <h>80</h>
+      <x>9457</x>
+      <y>1736</y>
+      <w>399</w>
+      <h>560</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;780.0;10.0;730.0;550.0;730.0;540.0;10.0;510.0;10.0</additional_attributes>
@@ -1968,10 +1968,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1124</x>
-      <y>340</y>
-      <w>134</w>
-      <h>134</h>
+      <x>7868</x>
+      <y>2380</y>
+      <w>938</w>
+      <h>938</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 currentNeuralNetwork</panel_attributes>
@@ -1980,10 +1980,10 @@ currentNeuralNetwork</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1131</x>
-      <y>343</y>
-      <w>128</w>
-      <h>131</h>
+      <x>7917</x>
+      <y>2401</y>
+      <w>896</w>
+      <h>917</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 maxNeuralNetwork</panel_attributes>
@@ -1992,10 +1992,10 @@ maxNeuralNetwork</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1155</x>
-      <y>475</y>
-      <w>456</w>
-      <h>102</h>
+      <x>8085</x>
+      <y>3325</y>
+      <w>3192</w>
+      <h>714</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 testNeuralNetwork
@@ -2005,10 +2005,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>313</x>
-      <y>713</y>
-      <w>39</w>
-      <h>22</h>
+      <x>2191</x>
+      <y>4991</y>
+      <w>273</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NeuralNetwork
@@ -2029,10 +2029,10 @@ NeuralNetworkPkg::NeuralNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>425</x>
-      <y>721</y>
-      <w>50</w>
-      <h>19</h>
+      <x>2975</x>
+      <y>5047</y>
+      <w>350</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NetworkLayer
@@ -2052,10 +2052,10 @@ NeuralNetworkPkg::NetworkLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>347</x>
-      <y>750</y>
-      <w>92</w>
-      <h>26</h>
+      <x>2429</x>
+      <y>5250</y>
+      <w>644</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionLayer
@@ -2079,10 +2079,10 @@ NeuralNetworkPkg::ConvolutionLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>514</x>
-      <y>750</y>
-      <w>81</w>
-      <h>26</h>
+      <x>3598</x>
+      <y>5250</y>
+      <w>567</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingLayer
@@ -2107,10 +2107,10 @@ NeuralNetworkPkg::PollingLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>688</x>
-      <y>750</y>
-      <w>67</w>
-      <h>17</h>
+      <x>4816</x>
+      <y>5250</y>
+      <w>469</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DenseLayer
@@ -2130,10 +2130,10 @@ NeuralNetworkPkg::DenseLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1004</x>
-      <y>750</y>
-      <w>53</w>
-      <h>17</h>
+      <x>7028</x>
+      <y>5250</y>
+      <w>371</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionLayer
@@ -2151,10 +2151,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>394</x>
-      <y>742</y>
-      <w>635</w>
-      <h>10</h>
+      <x>2758</x>
+      <y>5194</y>
+      <w>4445</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2163,10 +2163,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>3843</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -2174,10 +2174,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>717</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>5019</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2186,10 +2186,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>739</y>
-      <w>3</w>
-      <h>7</h>
+      <x>3136</x>
+      <y>5173</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -2197,10 +2197,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>728</y>
-      <w>76</w>
-      <h>5</h>
+      <x>2457</x>
+      <y>5096</y>
+      <w>532</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -2211,10 +2211,10 @@ list &lt;layers&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>313</x>
-      <y>734</y>
-      <w>16</w>
-      <h>17</h>
+      <x>2191</x>
+      <y>5138</y>
+      <w>112</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;uses&gt;&gt;</panel_attributes>
@@ -2223,10 +2223,10 @@ list &lt;layers&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>750</y>
-      <w>71</w>
-      <h>26</h>
+      <x>3087</x>
+      <y>5250</y>
+      <w>497</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationLayer
@@ -2245,10 +2245,10 @@ NeuralNetworkPkg::ActivationLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>757</x>
-      <y>750</y>
-      <w>50</w>
-      <h>17</h>
+      <x>5299</x>
+      <y>5250</y>
+      <w>350</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenLayer
@@ -2264,10 +2264,10 @@ NeuralNetworkPkg::FlattenLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>809</x>
-      <y>750</y>
-      <w>69</w>
-      <h>17</h>
+      <x>5663</x>
+      <y>5250</y>
+      <w>483</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutLayer
@@ -2283,10 +2283,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>3290</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -2294,10 +2294,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>779</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>5453</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2306,10 +2306,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>5880</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2318,10 +2318,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>597</x>
-      <y>750</y>
-      <w>89</w>
-      <h>21</h>
+      <x>4179</x>
+      <y>5250</y>
+      <w>623</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationLayer
@@ -2343,10 +2343,10 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>4480</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2355,10 +2355,10 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>714</y>
-      <w>698</w>
-      <h>38</h>
+      <x>2457</x>
+      <y>4998</y>
+      <w>4886</w>
+      <h>266</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -2370,10 +2370,10 @@ list &lt;chains&gt;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>750</y>
-      <w>59</w>
-      <h>17</h>
+      <x>6160</x>
+      <y>5250</y>
+      <w>413</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsLayer
@@ -2388,10 +2388,10 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>905</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>6335</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2400,10 +2400,10 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>746</y>
-      <w>26</w>
-      <h>18</h>
+      <x>2016</x>
+      <y>5222</y>
+      <w>182</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::Activation
@@ -2421,10 +2421,10 @@ SWISH</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>765</y>
-      <w>26</w>
-      <h>10</h>
+      <x>2016</x>
+      <y>5355</y>
+      <w>182</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::PollingType
@@ -2437,10 +2437,10 @@ AVEREAGE</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>776</y>
-      <w>26</w>
-      <h>10</h>
+      <x>2016</x>
+      <y>5432</y>
+      <w>182</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::LRNType
@@ -2453,10 +2453,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>313</x>
-      <y>748</y>
-      <w>12</w>
-      <h>22</h>
+      <x>2191</x>
+      <y>5236</y>
+      <w>84</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -2465,10 +2465,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>313</x>
-      <y>767</y>
-      <w>12</w>
-      <h>14</h>
+      <x>2191</x>
+      <y>5369</y>
+      <w>84</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -2477,10 +2477,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>317</x>
-      <y>807</y>
-      <w>65</w>
-      <h>18</h>
+      <x>2219</x>
+      <y>5649</y>
+      <w>455</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DeviceNetwork
@@ -2488,8 +2488,8 @@ NeuralNetworkPkg::DeviceNetwork
 --
 - platformName : string
 --
-+ &lt;&lt;constructor&gt;&gt; NetworkOperations()
-+ &lt;&lt;constructor&gt;&gt; NetworkOperations(platformName : string)
++ &lt;&lt;constructor&gt;&gt; NetworkOperations() : void
++ &lt;&lt;constructor&gt;&gt; NetworkOperations(platformName : string) : void
 + addKernelCode(layerType : Layertype, kernelCode : string[]) : void
 + executeCalculation(layer : NetworkLayer, inputData : double[][][]) : double[][][]
 + executeBackPropagation(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]</panel_attributes>
@@ -2498,15 +2498,16 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2576</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
-    <panel_attributes>NeuralNetworkPkg::ConvolutionCode
-{abstract}
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCode
+
 --
-# kernelCode : string[]
+
 --
 + setKernelCode(kernelCode : string[]) : void
 + executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
@@ -2516,10 +2517,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>525</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>3675</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -2527,10 +2528,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>827</y>
-      <w>3</w>
-      <h>9</h>
+      <x>3150</x>
+      <y>5789</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -2538,10 +2539,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>459</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>3213</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -2549,10 +2550,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>423</x>
-      <y>816</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2961</x>
+      <y>5712</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 /NeuralNetworkPkg::DeviceNetworkLayer/
@@ -2568,10 +2569,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>832</y>
-      <w>510</w>
-      <h>10</h>
+      <x>2772</x>
+      <y>5824</y>
+      <w>3570</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2580,10 +2581,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>4550</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2592,10 +2593,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>4984</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2604,10 +2605,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>776</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>5432</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2616,10 +2617,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>4088</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2628,10 +2629,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>833</y>
-      <w>3</w>
-      <h>9</h>
+      <x>5880</x>
+      <y>5831</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2640,10 +2641,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>792</y>
-      <w>40</w>
-      <h>26</h>
+      <x>1953</x>
+      <y>5544</y>
+      <w>280</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;uses&gt;&gt;
@@ -2653,10 +2654,10 @@ NeuralNetworkPkg::DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>941</x>
-      <y>750</y>
-      <w>61</w>
-      <h>17</h>
+      <x>6587</x>
+      <y>5250</y>
+      <w>427</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageLayer
@@ -2672,10 +2673,10 @@ NeuralNetworkPkg::OutputStorageLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>972</x>
-      <y>743</y>
-      <w>3</w>
-      <h>9</h>
+      <x>6804</x>
+      <y>5201</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -2684,10 +2685,10 @@ NeuralNetworkPkg::OutputStorageLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>787</y>
-      <w>26</w>
-      <h>23</h>
+      <x>2016</x>
+      <y>5509</y>
+      <w>182</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::LayerType
@@ -2708,10 +2709,10 @@ OUTPUT_STORAGE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>780</y>
-      <w>11</w>
-      <h>15</h>
+      <x>1953</x>
+      <y>5460</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -2721,10 +2722,10 @@ OUTPUT_STORAGE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>768</y>
-      <w>11</w>
-      <h>15</h>
+      <x>1953</x>
+      <y>5376</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -2734,10 +2735,10 @@ OUTPUT_STORAGE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>756</y>
-      <w>11</w>
-      <h>15</h>
+      <x>1953</x>
+      <y>5292</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -2747,10 +2748,10 @@ OUTPUT_STORAGE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>381</x>
-      <y>818</y>
-      <w>44</w>
-      <h>5</h>
+      <x>2667</x>
+      <y>5726</y>
+      <w>308</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -2761,14 +2762,14 @@ layer</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>431</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3017</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCode
-{abstract}
+
 --
 
 --
@@ -2780,14 +2781,14 @@ NeuralNetworkPkg::ActivationCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>494</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3458</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCode
-{abstract}
+
 --
 
 --
@@ -2799,14 +2800,14 @@ NeuralNetworkPkg::PollingCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>557</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3899</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCode
-{abstract}
+
 --
 
 --
@@ -2818,14 +2819,14 @@ NeuralNetworkPkg::LocalResponseNormalizationCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>4340</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCode
-{abstract}
+
 --
 
 --
@@ -2837,14 +2838,14 @@ NeuralNetworkPkg::FlattenCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>683</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>4781</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCode
-{abstract}
+
 --
 
 --
@@ -2856,14 +2857,14 @@ NeuralNetworkPkg::DropoutCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>746</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>5222</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
-{abstract}
+
 --
 
 --
@@ -2875,14 +2876,14 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>809</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>5663</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCode
-{abstract}
+
 --
 
 --
@@ -2894,14 +2895,14 @@ NeuralNetworkPkg::OutputStorageCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>6104</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCode
-{abstract}
+
 --
 
 --
@@ -2913,10 +2914,10 @@ NeuralNetworkPkg::InceptionCode
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>381</x>
-      <y>808</y>
-      <w>545</w>
-      <h>34</h>
+      <x>2667</x>
+      <y>5656</y>
+      <w>3815</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 operations</panel_attributes>
@@ -2925,10 +2926,10 @@ operations</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>859</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2254</x>
+      <y>6013</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeCPU
@@ -2944,10 +2945,10 @@ NeuralNetworkPkg::ConvolutionCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>874</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2254</x>
+      <y>6118</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeFPGA
@@ -2963,10 +2964,10 @@ NeuralNetworkPkg::ConvolutionCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>889</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2254</x>
+      <y>6223</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeGPU
@@ -2982,10 +2983,10 @@ NeuralNetworkPkg::ConvolutionCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>904</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2254</x>
+      <y>6328</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeASIC
@@ -3001,10 +3002,10 @@ NeuralNetworkPkg::ConvolutionCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>398</x>
-      <y>903</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2786</x>
+      <y>6321</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeASIC
@@ -3020,10 +3021,10 @@ NeuralNetworkPkg::ActivationCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>398</x>
-      <y>873</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2786</x>
+      <y>6111</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeFPGA
@@ -3039,10 +3040,10 @@ NeuralNetworkPkg::ActivationCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>398</x>
-      <y>858</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2786</x>
+      <y>6006</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeCPU
@@ -3058,10 +3059,10 @@ NeuralNetworkPkg::ActivationCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>398</x>
-      <y>888</y>
-      <w>61</w>
-      <h>12</h>
+      <x>2786</x>
+      <y>6216</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeGPU
@@ -3077,10 +3078,10 @@ NeuralNetworkPkg::ActivationCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>903</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3332</x>
+      <y>6321</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeASIC
@@ -3096,10 +3097,10 @@ NeuralNetworkPkg::PollingCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>888</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3332</x>
+      <y>6216</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeGPU
@@ -3115,10 +3116,10 @@ NeuralNetworkPkg::PollingCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>873</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3332</x>
+      <y>6111</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeFPGA
@@ -3134,10 +3135,10 @@ NeuralNetworkPkg::PollingCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>858</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3332</x>
+      <y>6006</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeCPU
@@ -3153,10 +3154,10 @@ NeuralNetworkPkg::PollingCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>551</x>
-      <y>858</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3857</x>
+      <y>6006</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeCPU
@@ -3172,10 +3173,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>551</x>
-      <y>872</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3857</x>
+      <y>6104</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeFPGA
@@ -3191,10 +3192,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>551</x>
-      <y>887</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3857</x>
+      <y>6209</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeGPU
@@ -3210,10 +3211,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>551</x>
-      <y>903</y>
-      <w>61</w>
-      <h>12</h>
+      <x>3857</x>
+      <y>6321</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeASIC
@@ -3229,10 +3230,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>622</x>
-      <y>903</y>
-      <w>54</w>
-      <h>12</h>
+      <x>4354</x>
+      <y>6321</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeASIC
@@ -3248,10 +3249,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>622</x>
-      <y>887</y>
-      <w>54</w>
-      <h>12</h>
+      <x>4354</x>
+      <y>6209</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeGPU
@@ -3267,10 +3268,10 @@ NeuralNetworkPkg::FlattenCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>622</x>
-      <y>872</y>
-      <w>54</w>
-      <h>12</h>
+      <x>4354</x>
+      <y>6104</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeFPGA
@@ -3286,10 +3287,10 @@ NeuralNetworkPkg::FlattenCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>622</x>
-      <y>858</y>
-      <w>54</w>
-      <h>12</h>
+      <x>4354</x>
+      <y>6006</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeCPU
@@ -3305,10 +3306,10 @@ NeuralNetworkPkg::FlattenCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>685</x>
-      <y>903</y>
-      <w>53</w>
-      <h>12</h>
+      <x>4795</x>
+      <y>6321</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeASIC
@@ -3324,10 +3325,10 @@ NeuralNetworkPkg::DropoutCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>685</x>
-      <y>887</y>
-      <w>53</w>
-      <h>12</h>
+      <x>4795</x>
+      <y>6209</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeGPU
@@ -3343,10 +3344,10 @@ NeuralNetworkPkg::DropoutCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>685</x>
-      <y>872</y>
-      <w>53</w>
-      <h>12</h>
+      <x>4795</x>
+      <y>6104</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeFPGA
@@ -3362,10 +3363,10 @@ NeuralNetworkPkg::DropoutCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>685</x>
-      <y>858</y>
-      <w>53</w>
-      <h>12</h>
+      <x>4795</x>
+      <y>6006</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeCPU
@@ -3381,10 +3382,10 @@ NeuralNetworkPkg::DropoutCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>747</x>
-      <y>858</y>
-      <w>53</w>
-      <h>12</h>
+      <x>5229</x>
+      <y>6006</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -3400,10 +3401,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>747</x>
-      <y>887</y>
-      <w>53</w>
-      <h>12</h>
+      <x>5229</x>
+      <y>6209</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -3419,10 +3420,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>747</x>
-      <y>872</y>
-      <w>53</w>
-      <h>12</h>
+      <x>5229</x>
+      <y>6104</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -3438,10 +3439,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>747</x>
-      <y>903</y>
-      <w>53</w>
-      <h>12</h>
+      <x>5229</x>
+      <y>6321</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -3457,10 +3458,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>858</y>
-      <w>52</w>
-      <h>12</h>
+      <x>5670</x>
+      <y>6006</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeCPU
@@ -3476,10 +3477,10 @@ NeuralNetworkPkg::OutputStorageCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>903</y>
-      <w>52</w>
-      <h>12</h>
+      <x>5670</x>
+      <y>6321</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeASIC
@@ -3495,10 +3496,10 @@ NeuralNetworkPkg::OutputStorageCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>887</y>
-      <w>52</w>
-      <h>12</h>
+      <x>5670</x>
+      <y>6209</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeGPU
@@ -3514,10 +3515,10 @@ NeuralNetworkPkg::OutputStorageCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>872</y>
-      <w>52</w>
-      <h>12</h>
+      <x>5670</x>
+      <y>6104</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeFPGA
@@ -3533,10 +3534,10 @@ NeuralNetworkPkg::OutputStorageCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>873</x>
-      <y>903</y>
-      <w>55</w>
-      <h>12</h>
+      <x>6111</x>
+      <y>6321</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeASIC
@@ -3552,10 +3553,10 @@ NeuralNetworkPkg::InceptionCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>873</x>
-      <y>887</y>
-      <w>55</w>
-      <h>12</h>
+      <x>6111</x>
+      <y>6209</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeGPU
@@ -3571,10 +3572,10 @@ NeuralNetworkPkg::InceptionCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>873</x>
-      <y>872</y>
-      <w>55</w>
-      <h>12</h>
+      <x>6111</x>
+      <y>6104</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeFPGA
@@ -3590,10 +3591,10 @@ NeuralNetworkPkg::InceptionCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>873</x>
-      <y>858</y>
-      <w>55</w>
-      <h>12</h>
+      <x>6111</x>
+      <y>6006</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeCPU
@@ -3609,43 +3610,98 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>382</x>
-      <y>851</y>
-      <w>13</w>
-      <h>13</h>
+      <x>2674</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>382</x>
-      <y>851</y>
-      <w>13</w>
-      <h>28</h>
+      <x>2674</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>382</x>
-      <y>851</y>
-      <w>13</w>
-      <h>43</h>
+      <x>2674</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>382</x>
-      <y>851</y>
-      <w>13</w>
-      <h>59</h>
+      <x>2674</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>413</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3206</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>413</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3206</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>301</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3206</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3206</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3752</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>413</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
@@ -3653,21 +3709,10 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>458</x>
-      <y>851</y>
-      <w>13</w>
-      <h>59</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>458</x>
-      <y>851</y>
-      <w>13</w>
-      <h>43</h>
+      <x>3752</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>301</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
@@ -3675,10 +3720,10 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>458</x>
-      <y>851</y>
-      <w>13</w>
-      <h>28</h>
+      <x>3752</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
@@ -3686,329 +3731,285 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>458</x>
-      <y>851</y>
-      <w>13</w>
-      <h>13</h>
+      <x>3752</x>
+      <y>5957</y>
+      <w>91</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>536</x>
-      <y>851</y>
-      <w>13</w>
-      <h>59</h>
+      <x>4277</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>536</x>
-      <y>851</y>
-      <w>13</w>
-      <h>43</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>536</x>
-      <y>851</y>
-      <w>13</w>
-      <h>28</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>536</x>
-      <y>851</y>
-      <w>13</w>
-      <h>13</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>611</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>4277</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>4277</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>4277</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>4725</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>4725</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>4725</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>4725</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>737</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>5159</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>737</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>5159</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>737</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>5159</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>737</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>5159</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>799</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>5593</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>799</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>5593</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>799</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>5593</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>799</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>5593</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>6027</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>6027</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>6027</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>6027</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>6489</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>6489</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>6489</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>927</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>6489</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>332</x>
-      <y>474</y>
-      <w>768</w>
-      <h>241</h>
+      <x>2324</x>
+      <y>3318</y>
+      <w>5376</w>
+      <h>1687</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;2390.0;10.0;2210.0;7210.0;2190.0;7210.0;10.0;7660.0;10.0</additional_attributes>
@@ -4016,22 +4017,22 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1230</x>
-      <y>442</y>
-      <w>102</w>
-      <h>27</h>
+      <x>8610</x>
+      <y>3094</y>
+      <w>714</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>
 Training::Trainer
 
 --
 - inputData : IData[]
-- trainingData : ResultAdapter[]
+- trainingData : Result[]
 - learningRate : double
 - testAccuracyGraph : double[]
 - trainingAccuracyGraph : double[]
 --
-+ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, IData[], trainingData : Result[], learningRate : double, )
++ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, IData[], trainingData : Result[], learningRate : double, ) : void
 + start() : void
 + getTrainedNetwork() : NeuralNetwork
 + getTestAccuracyGraph() : double[]
@@ -4041,10 +4042,10 @@ Training::Trainer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1231</x>
-      <y>484</y>
-      <w>102</w>
-      <h>40</h>
+      <x>8617</x>
+      <y>3388</y>
+      <w>714</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>
 Training::SingleTrainer
@@ -4059,7 +4060,7 @@ Training::SingleTrainer
 - trainingOperations : NetworkOperations
 - calculatingOperations : NetworkOperations
 --
-+ &lt;&lt;constructor&gt;&gt; SingleTrainer(learningRate : double, trainingOperations : NetworkOperations, calculatingOperations : NetworkOperations)
++ &lt;&lt;constructor&gt;&gt; SingleTrainer(learningRate : double, trainingOperations : NetworkOperations, calculatingOperations : NetworkOperations) : void
 + init(neuralNetwork : NeuralNetwork, inputData : double[][][], trainingData : double[][][]) : void
 - calculateLayer(layer : NetworkLayer, inputData : double[][][]) : double [][][]
 - calculateResults() : void
@@ -4073,10 +4074,10 @@ Training::SingleTrainer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1275</x>
-      <y>468</y>
-      <w>11</w>
-      <h>18</h>
+      <x>8925</x>
+      <y>3276</y>
+      <w>77</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 singleTrainer</panel_attributes>
@@ -4085,10 +4086,10 @@ singleTrainer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1366</x>
-      <y>187</y>
-      <w>23</w>
-      <h>47</h>
+      <x>9562</x>
+      <y>1309</y>
+      <w>161</w>
+      <h>329</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=3
@@ -4103,10 +4104,10 @@ neuralNetworkHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1354</x>
-      <y>187</y>
-      <w>101</w>
-      <h>141</h>
+      <x>9478</x>
+      <y>1309</y>
+      <w>707</w>
+      <h>987</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -4116,10 +4117,10 @@ distributor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1155</x>
-      <y>451</y>
-      <w>77</w>
-      <h>24</h>
+      <x>8085</x>
+      <y>3157</y>
+      <w>539</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=2
@@ -4131,10 +4132,10 @@ trainedNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1155</x>
-      <y>473</y>
-      <w>78</w>
-      <h>28</h>
+      <x>8085</x>
+      <y>3311</y>
+      <w>546</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=3
@@ -4147,10 +4148,10 @@ trainedNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1378</x>
-      <y>20</y>
-      <w>323</w>
-      <h>365</h>
+      <x>9646</x>
+      <y>140</y>
+      <w>2261</w>
+      <h>2555</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;3210.0;10.0;3210.0;3610.0;60.0;3630.0;60.0;3170.0;10.0;3170.0</additional_attributes>
@@ -4158,10 +4159,10 @@ trainedNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>840</y>
-      <w>61</w>
-      <h>12</h>
+      <x>6552</x>
+      <y>5880</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCode
@@ -4177,10 +4178,10 @@ NeuralNetworkPkg::FlattenCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>858</y>
-      <w>54</w>
-      <h>12</h>
+      <x>6566</x>
+      <y>6006</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeCPU
@@ -4196,10 +4197,10 @@ NeuralNetworkPkg::FlattenCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>872</y>
-      <w>54</w>
-      <h>12</h>
+      <x>6566</x>
+      <y>6104</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeFPGA
@@ -4215,10 +4216,10 @@ NeuralNetworkPkg::FlattenCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>887</y>
-      <w>54</w>
-      <h>12</h>
+      <x>6566</x>
+      <y>6209</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeGPU
@@ -4234,10 +4235,10 @@ NeuralNetworkPkg::FlattenCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>903</y>
-      <w>54</w>
-      <h>12</h>
+      <x>6566</x>
+      <y>6321</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeASIC
@@ -4253,10 +4254,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>923</x>
-      <y>808</y>
-      <w>46</w>
-      <h>34</h>
+      <x>6461</x>
+      <y>5656</y>
+      <w>322</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -4265,54 +4266,54 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>991</x>
-      <y>851</y>
-      <w>7</w>
-      <h>13</h>
+      <x>6937</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>991</x>
-      <y>851</y>
-      <w>7</w>
-      <h>28</h>
+      <x>6937</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>991</x>
-      <y>851</y>
-      <w>7</w>
-      <h>43</h>
+      <x>6937</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>991</x>
-      <y>851</y>
-      <w>7</w>
-      <h>59</h>
+      <x>6937</x>
+      <y>5957</y>
+      <w>49</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>978</x>
-      <y>336</y>
-      <w>51</w>
-      <h>22</h>
+      <x>6846</x>
+      <y>2352</y>
+      <w>357</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>ResultModel::ResultManager
 --
@@ -4332,10 +4333,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>917</x>
-      <y>337</y>
-      <w>48</w>
-      <h>21</h>
+      <x>6419</x>
+      <y>2359</y>
+      <w>336</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ResultModel::Result
 --
@@ -4350,10 +4351,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>879</x>
-      <y>417</y>
-      <w>45</w>
-      <h>21</h>
+      <x>6153</x>
+      <y>2919</y>
+      <w>315</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ResultModel:ClassProbability
 --
@@ -4368,10 +4369,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>877</x>
-      <y>378</y>
-      <w>76</w>
-      <h>21</h>
+      <x>6139</x>
+      <y>2646</y>
+      <w>532</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ResultModel::DetectionResult
 --
@@ -4384,10 +4385,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>909</x>
-      <y>357</y>
-      <w>31</w>
-      <h>23</h>
+      <x>6363</x>
+      <y>2499</y>
+      <w>217</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>290.0;10.0;290.0;110.0;10.0;110.0;10.0;210.0</additional_attributes>
@@ -4395,10 +4396,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>826</x>
-      <y>382</y>
-      <w>45</w>
-      <h>21</h>
+      <x>5782</x>
+      <y>2674</y>
+      <w>315</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ResultModel::BoundingBox
 --
@@ -4418,10 +4419,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>954</x>
-      <y>378</y>
-      <w>61</w>
-      <h>21</h>
+      <x>6678</x>
+      <y>2646</y>
+      <w>427</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>ResultModel::ClassificationResult
 --
@@ -4434,10 +4435,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>937</x>
-      <y>357</y>
-      <w>41</w>
-      <h>23</h>
+      <x>6559</x>
+      <y>2499</y>
+      <w>287</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0;390.0;110.0;390.0;210.0</additional_attributes>
@@ -4445,10 +4446,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>383</y>
-      <w>9</w>
-      <h>4</h>
+      <x>6090</x>
+      <y>2681</y>
+      <w>63</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
@@ -4457,10 +4458,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
-      <y>392</y>
-      <w>62</w>
-      <h>30</h>
+      <x>5733</x>
+      <y>2744</y>
+      <w>434</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
@@ -4469,10 +4470,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>923</x>
-      <y>398</y>
-      <w>68</w>
-      <h>24</h>
+      <x>6461</x>
+      <y>2786</y>
+      <w>476</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
@@ -4481,10 +4482,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1028</x>
-      <y>336</y>
-      <w>141</w>
-      <h>58</h>
+      <x>7196</x>
+      <y>2352</y>
+      <w>987</w>
+      <h>406</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -4494,10 +4495,10 @@ resultManager</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1379</x>
-      <y>462</y>
-      <w>45</w>
-      <h>23</h>
+      <x>9653</x>
+      <y>3234</y>
+      <w>315</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>Dispatcher::DispatchManager
 --
@@ -4520,10 +4521,10 @@ _+ getInstance() : DispatchManager_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1408</x>
-      <y>433</y>
-      <w>53</w>
-      <h>21</h>
+      <x>9856</x>
+      <y>3031</y>
+      <w>371</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Dispatcher::Mode
@@ -4544,10 +4545,10 @@ Dispatcher::Mode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1429</x>
-      <y>485</y>
-      <w>26</w>
-      <h>20</h>
+      <x>10003</x>
+      <y>3395</y>
+      <w>182</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Dispatcher::Device
@@ -4567,10 +4568,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1468</x>
-      <y>444</y>
-      <w>53</w>
-      <h>8</h>
+      <x>10276</x>
+      <y>3108</y>
+      <w>371</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Dispatcher::HighPerformanceMode
 --
@@ -4583,10 +4584,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1468</x>
-      <y>454</y>
-      <w>53</w>
-      <h>8</h>
+      <x>10276</x>
+      <y>3178</y>
+      <w>371</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Dispatcher::HighEfficiencyMode
 --
@@ -4599,10 +4600,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1468</x>
-      <y>463</y>
-      <w>53</w>
-      <h>8</h>
+      <x>10276</x>
+      <y>3241</y>
+      <w>371</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Dispatcher::LowPowerMode
 --
@@ -4615,10 +4616,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1467</x>
-      <y>516</y>
-      <w>29</w>
-      <h>12</h>
+      <x>10269</x>
+      <y>3612</y>
+      <w>203</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Dispatcher::FPGADevice
 --
@@ -4633,10 +4634,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1438</x>
-      <y>516</y>
-      <w>29</w>
-      <h>12</h>
+      <x>10066</x>
+      <y>3612</y>
+      <w>203</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Dispatcher::ASICDevice
 --
@@ -4650,10 +4651,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1408</x>
-      <y>516</y>
-      <w>30</w>
-      <h>12</h>
+      <x>9856</x>
+      <y>3612</y>
+      <w>210</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Dispatcher::CPUDevice
 --
@@ -4668,10 +4669,10 @@ Dispatcher::Device
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1380</x>
-      <y>516</y>
-      <w>28</w>
-      <h>12</h>
+      <x>9660</x>
+      <y>3612</y>
+      <w>196</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Dispatcher::GPUDevice
 --
@@ -4685,10 +4686,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1421</x>
-      <y>453</y>
-      <w>49</w>
-      <h>9</h>
+      <x>9947</x>
+      <y>3171</y>
+      <w>343</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;30.0;470.0;30.0</additional_attributes>
@@ -4696,10 +4697,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1421</x>
-      <y>453</y>
-      <w>49</w>
-      <h>14</h>
+      <x>9947</x>
+      <y>3171</y>
+      <w>343</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;120.0;470.0;120.0</additional_attributes>
@@ -4707,10 +4708,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1421</x>
-      <y>446</y>
-      <w>49</w>
-      <h>16</h>
+      <x>9947</x>
+      <y>3122</y>
+      <w>343</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;140.0;420.0;140.0;420.0;10.0;470.0;10.0</additional_attributes>
@@ -4718,10 +4719,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1397</x>
-      <y>504</y>
-      <w>43</w>
-      <h>14</h>
+      <x>9779</x>
+      <y>3528</y>
+      <w>301</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>410.0;10.0;410.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
@@ -4729,10 +4730,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1426</x>
-      <y>504</y>
-      <w>14</w>
-      <h>14</h>
+      <x>9982</x>
+      <y>3528</y>
+      <w>98</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;120.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
@@ -4740,10 +4741,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1437</x>
-      <y>504</y>
-      <w>46</w>
-      <h>14</h>
+      <x>10059</x>
+      <y>3528</y>
+      <w>322</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;440.0;70.0;440.0;120.0</additional_attributes>
@@ -4751,10 +4752,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1437</x>
-      <y>504</y>
-      <w>13</w>
-      <h>14</h>
+      <x>10059</x>
+      <y>3528</y>
+      <w>91</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;110.0;70.0;110.0;120.0</additional_attributes>
@@ -4762,10 +4763,10 @@ Dispatcher::Device
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1371</x>
-      <y>340</y>
-      <w>13</w>
-      <h>130</h>
+      <x>9597</x>
+      <y>2380</y>
+      <w>91</w>
+      <h>910</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1</panel_attributes>
@@ -4774,10 +4775,10 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1550</x>
-      <y>433</y>
-      <w>68</w>
-      <h>17</h>
+      <x>10850</x>
+      <y>3031</y>
+      <w>476</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Communication::Channel
@@ -4795,10 +4796,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1646</x>
-      <y>440</y>
-      <w>42</w>
-      <h>7</h>
+      <x>11522</x>
+      <y>3080</y>
+      <w>294</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::GPUChannel
 --
@@ -4810,10 +4811,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1646</x>
-      <y>431</y>
-      <w>42</w>
-      <h>7</h>
+      <x>11522</x>
+      <y>3017</y>
+      <w>294</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::CPUChannel
 --
@@ -4825,10 +4826,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1646</x>
-      <y>449</y>
-      <w>42</w>
-      <h>7</h>
+      <x>11522</x>
+      <y>3143</y>
+      <w>294</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::FPGAChannel
 --
@@ -4840,10 +4841,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1646</x>
-      <y>458</y>
-      <w>42</w>
-      <h>7</h>
+      <x>11522</x>
+      <y>3206</y>
+      <w>294</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::ASICChannel
 --
@@ -4855,10 +4856,10 @@ Communication::Channel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1568</x>
-      <y>449</y>
-      <w>80</w>
-      <h>19</h>
+      <x>10976</x>
+      <y>3143</y>
+      <w>560</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0;700.0;170.0;700.0;100.0;780.0;100.0</additional_attributes>
@@ -4866,10 +4867,10 @@ Communication::Channel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1568</x>
-      <y>449</y>
-      <w>80</w>
-      <h>19</h>
+      <x>10976</x>
+      <y>3143</y>
+      <w>560</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0;700.0;170.0;700.0;10.0;780.0;10.0</additional_attributes>
@@ -4877,10 +4878,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1554</x>
-      <y>494</y>
-      <w>68</w>
-      <h>9</h>
+      <x>10878</x>
+      <y>3458</y>
+      <w>476</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Communication::AbstractFactory
@@ -4894,10 +4895,10 @@ Communication::AbstractFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1636</x>
-      <y>495</y>
-      <w>53</w>
-      <h>7</h>
+      <x>11452</x>
+      <y>3465</y>
+      <w>371</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryASIC
 --
@@ -4911,10 +4912,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1636</x>
-      <y>475</y>
-      <w>53</w>
-      <h>7</h>
+      <x>11452</x>
+      <y>3325</y>
+      <w>371</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryFPGA
 --
@@ -4928,10 +4929,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1636</x>
-      <y>506</y>
-      <w>53</w>
-      <h>7</h>
+      <x>11452</x>
+      <y>3542</y>
+      <w>371</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryGPU
 --
@@ -4945,10 +4946,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1636</x>
-      <y>485</y>
-      <w>53</w>
-      <h>7</h>
+      <x>11452</x>
+      <y>3395</y>
+      <w>371</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryCPU
 --
@@ -4962,10 +4963,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1568</x>
-      <y>440</y>
-      <w>80</w>
-      <h>28</h>
+      <x>10976</x>
+      <y>3080</y>
+      <w>560</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;100.0;10.0;260.0;700.0;260.0;700.0;10.0;780.0;10.0</additional_attributes>
@@ -4973,10 +4974,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1568</x>
-      <y>431</y>
-      <w>80</w>
-      <h>37</h>
+      <x>10976</x>
+      <y>3017</y>
+      <w>560</w>
+      <h>259</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;10.0;350.0;700.0;350.0;700.0;10.0;780.0;10.0</additional_attributes>
@@ -4984,10 +4985,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>475</y>
-      <w>17</w>
-      <h>23</h>
+      <x>11347</x>
+      <y>3325</y>
+      <w>119</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;210.0;40.0;210.0;40.0;10.0;150.0;10.0</additional_attributes>
@@ -4995,10 +4996,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>485</y>
-      <w>17</w>
-      <h>13</h>
+      <x>11347</x>
+      <y>3395</y>
+      <w>119</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;40.0;110.0;40.0;10.0;150.0;10.0</additional_attributes>
@@ -5006,10 +5007,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>495</y>
-      <w>17</w>
-      <h>3</h>
+      <x>11347</x>
+      <y>3465</y>
+      <w>119</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
@@ -5017,10 +5018,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>495</y>
-      <w>17</w>
-      <h>14</h>
+      <x>11347</x>
+      <y>3465</y>
+      <w>119</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;40.0;10.0;40.0;120.0;150.0;120.0</additional_attributes>
@@ -5028,10 +5029,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1543</x>
-      <y>435</y>
-      <w>13</w>
-      <h>63</h>
+      <x>10801</x>
+      <y>3045</y>
+      <w>91</w>
+      <h>441</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;610.0;10.0;610.0;10.0;10.0;70.0;10.0</additional_attributes>
@@ -5039,10 +5040,10 @@ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1460</x>
-      <y>433</y>
-      <w>92</w>
-      <h>8</h>
+      <x>10220</x>
+      <y>3031</y>
+      <w>644</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1..n</panel_attributes>
@@ -5051,10 +5052,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>223</x>
-      <y>347</y>
-      <w>21</w>
-      <h>11</h>
+      <x>1561</x>
+      <y>2429</y>
+      <w>147</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Parser::IParser
 {abstract}
@@ -5068,10 +5069,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>223</x>
-      <y>401</y>
-      <w>21</w>
-      <h>9</h>
+      <x>1561</x>
+      <y>2807</y>
+      <w>147</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::ImageLocationsParser
 --
@@ -5083,10 +5084,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>193</x>
-      <y>401</y>
-      <w>27</w>
-      <h>9</h>
+      <x>1351</x>
+      <y>2807</y>
+      <w>189</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::NeuralNetworkParser
 --
@@ -5098,10 +5099,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>166</x>
-      <y>401</y>
-      <w>21</w>
-      <h>9</h>
+      <x>1162</x>
+      <y>2807</y>
+      <w>147</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::LayerParser
 --
@@ -5113,10 +5114,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>429</y>
-      <w>28</w>
-      <h>12</h>
+      <x>980</x>
+      <y>3003</y>
+      <w>196</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Parser::SingleDetectionDatasetParser
 --
@@ -5128,10 +5129,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>249</x>
-      <y>428</y>
-      <w>26</w>
-      <h>9</h>
+      <x>1743</x>
+      <y>2996</y>
+      <w>182</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::DetectionDatasetParser
 --
@@ -5144,10 +5145,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>218</x>
-      <y>371</y>
-      <w>33</w>
-      <h>19</h>
+      <x>1526</x>
+      <y>2597</y>
+      <w>231</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::LineBreakParser
 {abstract}
@@ -5163,10 +5164,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>271</x>
-      <y>401</y>
-      <w>29</w>
-      <h>19</h>
+      <x>1897</x>
+      <y>2807</y>
+      <w>203</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::ClassificationResultParser
 --
@@ -5178,10 +5179,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>357</y>
-      <w>3</w>
-      <h>16</h>
+      <x>1624</x>
+      <y>2499</y>
+      <w>21</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -5189,10 +5190,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>389</y>
-      <w>3</w>
-      <h>14</h>
+      <x>1624</x>
+      <y>2723</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -5200,10 +5201,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>394</y>
-      <w>29</w>
-      <h>36</h>
+      <x>1624</x>
+      <y>2758</y>
+      <w>203</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;270.0;20.0;270.0;340.0</additional_attributes>
@@ -5211,10 +5212,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>206</x>
-      <y>394</y>
-      <w>29</w>
-      <h>9</h>
+      <x>1442</x>
+      <y>2758</y>
+      <w>203</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>270.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
@@ -5222,10 +5223,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>175</x>
-      <y>394</y>
-      <w>34</w>
-      <h>9</h>
+      <x>1225</x>
+      <y>2758</y>
+      <w>238</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>320.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
@@ -5233,10 +5234,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>150</x>
-      <y>360</y>
-      <w>85</w>
-      <h>71</h>
+      <x>1050</x>
+      <y>2520</y>
+      <w>595</w>
+      <h>497</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>830.0;20.0;10.0;20.0;10.0;690.0</additional_attributes>
@@ -5244,10 +5245,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>229</x>
-      <y>360</y>
-      <w>59</w>
-      <h>43</h>
+      <x>1603</x>
+      <y>2520</y>
+      <w>413</w>
+      <h>301</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
@@ -5255,10 +5256,10 @@ m1=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>167</x>
-      <y>430</y>
-      <w>84</w>
-      <h>4</h>
+      <x>1169</x>
+      <y>3010</y>
+      <w>588</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -5267,10 +5268,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
-      <y>403</y>
-      <w>46</w>
-      <h>19</h>
+      <x>616</x>
+      <y>2821</y>
+      <w>322</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::ImageParser
 {abstract}
@@ -5287,10 +5288,10 @@ channelNumb : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>401</y>
-      <w>28</w>
-      <h>19</h>
+      <x>2142</x>
+      <y>2807</y>
+      <w>196</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::DetectionResultParser
 --
@@ -5302,10 +5303,10 @@ channelNumb : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>360</y>
-      <w>59</w>
-      <h>43</h>
+      <x>1848</x>
+      <y>2520</y>
+      <w>413</w>
+      <h>301</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
@@ -5313,10 +5314,10 @@ channelNumb : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>111</x>
-      <y>360</y>
-      <w>85</w>
-      <h>45</h>
+      <x>777</x>
+      <y>2520</y>
+      <w>595</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>830.0;20.0;10.0;20.0;10.0;430.0</additional_attributes>
@@ -5324,10 +5325,10 @@ channelNumb : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>265</x>
-      <y>482</y>
-      <w>51</w>
-      <h>10</h>
+      <x>1855</x>
+      <y>3374</y>
+      <w>357</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::NeuralNetworkFactory
 --
@@ -5339,10 +5340,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>508</y>
-      <w>57</w>
-      <h>16</h>
+      <x>490</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Parser::PoolingLayerFactory
 --
@@ -5359,10 +5360,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>129</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>903</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::ActivationLayerFactory
 --
@@ -5375,10 +5376,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>102</x>
-      <y>479</y>
-      <w>57</w>
-      <h>19</h>
+      <x>714</x>
+      <y>3353</y>
+      <w>399</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::LayerFactory
 {abstract}
@@ -5392,10 +5393,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>97</x>
-      <y>497</y>
-      <w>34</w>
-      <h>13</h>
+      <x>679</x>
+      <y>3479</y>
+      <w>238</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
@@ -5403,10 +5404,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>128</x>
-      <y>497</y>
-      <w>32</w>
-      <h>13</h>
+      <x>896</x>
+      <y>3479</y>
+      <w>224</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;300.0;50.0;300.0;110.0</additional_attributes>
@@ -5414,10 +5415,10 @@ _+ buildNeuralNetwork(layers : list&lt;NetworkLayer&gt;) : NeuralNetwork_</panel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>181</x>
-      <y>482</y>
-      <w>82</w>
-      <h>9</h>
+      <x>1267</x>
+      <y>3374</y>
+      <w>574</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::ClassificationResultFactory
 --
@@ -5430,10 +5431,10 @@ _+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>181</x>
-      <y>468</y>
-      <w>82</w>
-      <h>9</h>
+      <x>1267</x>
+      <y>3276</y>
+      <w>574</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Parser::DetectionResultFactory
 --
@@ -5446,10 +5447,10 @@ _+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxe
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>265</x>
-      <y>468</y>
-      <w>51</w>
-      <h>10</h>
+      <x>1855</x>
+      <y>3276</y>
+      <w>357</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::BoundingBoxFactory
 --
@@ -5462,10 +5463,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
-      <y>401</y>
-      <w>28</w>
-      <h>19</h>
+      <x>2436</x>
+      <y>2807</y>
+      <w>196</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Parser::ProbabilityParser
 --
@@ -5477,10 +5478,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>297</x>
-      <y>360</y>
-      <w>67</w>
-      <h>43</h>
+      <x>2079</x>
+      <y>2520</y>
+      <w>469</w>
+      <h>301</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;650.0;20.0;650.0;410.0</additional_attributes>
@@ -5488,10 +5489,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>246</x>
-      <y>335</y>
-      <w>19</w>
-      <h>7</h>
+      <x>1722</x>
+      <y>2345</y>
+      <w>133</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Generic abstract parser</panel_attributes>
     <additional_attributes/>
@@ -5499,10 +5500,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>339</y>
-      <w>12</w>
-      <h>11</h>
+      <x>1680</x>
+      <y>2373</y>
+      <w>84</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;90.0;100.0;10.0</additional_attributes>
@@ -5510,10 +5511,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>43</x>
-      <y>429</y>
-      <w>43</w>
-      <h>12</h>
+      <x>301</x>
+      <y>3003</y>
+      <w>301</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Parser::ImageParserWithCropping
 {}
@@ -5528,10 +5529,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>91</x>
-      <y>429</y>
-      <w>43</w>
-      <h>13</h>
+      <x>637</x>
+      <y>3003</y>
+      <w>301</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Parser::ImageParserWithPadding
 {}
@@ -5546,10 +5547,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>111</x>
-      <y>421</y>
-      <w>3</w>
-      <h>10</h>
+      <x>777</x>
+      <y>2947</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -5557,10 +5558,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>63</x>
-      <y>421</y>
-      <w>51</w>
-      <h>10</h>
+      <x>441</x>
+      <y>2947</y>
+      <w>357</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>490.0;10.0;490.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
@@ -5568,10 +5569,10 @@ _height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</pane
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>260</x>
-      <y>365</y>
-      <w>19</w>
-      <h>7</h>
+      <x>1820</x>
+      <y>2555</y>
+      <w>133</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>One abstraction layer deeper
 parses all input with 
@@ -5581,10 +5582,10 @@ line breaks</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>247</x>
-      <y>370</y>
-      <w>16</w>
-      <h>5</h>
+      <x>1729</x>
+      <y>2590</y>
+      <w>112</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;30.0;140.0;10.0</additional_attributes>
@@ -5592,10 +5593,10 @@ line breaks</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>51</x>
-      <y>483</y>
-      <w>22</w>
-      <h>7</h>
+      <x>357</x>
+      <y>3381</y>
+      <w>154</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Factories for encapsulate the 
 creating of the concrete objects
@@ -5605,10 +5606,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>508</y>
-      <w>57</w>
-      <h>16</h>
+      <x>1323</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Parser::PollingLayerFactory
 --
@@ -5625,10 +5626,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>248</x>
-      <y>508</y>
-      <w>57</w>
-      <h>16</h>
+      <x>1736</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Parser::LocalResponseNormalizationLayerFactory
 --
@@ -5643,10 +5644,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>309</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>2163</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::DenseLayerFactory
 --
@@ -5659,10 +5660,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>2576</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::FlattenLayerFactory
 --
@@ -5674,10 +5675,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>428</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>2996</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::DropoutLayerFactory
 --
@@ -5690,10 +5691,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>489</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>3423</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::CollectResultsLayerFactory
 --
@@ -5705,10 +5706,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>549</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>3843</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::OutputStorageLayerFactory
 --
@@ -5721,10 +5722,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>609</x>
-      <y>508</y>
-      <w>57</w>
-      <h>10</h>
+      <x>4263</x>
+      <y>3556</y>
+      <w>399</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>Parser::InceptionLayerFactory
 --
@@ -5736,10 +5737,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>157</x>
-      <y>500</y>
-      <w>64</w>
-      <h>10</h>
+      <x>1099</x>
+      <y>3500</y>
+      <w>448</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
@@ -5747,10 +5748,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>213</x>
-      <y>500</y>
-      <w>64</w>
-      <h>10</h>
+      <x>1491</x>
+      <y>3500</y>
+      <w>448</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
@@ -5758,10 +5759,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>500</y>
-      <w>64</w>
-      <h>10</h>
+      <x>1904</x>
+      <y>3500</y>
+      <w>448</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
@@ -5769,10 +5770,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>333</x>
-      <y>500</y>
-      <w>64</w>
-      <h>10</h>
+      <x>2331</x>
+      <y>3500</y>
+      <w>448</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
@@ -5780,10 +5781,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>393</x>
-      <y>500</y>
-      <w>64</w>
-      <h>10</h>
+      <x>2751</x>
+      <y>3500</y>
+      <w>448</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
@@ -5791,10 +5792,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>454</x>
-      <y>500</y>
-      <w>69</w>
-      <h>10</h>
+      <x>3178</x>
+      <y>3500</y>
+      <w>483</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
@@ -5802,10 +5803,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>507</x>
-      <y>500</y>
-      <w>69</w>
-      <h>10</h>
+      <x>3549</x>
+      <y>3500</y>
+      <w>483</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
@@ -5813,10 +5814,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>571</x>
-      <y>500</y>
-      <w>69</w>
-      <h>10</h>
+      <x>3997</x>
+      <y>3500</y>
+      <w>483</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
@@ -5824,10 +5825,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>348</y>
-      <w>578</w>
-      <h>105</h>
+      <x>1701</x>
+      <y>2436</y>
+      <w>4046</w>
+      <h>735</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;2670.0;10.0;2660.0;1030.0;5760.0;1030.0</additional_attributes>
@@ -5835,10 +5836,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1554</x>
-      <y>633</y>
-      <w>31</w>
-      <h>14</h>
+      <x>10878</x>
+      <y>4431</y>
+      <w>217</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Prediction::FPGAPerformancePredictor
 --
@@ -5851,10 +5852,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1554</x>
-      <y>604</y>
-      <w>31</w>
-      <h>19</h>
+      <x>10878</x>
+      <y>4228</y>
+      <w>217</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>Prediction::SinglePerformancePredictor
 {abstract}
@@ -5869,10 +5870,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1565</x>
-      <y>622</y>
-      <w>3</w>
-      <h>13</h>
+      <x>10955</x>
+      <y>4354</y>
+      <w>21</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -5880,10 +5881,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1658</x>
-      <y>597</y>
-      <w>28</w>
-      <h>9</h>
+      <x>11606</x>
+      <y>4179</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Prediction::PerformancePredictorFromFile
 --
@@ -5897,10 +5898,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1609</x>
-      <y>572</y>
-      <w>28</w>
-      <h>9</h>
+      <x>11263</x>
+      <y>4004</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Prediction::Predictor
 {abstract}
@@ -5913,10 +5914,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1588</x>
-      <y>633</y>
-      <w>31</w>
-      <h>14</h>
+      <x>11116</x>
+      <y>4431</y>
+      <w>217</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Prediction::CPUPerformancePredictor
 --
@@ -5929,10 +5930,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1621</x>
-      <y>633</y>
-      <w>31</w>
-      <h>14</h>
+      <x>11347</x>
+      <y>4431</y>
+      <w>217</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Prediction::GPUPerformancePredictor
 --
@@ -5945,10 +5946,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1654</x>
-      <y>633</y>
-      <w>31</w>
-      <h>14</h>
+      <x>11578</x>
+      <y>4431</y>
+      <w>217</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Prediction::ASICPerformancePredictor
 --
@@ -5961,10 +5962,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1565</x>
-      <y>622</y>
-      <w>42</w>
-      <h>13</h>
+      <x>10955</x>
+      <y>4354</y>
+      <w>294</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;400.0;50.0;400.0;110.0</additional_attributes>
@@ -5972,10 +5973,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1565</x>
-      <y>622</y>
-      <w>72</w>
-      <h>13</h>
+      <x>10955</x>
+      <y>4354</y>
+      <w>504</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;700.0;50.0;700.0;110.0</additional_attributes>
@@ -5983,10 +5984,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1565</x>
-      <y>622</y>
-      <w>107</w>
-      <h>13</h>
+      <x>10955</x>
+      <y>4354</y>
+      <w>749</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;1050.0;50.0;1050.0;110.0</additional_attributes>
@@ -5994,10 +5995,10 @@ from the input parsing</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1534</x>
-      <y>591</y>
-      <w>19</w>
-      <h>7</h>
+      <x>10738</x>
+      <y>4137</y>
+      <w>133</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Predict for a single device 
 performance
@@ -6007,10 +6008,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1547</x>
-      <y>594</y>
-      <w>10</w>
-      <h>13</h>
+      <x>10829</x>
+      <y>4158</y>
+      <w>70</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;110.0</additional_attributes>
@@ -6018,10 +6019,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
-      <y>597</y>
-      <w>28</w>
-      <h>9</h>
+      <x>11396</x>
+      <y>4179</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Prediction::PowerPredictorFromFile
 --
@@ -6034,10 +6035,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1657</x>
-      <y>615</y>
-      <w>28</w>
-      <h>9</h>
+      <x>11599</x>
+      <y>4305</y>
+      <w>196</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Prediction::CurrentPerformancePredictor
 --
@@ -6050,10 +6051,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>580</y>
-      <w>22</w>
-      <h>19</h>
+      <x>11347</x>
+      <y>4060</y>
+      <w>154</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;200.0;100.0;200.0;170.0</additional_attributes>
@@ -6061,10 +6062,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1621</x>
-      <y>580</y>
-      <w>53</w>
-      <h>19</h>
+      <x>11347</x>
+      <y>4060</y>
+      <w>371</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;510.0;100.0;510.0;170.0</additional_attributes>
@@ -6072,10 +6073,10 @@ Uses a prototype function</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1584</x>
-      <y>606</y>
-      <w>75</w>
-      <h>14</h>
+      <x>11088</x>
+      <y>4242</y>
+      <w>525</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n</panel_attributes>
@@ -6084,10 +6085,10 @@ m1=0..n</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1639</x>
-      <y>560</y>
-      <w>19</w>
-      <h>7</h>
+      <x>11473</x>
+      <y>3920</y>
+      <w>133</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Is responsible to provide
 the predicted hardware data
@@ -6097,10 +6098,10 @@ for each device</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1633</x>
-      <y>565</y>
-      <w>15</w>
-      <h>11</h>
+      <x>11431</x>
+      <y>3955</y>
+      <w>105</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;90.0</additional_attributes>
@@ -6108,10 +6109,10 @@ for each device</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1671</x>
-      <y>605</y>
-      <w>3</w>
-      <h>12</h>
+      <x>11697</x>
+      <y>4235</y>
+      <w>21</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
@@ -6119,10 +6120,10 @@ for each device</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1684</x>
-      <y>599</y>
-      <w>11</w>
-      <h>21</h>
+      <x>11788</x>
+      <y>4193</y>
+      <w>77</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;90.0;190.0;90.0;10.0;20.0;10.0</additional_attributes>
@@ -6130,10 +6131,10 @@ for each device</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1533</x>
-      <y>555</y>
-      <w>163</w>
-      <h>103</h>
+      <x>10731</x>
+      <y>3885</y>
+      <w>1141</w>
+      <h>721</h>
     </coordinates>
     <panel_attributes>Predictor
 fontsize=35</panel_attributes>
@@ -6142,10 +6143,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1365</x>
-      <y>423</y>
-      <w>163</w>
-      <h>111</h>
+      <x>9555</x>
+      <y>2961</y>
+      <w>1141</w>
+      <h>777</h>
     </coordinates>
     <panel_attributes>Dispatcher
 fontsize=35</panel_attributes>
@@ -6154,10 +6155,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1540</x>
-      <y>421</y>
-      <w>163</w>
-      <h>103</h>
+      <x>10780</x>
+      <y>2947</y>
+      <w>1141</w>
+      <h>721</h>
     </coordinates>
     <panel_attributes>Communication
 fontsize=35</panel_attributes>
@@ -6166,10 +6167,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1194</x>
-      <y>430</y>
-      <w>163</w>
-      <h>103</h>
+      <x>8358</x>
+      <y>3010</y>
+      <w>1141</w>
+      <h>721</h>
     </coordinates>
     <panel_attributes>Training
 fontsize=35</panel_attributes>
@@ -6178,10 +6179,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1246</x>
-      <y>305</y>
-      <w>189</w>
-      <h>103</h>
+      <x>8722</x>
+      <y>2135</y>
+      <w>1323</w>
+      <h>721</h>
     </coordinates>
     <panel_attributes>Inferencing
 fontsize=35</panel_attributes>
@@ -6190,10 +6191,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1249</x>
-      <y>220</y>
-      <w>197</w>
-      <h>60</h>
+      <x>8743</x>
+      <y>1540</y>
+      <w>1379</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>EventHandlerModule
 fontsize=35</panel_attributes>
@@ -6202,10 +6203,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1361</x>
-      <y>173</y>
-      <w>68</w>
-      <h>44</h>
+      <x>9527</x>
+      <y>1211</y>
+      <w>476</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>ControllerFacade
 fontsize=35</panel_attributes>
@@ -6214,10 +6215,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1489</x>
-      <y>36</y>
-      <w>179</w>
-      <h>100</h>
+      <x>10423</x>
+      <y>252</y>
+      <w>1253</w>
+      <h>700</h>
     </coordinates>
     <panel_attributes>Renderer
 fontsize=35</panel_attributes>
@@ -6226,10 +6227,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1239</x>
+      <x>8673</x>
       <y>0</y>
-      <w>436</w>
-      <h>150</h>
+      <w>3052</w>
+      <h>1050</h>
     </coordinates>
     <panel_attributes>Pages
 fontsize=35</panel_attributes>
@@ -6238,10 +6239,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1086</x>
-      <y>458</y>
-      <w>82</w>
-      <h>48</h>
+      <x>7602</x>
+      <y>3206</y>
+      <w>574</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>NeuralNetworkAdapter
 fontsize=35</panel_attributes>
@@ -6250,10 +6251,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1160</x>
-      <y>377</y>
-      <w>68</w>
-      <h>44</h>
+      <x>8120</x>
+      <y>2639</y>
+      <w>476</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>ResultAdapter
 fontsize=35</panel_attributes>
@@ -6262,10 +6263,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>813</x>
-      <y>325</y>
-      <w>222</w>
-      <h>118</h>
+      <x>5691</x>
+      <y>2275</y>
+      <w>1554</w>
+      <h>826</h>
     </coordinates>
     <panel_attributes>ResultModel
 fontsize=35</panel_attributes>
@@ -6274,10 +6275,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>700</x>
-      <y>441</y>
-      <w>255</w>
-      <h>50</h>
+      <x>4900</x>
+      <y>3087</y>
+      <w>1785</w>
+      <h>350</h>
     </coordinates>
     <panel_attributes>ModelFacade
 fontsize=35</panel_attributes>
@@ -6286,10 +6287,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>25</x>
-      <y>309</y>
-      <w>649</w>
-      <h>220</h>
+      <x>175</x>
+      <y>2163</y>
+      <w>4543</w>
+      <h>1540</h>
     </coordinates>
     <panel_attributes>Parser
 fontsize=35</panel_attributes>
@@ -6298,10 +6299,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>454</x>
-      <y>536</y>
-      <w>220</w>
-      <h>124</h>
+      <x>3178</x>
+      <y>3752</y>
+      <w>1540</w>
+      <h>868</h>
     </coordinates>
     <panel_attributes>VideoHandler
 fontsize=35</panel_attributes>
@@ -6310,10 +6311,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>688</x>
-      <y>550</y>
-      <w>324</w>
-      <h>112</h>
+      <x>4816</x>
+      <y>3850</y>
+      <w>2268</w>
+      <h>784</h>
     </coordinates>
     <panel_attributes>IO
 fontsize=35</panel_attributes>
@@ -6322,10 +6323,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>274</x>
-      <y>663</y>
-      <w>787</w>
-      <h>271</h>
+      <x>1918</x>
+      <y>4641</y>
+      <w>5530</w>
+      <h>1897</h>
     </coordinates>
     <panel_attributes>NeuralNetworkPkg
 fontsize=35</panel_attributes>
@@ -6334,10 +6335,10 @@ fontsize=35</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1077</x>
-      <y>161</y>
-      <w>705</w>
-      <h>518</h>
+      <x>7539</x>
+      <y>1127</y>
+      <w>4935</w>
+      <h>3626</h>
     </coordinates>
     <panel_attributes>Controller
 fontsize=40</panel_attributes>
@@ -6347,9 +6348,9 @@ fontsize=40</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
-      <y>278</y>
-      <w>1087</w>
-      <h>665</h>
+      <y>1946</y>
+      <w>7609</w>
+      <h>4655</h>
     </coordinates>
     <panel_attributes>Model
 fontsize=40</panel_attributes>
