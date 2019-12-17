@@ -1,32 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>60</y>
-      <w>330</w>
-      <h>300</h>
+      <x>144</x>
+      <y>40</y>
+      <w>320</w>
+      <h>672</h>
     </coordinates>
-    <panel_attributes>Controller::ControllerFassade
+    <panel_attributes>Controller::ControllerFacade
 --
-- distributor : Distributor
-- saveResultHandler : SaveResultHandler
-- inputHandler : InputImageHandler
-- neuralNetworkHandler : NeuralNetworkHandler
-- startHandler : StartHandler
-- neuralNetworkPager : PagerHandler
-- imagePager : PagerHandler
+_- facade : ControllerFacade_
+- viewFacade : ViewFacade
+
+- classificationDistributor : InferencingDistributorClassification
+- saveResultHandlerClassification : SaveResultHandler
+- inputHandlerClassification : InputImageHandler
+- neuralNetworkHandlerClassification : NeuralNetworkHandler
+- startHandlerClassification : StartHandler
+- neuralNetworkNextPagerClassification : PagerHandler
+- neuralNetworkPrevPagerClassification : PagerHandler
+- imageNextPagerClassification : PagerHandler
+- imagePrevPagerClassification : PagerHandler
+
+- detectionDistributor : InferencingDistributorDetection
+- saveResultHandlerDetection : SaveResultHandler
+- inputHandlerDetection : InputImageHandler
+- neuralNetworkHandlerDetection : NeuralNetworkHandler
+- startHandlerDetection : StartHandler
+- neuralNetworkNextPagerDetection : PagerHandler
+- neuralNetworkPrevPagerDetection : PagerHandler
+- imageNextPagerDetection : PagerHandler
+- imagePrevPagerDetection : PagerHandler
+
+- trainingDistributor : TrainingDistributor
+- inputHandlerTraining : InputImageHandler
+- neuralNetworkHandlerTraining : NeuralNetworkHandler
+- startHandlerTraining : StartHandler
+- trainstepHandlerTraining : TrainStepHandler
+
+- topologyDistributor : TopologyDistributor
+- neuralNetworkHandlerTopology : NeuralNetworkHandler
+- startHandlerTopology : StartHandler
 --
-+ startProcess() :void
-+ saveResults() : void
-+ nextNeuralNetwork() : void
-+ prevNeuralNetwork() : void
-+ nextImage() : void
-+ prevImage() : void
-+ getImageInput() : void
-+ getNeuralNetworkInput() : void</panel_attributes>
+_+ getInstance() : ControllerFacade_
+- &lt;&lt;constructor&gt;&gt; ControllerFacade()
+
++ startProcessClassification() :void
++ saveResultsClassification() : void
++ nextNeuralNetworkClassification() : void
++ prevNeuralNetworkClassification() : void
++ nextImageClassification() : void
++ prevImageClassification() : void
++ getImageInputClassification() : void
++ getNeuralNetworkInputClassification() : void
+
++ startProcessDetection() :void
++ saveResultsDetection() : void
++ nextNeuralNetworkDetection() : void
++ prevNeuralNetworkDetection() : void
++ nextImageDetection() : void
++ prevImageDetection() : void
++ getImageInputDetection() : void
++ getNeuralNetworkInputDetection() : void
+
++ startProcessTest() :void
++ getImageInputTraining() : void
++ getNeuralNetworkInputTraining() : void
++ newTrainStep(trainig : float[], test : float[]) : void
+
++ startProcessTopology() :void
++ getNeuralNetworkInputTopology() : void
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
