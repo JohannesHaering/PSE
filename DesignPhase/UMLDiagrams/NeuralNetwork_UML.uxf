@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>105</y>
-      <w>195</w>
-      <h>110</h>
+      <x>238</x>
+      <y>0</y>
+      <w>273</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NeuralNetwork
 
 --
 - name : string
+- firstLayer : &lt;pointer&gt;
+- lastLayer : &lt;pointer&gt;
 - currentLayer : &lt;pointer&gt;
 --
 + &lt;&lt;constructor&gt;&gt; NeuralNetwork() : void
 + &lt;&lt;constructor&gt;&gt; NeuralNetwork(name : string) : void
-+ addLayera(layer : NetworkLayer) : void
++ addLayer(layer : NetworkLayer) : void
++ setName(name : string) : void
 + getFirstLayer() : NetworkLayer
 + getLastLayer() : NetworkLayer
 + getNextLayer() : NetworkLayer
@@ -28,10 +31,10 @@ NeuralNetworkPkg::NeuralNetwork
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>145</y>
-      <w>250</w>
-      <h>95</h>
+      <x>1022</x>
+      <y>35</y>
+      <w>350</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NetworkLayer
@@ -39,10 +42,12 @@ NeuralNetworkPkg::NetworkLayer
 --
 # name : string
 # inputDimensions : int[]
+# layerType : LayerType
 --
 + setName(name : string) : void
 + setInputDimensions(inputDimensions : int[]) : void
 + getName() : string
++ getLayerType() : LayerType
 + getInputDimensions() : int[]
 + getTensorDimenssions() : int[]
 </panel_attributes>
@@ -51,10 +56,10 @@ NeuralNetworkPkg::NetworkLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>290</y>
-      <w>460</w>
-      <h>130</h>
+      <x>476</x>
+      <y>259</y>
+      <w>644</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionLayer
@@ -78,10 +83,10 @@ NeuralNetworkPkg::ConvolutionLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1175</x>
-      <y>290</y>
-      <w>405</w>
-      <h>130</h>
+      <x>1645</x>
+      <y>259</y>
+      <w>567</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingLayer
@@ -106,10 +111,10 @@ NeuralNetworkPkg::PollingLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2045</x>
-      <y>290</y>
-      <w>335</w>
-      <h>130</h>
+      <x>2863</x>
+      <y>259</y>
+      <w>469</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DenseLayer
@@ -129,31 +134,33 @@ NeuralNetworkPkg::DenseLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3625</x>
-      <y>290</y>
-      <w>265</w>
-      <h>130</h>
+      <x>5075</x>
+      <y>259</y>
+      <w>371</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionLayer
 
 --
+- firstChain : &lt;pointer&gt;
 - currentChain : &lt;pointer&gt;
 --
 + &lt;&lt;constructor&gt;&gt; InceptionLayer() : void
 + &lt;&lt;constructor&gt;&gt; InceptionLayer(name : string, inputDimensions : int[]) : void
 + addLayer_chain(chain : NeuralNetwork) : void
 + getFirstChain() : NeuralNetwork
-+ getNextChain() : NeuralNetwork</panel_attributes>
++ getNextChain() : NeuralNetwork
++ resetIterator() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>575</x>
-      <y>250</y>
-      <w>3175</w>
-      <h>50</h>
+      <x>805</x>
+      <y>203</y>
+      <w>4445</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -162,10 +169,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>1890</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -173,10 +180,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3066</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -185,10 +192,10 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
-      <y>235</y>
-      <w>15</w>
-      <h>35</h>
+      <x>1183</x>
+      <y>182</y>
+      <w>21</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -196,36 +203,37 @@ NeuralNetworkPkg::InceptionLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>180</y>
-      <w>380</w>
-      <h>25</h>
+      <x>504</x>
+      <y>105</y>
+      <w>532</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
-list &lt;layers&gt;</panel_attributes>
+&lt;&lt;list&gt;&gt;
+layers</panel_attributes>
     <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>210</y>
-      <w>80</w>
-      <h>85</h>
+      <x>238</x>
+      <y>182</y>
+      <w>119</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;10.0;100.0;150.0;10.0;150.0</additional_attributes>
+    <additional_attributes>100.0;10.0;100.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>290</y>
-      <w>355</w>
-      <h>130</h>
+      <x>1134</x>
+      <y>259</y>
+      <w>497</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationLayer
@@ -244,10 +252,10 @@ NeuralNetworkPkg::ActivationLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2390</x>
-      <y>290</y>
-      <w>250</w>
-      <h>130</h>
+      <x>3346</x>
+      <y>259</y>
+      <w>350</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenLayer
@@ -263,10 +271,10 @@ NeuralNetworkPkg::FlattenLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2650</x>
-      <y>290</y>
-      <w>345</w>
-      <h>130</h>
+      <x>3710</x>
+      <y>259</y>
+      <w>483</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutLayer
@@ -283,10 +291,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>955</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>1337</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -294,10 +302,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2500</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3500</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -306,10 +314,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2805</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3927</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -318,10 +326,10 @@ NeuralNetworkPkg::DropoutLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1590</x>
-      <y>290</y>
-      <w>445</w>
-      <h>130</h>
+      <x>2226</x>
+      <y>259</y>
+      <w>623</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationLayer
@@ -343,10 +351,10 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1805</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>2527</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -355,25 +363,26 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>110</y>
-      <w>3490</w>
-      <h>190</h>
+      <x>504</x>
+      <y>7</y>
+      <w>4858</w>
+      <h>266</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
-list &lt;chains&gt;
+&lt;&lt;list&gt;&gt;
+chains
 </panel_attributes>
     <additional_attributes>6880.0;360.0;6880.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3005</x>
-      <y>290</y>
-      <w>295</w>
-      <h>130</h>
+      <x>4207</x>
+      <y>259</y>
+      <w>413</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsLayer
@@ -389,10 +398,10 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3130</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>4382</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -401,10 +410,10 @@ NeuralNetworkPkg::CollectResultsLayer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>270</y>
-      <w>130</w>
-      <h>90</h>
+      <x>63</x>
+      <y>231</y>
+      <w>182</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::Activation
@@ -422,10 +431,10 @@ SWISH</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>365</y>
-      <w>130</w>
-      <h>50</h>
+      <x>63</x>
+      <y>364</y>
+      <w>182</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::PollingType
@@ -438,10 +447,10 @@ AVEREAGE</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>420</y>
-      <w>130</w>
-      <h>50</h>
+      <x>63</x>
+      <y>441</y>
+      <w>182</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::LRNType
@@ -454,10 +463,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>280</y>
-      <w>60</w>
-      <h>110</h>
+      <x>238</x>
+      <y>245</y>
+      <w>84</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -466,10 +475,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>375</y>
-      <w>60</w>
-      <h>70</h>
+      <x>238</x>
+      <y>378</y>
+      <w>84</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 </panel_attributes>
@@ -478,10 +487,10 @@ INTRA_CHANNEL</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>575</y>
-      <w>325</w>
-      <h>90</h>
+      <x>266</x>
+      <y>658</y>
+      <w>455</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::NetworkOperations
@@ -499,12 +508,13 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>445</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>623</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
-    <panel_attributes>NeuralNetworkPkg::ConvolutionCode
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCode
 {abstract}
 --
 # kernelCode : string[]
@@ -517,10 +527,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1230</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>1722</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -528,10 +538,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>855</x>
-      <y>675</y>
-      <w>15</w>
-      <h>45</h>
+      <x>1197</x>
+      <y>798</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -539,10 +549,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>1260</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -550,10 +560,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>620</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1008</x>
+      <y>721</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 /NeuralNetworkPkg::NetworkLayer/
@@ -569,34 +579,22 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>700</y>
-      <w>2550</w>
-      <h>50</h>
+      <x>819</x>
+      <y>833</y>
+      <w>4011</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;20.0;5080.0;20.0;5080.0;80.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;5710.0;20.0;5710.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1855</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2165</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3038</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -605,10 +603,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2485</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3472</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -617,10 +615,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1525</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>3920</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -629,10 +627,22 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2805</x>
-      <y>705</y>
-      <w>15</w>
-      <h>45</h>
+      <x>2135</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4368</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -642,9 +652,9 @@ NeuralNetworkPkg::NetworkOperations
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>500</y>
-      <w>200</w>
-      <h>130</h>
+      <y>553</y>
+      <w>280</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;uses&gt;&gt;
@@ -654,10 +664,10 @@ NeuralNetworkPkg::NetworkOperations
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3310</x>
-      <y>290</y>
-      <w>305</w>
-      <h>130</h>
+      <x>4634</x>
+      <y>259</y>
+      <w>427</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageLayer
@@ -673,10 +683,10 @@ outputData : double[][][]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3465</x>
-      <y>255</y>
-      <w>15</w>
-      <h>45</h>
+      <x>4851</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>
 </panel_attributes>
@@ -685,10 +695,10 @@ outputData : double[][][]
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>475</y>
-      <w>130</w>
-      <h>115</h>
+      <x>63</x>
+      <y>518</y>
+      <w>182</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 NeuralNetworkPkg::LayerType
@@ -710,9 +720,9 @@ OUTPUT_STORAGE</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>440</y>
-      <w>55</w>
-      <h>75</h>
+      <y>469</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -723,9 +733,9 @@ OUTPUT_STORAGE</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>380</y>
-      <w>55</w>
-      <h>75</h>
+      <y>385</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -736,9 +746,9 @@ OUTPUT_STORAGE</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>320</y>
-      <w>55</w>
-      <h>75</h>
+      <y>301</y>
+      <w>77</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 
@@ -748,10 +758,10 @@ OUTPUT_STORAGE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>630</y>
-      <w>220</w>
-      <h>25</h>
+      <x>714</x>
+      <y>735</y>
+      <w>308</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -762,10 +772,10 @@ layer</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1064</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCode
@@ -781,10 +791,10 @@ NeuralNetworkPkg::ActivationCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1075</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1505</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCode
@@ -800,10 +810,10 @@ NeuralNetworkPkg::PollingCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1390</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1946</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCode
@@ -819,10 +829,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1705</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>2828</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCode
@@ -838,10 +848,10 @@ NeuralNetworkPkg::FlattenCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2020</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>3269</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCode
@@ -857,10 +867,10 @@ NeuralNetworkPkg::DropoutCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2335</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>3710</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -876,10 +886,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2650</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>4151</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCode
@@ -895,10 +905,10 @@ NeuralNetworkPkg::OutputStorageCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2965</x>
-      <y>740</y>
-      <w>305</w>
-      <h>60</h>
+      <x>4592</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCode
@@ -914,22 +924,22 @@ NeuralNetworkPkg::InceptionCode
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>580</y>
-      <w>2725</w>
-      <h>170</h>
+      <x>714</x>
+      <y>665</y>
+      <w>4256</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 operations</panel_attributes>
-    <additional_attributes>10.0;20.0;5430.0;20.0;5430.0;320.0</additional_attributes>
+    <additional_attributes>10.0;20.0;6060.0;20.0;6060.0;320.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>215</x>
-      <y>835</y>
-      <w>305</w>
-      <h>60</h>
+      <x>336</x>
+      <y>1022</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeCPU
@@ -945,10 +955,10 @@ NeuralNetworkPkg::ConvolutionCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>215</x>
-      <y>910</y>
-      <w>305</w>
-      <h>60</h>
+      <x>336</x>
+      <y>1127</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeFPGA
@@ -964,10 +974,10 @@ NeuralNetworkPkg::ConvolutionCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>215</x>
-      <y>985</y>
-      <w>305</w>
-      <h>60</h>
+      <x>336</x>
+      <y>1232</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeGPU
@@ -983,10 +993,10 @@ NeuralNetworkPkg::ConvolutionCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>215</x>
-      <y>1060</y>
-      <w>305</w>
-      <h>60</h>
+      <x>336</x>
+      <y>1337</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCodeASIC
@@ -1002,10 +1012,10 @@ NeuralNetworkPkg::ConvolutionCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>1055</y>
-      <w>305</w>
-      <h>60</h>
+      <x>826</x>
+      <y>1330</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeASIC
@@ -1021,10 +1031,10 @@ NeuralNetworkPkg::ActivationCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>905</y>
-      <w>305</w>
-      <h>60</h>
+      <x>826</x>
+      <y>1120</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeFPGA
@@ -1040,10 +1050,10 @@ NeuralNetworkPkg::ActivationCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>830</y>
-      <w>305</w>
-      <h>60</h>
+      <x>826</x>
+      <y>1015</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeCPU
@@ -1059,10 +1069,10 @@ NeuralNetworkPkg::ActivationCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>980</y>
-      <w>305</w>
-      <h>60</h>
+      <x>826</x>
+      <y>1225</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCodeGPU
@@ -1078,10 +1088,10 @@ NeuralNetworkPkg::ActivationCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>985</x>
-      <y>1055</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1316</x>
+      <y>1330</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeASIC
@@ -1097,10 +1107,10 @@ NeuralNetworkPkg::PollingCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>985</x>
-      <y>980</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1316</x>
+      <y>1225</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeGPU
@@ -1116,10 +1126,10 @@ NeuralNetworkPkg::PollingCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>985</x>
-      <y>905</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1316</x>
+      <y>1120</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeFPGA
@@ -1135,10 +1145,10 @@ NeuralNetworkPkg::PollingCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>985</x>
-      <y>830</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1316</x>
+      <y>1015</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCodeCPU
@@ -1154,10 +1164,10 @@ NeuralNetworkPkg::PollingCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
-      <y>830</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1799</x>
+      <y>1015</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeCPU
@@ -1173,10 +1183,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
-      <y>900</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1799</x>
+      <y>1113</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeFPGA
@@ -1192,10 +1202,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
-      <y>975</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1799</x>
+      <y>1218</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeGPU
@@ -1211,10 +1221,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
-      <y>1055</y>
-      <w>305</w>
-      <h>60</h>
+      <x>1799</x>
+      <y>1330</y>
+      <w>427</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCodeASIC
@@ -1230,10 +1240,10 @@ NeuralNetworkPkg::LocalResponseNormalizationCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1715</x>
-      <y>1055</y>
-      <w>270</w>
-      <h>60</h>
+      <x>2716</x>
+      <y>1330</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeASIC
@@ -1249,10 +1259,10 @@ NeuralNetworkPkg::FlattenCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1715</x>
-      <y>975</y>
-      <w>270</w>
-      <h>60</h>
+      <x>2716</x>
+      <y>1218</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeGPU
@@ -1268,10 +1278,10 @@ NeuralNetworkPkg::FlattenCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1715</x>
-      <y>900</y>
-      <w>270</w>
-      <h>60</h>
+      <x>2716</x>
+      <y>1113</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeFPGA
@@ -1287,10 +1297,10 @@ NeuralNetworkPkg::FlattenCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1715</x>
-      <y>830</y>
-      <w>270</w>
-      <h>60</h>
+      <x>2716</x>
+      <y>1015</y>
+      <w>378</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCodeCPU
@@ -1306,10 +1316,10 @@ NeuralNetworkPkg::FlattenCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2030</x>
-      <y>1055</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3150</x>
+      <y>1330</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeASIC
@@ -1325,10 +1335,10 @@ NeuralNetworkPkg::DropoutCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2030</x>
-      <y>975</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3150</x>
+      <y>1218</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeGPU
@@ -1344,10 +1354,10 @@ NeuralNetworkPkg::DropoutCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2030</x>
-      <y>900</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3150</x>
+      <y>1113</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeFPGA
@@ -1363,10 +1373,10 @@ NeuralNetworkPkg::DropoutCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2030</x>
-      <y>830</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3150</x>
+      <y>1015</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCodeCPU
@@ -1382,10 +1392,10 @@ NeuralNetworkPkg::DropoutCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2340</x>
-      <y>830</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3577</x>
+      <y>1015</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -1401,10 +1411,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2340</x>
-      <y>975</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3577</x>
+      <y>1218</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -1420,10 +1430,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2340</x>
-      <y>900</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3577</x>
+      <y>1113</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -1439,10 +1449,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2340</x>
-      <y>1055</y>
-      <w>265</w>
-      <h>60</h>
+      <x>3577</x>
+      <y>1330</y>
+      <w>371</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
@@ -1458,10 +1468,10 @@ NeuralNetworkPkg::CollectResultsCode
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2655</x>
-      <y>830</y>
-      <w>260</w>
-      <h>60</h>
+      <x>4004</x>
+      <y>1015</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeCPU
@@ -1477,10 +1487,10 @@ NeuralNetworkPkg::OutputStorageCodeCPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2655</x>
-      <y>1055</y>
-      <w>260</w>
-      <h>60</h>
+      <x>4004</x>
+      <y>1330</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeASIC
@@ -1496,10 +1506,10 @@ NeuralNetworkPkg::OutputStorageCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2655</x>
-      <y>975</y>
-      <w>260</w>
-      <h>60</h>
+      <x>4004</x>
+      <y>1218</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeGPU
@@ -1515,10 +1525,10 @@ NeuralNetworkPkg::OutputStorageCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2655</x>
-      <y>900</y>
-      <w>260</w>
-      <h>60</h>
+      <x>4004</x>
+      <y>1113</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCodeFPGA
@@ -1534,10 +1544,10 @@ NeuralNetworkPkg::OutputStorageCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2970</x>
-      <y>1055</y>
-      <w>275</w>
-      <h>60</h>
+      <x>4424</x>
+      <y>1330</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeASIC
@@ -1553,10 +1563,10 @@ NeuralNetworkPkg::InceptionCodeASIC
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2970</x>
-      <y>975</y>
-      <w>275</w>
-      <h>60</h>
+      <x>4424</x>
+      <y>1218</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeGPU
@@ -1572,10 +1582,10 @@ NeuralNetworkPkg::InceptionCodeGPU
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2970</x>
-      <y>900</y>
-      <w>275</w>
-      <h>60</h>
+      <x>4424</x>
+      <y>1113</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeFPGA
@@ -1591,10 +1601,10 @@ NeuralNetworkPkg::InceptionCodeFPGA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2970</x>
-      <y>830</y>
-      <w>275</w>
-      <h>60</h>
+      <x>4424</x>
+      <y>1015</y>
+      <w>385</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCodeCPU
@@ -1610,397 +1620,588 @@ NeuralNetworkPkg::InceptionCodeCPU
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>795</y>
-      <w>65</w>
-      <h>65</h>
+      <x>756</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>795</y>
-      <w>65</w>
-      <h>140</h>
+      <x>756</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>795</y>
-      <w>65</w>
-      <h>215</h>
+      <x>756</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>795</y>
-      <w>65</w>
-      <h>295</h>
+      <x>756</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>795</y>
-      <w>65</w>
-      <h>295</h>
+      <x>2597</x>
+      <y>840</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2387</x>
+      <y>889</y>
+      <w>427</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCode
+{abstract}
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2282</x>
+      <y>1330</y>
+      <w>378</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2282</x>
+      <y>1218</y>
+      <w>378</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2282</x>
+      <y>1113</y>
+      <w>378</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2282</x>
+      <y>1015</y>
+      <w>378</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>795</y>
-      <w>65</w>
-      <h>215</h>
+      <x>1246</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>795</y>
-      <w>65</w>
-      <h>140</h>
+      <x>1246</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>795</y>
-      <w>65</w>
-      <h>65</h>
+      <x>1246</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1285</x>
-      <y>795</y>
-      <w>65</w>
-      <h>295</h>
+      <x>1246</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;110.0;570.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1285</x>
-      <y>795</y>
-      <w>65</w>
-      <h>215</h>
+      <x>1736</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;110.0;410.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1285</x>
-      <y>795</y>
-      <w>65</w>
-      <h>140</h>
+      <x>1736</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;110.0;260.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1285</x>
-      <y>795</y>
-      <w>65</w>
-      <h>65</h>
+      <x>1736</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;110.0;110.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1660</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>1736</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1660</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>2219</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1660</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>2219</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1660</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>2219</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1980</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>2219</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1980</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>2653</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1980</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>2653</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1980</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>2653</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>2653</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>3087</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>3087</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>3087</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2600</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>3087</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2600</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>3514</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2600</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>3514</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2600</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>3514</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2910</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>3514</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2910</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>3941</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2910</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>3941</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2910</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>3941</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3240</x>
-      <y>795</y>
-      <w>35</w>
-      <h>295</h>
+      <x>3941</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;570.0;50.0;570.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3240</x>
-      <y>795</y>
-      <w>35</w>
-      <h>215</h>
+      <x>4802</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;410.0;50.0;410.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3240</x>
-      <y>795</y>
-      <w>35</w>
-      <h>140</h>
+      <x>4802</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;260.0;50.0;260.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3240</x>
-      <y>795</y>
-      <w>35</w>
-      <h>65</h>
+      <x>4802</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;110.0;50.0;110.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4802</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4361</x>
+      <y>966</y>
+      <w>56</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4361</x>
+      <y>966</y>
+      <w>56</w>
+      <h>301</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4361</x>
+      <y>966</y>
+      <w>56</w>
+      <h>413</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4361</x>
+      <y>966</y>
+      <w>56</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -7,12 +7,13 @@
       <x>357</x>
       <y>238</y>
       <w>623</w>
-      <h>189</h>
+      <h>196</h>
     </coordinates>
     <panel_attributes>
 Training::Trainer
 
 --
+- control : ControlFasade
 - neuralNetwork : NeuralNetwork
 - trainedNetwork : NeuralNetwork
 - inputData : IData[]
@@ -67,12 +68,12 @@ Training::SingleTrainer
     <id>Relation</id>
     <coordinates>
       <x>623</x>
-      <y>420</y>
+      <y>427</y>
       <w>84</w>
-      <h>126</h>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 singleTrainer</panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
