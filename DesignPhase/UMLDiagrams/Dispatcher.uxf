@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -46,8 +47,8 @@ Dispatcher::Mode
 + setAllowedDeviceList(deviceList : list&lt;Device&gt;) : void
 + setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
 + setImageList(imageList : list&lt;image&gt;) : void
-/+ distributeImages() : ResultManager/
-/# calculate(deviceList : list&lt;Device&gt;) : (float, float)/</panel_attributes>
++ getImageDistribution() : list&lt;Device, list&lt;NeuralNetwork&gt;, list&lt;image&gt;) 
+/# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -85,8 +86,7 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
-# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -101,8 +101,7 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
-# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -117,8 +116,7 @@ Dispatcher::Device
 --
 - modeName : string
 --
-+ distributeImages() : ResultManager
-# calculate(deviceList : list&lt;Device&gt;) : (float, float)</panel_attributes>
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

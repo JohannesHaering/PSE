@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
-  <zoom_level>9</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>387</x>
-      <y>99</y>
-      <w>459</w>
-      <h>198</h>
+      <x>350</x>
+      <y>60</y>
+      <w>510</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>ResultModel::ResultManager
 --
@@ -26,10 +26,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1026</x>
-      <y>90</y>
-      <w>432</w>
-      <h>189</h>
+      <x>1060</x>
+      <y>50</y>
+      <w>480</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>ResultModel::Result
 --
@@ -44,10 +44,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>810</y>
-      <w>405</w>
-      <h>189</h>
+      <x>680</x>
+      <y>630</y>
+      <w>500</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>ResultModel:ClassProbability
 --
@@ -62,10 +62,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>666</x>
-      <y>459</y>
-      <w>684</w>
-      <h>189</h>
+      <x>680</x>
+      <y>320</y>
+      <w>750</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>ResultModel::DetectionResult
 --
@@ -78,28 +78,28 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>954</x>
-      <y>270</y>
-      <w>279</w>
-      <h>207</h>
+      <x>980</x>
+      <y>190</y>
+      <w>310</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>290.0;10.0;290.0;110.0;10.0;110.0;10.0;210.0</additional_attributes>
+    <additional_attributes>290.0;10.0;290.0;70.0;10.0;70.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>207</x>
-      <y>495</y>
-      <w>405</w>
-      <h>189</h>
+      <x>90</x>
+      <y>360</y>
+      <w>540</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>ResultModel::BoundingBox
 --
-- x : float
-- y : float
-- width : float
-- height : float
+	- x : float
+	- y : float
+	- width : float
+	- height : float
 --
 + &lt;&lt;constructor&gt;&gt; BoundingBox( x : float, y : float, width : float, height : float)
 + getX() : float
@@ -112,10 +112,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1359</x>
-      <y>459</y>
-      <w>549</w>
-      <h>189</h>
+      <x>1430</x>
+      <y>320</y>
+      <w>550</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>ResultModel::ClassificationResult
 --
@@ -128,57 +128,57 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1206</x>
-      <y>270</y>
-      <w>369</w>
-      <h>207</h>
+      <x>1260</x>
+      <y>190</y>
+      <w>410</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0;390.0;110.0;390.0;210.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;390.0;70.0;390.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>603</x>
-      <y>504</y>
-      <w>81</w>
-      <h>36</h>
+      <x>620</x>
+      <y>370</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>585</y>
-      <w>558</w>
-      <h>270</h>
+      <x>300</x>
+      <y>560</y>
+      <w>400</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>600.0;270.0;10.0;270.0;10.0;10.0;70.0;10.0</additional_attributes>
+    <additional_attributes>380.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
-      <y>639</y>
-      <w>612</w>
-      <h>216</h>
+      <x>1170</x>
+      <y>480</y>
+      <w>630</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..n</panel_attributes>
-    <additional_attributes>10.0;210.0;660.0;210.0;660.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;610.0;170.0;610.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>72</x>
-      <y>45</y>
-      <w>1881</w>
-      <h>981</h>
+      <x>0</x>
+      <y>0</y>
+      <w>2020</w>
+      <h>870</h>
     </coordinates>
     <panel_attributes>Results
 --</panel_attributes>
