@@ -1873,12 +1873,12 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
       <w>392</w>
       <h>133</h>
     </coordinates>
-    <panel_attributes>Resultadapter::ResultsmanagerAdapter
+    <panel_attributes>ResultAdapter::ResultsManagerAdapter
 --
 
 --
 &lt;&lt;constructor&gt;&gt; + ResultAdapter()
-+ getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
++ getNeuralNetworkList(): list&lt;NeuralNetworkAdapter&gt;
 + getImageList() : list&lt;image&gt;
 + getResults() : list&lt;NeuralNetwork,image,result)
 + getResultsPerNeuralNetwork(neuralNetwork : NeuralNetwork) : list&lt;Image,Result&gt;
@@ -4782,8 +4782,8 @@ m1=1</panel_attributes>
 Communication::Channel
 --
 - deviceHandler : Device
-- NeuralNetworkList : list&lt;NeuralNetwork&gt;
-- ImageList : list&lt;image&gt;
+- neuralNetworkList : list&lt;NeuralNetwork&gt;
+- imageList : list&lt;image&gt;
 --
 + &lt;&lt;constructor&gt;&gt; Channel(connectedDevice : Device)
 + &lt;&lt;constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetworkAdapter&gt;)

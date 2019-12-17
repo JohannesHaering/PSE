@@ -6,20 +6,20 @@
     <coordinates>
       <x>430</x>
       <y>400</y>
-      <w>560</w>
+      <w>600</w>
       <h>190</h>
     </coordinates>
-    <panel_attributes>Resultadapter::ResultsmanagerAdapter
+    <panel_attributes>Resultadapter::ResultsManagerAdapter
 --
 - resultManager : ResultManager
 --
 &lt;&lt;constructor&gt;&gt; + ResultAdapter()
-+ getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
++ getNeuralNetworkList(): list&lt;NeuralNetworkAdapter&gt;
 + getImageList() : list&lt;image&gt;
-+ getResults() : list&lt;NeuralNetwork,image,result)
-+ getResultsPerNeuralNetwork(neuralNetwork : NeuralNetwork) : list&lt;Image,Result&gt;
-+ getResultsPerImage(image : image): list&lt;NeuralNetwork,Result&gt;
-+ getResult(image : image,neuralNetwork : NeuralNetwork): Result
++ getResults() : list&lt;NeuralNetworkAdapter,image,result)
++ getResultsPerNeuralNetwork(neuralNetwork : NeuralNetworkAdapter) : list&lt;Image,Result&gt;
++ getResultsPerImage(image : image): list&lt;NeuralNetworkAdapter,Result&gt;
++ getResult(image : image,neuralNetwork : NeuralNetworkAdapter): Result
 </panel_attributes>
     <additional_attributes/>
   </element>
