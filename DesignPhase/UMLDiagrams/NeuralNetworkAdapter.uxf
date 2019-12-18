@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>50</y>
+      <w>300</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>ResultAdapter::
+NeuralNetworkAdapter
+--
+- neuralNetwork : NeuralNetwork
+--
+&lt;&lt;constructor&gt;&gt;+ NeuralNetwork()
+&lt;&lt;constructor&gt;&gt;+ NeuralNetwork(name : string)
++ add_layer(layer : NetworkLayer)
++ get_first_layer() : NetworkLayer
++ get_last_layer() : NetworkLayer
++ get_next_layer() : NetworkLayer
++ get_previous_layer() : NetworkLayer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

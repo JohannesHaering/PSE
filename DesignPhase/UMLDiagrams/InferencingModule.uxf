@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>268</x>
+      <y>496</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Inferencing::InferencingDistributor
+{abstract}
+--
+- imagedir : Directory[]
+- view : ViewFacade 
+- dispatcher : Dispatcher
+- neuralnetworks : NeuralNetworkAdapter[]
+- resultmanager : ResultManager 
+--
++ addNeuralNetwork(nn : NeuralNetworkAdapter) : void
++ addNeuralNetwork(nn : NeuralNetworkAdapter[]): void
+- removeNeuralNetwork(name : String): void 
++ setInput(directorys : Directory[]): void
++ getAmountNeuralNetworks() : int
++ getAmountImages() : int
++ startProcess(): void
++ getPlatformSettings() : PlatformSetting
++ setOutputSettings(platformSetting : PlatformSetting): void
++ getOutputSettings() : OutputSetting
++ saveResult(nn_id : int, input_id : int, path : string): void
++ getResult(nn_id : int, input_id : int): Result
++ drawResult(nn_id : int, input_id : int): void
+/# drawResult(result : Result) : void /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>220</y>
+      <w>204</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Inferencing::NeuralNetworkSetter
+--
+- model : ModelFacade
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkSetter(distributor : InterferencingDistributor, 
+    parser : NeuralNetworkParser)
++ setNeuralNetwork(directory : Directory[]): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>244</y>
+      <w>96</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>668</y>
+      <w>132</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+InferencingDistributorClassification
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorClassification(
+                       viewFacade : ViewFacade)                  
+# drawResult(result : Result) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>668</y>
+      <w>124</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+InferencingDistributorDetection
+--
+- boxthreshold : int
+--
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorDetection(
+                       viewFacade : ViewFacade)
+# drawResult(result : Result) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>644</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>644</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;160.0;40.0;160.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>68</x>
+      <y>320</y>
+      <w>208</w>
+      <h>188</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>500.0;450.0;10.0;450.0;10.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>496</y>
+      <w>140</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Inferencing::PlatformSetting
+--
+- hardwarelist : List&lt;String&gt;
+--
++ &lt;&lt;constructor&gt;&gt; PlatformSetting(List&lt;String&gt;) 
++ getHardwareList() : List&lt;String&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>552</y>
+      <w>140</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Inferencing::OutputSetting
+--
+- showResults : bool
+- saveResults : bool
+--
++ &lt;&lt;constructor&gt;&gt; OutputSetting(showresults : bool,
+    saveresults : bool)
++ showResultsEnabled() : bool
++ saveResultsEnabled() : bool </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>528</y>
+      <w>52</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;90.0;80.0;90.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>504</y>
+      <w>52</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>196</x>
+      <y>300</y>
+      <w>84</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Inferencing::Pager
+{abstract}
+--
+- currentPage : int
+- maxPage : int 
+- gui : ViewFacade
+--
++ reset(maxPage : int)
+/+ next()/
+/+ prev()/
+/- disable()/
++ getCurrentPage() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>420</y>
+      <w>172</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+TrainingDistributor
+--
+- neuralnetwork : NeuralNetworkAdapter
+- input : string[]
+- model : ModelFacade
+- view : ViewFacade
+--
++ &lt;&lt;constructor&gt;&gt; TrainingDistributor(view : ViewFacade)
++ addNeuralNetwork(neuralNetwork : NeuralNetworkAdaper) : void
++ setInput(directories : string[]) : void
++ startProcess() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>332</y>
+      <w>172</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+Distributor
+{abstract}
+--
+
+--
+/+ setInput(directories : string[]) : void /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>388</x>
+      <y>384</y>
+      <w>96</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>384</y>
+      <w>164</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;390.0;40.0;390.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>236</y>
+      <w>172</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+Inferencer
+{abstract}
+--
+
+--
+/+ addNeuralNetwork(neuralNetwork : NeuralNetworkAdapter) : void/
+/+ startProcess() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>332</y>
+      <w>172</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+TopologyInferencer
+--
+- neuralnetwork : NeuralNetworkAdapter
+- model : ModelFacade
+- view : ViewFacade
+--
++ &lt;&lt;constructor&gt;&gt; TopologyInferencer(view : ViewFacade)
++ addNeuralNetwork(neuralNetwork : NeuralNetworkAdaper) : void
++ startProcess() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>288</y>
+      <w>128</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>300.0;10.0;300.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>288</y>
+      <w>136</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;320.0;60.0;320.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>400</y>
+      <w>132</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Inferencing::NeuralNetworkPager
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkPager(maxPage : int,
+                            view : ViewFacade)
++ setImagePager(pager : ImagePager)
++ next() : void
++ prev() : void
+- disable()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>376</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>244</x>
+      <y>400</y>
+      <w>132</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Inferencing::ImagePager
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkPager(maxPage : int,
+                            view : ViewFacade)
++ setNeuralNetworkPager(pager : NeuralNetworkPager) : void
++ next() : void
++ prev() : void
+- disable() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>236</x>
+      <y>376</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;190.0;40.0;190.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>412</y>
+      <w>28</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>408</y>
+      <w>28</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

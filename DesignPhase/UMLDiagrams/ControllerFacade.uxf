@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>208</x>
+      <y>0</y>
+      <w>320</w>
+      <h>904</h>
+    </coordinates>
+    <panel_attributes>Controller::ControllerFacade
+--
+_- facade : ControllerFacade_
+- viewFacade : ViewFacade
+
+- classificationDistributor : InferencingDistributorClassification
+- saveResultHandlerClassification : SaveResultHandler
+- inputHandlerClassification : InputImageHandler
+- neuralNetworkHandlerClassification : NeuralNetworkHandler
+- startHandlerClassification : StartHandler
+- neuralNetworkNextPagerClassification : PagerHandler
+- neuralNetworkPrevPagerClassification : PagerHandler
+- imageNextPagerClassification : PagerHandler
+- imagePrevPagerClassification : PagerHandler
+- newResultHandlerClassification : NewResultHandler
+- predictionHandlerClassification : PredictionHandler
+
+- detectionDistributor : InferencingDistributorDetection
+- saveResultHandlerDetection : SaveResultHandler
+- inputHandlerDetection : InputImageHandler
+- neuralNetworkHandlerDetection : NeuralNetworkHandler
+- startHandlerDetection : StartHandler
+- neuralNetworkNextPagerDetection : PagerHandler
+- neuralNetworkPrevPagerDetection : PagerHandler
+- imageNextPagerDetection : PagerHandler
+- imagePrevPagerDetection : PagerHandler
+- newResultHandlerDetection : NewResultHandler
+- predictionHandlerDetection : PredictionHandler
+
+- trainingDistributor : TrainingDistributor
+- inputHandlerTraining : InputImageHandler
+- neuralNetworkHandlerTraining : NeuralNetworkHandler
+- startHandlerTraining : StartHandler
+- trainstepHandlerTraining : TrainStepHandler
+
+- topologyDistributor : TopologyDistributor
+- neuralNetworkHandlerTopology : NeuralNetworkHandler
+- startHandlerTopology : StartHandler
+--
+_+ getInstance() : ControllerFacade_
+- &lt;&lt;constructor&gt;&gt; ControllerFacade()
+
++ startProcessClassification() :void
++ saveResultsClassification() : void
++ nextNeuralNetworkClassification() : void
++ prevNeuralNetworkClassification() : void
++ nextImageClassification() : void
++ prevImageClassification() : void
++ getImageInputClassification() : void
++ getNeuralNetworkInputClassification() : void
++ newResultClassification() : void
++ newPredictionClassification() : void
+
++ startProcessDetection() :void
++ saveResultsDetection() : void
++ nextNeuralNetworkDetection() : void
++ prevNeuralNetworkDetection() : void
++ nextImageDetection() : void
++ prevImageDetection() : void
++ getImageInputDetection() : void
++ getNeuralNetworkInputDetection() : void
++ newResultDetection() : void
++ newPredictionDetection() : void
+
++ startProcessTest() :void
++ getImageInputTraining() : void
++ getNeuralNetworkInputTraining() : void
++ newTrainStep(trainig : float[], test : float[]) : void
+
++ startProcessTopology() :void
++ getNeuralNetworkInputTopology() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
