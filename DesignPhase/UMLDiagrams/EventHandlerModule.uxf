@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>295</x>
-      <y>405</y>
-      <w>125</w>
-      <h>95</h>
+      <x>360</x>
+      <y>474</y>
+      <w>150</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::StartHandler
 
@@ -22,10 +22,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>170</y>
-      <w>115</w>
-      <h>50</h>
+      <x>174</x>
+      <y>186</y>
+      <w>138</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PagerHandler
@@ -39,10 +39,10 @@ PagerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>270</y>
-      <w>145</w>
-      <h>55</h>
+      <x>54</x>
+      <y>306</y>
+      <w>174</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PrevHandler
@@ -56,10 +56,10 @@ PrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>270</y>
-      <w>140</w>
-      <h>55</h>
+      <x>246</x>
+      <y>306</y>
+      <w>168</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NextHandler
@@ -73,10 +73,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>215</y>
-      <w>115</w>
-      <h>65</h>
+      <x>114</x>
+      <y>240</y>
+      <w>138</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>210.0;10.0;210.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
@@ -84,10 +84,10 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>215</y>
-      <w>95</w>
-      <h>65</h>
+      <x>234</x>
+      <y>240</y>
+      <w>114</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;170.0;50.0;170.0;110.0</additional_attributes>
@@ -95,10 +95,10 @@ NextHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>405</y>
-      <w>170</w>
-      <h>110</h>
+      <x>138</x>
+      <y>474</y>
+      <w>204</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 SaveResultHandler
@@ -116,10 +116,10 @@ SaveResultHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>425</x>
-      <y>170</y>
-      <w>145</w>
-      <h>80</h>
+      <x>516</x>
+      <y>186</y>
+      <w>174</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 FileExplorerHandler
@@ -136,10 +136,10 @@ FileExplorerHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>415</x>
-      <y>245</y>
-      <w>75</w>
-      <h>35</h>
+      <x>504</x>
+      <y>276</y>
+      <w>90</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>130.0;10.0;130.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
@@ -147,10 +147,10 @@ FileExplorerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>55</y>
-      <w>105</w>
-      <h>50</h>
+      <x>366</x>
+      <y>84</y>
+      <w>126</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 EventHandler
@@ -164,54 +164,54 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>100</y>
-      <w>150</w>
-      <h>80</h>
+      <x>420</x>
+      <y>138</y>
+      <w>180</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0;280.0;110.0;280.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;280.0;50.0;280.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>100</y>
-      <w>170</w>
-      <h>80</h>
+      <x>234</x>
+      <y>138</y>
+      <w>204</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>320.0;10.0;320.0;110.0;10.0;110.0;10.0;140.0</additional_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
-      <y>100</y>
-      <w>165</w>
-      <h>315</h>
+      <x>240</x>
+      <y>138</y>
+      <w>198</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>310.0;10.0;310.0;570.0;10.0;570.0;10.0;610.0</additional_attributes>
+    <additional_attributes>310.0;10.0;310.0;510.0;10.0;510.0;10.0;560.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>100</y>
-      <w>15</w>
-      <h>315</h>
+      <x>420</x>
+      <y>138</y>
+      <w>18</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;560.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>535</x>
-      <y>270</y>
-      <w>145</w>
-      <h>75</h>
+      <x>648</x>
+      <y>306</y>
+      <w>174</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NeuralNetworkHandler
@@ -219,7 +219,6 @@ NeuralNetworkHandler
 - neuralNetworkSetter : NeuralNetworkSetter
 --
 + &lt;&lt;constructor&gt;&gt; NeuralNetworkHandler(
-                                 view : ViewFacade,
                                  distributor : Distributor,
                                  filetypes : string[])
 - sendDirectory(directories : Directory[]) : void</panel_attributes>
@@ -228,10 +227,10 @@ NeuralNetworkHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
-      <y>245</y>
-      <w>145</w>
-      <h>35</h>
+      <x>576</x>
+      <y>276</y>
+      <w>174</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0;270.0;30.0;270.0;50.0</additional_attributes>
@@ -239,10 +238,10 @@ NeuralNetworkHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>30</y>
-      <w>105</w>
-      <h>95</h>
+      <x>132</x>
+      <y>84</y>
+      <w>126</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 MainHandler
@@ -256,10 +255,10 @@ MainHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>270</y>
-      <w>160</w>
-      <h>85</h>
+      <x>438</x>
+      <y>306</y>
+      <w>192</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 InputImageHandler
@@ -268,8 +267,7 @@ InputImageHandler
 --
 &lt;&lt;constructor&gt;&gt; + InputImageDistributor(
                           distributor : Distributor, 
-                          filetypes : string[],
-                          view : ViewFacade ) 
+                          filetypes : string[]) 
 - setInputOption(): void
 - sendDirectory(directories : Directory[]) : void </panel_attributes>
     <additional_attributes/>
@@ -277,27 +275,27 @@ InputImageHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>445</x>
-      <y>30</y>
-      <w>185</w>
-      <h>50</h>
+      <x>552</x>
+      <y>84</y>
+      <w>222</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 NewTrainStepHandler
 --
 - guiFacade : ViewFacade
 --
-+ &lt;&lt;constructor&gt;&gt; NewTrainStepHandler(view : ViewFacade)
++ &lt;&lt;constructor&gt;&gt; NewTrainStepHandler()
 + newAccuracyPoints(training : float[], test : float[]) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>535</y>
-      <w>170</w>
-      <h>95</h>
+      <x>138</x>
+      <y>624</y>
+      <w>204</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::NewResultsHandler
 
@@ -312,10 +310,10 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15</x>
-      <y>280</y>
-      <w>105</w>
-      <h>165</h>
+      <x>24</x>
+      <y>318</y>
+      <w>126</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0;10.0;310.0;190.0;310.0</additional_attributes>
@@ -323,10 +321,10 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>95</x>
-      <y>280</y>
-      <w>115</w>
-      <h>165</h>
+      <x>120</x>
+      <y>318</y>
+      <w>138</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>210.0;10.0;190.0;10.0;190.0;200.0;10.0;200.0;10.0;310.0;30.0;310.0</additional_attributes>
@@ -334,42 +332,41 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
-      <y>510</y>
-      <w>15</w>
-      <h>35</h>
+      <x>240</x>
+      <y>600</y>
+      <w>18</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>435</x>
-      <y>405</y>
-      <w>125</w>
-      <h>95</h>
+      <x>528</x>
+      <y>474</y>
+      <w>150</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>EventHandlerModule::
 PredictionHandler
 --
 - view : ViewFacade
-- predictor : Predictor
+- dispatcher : DispatcherManager
 --
-+ &lt;&lt;constructor&gt;&gt; StartHandler(
-                         view : ViewFacade)
++ &lt;&lt;constructor&gt;&gt; PredictionHandler()
 + onAction() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>100</y>
-      <w>165</w>
-      <h>315</h>
+      <x>420</x>
+      <y>138</y>
+      <w>198</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;570.0;310.0;570.0;310.0;610.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0;310.0;510.0;310.0;560.0</additional_attributes>
   </element>
 </diagram>

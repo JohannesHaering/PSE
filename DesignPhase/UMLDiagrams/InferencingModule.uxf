@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>250</x>
-      <y>455</y>
-      <w>310</w>
-      <h>190</h>
+      <x>300</x>
+      <y>468</y>
+      <w>372</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>Inferencing::InferencingDistributor
 {abstract}
@@ -38,10 +38,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>185</x>
-      <y>110</y>
-      <w>255</w>
-      <h>65</h>
+      <x>222</x>
+      <y>54</y>
+      <w>306</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>Inferencing::NeuralNetworkSetter
 --
@@ -55,10 +55,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>140</y>
-      <w>120</w>
-      <h>15</h>
+      <x>522</x>
+      <y>90</y>
+      <w>144</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;10.0;10.0</additional_attributes>
@@ -66,45 +66,17 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>620</y>
-      <w>260</w>
-      <h>75</h>
-    </coordinates>
-    <panel_attributes>Inferencing::ModeCalculator
---
-
---
-+ &lt;&lt;constructor&gt;&gt; ModeCalculator()
-+ getHardwareforMode(mode : Mode, chosenHardware : list&lt;string&gt;) : list&lt;string&gt;
-- calculateOptimal() : List&lt;String&gt;</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>555</x>
-      <y>505</y>
-      <w>65</w>
-      <h>135</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>110.0;250.0;70.0;250.0;70.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>240</x>
-      <y>670</y>
-      <w>160</w>
-      <h>65</h>
+      <x>276</x>
+      <y>726</y>
+      <w>198</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorClassification
 --
 
 --
-&lt;&lt;constructor&gt;&gt; InferencingDistributorClassification(
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorClassification(
                        viewFacade : ViewFacade)                  
 # drawResult(result : Result) : void
 </panel_attributes>
@@ -113,17 +85,17 @@ InferencingDistributorClassification
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>415</x>
-      <y>670</y>
-      <w>150</w>
-      <h>75</h>
+      <x>492</x>
+      <y>726</y>
+      <w>186</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Inferencing::
 InferencingDistributorDetection
 --
 - boxthreshold : int
 --
-&lt;&lt;constructor&gt;&gt;InferencingDistributorDetection(
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorDetection(
                        viewFacade : ViewFacade)
 # drawResult(result : Result) : void
 </panel_attributes>
@@ -132,32 +104,32 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
-      <y>640</y>
-      <w>110</w>
-      <h>40</h>
+      <x>348</x>
+      <y>690</y>
+      <w>144</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>395</x>
-      <y>640</y>
-      <w>95</w>
-      <h>40</h>
+      <x>474</x>
+      <y>690</y>
+      <w>108</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;170.0;40.0;170.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;160.0;40.0;160.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>235</y>
-      <w>260</w>
-      <h>235</h>
+      <y>204</y>
+      <w>312</w>
+      <h>282</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>500.0;450.0;10.0;450.0;10.0;10.0;320.0;10.0</additional_attributes>
@@ -165,10 +137,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>455</y>
-      <w>175</w>
-      <h>60</h>
+      <x>732</x>
+      <y>468</y>
+      <w>210</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Inferencing::PlatformSetting
 --
@@ -183,10 +155,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>525</y>
-      <w>175</w>
-      <h>85</h>
+      <x>732</x>
+      <y>552</y>
+      <w>210</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>Inferencing::OutputSetting
 --
@@ -202,10 +174,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>555</x>
-      <y>495</y>
-      <w>65</w>
-      <h>55</h>
+      <x>666</x>
+      <y>516</y>
+      <w>78</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;90.0;80.0;90.0;80.0;10.0;10.0;10.0</additional_attributes>
@@ -213,10 +185,10 @@ InferencingDistributorDetection
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>555</x>
-      <y>465</y>
-      <w>65</w>
-      <h>35</h>
+      <x>666</x>
+      <y>480</y>
+      <w>78</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>110.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
@@ -224,10 +196,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>210</y>
-      <w>105</w>
-      <h>100</h>
+      <x>192</x>
+      <y>174</y>
+      <w>126</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Inferencing::Pager
 {abstract}
@@ -246,10 +218,10 @@ InferencingDistributorDetection
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>360</y>
-      <w>215</w>
-      <h>90</h>
+      <x>714</x>
+      <y>354</y>
+      <w>258</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>Inferencing::
 TrainingDistributor
@@ -268,10 +240,10 @@ TrainingDistributor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>405</x>
-      <y>250</y>
-      <w>215</w>
-      <h>70</h>
+      <x>486</x>
+      <y>222</y>
+      <w>258</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Inferencing::
 Distributor
@@ -286,10 +258,10 @@ Distributor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>315</y>
-      <w>120</w>
-      <h>150</h>
+      <x>480</x>
+      <y>300</y>
+      <w>144</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;280.0</additional_attributes>
@@ -297,10 +269,10 @@ Distributor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>505</x>
-      <y>315</y>
-      <w>205</w>
-      <h>55</h>
+      <x>606</x>
+      <y>300</y>
+      <w>246</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;390.0;40.0;390.0;90.0</additional_attributes>
@@ -308,10 +280,10 @@ Distributor
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>545</x>
-      <y>130</y>
-      <w>215</w>
-      <h>70</h>
+      <x>654</x>
+      <y>78</y>
+      <w>258</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Inferencing::
 Inferencer
@@ -326,10 +298,10 @@ Inferencer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>705</x>
-      <y>250</y>
-      <w>215</w>
-      <h>75</h>
+      <x>846</x>
+      <y>222</y>
+      <w>258</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Inferencing::
 TopologyInferencer
@@ -346,10 +318,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>505</x>
-      <y>195</y>
-      <w>160</w>
-      <h>65</h>
+      <x>606</x>
+      <y>156</y>
+      <w>192</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>300.0;10.0;300.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
@@ -357,10 +329,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>195</y>
-      <w>170</w>
-      <h>65</h>
+      <x>780</x>
+      <y>156</y>
+      <w>204</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0;320.0;60.0;320.0;110.0</additional_attributes>
@@ -368,10 +340,10 @@ TopologyInferencer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>35</x>
-      <y>335</y>
-      <w>165</w>
-      <h>100</h>
+      <x>42</x>
+      <y>324</y>
+      <w>198</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Inferencing::NeuralNetworkPager
 --
@@ -388,10 +360,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>115</x>
-      <y>305</y>
-      <w>110</w>
-      <h>40</h>
+      <x>138</x>
+      <y>288</y>
+      <w>132</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
@@ -399,10 +371,10 @@ TopologyInferencer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>335</y>
-      <w>165</w>
-      <h>100</h>
+      <x>264</x>
+      <y>324</y>
+      <w>198</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Inferencing::ImagePager
 --
@@ -419,10 +391,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>305</y>
-      <w>105</w>
-      <h>40</h>
+      <x>252</x>
+      <y>288</y>
+      <w>126</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;190.0;40.0;190.0;60.0</additional_attributes>
@@ -430,10 +402,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
-      <y>350</y>
-      <w>35</w>
-      <h>15</h>
+      <x>234</x>
+      <y>342</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
@@ -441,10 +413,10 @@ TopologyInferencer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
-      <y>345</y>
-      <w>35</w>
-      <h>15</h>
+      <x>234</x>
+      <y>336</y>
+      <w>42</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
