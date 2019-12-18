@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>156</x>
+      <y>102</y>
+      <w>510</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+RendererModule::Renderer
+--
+- resultImage : Image
+--
+/+ drawGraphic() : E/
+# drawRectangle(img : Image, x : double, y : double, width : double, height : double, fillingColor : string, strokeColor : string) : Image
+# drawText(img : Image, text : string, , x : double, y : double, width : double, height : double) : Image
+# drawLine(img : Image, x : double, y : double, fillingColor : string, strokeColor : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>450</y>
+      <w>336</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DetectionResultRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DetectionResultRenderer()
++ drawGraphic(result : DetectionResult) : Image
+- combineBoundingBoxProbabilities(boundingBoxes : BoundingBox[]) : Probability[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>450</y>
+      <w>306</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ChartRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ChartRenderer()
++ drawGraphic(pointsArrayTest : float[], pointsArrayTraining : float[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>294</y>
+      <w>210</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ClassificationResultRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ClassificationResultRenderer()
++ drawGraphic(result : Result) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>258</x>
+      <y>210</y>
+      <w>126</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>210</y>
+      <w>276</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;70.0;90.0;70.0;370.0;440.0;370.0;440.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>294</y>
+      <w>222</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>RendererModule::TopologyRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; TopologyRenderer()
++ drawGraphic(neuralNetwork : NeuralNetwork) : Image
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>210</y>
+      <w>438</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>468</x>
+      <y>300</y>
+      <w>204</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DiagramRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DiagramRenderer()
++ drawGraphic(probabilities : Probability[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>366</x>
+      <y>210</y>
+      <w>222</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;350.0;90.0;350.0;150.0</additional_attributes>
+  </element>
+</diagram>
