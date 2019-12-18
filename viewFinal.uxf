@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>574</x>
+      <y>1820</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>ViewModule::MainMenu
+--
+- imageClassificationButton : QButton
+- objectDetectionButton : QButton
+- trainingButton : QButton 
+- topologyButton : QButton
+- guiText : English
+--
++ showPage() : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2730</x>
+      <y>1792</y>
+      <w>420</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>ViewModule::Topology
+--
+- chooseTopologyButton : QButton
+- saveVisualisationButton : QButton
+- topologyRenderer : TopologyRenderer
+- currentTopology : Image
+- topologyLabel : QLabel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; Topology()
++ update() : void
++ showPage() : void
++ topolgyChanged(nn : NeuralNetwork) : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1750</x>
+      <y>994</y>
+      <w>294</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+ViewModule::View
+--
+- panel : Panel
+--
+/+ setController() : void/
+/+ showPage() : void/
++ pageActive(flag : bool) : void
+/+ pageSet() : void/
+/+ update()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2212</x>
+      <y>1820</y>
+      <w>504</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>ViewModule::InferencePage
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; InferencePage()
++ getOperatingMode() : string
++ getDevices() : string[]
++ getInputMode() : string
++ getNeuralNetworkPath() : string
++ getShowResults() : bool
++ getSaveResults() : bool
++ getImageAmount() : string
++ getInputPathes() : string[]
++ getAppendResult() : string[]
++ showPage() : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>1232</y>
+      <w>1148</w>
+      <h>616</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>800.0;10.0;800.0;40.0;10.0;40.0;10.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1876</x>
+      <y>1456</y>
+      <w>602</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;410.0;170.0;410.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1876</x>
+      <y>1456</y>
+      <w>1036</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;720.0;170.0;720.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1148</x>
+      <y>2450</y>
+      <w>42</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4298</x>
+      <y>686</y>
+      <w>1190</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+RendererModule::Renderer
+--
+- resultImage : Image
+--
+/+ drawGraphic() : E/
+# drawRectangle(img : Image, x : double, y : double, width : double, height : double, fillingColor : string, strokeColor : string) : Image
+# drawText(img : Image, text : string, , x : double, y : double, width : double, height : double) : Image
+# drawLine(img : Image, x : double, y : double, fillingColor : string, strokeColor : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>1848</y>
+      <w>504</w>
+      <h>616</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ClassificationResultPanel
+--
+- currentImage : Image
+- currentResult : Image
+- imageLabel : QLabel
+- resultLabel : QLabel
+- nextNNButton : QButton
+- prevNNButton : QButton
+- nextImgButton : QButton 
+- prevImgButton : QButton
+- saveResultButton : QButton
+- renderer : ClassificationResultRenderer
+- imageNameLabel : QLabel
+- neuralNetwrokNameLabel : QLabel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; ClassificationResultPanel()
++ update() : void
+- displayImage(img : Image) : void 
+- displayResult(img : Image) : void
+# resultsChanged(nnName: string, imgName : string, 
+                            image : Image, result: Result) : void
++ nextNNEnable(flag : bool) : void
++ prevNNEnable(flag : bool) : void
++ nextImageEnable(flag : bool) : void
++ prevImageEnable(flag : bool) : void
++ saveResultEnable(flag : bool) : void
++ pageSet() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>854</x>
+      <y>2506</y>
+      <w>700</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DetectionResultPanel
+--
+- renderer : DetectionResultRenderer
+--
++ &lt;&lt;constructor&gt;&gt; DetectionResultPanel()
+# resultsChanged(image : Image, result: Result) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4312</x>
+      <y>1498</y>
+      <w>784</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DetectionResultRenderer
+--
+
+--
++ drawGraphic(result : DetectionResult) : Image
+- combineBoundingBoxProbabilities(boundingBoxes : BoundingBox[]) : Probability[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5152</x>
+      <y>1498</y>
+      <w>714</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ChartRenderer
+--
+
+--
++ drawGraphic(pointsArrayTest : float[], pointsArrayTraining : float[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4312</x>
+      <y>1134</y>
+      <w>490</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ClassificationResultRenderer
+--
+
+--
++ drawGraphic(result : Result) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4536</x>
+      <y>938</y>
+      <w>294</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4788</x>
+      <y>938</y>
+      <w>644</w>
+      <h>588</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;70.0;90.0;70.0;370.0;440.0;370.0;440.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4536</x>
+      <y>1386</y>
+      <w>42</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>2758</y>
+      <w>602</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DetectionControlPanel
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ClassifictaionControlPanel() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1736</x>
+      <y>2492</y>
+      <w>56</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0;20.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1736</x>
+      <y>1330</y>
+      <w>434</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ContentView
+--
+
+--
+# getPathsFromExplorer(types : string[]) : string[]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1876</x>
+      <y>1232</y>
+      <w>42</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5544</x>
+      <y>1134</y>
+      <w>518</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>RendererModule::TopologyRenderer
+--
+
+--
++ drawGraphic(neuralNetwork : NeuralNetwork) : Image
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4788</x>
+      <y>938</y>
+      <w>1022</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2170</x>
+      <y>1862</y>
+      <w>70</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;60.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1456</x>
+      <y>1834</y>
+      <w>784</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;540.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2884</x>
+      <y>2114</y>
+      <w>840</w>
+      <h>518</h>
+    </coordinates>
+    <panel_attributes>ViewModule::Training
+--
+- textFieldLearningRate : QLineEdit
+- textFieldPrecision : QLineEdit
+- textFieldName : QLineEdit
+- chooseNeuralNetworkButton : QButton
+- chooseDatasetButton : QButton
+- trainButton : QButton
+- learningProgessLabel : QLabel
+- chartRenderer : ChartRender
+- currentGraphic : Image
+- learningComboBox : QComboBox
+- guiText : English
+--
++ update() : void
++ showPage() : void
++ newTrainingFinished(pointsArrayTest : float[], pointsArrayTraining : float[]) : void
++ getLearningRate() : float
++ getPrecision() : float
++ getName() : string
++ getLearningMode() : string
+- displayGraphic(img : Image) : void
++ pageSet() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1876</x>
+      <y>1456</y>
+      <w>1330</w>
+      <h>686</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0;930.0;170.0;930.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2226</x>
+      <y>2324</y>
+      <w>504</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DeviceCheckBoxManager
+--
+- devicelist : list&lt;string&gt;
+- checkBoxes : list&lt;QCheckBox&gt;
+- panel : QPanel
+- guiText : English
+--
+&lt;&lt;constructor&gt;&gt; + DeviceCheckboxManager(list&lt;string&gt;, 
+                          panel : QPanel)
++ getCheckedDevices() : string[]
++ setAvailableDevices(devices : string[]) : void
++ showPage() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5026</x>
+      <y>1148</y>
+      <w>476</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DiagramRenderer
+--
+
+--
++ drawGraphic(probabilities : Probability[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4788</x>
+      <y>938</y>
+      <w>518</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;350.0;90.0;350.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2170</x>
+      <y>2086</y>
+      <w>84</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;180.0;20.0;180.0;20.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>476</y>
+      <w>770</w>
+      <h>994</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ViewFacade
+--
+_- facade : ViewFacade_
+- mainMenu : MainMenu
+- inferencePage : InferencePage
+- imageClassificationControlPanel : ImageClassificationControlPanel
+- classificationResultPanel : ClassificationResultPanel
+- detectionResultPanel : DetectionResultPanel
+- topology : Topology
+- training : Training
+- detectionControlPanel : DetectionControlPanel
+--
+- ViewFacade()
+_+ getInstance() : ViewFacade_
++ nextNNEnable(flag : bool) : void
++ prevNNEnable(flag : bool) : void
++ nextImageEnable(flag : bool) : void
++ prevImageEnable(flag : bool) : void
++ saveResultNNEnable(flag : bool) : void
++ getCheckBoxesDevice() : string[]
++ getCheckBoxAppendResults() : bool
++ getShowResultsCheckBox() : bool
++ getSaveResultsCheckBox() : bool
++ getAppendResultsCheckBox() : bool
++ getNeuralNetworkPath() : string
++ getOperatingMode() : string
++ getImageAmount() : string
++ getOperatingMode() : string
++ getDevices() : string[]
++ getInputMode() : string
++ getNeuralNetworkPath() : string
++ getShowResults() : bool
++ getSaveResults() : bool
++ getImageAmount() : string
++ getInputPathes() : string[]
++ getAppendResult() : string[]
++ topolgyChanged(nn : NeuralNetwork) : void
++ newTrainingFinished(pointsArrayTest : float[], pointsArrayTraining : float[]) : void
++ getLearningRate() : float
++ getPrecision() : float
++ getName() : string
++ getLearningMode() : string
++ getPathsFromExplorer(types : string[]) : string[]
++ update()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1582</x>
+      <y>1932</y>
+      <w>602</w>
+      <h>574</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ImageClassificationControlPanel
+--
+- showResultsCheckBox : QCheckBox
+- saveResultsCheckBox : QCheckBox
+- appendResultsCheckBox : QCheckBox
+- chooseNeuralNetwork : QButton
+- startImageClass : QButton
+- addImageButton : QButton
+- inputModeComboBox : QComboBox
+- operatingModeComboBox : QComboBox
+- deviceCheckBoxManager : DeviceCheckBoxManager
+- panelCheckBox : QPanel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; ImageClassificationControlPanel() 
++ showPage() : void
++ getCheckBoxesDevice() : string[]
++ getCheckBoxAppendResults() : bool
++ getShowResultsCheckBox() : bool
++ getSaveResultsCheckBox() : bool
++ getAppendResultsCheckBox() : bool
++ getNeuralNetworkPath() : string
++ getOperatingMode() : string
++ getInputMode() : string
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>532</w>
+      <h>1190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>360.0;830.0;10.0;830.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>2170</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1530.0;810.0;1530.0;1060.0;10.0;1060.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>2478</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1750.0;450.0;1750.0;1060.0;10.0;1060.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>2478</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1530.0;510.0;1530.0;570.0;1750.0;570.0;1750.0;1060.0;10.0;1060.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>2996</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>2120.0;840.0;2120.0;1060.0;10.0;1060.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>1792</w>
+      <h>1512</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1260.0;750.0;1260.0;1060.0;10.0;1060.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>1148</w>
+      <h>1358</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>800.0;950.0;10.0;950.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>252</w>
+      <h>476</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;320.0;10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2324</x>
+      <y>0</y>
+      <w>532</w>
+      <h>1218</h>
+    </coordinates>
+    <panel_attributes>{abstract}
+ViewModule::GUIText
+--
+- inputMode : string[]
+- showResults : string
+- saveResults : string
+- chooseNeuralNetwork : string
+- operatingMode : string[]
+- appendResults : string
+- startImageClass : string
+- imageName : string
+- neuralNetworkName : string
+- previousImage : string
+- nextImage : string
+- previousNN : string
+- nextNN : string
+- saveResult : string
+- chooseDataset : string
+- learningMode : string[]
+- learningRate : string
+- precision : string
+- nameTraining : string
+- train : string
+- learning progress : string 
+- testAccuracy : string
+- trainingsAccuracy : string
+- chooseTopology : string
+- saveVisualisation : string
+--
+/- getShowResults() : string/
+/- getSaveResults() : string/
+/- getChooseNeuralNetwork() : string/
+/- getOperatingMode() : string[]/
+/- getAppendResults() : string/
+/- getStartImageClass() : string/
+/- getImageName() : string/
+/- getNeuralNetworkName() : string/
+/- getPreviousImage() : string/
+/- getNextImage() : string/
+/- getPreviousNN() : string/
+/- getNextNN() : string/
+/- getSaveResult() : string/
+/- getChooseDataset() : string/
+/- getLearningMode() : string[]/
+/- getLearningRate() : string/
+/- getPrecision() : string/
+/- getNameTraining() : string/
+/- getTrain() : string/
+/- getLearning() progress : string /
+/- getTestAccuracy() : string/
+/- getTrainingsAccuracy() : string/
+/- getChooseTopology() : string/
+/- getSaveVisualisation() : string/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3136</x>
+      <y>1036</y>
+      <w>406</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>ViewModule::GUITextEnglish
+--
+
+--
+- getShowResults() : string
+- getSaveResults() : string
+- getChooseNeuralNetwork() : string
+- getOperatingMode() : string[]
+- getAppendResults() : string
+- getStartImageClass() : string
+- getImageName() : string
+- getNeuralNetworkName() : string
+- getPreviousImage() : string
+- getNextImage() : string
+- getPreviousNN() : string
+- getNextNN() : string
+- getSaveResult() : string
+- getChooseDataset() : string
+- getLearningMode() : string[]
+- getLearningRate() : string
+- getPrecision() : string
+- getNameTraining() : string
+- getTrain() : string
+- getLearning() progress : string 
+- getTestAccuracy() : string
+- getTrainingsAccuracy() : string
+- getChooseTopology() : string
+- getSaveVisualisation() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2576</x>
+      <y>1204</y>
+      <w>588</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;400.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2030</x>
+      <y>1008</y>
+      <w>322</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>1456</y>
+      <w>644</w>
+      <h>784</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>440.0;540.0;10.0;540.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
