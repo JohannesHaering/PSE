@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>238</y>
-      <w>623</w>
-      <h>196</h>
+      <x>248</x>
+      <y>0</y>
+      <w>712</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>
 Training::Trainer
@@ -16,13 +16,12 @@ Training::Trainer
 - control : ControlFasade
 - neuralNetwork : NeuralNetwork
 - trainedNetwork : NeuralNetwork
-- inputData : IData[]
-- trainingData : Result[]
+- trainingData : TrainingData[]
 - learningRate : double
 - testAccuracyGraph : double[]
 - trainingAccuracyGraph : double[]
 --
-+ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, IData[], trainingData : Result[], learningRate : double, ) : void
++ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, trainingData : TrainingData[], learningRate : double) : void
 + start() : void
 + getTrainedNetwork() : NeuralNetwork
 + getTestAccuracyGraph() : double[]
@@ -32,10 +31,10 @@ Training::Trainer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>308</x>
-      <y>532</y>
-      <w>721</w>
-      <h>280</h>
+      <x>192</x>
+      <y>336</y>
+      <w>824</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>
 Training::SingleTrainer
@@ -55,9 +54,9 @@ Training::SingleTrainer
 --
 + &lt;&lt;constructor&gt;&gt; SingleTrainer(learningRate : double, trainingOperations : NetworkOperations, calculatingOperations : NetworkOperations) : void
 + init(neuralNetwork : NeuralNetwork, inputData : double[][][], trainingData : double[][][]) : void
-- calculateLayer(layer : NetworkLayer, inputData : double[][][]) : double [][][]
+- calculateLayer(layer : NetworkLayer, inputData : double[][][]) : void
 - calculateResults() : void
-- trainLayer(layer : NetworkLayer, data : double[][][][]) : NetworkLayer
+- trainLayer(layer : NetworkLayer, data : double[][][][]) : void
 - performTraining() : void
 + train() : NeuralNetwork
 + getTestAccuracy() : double
@@ -67,13 +66,31 @@ Training::SingleTrainer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>427</y>
-      <w>84</w>
-      <h>119</h>
+      <x>552</x>
+      <y>208</y>
+      <w>96</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 singleTrainer</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>16</x>
+      <y>0</y>
+      <w>176</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>
+Training::TrainingData
+&lt;&lt;struct&gt;&gt;
+--
++ inputData : Image
++ resultData : Result
+--
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
