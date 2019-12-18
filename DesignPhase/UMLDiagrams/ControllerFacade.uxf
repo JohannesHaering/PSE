@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>184</x>
-      <y>16</y>
+      <x>208</x>
+      <y>0</y>
       <w>320</w>
-      <h>800</h>
+      <h>904</h>
     </coordinates>
     <panel_attributes>Controller::ControllerFacade
 --
@@ -23,6 +23,8 @@ _- facade : ControllerFacade_
 - neuralNetworkPrevPagerClassification : PagerHandler
 - imageNextPagerClassification : PagerHandler
 - imagePrevPagerClassification : PagerHandler
+- newResultHandlerClassification : NewResultHandler
+- predictionHandlerClassification : PredictionHandler
 
 - detectionDistributor : InferencingDistributorDetection
 - saveResultHandlerDetection : SaveResultHandler
@@ -33,6 +35,8 @@ _- facade : ControllerFacade_
 - neuralNetworkPrevPagerDetection : PagerHandler
 - imageNextPagerDetection : PagerHandler
 - imagePrevPagerDetection : PagerHandler
+- newResultHandlerDetection : NewResultHandler
+- predictionHandlerDetection : PredictionHandler
 
 - trainingDistributor : TrainingDistributor
 - inputHandlerTraining : InputImageHandler
@@ -55,6 +59,8 @@ _+ getInstance() : ControllerFacade_
 + prevImageClassification() : void
 + getImageInputClassification() : void
 + getNeuralNetworkInputClassification() : void
++ newResultClassification() : void
++ newPredictionClassification() : void
 
 + startProcessDetection() :void
 + saveResultsDetection() : void
@@ -64,6 +70,8 @@ _+ getInstance() : ControllerFacade_
 + prevImageDetection() : void
 + getImageInputDetection() : void
 + getNeuralNetworkInputDetection() : void
++ newResultDetection() : void
++ newPredictionDetection() : void
 
 + startProcessTest() :void
 + getImageInputTraining() : void

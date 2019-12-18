@@ -93,7 +93,7 @@
     <id>UMLObject</id>
     <coordinates>
       <x>570</x>
-      <y>1446</y>
+      <y>1464</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
@@ -106,10 +106,10 @@
       <x>234</x>
       <y>666</y>
       <w>348</w>
-      <h>804</h>
+      <h>822</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>560.0;1320.0;10.0;10.0</additional_attributes>
+    <additional_attributes>560.0;1350.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLObject</id>
@@ -247,7 +247,7 @@
     <id>UMLObject</id>
     <coordinates>
       <x>570</x>
-      <y>1494</y>
+      <y>1500</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
@@ -260,10 +260,10 @@
       <x>234</x>
       <y>666</y>
       <w>348</w>
-      <h>852</h>
+      <h>858</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>560.0;1400.0;10.0;10.0</additional_attributes>
+    <additional_attributes>560.0;1410.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -271,16 +271,16 @@
       <x>234</x>
       <y>666</y>
       <w>348</w>
-      <h>882</h>
+      <h>888</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>560.0;1450.0;10.0;10.0</additional_attributes>
+    <additional_attributes>560.0;1460.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLObject</id>
     <coordinates>
       <x>570</x>
-      <y>1524</y>
+      <y>1530</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
@@ -1032,25 +1032,25 @@ is passed to </panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>708</x>
-      <y>1452</y>
+      <y>1470</y>
       <w>102</w>
-      <h>66</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 is passed to </panel_attributes>
-    <additional_attributes>10.0;90.0;80.0;70.0;80.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;80.0;70.0;80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>708</x>
-      <y>1452</y>
+      <y>1470</y>
       <w>60</w>
-      <h>96</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 </panel_attributes>
-    <additional_attributes>10.0;140.0;80.0;120.0;80.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;80.0;120.0;80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1100,7 +1100,7 @@ is passed to </panel_attributes>
     <id>UMLObject</id>
     <coordinates>
       <x>828</x>
-      <y>1500</y>
+      <y>1506</y>
       <w>144</w>
       <h>24</h>
     </coordinates>
@@ -1111,7 +1111,7 @@ is passed to </panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>708</x>
-      <y>1506</y>
+      <y>1512</y>
       <w>132</w>
       <h>18</h>
     </coordinates>
