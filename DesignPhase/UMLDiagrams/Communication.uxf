@@ -94,6 +94,18 @@ Communication::Channel
     <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;100.0;580.0;100.0</additional_attributes>
   </element>
   <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>1320</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>Communication
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>Relation</id>
     <coordinates>
       <x>290</x>
