@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>13</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>377</x>
+      <x>248</x>
       <y>0</y>
-      <w>1157</w>
-      <h>351</h>
+      <w>712</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>
 Training::Trainer
@@ -21,7 +21,7 @@ Training::Trainer
 - testAccuracyGraph : double[]
 - trainingAccuracyGraph : double[]
 --
-+ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, trainingData : TrainingData[], learningRate : double, ) : void
++ &lt;&lt;constructor&gt;&gt; Trainer(neuralNetwork : NeuralNetwork, trainingData : TrainingData[], learningRate : double) : void
 + start() : void
 + getTrainedNetwork() : NeuralNetwork
 + getTestAccuracyGraph() : double[]
@@ -31,10 +31,10 @@ Training::Trainer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>286</x>
-      <y>546</y>
-      <w>1339</w>
-      <h>520</h>
+      <x>192</x>
+      <y>336</y>
+      <w>824</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>
 Training::SingleTrainer
@@ -54,9 +54,9 @@ Training::SingleTrainer
 --
 + &lt;&lt;constructor&gt;&gt; SingleTrainer(learningRate : double, trainingOperations : NetworkOperations, calculatingOperations : NetworkOperations) : void
 + init(neuralNetwork : NeuralNetwork, inputData : double[][][], trainingData : double[][][]) : void
-- calculateLayer(layer : NetworkLayer, inputData : double[][][]) : double [][][]
+- calculateLayer(layer : NetworkLayer, inputData : double[][][]) : void
 - calculateResults() : void
-- trainLayer(layer : NetworkLayer, data : double[][][][]) : NetworkLayer
+- trainLayer(layer : NetworkLayer, data : double[][][][]) : void
 - performTraining() : void
 + train() : NeuralNetwork
 + getTestAccuracy() : double
@@ -66,10 +66,10 @@ Training::SingleTrainer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>871</x>
-      <y>338</y>
-      <w>156</w>
-      <h>234</h>
+      <x>552</x>
+      <y>208</y>
+      <w>96</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 singleTrainer</panel_attributes>
@@ -78,10 +78,10 @@ singleTrainer</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>16</x>
       <y>0</y>
-      <w>286</w>
-      <h>156</h>
+      <w>176</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>
 Training::TrainingData
