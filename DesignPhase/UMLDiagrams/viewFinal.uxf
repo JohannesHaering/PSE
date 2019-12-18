@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>3</zoom_level>
+  <zoom_level>2</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>75</x>
-      <y>381</y>
-      <w>75</w>
-      <h>45</h>
+      <x>250</x>
+      <y>410</y>
+      <w>50</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>ViewModule::MainMenu
 --
@@ -25,10 +25,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>633</x>
-      <y>381</y>
-      <w>90</w>
-      <h>63</h>
+      <x>622</x>
+      <y>410</y>
+      <w>60</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>ViewModule::Topology
 --
@@ -50,10 +50,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>243</x>
-      <y>213</y>
-      <w>63</w>
-      <h>54</h>
+      <x>362</x>
+      <y>298</y>
+      <w>42</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>{abstract}
 ViewModule::View
@@ -71,10 +71,10 @@ ViewModule::View
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>201</x>
-      <y>381</y>
-      <w>108</w>
-      <h>81</h>
+      <x>334</x>
+      <y>410</y>
+      <w>72</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>ViewModule::InferencePage
 --
@@ -100,10 +100,10 @@ ViewModule::View
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>117</x>
-      <y>264</y>
-      <w>162</w>
-      <h>123</h>
+      <x>278</x>
+      <y>332</y>
+      <w>108</w>
+      <h>82</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>520.0;10.0;520.0;100.0;10.0;100.0;10.0;390.0</additional_attributes>
@@ -111,10 +111,10 @@ ViewModule::View
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>249</x>
-      <y>333</y>
-      <w>147</w>
-      <h>54</h>
+      <x>366</x>
+      <y>378</y>
+      <w>98</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>470.0;10.0;470.0;50.0;10.0;50.0;10.0;160.0</additional_attributes>
@@ -122,10 +122,10 @@ ViewModule::View
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>333</y>
-      <w>285</w>
-      <h>54</h>
+      <x>458</x>
+      <y>378</y>
+      <w>190</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;930.0;50.0;930.0;160.0</additional_attributes>
@@ -133,10 +133,10 @@ ViewModule::View
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>162</x>
-      <y>612</y>
-      <w>9</w>
-      <h>24</h>
+      <x>308</x>
+      <y>564</y>
+      <w>6</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -144,29 +144,10 @@ ViewModule::View
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>795</x>
-      <y>192</y>
-      <w>255</w>
-      <h>57</h>
-    </coordinates>
-    <panel_attributes>{abstract}
-RendererModule::Renderer
---
-- resultImage : Image
---
-/+ drawGraphic() : E/
-# drawRectangle(img : Image, x : double, y : double, width : double, height : double, fillingColor : string, strokeColor : string) : Image
-# drawText(img : Image, text : string, , x : double, y : double, width : double, height : double) : Image
-# drawLine(img : Image, x : double, y : double, fillingColor : string, strokeColor : string</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>111</x>
-      <y>483</y>
-      <w>108</w>
-      <h>132</h>
+      <x>274</x>
+      <y>478</y>
+      <w>72</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>ViewModule::ClassificationResultPanel
 --
@@ -201,10 +182,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>111</x>
-      <y>630</y>
-      <w>108</w>
-      <h>48</h>
+      <x>274</x>
+      <y>576</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>ViewModule::DetectionResultPanel
 --
@@ -217,81 +198,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>798</x>
-      <y>366</y>
-      <w>168</w>
-      <h>57</h>
-    </coordinates>
-    <panel_attributes>RendererModule::DetectionResultRenderer
---
-
---
-+ &lt;&lt;constructor&gt;&gt; DetectionResultRenderer()
-+ drawGraphic(result : DetectionResult) : Image
-- combineBoundingBoxProbabilities(boundingBoxes : BoundingBox[]) : Probability[]</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>978</x>
-      <y>366</y>
-      <w>153</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>RendererModule::ChartRenderer
---
-
---
-+ &lt;&lt;constructor&gt;&gt; ChartRenderer()
-+ drawGraphic(pointsArrayTest : float[], pointsArrayTraining : float[]) : Image</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>798</x>
-      <y>288</y>
-      <w>105</w>
-      <h>57</h>
-    </coordinates>
-    <panel_attributes>RendererModule::ClassificationResultRenderer
---
-
---
-+ &lt;&lt;constructor&gt;&gt; ClassificationResultRenderer()
-+ drawGraphic(result : Result) : Image</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>846</x>
-      <y>246</y>
-      <w>63</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>900</x>
-      <y>246</y>
-      <w>138</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;70.0;90.0;70.0;370.0;440.0;370.0;440.0;400.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>228</x>
-      <y>630</y>
-      <w>129</w>
-      <h>24</h>
+      <x>352</x>
+      <y>576</y>
+      <w>86</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>ViewModule::DetectionControlPanel
 --
@@ -303,10 +213,10 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>627</y>
-      <w>9</w>
-      <h>9</h>
+      <x>392</x>
+      <y>574</y>
+      <w>6</w>
+      <h>6</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
@@ -314,10 +224,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>306</y>
-      <w>93</w>
-      <h>30</h>
+      <x>438</x>
+      <y>360</y>
+      <w>62</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>ViewModule::ContentView
 --
@@ -331,49 +241,21 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>264</y>
-      <w>126</w>
-      <h>48</h>
+      <x>380</x>
+      <y>332</y>
+      <w>84</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;400.0;100.0;400.0;140.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1062</x>
-      <y>288</y>
-      <w>111</w>
-      <h>57</h>
-    </coordinates>
-    <panel_attributes>RendererModule::TopologyRenderer
---
-
---
-+ &lt;&lt;constructor&gt;&gt; TopologyRenderer()
-+ drawGraphic(neuralNetwork : NeuralNetwork) : Image
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>246</y>
-      <w>219</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>171</x>
-      <y>390</y>
-      <w>126</w>
-      <h>99</h>
+      <x>314</x>
+      <y>416</y>
+      <w>84</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
@@ -382,10 +264,10 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>162</x>
-      <y>387</y>
-      <w>45</w>
-      <h>102</h>
+      <x>308</x>
+      <y>414</y>
+      <w>30</w>
+      <h>68</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
@@ -394,10 +276,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>381</y>
-      <w>180</w>
-      <h>111</h>
+      <x>500</x>
+      <y>410</y>
+      <w>120</w>
+      <h>74</h>
     </coordinates>
     <panel_attributes>ViewModule::Training
 --
@@ -427,10 +309,10 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>333</y>
-      <w>132</w>
-      <h>54</h>
+      <x>458</x>
+      <y>378</y>
+      <w>88</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;420.0;50.0;420.0;160.0</additional_attributes>
@@ -438,10 +320,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>381</x>
-      <y>516</y>
-      <w>108</w>
-      <h>57</h>
+      <x>454</x>
+      <y>500</y>
+      <w>72</w>
+      <h>38</h>
     </coordinates>
     <panel_attributes>ViewModule::DeviceCheckBoxManager
 --
@@ -459,39 +341,12 @@ RendererModule::Renderer
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>951</x>
-      <y>291</y>
-      <w>102</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>RendererModule::DiagramRenderer
---
-
---
-+ &lt;&lt;constructor&gt;&gt; DiagramRenderer()
-+ drawGraphic(probabilities : Probability[]) : Image</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>246</y>
-      <w>111</w>
-      <h>51</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0;350.0;90.0;350.0;150.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>354</x>
-      <y>516</y>
-      <w>33</w>
-      <h>9</h>
+      <x>436</x>
+      <y>500</y>
+      <w>22</w>
+      <h>6</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
@@ -499,10 +354,10 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>69</x>
-      <y>60</y>
-      <w>165</w>
-      <h>219</h>
+      <x>246</x>
+      <y>196</y>
+      <w>110</w>
+      <h>146</h>
     </coordinates>
     <panel_attributes>ViewModule::ViewFacade
 --
@@ -556,10 +411,10 @@ _+ getInstance() : ViewFacade_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>228</x>
-      <y>483</y>
-      <w>129</w>
-      <h>141</h>
+      <x>352</x>
+      <y>478</y>
+      <w>86</w>
+      <h>94</h>
     </coordinates>
     <panel_attributes>ViewModule::ImageClassificationControlPanel
 --
@@ -597,10 +452,10 @@ _+ getInstance() : ViewFacade_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>72</y>
-      <w>63</w>
-      <h>315</h>
+      <x>236</x>
+      <y>204</y>
+      <w>42</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>190.0;1030.0;190.0;950.0;10.0;950.0;10.0;10.0;50.0;10.0</additional_attributes>
@@ -608,10 +463,10 @@ _+ getInstance() : ViewFacade_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>39</y>
-      <w>114</w>
-      <h>288</h>
+      <x>524</x>
+      <y>182</y>
+      <w>76</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>{abstract}
 ViewModule::GUIText
@@ -680,10 +535,10 @@ ViewModule::GUIText
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>633</x>
-      <y>78</y>
-      <w>87</w>
-      <h>150</h>
+      <x>622</x>
+      <y>208</y>
+      <w>58</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>ViewModule::GUITextEnglish
 --
@@ -722,10 +577,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>537</x>
-      <y>63</y>
-      <w>144</w>
-      <h>279</h>
+      <x>558</x>
+      <y>198</y>
+      <w>96</w>
+      <h>186</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;880.0;10.0;910.0;260.0;910.0;250.0;10.0;460.0;10.0;460.0;50.0</additional_attributes>
@@ -733,10 +588,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>303</x>
-      <y>42</y>
-      <w>189</w>
-      <h>192</h>
+      <x>402</x>
+      <y>184</y>
+      <w>126</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>610.0;10.0;140.0;10.0;140.0;620.0;10.0;620.0</additional_attributes>
@@ -744,10 +599,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>72</y>
-      <w>192</w>
-      <h>315</h>
+      <x>236</x>
+      <y>204</y>
+      <w>128</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>620.0;1030.0;620.0;950.0;10.0;950.0;10.0;10.0;50.0;10.0</additional_attributes>
@@ -755,10 +610,10 @@ ViewModule::GUIText
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>381</y>
-      <w>108</w>
-      <h>57</h>
+      <x>424</x>
+      <y>410</y>
+      <w>72</w>
+      <h>38</h>
     </coordinates>
     <panel_attributes>ViewModule::ObejctDetectionInferencePage
 --
@@ -771,10 +626,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>237</x>
-      <y>369</y>
-      <w>141</w>
-      <h>108</h>
+      <x>358</x>
+      <y>402</y>
+      <w>94</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;310.0;10.0;340.0;270.0;340.0;270.0;10.0;450.0;10.0;450.0;40.0</additional_attributes>
@@ -782,10 +637,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>321</x>
-      <y>387</y>
-      <w>54</w>
-      <h>252</h>
+      <x>414</x>
+      <y>414</y>
+      <w>36</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>120.0;820.0;160.0;820.0;160.0;300.0;10.0;300.0;10.0;10.0;50.0;10.0</additional_attributes>
@@ -793,10 +648,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>390</y>
-      <w>162</w>
-      <h>276</h>
+      <x>344</x>
+      <y>416</y>
+      <w>108</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;810.0;30.0;810.0;30.0;900.0;520.0;900.0;520.0;270.0;370.0;270.0;370.0;10.0;400.0;10.0</additional_attributes>
@@ -804,10 +659,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>72</y>
-      <w>342</w>
-      <h>315</h>
+      <x>236</x>
+      <y>204</y>
+      <w>228</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>1120.0;1030.0;1120.0;950.0;10.0;950.0;10.0;10.0;50.0;10.0</additional_attributes>
@@ -815,10 +670,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>72</y>
-      <w>498</w>
-      <h>315</h>
+      <x>236</x>
+      <y>204</y>
+      <w>332</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>1640.0;1030.0;1640.0;950.0;10.0;950.0;10.0;10.0;50.0;10.0</additional_attributes>
@@ -826,10 +681,10 @@ ViewModule::GUIText
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>54</x>
-      <y>72</y>
-      <w>636</w>
-      <h>315</h>
+      <x>236</x>
+      <y>204</y>
+      <w>424</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>2100.0;1030.0;2100.0;950.0;10.0;950.0;10.0;10.0;50.0;10.0</additional_attributes>
