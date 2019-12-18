@@ -9,8 +9,8 @@
       <w>510</w>
       <h>114</h>
     </coordinates>
-    <panel_attributes>{abstract}
-RendererModule::Renderer
+    <panel_attributes>RendererModule::Renderer
+{abstract}
 --
 - resultImage : Image
 --
@@ -145,5 +145,16 @@ RendererModule::Renderer
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0;350.0;90.0;350.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>210</y>
+      <w>120</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;90.0;180.0;90.0;180.0;370.0;10.0;370.0;10.0;400.0</additional_attributes>
   </element>
 </diagram>
