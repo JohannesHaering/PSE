@@ -2,20 +2,6 @@
 <diagram program="umlet" version="14.3.0">
   <zoom_level>7</zoom_level>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>833</x>
-      <y>196</y>
-      <w>70</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>
---
-View
-Fassade</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>840</x>
