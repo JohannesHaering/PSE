@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>174</x>
-      <y>114</y>
+      <x>156</x>
+      <y>102</y>
       <w>510</w>
       <h>114</h>
     </coordinates>
@@ -23,8 +23,8 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>462</y>
+      <x>162</x>
+      <y>450</y>
       <w>336</w>
       <h>114</h>
     </coordinates>
@@ -40,8 +40,8 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>462</y>
+      <x>522</x>
+      <y>450</y>
       <w>306</w>
       <h>120</h>
     </coordinates>
@@ -56,8 +56,8 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>306</y>
+      <x>162</x>
+      <y>294</y>
       <w>210</w>
       <h>114</h>
     </coordinates>
@@ -72,8 +72,8 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>222</y>
+      <x>258</x>
+      <y>210</y>
       <w>126</w>
       <h>96</h>
     </coordinates>
@@ -83,8 +83,8 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>222</y>
+      <x>366</x>
+      <y>210</y>
       <w>276</w>
       <h>252</h>
     </coordinates>
@@ -94,8 +94,8 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>708</x>
-      <y>306</y>
+      <x>690</x>
+      <y>294</y>
       <w>222</w>
       <h>114</h>
     </coordinates>
@@ -111,8 +111,8 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>222</y>
+      <x>366</x>
+      <y>210</y>
       <w>438</w>
       <h>96</h>
     </coordinates>
@@ -122,8 +122,8 @@ RendererModule::Renderer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>312</y>
+      <x>468</x>
+      <y>300</y>
       <w>204</w>
       <h>120</h>
     </coordinates>
@@ -138,8 +138,8 @@ RendererModule::Renderer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>222</y>
+      <x>366</x>
+      <y>210</y>
       <w>222</w>
       <h>102</h>
     </coordinates>
