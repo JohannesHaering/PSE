@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
-      <y>575</y>
+      <x>295</x>
+      <y>405</y>
       <w>125</w>
       <h>95</h>
     </coordinates>
@@ -22,8 +22,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>255</x>
-      <y>325</y>
+      <x>140</x>
+      <y>170</y>
       <w>115</w>
       <h>50</h>
     </coordinates>
@@ -39,8 +39,8 @@ PagerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>155</x>
-      <y>425</y>
+      <x>40</x>
+      <y>270</y>
       <w>145</w>
       <h>55</h>
     </coordinates>
@@ -56,8 +56,8 @@ PrevHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>425</y>
+      <x>200</x>
+      <y>270</y>
       <w>140</w>
       <h>55</h>
     </coordinates>
@@ -73,8 +73,8 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>205</x>
-      <y>370</y>
+      <x>90</x>
+      <y>215</y>
       <w>115</w>
       <h>65</h>
     </coordinates>
@@ -84,8 +84,8 @@ NextHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
-      <y>370</y>
+      <x>190</x>
+      <y>215</y>
       <w>95</w>
       <h>65</h>
     </coordinates>
@@ -95,8 +95,8 @@ NextHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>225</x>
-      <y>560</y>
+      <x>110</x>
+      <y>405</y>
       <w>170</w>
       <h>110</h>
     </coordinates>
@@ -116,8 +116,8 @@ SaveResultHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>325</y>
+      <x>425</x>
+      <y>170</y>
       <w>145</w>
       <h>80</h>
     </coordinates>
@@ -136,8 +136,8 @@ FileExplorerHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>400</y>
+      <x>415</x>
+      <y>245</y>
       <w>75</w>
       <h>35</h>
     </coordinates>
@@ -147,8 +147,8 @@ FileExplorerHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>415</x>
-      <y>210</y>
+      <x>300</x>
+      <y>55</y>
       <w>105</w>
       <h>50</h>
     </coordinates>
@@ -164,8 +164,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>255</y>
+      <x>345</x>
+      <y>100</y>
       <w>150</w>
       <h>80</h>
     </coordinates>
@@ -175,8 +175,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>305</x>
-      <y>255</y>
+      <x>190</x>
+      <y>100</y>
       <w>170</w>
       <h>80</h>
     </coordinates>
@@ -186,8 +186,8 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>255</y>
+      <x>195</x>
+      <y>100</y>
       <w>165</w>
       <h>315</h>
     </coordinates>
@@ -197,19 +197,19 @@ EventHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>255</y>
+      <x>345</x>
+      <y>100</y>
       <w>15</w>
-      <h>330</h>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;640.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>425</y>
+      <x>535</x>
+      <y>270</y>
       <w>145</w>
       <h>75</h>
     </coordinates>
@@ -228,8 +228,8 @@ NeuralNetworkHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>400</y>
+      <x>475</x>
+      <y>245</y>
       <w>145</w>
       <h>35</h>
     </coordinates>
@@ -239,8 +239,8 @@ NeuralNetworkHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>175</x>
-      <y>185</y>
+      <x>60</x>
+      <y>30</y>
       <w>105</w>
       <h>95</h>
     </coordinates>
@@ -256,8 +256,8 @@ MainHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>475</x>
-      <y>425</y>
+      <x>360</x>
+      <y>270</y>
       <w>160</w>
       <h>85</h>
     </coordinates>
@@ -277,8 +277,8 @@ InputImageHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>185</y>
+      <x>445</x>
+      <y>30</y>
       <w>185</w>
       <h>50</h>
     </coordinates>
@@ -294,8 +294,8 @@ NewTrainStepHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>225</x>
-      <y>690</y>
+      <x>110</x>
+      <y>535</y>
       <w>170</w>
       <h>95</h>
     </coordinates>
@@ -312,8 +312,8 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>435</y>
+      <x>15</x>
+      <y>280</y>
       <w>105</w>
       <h>165</h>
     </coordinates>
@@ -323,8 +323,8 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>435</y>
+      <x>95</x>
+      <y>280</y>
       <w>115</w>
       <h>165</h>
     </coordinates>
@@ -334,12 +334,42 @@ NewTrainStepHandler
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
-      <y>665</y>
+      <x>195</x>
+      <y>510</y>
       <w>15</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>435</x>
+      <y>405</y>
+      <w>125</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+PredictionHandler
+--
+- view : ViewFacade
+- predictor : Predictor
+--
++ &lt;&lt;constructor&gt;&gt; StartHandler(
+                         view : ViewFacade)
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>345</x>
+      <y>100</y>
+      <w>165</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;570.0;310.0;570.0;310.0;610.0</additional_attributes>
   </element>
 </diagram>
