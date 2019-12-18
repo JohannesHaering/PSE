@@ -6,7 +6,7 @@
     <coordinates>
       <x>170</x>
       <y>50</y>
-      <w>300</w>
+      <w>430</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>ResultAdapter::

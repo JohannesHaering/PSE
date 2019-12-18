@@ -6,7 +6,7 @@
     <coordinates>
       <x>290</x>
       <y>220</y>
-      <w>260</w>
+      <w>620</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>Resultadapter::
@@ -14,12 +14,12 @@ ResultsmanagerAdapter
 --
 - resultManager : ResultManager
 --
-+getNNList():list&lt;NN&gt;
-+getImgList():list&lt;Img&gt;
-+getResults():list&lt;NN,Img,Result)
-+getResultsPerNN(NN):list&lt;Img,Result&gt;
-+getResultsPerImg(Img):list&lt;NN,Result&gt;
-+getResult(Img,NN):Result
++getNeuralNetworkAdapterList() : list&lt;NeuralNetworkAdapter&gt;
++getImgList() : list&lt;Image&gt;
++getResults() : list&lt;NeuralNetworkAdapter, Image, Result)
++getResultsPerNeuralNetwork(NeuralNetworkAdapter) : list&lt;Image, Result&gt;
++getResultsPerImg(image : Image) : list&lt;NeuralNetworkAdapter, Result&gt;
++getResult(image  : Image , neuralNetwork : NeuralNetworkAdapter) : Result
 </panel_attributes>
     <additional_attributes/>
   </element>

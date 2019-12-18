@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>60</y>
-      <w>680</w>
-      <h>170</h>
+      <x>200</x>
+      <y>136</y>
+      <w>544</w>
+      <h>136</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
-Communication::Channel
+    <panel_attributes>Communication::Channel
+{abstract}
 --
 - deviceHandler : Device
 - neuralNetworkList : list&lt;NeuralNetwork&gt;
@@ -25,10 +25,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>130</y>
-      <w>370</w>
-      <h>70</h>
+      <x>808</x>
+      <y>192</y>
+      <w>296</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::GPUChannel
 --
@@ -40,10 +40,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>40</y>
-      <w>370</w>
-      <h>70</h>
+      <x>808</x>
+      <y>120</y>
+      <w>296</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::CPUChannel
 --
@@ -55,10 +55,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>220</y>
-      <w>370</w>
-      <h>70</h>
+      <x>808</x>
+      <y>264</y>
+      <w>296</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::FPGAChannel
 --
@@ -70,10 +70,10 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>870</x>
-      <y>310</y>
-      <w>370</w>
-      <h>70</h>
+      <x>808</x>
+      <y>336</y>
+      <w>296</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::ASICChannel
 --
@@ -85,33 +85,21 @@ Communication::Channel
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>220</y>
-      <w>600</w>
-      <h>160</h>
+      <x>344</x>
+      <y>264</y>
+      <w>480</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;100.0;580.0;100.0</additional_attributes>
   </element>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>10</x>
-      <y>10</y>
-      <w>1320</w>
-      <h>780</h>
-    </coordinates>
-    <panel_attributes>Communication
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>220</y>
-      <w>600</w>
-      <h>160</h>
+      <x>344</x>
+      <y>264</y>
+      <w>480</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;10.0;580.0;10.0</additional_attributes>
@@ -119,13 +107,13 @@ Communication::Channel
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>560</y>
-      <w>520</w>
-      <h>90</h>
+      <x>200</x>
+      <y>536</y>
+      <w>416</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
-Communication::AbstractFactory
+    <panel_attributes>Communication::AbstractFactory
+{abstract}
 --
 
 --
@@ -136,10 +124,10 @@ Communication::AbstractFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>610</y>
-      <w>520</w>
-      <h>70</h>
+      <x>696</x>
+      <y>576</y>
+      <w>416</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryASIC
 --
@@ -153,10 +141,10 @@ Communication::AbstractFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>430</y>
-      <w>520</w>
-      <h>70</h>
+      <x>696</x>
+      <y>432</y>
+      <w>416</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryFPGA
 --
@@ -170,10 +158,10 @@ Communication::AbstractFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>700</y>
-      <w>520</w>
-      <h>70</h>
+      <x>696</x>
+      <y>648</y>
+      <w>416</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryGPU
 --
@@ -187,10 +175,10 @@ Communication::AbstractFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>520</y>
-      <w>520</w>
-      <h>70</h>
+      <x>696</x>
+      <y>504</y>
+      <w>416</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Communication::ConcreteFactoryCPU
 --
@@ -204,10 +192,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>130</y>
-      <w>600</w>
-      <h>250</h>
+      <x>344</x>
+      <y>192</y>
+      <w>480</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;100.0;10.0;230.0;520.0;230.0;520.0;10.0;580.0;10.0</additional_attributes>
@@ -215,10 +203,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>40</y>
-      <w>600</w>
-      <h>340</h>
+      <x>344</x>
+      <y>120</y>
+      <w>480</w>
+      <h>272</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;10.0;320.0;520.0;320.0;520.0;10.0;580.0;10.0</additional_attributes>
@@ -226,10 +214,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>430</y>
-      <w>130</w>
-      <h>230</h>
+      <x>608</x>
+      <y>432</y>
+      <w>104</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;150.0;60.0;150.0;60.0;210.0;60.0;10.0;110.0;10.0</additional_attributes>
@@ -237,10 +225,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>520</y>
-      <w>130</w>
-      <h>140</h>
+      <x>608</x>
+      <y>504</y>
+      <w>104</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;60.0;60.0;60.0;120.0;60.0;10.0;110.0;10.0</additional_attributes>
@@ -248,10 +236,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>570</y>
-      <w>130</w>
-      <h>70</h>
+      <x>608</x>
+      <y>544</y>
+      <w>104</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0;60.0;50.0;110.0;50.0</additional_attributes>
@@ -259,10 +247,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>570</y>
-      <w>130</w>
-      <h>160</h>
+      <x>608</x>
+      <y>544</y>
+      <w>104</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0;60.0;140.0;110.0;140.0</additional_attributes>
@@ -270,10 +258,10 @@ Communication::AbstractFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
-      <y>80</y>
-      <w>100</w>
-      <h>520</h>
+      <x>136</x>
+      <y>152</y>
+      <w>80</w>
+      <h>416</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>80.0;500.0;10.0;500.0;10.0;10.0;80.0;10.0</additional_attributes>

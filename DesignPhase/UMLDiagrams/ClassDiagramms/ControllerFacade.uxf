@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>208</x>
+      <x>536</x>
       <y>0</y>
       <w>320</w>
       <h>904</h>
@@ -62,7 +62,7 @@ _+ getInstance() : ControllerFacade_
 + newResultClassification() : void
 + newPredictionClassification() : void
 
-+ startProcessDetection() :void
++ startProcessDetection() : void
 + saveResultsDetection() : void
 + nextNeuralNetworkDetection() : void
 + prevNeuralNetworkDetection() : void
@@ -78,7 +78,7 @@ _+ getInstance() : ControllerFacade_
 + getNeuralNetworkInputTraining() : void
 + newTrainStep(trainig : float[], test : float[]) : void
 
-+ startProcessTopology() :void
++ startProcessTopology() : void
 + getNeuralNetworkInputTopology() : void
 </panel_attributes>
     <additional_attributes/>

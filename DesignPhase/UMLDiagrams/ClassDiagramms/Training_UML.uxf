@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>702</x>
+      <y>732</y>
+      <w>168</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Training::CompleteNewTrainer
+--
+
+--
+- initLayersRandomly() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>114</y>
+      <w>312</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>Training::Trainer
+{abstract}
+--
+- controlFacade : ControlFacade
+- toTrain : NeuralNetworkAdapter
+- currentBest : NeuralNetworkAdapter
+- learningRate : float
+- desiredPrecision : float
+- testAccuracyPerEpoch : list&lt;float&gt;
+- trainingsAccuracyPerEpoch : list&lt;float&gt;
+- dataSet : list&lt;TrainingData&gt;
+--
++ &lt;&lt;constructor&gt;&gt; Trainer(controlFacade : ControlFacade, 
+              toTrain : NeuralNetworkAdapter, 
+              desiredPrecision : float, dataDirectory : string)
++ startTraining() : void
+- getNewTestAccuracy() : void
+- getNewTrainingsAccuracy() : void
+- isFinished() : void
+- saveNewNeuralNetwork() : void
+- adaptOutputLayer() : void
+- loadDataSet(path : string) : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>558</y>
+      <w>168</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Training::CompleteTrainer
+--
+
+--
+# backpropagate() : NeuralNetworkAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>534</x>
+      <y>558</y>
+      <w>168</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Training::TransferLearningTrainer
+--
+
+--
+# backpropagate() : NeuralNetworkAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>846</x>
+      <y>138</y>
+      <w>204</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>Training::TrainingMethods
+{abstract}
+--
+dataSet : list&lt;TrainingData&gt;
+dataSetTraining : list&lt;TrainingData&gt;
+dataSetTest : list&lt;TrainingData&gt;
+currentTestAccuracy : float
+currentTrainingsAccuracy : float
+--
++ &lt;&lt;constructor&gt;&gt; TraingsMethods(dataSet : list&lt;TrainingData&gt;)
+/+ newEpoch() : NeuralNetworkAdapter/
+- divideIntoSets() : void
+# excecuteNeuralNetwork(toExcecute : NeuralNetworkAdapter, data : list&lt;TrainingData&gt;) : Result
+# calcualteAccuracies() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>138</y>
+      <w>354</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+trainer
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>378</y>
+      <w>348</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Training::SupervisedTrainer
+{abstract}
+--
+neuralNetwork : NeuralNetworkAdapter
+--
++ newEpoch() : NeuralNetworkAdapter
+/# backpropagate() : NeuralNetworkAdapter/
+# gradientDescent(currentWeights : float[][], output : float[], desiredOutput : float[]) : float[][]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>486</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>486</y>
+      <w>162</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>564</y>
+      <w>84</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>50.0;10.0;120.0;10.0;120.0;310.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>666</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>306</y>
+      <w>180</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;60.0;10.0;60.0;10.0;120.0</additional_attributes>
+  </element>
+</diagram>
