@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>144</x>
-      <y>40</y>
+      <x>184</x>
+      <y>16</y>
       <w>320</w>
-      <h>672</h>
+      <h>800</h>
     </coordinates>
     <panel_attributes>Controller::ControllerFacade
 --

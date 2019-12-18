@@ -6,8 +6,8 @@
     <coordinates>
       <x>170</x>
       <y>50</y>
-      <w>210</w>
-      <h>190</h>
+      <w>300</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>ResultAdapter::
 NeuralNetworkAdapter
