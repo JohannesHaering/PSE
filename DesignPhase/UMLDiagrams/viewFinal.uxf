@@ -332,7 +332,7 @@ ViewModule::View
 - panel : QPanel
 - guiText : English
 --
-&lt;&lt;constructor&gt;&gt; + DeviceCheckboxManager(list&lt;string&gt;, 
++ &lt;&lt;constructor&gt;&gt; DeviceCheckboxManager(list&lt;string&gt;, 
                           panel : QPanel)
 + getCheckedDevices() : string[]
 + setAvailableDevices(devices : string[]) : void

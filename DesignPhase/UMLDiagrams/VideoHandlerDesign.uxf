@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>469</x>
-      <y>644</y>
+      <y>686</y>
       <w>308</w>
       <h>77</h>
     </coordinates>
@@ -21,8 +21,8 @@
     <id>UMLClass</id>
     <coordinates>
       <x>966</x>
-      <y>462</y>
-      <w>231</w>
+      <y>504</y>
+      <w>273</w>
       <h>133</h>
     </coordinates>
     <panel_attributes>VideoHandler::CameraHandler
@@ -31,7 +31,7 @@ deviceId : int
 timeout : int
 frameInterval : int
 --
-&lt;&lt;constructor&gt;&gt; + CameraHandler(deviceId : int, timeout : int)
++ &lt;&lt;constructor&gt;&gt; CameraHandler(deviceId : int, timeout : int)
 + getNextFrame()</panel_attributes>
     <additional_attributes/>
   </element>
@@ -39,7 +39,7 @@ frameInterval : int
     <id>UMLClass</id>
     <coordinates>
       <x>966</x>
-      <y>651</y>
+      <y>693</y>
       <w>224</w>
       <h>77</h>
     </coordinates>
@@ -55,7 +55,7 @@ FrameInterval : int
     <id>UMLClass</id>
     <coordinates>
       <x>469</x>
-      <y>770</y>
+      <y>812</y>
       <w>308</w>
       <h>84</h>
     </coordinates>
@@ -65,7 +65,7 @@ VideoHandler::VideoHandler
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + VideoCutter()
++ &lt;&lt;constructor&gt;&gt; VideoCutter()
 + cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -73,7 +73,7 @@ VideoHandler::VideoHandler
     <id>UMLClass</id>
     <coordinates>
       <x>56</x>
-      <y>406</y>
+      <y>448</y>
       <w>308</w>
       <h>98</h>
     </coordinates>
@@ -92,7 +92,7 @@ VideoHandler::VideoHandler
     <id>Relation</id>
     <coordinates>
       <x>602</x>
-      <y>714</y>
+      <y>756</y>
       <w>21</w>
       <h>70</h>
     </coordinates>
@@ -103,7 +103,7 @@ VideoHandler::VideoHandler
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>658</y>
+      <y>700</y>
       <w>210</w>
       <h>56</h>
     </coordinates>
@@ -115,7 +115,7 @@ m1=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>973</x>
-      <y>840</y>
+      <y>882</y>
       <w>217</w>
       <h>56</h>
     </coordinates>
@@ -123,7 +123,7 @@ m1=1</panel_attributes>
 --
 frameInterval : int
 --
-&lt;&lt;constructor&gt;&gt; + VideoHandler(frameInterbal : int)
++ &lt;&lt;constructor&gt;&gt; VideoHandler(frameInterbal : int)
 + handleVideo(stream . VideoStream) : Image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -131,7 +131,7 @@ frameInterval : int
     <id>UMLClass</id>
     <coordinates>
       <x>56</x>
-      <y>609</y>
+      <y>651</y>
       <w>308</w>
       <h>105</h>
     </coordinates>
@@ -139,7 +139,7 @@ frameInterval : int
 --
 _- videoLibAdapter : IVideoLibAdapter 
 --
-&lt;&lt;constructor&gt;&gt; - OpenCWAdapter()
+- &lt;&lt;constructor&gt;&gt; OpenCWAdapter()
 + cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]
 + loadFrameFromCamera(cameraId : int) : Image 
 + openCamera(cameraID : int) : boolean
@@ -150,7 +150,7 @@ _ + getInstance() : OpenCWAdapter_</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>357</x>
-      <y>427</y>
+      <y>469</y>
       <w>126</w>
       <h>280</h>
     </coordinates>
@@ -162,7 +162,7 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>196</x>
-      <y>497</y>
+      <y>539</y>
       <w>21</w>
       <h>126</h>
     </coordinates>
@@ -170,25 +170,10 @@ m1=1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>966</x>
-      <y>259</y>
-      <w>231</w>
-      <h>133</h>
-    </coordinates>
-    <panel_attributes>VideoHandler::ICameraHandler
---
-
---
-/+ GetNextFrame()/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>1071</x>
-      <y>721</y>
+      <y>763</y>
       <w>21</w>
       <h>133</h>
     </coordinates>
@@ -199,7 +184,7 @@ m1=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>357</x>
-      <y>413</y>
+      <y>455</y>
       <w>623</w>
       <h>98</h>
     </coordinates>
@@ -208,21 +193,10 @@ m1=1</panel_attributes>
     <additional_attributes>10.0;10.0;670.0;10.0;670.0;120.0;870.0;120.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1057</x>
-      <y>385</y>
-      <w>21</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1239</x>
-      <y>161</y>
+      <x>1232</x>
+      <y>259</y>
       <w>168</w>
       <h>63</h>
     </coordinates>
@@ -235,8 +209,8 @@ As well as taking pictures</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1176</x>
-      <y>210</y>
+      <x>1169</x>
+      <y>308</y>
       <w>84</w>
       <h>70</h>
     </coordinates>
@@ -247,7 +221,7 @@ As well as taking pictures</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1232</x>
-      <y>602</y>
+      <y>644</y>
       <w>98</w>
       <h>49</h>
     </coordinates>
@@ -260,7 +234,7 @@ into frames</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1169</x>
-      <y>637</y>
+      <y>679</y>
       <w>84</w>
       <h>42</h>
     </coordinates>
@@ -271,7 +245,7 @@ into frames</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>728</x>
-      <y>546</y>
+      <y>588</y>
       <w>98</w>
       <h>49</h>
     </coordinates>
@@ -283,7 +257,7 @@ frames</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>728</x>
-      <y>581</y>
+      <y>623</y>
       <w>35</w>
       <h>91</h>
     </coordinates>
@@ -294,7 +268,7 @@ frames</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>301</y>
+      <y>343</y>
       <w>119</w>
       <h>49</h>
     </coordinates>
@@ -307,11 +281,37 @@ functionality</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>35</x>
-      <y>336</y>
+      <y>378</y>
       <w>63</w>
       <h>98</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>70.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1057</x>
+      <y>427</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>357</y>
+      <w>231</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::ICameraHandler
+--
+
+--
+/+ GetNextFrame()/</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

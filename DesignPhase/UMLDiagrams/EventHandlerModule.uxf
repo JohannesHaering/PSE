@@ -49,7 +49,7 @@ PrevHandler
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + PrevHandler(pager : Pager)
++ &lt;&lt;constructor&gt;&gt; PrevHandler(pager : Pager)
 + onAction() : void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -66,7 +66,7 @@ NextHandler
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + NextHandler(pager : Pager)
++ &lt;&lt;constructor&gt;&gt; NextHandler(pager : Pager)
 + onAction() : void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -265,7 +265,7 @@ InputImageHandler
 --
 - distributor : Distributor
 --
-&lt;&lt;constructor&gt;&gt; + InputImageDistributor(
++ &lt;&lt;constructor&gt;&gt; InputImageDistributor(
                           distributor : Distributor, 
                           filetypes : string[]) 
 - setInputOption(): void

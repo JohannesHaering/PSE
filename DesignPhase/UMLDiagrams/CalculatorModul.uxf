@@ -13,7 +13,7 @@
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + FPGAPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; FPGAPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -91,7 +91,7 @@
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + CPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; CPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -107,7 +107,7 @@
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + GPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; GPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -123,7 +123,7 @@
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ASICPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; ASICPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>

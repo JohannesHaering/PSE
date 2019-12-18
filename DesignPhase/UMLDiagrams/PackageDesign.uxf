@@ -702,7 +702,7 @@ I/O::Data
 --
 - data : image[]
 --
-&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ &lt;&lt;constructor&gt;&gt; MultipleimageData(data : image[])
 + getData(), image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -718,7 +718,7 @@ I/O::Data
 --
 - video : Video
 --
-&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ &lt;&lt;constructor&gt;&gt; VideoData(data : video)
 + getData(), video</panel_attributes>
     <additional_attributes/>
   </element>
@@ -734,7 +734,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ &lt;&lt;constructor&gt;&gt; MultipleStringData(data : string[])
 + getData(), string[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -750,7 +750,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ &lt;&lt;constructor&gt;&gt; StringData(data : string)
 + getData(), string
 </panel_attributes>
     <additional_attributes/>
@@ -767,7 +767,7 @@ I/O::Data
 --
 - imageData : Image
 --
-&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ &lt;&lt;constructor&gt;&gt; ImageData(data : image)
 + getData(), image</panel_attributes>
     <additional_attributes/>
   </element>
@@ -1869,7 +1869,7 @@ m1=0..n</panel_attributes>
 --
 - checkboxes : list&lt;checkbox&gt;
 --
-&lt;&lt;constructor&gt;&gt; + PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
++ &lt;&lt;constructor&gt;&gt; PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
 						distributor : InferencingDistributor)
 + setPlatform() : void
 + setPlatform(platforms : list&lt;string&gt;) . void</panel_attributes>
@@ -1898,7 +1898,7 @@ m1=0..n</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ModeCalculator()
++ &lt;&lt;constructor&gt;&gt; ModeCalculator()
 + setMode() : void
 - calculateOptimal() : list&lt;String&gt;</panel_attributes>
     <additional_attributes/>
@@ -1985,7 +1985,7 @@ InferencingDistributorDetection
 - previmagebutton : button
 - nextimagebutton : button
 --
-&lt;&lt;constructor&gt;&gt; + Pager(prevNeuralNetworkButton : button, 
++ &lt;&lt;constructor&gt;&gt; Pager(prevNeuralNetworkButton : button, 
 			nextNeuralNetworkButton : button,
 			prevImageButton : button,
 			nextImageButton : button)
@@ -2393,7 +2393,7 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ResultAdapter()
++ &lt;&lt;constructor&gt;&gt; ResultAdapter()
 + getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
 + getImageList() : list&lt;image&gt;
 + getResults() : list&lt;NeuralNetwork,image,result)
@@ -6361,7 +6361,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + FPGAPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; FPGAPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6439,7 +6439,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + CPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; CPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6455,7 +6455,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + GPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; GPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6471,7 +6471,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ASICPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; ASICPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6900,7 +6900,7 @@ I/O::Data
 --
 - data : image[]
 --
-&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ &lt;&lt;constructor&gt;&gt; MultipleimageData(data : image[])
 + getData(), image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6916,7 +6916,7 @@ I/O::Data
 --
 - video : Video
 --
-&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ &lt;&lt;constructor&gt;&gt; VideoData(data : video)
 + getData(), video</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6932,7 +6932,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ &lt;&lt;constructor&gt;&gt; MultipleStringData(data : string[])
 + getData(), string[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -6948,7 +6948,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ &lt;&lt;constructor&gt;&gt; StringData(data : string)
 + getData(), string
 </panel_attributes>
     <additional_attributes/>
@@ -6965,7 +6965,7 @@ I/O::Data
 --
 - imageData : Image
 --
-&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ &lt;&lt;constructor&gt;&gt; ImageData(data : image)
 + getData(), image</panel_attributes>
     <additional_attributes/>
   </element>
@@ -8067,7 +8067,7 @@ m1=0..n</panel_attributes>
 --
 - checkboxes : list&lt;checkbox&gt;
 --
-&lt;&lt;constructor&gt;&gt; + PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
++ &lt;&lt;constructor&gt;&gt; PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
 						distributor : InferencingDistributor)
 + setPlatform() : void
 + setPlatform(platforms : list&lt;string&gt;) . void</panel_attributes>
@@ -8096,7 +8096,7 @@ m1=0..n</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ModeCalculator()
++ &lt;&lt;constructor&gt;&gt; ModeCalculator()
 + setMode() : void
 - calculateOptimal() : list&lt;String&gt;</panel_attributes>
     <additional_attributes/>
@@ -8183,7 +8183,7 @@ InferencingDistributorDetection
 - previmagebutton : button
 - nextimagebutton : button
 --
-&lt;&lt;constructor&gt;&gt; + Pager(prevNeuralNetworkButton : button, 
++ &lt;&lt;constructor&gt;&gt; Pager(prevNeuralNetworkButton : button, 
 			nextNeuralNetworkButton : button,
 			prevImageButton : button,
 			nextImageButton : button)
@@ -8591,7 +8591,7 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ResultAdapter()
++ &lt;&lt;constructor&gt;&gt; ResultAdapter()
 + getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
 + getImageList() : list&lt;image&gt;
 + getResults() : list&lt;NeuralNetwork,image,result)
@@ -12559,7 +12559,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + FPGAPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; FPGAPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -12637,7 +12637,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + CPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; CPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -12653,7 +12653,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + GPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; GPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -12669,7 +12669,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ASICPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; ASICPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -13098,7 +13098,7 @@ I/O::Data
 --
 - data : image[]
 --
-&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ &lt;&lt;constructor&gt;&gt; MultipleimageData(data : image[])
 + getData(), image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -13114,7 +13114,7 @@ I/O::Data
 --
 - video : Video
 --
-&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ &lt;&lt;constructor&gt;&gt; VideoData(data : video)
 + getData(), video</panel_attributes>
     <additional_attributes/>
   </element>
@@ -13130,7 +13130,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ &lt;&lt;constructor&gt;&gt; MultipleStringData(data : string[])
 + getData(), string[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -13146,7 +13146,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ &lt;&lt;constructor&gt;&gt; StringData(data : string)
 + getData(), string
 </panel_attributes>
     <additional_attributes/>
@@ -13163,7 +13163,7 @@ I/O::Data
 --
 - imageData : Image
 --
-&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ &lt;&lt;constructor&gt;&gt; ImageData(data : image)
 + getData(), image</panel_attributes>
     <additional_attributes/>
   </element>
@@ -14265,7 +14265,7 @@ m1=0..n</panel_attributes>
 --
 - checkboxes : list&lt;checkbox&gt;
 --
-&lt;&lt;constructor&gt;&gt; + PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
++ &lt;&lt;constructor&gt;&gt; PlatformSetter(checkboxes : list&lt;checkbox&gt;, 
 						distributor : InferencingDistributor)
 + setPlatform() : void
 + setPlatform(platforms : list&lt;string&gt;) . void</panel_attributes>
@@ -14294,7 +14294,7 @@ m1=0..n</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ModeCalculator()
++ &lt;&lt;constructor&gt;&gt; ModeCalculator()
 + setMode() : void
 - calculateOptimal() : list&lt;String&gt;</panel_attributes>
     <additional_attributes/>
@@ -14381,7 +14381,7 @@ InferencingDistributorDetection
 - previmagebutton : button
 - nextimagebutton : button
 --
-&lt;&lt;constructor&gt;&gt; + Pager(prevNeuralNetworkButton : button, 
++ &lt;&lt;constructor&gt;&gt; Pager(prevNeuralNetworkButton : button, 
 			nextNeuralNetworkButton : button,
 			prevImageButton : button,
 			nextImageButton : button)
@@ -14789,7 +14789,7 @@ NeuralNetworkModelAdapter::NeuralNetworkAdapter
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ResultAdapter()
++ &lt;&lt;constructor&gt;&gt; ResultAdapter()
 + getNeuralNetworkList(): list&lt;NeuralNetwork&gt;
 + getImageList() : list&lt;image&gt;
 + getResults() : list&lt;NeuralNetwork,image,result)
@@ -18757,7 +18757,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + FPGAPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; FPGAPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -18835,7 +18835,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + CPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; CPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -18851,7 +18851,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + GPUPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; GPUPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>
@@ -18867,7 +18867,7 @@ from the input parsing</panel_attributes>
 --
 
 --
-&lt;&lt;constructor&gt;&gt; + ASICPerformancePredictor() 
++ &lt;&lt;constructor&gt;&gt; ASICPerformancePredictor() 
 # calculatePerformance(deviceID : string) : float</panel_attributes>
     <additional_attributes/>
   </element>

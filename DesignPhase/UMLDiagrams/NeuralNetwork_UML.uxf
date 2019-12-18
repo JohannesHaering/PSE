@@ -211,7 +211,7 @@ NeuralNetworkPkg::InceptionLayer
       <w>456</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m1=1
 m2=0..*
 &lt;&lt;list&gt;&gt;
@@ -223,7 +223,7 @@ layers</panel_attributes>
     <coordinates>
       <x>204</x>
       <y>192</y>
-      <w>102</w>
+      <w>96</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
@@ -372,7 +372,7 @@ NeuralNetworkPkg::LocalResponseNormalizationLayer
       <w>4164</w>
       <h>228</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m1=1
 m2=0..*
 &lt;&lt;list&gt;&gt;
@@ -519,7 +519,7 @@ NeuralNetworkPkg::NetworkOperations
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ConvolutionCode
-{abstract}
+
 --
 
 --
@@ -768,7 +768,7 @@ OUTPUT_STORAGE</panel_attributes>
       <w>264</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
 m1=1
 m2=10
 layer</panel_attributes>
@@ -784,7 +784,7 @@ layer</panel_attributes>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::ActivationCode
-{abstract}
+
 --
 
 --
@@ -803,7 +803,7 @@ NeuralNetworkPkg::ActivationCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::PollingCode
-{abstract}
+
 --
 
 --
@@ -822,7 +822,7 @@ NeuralNetworkPkg::PollingCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::LocalResponseNormalizationCode
-{abstract}
+
 --
 
 --
@@ -841,7 +841,7 @@ NeuralNetworkPkg::LocalResponseNormalizationCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::FlattenCode
-{abstract}
+
 --
 
 --
@@ -860,7 +860,7 @@ NeuralNetworkPkg::FlattenCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DropoutCode
-{abstract}
+
 --
 
 --
@@ -879,7 +879,7 @@ NeuralNetworkPkg::DropoutCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::CollectResultsCode
-{abstract}
+
 --
 
 --
@@ -898,7 +898,7 @@ NeuralNetworkPkg::CollectResultsCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::OutputStorageCode
-{abstract}
+
 --
 
 --
@@ -917,7 +917,7 @@ NeuralNetworkPkg::OutputStorageCode
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::InceptionCode
-{abstract}
+
 --
 
 --
@@ -1692,7 +1692,7 @@ group=1</panel_attributes>
     </coordinates>
     <panel_attributes>
 NeuralNetworkPkg::DenseCode
-{abstract}
+
 --
 
 --

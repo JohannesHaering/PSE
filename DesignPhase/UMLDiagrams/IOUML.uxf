@@ -12,13 +12,13 @@
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 I/O::FileIO
 --
-- singleton, FileIO
+_- singleton, FileIO_
 - sileStream, fileStream
 --
 - fileIO(), FileIO
-/+ readFile(filePath : string), IData/
-/+ writeFile(filePath : string, data : IData), boolean/
-+ getInstance(), IFileIO
+/+ readFile(filePath : string), Data/
+/+ writeFile(filePath : string, data : Data), bool/
+_+ getInstance(), FileIO_
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -34,8 +34,8 @@ I/O::FileIO
 --
 
 --
-+ readFile(filePath : string), IData
-+ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), Data
++ writeStream(filePath : string, data : Data) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -50,8 +50,8 @@ I/O::FileIO
 --
 
 --
-+ ReadFile(filePaths : string[]), IData
-+ WriteStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePaths : string[]), Data
++ writeStream(filePath : string, data : Data) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -77,8 +77,8 @@ I/O::FileIO
 --
 
 --
-+ readFile(filePath : string), IData
-+ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), Data
++ writeStream(filePath : string, data : Data) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -104,8 +104,8 @@ I/O::FileIO
 --
 
 --
-+ readFile(filePath : string), IData
-+ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), Data
++ writeStream(filePath : string, data : Data) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -142,8 +142,8 @@ I/O::FileIO
 --
 
 --
-+ readFile(filePath : string), IData
-+ writeStream(filePath : string, data : IData) : boolean</panel_attributes>
++ readFile(filePath : string), Data
++ writeStream(filePath : string, data : Data) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -185,7 +185,7 @@ I/O::Data
 --
 - data : image[]
 --
-&lt;&lt;constructor&gt;&gt; + MultipleimageData(data : image[])
++ &lt;&lt;constructor&gt;&gt; MultipleimageData(data : image[])
 + getData(), image[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -201,7 +201,7 @@ I/O::Data
 --
 - video : Video
 --
-&lt;&lt;constructor&gt;&gt; + VideoData(data : video)
++ &lt;&lt;constructor&gt;&gt; VideoData(data : video)
 + getData(), video</panel_attributes>
     <additional_attributes/>
   </element>
@@ -217,7 +217,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + MultipleStringData(data : string[])
++ &lt;&lt;constructor&gt;&gt; MultipleStringData(data : string[])
 + getData(), string[]</panel_attributes>
     <additional_attributes/>
   </element>
@@ -233,7 +233,7 @@ I/O::Data
 --
 - stringData : string
 --
-&lt;&lt;constructor&gt;&gt; + StringData(data : string)
++ &lt;&lt;constructor&gt;&gt; StringData(data : string)
 + getData(), string
 </panel_attributes>
     <additional_attributes/>
@@ -250,7 +250,7 @@ I/O::Data
 --
 - imageData : Image
 --
-&lt;&lt;constructor&gt;&gt; + ImageData(data : image)
++ &lt;&lt;constructor&gt;&gt; ImageData(data : image)
 + getData(), image</panel_attributes>
     <additional_attributes/>
   </element>
