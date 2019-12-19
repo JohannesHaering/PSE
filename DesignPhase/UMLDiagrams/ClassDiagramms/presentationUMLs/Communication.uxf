@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>136</y>
+      <w>544</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Communication::Channel
+{abstract}
+--
+- deviceHandler : Device
+- neuralNetworkList : list&lt;NeuralNetwork&gt;
+- imageList : list&lt;image&gt;
+--
++ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device)
++ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetwork&gt;)
++ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
+/+ sendImageList(imageList : list&lt;Image&gt;) : list&lt;Result&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>192</y>
+      <w>296</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::GPUChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>120</y>
+      <w>296</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::CPUChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>264</y>
+      <w>296</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::FPGAChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>336</y>
+      <w>296</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::ASICChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>264</y>
+      <w>480</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;100.0;580.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>264</y>
+      <w>480</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>536</y>
+      <w>416</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Communication::AbstractFactory
+{abstract}
+--
+
+--
+/+ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>576</y>
+      <w>416</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryASIC
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>432</y>
+      <w>416</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryFPGA
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>648</y>
+      <w>416</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryGPU
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>504</y>
+      <w>416</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryCPU
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>192</y>
+      <w>480</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;230.0;520.0;230.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>120</y>
+      <w>480</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;320.0;520.0;320.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>432</y>
+      <w>104</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;60.0;150.0;60.0;210.0;60.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>504</y>
+      <w>104</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;60.0;60.0;60.0;120.0;60.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>544</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;50.0;110.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>544</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;140.0;110.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>152</y>
+      <w>80</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;500.0;10.0;500.0;10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>
