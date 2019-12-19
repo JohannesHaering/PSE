@@ -1,0 +1,7502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>1</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1228</x>
+      <y>48</y>
+      <w>55</w>
+      <h>73</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ViewFacade
+--
+_- facade : ViewFacade_
+- mainMenu : MainMenu
+- inferencePage : InferencePage
+- imageClassificationControlPanel : ImageClassificationControlPanel
+- classificationResultPanel : ClassificationResultPanel
+- detectionResultPanel : DetectionResultPanel
+- topology : Topology
+- training : Training
+- detectionControlPanel : DetectionControlPanel
+--
+- ViewFacade()
+_+ getInstance() : ViewFacade_
++ nextNNEnable(flag : bool) : void
++ prevNNEnable(flag : bool) : void
++ nextImageEnable(flag : bool) : void
++ prevImageEnable(flag : bool) : void
++ saveResultNNEnable(flag : bool) : void
++ getCheckBoxesDevice() : string[]
++ getCheckBoxAppendResults() : bool
++ getShowResultsCheckBox() : bool
++ getSaveResultsCheckBox() : bool
++ getAppendResultsCheckBox() : bool
++ getNeuralNetworkPath() : string
++ getOperatingMode() : string
++ getImageAmount() : string
++ getOperatingMode() : string
++ getDevices() : string[]
++ getInputMode() : string
++ getNeuralNetworkPath() : string
++ getShowResults() : bool
++ getSaveResults() : bool
++ getImageAmount() : string
++ getInputPathes() : string[]
++ getAppendResult() : string[]
++ topolgyChanged(nn : NeuralNetwork) : void
++ newTrainingFinished(pointsArrayTest : float[], pointsArrayTraining : float[]) : void
++ getLearningRate() : float
++ getPrecision() : float
++ getName() : string
++ getLearningMode() : string
++ getPathsFromExplorer(types : string[]) : string[]
++ setPowerPrediction(amount : int) : void
++ setPerformancePrediction(amount : int) : void
++ update()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1334</x>
+      <y>154</y>
+      <w>25</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>ViewModule::MainMenu
+--
+- imageClassificationButton : QButton
+- objectDetectionButton : QButton
+- trainingButton : QButton 
+- topologyButton : QButton
+- guiText : English
+--
++ showPage() : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1520</x>
+      <y>154</y>
+      <w>30</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>ViewModule::Topology
+--
+- chooseTopologyButton : QButton
+- saveVisualisationButton : QButton
+- currentTopology : Image
+- topologyLabel : QLabel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; Topology()
++ update() : void
++ showPage() : void
++ topolgyChanged(nn : NeuralNetwork) : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1390</x>
+      <y>47</y>
+      <w>21</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>ViewModule::View
+{abstract}
+--
+- panel : Panel
+--
+/+ setController() : void/
+/+ showPage() : void/
++ pageActive(flag : bool) : void
+/+ pageSet() : void/
+/+ update()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1376</x>
+      <y>154</y>
+      <w>36</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>ViewModule::InferencePage
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; InferencePage()
++ getOperatingMode() : string
++ getDevices() : string[]
++ getInputMode() : string
++ getNeuralNetworkPath() : string
++ getShowResults() : bool
++ getSaveResults() : bool
++ getImageAmount() : string
++ getInputPathes() : string[]
++ getAppendResult() : string[]
++ setPowerPrediction(amount : int) : void
++ setPerformancePrediction(amount : int) : void
++ showPage() : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1348</x>
+      <y>64</y>
+      <w>54</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>520.0;10.0;520.0;610.0;10.0;610.0;10.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>138</y>
+      <w>49</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>470.0;10.0;470.0;50.0;10.0;50.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1438</x>
+      <y>138</y>
+      <w>95</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;930.0;50.0;930.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1363</x>
+      <y>231</y>
+      <w>3</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1346</x>
+      <y>188</y>
+      <w>36</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ClassificationResultPanel
+--
+- currentImage : Image
+- currentResult : Image
+- imageLabel : QLabel
+- resultLabel : QLabel
+- nextNNButton : QButton
+- prevNNButton : QButton
+- nextImgButton : QButton 
+- prevImgButton : QButton
+- saveResultButton : QButton
+- imageNameLabel : QLabel
+- neuralNetwrokNameLabel : QLabel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; ClassificationResultPanel()
++ update() : void
+- displayImage(img : Image) : void 
+- displayResult(img : Image) : void
+# resultsChanged(nnName: string, imgName : string, 
+                            image : Image, result: Result) : void
++ nextNNEnable(flag : bool) : void
++ prevNNEnable(flag : bool) : void
++ nextImageEnable(flag : bool) : void
++ prevImageEnable(flag : bool) : void
++ saveResultEnable(flag : bool) : void
++ pageSet() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1346</x>
+      <y>251</y>
+      <w>36</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DetectionResultPanel
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DetectionResultPanel()
+# resultsChanged(image : Image, result: Result) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1385</x>
+      <y>237</y>
+      <w>43</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DetectionControlPanel
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ClassifictaionControlPanel() </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1405</x>
+      <y>236</y>
+      <w>3</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1428</x>
+      <y>129</y>
+      <w>31</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ContentView
+--
+
+--
+# getPathsFromExplorer(types : string[]) : string[]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1399</x>
+      <y>64</y>
+      <w>42</w>
+      <h>67</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;610.0;400.0;610.0;400.0;650.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1366</x>
+      <y>157</y>
+      <w>42</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>400.0;310.0;400.0;290.0;10.0;290.0;10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1363</x>
+      <y>156</y>
+      <w>15</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1459</x>
+      <y>177</y>
+      <w>60</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>ViewModule::Training
+--
+- textFieldLearningRate : QLineEdit
+- textFieldPrecision : QLineEdit
+- textFieldName : QLineEdit
+- chooseNeuralNetworkButton : QButton
+- chooseDatasetButton : QButton
+- trainButton : QButton
+- learningProgessLabel : QLabel
+- currentGraphic : Image
+- learningComboBox : QComboBox
+- guiText : English
+--
++ update() : void
++ showPage() : void
++ newTrainingFinished(pointsArrayTest : float[], pointsArrayTraining : float[]) : void
++ getLearningRate() : float
++ getPrecision() : float
++ getName() : string
++ getLearningMode() : string
+- displayGraphic(img : Image) : void
++ pageSet() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1438</x>
+      <y>138</y>
+      <w>44</w>
+      <h>41</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;420.0;50.0;420.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1459</x>
+      <y>218</y>
+      <w>36</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>ViewModule::DeviceCheckBoxManager
+--
+- devicelist : list&lt;string&gt;
+- checkBoxes : list&lt;QCheckBox&gt;
+- panel : QPanel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; DeviceCheckboxManager(list&lt;string&gt;, 
+                          panel : QPanel)
++ getCheckedDevices() : string[]
++ setAvailableDevices(devices : string[]) : void
++ showPage() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1427</x>
+      <y>199</y>
+      <w>34</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+deviceCheckBoxManager</panel_attributes>
+    <additional_attributes>320.0;200.0;120.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1385</x>
+      <y>188</y>
+      <w>43</w>
+      <h>47</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ImageClassificationControlPanel
+--
+- showResultsCheckBox : QCheckBox
+- saveResultsCheckBox : QCheckBox
+- appendResultsCheckBox : QCheckBox
+- chooseNeuralNetwork : QButton
+- startImageClass : QButton
+- addImageButton : QButton
+- inputModeComboBox : QComboBox
+- operatingModeComboBox : QComboBox
+- powerPrediction : float
+- performancePrediction : float
+- panelCheckBox : QPanel
+- predictionText : QPanel
+- guiText : English
+--
++ &lt;&lt;constructor&gt;&gt; ImageClassificationControlPanel() 
++ showPage() : void
++ getCheckBoxesDevice() : string[]
++ getCheckBoxAppendResults() : bool
++ getShowResultsCheckBox() : bool
++ getSaveResultsCheckBox() : bool
++ getAppendResultsCheckBox() : bool
++ getNeuralNetworkPath() : string
++ getOperatingMode() : string
++ getInputMode() : string
++ setPowerPrediction(amount : float) : void
++ setPerformancePrediction(amount : float) : void
++ pageSet() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>58</y>
+      <w>66</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>640.0;960.0;640.0;880.0;460.0;880.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1471</x>
+      <y>40</y>
+      <w>38</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>ViewModule::GUIText
+{abstract}
+--
+- inputMode : string[]
+- showResults : string
+- saveResults : string
+- chooseNeuralNetwork : string
+- operatingMode : string[]
+- appendResults : string
+- startImageClass : string
+- imageName : string
+- neuralNetworkName : string
+- previousImage : string
+- nextImage : string
+- previousNN : string
+- nextNN : string
+- saveResult : string
+- chooseDataset : string
+- learningMode : string[]
+- learningRate : string
+- precision : string
+- nameTraining : string
+- train : string
+- learning progress : string 
+- testAccuracy : string
+- trainingsAccuracy : string
+- chooseTopology : string
+- saveVisualisation : string
+- powerPrediction : string
+- powerPredictionUnit : string
+- performancePrediction : string
+- performancePredictionUnit : string
+--
+/- getShowResults() : string/
+/- getSaveResults() : string/
+/- getChooseNeuralNetwork() : string/
+/- getOperatingMode() : string[]/
+/- getAppendResults() : string/
+/- getStartImageClass() : string/
+/- getImageName() : string/
+/- getNeuralNetworkName() : string/
+/- getPreviousImage() : string/
+/- getNextImage() : string/
+/- getPreviousNN() : string/
+/- getNextNN() : string/
+/- getSaveResult() : string/
+/- getChooseDataset() : string/
+/- getLearningMode() : string[]/
+/- getLearningRate() : string/
+/- getPrecision() : string/
+/- getNameTraining() : string/
+/- getTrain() : string/
+/- getLearning() progress : string /
+/- getTestAccuracy() : string/
+/- getTrainingsAccuracy() : string/
+/- getChooseTopology() : string/
+/- getSaveVisualisation() : string/
+/- getPerformancePrediction : string/
+/- getPerformancePredictionUnit : string/
+/- getPowerPrediction() : string/
+/- getPowerPredictionUnit() : string/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1520</x>
+      <y>53</y>
+      <w>29</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>ViewModule::GUITextEnglish
+--
+
+--
+- getShowResults() : string
+- getSaveResults() : string
+- getChooseNeuralNetwork() : string
+- getOperatingMode() : string[]
+- getAppendResults() : string
+- getStartImageClass() : string
+- getImageName() : string
+- getNeuralNetworkName() : string
+- getPreviousImage() : string
+- getNextImage() : string
+- getPreviousNN() : string
+- getNextNN() : string
+- getSaveResult() : string
+- getChooseDataset() : string
+- getLearningMode() : string[]
+- getLearningRate() : string
+- getPrecision() : string
+- getNameTraining() : string
+- getTrain() : string
+- getLearning() progress : string 
+- getTestAccuracy() : string
+- getTrainingsAccuracy() : string
+- getChooseTopology() : string
+- getSaveVisualisation() : string
+- getPerformancePrediction : string
+- getPerformancePredictionUnit : string
+- getPowerPrediction() : string
+- getPowerPredictionUnit() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1488</x>
+      <y>48</y>
+      <w>48</w>
+      <h>93</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;880.0;10.0;910.0;260.0;910.0;250.0;10.0;460.0;10.0;460.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>41</y>
+      <w>63</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>610.0;10.0;140.0;10.0;140.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>58</y>
+      <w>109</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1070.0;960.0;1070.0;880.0;460.0;880.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1421</x>
+      <y>154</y>
+      <w>36</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>ViewModule::ObejctDetectionInferencePage
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ObjectDetectionInferencePage()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1388</x>
+      <y>150</y>
+      <w>47</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;310.0;10.0;340.0;270.0;340.0;270.0;10.0;450.0;10.0;450.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1416</x>
+      <y>156</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;820.0;160.0;820.0;160.0;300.0;10.0;300.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1381</x>
+      <y>157</y>
+      <w>54</w>
+      <h>97</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;950.0;520.0;950.0;520.0;270.0;370.0;270.0;370.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>58</y>
+      <w>159</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1570.0;960.0;1570.0;880.0;460.0;880.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>58</y>
+      <w>211</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>2090.0;1190.0;2090.0;880.0;460.0;880.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>58</y>
+      <w>257</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>2550.0;960.0;2550.0;880.0;460.0;880.0;460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>41</y>
+      <w>85</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>RendererModule::Renderer
+{abstract}
+--
+- resultImage : Image
+--
+/+ drawGraphic() : E/
+# drawRectangle(img : Image, x : double, y : double, width : double, height : double, fillingColor : string, strokeColor : string) : Image
+# drawText(img : Image, text : string, , x : double, y : double, width : double, height : double) : Image
+# drawLine(img : Image, x : double, y : double, fillingColor : string, strokeColor : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1591</x>
+      <y>99</y>
+      <w>56</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DetectionResultRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DetectionResultRenderer()
++ drawGraphic(result : DetectionResult) : Image
+- combineBoundingBoxProbabilities(boundingBoxes : BoundingBox[]) : Probability[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1651</x>
+      <y>99</y>
+      <w>51</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ChartRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ChartRenderer()
++ drawGraphic(pointsArrayTest : float[], pointsArrayTraining : float[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1591</x>
+      <y>73</y>
+      <w>35</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>RendererModule::ClassificationResultRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ClassificationResultRenderer()
++ drawGraphic(result : Result) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1607</x>
+      <y>59</y>
+      <w>21</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;190.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1625</x>
+      <y>59</y>
+      <w>46</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;330.0;90.0;70.0;90.0;70.0;370.0;440.0;370.0;440.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1679</x>
+      <y>73</y>
+      <w>37</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>RendererModule::TopologyRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; TopologyRenderer()
++ drawGraphic(neuralNetwork : NeuralNetwork) : Image
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1625</x>
+      <y>59</y>
+      <w>73</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;710.0;90.0;710.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1642</x>
+      <y>74</y>
+      <w>34</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>RendererModule::DiagramRenderer
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DiagramRenderer()
++ drawGraphic(probabilities : Probability[]) : Image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1625</x>
+      <y>59</y>
+      <w>37</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;350.0;90.0;350.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1614</x>
+      <y>59</y>
+      <w>20</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;90.0;180.0;90.0;180.0;370.0;10.0;370.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1572</x>
+      <y>43</y>
+      <w>20</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+    <additional_attributes>10.0;1120.0;10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1518</x>
+      <y>154</y>
+      <w>57</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+chartRenderer</panel_attributes>
+    <additional_attributes>10.0;300.0;550.0;300.0;550.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1381</x>
+      <y>183</y>
+      <w>194</w>
+      <h>73</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+renderer</panel_attributes>
+    <additional_attributes>10.0;710.0;1920.0;710.0;1920.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1323</x>
+      <y>198</y>
+      <w>252</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+renderer</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0;10.0;900.0;2500.0;900.0;2500.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1549</x>
+      <y>156</y>
+      <w>26</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+topologyRenderer</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1350</x>
+      <y>365</y>
+      <w>45</w>
+      <h>113</h>
+    </coordinates>
+    <panel_attributes>ControllerFacade::ControllerFacade
+--
+_- facade : ControllerFacade_
+
+- classificationDistributor : InferencingDistributorClassification
+- saveResultHandlerClassification : SaveResultHandler
+- inputHandlerClassification : InputImageHandler
+- neuralNetworkHandlerClassification : NeuralNetworkHandler
+- startHandlerClassification : StartHandler
+- neuralNetworkNextPagerClassification : PagerHandler
+- neuralNetworkPrevPagerClassification : PagerHandler
+- imageNextPagerClassification : PagerHandler
+- imagePrevPagerClassification : PagerHandler
+- newResultHandlerClassification : NewResultHandler
+- predictionHandlerClassification : PredictionHandler
+
+- detectionDistributor : InferencingDistributorDetection
+- saveResultHandlerDetection : SaveResultHandler
+- inputHandlerDetection : InputImageHandler
+- neuralNetworkHandlerDetection : NeuralNetworkHandler
+- startHandlerDetection : StartHandler
+- neuralNetworkNextPagerDetection : PagerHandler
+- neuralNetworkPrevPagerDetection : PagerHandler
+- imageNextPagerDetection : PagerHandler
+- imagePrevPagerDetection : PagerHandler
+- newResultHandlerDetection : NewResultHandler
+- predictionHandlerDetection : PredictionHandler
+
+- trainingDistributor : TrainingDistributor
+- inputHandlerTraining : InputImageHandler
+- neuralNetworkHandlerTraining : NeuralNetworkHandler
+- startHandlerTraining : StartHandler
+- trainstepHandlerTraining : TrainStepHandler
+
+- topologyDistributor : TopologyDistributor
+- neuralNetworkHandlerTopology : NeuralNetworkHandler
+- startHandlerTopology : StartHandler
+--
+_+ getInstance() : ControllerFacade_
+- &lt;&lt;constructor&gt;&gt; ControllerFacade()
+
++ startProcessClassification() :void
++ saveResultsClassification() : void
++ nextNeuralNetworkClassification() : void
++ prevNeuralNetworkClassification() : void
++ nextImageClassification() : void
++ prevImageClassification() : void
++ getImageInputClassification() : void
++ getNeuralNetworkInputClassification() : void
++ newResultClassification() : void
++ newPredictionClassification() : void
+
++ startProcessDetection() : void
++ saveResultsDetection() : void
++ nextNeuralNetworkDetection() : void
++ prevNeuralNetworkDetection() : void
++ nextImageDetection() : void
++ prevImageDetection() : void
++ getImageInputDetection() : void
++ getNeuralNetworkInputDetection() : void
++ newResultDetection() : void
++ newPredictionDetection() : void
+
++ startProcessTest() :void
++ getImageInputTraining() : void
++ getNeuralNetworkInputTraining() : void
++ newTrainStep(trainingAccuracy : float[], testAccuray : float[]) : void
+
++ startProcessTopology() : void
++ getNeuralNetworkInputTopology() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1363</x>
+      <y>570</y>
+      <w>25</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::StartHandler
+
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; StartHandler(
+                         distributor : Inferencer)
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1329</x>
+      <y>522</y>
+      <w>23</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+PagerHandler
+{abstract}
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1309</x>
+      <y>542</y>
+      <w>29</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+PrevHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; PrevHandler(pager : Pager)
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1341</x>
+      <y>542</y>
+      <w>28</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NextHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NextHandler(pager : Pager)
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1319</x>
+      <y>531</y>
+      <w>23</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;210.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1339</x>
+      <y>531</y>
+      <w>19</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;170.0;50.0;170.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1323</x>
+      <y>570</y>
+      <w>34</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+SaveResultHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; SaveResultHandler(
+                          distributor : InferencingDistributor,
+                          neuralNetworkPager : NeuralNetworkPager
+                          imagePager : ImagePager )
++ onAction() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1386</x>
+      <y>522</y>
+      <w>29</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+FileExplorerHandler
+{abstract}
+--
+
+- filetypes : string[]
+--
++ onAction() : void
+/- fetchDirectory(): Directory[]/
+/- sendDirectory(directories : Directory[]): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1384</x>
+      <y>537</y>
+      <w>15</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1361</x>
+      <y>505</y>
+      <w>21</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+EventHandler
+{abstract}
+--
+
+--
+/+ onAction() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>514</y>
+      <w>30</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;280.0;50.0;280.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1339</x>
+      <y>514</y>
+      <w>34</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1340</x>
+      <y>514</y>
+      <w>33</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;310.0;510.0;10.0;510.0;10.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>514</y>
+      <w>6</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0;40.0;510.0;40.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1416</x>
+      <y>542</y>
+      <w>29</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NeuralNetworkHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkHandler(
+                                 distributor : Distributor,
+                                 filetypes : string[])
+- sendDirectory(directories : string[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1396</x>
+      <y>537</y>
+      <w>37</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;350.0;30.0;350.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1325</x>
+      <y>505</y>
+      <w>21</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+MainHandler
+--
+
+--
++ main(String[] args) : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1373</x>
+      <y>542</y>
+      <w>32</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+InputImageHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; InputImageDistributor(
+                          distributor : Distributor, 
+                          filetypes : string[]) 
+- setInputOption(): void
+- sendDirectory(directories : Directory[]) : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1392</x>
+      <y>505</y>
+      <w>37</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+NewTrainStepHandler
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NewTrainStepHandler()
++ newAccuracyPoints(training : float[], test : float[]) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1323</x>
+      <y>595</y>
+      <w>34</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::NewResultsHandler
+
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; StartHandler(
+                         distributor : Inferencer)
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1304</x>
+      <y>544</y>
+      <w>21</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;310.0;190.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>544</y>
+      <w>23</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;190.0;10.0;190.0;200.0;10.0;200.0;10.0;310.0;30.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1340</x>
+      <y>591</y>
+      <w>3</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1398</x>
+      <y>570</y>
+      <w>25</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule::
+PredictionHandler
+--
+- dispatcher : DispatcherManager
+--
++ &lt;&lt;constructor&gt;&gt; PredictionHandler()
++ onAction() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>514</y>
+      <w>43</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0;320.0;510.0;410.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1334</x>
+      <y>397</y>
+      <w>39</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0;10.0;900.0;370.0;900.0;370.0;1080.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1334</x>
+      <y>486</y>
+      <w>3</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>486</y>
+      <w>46</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>440.0;190.0;440.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1525</x>
+      <y>599</y>
+      <w>62</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>Inferencing::InferencingDistributor
+{abstract}
+--
+- imagedir : string[]
+--
++ addNeuralNetwork(nn : NeuralNetworkAdapter) : void
++ addNeuralNetwork(nn : NeuralNetworkAdapter[]): void
+- removeNeuralNetwork(name : String): void 
++ setInput(directorys : Directory[]): void
++ getAmountNeuralNetworks() : int
++ getAmountImages() : int
++ startProcess(): void
++ getPlatformSettings() : PlatformSetting
++ setOutputSettings(platformSetting : PlatformSetting): void
++ getOutputSettings() : OutputSetting
++ saveResult(nn_id : int, input_id : int, path : string): void
++ getResult(nn_id : int, input_id : int): Result
++ drawResult(nn_id : int, input_id : int): void
+/# drawResult(result : Result) : void /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1529</x>
+      <y>530</y>
+      <w>51</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>Inferencing::NeuralNetworkSetter
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkSetter(distributor : InterferencingDistributor, 
+    parser : NeuralNetworkParser)
++ setNeuralNetwork(directory : string[]): void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1579</x>
+      <y>536</y>
+      <w>7</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1521</x>
+      <y>642</y>
+      <w>33</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+InferencingDistributorClassification
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorClassification(
+                       viewFacade : ViewFacade)                  
+# drawResult(result : Result) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1557</x>
+      <y>642</y>
+      <w>32</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+InferencingDistributorDetection
+--
+- boxthreshold : int
+--
++ &lt;&lt;constructor&gt;&gt; InferencingDistributorDetection(
+                       viewFacade : ViewFacade)
+# drawResult(result : Result) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1533</x>
+      <y>636</y>
+      <w>24</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1554</x>
+      <y>636</y>
+      <w>18</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;160.0;40.0;160.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1474</x>
+      <y>561</y>
+      <w>53</w>
+      <h>41</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>510.0;390.0;10.0;390.0;10.0;10.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1597</x>
+      <y>599</y>
+      <w>35</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Inferencing::PlatformSetting
+--
+- hardwarelist : List&lt;String&gt;
+--
++ &lt;&lt;constructor&gt;&gt; PlatformSetting(List&lt;String&gt;) 
++ getHardwareList() : List&lt;String&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1597</x>
+      <y>613</y>
+      <w>35</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>Inferencing::OutputSetting
+--
+- showResults : bool
+- saveResults : bool
+--
++ &lt;&lt;constructor&gt;&gt; OutputSetting(showresults : bool,
+    saveresults : bool)
++ showResultsEnabled() : bool
++ saveResultsEnabled() : bool </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1586</x>
+      <y>607</y>
+      <w>13</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>110.0;90.0;80.0;90.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1586</x>
+      <y>601</y>
+      <w>13</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>110.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1507</x>
+      <y>550</y>
+      <w>21</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>Inferencing::Pager
+{abstract}
+--
+- currentPage : int
+- maxPage : int 
+--
++ reset(maxPage : int)
+/+ next()/
+/+ prev()/
+/- disable()/
++ getCurrentPage() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1594</x>
+      <y>580</y>
+      <w>43</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+TrainingDistributor
+--
+- neuralnetwork : NeuralNetworkAdapter
+- input : string[]
+--
++ &lt;&lt;constructor&gt;&gt; TrainingDistributor(view : ViewFacade)
++ addNeuralNetwork(neuralNetwork : NeuralNetworkAdapter) : void
++ setInput(directories : string[]) : void
++ startProcess() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1556</x>
+      <y>558</y>
+      <w>43</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+Distributor
+{abstract}
+--
+
+--
+/+ setInput(directories : string[]) : void /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1555</x>
+      <y>571</y>
+      <w>24</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1576</x>
+      <y>571</y>
+      <w>41</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;390.0;40.0;390.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1584</x>
+      <y>534</y>
+      <w>43</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+Inferencer
+{abstract}
+--
+
+--
+/+ addNeuralNetwork(neuralNetwork : NeuralNetworkAdapter) : void/
+/+ startProcess() : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1616</x>
+      <y>558</y>
+      <w>43</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Inferencing::
+TopologyInferencer
+--
+- neuralnetwork : NeuralNetworkAdapter
+--
++ &lt;&lt;constructor&gt;&gt; TopologyInferencer(view : ViewFacade)
++ addNeuralNetwork(neuralNetwork : NeuralNetworkAdaper) : void
++ startProcess() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1576</x>
+      <y>547</y>
+      <w>32</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>300.0;10.0;300.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1605</x>
+      <y>547</y>
+      <w>34</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;320.0;60.0;320.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1477</x>
+      <y>575</y>
+      <w>33</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>Inferencing::NeuralNetworkPager
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkPager(maxPage : int,
+                            view : ViewFacade)
++ setImagePager(pager : ImagePager)
++ next() : void
++ prev() : void
+- disable()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1493</x>
+      <y>569</y>
+      <w>22</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1514</x>
+      <y>575</y>
+      <w>40</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>Inferencing::ImagePager
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetworkPager(maxPage : int,
+                            view : ViewFacade)
++ setNeuralNetworkPager(pager : NeuralNetworkPager) : void
++ next() : void
++ prev() : void
+- disable() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>569</y>
+      <w>21</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;190.0;40.0;190.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1509</x>
+      <y>578</y>
+      <w>7</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1509</x>
+      <y>577</y>
+      <w>7</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1444</x>
+      <y>530</y>
+      <w>87</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=neuralNetworkSetter</panel_attributes>
+    <additional_attributes>10.0;170.0;90.0;170.0;90.0;10.0;850.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>545</y>
+      <w>154</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=distributor</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0;70.0;200.0;510.0;200.0;740.0;10.0;1320.0;10.0;1520.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1356</x>
+      <y>545</y>
+      <w>124</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+distributor</panel_attributes>
+    <additional_attributes>10.0;300.0;50.0;300.0;50.0;600.0;510.0;600.0;1220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1387</x>
+      <y>537</y>
+      <w>281</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=distributor</panel_attributes>
+    <additional_attributes>10.0;380.0;50.0;380.0;50.0;1290.0;2790.0;1310.0;2780.0;10.0;2400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1291</x>
+      <y>528</y>
+      <w>218</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=pager</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;10.0;20.0;900.0;1110.0;900.0;1860.0;240.0;2160.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1712</x>
+      <y>567</y>
+      <w>45</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::DispatchManager
+--
+_- dispatcher : DispatchManager_
+--
+- &lt;&lt;Constructor&gt;&gt; DispatchManager()
+_+ getInstance() : DispatchManager_
++ setMode(operatingMode : Mode) : void
++ getMode() : Mode
++ getModeList() : list&lt;Mode&gt;
++ setNeuralNetworkList(list&lt;NeuralNetwork&gt; : void
++ getNeuralNetworkList() : list&lt;NeuralNetwork&gt;
++ dispatchImages(imageList : list&lt;Image&gt;) : Resultmanager
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1741</x>
+      <y>538</y>
+      <w>53</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::Mode
+{abstract}
+--
+- modeName: string
+--
++ &lt;&lt;constructor&gt;&gt; Mode()
++ getModeName() : string
++ setAllowedDeviceList(deviceList : list&lt;Device&gt;) : void
++ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
++ setImageList(imageList : list&lt;image&gt;) : void
++ getImageDistribution() : list&lt;Device, list&lt;NeuralNetwork&gt;, list&lt;image&gt;) 
+/# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1764</x>
+      <y>590</y>
+      <w>26</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::Device
+{abstract}
+--
+# name : string
+# type : string
+# ram : long
+# performance : float
+# power : float
+--
++ &lt;&lt;constructor&gt;&gt; Device()
++ getType() : string
++ getName() : string
++ getRAM() : long
++ getPerformance() : float
++ getPower() : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1801</x>
+      <y>549</y>
+      <w>53</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::HighPerformanceMode
+--
+- modeName : string
+--
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1801</x>
+      <y>559</y>
+      <w>53</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::HighEfficiencyMode
+--
+- modeName : string
+--
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1801</x>
+      <y>568</y>
+      <w>53</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::LowPowerMode
+--
+- modeName : string
+--
+# calculate(deviceList : list&lt;Device&gt;, imgAmount : int) : (float, float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1805</x>
+      <y>621</y>
+      <w>29</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::FPGADevice
+--
+# name : string
+# type : string
+# ram : long
+# performance : float
+# power : float
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1773</x>
+      <y>621</y>
+      <w>29</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::ASICDevice
+--
+# name : string
+# type : string
+# ram : long
+# performance : float
+# power : float
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1741</x>
+      <y>621</y>
+      <w>30</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::CPUDevice
+--
+# name : string
+# type : string
+# ram : long
+# performance : float
+# power : float
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1712</x>
+      <y>621</y>
+      <w>28</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Dispatcher::GPUDevice
+--
+# name : string
+# type : string
+# ram : long
+# performance : float
+# power : float
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1754</x>
+      <y>558</y>
+      <w>49</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;30.0;470.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1754</x>
+      <y>558</y>
+      <w>49</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;420.0;70.0;420.0;120.0;470.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1754</x>
+      <y>551</y>
+      <w>49</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;140.0;420.0;140.0;420.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1729</x>
+      <y>612</y>
+      <w>44</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;40.0;10.0;40.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1759</x>
+      <y>612</y>
+      <w>14</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1770</x>
+      <y>612</y>
+      <w>51</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;490.0;40.0;490.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1770</x>
+      <y>612</y>
+      <w>15</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1701</x>
+      <y>542</y>
+      <w>65</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=deviceList
+m2=0..*</panel_attributes>
+    <additional_attributes>400.0;10.0;10.0;10.0;10.0;510.0;630.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1756</x>
+      <y>572</y>
+      <w>11</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=deviceList
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;190.0;80.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1706</x>
+      <y>544</y>
+      <w>37</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=mode</panel_attributes>
+    <additional_attributes>60.0;270.0;30.0;270.0;30.0;10.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1586</x>
+      <y>575</y>
+      <w>128</w>
+      <h>62</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1dispatcher</panel_attributes>
+    <additional_attributes>10.0;350.0;60.0;350.0;60.0;600.0;860.0;600.0;860.0;10.0;1260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1954</x>
+      <y>591</y>
+      <w>37</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::GPUChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1954</x>
+      <y>582</y>
+      <w>37</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::CPUChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1954</x>
+      <y>600</y>
+      <w>37</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::FPGAChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1954</x>
+      <y>609</y>
+      <w>37</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::ASICChannel
+--
+
+--
++ sendImageList(imageList : list&lt;image&gt;) : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1940</x>
+      <y>639</y>
+      <w>52</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryASIC
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1940</x>
+      <y>621</y>
+      <w>52</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryFPGA
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1940</x>
+      <y>648</y>
+      <w>52</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryGPU
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1940</x>
+      <y>630</y>
+      <w>52</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Communication::ConcreteFactoryCPU
+--
+
+--
++ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1878</x>
+      <y>584</y>
+      <w>68</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>Communication::Channel
+{abstract}
+--
+- imageList : list&lt;image&gt;
+--
++ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device)
++ &lt;&lt;Constructor&gt;&gt; Channel(connectedDevice : Device, neuralNetworkList : list&lt;NeuralNetwork&gt;)
++ setNeuralNetworkList(neuralNetworkList : list&lt;NeuralNetwork&gt;) : void
+/+ sendImageList(imageList : list&lt;Image&gt;) : list&lt;Result&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1896</x>
+      <y>600</y>
+      <w>60</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;100.0;580.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1896</x>
+      <y>600</y>
+      <w>60</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;520.0;140.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1878</x>
+      <y>634</y>
+      <w>52</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Communication::AbstractFactory
+{abstract}
+--
+
+--
+/+ getOpenclCode(networkDescription : NeuralNetwork) : DeviceNetwork/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1896</x>
+      <y>591</y>
+      <w>60</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;230.0;520.0;230.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1896</x>
+      <y>582</y>
+      <w>60</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;320.0;520.0;320.0;520.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1929</x>
+      <y>621</y>
+      <w>13</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;60.0;150.0;60.0;210.0;60.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1929</x>
+      <y>630</y>
+      <w>13</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;60.0;60.0;60.0;120.0;60.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1929</x>
+      <y>635</y>
+      <w>13</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;50.0;110.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1929</x>
+      <y>635</y>
+      <w>13</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;140.0;110.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1870</x>
+      <y>594</y>
+      <w>10</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;420.0;10.0;420.0;10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1756</x>
+      <y>570</y>
+      <w>124</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=deviceChannelMap</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;160.0;1220.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1789</x>
+      <y>591</y>
+      <w>91</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=deviceHandler</panel_attributes>
+    <additional_attributes>890.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1719</x>
+      <y>733</y>
+      <w>31</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Prediction::FPGAPerformancePredictor
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; FPGAPerformancePredictor() 
+# calculatePerformance(deviceID : string) : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1719</x>
+      <y>704</y>
+      <w>31</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Prediction::SinglePerformancePredictor
+{abstract}
+--
+
+--
++ predict(deviceID : string): float
+/# openCommunication(deviceID : string) : bool/
+/# calculatePerformance(deviceID : string) : float/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1730</x>
+      <y>722</y>
+      <w>3</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1823</x>
+      <y>697</y>
+      <w>28</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Prediction::PerformancePredictorFromFile
+--
+- path : string
+--
++ predict(ids : string[]): map&lt;string, float&gt;
+- loadFromFile() : string[]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1774</x>
+      <y>672</y>
+      <w>28</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Prediction::Predictor
+{abstract}
+--
+
+--
+/+ predict(ids : string[]): map&lt;string, float&gt;/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1753</x>
+      <y>733</y>
+      <w>31</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Prediction::CPUPerformancePredictor
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; CPUPerformancePredictor() 
+# calculatePerformance(deviceID : string) : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1786</x>
+      <y>733</y>
+      <w>31</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Prediction::GPUPerformancePredictor
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; GPUPerformancePredictor() 
+# calculatePerformance(deviceID : string) : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1819</x>
+      <y>733</y>
+      <w>31</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>Prediction::ASICPerformancePredictor
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ASICPerformancePredictor() 
+# calculatePerformance(deviceID : string) : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1730</x>
+      <y>722</y>
+      <w>42</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;400.0;50.0;400.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1730</x>
+      <y>722</y>
+      <w>72</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;700.0;50.0;700.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1730</x>
+      <y>722</y>
+      <w>107</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;1050.0;50.0;1050.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1699</x>
+      <y>691</y>
+      <w>19</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Predict for a single device 
+performance
+Uses a prototype function</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1715</x>
+      <y>695</y>
+      <w>7</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1793</x>
+      <y>697</y>
+      <w>28</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Prediction::PowerPredictorFromFile
+--
+- path : string
+--
++ predict(ids : string[]): map&lt;string, float&gt;
+- loadFromFile() : string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1822</x>
+      <y>715</y>
+      <w>28</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Prediction::CurrentPerformancePredictor
+--
+
+--
++ predict(): map&lt;string, float&gt;
+- updateFile(valuePairs : map&lt;string, float&gt;) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1786</x>
+      <y>680</y>
+      <w>22</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;200.0;100.0;200.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1786</x>
+      <y>680</y>
+      <w>53</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;510.0;100.0;510.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1749</x>
+      <y>706</y>
+      <w>75</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0;200.0;120.0;730.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1804</x>
+      <y>660</y>
+      <w>19</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Is responsible to provide
+the predicted hardware data
+for each device</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1798</x>
+      <y>665</y>
+      <w>15</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1836</x>
+      <y>705</y>
+      <w>3</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1849</x>
+      <y>699</y>
+      <w>11</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;190.0;90.0;190.0;90.0;10.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1789</x>
+      <y>597</y>
+      <w>65</w>
+      <h>79</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=performancePredictor, powerPredictor</panel_attributes>
+    <additional_attributes>10.0;10.0;630.0;10.0;630.0;770.0;130.0;770.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1377</x>
+      <y>808</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Training::CompleteNewTrainer
+--
+
+--
+- initLayersRandomly() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1293</x>
+      <y>721</y>
+      <w>52</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Training::Trainer
+{abstract}
+--
+- learningRate : float
+- desiredPrecision : float
+- testAccuracyPerEpoch : list&lt;float&gt;
+- trainingsAccuracyPerEpoch : list&lt;float&gt;
+- dataSet : list&lt;TrainingData&gt;
+--
++ &lt;&lt;constructor&gt;&gt; Trainer(controlFacade : ControlFacade, 
+              toTrain : NeuralNetworkAdapter, 
+              desiredPrecision : float, dataDirectory : string)
++ startTraining() : void
+- getNewTestAccuracy() : void
+- getNewTrainingsAccuracy() : void
+- isFinished() : void
+- saveNewNeuralNetwork() : void
+- adaptOutputLayer() : void
+- loadDataSet(path : string) : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1381</x>
+      <y>779</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Training::CompleteTrainer
+--
+
+--
+# backpropagate() : NeuralNetworkAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1349</x>
+      <y>779</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Training::TransferLearningTrainer
+--
+
+--
+# backpropagate() : NeuralNetworkAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1401</x>
+      <y>709</y>
+      <w>64</w>
+      <h>29</h>
+    </coordinates>
+    <panel_attributes>Training::TrainingMethods
+{abstract}
+--
+currentTestAccuracy : float
+currentTrainingsAccuracy : float
+--
++ &lt;&lt;constructor&gt;&gt; TraingsMethods(dataSet : list&lt;TrainingData&gt;)
+/+ newEpoch() : NeuralNetworkAdapter/
+- divideIntoSets() : void
+# excecuteNeuralNetwork(toExcecute : NeuralNetworkAdapter, data : list&lt;TrainingData&gt;) : Result
+# calcualteAccuracies() : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>719</y>
+      <w>59</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=trainer
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;570.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1358</x>
+      <y>752</y>
+      <w>67</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Training::SupervisedTrainer
+{abstract}
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; SupervisedTrainer(neuralNetwork : NeuralNetworkAdapter, dataSet : list&lt;TrainingData&gt;)
++ newEpoch() : NeuralNetworkAdapter
+/# backpropagate() : NeuralNetworkAdapter/
+# gradientDescent(currentWeights : float[][], output : float[], desiredOutput : float[]) : float[][]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1390</x>
+      <y>767</y>
+      <w>3</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1366</x>
+      <y>767</y>
+      <w>27</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>780</y>
+      <w>14</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>50.0;10.0;120.0;10.0;120.0;310.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1390</x>
+      <y>797</y>
+      <w>3</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1390</x>
+      <y>737</y>
+      <w>30</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;60.0;10.0;60.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1251</x>
+      <y>392</y>
+      <w>101</w>
+      <h>335</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;
+m2=controlFacade</panel_attributes>
+    <additional_attributes>990.0;10.0;10.0;10.0;20.0;3320.0;420.0;3320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1255</x>
+      <y>893</y>
+      <w>63</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>NeuralNetworkModelAdapter::
+NeuralNetworkAdapter
+--
+- neuralNetwork : NeuralNetwork
+--
+&lt;&lt;constructor&gt;&gt;+ NeuralNetwork()
+&lt;&lt;constructor&gt;&gt;+ NeuralNetwork(name : string)
++ add_layer(layer : NetworkLayer)
++ get_first_layer() : NetworkLayer
++ get_last_layer() : NetworkLayer
++ get_next_layer() : NetworkLayer
++ get_previous_layer() : NetworkLayer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1317</x>
+      <y>757</y>
+      <w>43</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=neuralNetwork</panel_attributes>
+    <additional_attributes>410.0;10.0;150.0;10.0;150.0;1380.0;10.0;1380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>733</y>
+      <w>64</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;
+m2=toTrain, trained</panel_attributes>
+    <additional_attributes>620.0;1260.0;10.0;1260.0;10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1317</x>
+      <y>608</y>
+      <w>210</w>
+      <h>295</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=neuralnetworks
+m2=0..*</panel_attributes>
+    <additional_attributes>2080.0;10.0;1820.0;10.0;1820.0;2910.0;10.0;2920.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1317</x>
+      <y>540</y>
+      <w>426</w>
+      <h>368</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m2=1..*
+m1=neuralNetworkList</panel_attributes>
+    <additional_attributes>4240.0;10.0;3610.0;10.0;3620.0;3650.0;10.0;3650.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1255</x>
+      <y>927</y>
+      <w>62</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Resultadapter::
+ResultsmanagerAdapter
+--
+- resultManager : ResultManager
+--
++getNeuralNetworkAdapterList() : list&lt;NeuralNetworkAdapter&gt;
++getImageList() : list&lt;Image&gt;
++getResults() : list&lt;NeuralNetworkAdapter, Image, Result)
++getResultsPerNeuralNetwork(NeuralNetworkAdapter) : list&lt;Image, Result&gt;
++getResultsPerImg(image : Image) : list&lt;NeuralNetworkAdapter, Result&gt;
++getResult(image  : Image , neuralNetwork : NeuralNetworkAdapter) : Result
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1316</x>
+      <y>612</y>
+      <w>211</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=resultmanager</panel_attributes>
+    <additional_attributes>2090.0;10.0;1990.0;10.0;1990.0;3180.0;10.0;3180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=1</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=2</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=3</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>412</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>412</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>412</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>412</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=4</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=5</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>536</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=6</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>597</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>597</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>597</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>597</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=7</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=8</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>781</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=9</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>718</x>
+      <y>867</y>
+      <w>8</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;570.0;60.0;570.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>718</x>
+      <y>867</y>
+      <w>8</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;110.0;60.0;110.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>718</x>
+      <y>867</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;260.0;60.0;260.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>718</x>
+      <y>867</y>
+      <w>8</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+group=10</panel_attributes>
+    <additional_attributes>10.0;410.0;60.0;410.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>416</y>
+      <w>35</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+I/O::FileIO
+--
+_- singleton, FileIO_
+- sileStream, fileStream
+--
+- fileIO(), FileIO
+/+ readFile(filePath : string), IData/
+/+ writeFile(filePath : string, data : IData), bool/
+_+ getInstance(), FileIO_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>450</y>
+      <w>45</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::TextFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>356</x>
+      <y>470</y>
+      <w>37</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleImageFileIO
+--
+
+--
++ readFile(filePaths : string[]), IData
++ writeStream(filePath : string, data : IData) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>434</y>
+      <w>26</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;240.0;70.0;10.0;70.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>470</y>
+      <w>47</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleTextFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>322</x>
+      <y>462</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>356</x>
+      <y>450</y>
+      <w>37</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::ImageFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>374</x>
+      <y>462</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>439</y>
+      <w>34</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;320.0;20.0;320.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>399</x>
+      <y>450</y>
+      <w>38</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>I/O::VideoFileIO
+--
+
+--
++ readFile(filePath : string), IData
++ writeStream(filePath : string, data : IData) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>374</x>
+      <y>439</y>
+      <w>47</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;450.0;20.0;450.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>421</y>
+      <w>21</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+I/O::Data
+--
+
+--
+/+ getData(), E/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>227</x>
+      <y>450</y>
+      <w>35</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/Oge::MultipleImageData
+--
+- data : image[]
+--
++ &lt;&lt;constructor&gt;&gt; MultipleimageData(data : image[])
++ getData(), image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>265</x>
+      <y>450</y>
+      <w>30</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::VideoData
+--
+- video : Video
+--
++ &lt;&lt;constructor&gt;&gt; VideoData(data : video)
++ getData(), video</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>125</x>
+      <y>450</y>
+      <w>32</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::MultipleStringData
+--
+- stringData : string
+--
++ &lt;&lt;constructor&gt;&gt; MultipleStringData(data : string[])
++ getData(), string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>450</y>
+      <w>30</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::StringData
+--
+- stringData : string
+--
++ &lt;&lt;constructor&gt;&gt; StringData(data : string)
++ getData(), string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>450</y>
+      <w>28</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>I/O::ImageData
+--
+- imageData : Image
+--
++ &lt;&lt;constructor&gt;&gt; ImageData(data : image)
++ getData(), image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>178</x>
+      <y>439</y>
+      <w>44</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>205</x>
+      <y>445</y>
+      <w>3</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>219</x>
+      <y>444</y>
+      <w>60</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;580.0;20.0;580.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>439</y>
+      <w>78</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>760.0;10.0;760.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>219</x>
+      <y>439</y>
+      <w>26</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;240.0;70.0;240.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>182</x>
+      <y>413</y>
+      <w>18</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Stores the abstractly 
+and independently 
+from the file I/O</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>417</y>
+      <w>20</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>374</x>
+      <y>406</y>
+      <w>18</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Generic abstract IO class
+The inherited classes
+implement the concrete IO
+for the concrete classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>362</x>
+      <y>413</y>
+      <w>16</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>454</x>
+      <y>380</y>
+      <w>59</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ImageFacade
+--
+
+--
++ getImage(filePath : string, width : int, height : int, channelNumb : int) : int[]
++ getImages(filePaths : string[], width : int, height : int, channelNumb : int) : int[][]
++ getImagesFromTxtFile(filePath : string, width : int, height : int, channelNumb : int) : int[][]
++ getImageFromCamera(deviceId : int, width : int, height : int, channelNumb : int) : int[]
++ getImagesFromVideo(filePath : string, width : int, height : int, channelNumb : int) : int[][] 
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>339</y>
+      <w>21</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::Facade
+{abstract}
+--
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>391</x>
+      <y>365</y>
+      <w>60</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::DetectionDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : DetectionDatset</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>323</x>
+      <y>365</y>
+      <w>62</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ClassificationDatasetFacade
+--
+
+--
++ loadDataset(directory : string, width : int, height : int, channelNumb : int) : ClassificationDataset
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>365</y>
+      <w>48</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>ModelFacade::ParseResultFacade
+--
+
+--
++ parseClassificationResult(resultString : string) : ClassificatiomResult
++ parseDetectionResult(resultString : string) : DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>354</x>
+      <y>349</y>
+      <w>100</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>451</x>
+      <y>349</y>
+      <w>90</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>417</x>
+      <y>349</y>
+      <w>37</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>451</x>
+      <y>349</y>
+      <w>32</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>635</x>
+      <y>414</y>
+      <w>21</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>Parser::IParser
+{abstract}
+--
+
+--
+/+ parse(toParse : string), E /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>635</x>
+      <y>468</y>
+      <w>21</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageLocationsParser
+--
+
+--
++ Parse(toParse : string), string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>605</x>
+      <y>468</y>
+      <w>27</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::NeuralNetworkParser
+--
+
+--
++ parse(toParse : string), NeuralNetwork</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>578</x>
+      <y>468</y>
+      <w>21</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::LayerParser
+--
+
+--
++ parse(toParse : string), ILayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>496</y>
+      <w>28</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;SingleDetectionDatasetParser&gt;&gt;
+Parser::Parser
+{}
+--
+
+--
+/+ parse(string toParse), DetectionData /</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>661</x>
+      <y>495</y>
+      <w>26</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionDatasetParser
+--
+
+--
++ parse(toParse : string), DetectionData[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>438</y>
+      <w>33</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::LineBreakParser
+{abstract}
+--
+
+--
++ parse(toParse : string), E
+# splitIntoLines(string text), string[]
+# splitBySymbol(string text, char symbol), string[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>683</x>
+      <y>468</y>
+      <w>29</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::ClassificationResultParser
+--
+
+--
++ parse(toParse : string), ClassificationResult </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>424</y>
+      <w>3</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>456</y>
+      <w>3</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>461</y>
+      <w>29</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;270.0;20.0;270.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>461</y>
+      <w>29</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>270.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>587</x>
+      <y>461</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>320.0;20.0;10.0;20.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>562</x>
+      <y>427</y>
+      <w>85</w>
+      <h>71</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>830.0;20.0;10.0;20.0;10.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>641</x>
+      <y>427</y>
+      <w>59</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>579</x>
+      <y>497</y>
+      <w>84</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;820.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>470</y>
+      <w>46</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParser
+{abstract}
+--
+width : int
+height : int
+channelNumb : int
+--
+&lt;&lt;consturctor&gt;&gt; + ImageParser(width : int, height : int, channelNumb : int)
++ parse(image : int[]), image
+/# resize(image : int[], width : int, height : int, channelnumb : int), int[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>718</x>
+      <y>468</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionResultParser
+--
+
+--
++ parse(toParse : string): DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>676</x>
+      <y>427</y>
+      <w>59</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;570.0;20.0;570.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>523</x>
+      <y>427</y>
+      <w>85</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>830.0;20.0;10.0;20.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>560</y>
+      <w>82</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::NeuralNetworkFactoryr
+--
+
+--
+_+ buildNeuralNetwork(layers : list&lt;ILayer&gt;) : NeuralNetwork_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>609</y>
+      <w>57</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Parser::PoolingLayerFactory
+--
+- padding : int
+- stride : int
+- tensors : double[][][]
+--
++ buildLayer() : NetworkLayer
++ setWeightTensor(tensors : double[][][]) : PoolingLayer
++ setStride(stride : int) : PoolingLayer
++ setPadding(padding : int) : PoolingLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>609</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::ActivationLayerFactory
+--
+- function : Activation
+--
++ buildLayer() : NetworkLayer
++ setActivation(function : Activation) : ActivationLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>580</y>
+      <w>57</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::LayerFactory
+{abstract}
+--
+- inputDimension : int
+--
+/+ buildLayer() : NetworkLayer/
++ setInputDimension(dimension : int) : LayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>523</x>
+      <y>598</y>
+      <w>34</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>554</x>
+      <y>598</y>
+      <w>32</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;300.0;50.0;300.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>502</x>
+      <y>547</y>
+      <w>82</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::ClassificationResultFactory
+--
+
+--
+_+ buildClassificationResult(imageID : string, neuralNetworkID : string, probabilities : float[]) : ClassificationResult _
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>502</x>
+      <y>533</y>
+      <w>82</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::DetectionResultFactory
+--
+
+--
+_+ buildDetectionResult(imageID : string, neuralNetworkID : string, boundingBoxes : list&lt;BoundingBox&gt;) : ClassificationResult _
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>547</y>
+      <w>82</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Parser::BoundingBoxFactory
+--
+
+--
+_+ buildBoundingBox(imageClass : string, probabilities : list&lt;Probabilities&gt;) : Probability_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>502</x>
+      <y>560</y>
+      <w>82</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::BoundingBoxFactory
+--
+
+--
+_+ buildBoundingBox(x : float, y : float, width : float, height : float, probabilities : list&lt;Probabilities&gt;) : BoundingBox_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>468</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>Parser::ProbabilityParser
+--
+
+--
++ parse(toParse : string): DetectionResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>709</x>
+      <y>427</y>
+      <w>67</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;650.0;20.0;650.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>660</x>
+      <y>407</y>
+      <w>19</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Generic abstract parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>652</x>
+      <y>411</y>
+      <w>12</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>496</y>
+      <w>43</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParserWithCropping
+{}
+--
+
+--
+&lt;&lt;consturctor&gt;&gt; + ImageParserWithCropping
+                          (width : int, height : int, channelNumb : int)
+- resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>503</x>
+      <y>496</y>
+      <w>43</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>Parser::ImageParserWithPadding
+{}
+--
+
+--
+&lt;&lt;consturctor&gt;&gt; + ImageParserWithPadding
+                          (width : int, height : int, channelNumb : int)
+- resize(image : int[], width : int, height : int, channelnumb : int), int[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>523</x>
+      <y>488</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>475</x>
+      <y>488</y>
+      <w>51</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>490.0;10.0;490.0;50.0;10.0;50.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>672</x>
+      <y>432</y>
+      <w>19</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>One abstraction layer deeper
+parses all input with 
+line breaks</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>659</x>
+      <y>437</y>
+      <w>16</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;30.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>634</x>
+      <y>527</y>
+      <w>22</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Factories for encapsulate the 
+creating of the concrete objects
+from the input parsing</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>615</x>
+      <y>609</y>
+      <w>57</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Parser::PollingLayerFactory
+--
+- type : PollingType
+- size : int
+- stride : int
+--
++ buildLayer() : NetworkLayer
++ setPollingType(type : PollingType) : PollingLayerFactory
++ setSize(size : int) PollingLayerFactory
++ setStride(stride : int) : PollingLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>674</x>
+      <y>609</y>
+      <w>57</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Parser::LocalResponseNormalizationLayerFactory
+--
+- type : LRNType
+- depth : int
+--
++ buildLayer() : NetworkLayer
++ setType(type : LRNType) : LocalResponseNormalizationLayerFactory
++ setDepth(depth : int) : LocalResponseNormalizationLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>609</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::DenseLayerFactory
+--
+- matrix : double[][]
+--
++ buildLayer() : NetworkLayer
++ setMatrix(amtrix : double[][]) : DenseLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>497</x>
+      <y>646</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::FlattenLayerFactory
+--
+
+--
++ buildLayer() : NetworkLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>557</x>
+      <y>646</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::DropoutLayerFactory
+--
+- dropoutRate : float
+--
++ buildLayer() : NetworkLayer
++ setDropoutRate(dorupoutRate : float) : DropoutLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>646</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::CollectResultsLayerFactory
+--
+
+--
++ buildLayer() : NetworkLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>678</x>
+      <y>646</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::OutputStorageLayerFactory
+--
+- outputData : double[][][]
+--
++ buildLayer() : NetworkLayer
++ setOuputData(outputData . double[][][]) : OutputStorageLayerFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>646</y>
+      <w>57</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Parser::InceptionLayerFactory
+--
+
+--
++ buildLayer() : NetworkLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>583</x>
+      <y>601</y>
+      <w>64</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>601</y>
+      <w>64</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>698</x>
+      <y>601</y>
+      <w>64</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;620.0;20.0;620.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>759</x>
+      <y>602</y>
+      <w>37</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;350.0;10.0;350.0;380.0;80.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>521</x>
+      <y>638</y>
+      <w>65</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;80.0;10.0;20.0;630.0;20.0;630.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>583</x>
+      <y>638</y>
+      <w>69</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>638</y>
+      <w>69</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>638</y>
+      <w>69</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;670.0;20.0;670.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>341</y>
+      <w>128</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+fileIO</panel_attributes>
+    <additional_attributes>1260.0;20.0;10.0;10.0;10.0;760.0;150.0;760.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>461</x>
+      <y>341</y>
+      <w>185</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+parser</panel_attributes>
+    <additional_attributes>10.0;30.0;1830.0;20.0;1830.0;730.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>467</y>
+      <w>44</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoCutter
+{abstract}
+--
+
+--
+/+ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>441</y>
+      <w>39</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::CameraHandler
+--
+deviceId : int
+timeout : int
+frameInterval : int
+--
++ &lt;&lt;constructor&gt;&gt; CameraHandler(deviceId : int, timeout : int)
++ getNextFrame()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>468</y>
+      <w>32</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoHandler
+{abstract}
+--
+FrameInterval : int
+--
+/+ handleVideo(stream : VideoStream) : Image[]/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>485</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;VideoCutter&gt;&gt;
+VideoHandler::VideoHandler
+{}
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; VideoCutter()
++ cutIntoFrames(stream : VideoStream, frameInterval . int) : Image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>433</y>
+      <w>44</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::IVideoLibAdapter
+{abstract}
+--
+
+--
+/ + cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]/
+/ + loadFrameFromCamera(cameraId : int) : Image /
+/ + openCamera(cameraID : int) : boolean /
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>883</x>
+      <y>477</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>907</x>
+      <y>469</y>
+      <w>30</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;60.0;280.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>495</y>
+      <w>31</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::AviVideosHandler
+--
+frameInterval : int
+--
++ &lt;&lt;constructor&gt;&gt; VideoHandler(frameInterbal : int)
++ handleVideo(stream . VideoStream) : Image[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>462</y>
+      <w>44</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::OpenCWAdapter
+--
+_- videoLibAdapter : IVideoLibAdapter 
+--
+- &lt;&lt;constructor&gt;&gt; OpenCWAdapter()
++ cutIntoFrames(stream, VideoStream, frameInterval int) : Image[]
++ loadFrameFromCamera(cameraId : int) : Image 
++ openCamera(cameraID : int) : boolean
+_ + getInstance() : OpenCWAdapter_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>436</y>
+      <w>18</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;380.0;160.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>825</x>
+      <y>446</y>
+      <w>3</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>478</y>
+      <w>3</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>434</y>
+      <w>89</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;670.0;10.0;670.0;120.0;870.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>973</x>
+      <y>406</y>
+      <w>24</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Is responsible for
+opening/ closing the connection to 
+the camera
+As well as taking pictures</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>964</x>
+      <y>413</y>
+      <w>12</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>973</x>
+      <y>461</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Is responsible for 
+cutting the video 
+into frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>964</x>
+      <y>466</y>
+      <w>12</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>901</x>
+      <y>453</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Cuts the video into 
+frames</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>901</x>
+      <y>458</y>
+      <w>5</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;110.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>818</x>
+      <y>422</y>
+      <w>17</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Adapter to video library 
+to support the needed 
+functionality</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>427</y>
+      <w>13</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;80.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>948</x>
+      <y>430</y>
+      <w>3</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>935</x>
+      <y>420</y>
+      <w>33</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>VideoHandler::ICameraHandler
+--
+
+--
+/+ GetNextFrame()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>383</y>
+      <w>509</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+videoHandler</panel_attributes>
+    <additional_attributes>10.0;20.0;4990.0;10.0;4990.0;880.0;4550.0;880.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>387</y>
+      <w>497</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+cameraHandler</panel_attributes>
+    <additional_attributes>10.0;10.0;4860.0;10.0;4860.0;550.0;4620.0;550.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>129</x>
+      <y>726</y>
+      <w>39</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::NeuralNetwork
+
+--
+- name : string
+- firstLayer : &lt;pointer&gt;
+- lastLayer : &lt;pointer&gt;
+- currentLayer : &lt;pointer&gt;
+- configuration : string[]
+--
++ &lt;&lt;constructor&gt;&gt; NeuralNetwork() : void
++ &lt;&lt;constructor&gt;&gt; NeuralNetwork(name : string, configuration : string[]) : void
++ addLayer(layer : NetworkLayer) : void
++ setName(name : string) : void
++ setConfiguration(configuration : string[]) :void
++ getName() : string
++ getConfiguration() : string[]
++ getFirstLayer() : NetworkLayer
++ getLastLayer() : NetworkLayer
++ getNextLayer() : NetworkLayer
++ getPreviousLayer() : NetworkLayer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>241</x>
+      <y>734</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::NetworkLayer
+{abstract}
+--
+# name : string
+# inputDimensions : int[]
+# layerType : LayerType
+--
++ setName(name : string) : void
++ setInputDimensions(inputDimensions : int[]) : void
++ getName() : string
++ getLayerType() : LayerType
++ getInputDimensions() : int[]
++ getTensorDimenssions() : int[]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>163</x>
+      <y>766</y>
+      <w>92</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionLayer
+
+--
+- weigthsTensor : double[][][][]
+- stride : int
+- padding : int
+--
++ &lt;&lt;constructor&gt;&gt; ConvolutionLayer() : void
++ &lt;&lt;constructor&gt;&gt; ConvolutionLayer(name : string, inputDimensions : int[], weights : double[][][][], stride : int, padding : int) : void
++ setWeigthsTensor(weights : double[][][][]) : void
++ setStride(stride : int) : void
++ setPadding(padding : int) : void
++ getWeigthsTensor() : double[][][][]
++ getStride() : int
++ getPadding() : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>766</y>
+      <w>81</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingLayer
+
+--
+- type : PollingType
+- size : int
+- stride : int
+--
++ &lt;&lt;constructor&gt;&gt; polingLayer() : void
++ &lt;&lt;constructor&gt;&gt; polingLayer(name : string, inputDimensions : int[], size : int, stride : int, type : PollingType) : void
++ setType(type : PollingType) : void
++ setSize(size : int) : void
++ setStride(stride : int) : void
++ getType() : PollingType
++ getSize() : int
++ getStride() : int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>766</y>
+      <w>67</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseLayer
+
+--
+- matrix : double[][]
+--
++ &lt;&lt;constructor&gt;&gt; DenseLayer() : void
++ &lt;&lt;constructor&gt;&gt; DenseLayer(name : string, inputDimensions : int[], matrix : double[][]) : void
++ setMatrix(matrix : double[][]) : void
++ getMatrix() : double[][]
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>766</y>
+      <w>53</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionLayer
+
+--
+- firstChain : &lt;pointer&gt;
+- currentChain : &lt;pointer&gt;
+--
++ &lt;&lt;constructor&gt;&gt; InceptionLayer() : void
++ &lt;&lt;constructor&gt;&gt; InceptionLayer(name : string, inputDimensions : int[]) : void
++ addLayerChain(chain : NeuralNetwork) : void
++ getFirstChain() : NeuralNetwork
++ getNextChain() : NeuralNetwork</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>758</y>
+      <w>635</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;6330.0;20.0;6330.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>365</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>533</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>755</y>
+      <w>3</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>167</x>
+      <y>744</y>
+      <w>76</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=1
+m2=0..*
+&lt;&lt;list&gt;&gt;
+layers</panel_attributes>
+    <additional_attributes>10.0;20.0;740.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>129</x>
+      <y>758</y>
+      <w>16</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>257</x>
+      <y>766</y>
+      <w>71</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationLayer
+
+--
+- function : Activation
+--
++ &lt;&lt;constructor&gt;&gt; ActivationLayer() : void
++ &lt;&lt;constructor&gt;&gt; ActivationLayer(name : string, inputDimensions : int[], function : Activation) : void
++ setFunction(function : Activation) : void
++ getFunction() : Activation
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>573</x>
+      <y>766</y>
+      <w>50</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenLayer
+
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; FlattenLayer() : void
++ &lt;&lt;constructor&gt;&gt; FlattenLayer(name : string, inputDimensions) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>766</y>
+      <w>69</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutLayer
+
+--
+- dropoutRate : float
+--
++ &lt;&lt;constructor&gt;&gt; DropoutLayer() : void
++ &lt;&lt;constructor&gt;&gt; DropoutLayer(name : string, inputDimensions : int[], dropoutRate : float) : void
++ setDropoutRate(dropoutRate : float) : void
++ getDropoutRate() : float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>286</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>656</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>413</x>
+      <y>766</y>
+      <w>89</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationLayer
+
+--
+- type : LRNType
+- depth : int
+--
++ &lt;&lt;constructor&gt;&gt; LocalResponseNormalizationLayer() : void
++ &lt;&lt;constructor&gt;&gt; LocalResponseNormalizationLayer(name : string, inputDimensions : int[], type : LRNType, depth : int) : void
++ setType(type : LRNType) : void
++ setDepth(depth : int) : void
++ getType() : LRNType
++ getDepth() : int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>167</x>
+      <y>730</y>
+      <w>694</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=1
+m2=0..*
+&lt;&lt;list&gt;&gt;
+chains
+</panel_attributes>
+    <additional_attributes>6880.0;360.0;6880.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>696</x>
+      <y>766</y>
+      <w>59</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsLayer
+
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer() : void
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer(name : string, inputDimensions : int[]) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>762</y>
+      <w>26</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+NeuralNetworkPkg::Activation
+
+--
+SIGMOID
+TANH
+RELU
+LEAKING_RELU
+PARAMETRIC_RELU
+SOFTMAX
+SWISH</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>781</y>
+      <w>26</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+NeuralNetworkPkg::PollingType
+
+--
+MAX
+AVEREAGE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>792</y>
+      <w>26</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+NeuralNetworkPkg::LRNType
+
+--
+INTER_CHANNEL
+INTRA_CHANNEL</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>129</x>
+      <y>764</y>
+      <w>12</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;200.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>129</x>
+      <y>783</y>
+      <w>12</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>100.0;10.0;100.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>133</x>
+      <y>823</y>
+      <w>65</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::NetworkOperations
+
+--
+- platformName : string
+--
++ &lt;&lt;constructor&gt;&gt; NetworkOperations() : void
++ &lt;&lt;constructor&gt;&gt; NetworkOperations(platformName : string) : void
++ addKernelCode(layerType : Layertype, kernelCode : string[]) : void
++ executeCalculation(layer : NetworkLayer, inputData : double[][][]) : double[][][]
++ executeBackPropagation(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>341</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>843</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>275</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>832</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+/NeuralNetworkPkg::LayerCode/
+{abstract}
+--
+# kernelCode : string[]
+--
+/# setKernelCode(kernelCode : string[]) : void/
+/+ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>212</x>
+      <y>848</y>
+      <w>573</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;5710.0;20.0;5710.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>529</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>591</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>655</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>719</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>808</y>
+      <w>40</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;uses&gt;&gt;
+</panel_attributes>
+    <additional_attributes>380.0;190.0;10.0;190.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>757</x>
+      <y>766</y>
+      <w>61</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageLayer
+
+--
+- outputData : double[][][]
+--
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer() : void
++ &lt;&lt;constructor&gt;&gt; CollectResultsLayer(name : string, outputData : double[][][]) : void
++ setData(outputData : double[][][]) : void
++ getData() : double[][][]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>788</x>
+      <y>759</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>803</y>
+      <w>26</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+NeuralNetworkPkg::LayerType
+
+--
+CONVOLUTION
+ACTIVATION
+POLING
+LRN
+DENSE
+FLATTEN
+DROPOUT
+COLLECT_RESULTS
+INCEPTION
+OUTPUT_STORAGE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>796</y>
+      <w>11</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>784</y>
+      <w>11</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>772</y>
+      <w>11</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>197</x>
+      <y>834</y>
+      <w>44</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=1
+m2=10
+layer</panel_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>247</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>373</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>499</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>562</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>751</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>197</x>
+      <y>824</y>
+      <w>608</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+operations</panel_attributes>
+    <additional_attributes>10.0;20.0;6060.0;20.0;6060.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>875</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>890</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>905</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>920</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ConvolutionCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>213</x>
+      <y>919</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>213</x>
+      <y>889</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>213</x>
+      <y>874</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>213</x>
+      <y>904</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::ActivationCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>283</x>
+      <y>919</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>283</x>
+      <y>904</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>283</x>
+      <y>889</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>283</x>
+      <y>874</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::PollingCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>874</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>888</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>903</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>919</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::LocalResponseNormalizationCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>919</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>903</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>888</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>483</x>
+      <y>874</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::FlattenCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>919</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>903</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>888</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>874</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DropoutCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>874</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>903</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>888</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>606</x>
+      <y>919</y>
+      <w>53</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::CollectResultsCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>667</x>
+      <y>874</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>667</x>
+      <y>919</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>667</x>
+      <y>903</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>667</x>
+      <y>888</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::OutputStorageCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>727</x>
+      <y>919</y>
+      <w>55</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>727</x>
+      <y>903</y>
+      <w>55</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>727</x>
+      <y>888</y>
+      <w>55</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>727</x>
+      <y>874</y>
+      <w>55</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::InceptionCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>466</x>
+      <y>849</y>
+      <w>3</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>436</x>
+      <y>856</y>
+      <w>61</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCode
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>421</x>
+      <y>919</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeASIC
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>421</x>
+      <y>903</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeGPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>421</x>
+      <y>888</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeFPGA
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>421</x>
+      <y>874</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>
+NeuralNetworkPkg::DenseCodeCPU
+
+--
+
+--
++ setKernelCode(kernelCode : string[]) : void
++ executeKernelCode(layer : NetworkLayer, inputData : double[][][][]) : double[][][][]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1091</x>
+      <y>763</y>
+      <w>51</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>ResultModel::ResultManager
+--
+- neuralNetworkMap : map&lt;string , Result&gt;
+- imageMap : map&lt;string , Result&gt;
+--
++ &lt;&lt;constructor&gt;&gt; ResultManager(resultList : list&lt;Result&gt;)
++ getResultsByImage(imageID : string) : list&lt;Result&gt;
++ getResultsByNeuralNetwork(neuralNetworkID : string) : list&lt;Result&gt;
++ getSingleResult(imageID : string, neuralNetworkID : string) : Result
++ addResult(result : Result) : void
++ addResults(results : list&lt;Result&gt;) : void
+- organizeResults(result : Results) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>765</y>
+      <w>48</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>ResultModel::Result
+--
+- imageID : string
+- neuralNetworkID : string
+--
++ &lt;&lt;constructor&gt;&gt; Result(imageID : string, neuralNetworkID : string)
++ getImageID() : string
++ getNeuralNetworkID() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>979</x>
+      <y>823</y>
+      <w>50</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>ResultModel:ClassProbability
+--
+- className : string
+- probability : float
+--
++ &lt;&lt;constructor&gt;&gt; NetworkPredicition( name : string, probability : float)
++ getClassName() : string
++ getProbability() : float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>979</x>
+      <y>792</y>
+      <w>75</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>ResultModel::DetectionResult
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; DetectionResult(imageID : string, neuralNetworkID : string, boundingBox : BoundingBox)
++ getBoundingBoxes() : list&lt;BoundingBox&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1009</x>
+      <y>779</y>
+      <w>31</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;290.0;70.0;10.0;70.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>796</y>
+      <w>54</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>ResultModel::BoundingBox
+--
+	- x : float
+	- y : float
+	- width : float
+	- height : float
+--
++ &lt;&lt;constructor&gt;&gt; BoundingBox( x : float, y : float, width : float, height : float)
++ getX() : float
++ getY() : float
++ getWidth() : float
++ getHeight() : float
++ getProbabilities() : list&lt;ClassProbabilities&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1057</x>
+      <y>792</y>
+      <w>55</w>
+      <h>17</h>
+    </coordinates>
+    <panel_attributes>ResultModel::ClassificationResult
+--
+
+--
++ &lt;&lt;constructor&gt;&gt; ClassificationResultModel(imageID : string, neuralNetworkID : string)
++ getProbablities() : list&lt;ClassProbalities&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1037</x>
+      <y>779</y>
+      <w>45</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;430.0;70.0;430.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>973</x>
+      <y>797</y>
+      <w>8</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>941</x>
+      <y>816</y>
+      <w>40</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>380.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1028</x>
+      <y>808</y>
+      <w>63</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n</panel_attributes>
+    <additional_attributes>10.0;170.0;610.0;170.0;610.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1085</x>
+      <y>672</y>
+      <w>47</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>TrainingModel::TrainingData
+--
+- inputData : Image
+- resultData : Result
+--
++ &lt;&lt;constructor&gt;&gt; TrainingData(inputData : Image, resultData : Result)
++ getInputData() : Image
++ getResultData() : Result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>80</x>
+      <y>727</y>
+      <w>55</w>
+      <h>106</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;
+m1=4
+implementations</panel_attributes>
+    <additional_attributes>530.0;1030.0;10.0;1030.0;10.0;10.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1141</x>
+      <y>764</y>
+      <w>116</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=resultManager</panel_attributes>
+    <additional_attributes>1140.0;1680.0;510.0;1680.0;500.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1064</x>
+      <y>765</y>
+      <w>29</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+resultList
+m2=0..*</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>709</y>
+      <w>1097</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=neuralNetwork</panel_attributes>
+    <additional_attributes>10950.0;1890.0;7310.0;1890.0;7310.0;10.0;10.0;20.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1131</x>
+      <y>676</y>
+      <w>164</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=dataSet
+m2=0..'*</panel_attributes>
+    <additional_attributes>1620.0;530.0;650.0;530.0;650.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1131</x>
+      <y>674</y>
+      <w>272</w>
+      <h>43</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=dataSet, dataSetTraining, dataSetTest
+m2=0..*</panel_attributes>
+    <additional_attributes>2700.0;400.0;770.0;400.0;770.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1282</x>
+      <y>62</y>
+      <w>70</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=viewFacade
+m2=1</panel_attributes>
+    <additional_attributes>680.0;3120.0;180.0;3120.0;180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1199</x>
+      <y>57</y>
+      <w>328</w>
+      <h>575</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=view
+m2=1</panel_attributes>
+    <additional_attributes>3260.0;5480.0;2870.0;5480.0;2870.0;5730.0;10.0;5730.0;10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1397</x>
+      <y>555</y>
+      <w>112</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=gui</panel_attributes>
+    <additional_attributes>1100.0;10.0;820.0;10.0;10.0;750.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1299</x>
+      <y>313</y>
+      <w>344</w>
+      <h>226</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= model, view</panel_attributes>
+    <additional_attributes>3280.0;2230.0;3420.0;2230.0;3420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>461</x>
+      <y>339</y>
+      <w>640</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;6380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>339</y>
+      <w>495</w>
+      <h>195</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=modelFacade</panel_attributes>
+    <additional_attributes>4820.0;1920.0;4930.0;1920.0;4930.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1582</x>
+      <y>30</y>
+      <w>156</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>RendererModule
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1173</x>
+      <y>0</y>
+      <w>625</w>
+      <h>301</h>
+    </coordinates>
+    <panel_attributes>View
+fontsize=60</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1189</x>
+      <y>16</y>
+      <w>371</w>
+      <h>259</h>
+    </coordinates>
+    <panel_attributes>ViewModule
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>296</x>
+      <y>307</y>
+      <w>336</w>
+      <h>89</h>
+    </coordinates>
+    <panel_attributes>ModelFacade
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>108</x>
+      <y>393</y>
+      <w>339</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>I/O
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>453</x>
+      <y>400</y>
+      <w>345</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Parser
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>801</x>
+      <y>400</y>
+      <w>227</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>VideoHandler
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>66</x>
+      <y>692</y>
+      <w>814</w>
+      <h>254</h>
+    </coordinates>
+    <panel_attributes>NeuralNetworkPkg
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>905</x>
+      <y>751</y>
+      <w>255</w>
+      <h>111</h>
+    </coordinates>
+    <panel_attributes>ResultModel
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1077</x>
+      <y>656</y>
+      <w>65</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>TrainingModel
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>52</x>
+      <y>292</y>
+      <w>1117</w>
+      <h>666</h>
+    </coordinates>
+    <panel_attributes>Model
+fontsize=60</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1242</x>
+      <y>882</y>
+      <w>84</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>NeuralNetworkModelAdapter
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1695</x>
+      <y>651</y>
+      <w>167</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>Prediction
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1242</x>
+      <y>919</y>
+      <w>84</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Resultadapter
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1278</x>
+      <y>695</y>
+      <w>193</w>
+      <h>139</h>
+    </coordinates>
+    <panel_attributes>Training
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1864</x>
+      <y>566</y>
+      <w>156</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>Communication
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1217</x>
+      <y>326</y>
+      <w>826</w>
+      <h>642</h>
+    </coordinates>
+    <panel_attributes>Controller
+fontsize=60</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1698</x>
+      <y>530</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Dispatcher
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1463</x>
+      <y>517</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Inferencing
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1281</x>
+      <y>492</y>
+      <w>179</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>EventHandlerModule
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1326</x>
+      <y>350</y>
+      <w>86</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>ControllerFacade
+fontsize=50</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
