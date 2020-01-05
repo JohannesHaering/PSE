@@ -4,10 +4,12 @@ using namespace std;
 
 class Result {
 	public:
-		Result(string imageID, string neuralNetworkID) {
+		Result(string imageID, string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
+		/*Result(string imageID, string neuralNetworkID) 
+		{
 			this.imageID = imageID;
 			this.neuralNetworkID = neuralNetworkID
-		}
+		}*/
 		string GetImageID() {
 			return imageID;
 		}
@@ -18,4 +20,4 @@ class Result {
 	private:
 		string imageID;
 		string neuralNetworkID;
-}
+};

@@ -11,4 +11,4 @@ class Result {
 	private:
 		string imageID;
 		string neuralNetworkID;
-}
+};
