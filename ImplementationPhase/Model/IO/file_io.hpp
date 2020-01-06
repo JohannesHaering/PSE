@@ -1,44 +1,18 @@
-#include "data.hpp"
+#include "Data.hpp"
+//#include "Data.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-template <typename Data>
-
-class FileIO{
+class FileIO {
+    public:
+        static FileIO getInstance();
+        string readFile(string path);
+        bool writeFile(string path, Data data);
+        ~FileIO();
     private:
         static FileIO singleton;
-        FileIO() {
-
-        }
-    public:
-        static FileIO getInstance() {
-            if(singleton == null) {
-                singleton = FileIO();
-            }
-            return singleton;
-        }
-
-        string readFile(string path) {
-            ifstream file(path);
-            string output = "";
-            string temp;
-
-            while(getline(file, temp)) {
-                output += temp;
-                output += "\n";
-            }
-
-            file.close();
-
-            return output;
-        }
-
-        bool writeFile(string path, Data data);
-
-        ~FileIO() {
-
-        }
+        FileIO();
 };
