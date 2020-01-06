@@ -1,7 +1,7 @@
 #include <list>
 #include <string>
 #include <map>
-#include "Result.h"
+#include "../include/Result.h"
 
 using namespace std;
 

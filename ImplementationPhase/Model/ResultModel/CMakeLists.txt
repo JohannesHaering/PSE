@@ -7,4 +7,5 @@ enable_testing()
 #include_directories(${GTEST_INCLUDE_DIR})
 
 # add the executable
-add_executable(ResultPackage Result.cpp ResultManager.cpp )
+add_library(ResultPackage src/Result.cpp src/ResultManager.cpp )
+#add_executable(ResultPackage src/Result.cpp src/ResultManager.cpp )
