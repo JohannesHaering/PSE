@@ -1,14 +1,16 @@
+#ifndef CLASS_PROBABILITY_H
+#define CLASS_PROBABILITY_H
 #include <string>
 
 using namespace std;
 
-Class ClassProbability{
+class ClassProbability{
 	public:
-		NetworkPrediction(string name, float probability);
+		ClassProbability(string name, float probability);
 		string getClassName();
-		string getProbability();
+		float getProbability();
 	private:
 		string className;
 		float probability;
-}
-
+};
+#endif

@@ -1,23 +1,11 @@
 #include <string>
 #include <list>
-#include <BoundingBox.h>
+#include "BoundingBox.h"
+#include "DetectionResult.h"
 
 using namespace std;
 
-class DetectionResult : public Result{
-	public:
-   		DetectionResult(string imageID, string neuralNetworkID, list<BoundingBox> boundingBoxList) {
-			this.imageID = imageID;
-			this.neuralNetworkID = neuralNetworkID;
-			this.boundingBoxList = boundingBoxList;
-		}
+DetectionResult::DetectionResult(string imageID, string neuralNetworkID, list<BoundingBox> boundingBoxList) :
+	Result(imageID, neuralNetworkID), boundingBoxList(boundingBoxList) {}
 
-		list<BoundingBox> GetBoundingBoxes() {
-			return boundingBoxList;
-		}
-
-	private:
-		list<BoundingBox> boundingBoxList;
-}
-
-
+list<BoundingBox> DetectionResult::GetBoundingBoxes() { return boundingBoxList; }

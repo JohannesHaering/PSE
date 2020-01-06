@@ -1,23 +1,16 @@
 #include <string>
-
+#include "Result.h"
+#include <iostream>
 using namespace std;
 
-class Result {
-	public:
-		Result(string imageID, string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
-		/*Result(string imageID, string neuralNetworkID) 
-		{
-			this.imageID = imageID;
-			this.neuralNetworkID = neuralNetworkID
-		}*/
-		string GetImageID() {
-			return imageID;
-		}
-		string GetNeuralNetworkID() {
-			return neuralNetworkID;
-		}
-	
-	private:
-		string imageID;
-		string neuralNetworkID;
-};
+Result::Result(string imageID, string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
+
+string Result::GetImageID()
+{
+	return imageID;
+}
+
+string Result::GetNeuralNetworkID()
+{
+	return neuralNetworkID;
+}

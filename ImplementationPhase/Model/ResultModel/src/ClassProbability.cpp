@@ -1,23 +1,17 @@
 #include <string>
+#include <stdexcept>
+#include "ClassProbability.h"
 
 using namespace std;
 
-Class ClassProbability{
-	public:
-		NetworkPrediction(string name, float probability) {
-			if (probability < 0 or probability > 1):
-				throw std::range_error("probability should be between 0.0 and 1.0, was %f\n", probability);
-			className = name;
-			this.probability = probability;
-		}
-		string getClassName() {
-			return className;
-		}
-		string getProbability() {
-			return probability;
-		}
-	private:
-		string className;
-		float probability;
+ClassProbability::ClassProbability(string name, float probability) : className(name), probability(probability)
+{
+	if (probability < 0 or probability > 1)
+		throw std::invalid_argument("probability should be between 0.0 and 1.0, was " + std::to_string(probability) + "\n");
+	//this->className = name;
+	//this->probability = probability;
 }
 
+string ClassProbability::getClassName() { return className; }
+
+float ClassProbability::getProbability() { return probability; }
