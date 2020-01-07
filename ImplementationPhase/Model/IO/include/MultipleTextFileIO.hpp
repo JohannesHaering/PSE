@@ -1,4 +1,4 @@
-#include "textfile_io.hpp"
+#include "TextFileIO.hpp"
 
 
 class MultipleTextFileIO: public TextFileIO{

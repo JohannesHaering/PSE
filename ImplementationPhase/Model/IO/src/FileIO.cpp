@@ -9,11 +9,6 @@ using namespace std;
 template <typename Data>
 
 class FileIO{
-    private:
-        static FileIO singleton;
-        FileIO() {
-
-        }
     public:
         static FileIO getInstance() {
             if(singleton == null) {
@@ -21,8 +16,16 @@ class FileIO{
             }
             return singleton;
         }
-
-        string readFile(string path) {
+        virtual bool writeFile(string path, Data data) {
+            ofstream file(path);
+            string output = to_string(Data.getData());
+            file << output;
+            file.close;
+            return true;
+        }
+        virtual Data readFile(string path);
+    protected:
+        virtual string readPureFile(string path) {
             ifstream file(path);
             string output = "";
             string temp;
@@ -36,10 +39,9 @@ class FileIO{
 
             return output;
         }
-
-        bool writeFile(string path, Data data);
-
-        ~FileIO() {
+    private:
+        static FileIO singleton;
+        FileIO() {
 
         }
 };
