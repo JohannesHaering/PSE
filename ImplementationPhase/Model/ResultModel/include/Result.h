@@ -1,3 +1,5 @@
+#ifndef _RESULT_H_
+#define _RESULT_H_
 #include <string>
 
 using namespace std;
@@ -8,7 +10,9 @@ class Result {
 		string GetImageID();
 		string GetNeuralNetworkID();
 	
-	private:
+	//private:
+	protected:
 		string imageID;
 		string neuralNetworkID;
 };
+#endif

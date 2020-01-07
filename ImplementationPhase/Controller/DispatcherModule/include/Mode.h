@@ -1,9 +1,10 @@
+#include <opencv2/opencv.hpp>
 class Mode {
 	private:
  		string modeName;
 		list<Device> deviceList;
 		list<NeuralNetwork> neuralNetworkList;
-
+		list<cv::Mat> imageList;
 	public: 
 		Mode();
 		string getModeName();

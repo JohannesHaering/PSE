@@ -1,7 +1,10 @@
+#ifndef RESULT_MANAGER_H
+#define RESULT_MANAGER_H
+
 #include <list>
-#include <stringi>
+#include <string>
 #include <map>
-#include <Result>
+#include "Result.h"
 
 using namespace std;
 
@@ -9,7 +12,7 @@ class ResultManager {
 	public:
 		ResultManager(list<Result> resultList);
 		list<Result> getResultsByImage(string imageID);
-		list<Result> getResultsByNeuralNetwork();
+		list<Result> getResultsByNeuralNetwork(string neuralNetworkID);
 		Result* getSingleResult(string imageID, string neuralNetworkID);
 		void addResult(Result result);
 		void addResults(list<Result> results);
@@ -19,4 +22,5 @@ class ResultManager {
 		list<Result> resultList;
 		map<string,Result*> neuralNetworkMap;
 		map<string,Result*> imageMap;
-}
+};
+#endif
