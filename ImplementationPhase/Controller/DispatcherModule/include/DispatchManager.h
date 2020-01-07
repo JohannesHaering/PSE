@@ -5,8 +5,8 @@ class DispatchManager
 	private:
 		DispatchManager();	
 	        // Stop the compiler generating methods of copy the object
-		DispatchManager(DispatchManager const& copy); //not implemented
-		DispatchManager& operator=(DispatchManager const& copy); //not implemented
+		DispatchManager(DispatchManager const& copy); //don't implement!
+		DispatchManager& operator=(DispatchManager const& copy); //don't implement!
 		Mode mode;
 		list<Device> deviceList;
 		map<Device,Channel> deviceChannelMap;
