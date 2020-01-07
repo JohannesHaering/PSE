@@ -1,16 +1,18 @@
-
-#include "../include/Data.hpp"
-#include "../include/FileIO.hpp"
+#include "../include/Data.h"
+#include "../include/FileIO.h"
+#include "../include/TextFileIO.h"
 #include <string>
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-class TextFileIO : public FileIO {
-    public:
-        bool writeFile(string path, Data data){
-            auto success = FileIO::writeFile(path, data);     
-            return success;       
-        }
-};
+Data<string> TextFileIO::readFile(string path) {
+    Data<string> data = Data<string>(FileIO::readPureFile(path));
+    return data;
+}
+
+bool TextFileIO::writeFile(string path, Data<string> data){
+    auto success = FileIO::writePureFile(path, data.getData());     
+    return success;       
+}

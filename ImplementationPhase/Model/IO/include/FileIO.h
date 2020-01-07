@@ -1,4 +1,6 @@
-#include "../include/Data.hpp"
+#ifndef FILE_IO_H
+#define FILE_IO_H
+
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -8,11 +10,13 @@ using namespace std;
 class FileIO {
     public:
         static FileIO getInstance();
-        Data readFile(string path);
-        bool writeFile(string path, Data data);
     protected:
-        string readPureFile(string path);
+        virtual string readPureFile(string path);
+        virtual bool  writePureFile(string path, string output);
     private:
         static FileIO singleton;
-        FileIO();
+        FileIO() {
+
+        }
 };
+#endif
