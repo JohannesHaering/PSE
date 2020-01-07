@@ -5,5 +5,4 @@ project(PSE)
 enable_testing()
 
 # add the executable
-add_library(IOPackage src/Data.cpp src/FileIO.cpp src/MultipleTextFileIO src/TextFileIO)
-
+add_library(ParsingPackage )

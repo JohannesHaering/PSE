@@ -1,13 +1,13 @@
 #ifndef BOUNDING_BOX_H
 #define BOUNDING_BOX_H
 #include <list>
-#include <ClassProbability.h>
+#include "ClassProbability.h"
 
 using namespace std;
 
 class BoundingBox{
 	public:
-		BoundingBox(float x, float y, float width, float height);
+		BoundingBox(float x, float y, float width, float height, list<ClassProbability> classProbabilityList);
 		float getX();
 		float getY();
 		float getWidth();
