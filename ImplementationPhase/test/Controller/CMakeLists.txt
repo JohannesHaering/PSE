@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+
+add_subdirectory(Communication)
+add_subdirectory(ControllerFacade)
+add_subdirectory(Dispatcher)
+add_subdirectory(Inferencing)
+add_subdirectory(NeuralNetworkModelAdapter)
+add_subdirectory(Prediction)
+add_subdirectory(ResultModelAdapter)
+add_subdirectory(Training)

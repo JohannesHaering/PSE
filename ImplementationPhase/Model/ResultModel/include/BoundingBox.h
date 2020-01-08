@@ -7,7 +7,7 @@ using namespace std;
 
 class BoundingBox{
 	public:
-		BoundingBox(float x, float y, float width, float height);
+		BoundingBox(float x, float y, float width, float height, list<ClassProbability> classProbabilityList);
 		float getX();
 		float getY();
 		float getWidth();

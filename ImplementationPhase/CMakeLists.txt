@@ -25,17 +25,9 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
                  ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
                  EXCLUDE_FROM_ALL)
 
-# Now simply link against gtest or gtest_main as needed. Eg
-add_executable(example test/math_test.cpp)
-target_link_libraries(example gtest_main)
-target_link_libraries(example gtest)
 
-# Add definition for math library
-add_library(math src/math.cpp src/math.hpp)
+add_subdirectory(test)
 
-# Add definition for the cmake-tutorial binary
-target_link_libraries(example math)
-
-
-#add_subdirectory(Model)
-#add_subdirectory(Controller)
+add_subdirectory(Model)
+add_subdirectory(View)
+add_subdirectory(Controller)
