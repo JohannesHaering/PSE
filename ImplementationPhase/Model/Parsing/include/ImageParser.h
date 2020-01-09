@@ -2,7 +2,7 @@
 #define IMAGE_PARSER_H
 
 #include "Parser.h"
-#include "../../DataStructures/include/Image.h"
+#include "Image.h"
 
 #include <string>
 #include <list>

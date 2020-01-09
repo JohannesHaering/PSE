@@ -2,8 +2,8 @@
 #define CLASS_PROBABILITY_PARSER_H
 
 #include "Parser.h"
-#include "Factory/ClassProbabilityFactory.h"
-#include "../../ResultModel/include/ClassProbability.h"
+#include "ClassProbabilityFactory.h"
+#include "ClassProbability.h"
 
 #include <string>
 

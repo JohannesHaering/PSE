@@ -1,8 +1,8 @@
 #ifndef BOUNDING_BOX_FACTORY
 #define BOUNDING_BOX_FACTORY
 
-#include "../../../ResultModel/include/BoundingBox.h"
-#include "../../../ResultModel/include/ClassProbability.h"
+#include "ResultModel/include/BoundingBox.h"
+#include "ResultModel/include/ClassProbability.h"
 
 #include <string>
 #include <list>

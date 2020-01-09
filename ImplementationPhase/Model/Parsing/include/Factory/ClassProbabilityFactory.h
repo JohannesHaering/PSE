@@ -1,7 +1,7 @@
 #ifndef CLASS_PROBABILITY_FACTORY_H
 #define CLASS_PROBABILITY_FACTORY_H
 
-#include "../../../ResultModel/include/ClassProbability.h"
+#include "ClassProbability.h"
 
 #include <string>
 

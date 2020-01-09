@@ -6,9 +6,9 @@
 
 using namespace std;
 
-class DetectionDataset {
+class DetectionData {
     public:
-        DetectionDataset(list<SingleDetectionDataset> dataset);
+        DetectionData(list<SingleDetectionDataset> dataset);
         list<SingleDetectionDataset> getDataset();
     private:
         list<SingleDetectionDataset> dataset;

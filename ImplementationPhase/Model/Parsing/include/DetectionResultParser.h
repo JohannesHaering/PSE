@@ -2,8 +2,8 @@
 #define DETECTION_RESULT_PARSER_H
 
 #include "Parser.h"
-#include "Factory/DetectionResultFactory.h"
-#include "../../ResultModel/include/DetectionResult.h"
+#include "DetectionResultFactory.h"
+#include "DetectionResult.h"
 
 #include <string>
 

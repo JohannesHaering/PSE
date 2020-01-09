@@ -2,8 +2,9 @@
 #define CLASSIFICATION_PARSER_H
 
 #include "Parser.h"
-#include "Factory/ClassificationResultFactory.h"
-#include "../../ResultModel/include/ClassificationResult.h"
+#include "ClassificationResultFactory.h"
+#include "
+ClassificationResult.h"
 
 #include <string>
 

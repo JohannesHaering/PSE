@@ -2,7 +2,7 @@
 #define BOUNDING_BOX_PARSER
 
 #include "Parser.h"
-#include "../../ResultModel/include/BoundingBox.h"
+#include "BoundingBox.h"
 
 #include <string>
 #include <list>
