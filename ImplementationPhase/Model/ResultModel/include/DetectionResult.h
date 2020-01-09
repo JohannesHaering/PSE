@@ -4,7 +4,7 @@
 #include <string>
 #include <list>
 #include "Result.h"
-#include <BoundingBox.h>
+#include "BoundingBox.h"
 
 using namespace std;
 
