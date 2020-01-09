@@ -1,5 +1,5 @@
-#ifndef _RESULT_H_
-#define _RESULT_H_
+#ifndef RESULT_H_
+#define RESULT_H_
 #include <string>
 
 using namespace std;

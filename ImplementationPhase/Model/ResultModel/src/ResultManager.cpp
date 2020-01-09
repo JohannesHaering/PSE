@@ -16,7 +16,7 @@ list<Result> ResultManager::getResultsByImage(string imageID)
 	{
 		Result* newRes = it->second;
 		resultList.push_back(*newRes);
-		std::next(it);
+		++it;
 	}
 	return resultList;
 };
@@ -28,7 +28,7 @@ list<Result> ResultManager::getResultsByNeuralNetwork(string neuralNetworkID)
 	auto it = imageMap.find(neuralNetworkID);
 	while (it != imageMap.end()) {
 		resultList.push_back(*(it->second));
-		std::next(it);
+		++it;
 	}
 	return resultList;
 };
@@ -50,7 +50,7 @@ void ResultManager::addResult(Result result)
 
 void ResultManager::addResults(list<Result> results) 
 {
-	for (std::list<Result>::iterator it = results.begin(); it != results.end(); it++) {
+	for (std::list<Result>::iterator it = results.begin(); it != results.end(); ++it) {
 		organizeResults(*it);
 	}
 };
