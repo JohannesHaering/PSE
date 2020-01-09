@@ -1,17 +1,18 @@
 #ifndef SINGLE_DETECTION_DATASET_H
 #define SINGLE_DETECTION_DATASET_H
 
-#include "../../ResultModel/include/DetectionResult.h"
-#include "Image.h"
+#include "DetectionResult.h"
+#include <string>
+
+using namespace  std;
 
 class SingleDetectionDataset {
     public:
-        SingleDetectionDataset(Image image, DetectionResult detectionResult);
-        Image getImage();
+        SingleDetectionDataset(string imageLocation, DetectionResult detectionResult);
+        string getImageLocation();
         DetectionResult getDetectionResult();
     private:
-        Image image;
+        string imageLocation;
         DetectionResult detectionResult;
 };
-
 #endif
