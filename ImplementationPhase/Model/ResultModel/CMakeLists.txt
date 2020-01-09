@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name
-project(ResultPackageMain C CXX)
+project(ResultPackage C CXX)
 
 add_library(RESULT "src/Result.cpp" "include/Result.h")
 target_include_directories(RESULT PUBLIC "include/")

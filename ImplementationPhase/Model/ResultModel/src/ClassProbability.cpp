@@ -8,8 +8,6 @@ ClassProbability::ClassProbability(string name, float probability) : className(n
 {
 	if (probability < 0 or probability > 1)
 		throw std::invalid_argument("probability should be between 0.0 and 1.0, was " + std::to_string(probability) + "\n");
-	//this->className = name;
-	//this->probability = probability;
 }
 
 string ClassProbability::getClassName() { return className; }

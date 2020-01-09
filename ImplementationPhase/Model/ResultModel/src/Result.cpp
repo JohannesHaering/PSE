@@ -1,16 +1,9 @@
 #include <string>
-#include "Result.h"
 #include <iostream>
-using namespace std;
+#include "Result.h"
 
-Result::Result(string imageID, string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
+Result::Result(std::string imageID, std::string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
 
-string Result::GetImageID()
-{
-	return imageID;
-}
+std::string Result::getImageID() { return imageID; }
 
-string Result::GetNeuralNetworkID()
-{
-	return neuralNetworkID;
-}
+std::string Result::getNeuralNetworkID() { return neuralNetworkID; }

@@ -1,5 +1,5 @@
-#ifndef RESULT_MANAGER_H
-#define RESULT_MANAGER_H
+#ifndef RESULT_MANAGER_H_
+#define RESULT_MANAGER_H_
 
 #include <list>
 #include <string>
@@ -8,17 +8,17 @@
 
 class ResultManager {
 	public:
-		ResultManager(list<Result> resultList);
-		std::list<Result> getResultsByImage(string imageID);
-		std::list<Result> getResultsByNeuralNetwork(string neuralNetworkID);
-		Result* getSingleResult(string imageID, string neuralNetworkID);
+		ResultManager(std::list<Result> resultList);
+		std::list<Result> getResultsByImage(std::string imageID);
+		std::list<Result> getResultsByNeuralNetwork(std::string neuralNetworkID);
+		Result* getSingleResult(std::string imageID, std::string neuralNetworkID);
 		void addResult(Result result);
-		void addResults(list<Result> results);
+		void addResults(std::list<Result> results);
 
 	private:
 		void organizeResults(Result result);
 		std::list<Result> resultList;
-		std::map<string,Result*> neuralNetworkMap;
-		std::map<string,Result*> imageMap;
+		std::map<std::string,Result*> neuralNetworkMap;
+		std::map<std::string,Result*> imageMap;
 };
 #endif

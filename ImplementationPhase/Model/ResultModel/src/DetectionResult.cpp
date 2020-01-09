@@ -8,4 +8,4 @@ using namespace std;
 DetectionResult::DetectionResult(string imageID, string neuralNetworkID, list<BoundingBox> boundingBoxList) :
 	Result(imageID, neuralNetworkID), boundingBoxList(boundingBoxList) {}
 
-list<BoundingBox> DetectionResult::GetBoundingBoxes() { return boundingBoxList; }
+list<BoundingBox> DetectionResult::getBoundingBoxes() { return boundingBoxList; }

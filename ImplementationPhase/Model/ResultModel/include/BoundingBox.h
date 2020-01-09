@@ -1,5 +1,5 @@
-#ifndef BOUNDING_BOX_H
-#define BOUNDING_BOX_H
+#ifndef BOUNDING_BOX_H_
+#define BOUNDING_BOX_H_
 #include <list>
 #include "ClassProbability.h"
 

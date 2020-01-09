@@ -3,11 +3,11 @@
 
 TEST(OwnTest, initialize) {
     Result res("FOO", "BAR");
-    EXPECT_EQ(res.GetImageID(), "FOO");
+    EXPECT_EQ(res.getImageID(), "FOO");
 }
 
     
-/*
+/* more examples
 TEST(InitTest, PositiveNum) { 
     EXPECT_EQ(2, math::add(1, 1));
     EXPECT_EQ(10, math::add(2, 8));

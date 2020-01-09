@@ -2,17 +2,14 @@
 #define RESULT_H_
 #include <string>
 
-using namespace std;
-
 class Result {
 	public:
-		Result(string imageID, string neuralNetworkID);
-		string GetImageID();
-		string GetNeuralNetworkID();
+		Result(std::string imageID, std::string neuralNetworkID);
+		std::string getImageID();
+		std::string getNeuralNetworkID();
 	
-	//private:
 	protected:
-		string imageID;
-		string neuralNetworkID;
+		std::string imageID;
+		std::string neuralNetworkID;
 };
 #endif

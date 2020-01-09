@@ -4,13 +4,13 @@
 #include "Result.h"
 #include "ResultManager.h"
 
-using namespace std;
+//using namespace std;
 
-ResultManager::ResultManager(list<Result> resultList) : resultList(resultList){}
+ResultManager::ResultManager(std::list<Result> resultList) : resultList(resultList){}
 
-list<Result> ResultManager::getResultsByImage(string imageID) 
+std::list<Result> ResultManager::getResultsByImage(std::string imageID) 
 {
-	resultList = list<Result>();
+	resultList = std::list<Result>();
 	auto it = imageMap.find(imageID);
 	while (it != imageMap.end()) 
 	{
@@ -22,10 +22,10 @@ list<Result> ResultManager::getResultsByImage(string imageID)
 };
 
 
-list<Result> ResultManager::getResultsByNeuralNetwork(string neuralNetworkID)
+std::list<Result> ResultManager::getResultsByNeuralNetwork(std::string neuralNetworkID)
 {
-	resultList = list<Result>();
-	auto it = imageMap.find(neuralNetworkID);
+	resultList = std::list<Result>();
+	auto it = neuralNetworkMap.find(neuralNetworkID);
 	while (it != imageMap.end()) {
 		resultList.push_back(*(it->second));
 		++it;
@@ -33,7 +33,7 @@ list<Result> ResultManager::getResultsByNeuralNetwork(string neuralNetworkID)
 	return resultList;
 };
 
-Result* ResultManager::getSingleResult(string imageID, string neuralNetworkID) 
+Result* ResultManager::getSingleResult(std::string imageID, std::string neuralNetworkID) 
 {
 	auto it = imageMap.find(imageID);
 	while (it != imageMap.end()) {
@@ -48,7 +48,7 @@ void ResultManager::addResult(Result result)
 	organizeResults(result);
 };
 
-void ResultManager::addResults(list<Result> results) 
+void ResultManager::addResults(std::list<Result> results) 
 {
 	for (std::list<Result>::iterator it = results.begin(); it != results.end(); ++it) {
 		organizeResults(*it);
@@ -58,8 +58,8 @@ void ResultManager::addResults(list<Result> results)
 void ResultManager::organizeResults(Result result) 
 {
 	resultList.push_back(result);
-	auto newNNEntry = std::pair<string, Result*>(result.GetNeuralNetworkID(), &resultList.back());
-	auto newImageEntry = std::pair<string, Result*>(result.GetImageID(), &resultList.back());
-	neuralNetworkMap.insert(newNNEntry);
+	auto newNeuralNetworkEntry = std::pair<std::string, Result*>(result.getNeuralNetworkID(), &resultList.back());
+	auto newImageEntry = std::pair<std::string, Result*>(result.getImageID(), &resultList.back());
+	neuralNetworkMap.insert(newNeuralNetworkEntry);
 	imageMap.insert(newImageEntry);
 };

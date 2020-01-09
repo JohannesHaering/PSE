@@ -17,11 +17,11 @@ target_link_libraries(DetectionResultTest DETECTIONRESULT RESULT)
 add_executable(ResultManagerTest "ResultManager_test.cpp")
 target_link_libraries(ResultTest RESULTMANAGER RESULT)
 
-#not a junit test example.
+#not a unit test example.
 #how should we handle them?
-add_executable(ResultPackageMain "main.cpp")
-target_link_libraries(ResultPackageMain PUBLIC RESULTMANAGER)
-target_link_libraries(ResultPackageMain PUBLIC CLASSIFICATIONRESULT)
-target_link_libraries(ResultPackageMain PUBLIC DETECTIONRESULT)
-target_link_libraries(ResultPackageMain PUBLIC BOUNDINGBOX)
-target_link_libraries(ResultPackageMain PUBLIC CLASSPROBABILITY)
+#add_executable(ResultPackageMain "main.cpp")
+#target_link_libraries(ResultPackageMain PUBLIC RESULTMANAGER)
+#target_link_libraries(ResultPackageMain PUBLIC CLASSIFICATIONRESULT)
+#target_link_libraries(ResultPackageMain PUBLIC DETECTIONRESULT)
+#target_link_libraries(ResultPackageMain PUBLIC BOUNDINGBOX)
+#target_link_libraries(ResultPackageMain PUBLIC CLASSPROBABILITY)

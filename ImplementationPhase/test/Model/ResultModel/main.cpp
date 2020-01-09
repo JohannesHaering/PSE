@@ -16,9 +16,8 @@ int main(int argc, char **argv) {
 	Result second("FOO2", "BAR");
 	list<Result> resultList({first,second});
 	ResultManager mgr(resultList);
-	std::cout << first.GetImageID() << endl;
-	cout << mgr.getSingleResult("FOO1", "BAR")->GetImageID();
-	//cout << mgr.getSingleResult("FOO", "BAR")->GetImageID();
+	std::cout << first.getImageID() << endl;
+	cout << mgr.getSingleResult("FOO1", "BAR")->getImageID();
 	list<Result> imgResList = mgr.getResultsByImage("FOO1");
 	list<Result> NNResList = mgr.getResultsByNeuralNetwork("BAR");
 
