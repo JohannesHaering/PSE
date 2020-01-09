@@ -1,7 +1,7 @@
 #include <list>
 #include <stdexcept>
-#include "ClassProbability.h"
-#include "BoundingBox.h"
+#include "ClassProbability.hpp"
+#include "BoundingBox.hpp"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "Result.h"
+#include "Result.hpp"
 
 Result::Result(std::string imageID, std::string neuralNetworkID) : imageID(imageID), neuralNetworkID(neuralNetworkID) {}
 

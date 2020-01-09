@@ -1,6 +1,6 @@
 #include <string>
 #include <stdexcept>
-#include "ClassProbability.h"
+#include "ClassProbability.hpp"
 
 using namespace std;
 

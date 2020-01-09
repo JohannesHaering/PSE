@@ -3,8 +3,8 @@
 
 #include <string>
 #include <list>
-#include "Result.h"
-#include "BoundingBox.h"
+#include "Result.hpp"
+#include "BoundingBox.hpp"
 
 using namespace std;
 

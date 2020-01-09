@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Result.h"
+#include "Result.hpp"
 
 TEST(OwnTest, initialize) {
     Result res("FOO", "BAR");

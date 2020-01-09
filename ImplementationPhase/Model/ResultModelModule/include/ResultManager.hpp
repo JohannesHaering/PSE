@@ -4,7 +4,7 @@
 #include <list>
 #include <string>
 #include <map>
-#include "Result.h"
+#include "Result.hpp"
 
 class ResultManager {
 	public:
