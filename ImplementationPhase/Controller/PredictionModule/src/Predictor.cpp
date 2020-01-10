@@ -1,4 +1,4 @@
-#include "Predictor.h"
+#include "Predictor.hpp"
 
 #include <string>
 #include <list>
