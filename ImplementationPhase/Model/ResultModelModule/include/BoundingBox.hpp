@@ -3,20 +3,18 @@
 #include <list>
 #include "ClassProbability.hpp"
 
-using namespace std;
-
 class BoundingBox{
 	public:
-		BoundingBox(float x, float y, float width, float height, list<ClassProbability> classProbabilityList);
+		BoundingBox(float x, float y, float width, float height, std::list<ClassProbability> classProbabilityList);
 		float getX();
 		float getY();
 		float getWidth();
 		float getHeight();
-		list<ClassProbability> getProbabilities();
+		std::list<ClassProbability> getProbabilities();
 
 	private:
 		float x, y;
 		float width, height;
-		list<ClassProbability> classProbabilityList;
+		std::list<ClassProbability> classProbabilityList;
 };
 #endif

@@ -2,15 +2,13 @@
 #define CLASS_PROBABILITY_H_
 #include <string>
 
-using namespace std;
-
 class ClassProbability{
 	public:
-		ClassProbability(string name, float probability);
-		string getClassName();
+		ClassProbability(std::string name, float probability);
+		std::string getClassName();
 		float getProbability();
 	private:
-		string className;
+		std::string className;
 		float probability;
 };
 #endif

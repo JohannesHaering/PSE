@@ -5,13 +5,11 @@
 #include "ClassProbability.hpp"
 #include "Result.hpp"
 
-using namespace std;
-
 class ClassificationResult : public Result{
 	public:
-   		ClassificationResult(string imageID, string neuralNetworkID, list<ClassProbability> classProbabilityList);
-		list<ClassProbability> getProbabilities();
+   		ClassificationResult(std::string imageID, std::string neuralNetworkID, std::list<ClassProbability> classProbabilityList);
+		std::list<ClassProbability> getProbabilities();
 	private:
-		list<ClassProbability> classProbabilityList;
+		std::list<ClassProbability> classProbabilityList;
 };
 #endif

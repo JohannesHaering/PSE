@@ -3,9 +3,7 @@
 #include "ClassProbability.hpp"
 #include "BoundingBox.hpp"
 
-using namespace std;
-
-BoundingBox::BoundingBox(float x, float y, float width, float height, list<ClassProbability> classProbabilityList) : 
+BoundingBox::BoundingBox(float x, float y, float width, float height, std::list<ClassProbability> classProbabilityList) : 
 	x(x), y(y), width(width), height(height), classProbabilityList(classProbabilityList)
 {
 	if (x <= 0 || x >= 1 || y <= 0 || y >= 1 || width <= 0 || width > 1 || height <= 0 || height > 1)
@@ -20,4 +18,4 @@ float BoundingBox::getWidth() { return width; }
 
 float BoundingBox::getHeight() { return height; }
 
-list<ClassProbability> BoundingBox::getProbabilities() { return classProbabilityList; }
+std::list<ClassProbability> BoundingBox::getProbabilities() { return classProbabilityList; }

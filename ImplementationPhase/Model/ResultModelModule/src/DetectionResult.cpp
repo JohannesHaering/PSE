@@ -3,9 +3,7 @@
 #include "BoundingBox.hpp"
 #include "DetectionResult.hpp"
 
-using namespace std;
-
-DetectionResult::DetectionResult(string imageID, string neuralNetworkID, list<BoundingBox> boundingBoxList) :
+DetectionResult::DetectionResult(std::string imageID, std::string neuralNetworkID, std::list<BoundingBox> boundingBoxList) :
 	Result(imageID, neuralNetworkID), boundingBoxList(boundingBoxList) {}
 
-list<BoundingBox> DetectionResult::getBoundingBoxes() { return boundingBoxList; }
+std::list<BoundingBox> DetectionResult::getBoundingBoxes() { return boundingBoxList; }

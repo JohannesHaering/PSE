@@ -6,13 +6,11 @@
 #include "Result.hpp"
 #include "BoundingBox.hpp"
 
-using namespace std;
-
 class DetectionResult : public Result{
 	public:
-   		DetectionResult(string imageID, string neuralNetworkID, list<BoundingBox> boundingBoxList);
-		list<BoundingBox> getBoundingBoxes();
+   		DetectionResult(std::string imageID, std::string neuralNetworkID, std::list<BoundingBox> boundingBoxList);
+		std::list<BoundingBox> getBoundingBoxes();
 	private:
-		list<BoundingBox> boundingBoxList;
+		std::list<BoundingBox> boundingBoxList;
 };
 #endif
