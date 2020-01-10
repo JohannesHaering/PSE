@@ -1,0 +1,2 @@
+class GPUDevice : Device {
+	
