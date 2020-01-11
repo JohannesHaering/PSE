@@ -1,7 +1,7 @@
 #ifndef BOUNDING_BOX_H
 #define BOUNDING_BOX_H
 #include <list>
-#include "ClassProbability.h"
+#include "ClassProbability.hpp"
 
 using namespace std;
 

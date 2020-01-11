@@ -1,8 +1,8 @@
 #include <list>
 #include <string>
 #include <map>
-#include "Result.h"
-#include "ResultManager.h"
+#include "Result.hpp"
+#include "ResultManager.hpp"
 
 using namespace std;
 

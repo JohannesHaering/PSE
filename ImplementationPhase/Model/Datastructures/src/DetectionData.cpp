@@ -1,10 +1,8 @@
-#include "DetectionData.h"
-#include "SingleDetectionDataset.h"
+#include "DetectionData.hpp"
+#include "SingleDetectionDataset.hpp"
 
 #include <list>
 
-using namespace std;
+DetectionData::DetectionData(std::list<SingleDetectionDataset> dataset) : dataset(dataset) {}
 
-DetectionData::DetectionDataset(list<SingleDetectionDatset> dataset) : dataset(dataset) {}
-
-list<SingleDetectionData> getDataset() { return dataset; }
+std::list<SingleDetectionDataset> DetectionData::getDataset() { return dataset; }

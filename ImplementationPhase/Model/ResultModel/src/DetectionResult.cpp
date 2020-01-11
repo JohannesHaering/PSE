@@ -1,7 +1,7 @@
 #include <string>
 #include <list>
-#include "BoundingBox.h"
-#include "DetectionResult.h"
+#include "BoundingBox.hpp"
+#include "DetectionResult.hpp"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
 #include <string>
-#include "Result.h"
+#include "Result.hpp"
 #include <iostream>
 using namespace std;
 

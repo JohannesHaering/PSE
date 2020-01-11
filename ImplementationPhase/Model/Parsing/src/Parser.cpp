@@ -1,15 +1,15 @@
-#include "../include/Parser.h"
+#include "Parser.hpp"
 #include <string>
 #include <list>
 
-using namespace std;
-
 template <class T>
-list<string> Parser<T>::splitBySymbol(string text, string symbol) {
-    list<string> output;
+std::list<std::string> Parser<T>::splitBySymbol(std::string text, std::string symbol)
+{
+    std::list<std::string> output;
     size_t pos = 0;
     string token;
-    while ((pos = s.find(symbol)) != string::npos) {
+    while ((pos = s.find(symbol)) != std::string::npos)
+    {
         token = s.substr(0, pos);
         output.push_back(token);
         s.erase(0, pos + symbol.length());

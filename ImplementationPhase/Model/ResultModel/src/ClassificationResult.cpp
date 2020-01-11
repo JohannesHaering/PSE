@@ -1,7 +1,7 @@
 #include <string>
 #include <list>
-#include <ClassProbability.h>
-#include <ClassificationResult.h>
+#include <ClassProbability.hpp>
+#include <ClassificationResult.hpp>
 
 using namespace std;
 

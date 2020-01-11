@@ -1,11 +1,11 @@
-#include "../../../ResultModel/include/BoundingBox.h"
-#include "../../../ResultModel/include/DetectionResult.h"
-#include "../../include/Factory/DetectionResultFactory.h"
+#include "BoundingBox.hpp"
+#include "DetectionResult.hpp"
+#include "DetectionResultFactory.hpp"
 
 #include <string>
+#include <list>
 
-using namespace std;
-
-DetectionResult DetectionResultFactory::build(string imageId, string neuralnetworkId, list<BoundingBox> boundingBoxes){
+DetectionResult DetectionResultFactory::build(std::string imageId, std::string neuralnetworkId, std::list<BoundingBox> boundingBoxes)
+{
     return DetectionResult(imageId, neuralnetworkId, boundingBoxes);
-} 
+}

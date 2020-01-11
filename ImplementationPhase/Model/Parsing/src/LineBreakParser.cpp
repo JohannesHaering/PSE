@@ -1,11 +1,10 @@
-#include "../include/Parser.h"
-#include "../include/LineBreakParser.h"
+#include "Parser.hpp"
+#include "LineBreakParser.hpp"
 #include <string>
 #include <list>
 
-using namespace std;
-
 template <class T>
-list<string> LineBreakParser<T>::splitIntoLines(string text) {
+std::list<std::string> LineBreakParser<T>::splitIntoLines(std::string text) {
     return Parser::splitBySymbol(text, "\n");
 }
+

@@ -1,18 +1,18 @@
-#include "../include/Parser.h"
-#include "../include/ClassificationResultParser.h"
-#include "../include/Factory/ClassificationResultFactory.h"
-#include "../../ResultModel/include/ClassificationResult.h"
-#include "../include/ClassProbabilityParser.h"
+#include "Parser.hpp"
+#include "ClassificationResultParser.hpp"
+#include "ClassificationResultFactory.hpp"
+#include "ClassificationResult.hpp"
+#include "ClassProbabilityParser.hpp"
 
 #include <string>
 #include <list>
 #include <stdexcept>
 
-using namespace std;
-
-ClassificationResult ClassificationResultParser::parse(string toParse) {
+ClassificationResult ClassificationResultParser::parse(std::string toParse)
+{
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
-    if(parts.size() < 3 || parts.size() > 3){
+    if (parts.size() < 3 || parts.size() > 3)
+    {
         throw invalid_argument("Too much parts");
     }
     auto iterator = parts.begin();
@@ -25,7 +25,8 @@ ClassificationResult ClassificationResultParser::parse(string toParse) {
     list<ClassProbability> parsedProbabilities;
     auto probabilityParser = ClassProbabilityParser();
     auto singleProbabilities = Parser::splitBySymbol(probabilities, probabilitiesDelimeter);
-    for(auto probabilitiesIterator = singleProbabilities.begin(); probabilitiesIterator != singleProbabilities.end(); ++probabilitiesIterator) {
+    for (auto probabilitiesIterator = singleProbabilities.begin(); probabilitiesIterator != singleProbabilities.end(); ++probabilitiesIterator)
+    {
         parsedProbabilities.push_back(probabilityParser.parse(*probabilitiesIterator));
     }
 

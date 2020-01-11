@@ -1,16 +1,18 @@
-#include "../include/BoundingBoxParser.h"
-#include "../include/Factory/BoundingBoxFactory.h"
-#include "../include/Parser.h"
-#include "../include/ClassProbabilityParser.h"
-#include "../../ResultModel/include/BoundingBox.h"
+#include "BoundingBoxParser.hpp"
+#include "BoundingBoxFactory.hpp"
+#include "Parser.hpp"
+#include "ClassProbabilityParser.hpp"
+#include "BoundingBox.hpp"
 
 #include <string>
 #include <list>
 #include <stdexcept>
 
-using namespace std;
-
-BoundingBox BoundingBoxParser::parse(string toParse) {
+// Format of the string
+// <X>$<Y>$<Width>$<Height>$<ClassProbability1>/<ClassProbability2>/...
+// Format of the ClassProbability
+// <classId>:<probability>
+BoundingBox BoundingBoxParser::parse(std::string toParse) {
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
     if(parts.size() < 5 || parts.size() > 5){
         throw invalid_argument("Too much parts");

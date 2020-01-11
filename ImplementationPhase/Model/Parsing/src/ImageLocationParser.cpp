@@ -1,12 +1,11 @@
-#include "../include/LineBreakParser.h"
-#include "../include/ImageLocationParser.h"
+#include "LineBreakParser.hpp"
+#include "ImageLocationParser.hpp"
 #include <string>
 #include <list>
 
-using namespace std;
-
 template <class T>
-list<string> parse(string toParse) {
+std::list<std::string> parse(std::string toParse)
+{
     auto output = LineBreakParser<T>::splitIntoLines(toParse);
     return output;
 }

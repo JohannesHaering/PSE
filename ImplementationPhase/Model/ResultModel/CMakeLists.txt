@@ -4,30 +4,30 @@ cmake_minimum_required(VERSION 3.10)
 project(ResultPackageMain C CXX)
 
 
-add_library(RESULT "src/Result.cpp" "include/Result.h")
+add_library(RESULT "src/Result.cpp" "include/Result.hpp")
 target_include_directories(RESULT PUBLIC "include/")
 
 
-add_library(CLASSPROBABILITY "src/ClassProbability.cpp" "include/ClassProbability.h")
+add_library(CLASSPROBABILITY "src/ClassProbability.cpp" "include/ClassProbability.hpp")
 target_include_directories(CLASSPROBABILITY PUBLIC "include/")
 
 
-add_library(BOUNDINGBOX "src/BoundingBox.cpp" "include/BoundingBox.h")
+add_library(BOUNDINGBOX "src/BoundingBox.cpp" "include/BoundingBox.hpp")
 target_include_directories(BOUNDINGBOX PUBLIC "include/")
 #target_link_libraries(BOUNDINGBOX PUBLIC RESULT)#not sure
 
 
-add_library(CLASSIFICATIONRESULT "src/ClassificationResult.cpp" "include/ClassificationResult.h")
+add_library(CLASSIFICATIONRESULT "src/ClassificationResult.cpp" "include/ClassificationResult.hpp")
 target_include_directories(CLASSIFICATIONRESULT PUBLIC "include/")
 #target_link_libraries(CLASSIFICATIONRESULT PUBLIC RESULT)#not sure
 
 
-add_library(DETECTIONRESULT "src/DetectionResult.cpp" "include/DetectionResult.h")
+add_library(DETECTIONRESULT "src/DetectionResult.cpp" "include/DetectionResult.hpp")
 target_include_directories(DETECTIONRESULT PUBLIC "include/")
 #target_link_libraries(DETECTIONRESULT PUBLIC BOUNDINGBOX)#not sure
 
 
-add_library(RESULTMANAGER "src/ResultManager.cpp" "include/ResultManager.h")
+add_library(RESULTMANAGER "src/ResultManager.cpp" "include/ResultManager.hpp")
 target_include_directories(RESULTMANAGER PUBLIC "include/")
 target_link_libraries(RESULTMANAGER PUBLIC RESULT)
 

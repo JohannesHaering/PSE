@@ -2,8 +2,8 @@
 #define CLASSIFICATION_RESULT_H
 #include <string>
 #include <list>
-#include "ClassProbability.h"
-#include "Result.h"
+#include "ClassProbability.hpp"
+#include "Result.hpp"
 
 using namespace std;
 

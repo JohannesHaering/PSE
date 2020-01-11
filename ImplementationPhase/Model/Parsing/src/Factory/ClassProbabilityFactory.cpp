@@ -1,10 +1,9 @@
-#include "../../../ResultModel/include/ClassProbability.h"
-#include "../../include/Factory/ClassProbabilityFactory.h"
+#include "ClassProbability.hpp"
+#include "ClassProbabilityFactory.hpp"
 
 #include <string>
 
-using namespace std;
-
-ClassProbability ClassProbabilityFactory::build(string classId, float probability){
+ClassProbability ClassProbabilityFactory::build(std::string classId, float probability)
+{
     return ClassProbability(classId, probability);
 }
