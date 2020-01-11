@@ -39,3 +39,7 @@ target_link_libraries(example math)
 
 #add_subdirectory(Model)
 #add_subdirectory(Controller)
+
+# Require OpenCV. if not configured for now, add # before next 2 lines
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
