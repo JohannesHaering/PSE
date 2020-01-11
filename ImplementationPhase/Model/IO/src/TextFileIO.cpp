@@ -1,18 +1,16 @@
-#include "../include/Data.h"
-#include "../include/FileIO.h"
-#include "../include/TextFileIO.h"
+#include "Data.hpp"
+#include "FileIO.hpp"
+#include "TextFileIO.hpp"
 #include <string>
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
-Data<string> TextFileIO::readFile(string path) {
-    Data<string> data = Data<string>(FileIO::readPureFile(path));
+Data<std::string> TextFileIO::readFile(std::string path) {
+    Data<std::string> data = Data<std::string>(FileIO::readPureFile(path));
     return data;
 }
 
-bool TextFileIO::writeFile(string path, Data<string> data){
+bool TextFileIO::writeFile(std::string path, Data<std::string> data){
     auto success = FileIO::writePureFile(path, data.getData());     
     return success;       
 }

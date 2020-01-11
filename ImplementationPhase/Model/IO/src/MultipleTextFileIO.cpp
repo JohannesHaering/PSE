@@ -1,22 +1,20 @@
-#include "../include/Data.h"
-#include "../include/TextFileIO.h"
-#include "../include/MultipleTextFileIO.h"
+#include "Data.hpp"
+#include "TextFileIO.hpp"
+#include "MultipleTextFileIO.hpp"
 #include <string>
 #include <list>
 
-using namespace std;
 
-
-Data<list<string>> MultipleTextFileIO::readFile(list<string> paths) {
-    list<string> rawData;
-    for(list<string>::iterator it=paths.begin(); it != paths.end(); ++it){
+Data<std::list<std::string>> MultipleTextFileIO::readFile(std::list<std::string> paths) {
+    std::list<std::string> rawData;
+    for(std::list<std::string>::iterator it=paths.begin(); it != paths.end(); ++it){
         rawData.push_back(FileIO::readPureFile(*it));
     }
     return Data(rawData);
 }
 
-bool MultipleTextFileIO::writeFile(list<string> paths, Data<list<string>> data) {
-    list<string> output = data.getData();
+bool MultipleTextFileIO::writeFile(std::list<std::string> paths, Data<std::list<std::string>> data) {
+    std::list<std::string> output = data.getData();
     if(paths.size() != output.size()){
         return false;
     }
