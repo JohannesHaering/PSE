@@ -1,5 +1,5 @@
-#ifndef IMAGE_IO_H_
-#define IMAGE_IO_H_
+#ifndef IMAGE_FILE_IO_H_
+#define IMAGE_FILE_IO_H_
 
 #include "Data.hpp"
 #include "FileIO.hpp"

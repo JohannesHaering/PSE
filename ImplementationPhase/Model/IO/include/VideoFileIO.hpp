@@ -7,7 +7,7 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 
-class VideoIO : public FileIO
+class VideoFileIO : public FileIO
 {
 public:
     Data<cv::VideoCapture> readFile(std::string path);

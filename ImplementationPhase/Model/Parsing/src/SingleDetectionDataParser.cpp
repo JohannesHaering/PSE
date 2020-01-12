@@ -1,9 +1,10 @@
 #include "SingleDetectionDatasetParser.hpp"
 #include "BoundingBox.hpp"
 #include "BoundingBoxParser.hpp"
-#include "Parser.hpp"
+#include "LineBreakParser.hpp"
 #include "SingleDetectionDataset.hpp"
 #include <string>
+#include <list>
 
 // Format of the file
 // <image_name>
@@ -15,15 +16,17 @@
 // <X>$<Y>$<Width>$<Height>$<ClassProbability1>/<ClassProbability2>/...
 // Format of the ClassProbability
 // <classId>:<probability>
-SingleDetectionDataset SingleDetectionDatasetParser::parse(std::list<std::string> toParse)
+SingleDetectionDataset SingleDetectionDatasetParser::parse(std::string toParse)
 {
-    auto iterator = toParse.begin();
+    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
+
+    auto iterator = lines.begin();
     auto imageID = *iterator;
     ++iterator;
     auto imageLocation = *iterator;
     ++iterator;
     std::list<BoundingBox> boundingBoxes;
-    for(; iterator != toParse.end(); ++iterator){
+    for(; iterator != lines.end(); ++iterator){
         boundingBoxes.push_back(BoundingBoxParser().parse(*iterator));
     }
     

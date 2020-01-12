@@ -8,7 +8,7 @@
 
 // You get the input of multiple files
 // The input of every file has the format of a SingleDetectionDataset
-DetectionData DetectionDataParser::parse(std::list<std::list<std::string>> toParse)
+DetectionData DetectionDataParser::parse(std::list<std::string> toParse)
 {
     std::list<SingleDetectionDataset> datasets;
     for (auto iterator = toParse.begin(); iterator != toParse.end(); ++iterator)
