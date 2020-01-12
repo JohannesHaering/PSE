@@ -4,15 +4,6 @@
 #include <iostream>
 #include <fstream>
 
-FileIO FileIO::getInstance()
-{
-    if (&singleton == 0)
-    {
-        singleton = FileIO();
-    }
-    return singleton;
-}
-
 std::string FileIO::readPureFile(std::string path)
 {
     std::ifstream file(path);
