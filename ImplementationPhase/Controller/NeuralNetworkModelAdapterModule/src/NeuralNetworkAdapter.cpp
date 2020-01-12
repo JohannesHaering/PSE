@@ -1,12 +1,12 @@
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
 
-void NeuralNetworkAdapter::addLayer(NetworkLayer layer) { neuralNetwork.addLayer(layer); }
+void NeuralNetworkAdapter::addLayer(NetworkLayer layer) { this->neuralNetwork.addLayer(layer); }
 
-NetworkLayer NeuralNetworkAdapter::getFirstLayer() { return neuralNetwork.getFirstLayer(); }
+NetworkLayer NeuralNetworkAdapter::getFirstLayer() { return this->neuralNetwork.getFirstLayer(); }
 
-NetworkLayer NeuralNetworkAdapter::getLastLayer() { return neuralNetwork.getLastLayer(); }
+NetworkLayer NeuralNetworkAdapter::getLastLayer() { return this->neuralNetwork.getLastLayer(); }
 
-NetworkLayer NeuralNetworkAdapter::getNextLayer() { return neuralNetwork.getNextLayer(); }        
+NetworkLayer NeuralNetworkAdapter::getNextLayer() { return this->neuralNetwork.getNextLayer(); }        
 
-NetworkLayer NeuralNetworkAdapter::getPreviousLayer() { return neuralNetwork.getPreviousLayer(); }
+NetworkLayer NeuralNetworkAdapter::getPreviousLayer() { return this->neuralNetwork.getPreviousLayer(); }
