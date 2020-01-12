@@ -1,0 +1,7 @@
+google-test sollte bei euch automatisch bauen.
+gUnitTests unter /test/.../... ablegen (vgl. /test/Model/ResultModel)
+CMakeLists.txt in dem Folder entsprechend der dependencies des jeweiligen Tests anpassen
+
+Aufteilen in .hpp und .cpp Dateien
+Vgl. /Model/ResultModel/src bzw. /Model/ResultModel/include sowie /Model/ResultModel/CmakeLists.txt
+
