@@ -1,0 +1,5 @@
+class MainHandler {
+
+    void main();
+
+};
