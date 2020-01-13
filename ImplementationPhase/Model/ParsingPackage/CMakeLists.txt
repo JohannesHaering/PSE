@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name
-project(ParsingPackage C CXX)
+# project(ParsingPackage C CXX)
 
-add_library(FACTORY "src/Factory/BoundingBoxFactory.cpp" "include/Factory/BoundingBoxFactory.hpp "src/Factory/ClassificationResultFactory.cpp" "icnlude/Factory/ClassificationResultFactory.hpp" "src/Factory/ClassProbabilityFactory.cpp" "include/Factory/ClassProbabilityFactory.hpp" "src/Factory/DetectionResultFactory.cpp" "include/Factory/DetectionResultFactory.hpp)
+add_library(FACTORY "src/Factory/BoundingBoxFactory.cpp" "include/Factory/BoundingBoxFactory.hpp" "src/Factory/ClassificationResultFactory.cpp" "include/Factory/ClassificationResultFactory.hpp" "src/Factory/ClassProbabilityFactory.cpp" "include/Factory/ClassProbabilityFactory.hpp" "src/Factory/DetectionResultFactory.cpp" "include/Factory/DetectionResultFactory.hpp")
 target_include_directories(FACTORY PUBLIC "include/Factory")
 
 add_library(BOUNDINGBOXPARSER "src/BoundingBoxParser.cpp" "include/BoundingBoxParser.hpp")
@@ -33,13 +33,3 @@ target_include_directories(PARSER PUBLIC "include/")
 add_library(LINEBREAKPARSER "src/LineBreakParser.cpp" "include/LineBreakParser.hpp")
 target_include_directories(LINEBREAKPARSER PUBLIC "include/")
 
-target_link_libraries(ParsingPackage PUBLIC FACTORY)
-target_link_libraries(ParsingPackage PUBLIC BOUNDINGBOXPARSER)
-target_link_libraries(ParsingPackage PUBLIC CLASSIFICATIONDATASETPARSER)
-target_link_libraries(ParsingPackage PUBLIC CLASSIFICATIONRESULTPARSER)
-target_link_libraries(ParsingPackage PUBLIC DETECTIONDATAPARSER)
-target_link_libraries(ParsingPackage PUBLIC DETECTIONRESULTPARSER)
-target_link_libraries(ParsingPackage PUBLIC CLASSPROBABILITYPARSER)
-target_link_libraries(ParsingPackage PUBLIC IMAGEPARSING)
-target_link_libraries(ParsingPackage PUBLIC PARSER)
-target_link_libraries(ParsingPackage PUBLIC LINEBREAKPARSER)

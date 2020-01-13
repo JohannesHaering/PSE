@@ -5,4 +5,4 @@ add_subdirectory(IOPackage)
 add_subdirectory(ModelFacadePackage)
 add_subdirectory(ParsingPackage)
 add_subdirectory(VideoHandlingPackage)
-add_subdirectory(ModelFacade)
+# add_subdirectory(ModelFacade) #not done yet

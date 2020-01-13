@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(ImageClassifier)
-
-# add_executable("${PROJECT_NAME}" "/Controller/EventHandlerModule/src/MainHandler.cpp")
-
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -35,15 +31,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 
 add_subdirectory(test)
 
+add_subdirectory(Model)
+add_subdirectory(View)
+add_subdirectory(Controller)
 
-# Add definition for the cmake-tutorial binary
-target_link_libraries(example math)
-
-
-#add_subdirectory(Model)
-#add_subdirectory(View)
-#add_subdirectory(Controller)
-
-# Require OpenCV. if not configured for now, add # before next 2 lines
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
