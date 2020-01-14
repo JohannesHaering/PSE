@@ -1,4 +1,4 @@
 #include "Result.hpp"
 #include "ResultManager.hpp"
 
-Result ResultManager::getSingleResult(int imageID, int neuralNetworkID){}
+Result* ResultManager::getSingleResult(std::string imageID, std::string neuralNetworkID){}

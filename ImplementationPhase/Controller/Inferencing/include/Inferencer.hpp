@@ -2,6 +2,7 @@
 #define INFERENCER_H_
 
 #include "NeuralNetworkAdapter.hpp"
+#include <vector>
 
 class Inferencer {
 

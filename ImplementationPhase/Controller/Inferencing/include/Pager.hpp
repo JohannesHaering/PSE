@@ -10,6 +10,8 @@ class Pager {
 		void next();
 		void prev();
 		int getCurrentPage();
+		bool nextEnable();
+		bool prevEnable();
 
 	protected: 
 		int currentPage;
