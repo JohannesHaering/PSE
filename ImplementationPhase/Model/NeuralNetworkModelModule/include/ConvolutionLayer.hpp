@@ -2,7 +2,6 @@
 #define CONVOLUTIONLAYER_H_
 
 #include <string>
-#include <vector>
 #include "NetworkLayer.hpp"
 #include "MatrixDefine.hpp"
 
@@ -12,6 +11,7 @@ class ConvolutionLayer  : public NetworkLayer {
     TENSOR(double) weightsTensor;
     int stride;
     int padding;
+
   public:
     ConvolutionLayer();
     ConvolutionLayer(std::string name, int* inputDimensions, TENSOR(double) weights, int stride, int padding);

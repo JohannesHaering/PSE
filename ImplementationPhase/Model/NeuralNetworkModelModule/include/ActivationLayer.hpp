@@ -9,11 +9,13 @@ class ActivationLayer  : public NetworkLayer {
 
   private:
     Activation function;
+
   public:
     ActivationLayer();
     ActivationLayer(std::string name, int* inputDimensions, Activation function);
     void setFunction(Activation function);
     Activation getFunction();
     virtual int* getTensorDimenssions();
+    // ~ActivationLayer();
 };
 #endif
