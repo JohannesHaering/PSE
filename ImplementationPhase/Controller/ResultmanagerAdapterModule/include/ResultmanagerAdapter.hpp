@@ -1,5 +1,5 @@
-#ifndef RESULT_MANAGER_H_
-#define RESULT_MANAGER_H_
+#ifndef RESULT_MANAGER_ADAPTER_H_
+#define RESULT_MANAGER_ADAPTER_H_
 
 #include <list>
 #include <string>

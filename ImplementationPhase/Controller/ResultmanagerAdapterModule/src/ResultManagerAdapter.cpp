@@ -8,7 +8,7 @@ ResultManagerAdapter::ResultManagerAdapter(ResultManager resultManager) : result
 
 std::list<Result> ResultManagerAdapter::getResultsByImage(std::string imageID)
 {
-	return resultManager.getResultByImage(imageID);
+	return resultManager.getResultsByImage(imageID);
 };
 
 
@@ -17,28 +17,18 @@ std::list<Result> ResultManagerAdapter::getResultsByNeuralNetwork(std::string ne
 	return resultManager.getResultsByNeuralNetwork(neuralNetworkID);
 };
 
-Result ResultManagerAdapter::getSingleResult(std::string imageID, std::string neuralNetworkID)
+Result* ResultManagerAdapter::getSingleResult(std::string imageID, std::string neuralNetworkID)
 {
-	return resultManager.getSingleResult(neuralNetworkID);
+	return resultManager.getSingleResult(imageID, neuralNetworkID);
 };
 
 void ResultManagerAdapter::addResult(Result result)
 {
-	resultManager.organizeResults(result);
+	resultManager.addResult(result);
 };
 
 void ResultManagerAdapter::addResults(std::list<Result> results)
 {
-	for (std::list<Result>::iterator it = results.begin(); it != results.end(); ++it) {
-		organizeResults(*it);
-	}
+	resultManager.addResults(results);
 };
 
-void ResultManagerAdapter::organizeResults(Result result)
-{
-	resultList.push_back(result);
-	auto newNeuralNetworkEntry = std::pair<std::string, Result*>(result.getNeuralNetworkID(), &resultList.back());
-	auto newImageEntry = std::pair<std::string, Result*>(result.getImageID(), &resultList.back());
-	neuralNetworkMap.insert(newNeuralNetworkEntry);
-	imageMap.insert(newImageEntry);
-};
