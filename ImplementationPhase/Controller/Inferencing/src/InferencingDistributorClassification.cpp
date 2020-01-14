@@ -2,15 +2,16 @@
 #include "InferencingDistributorClassification.hpp"
 
 
-InferencingDistributorClassification::InferencingDistributorClassification(){
-    this->view = ViewFacade::getInstance();
+InferencingDistributorClassification::InferencingDistributorClassification(InferencePage page)
+{
+	this->page = page;
 }
 
 /*
 * Enables or disables the Start button of the View
 */
 void InferencingDistributorClassification::enableStart(){
-    view.startButtonEnableClassification(canStart());
+    page.startButtonEnable(canStart());
 }
 
 /*
@@ -20,8 +21,8 @@ void InferencingDistributorClassification::enableStart(){
 void InferencingDistributorClassification::startProcess(){
     dispatcher.setNeuralNetworkList(neuralNetworks);
     //TODO: correct mode
-    std::vector<std::string> platforms = view.getPlatformsClassification();
-    std::string operatingMode = view.getOperatingModeClassification();
+    std::vector<std::string> platforms = page.getPlatforms();
+    std::string operatingMode = page.getOperatingMode();
     Mode mode = {};
     dispatcher.setMode(mode);
     resultManager = dispatcher.dispatchImages(directories);
@@ -31,6 +32,6 @@ void InferencingDistributorClassification::startProcess(){
 * Sends the given result to the view. 
 */
 void InferencingDistributorClassification::drawResult(Result result) {
-    view.setResultClassification(result);
+    page.setResult(result);
 }    
     

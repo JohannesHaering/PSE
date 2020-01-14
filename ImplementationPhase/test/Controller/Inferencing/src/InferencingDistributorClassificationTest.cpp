@@ -1,14 +1,17 @@
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
+#include "InferencePage.hpp"
 
 struct InferencingDistributorTests : testing::Test 
 {
 	
 	InferencingDistributor* inferencer;
+	ClassificationPageMock* page;
 
 	InferencingDistributorTests() {
-		inferencer = new InferencingDistributorClassification();
+		page = new ClassificationPageMock();
+		inferencer = new InferencingDistributorClassification(*page);
 	}
 
 	~InferencingDistributorTests() {
@@ -17,19 +20,51 @@ struct InferencingDistributorTests : testing::Test
 
 };
 
-class ClassificationPageMock : public ClassificationPage {
+class ClassificationPageMock : public InferencePage {
+
+public:
+	bool getShowResults() 
+	{
+		return showResults;
+	}
+	bool getSaveResults() 
+	{
+		return saveResults;
+	}
+	void setShowResults(bool enable)
+	{
+		showResults = enable;
+	}
+	void setSaveResults(bool enable) 
+	{
+		saveResults = enable;
+	}
+
+private: 
+	bool showResults;
+	bool saveResults;
 
 };
 
-TEST_F(InferencingDistributorTests, TopologyBeginStartTest)
+TEST_F(InferencingDistributorTests, InferencerShowSaveFalseStartTest)
 {
+	page->setShowResults(false);
+	page->setSaveResults(false);
+	std::vector<NeuralNetworkAdapter> neuralNetworks = { NeuralNetworkAdapter(NeuralNetwork()) };
+	inferencer->addNeuralNetwork(neuralNetworks);
+	std::vector<std::string> paths = { "FOO", "FOO" };
+	inferencer->setInput(paths);
 	EXPECT_FALSE(inferencer->canStart());
 }
 
 TEST_F(InferencingDistributorTests, TopologyCanStartTest)
 {
+	page->setShowResults(true);
+	page->setSaveResults(false);
 	std::vector<NeuralNetworkAdapter> neuralNetworks = { NeuralNetworkAdapter(NeuralNetwork()) };
 	inferencer->addNeuralNetwork(neuralNetworks);
+	std::vector<std::string> paths = { "FOO", "FOO" };
+	inferencer->setInput(paths);
 	EXPECT_TRUE(inferencer->canStart());
 }
 

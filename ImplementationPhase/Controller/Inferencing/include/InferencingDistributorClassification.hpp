@@ -6,7 +6,7 @@
 class InferencingDistributorClassification : public InferencingDistributor {
 
     public: 
-        InferencingDistributorClassification();
+        InferencingDistributorClassification(InferencePage page);
         void enableStart();
         void startProcess();
 

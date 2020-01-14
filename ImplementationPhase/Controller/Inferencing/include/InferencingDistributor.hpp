@@ -19,7 +19,7 @@ class InferencingDistributor : public Distributor {
         virtual void enableStart();
 
     protected: 
-        ViewFacade view;
+        InferencePage page;
         DispatchManager dispatcher; 
         ResultManager resultManager;
         virtual void drawResult(Result result);
