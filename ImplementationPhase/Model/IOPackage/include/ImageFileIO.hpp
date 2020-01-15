@@ -10,6 +10,6 @@
 class ImageFileIO : public FileIO {
     public:
         Data<cv::Mat> readFile(std::string path);
-        bool writeFile(Data<cv::Mat image>, std::string path);
+        bool writeFile(Data<cv::Mat> image, std::string path);
 };
 #endif

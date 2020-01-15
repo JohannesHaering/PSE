@@ -11,7 +11,7 @@ Data<std::list<std::string>> MultipleTextFileIO::readFile(std::list<std::string>
     {
         rawData.push_back(FileIO::readPureFile(*it));
     }
-    return Data(rawData);
+    return Data<std::list<std::string>> (rawData);
 }
 
 bool MultipleTextFileIO::writeFile(std::list<std::string> paths, Data<std::list<std::string>> data)

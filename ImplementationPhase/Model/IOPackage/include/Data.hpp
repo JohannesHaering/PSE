@@ -10,7 +10,7 @@ private:
 public:
     Data<T>(T data)
     {
-        this.data = data;
+        this->data = data;
     }
     virtual T getData();
 };
