@@ -1,2 +1,0 @@
-/usr/bin/ar qc libINCEPTIONLAYER.a  CMakeFiles/INCEPTIONLAYER.dir/src/InceptionLayer.cpp.o
-/usr/bin/ranlib libINCEPTIONLAYER.a

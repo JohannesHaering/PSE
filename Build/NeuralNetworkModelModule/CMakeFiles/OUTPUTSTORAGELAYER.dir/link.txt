@@ -1,2 +1,0 @@
-/usr/bin/ar qc libOUTPUTSTORAGELAYER.a  CMakeFiles/OUTPUTSTORAGELAYER.dir/src/OutputStorageLayer.cpp.o
-/usr/bin/ranlib libOUTPUTSTORAGELAYER.a

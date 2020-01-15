@@ -1,2 +1,0 @@
-/usr/bin/ar qc libRESULT.a  CMakeFiles/RESULT.dir/src/Result.cpp.o
-/usr/bin/ranlib libRESULT.a

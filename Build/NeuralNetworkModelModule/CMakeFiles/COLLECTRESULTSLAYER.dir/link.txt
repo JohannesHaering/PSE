@@ -1,2 +1,0 @@
-/usr/bin/ar qc libCOLLECTRESULTSLAYER.a  CMakeFiles/COLLECTRESULTSLAYER.dir/src/CollectResultsLayer.cpp.o
-/usr/bin/ranlib libCOLLECTRESULTSLAYER.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libNETWORKLAYER.a  CMakeFiles/NETWORKLAYER.dir/src/NetworkLayer.cpp.o
-/usr/bin/ranlib libNETWORKLAYER.a

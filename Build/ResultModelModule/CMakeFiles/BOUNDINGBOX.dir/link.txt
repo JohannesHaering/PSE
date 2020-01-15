@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBOUNDINGBOX.a  CMakeFiles/BOUNDINGBOX.dir/src/BoundingBox.cpp.o
-/usr/bin/ranlib libBOUNDINGBOX.a

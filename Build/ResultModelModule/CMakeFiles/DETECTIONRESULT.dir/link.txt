@@ -1,2 +1,0 @@
-/usr/bin/ar qc libDETECTIONRESULT.a  CMakeFiles/DETECTIONRESULT.dir/src/DetectionResult.cpp.o
-/usr/bin/ranlib libDETECTIONRESULT.a

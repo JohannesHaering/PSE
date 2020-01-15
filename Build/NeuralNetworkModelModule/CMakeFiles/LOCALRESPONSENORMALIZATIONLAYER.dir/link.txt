@@ -1,2 +1,0 @@
-/usr/bin/ar qc libLOCALRESPONSENORMALIZATIONLAYER.a  CMakeFiles/LOCALRESPONSENORMALIZATIONLAYER.dir/src/LocalResponseNormalizationLayer.cpp.o
-/usr/bin/ranlib libLOCALRESPONSENORMALIZATIONLAYER.a

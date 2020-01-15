@@ -1,2 +1,0 @@
-/usr/bin/ar qc libCONVOLUTIONLAYER.a  CMakeFiles/CONVOLUTIONLAYER.dir/src/ConvolutionLayer.cpp.o
-/usr/bin/ranlib libCONVOLUTIONLAYER.a
