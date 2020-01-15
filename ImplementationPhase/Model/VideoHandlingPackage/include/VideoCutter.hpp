@@ -6,6 +6,6 @@
 
 class VideoCutter {
     public:
-        std::list<cv:Mat> cutIntoFrames(cv::VideoCapture video, int frameInterval);
+        std::list<cv::Mat> cutIntoFrames(cv::VideoCapture video, int frameInterval);
 };
 #endif

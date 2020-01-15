@@ -1,3 +1,4 @@
+#include "Result.hpp"
 class InferencePage {
     public: 
         void nextNeuralNetworkButtonEnable(bool enable);
