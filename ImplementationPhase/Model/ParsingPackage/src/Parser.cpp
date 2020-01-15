@@ -8,10 +8,10 @@ std::list<std::string> Parser<T>::splitBySymbol(std::string text, std::string sy
     std::list<std::string> output;
     size_t pos = 0;
     std::string token;
-    while ((pos = s.find(symbol)) != std::string::npos)
+    while ((pos = text.find(symbol)) != std::string::npos)
     {
-        token = s.substr(0, pos);
+        token = text.substr(0, pos);
         output.push_back(token);
-        s.erase(0, pos + symbol.length());
+        text.erase(0, pos + symbol.length());
     }
 }
