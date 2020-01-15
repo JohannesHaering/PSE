@@ -6,9 +6,9 @@
 #include <list>
 
 template <class T>
-class LineBreakParser : public Parser
+class LineBreakParser : public Parser<T>
 {
-protected:
+  protected:
     std::list<std::string> splitIntoLines(std::string text);
 };
 #endif

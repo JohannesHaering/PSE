@@ -8,12 +8,16 @@ target_include_directories(MODELFACADE PUBLIC "include/")
 
 add_library(CLASSIFICATIONDATASETFACADE "src/ClassificationDatasetFacade.cpp" "include/ClassificationDatasetFacade.hpp")
 target_include_directories(CLASSIFICATIONDATASETFACADE PUBLIC "include/")
+target_link_libraries(CLASSIFICATIONDATASETFACADE PUBLIC IO CLASSIFICATIONRESULT CLASSIFICATIONDATASETPARSER)
 
 add_library(DETECTIONDATAFACADE "src/DetectionDataFacade.cpp" "include/DetectionDataFacade.hpp")
 target_include_directories(DETECTIONDATAFACADE PUBLIC "include/")
+target_link_libraries(DETECTIONDATAFACADE PUBLIC IO DETECTIONDATA DETECTIONDATAPARSER)
 
 add_library(IMAGEFACADE "src/ImageFacade.cpp" "include/ImageFacade.hpp")
 target_include_directories(IMAGEFACADE PUBLIC "include/")
+target_link_libraries(IMAGEFACADE PUBLIC IO CAMERA IMAGEPARSER)
 
 add_library(PARSERESULTFACADE "src/ParseResultFacade.cpp" "include/ParseResultFacade.hpp")
 target_include_directories(PARSERESULTFACADE PUBLIC "include/")
+target_link_libraries(PARSERESULTFACADE PUBLIC DETECTIONRESULT DETECTIONRESULTPARSER)

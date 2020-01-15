@@ -13,7 +13,7 @@ DetectionResult DetectionResultParser::parse(std::string toParse)
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
     if (parts.size() < 3 || parts.size() > 3)
     {
-        throw invalid_argument("Too much parts");
+        throw std::invalid_argument("Too much parts");
     }
     auto iterator = parts.begin();
     auto imageId = *iterator;
@@ -22,7 +22,7 @@ DetectionResult DetectionResultParser::parse(std::string toParse)
     ++iterator;
     auto boundingBoxes = *iterator;
 
-    list<BoundingBox> parsedBoundingBoxes;
+    std::list<BoundingBox> parsedBoundingBoxes;
     auto boundingBoxParser = BoundingBoxParser();
     auto singleBoundingBoxes = Parser::splitBySymbol(boundingBoxes, boundingBoxDelimeter);
     for (auto boundingBoxIterator = singleBoundingBoxes.begin(); boundingBoxIterator != singleBoundingBoxes.end(); ++boundingBoxIterator)

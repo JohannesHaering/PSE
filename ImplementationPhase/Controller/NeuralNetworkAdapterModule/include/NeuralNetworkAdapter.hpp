@@ -1,5 +1,5 @@
 #include <string>
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "NeuralNetwork.hpp"
 
 class NeuralNetworkAdapter {
@@ -7,11 +7,11 @@ class NeuralNetworkAdapter {
     public:
         NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
 
-        void addLayer(NeuralNetworkLayer layer);
-		NeuralNetworkLayer getFirstLayer();
-		NeuralNetworkLayer getLastLayer();
-		NeuralNetworkLayer getNextLayer();
-		NeuralNetworkLayer getPreviousLayer();
+        void addLayer(NetworkLayer layer);
+		NetworkLayer getFirstLayer();
+		NetworkLayer getLastLayer();
+		NetworkLayer getNextLayer();
+		NetworkLayer getPreviousLayer();
 
     private: 
         NeuralNetwork neuralNetwork;    

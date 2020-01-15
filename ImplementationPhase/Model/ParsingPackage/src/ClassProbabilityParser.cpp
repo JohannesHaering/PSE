@@ -13,7 +13,7 @@ ClassProbability ClassProbabilityParser::parse(std::string toParse)
     auto parts = Parser::splitBySymbol(toParse, delimeter);
     if (parts.size < 2 || parts.size > 2)
     {
-        throw invalid_argument("Too much parts");
+        throw std::invalid_argument("Too much parts");
     }
     auto iterator = parts.begin();
     auto classId = *iterator;

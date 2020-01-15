@@ -13,7 +13,7 @@ ClassificationResult ClassificationResultParser::parse(std::string toParse)
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
     if (parts.size() < 3 || parts.size() > 3)
     {
-        throw invalid_argument("Too much parts");
+        throw std::invalid_argument("Too much parts");
     }
     auto iterator = parts.begin();
     auto imageId = *iterator;
@@ -22,7 +22,7 @@ ClassificationResult ClassificationResultParser::parse(std::string toParse)
     ++iterator;
     auto probabilities = *iterator;
 
-    list<ClassProbability> parsedProbabilities;
+    std::list<ClassProbability> parsedProbabilities;
     auto probabilityParser = ClassProbabilityParser();
     auto singleProbabilities = Parser::splitBySymbol(probabilities, probabilitiesDelimeter);
     for (auto probabilitiesIterator = singleProbabilities.begin(); probabilitiesIterator != singleProbabilities.end(); ++probabilitiesIterator)

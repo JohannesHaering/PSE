@@ -11,5 +11,5 @@ class VideoFileIO : public FileIO
 {
 public:
     Data<cv::VideoCapture> readFile(std::string path);
-}:
+};
 #endif
