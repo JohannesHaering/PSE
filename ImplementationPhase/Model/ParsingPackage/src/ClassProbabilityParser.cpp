@@ -11,7 +11,7 @@
 ClassProbability ClassProbabilityParser::parse(std::string toParse)
 {
     auto parts = Parser::splitBySymbol(toParse, delimeter);
-    if (parts.size < 2 || parts.size > 2)
+    if (parts.size() < 2 || parts.size() > 2)
     {
         throw std::invalid_argument("Too much parts");
     }
