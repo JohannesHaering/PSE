@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFLATTENLAYER.a  CMakeFiles/FLATTENLAYER.dir/src/FlattenLayer.cpp.o
+/usr/bin/ranlib libFLATTENLAYER.a

@@ -35,5 +35,5 @@ int ConvolutionLayer::getPadding()
 }
 
 int* ConvolutionLayer::getTensorDimenssions() {
-  return new int[4] {weightsTensor[0][0][0].size(), weightsTensor[0][0].size(), weightsTensor[0].size(), weightsTensor.size()};
+  return new int[4] {(int) weightsTensor[0][0][0].size(), (int) weightsTensor[0][0].size(), (int) weightsTensor[0].size(), (int) weightsTensor.size()};
 }

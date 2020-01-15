@@ -1,26 +1,37 @@
-#ifndef POLLINGLAYER_H_
-#define POLLINGLAYER_H_
+#include "PollingLayer.hpp"
 
-#include <string>
-#include "NetworkLayer.hpp"
-#include "PollingType.h"
+PollingLayer::PollingLayer() : NetworkLayer(LayerType::POLLING), size(0), stride(0), type(PollingType::MAX) {}
+PollingLayer::PollingLayer(std::string name, int* inputDimensions, int size, int stride, PollingType type) : NetworkLayer(name, inputDimensions, LayerType::POLLING), size(size), stride(stride), type(type) {}
+void PollingLayer::setType(PollingType type)
+{
+  this->type = type;
+}
 
-class PollingLayer  : public NetworkLayer {
+void PollingLayer::setSize(int size)
+{
+  this->size = size;
+}
 
-  private:
-    PollingType type;
-    int size;
-    int stride;
+void PollingLayer::setStride(int stride)
+{
+  this->stride = stride;
+}
 
-  public:
-    PolingLayer();
-    PolingLayer(std::string name, int* inputDimensions, int size, int stride, PollingType type);
-    void setType(PollingType type);
-    void setSize(int size);
-    void setStride(int stride);
-    PollingType getType();
-    int getSize();
-    int getStride();
-    // ~PolingLayer();
-};
-#endif
+PollingType PollingLayer::getType()
+{
+  return type;
+}
+
+int PollingLayer::getSize()
+{
+  return size;
+}
+
+int PollingLayer::getStride()
+{
+  return stride;
+}
+
+int* PollingLayer::getTensorDimenssions() {
+  return new int[4] {size, size, 0, 0};
+}

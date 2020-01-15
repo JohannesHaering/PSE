@@ -3,18 +3,18 @@
 
 #include <string>
 #include "NetworkLayer.hpp"
-#include "MatrixDefine.h"
+#include "MatrixDefine.hpp"
 
 class OutputStorageLayer  : public NetworkLayer {
-  + <<constructor>> CollectResultsLayer() : void
-  + <<constructor>> CollectResultsLayer(name : string, outputData : double[][][]) : void
 
   private:
     MATRIX_3D(double) outputData;
 
   public:
-    CollectResultsLayer();
-    CollectResultsLayer(std::string name, MATRIX_3D(double) outputData);
+    OutputStorageLayer();
+    OutputStorageLayer(std::string name, MATRIX_3D(double) outputData);
+    void setData(MATRIX_3D(double) outputData);
+    MATRIX_3D(double) getData();
     // ~CollectResultsLayer();
 };
 #endif

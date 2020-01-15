@@ -3,7 +3,7 @@
 
 #include <string>
 #include "NetworkLayer.hpp"
-#include "LRNType.h"
+#include "LRNType.hpp"
 
 class LocalResponseNormalizationLayer  : public NetworkLayer {
 
@@ -12,8 +12,8 @@ class LocalResponseNormalizationLayer  : public NetworkLayer {
     int depth;
 
   public:
-    void LocalResponseNormalizationLayer();
-    void LocalResponseNormalizationLayer(std::string name, int* inputDimensions, LRNType type, int depth);
+    LocalResponseNormalizationLayer();
+    LocalResponseNormalizationLayer(std::string name, int* inputDimensions, LRNType type, int depth);
     void setType(LRNType type);
     void setDepth(int depth);
     LRNType getType();

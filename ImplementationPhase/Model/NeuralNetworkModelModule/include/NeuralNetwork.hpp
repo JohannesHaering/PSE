@@ -9,16 +9,16 @@ class NeuralNetwork {
 
   private:
     std::string name;
-    std::list<NetworkLayer> layers;
+    std::list<NetworkLayer*> layers;
     // NetworkLayer *firstLayer;
     // NetworkLayer *currentLayer;
     // NetworkLayer *lastLayer;
-    std::list<NetworkLayer>::iterator it;
+    std::list<NetworkLayer*>::iterator it;
 
   public:
     NeuralNetwork();
     NeuralNetwork(std::string name);
-    void addLayer(NetworkLayer& layer);
+    void addLayer(NetworkLayer* layer);
     void setName(std::string name);
     std::string getName();
     NetworkLayer* getFirstLayer();

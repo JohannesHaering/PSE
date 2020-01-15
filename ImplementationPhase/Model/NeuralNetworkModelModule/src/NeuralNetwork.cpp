@@ -7,7 +7,7 @@ NeuralNetwork::NeuralNetwork(std::string name) : name(name), layers()
   it = layers.begin();
 };
 
-void NeuralNetwork::addLayer(NetworkLayer& layer)
+void NeuralNetwork::addLayer(NetworkLayer* layer)
 {
   layers.push_back(layer);
 }
@@ -25,23 +25,23 @@ std::string NeuralNetwork::getName()
 NetworkLayer* NeuralNetwork::getFirstLayer()
 {
   it = layers.begin();
-  return &(*it);
+  return *it;
 }
 
 NetworkLayer* NeuralNetwork::getLastLayer()
 {
   it = layers.end();
-  return &*it;
+  return *it;
 }
 
 NetworkLayer* NeuralNetwork::getNextLayer()
 {
-  return &*(++it);
+  return *(++it);
 }
 
 NetworkLayer* NeuralNetwork::getPreviousLayer()
 {
-  return &*(--it);
+  return *(--it);
 }
 
 NeuralNetwork::~NeuralNetwork()

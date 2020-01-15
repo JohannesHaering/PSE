@@ -12,6 +12,8 @@ class DropoutLayer  : public NetworkLayer {
   public:
     DropoutLayer();
     DropoutLayer(std::string name, int* inputDimensions, float dropoutRate);
+    void setDropoutRate(float dropoutRate);
+    float getDropoutRate();
     // ~DropoutLayer();
 };
 #endif

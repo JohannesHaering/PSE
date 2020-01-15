@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCLASSIFICATIONRESULT.a  CMakeFiles/CLASSIFICATIONRESULT.dir/src/ClassificationResult.cpp.o
+/usr/bin/ranlib libCLASSIFICATIONRESULT.a

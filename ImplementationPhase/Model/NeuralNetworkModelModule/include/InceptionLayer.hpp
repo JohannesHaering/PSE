@@ -14,11 +14,10 @@ class InceptionLayer  : public NetworkLayer {
 
   public:
     InceptionLayer();
-    InceptionLayer(name : string, inputDimensions : int[]);
-    void addLayerChain(chain : NeuralNetwork);
+    InceptionLayer(std::string name, int* inputDimensions);
+    void addLayerChain(NeuralNetwork chain);
     NeuralNetwork getFirstChain();
     NeuralNetwork getNextChain();
-    void resetIterator();
     // ~InceptionLayer();
 };
 #endif

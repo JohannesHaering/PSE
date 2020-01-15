@@ -1,0 +1,2 @@
+/usr/bin/ar qc libACTIVATIONLAYER.a  CMakeFiles/ACTIVATIONLAYER.dir/src/ActivationLayer.cpp.o
+/usr/bin/ranlib libACTIVATIONLAYER.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCLASSPROBABILITY.a  CMakeFiles/CLASSPROBABILITY.dir/src/ClassProbability.cpp.o
+/usr/bin/ranlib libCLASSPROBABILITY.a

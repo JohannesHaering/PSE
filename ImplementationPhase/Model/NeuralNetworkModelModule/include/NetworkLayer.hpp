@@ -13,14 +13,14 @@ private:
     LayerType layerType;
 
   public:
-    NetworkLayer(std::string name, int inputDimensions[], LayerType layerType);
+    NetworkLayer(std::string name, int* inputDimensions, LayerType layerType);
     NetworkLayer(LayerType layerType);
     void setName(std::string name);
-    void setInputDimensions(int inputDimensions[]);
+    void setInputDimensions(int* inputDimensions);
     std::string getName();
     LayerType getLayerType();
     int* getInputDimensions();
-    virtual int* getTensorDimenssions() = 0;
+    virtual int* getTensorDimenssions();
     // ~NetworkLayer();
 };
 #endif

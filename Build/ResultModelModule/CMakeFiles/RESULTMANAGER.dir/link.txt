@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRESULTMANAGER.a  CMakeFiles/RESULTMANAGER.dir/src/ResultManager.cpp.o
+/usr/bin/ranlib libRESULTMANAGER.a

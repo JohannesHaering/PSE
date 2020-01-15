@@ -3,7 +3,7 @@
 
 #include <string>
 #include "NetworkLayer.hpp"
-#include "MatrixDefine.h"
+#include "MatrixDefine.hpp"
 
 class DenseLayer  : public NetworkLayer {
 
@@ -15,6 +15,7 @@ class DenseLayer  : public NetworkLayer {
     DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(double) matrix);
     void setMatrix(MATRIX_2D(double) matrix);
     MATRIX_2D(double) getMatrix();
+    virtual int* getTensorDimenssions();
     // ~DenseLayer();
 };
 #endif

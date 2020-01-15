@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDENSELAYER.a  CMakeFiles/DENSELAYER.dir/src/DenseLayer.cpp.o
+/usr/bin/ranlib libDENSELAYER.a

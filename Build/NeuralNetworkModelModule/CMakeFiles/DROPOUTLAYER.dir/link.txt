@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDROPOUTLAYER.a  CMakeFiles/DROPOUTLAYER.dir/src/DropoutLayer.cpp.o
+/usr/bin/ranlib libDROPOUTLAYER.a

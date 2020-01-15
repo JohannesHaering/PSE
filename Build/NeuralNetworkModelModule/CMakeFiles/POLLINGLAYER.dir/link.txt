@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPOLLINGLAYER.a  CMakeFiles/POLLINGLAYER.dir/src/PollingLayer.cpp.o
+/usr/bin/ranlib libPOLLINGLAYER.a

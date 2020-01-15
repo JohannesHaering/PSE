@@ -4,7 +4,7 @@
 enum LayerType {
   CONVOLUTION,
   ACTIVATION,
-  POLING,
+  POLLING,
   LRN,
   DENSE,
   FLATTEN,

@@ -1,0 +1,3 @@
+file(REMOVE_RECURSE
+  "libPOLLINGLAYER.a"
+)
