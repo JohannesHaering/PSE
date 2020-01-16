@@ -18,7 +18,7 @@ public:
 private:
     const std::string SIZE = "size";
     const std::string STRIDE = "stride";
-    const std::string POLLINGTYPE = "type";
+    const std::string POLLING_TYPE = "type";
     const PollingType STANDARD_POLLING_TYPE = PollingType::MAX;
 };
 #endif

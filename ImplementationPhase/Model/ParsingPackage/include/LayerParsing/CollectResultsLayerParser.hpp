@@ -7,6 +7,8 @@
 #include "CollectResultLayerFactory.hpp"
 #include "CollectResultLayer.hpp"
 
+#include <string>
+
 class CollectResultsLayerParser : public LayerParser
 {
 public:

@@ -15,7 +15,7 @@
 BoundingBox BoundingBoxParser::parse(std::string toParse) {
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
     if(parts.size() < 5 || parts.size() > 5){
-        throw invalid_argument("Too much parts");
+        throw std::invalid_argument("Too much parts");
     }
     auto iterator = parts.begin();
     auto x = *iterator;
@@ -33,7 +33,7 @@ BoundingBox BoundingBoxParser::parse(std::string toParse) {
     float widthf = ::atof(width.c_str());
     float heightf = ::atof(height.c_str());
 
-    list<ClassProbability> parsedProbabilities;
+    std::list<ClassProbability> parsedProbabilities;
     auto probabilityParser = ClassProbabilityParser();
     auto singleProbabilities = Parser::splitBySymbol(probabilities, probabilitiesDelimeter);
     for(auto probabilitiesIterator = singleProbabilities.begin(); probabilitiesIterator != singleProbabilities.end(); ++probabilitiesIterator) {

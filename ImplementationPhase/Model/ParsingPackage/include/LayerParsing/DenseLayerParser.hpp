@@ -14,8 +14,6 @@ class DenseLayerParser : public LayerParser {
     public:
         NeuralNetworkLayer parse(std::string toParse);
     private:
-        const std::string PADDING = "padding";
-        const std::string STRIDE = "stride";
         const std::string WEIGHTS_TENSOR = "weights_tensor";
 };
 #endif

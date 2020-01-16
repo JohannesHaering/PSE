@@ -3,6 +3,7 @@
 #include "ClassProbability.hpp"
 #include "Parser.hpp"
 #include "ClassProbabilityParser.hpp"
+#include "ClassificationResultFactory.hpp"
 
 #include <string>
 #include <list>

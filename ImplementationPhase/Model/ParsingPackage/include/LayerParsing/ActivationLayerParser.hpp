@@ -15,6 +15,8 @@ public:
     NeuralNetworkLayer parse(std::string toParse);
 
 private:
+    float extractAlpha(std::string alphaString);
+
     const std::string USED_FUNCTION = "function";
     const std::string SIGMOID = "sigmoid";
     const std::string TANH = "tanh";

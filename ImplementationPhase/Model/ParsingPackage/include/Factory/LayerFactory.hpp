@@ -10,11 +10,11 @@ class LayerFactory
 {
 public:
     virtual NeuralNetworkLayer buildLayer();
-    LayerFactory setInputDimensions(std::vector<int> dimensions);
+    LayerFactory setInputDimensions(int* dimensions);
     LayerFactory setName(std::string name);
 
 protected:
-    std::vector<int> inputDimensions;
+    int* inputDimensions;
     std::string name;
 };
 #endif
