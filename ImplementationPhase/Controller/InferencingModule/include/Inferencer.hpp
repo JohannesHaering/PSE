@@ -1,6 +1,6 @@
 #ifndef INFERENCER_H_
 #define INFERENCER_H_
-#include <vector>
+
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
 
