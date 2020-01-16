@@ -10,19 +10,19 @@ NeuralNetworkLayer ConvolutionalLayerFactory::buildLayer()
     return ConvolutionalLayer(name, inputDimensions, weightTensors, stride, padding);
 }
 
-ConvolutionalLayerFactory ConvolutionalLayerFactory::setWeightTensors(std::vector<std::vector<std::vector<int>>> weightTensors)
+ConvolutionalLayerFactory ConvolutionalLayerFactory::setWeightTensors(std::vector<std::vector<std::vector<float>>> weightTensors)
 {
-    (*this).weightTensors = weightTensors;
+    this -> weightTensors = weightTensors;
     return *this;
 }
 
 PoolingLayConvolutionalLayerFactoryerFactory ConvolutionalLayerFactory::setStride(int stride)
 {
-    (*this).stride = stride return this;
+    this -> stride = stride;
     return *this;
 }
 ConvolutionalLayerFactory ConvolutionalLayerFactory::setPadding(int padding)
 {
-    (*this).padding = padding;
+    this -> padding = padding;
     return *this;
 }

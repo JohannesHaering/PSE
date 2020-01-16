@@ -3,7 +3,6 @@
 
 #include "LayerFactory.hpp"
 #include "NeuralNetworkLayer.hpp"
-#include "ActivationLayer.hpp"
 #include "Activation.hpp"
 
 class ActivationLayerFactory : public LayerFactory
@@ -15,6 +14,6 @@ public:
 
 private:
     Activation activation;
-float alpha;
+    float alpha;
 }:
 #endif

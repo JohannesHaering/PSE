@@ -10,6 +10,6 @@ NeuralNetworkLayer InceptionLayerFactory::buildLayer()
 }
 InceptionLayerFactory InceptionLayerFactory::addLayerChain(NeuralNetwork chain)
 {
-    (*this).chain = chain;
+   this -> chain = chain;
     return *this;
 }

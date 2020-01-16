@@ -10,6 +10,6 @@ NeuralNetworkLayer DropoutLayerFactory::buildLayer()
 
 DropoutLayerFactory DropoutLayerFactory::setDropoutRate(float dropoutRate)
 {
-    (*this).dropoutRate = dropoutRate;
+    this -> dropoutRate = dropoutRate;
     return *this;
 }

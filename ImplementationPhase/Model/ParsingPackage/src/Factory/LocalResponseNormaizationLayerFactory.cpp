@@ -10,11 +10,11 @@ NeuralNetworkLayer LocalResponseNormalizationLayerFactory::buildLayer()
 }
 LocalResponseNormalizationLayerFactory LocalResponseNormalizationLayerFactory::setType(LRNType type)
 {
-    (*this).type = type;
+    this -> type = type;
     return *this;
 }
 LocalResponseNormalizationLayerFactory LocalResponseNormalizationLayerFactory::setDepth(int depth)
 {
-    (*this).depth;
+    this -> depth;
     return *this;
 }

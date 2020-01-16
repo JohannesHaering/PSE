@@ -10,8 +10,8 @@ class DenseLayerFactory : public LayerFactory
 {
 public:
     NeuralNetworkLayer buildLayer() override;
-    DenseLayerFactory setMatrix(std::vector<std::vector<double>> matrix);
+    DenseLayerFactory setMatrix(std::vector<std::vector<float>> matrix);
 private:
-    std::vector<std::vector<double>> matrix;
+    std::vector<std::vector<float>> matrix;
 };
 #endif

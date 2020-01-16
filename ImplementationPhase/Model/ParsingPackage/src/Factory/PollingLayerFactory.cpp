@@ -11,18 +11,18 @@ NeuralNetworkLayer PollingLayerFactory::buildLayer()
 
 PollingLayerFactory PollingLayerFactory::setType(PoolingType type)
 {
-    (*this).type = type;
+    this -> type = type;
     return *this;
 }
 
 PollingLayerFactory PollingLayerFactory::setSize(int size)
 {
-    (*this).size = size;
+    this -> size = size;
     return *this;
 }
 
 PollingLayerFactory PollingLayerFactory::setStride(int stride)
 {
-    (*this).stride = stride;
+    this -> stride = stride;
     return *this;
 }
