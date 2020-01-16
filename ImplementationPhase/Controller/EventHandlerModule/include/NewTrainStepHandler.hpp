@@ -4,6 +4,7 @@
 #include <vector>
 #include <assert.h>
 #include "ViewFacade.hpp"
+#include "TrainingPage.hpp"
 
 class NewTrainStepHandler {
     

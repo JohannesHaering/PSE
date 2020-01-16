@@ -15,8 +15,6 @@ ImagePager::ImagePager(int maxPage, InferencePage page) {
 * Checks if a button on the gui should be disabled and calls the gui in that case
 */ 
 void ImagePager::disable() {
-    bool nextenable = currentPage + 1 < maxPage;
-    page.nextImageEnable(nextenable);
-    bool prevenable = currentPage > 0;
-    page.prevImageEnable(prevenable);
+    page.nextImageEnable(nextEnable());
+    page.prevImageEnable(prevEnable());
 }    

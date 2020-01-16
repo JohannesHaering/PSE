@@ -6,5 +6,4 @@ add_subdirectory(DatastructurePackage)
 add_subdirectory(ParsingPackage)
 add_subdirectory(VideoHandlingPackage)
 add_subdirectory(ModelFacadePackage)
-#add_subdirectory(ModelFacade) #not done yet
 add_subdirectory(NeuralNetworkModelModule)

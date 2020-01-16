@@ -1,1 +1,23 @@
 cmake_minimum_required(VERSION 3.10)
+
+add_executable(INFERENCERTEST "src/InferencerTest.cpp")
+target_link_libraries(INFERENCERTEST PUBLIC INFERENCER)
+
+add_executable(DISTRIBUTORTEST "src/DistributorTest.cpp")
+target_link_libraries(DISTRIBUTORTEST PUBLIC DISTRIBUTOR)
+
+add_executable(TOPOLOGYINFERENCERTEST "src/TopologyInferencerTest.cpp")
+target_link_libraries(TOPOLOGYINFERENCERTEST PUBLIC TOPOLOGYINFERENCER)
+
+add_executable(TRAININGDISTRIBUTORTEST "src/TrainingDistributorTest.cpp")
+target_link_libraries(TRAININGDISTRIBUTORTEST PUBLIC TRAININGDISTRIBUTOR)
+
+add_executable(INFERENCINGDISTRIBUTORCLASSIFICATIONTEST "src/InferencingDistributorClassificationTest.cpp")
+target_link_libraries(INFERENCINGDISTRIBUTORCLASSIFICATIONTEST PUBLIC INFERENCINGDISTRIBUTORCLASSIFICATION)
+
+add_executable(PAGERTEST "src/PagerTest.cpp")
+target_link_libraries(PAGERTEST PUBLIC NEURALNETWORKPAGER)
+target_link_libraries(PAGERTEST PUBLIC VIEWFACADE)
+
+add_executable(NEURALNETWORKSETTERTEST "src/NeuralNetworkSetterTest.cpp")
+target_link_libraries(NEURALNETWORKSETTERTEST PUBLIC NEURALNETWORKSETTER)

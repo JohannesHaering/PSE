@@ -3,10 +3,10 @@
 
 #include "InferencingDistributor.hpp"
 
-class InferencingDistributorClassification : public InferencingDistributor {
+class InferencingDistributorClassification : virtual public InferencingDistributor {
 
     public: 
-        InferencingDistributorClassification();
+        InferencingDistributorClassification(InferencePage page);
         void enableStart();
         void startProcess();
 

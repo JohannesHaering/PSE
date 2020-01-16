@@ -24,12 +24,14 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
 	ViewFacade view = ViewFacade::getInstance();
-    std::string mode = page.getInputMode();
-    if (mode.compare("Manual") == 0) 
+    int mode = page.getInputMode();
+	// normaler mode
+    if (mode == 0) 
     {
 		return view.getDirectories(validformatsmanual);
     } 
-    else if (mode.compare("Textfile") == 0) {
+	// text file
+    else if (mode == 1) {
 		return view.getDirectories(validformatstxt);
     }
 

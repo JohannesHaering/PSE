@@ -37,7 +37,7 @@ cv::Mat ImageFacade::getImageFromCamera(int deviceId, int width, int height, int
     auto cameraHandler = CameraHandler(deviceId, 30);
     cv::Mat capturedImage = cameraHandler.getNextFrame();
     cv::Mat parsedCapturedImage = ImageParserWithSizing(width, height, channelNumb).parse(capturedImage);
-    ~cameraHandler;
+    ~cameraHandler();
     return parsedCapturedImage;
 }
 

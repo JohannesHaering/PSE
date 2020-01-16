@@ -6,6 +6,12 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "Model.hpp"
 #include <vector>
+#include <string>
+
+InferencingDistributor::InferencingDistributor() 
+{
+
+}
 
 /*
 * Finds the given result and calls the model to save it
@@ -13,10 +19,11 @@
 * -int neuralNetworkId: number of neural network of the wanted result
 * -int imageId: number if image of the wanted result
 */
-void InferencingDistributor::saveResult(int neuralNetworkId, int imageId) {
-    Result result = resultManager.getSingleResult(neuralNetworkId, imageId);
+void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId) 
+{
+    Result* result = (Result*)resultManager.getSingleResult(neuralNetworkId, imageId);
     Model model = model.getInstance();
-    model.saveResult(result);
+    model.saveResult(*result);
 }
 
 /*
@@ -25,9 +32,9 @@ void InferencingDistributor::saveResult(int neuralNetworkId, int imageId) {
 * -int neuralNetworkId: number of neural network of the wanted result
 * -int imageId: number if image of the wanted result
 */
-void InferencingDistributor::drawResult(int nn_id, int input_id) {
-    Result result = resultManager.getSingleResult(nn_id, input_id);
-    drawResult(result);
+void InferencingDistributor::drawResult(std::string nn_id, std::string input_id) {
+    Result* result = (Result*)resultManager.getSingleResult(nn_id, input_id);
+    page.setResult(*result);
 }
 
 /*
@@ -36,6 +43,6 @@ void InferencingDistributor::drawResult(int nn_id, int input_id) {
 bool InferencingDistributor::canStart() {
     return &neuralNetworks != NULL && neuralNetworks.size() != 0 && 
                 &directories != NULL && directories.size() != 0 &&
-                (view.showPageClassification || view.getSaveResultsClassification);
+                (page.getShowResults() || page.getSaveResults());
 }
 
