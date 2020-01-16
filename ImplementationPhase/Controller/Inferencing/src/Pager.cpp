@@ -19,8 +19,17 @@ void Pager::reset(int maxPage)
 */
 void Pager::next() 
 {
-    currentPage++;
-    disable();
+	if (nextEnable())
+	{
+		currentPage++;
+		disable();
+	} 
+	else 
+	{
+		throw "Already maxed.";
+	}
+
+
 }
 
 /*
@@ -28,8 +37,15 @@ void Pager::next()
 */
 void Pager::prev() 
 {
-    currentPage--;
-    disable();
+	if (prevEnable()) 
+	{
+		currentPage--;
+		disable();
+	}
+	else
+	{
+		throw "Already zero.";
+	}
 }
 
 /*

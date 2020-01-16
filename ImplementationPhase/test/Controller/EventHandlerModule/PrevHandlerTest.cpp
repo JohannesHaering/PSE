@@ -28,6 +28,11 @@ TEST_F(PrevHandlerTests, ActionTest)
 	EXPECT_EQ(pager->getCurrentPage(), 0);
 }
 
+TEST_F(PrevHandlerTests, ExceptionTest)
+{
+	EXPECT_DEATH(pager->prev(), "Already zero");
+}
+
 int main(int argc, char* argv[])
 {
 	testing::InitGoogleTest(&argc, argv);

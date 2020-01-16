@@ -3,6 +3,32 @@
 #include "ViewFacade.hpp"
 #include "InferencePage.hpp"
 
+class ClassificationPageMock : public InferencePage {
+
+public:
+	bool getShowResults()
+	{
+		return showResults;
+	}
+	bool getSaveResults()
+	{
+		return saveResults;
+	}
+	void setShowResults(bool enable)
+	{
+		showResults = enable;
+	}
+	void setSaveResults(bool enable)
+	{
+		saveResults = enable;
+	}
+
+private:
+	bool showResults;
+	bool saveResults;
+
+};
+
 struct InferencingDistributorTests : testing::Test 
 {
 	
@@ -17,32 +43,6 @@ struct InferencingDistributorTests : testing::Test
 	~InferencingDistributorTests() {
 		delete inferencer;
 	}
-
-};
-
-class ClassificationPageMock : public InferencePage {
-
-public:
-	bool getShowResults() 
-	{
-		return showResults;
-	}
-	bool getSaveResults() 
-	{
-		return saveResults;
-	}
-	void setShowResults(bool enable)
-	{
-		showResults = enable;
-	}
-	void setSaveResults(bool enable) 
-	{
-		saveResults = enable;
-	}
-
-private: 
-	bool showResults;
-	bool saveResults;
 
 };
 

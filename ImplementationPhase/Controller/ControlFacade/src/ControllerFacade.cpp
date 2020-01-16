@@ -2,6 +2,7 @@
 #include "Distributor.hpp"
 #include "InferencingDistributor.hpp"
 #include "InferencingDistributorClassification.hpp"
+#include "InferencingDistributorDetection.hpp"
 #include "SaveResultHandler.hpp"
 #include "InputImageHandler.hpp"
 #include "NeuralNetworkHandler.hpp"
@@ -20,7 +21,7 @@
 
         ControllerFacade ControllerFacade::getInstance(){
             if (&instance == nullptr) {
-                //ControllerFacade::instance = new ControllerFacade();
+                ControllerFacade::instance = ControllerFacade();
             }
             return instance;
         }
@@ -86,28 +87,34 @@
 			
             // Setup Classification
 			InferencePage classificationPage = view.getClassificationPage();
-            classificationInferencer = InferencingDistributorClassification();
-            NeuralNetworkPager neuralNetworkPager = NeuralNetworkPager(0, view.getClassificationPage());
-            ImagePager imagePager = ImagePager(0, view.getClassificationPage());
+            classificationInferencer = InferencingDistributorClassification(classificationPage);
+            NeuralNetworkPager neuralNetworkPager = NeuralNetworkPager(0, classificationPage);
+            ImagePager imagePager = ImagePager(0, classificationPage);
             saveHandlerClassification = SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
             inputHandlerClassification = InputImageHandler(classificationInferencer);
             neuralNetworkHandlerClassification = NeuralNetworkHandler(classificationInferencer);
             startHandlerClassification = StartHandler(classificationInferencer);
-            nnNextHandlerClassification = PagerHandler();
+            nnNextHandlerClassification = NextHandler(neuralNetworkPager);
+			nnPrevHandlerClassification = PrevHandler(neuralNetworkPager);
+			imgNextHandlerClassification = NextHandler(imagePager);
+			imgPrevHandlerClassification = PrevHandler(imagePager);
             newResultHandlerClassification = NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
             predictionHandlerClassification = PredictionHandler(classificationPage);
 		
             // Setup Detection
 			InferencePage detectionPage = view.getDetectionPage();
-            detectionInferencer = InferencingDistributorClassification();
-            NeuralNetworkPager neuralNetworkPager = NeuralNetworkPager(0, view.getDetectionPage());
-            ImagePager imagePager = ImagePager(0, view.getDetectionPage());
-            saveHandlerDetection = SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
-            inputHandlerDetection = InputImageHandler(classificationInferencer);
-            neuralNetworkHandlerDetection = NeuralNetworkHandler(classificationInferencer);
-            startHandlerDetection = StartHandler(classificationInferencer);
-            nnNextHandlerDetection = PagerHandler();
-            newResultHandlerDetection = NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
+            detectionInferencer = InferencingDistributorDetection(detectionPage);
+            NeuralNetworkPager neuralNetworkPagerDetection = NeuralNetworkPager(0, detectionPage);
+            ImagePager imagePagerDetection = ImagePager(0, detectionPage);
+            saveHandlerDetection = SaveResultHandler(detectionInferencer, neuralNetworkPagerDetection, imagePagerDetection);
+            inputHandlerDetection = InputImageHandler(detectionInferencer);
+            neuralNetworkHandlerDetection = NeuralNetworkHandler(detectionInferencer);
+            startHandlerDetection = StartHandler(detectionInferencer);
+			nnNextHandlerDetection = NextHandler(neuralNetworkPagerDetection);
+			nnPrevHandlerDetection = PrevHandler(neuralNetworkPagerDetection);
+			imgNextHandlerDetection = NextHandler(imagePagerDetection);
+			imgPrevHandlerDetection = PrevHandler(imagePagerDetection);
+            newResultHandlerDetection = NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
             predictionHandlerDetection = PredictionHandler(detectionPage);
 
             // Setup Training

@@ -12,9 +12,10 @@
 class InferencingDistributor : public Distributor {
 
     public:
+		InferencingDistributor();
         void startProcess();
-        void saveResult(int nn_id, int input_id);
-        void drawResult(int nn_id, int input_id);
+        void saveResult(std::string nn_id, std::string input_id);
+        void drawResult(std::string nn_id, std::string input_id);
         bool canStart();
         virtual void enableStart();
 

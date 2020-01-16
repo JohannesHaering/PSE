@@ -28,7 +28,7 @@ TEST_F(TrainingDistributorTests, TrainingImagesStartTest)
 	EXPECT_FALSE(distributor->canStart());
 }
 
-TEST_F(TrainingDistributorTests, TrainingNothingStartTest)
+TEST_F(TrainingDistributorTests, TrainingNetworkStartTest)
 {
 	std::vector<NeuralNetworkAdapter> neuralNetworks = { NeuralNetworkAdapter(NeuralNetwork()) };
 	distributor->addNeuralNetwork(neuralNetworks);

@@ -23,5 +23,5 @@ void SaveResultHandler::onAction()
 {
     int nn_id = nnpager.getCurrentPage();
     int img_id = ipager.getCurrentPage();
-    distributor.saveResult(nn_id, img_id);
+	distributor.saveResult(std::to_string(nn_id), std::to_string(img_id));
 }

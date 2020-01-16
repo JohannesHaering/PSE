@@ -3,7 +3,7 @@
 
 #include "InferencingDistributor.hpp"
 
-class InferencingDistributorClassification : public InferencingDistributor {
+class InferencingDistributorClassification : virtual public InferencingDistributor {
 
     public: 
         InferencingDistributorClassification(InferencePage page);

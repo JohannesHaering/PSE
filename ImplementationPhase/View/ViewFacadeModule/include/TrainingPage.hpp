@@ -1,3 +1,6 @@
+#ifndef TRAINING_PAGE_H_
+#define TRAINING_PAGE_H_
+
 #include <vector>
 #include <string>
 
@@ -10,3 +13,4 @@ class TrainingPage {
         std::string getLearningMode();
         void startButtonEnableTraining(bool flag);
 };
+#endif

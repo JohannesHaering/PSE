@@ -1,3 +1,6 @@
+#ifndef NEURAL_NETWORK_H_
+#define NEURAL_NETWORK_H_
+
 #include <string>
 #include "NeuralNetworkLayer.hpp"
 
@@ -12,3 +15,4 @@ class NeuralNetwork {
         NeuralNetworkLayer getNextLayer();
         NeuralNetworkLayer getPreviousLayer();
 };
+#endif

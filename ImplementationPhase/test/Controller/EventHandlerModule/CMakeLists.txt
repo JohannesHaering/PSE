@@ -15,3 +15,7 @@ target_link_libraries(NEWRESULTHANDLERTEST PUBLIC IMAGEPAGER)
 add_executable(STARTHANDLERTEST "StartHandlerTest.cpp")
 target_link_libraries(STARTHANDLERTEST PUBLIC STARTHANDLER)
 
+add_executable(PREDICTIONHANDLERTEST "PredictionHandlerTest.cpp")
+target_link_libraries(PREDICTIONHANDLERTEST PUBLIC PREDICTIONHANDLER)
+
+

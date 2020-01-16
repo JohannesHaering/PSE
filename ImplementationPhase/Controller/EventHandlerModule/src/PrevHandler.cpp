@@ -8,5 +8,13 @@ PrevHandler::PrevHandler(Pager pager) : pager(pager) {}
 */
 void PrevHandler::prev() 
 {
-    pager.prev();
+	try 
+	{
+		pager.prev();
+	}
+	catch (const char* msg)
+	{
+
+	}
+
 }

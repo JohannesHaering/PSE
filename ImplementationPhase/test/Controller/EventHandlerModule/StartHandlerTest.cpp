@@ -1,23 +1,6 @@
 #include <gtest/gtest.h>
 #include "StartHandler.hpp"
 
-struct StartHandlerTests : testing::Test 
-{
-	
-	StartHandler* handler;
-	InferencerMock* inferencer;
-
-	StartHandlerTests() {
-		inferencer = new InferencerMock();
-		handler = new StartHandler(*inferencer);
-	}
-
-	~StartHandlerTests() {
-		delete handler;
-	}
-
-};
-
 class InferencerMock : public Inferencer {
 
 public:
@@ -29,13 +12,30 @@ public:
 	{
 		startSignalGiven = true;
 	}
-	bool getStartSignalGiven() 
+	bool getStartSignalGiven()
 	{
 		return startSignalGiven;
 	}
 
 private:
 	bool startSignalGiven;
+
+};
+
+struct StartHandlerTests : testing::Test 
+{
+	
+	StartHandler* handler;
+	InferencerMock* inferencer;
+
+	StartHandlerTests() {
+		this->inferencer = new InferencerMock();
+		this->handler = new StartHandler(*inferencer);
+	}
+
+	~StartHandlerTests() {
+		delete handler;
+	}
 
 };
 

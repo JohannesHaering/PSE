@@ -4,6 +4,7 @@
 #include "Distributor.hpp"
 #include "ViewFacade.hpp"
 #include "Trainer.hpp"
+#include "NeuralNetworkAdapter.hpp"
 
 class TrainingDistributor : public Distributor {
 

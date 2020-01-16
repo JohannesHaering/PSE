@@ -3,6 +3,8 @@
 
 #include "ViewFacade.hpp"
 #include "ResultManager.hpp"
+#include "PerformancePredictorFromFile.hpp"
+#include "PowerPredictorFromFile.hpp"
 
 class PredictionHandler 
 {

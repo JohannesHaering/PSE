@@ -28,7 +28,7 @@ void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
  * Calls the view to open a file explorer and gets the chosen directories.
  */
 std::vector<std::string> NeuralNetworkHandler::fetchDirectory() {
-	view.getDirectories(validformats);
+	return view.getDirectories(validformats);
 }
 
 

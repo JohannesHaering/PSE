@@ -1,3 +1,6 @@
+#ifndef VIEWFACADE_H_
+#define VIEWFACADE_H_
+
 #include <string>
 #include <vector>
 #include "NeuralNetworkAdapter.hpp"
@@ -70,3 +73,4 @@ class ViewFacade {
 
 
 };
+#endif

@@ -11,15 +11,6 @@ class NewResultHandler : public SaveResultHandler {
     public: 
 		NewResultHandler(InferencingDistributor distributor, NeuralNetworkPager nnpager, ImagePager ipager);
 		NewResultHandler();
-
-        void onAction(){
-            int amountimg = distributor.getAmountImages();
-            int amountnn = distributor.getAmountNeuralNetworks();
-
-            ipager.reset(amountimg);
-            nnpager.reset(amountnn);
-
-            distributor.drawResult(0,0);
-        }
+		void onAction();
 };
 #endif

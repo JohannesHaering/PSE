@@ -1,7 +1,11 @@
 #include "InferencingDistributor.hpp"
 #include "InferencingDistributorClassification.hpp"
 
-
+/*
+* Creates a InferencingDistributor for Classification.
+* Parameters:
+* -Inference page: the corresponding page
+*/
 InferencingDistributorClassification::InferencingDistributorClassification(InferencePage page)
 {
 	this->page = page;
@@ -21,9 +25,13 @@ void InferencingDistributorClassification::enableStart(){
 void InferencingDistributorClassification::startProcess(){
     dispatcher.setNeuralNetworkList(neuralNetworks);
     //TODO: correct mode
-    std::vector<std::string> platforms = page.getPlatforms();
+    std::vector<Device> platforms = page.getPlatforms();
     std::string operatingMode = page.getOperatingMode();
-    Mode mode = {};
+	Mode mode = Mode();
+	mode.setModeName(operatingMode);
+	mode.setAllowedDeviceList(platforms);
+	mode.setImageList(directories);
+	mode.setNeuralNetworkList(neuralNetworks);
     dispatcher.setMode(mode);
     resultManager = dispatcher.dispatchImages(directories);
 }
