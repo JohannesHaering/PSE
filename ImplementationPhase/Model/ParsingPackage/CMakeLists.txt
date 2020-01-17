@@ -74,8 +74,7 @@ target_link_libraries(DETECTIONRESULTPARSER PUBLIC FACTORY PARSER BOUNDINGBOXPAR
 
 add_library(IMAGEPARSING "src/ImageLocationParser.cpp" "src/ImageParser.cpp" "src/ImageParserWithSizing.cpp" "include/ImageLocationParser.hpp" "include/ImageParser.hpp" "include/ImageParserWithSizing.hpp")
 target_include_directories(IMAGEPARSING PUBLIC "include/")
-target_link_libraries(IMAGEPARSING PUBLIC PARSER)
-target_link_libraries(IMAGEPARSING ${OpenCV_LIBS} )
+target_link_libraries(IMAGEPARSING PUBLIC PARSER ${OpenCV_LIBS})
 
 add_library(PARSER "src/Parser.cpp" "include/Parser.hpp")
 target_include_directories(PARSER PUBLIC "include/")
