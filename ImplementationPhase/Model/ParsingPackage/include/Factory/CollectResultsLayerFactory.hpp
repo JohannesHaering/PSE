@@ -4,7 +4,7 @@
 #include "LayerFactory.hpp"
 #include "NeuralNetworkLayer.hpp"
 
-class CollectResultLayerFactory : public LayerFactory {
+class CollectResultsLayerFactory : public LayerFactory {
     NeuralNetworkLayer CollectResultLayerFactory::buildLayer() override;
 };
 #endif

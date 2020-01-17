@@ -13,7 +13,7 @@ target_link_libraries(FACTORY PUBLIC BOUNDINGBOX RESULT CLASSPROBABILITY CLASSIF
 
 add_library(NEURALNETWORKFACTORY 
 "src/Factory/ActivationLayerFactory.cpp" "include/Factory/ActivationLayerFactory.hpp" 
-"src/Factory/CollectResultLayerFactory.cpp" "include/Factory/CollectResultLayerFactory.hpp" 
+"src/Factory/CollectResultsLayerFactory.cpp" "include/Factory/CollectResultsLayerFactory.hpp" 
 "src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
 "src/Factory/DenseLayerFactory.cpp" "include/Factory/DenseLayerFactory.hpp" 
 "src/Factory/DropoutLayerFactory.cpp" "include/Factory/DropoutLayerFactory.hpp" 
@@ -21,7 +21,7 @@ add_library(NEURALNETWORKFACTORY
 "src/Factory/InceptionLayerFactory.cpp" "include/Factory/InceptionLayerFactory.hpp" 
 "src/Factory/LayerFactory.cpp" "include/Factory/LayerFactory.hpp" 
 "src/Factory/LocalResponseNormalizationLayerFactory.cpp" "include/Factory/LocalResponseNormalizationLayerFactory.hpp" 
-"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactorys.hpp" 
+"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp" 
 "src/Factory/OutputStorageLayerFactory.cpp" "include/Factory/OutputStorageLayerFactory.hpp" 
 "src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp")
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
@@ -29,8 +29,8 @@ target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER CON
 
 add_library(LAYERPARSER 
 "src/LayerParsing/ActivationLayerParser.cpp" "include/LayerParsing/ActivationLayerParser.hpp"
-"src/LayerParsing/CollectResultLayerFactory.cpp" "include/LayerParsing/CollectResultLayerFactory.hpp"
-"src/LayerParsing/ConvolutionalLayerParser.cpp" "include/LayerParsing/ConvolutionalLayerFactory.hpp"
+"src/LayerParsing/CollectResultsLayerParser.cpp" "include/LayerParsing/CollectResultsLayerParser.hpp"
+"src/LayerParsing/ConvolutionalLayerParser.cpp" "include/LayerParsing/ConvolutionalLayerParser.hpp"
 "src/LayerParsing/DenseLayerParser.cpp" "include/LayerParsing/DenseLayerParser.hpp"
 "src/LayerParsing/DropoutLayerParser.cpp" "include/LayerParsing/DropoutLayerParser.hpp"
 "src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp"
@@ -41,7 +41,7 @@ add_library(LAYERPARSER
 "src/LayerParsing/OutputStorageLayerParser.cpp" "include/LayerParsing/OutputStorageLayerParser.hpp"
 "src/LayerParsing/PollingLayerParser.cpp" "include/LayerParsing/PollingLayerParser.hpp")
 target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
-target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER PARSER LINEBREAKPARSER)
+target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER  NEURALNETWORK NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER)
 
 add_library(NEURALNETWORKPARSER
 "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")

@@ -3,7 +3,7 @@
 #include "LayerFactory.hpp"
 #include "NeuralNetworkLayer.hpp"
 
-NeuralNetworkLayer CollectResultLayerFactory::buildLayer()
+NeuralNetworkLayer CollectResultsLayerFactory::buildLayer()
 {
     return CollectResultLayer(name, inputDimensions);
 }

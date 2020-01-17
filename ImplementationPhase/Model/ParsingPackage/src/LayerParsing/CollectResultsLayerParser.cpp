@@ -2,7 +2,7 @@
 #include "LayerParser.hpp"
 #include "NeuralNetworkLayer.hpp"
 #include "LayerType.hpp"
-#include "CollectResultLayerFactory.hpp"
+#include "CollectResultsLayerFactory.hpp"
 #include "CollectResultLayer.hpp"
 #include "LayerParserDistribution.hpp"
 
