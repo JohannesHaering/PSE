@@ -5,6 +5,6 @@
 
 template <class T>
 std::list<std::string> LineBreakParser<T>::splitIntoLines(std::string text) {
-    return Parser::splitBySymbol(text, "\n");
+    return Parser<T>::splitBySymbol(text, "\n");
 }
 

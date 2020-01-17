@@ -1,3 +1,11 @@
+#ifndef INFERENCE_PAGE_H_
+#define INFERENCE_PAGE_H_
+
+#include "Device.hpp"
+#include "Result.hpp"
+#include <string>
+#include <vector>
+
 class InferencePage {
     public: 
         void nextNeuralNetworkButtonEnable(bool enable);
@@ -8,7 +16,7 @@ class InferencePage {
 
         std::string getOperatingMode();
         std::vector<std::string> getDevices();
-        std::string getInputMode();
+        int getInputMode();
         std::string getNeuralNetworkPath();
         bool getShowResults();
         bool getSaveResults();
@@ -20,7 +28,9 @@ class InferencePage {
         void showPage(bool flag);
         void startButtonEnable(bool flag);
         void setResult(Result result);
-        std::vector<std::string> getPlatforms();
+        std::vector<Device> getPlatforms();
+		void setDevices(std::vector<Device> devices);
         void update();
 		void setActive(bool flag);
 };
+#endif

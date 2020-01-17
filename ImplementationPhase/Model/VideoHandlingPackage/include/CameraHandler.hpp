@@ -14,4 +14,5 @@ private:
     int deviceId;
     int timeout;
     cv::VideoCapture cameraInput;
-}
+};
+#endif

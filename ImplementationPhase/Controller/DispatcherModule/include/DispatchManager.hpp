@@ -1,7 +1,13 @@
+#ifndef DISPATCHER_MANAGER_H_
+#define DISPATCHER_MANAGER_H_
+
+#include "NeuralNetworkAdapter.hpp"
+#include "Mode.hpp"
+#include "ResultManager.hpp"
 #include <list>
 #include <map>
+#include <vector>
 
-#include "Mode.h"
 
 class DispatchManager 
 {
@@ -19,7 +25,9 @@ class DispatchManager
 		void setMode(Mode operatingmode);
 		Mode getMode();
 		std::list<Mode> getModeList();
-		void setNeuralNetworkList(std::list<NeuralNetwork> neuralNetworkList);
-		std::list<NeuralNetwork> getNeuralNetworkList();
+		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
+		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
 		ResultManager dispatchImages(std::list<image> imageList);
-}
+		static std::vector<Device> getAvailableDevices();
+};
+#endif

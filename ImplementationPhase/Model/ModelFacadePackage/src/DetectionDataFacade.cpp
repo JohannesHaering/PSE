@@ -13,7 +13,7 @@ DetectionData DetectionDataFacade::loadDetectionData(std::string directory){
     // Filter for .txt files
     for (auto it = files.begin(); it != files.end(); ++it)
     {
-        int length = (*it).length;
+        int length = it->length();
         if ((*it)[length - 1] == 't' && (*it)[length - 2] == 'x' && (*it)[length - 3] == 't' && (*it)[length - 4] == '.')
         {
             txtFiles.push_back(*it);

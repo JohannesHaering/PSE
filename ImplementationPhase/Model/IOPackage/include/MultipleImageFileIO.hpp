@@ -11,6 +11,6 @@
 class MultipleImageFileIO : public ImageFileIO {
     public:
         Data<std::list<cv::Mat>> readFile(std::list<std::string> paths);
-        bool writeFile(Data<std::list<cv::Mat>> imageData, std::list<std::string> paths);
+        bool writeFile(Data<std::list<cv::Mat>> image, std::list<std::string> paths);
 };
 #endif

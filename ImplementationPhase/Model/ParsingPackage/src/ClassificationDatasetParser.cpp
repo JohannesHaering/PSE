@@ -3,8 +3,12 @@
 #include "ClassProbability.hpp"
 #include "Parser.hpp"
 #include "ClassProbabilityParser.hpp"
+<<<<<<< HEAD
 #include "ClassificationResultFactory.hpp"
 
+=======
+#include "ClassificationResultFactory.hpp" //Manuel
+>>>>>>> staging
 #include <string>
 #include <list>
 
