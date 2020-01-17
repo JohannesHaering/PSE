@@ -23,15 +23,15 @@ public:
     const std::string INCEPTION = "inception";
     const std::string OUTPUT_STORAGE = "output_storage";
 private:
-    NeuralNetworkLayer parseConvolutionalLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseActivationLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parsePollingLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseLocalResponseNormalizationLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseDenseLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseFlattenLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseDropoutLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseCollectResultLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseOutputStorageLayer(std::list<std::string> lines);
-    NeuralNetworkLayer parseInceptionLayer(std::list<std::string> lines);
+    NeuralNetworkLayer parseConvolutionalLayer(std::string toParse);
+    NeuralNetworkLayer parseActivationLayer(std::string toParse);
+    NeuralNetworkLayer parsePollingLayer(std::string toParse);
+    NeuralNetworkLayer parseLocalResponseNormalizationLayer(std::string toParse);
+    NeuralNetworkLayer parseDenseLayer(std::string toParse);
+    NeuralNetworkLayer parseFlattenLayer(std::string toParse);
+    NeuralNetworkLayer parseDropoutLayer(std::string toParse);
+    NeuralNetworkLayer parseCollectResultLayer(std::string toParse);
+    NeuralNetworkLayer parseOutputStorageLayer(std::string toParse);
+    NeuralNetworkLayer parseInceptionLayer(std::string toParse);
 };
 #endif
