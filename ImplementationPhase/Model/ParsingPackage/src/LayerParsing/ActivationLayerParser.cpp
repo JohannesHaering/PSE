@@ -17,7 +17,7 @@ NeuralNetworkLayer ActivationLayerParser::parse(std::string toParse)
 
     ActivationLayerFactory factory = new ActivationLayerFactory();
     factory.setName(LayerParserDistribution::ACTIVATION);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();

@@ -11,8 +11,9 @@ class LayerParserDistribution : public LineBreakParser<NeuralNetworkLayer>
 public:
     NeuralNetworkLayer parse(std::string toParse);
 
-    const std::string TYPE_BEGIN = "[";
-    const std::string TYPE_END = "]";
+    const char TYPE_BEGIN = '[';
+    const char TYPE_END = ']';
+    
     const std::string CONVOLUTIONAL = "convolutional";
     const std::string POLLING = "polling";
     const std::string ACTIVATION = "activation";

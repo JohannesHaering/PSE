@@ -23,9 +23,6 @@ void LayerParser::pextractGeneralInformationarse(std::string toParse)
 
     auto valuePart = *firstLine.end();
 
-    valuePart = removeCharacter(valuePart, VALUE_BEGIN);
-    valuePart = removeCharacter(valuePart, VALUE_END);
-
     inputDimensions = parseIntArray(valuePart);
 }
 

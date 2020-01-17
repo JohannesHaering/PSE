@@ -3,7 +3,7 @@
 #include "NeuralNetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "PollingLayer.hpp"
-#include "PoolingLayerFactory.hpp"
+#include "PollingLayerFactory.hpp"
 #include "PollingType.hpp"
 #include "LayerParserDistribution.hpp"
 #include "LineBreakParser.hpp"
@@ -18,7 +18,7 @@ NeuralNetworkLayer PollingLayerParser::parse(std::string toParse)
 
     PollingLayerFactory factory = PollingLayerFactory();
     factory.setName(LayerParserDistribution::POLLING);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto it = LineBreakParser::splitIntoLines(toParse).begin();
     ++it;

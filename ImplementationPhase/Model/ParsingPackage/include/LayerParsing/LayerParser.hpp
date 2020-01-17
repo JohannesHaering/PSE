@@ -24,8 +24,6 @@ protected:
     std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text);
     const std::string VALUE_TYPE_DELIMETER = "=";
     const std::string INPUT_DIMENSIONS = "inputdim";
-    const std::string VALUE_BEGIN = "{";
-    const std::string VALUE_END = "}";
     const std::string VALUE_PARTS_DELIMETER = ",";
     int *inputDimensions;
 };

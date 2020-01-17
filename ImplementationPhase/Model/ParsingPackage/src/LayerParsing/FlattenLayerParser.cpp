@@ -14,7 +14,7 @@ NeuralNetworkLayer FlattenLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation();
     FlattenLayerFactory factory = FlattenLayerFactory();
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
     factory.setName(LayerParserDistribution::FLATTEN);
 
     return factory.buildLayer();

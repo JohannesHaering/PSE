@@ -16,7 +16,7 @@ NeuralNetworkLayer InceptionLayerParser::parse(std::string toParse)
     LayerParser::extractGeneralInformation();
     InceptionLayerFactory factory = InceptionLayerFactory();
     factory.setName(LayerParserDistribution::INCEPTION);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto it = LineBreakParser::splitIntoLines(toParse).begin();
     auto chain = NeuralNetworkParser().parse(toParse.substr((*it).size(), toParse.size()));

@@ -18,7 +18,7 @@ NeuralNetworkLayer DropoutLayerParser::parse(std::string toParse)
 
     DropoutLayerFactory factory = DropoutLayerFactory();
     factory.setName(LayerParserDistribution::DROPOUT);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto it = LineBreakParser::splitIntoLines(toParse);
     ++it;

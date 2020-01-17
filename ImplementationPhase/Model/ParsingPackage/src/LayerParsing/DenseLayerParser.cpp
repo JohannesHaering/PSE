@@ -17,7 +17,7 @@ NeuralNetworkLayer DenseLayerParser::parse(std::string toParse)
 
     DenseLayerFactory factory = DenseLayerFactory();
     factory.setName(LayerParserDistribution::DENSE);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();

@@ -18,7 +18,7 @@ NeuralNetworkLayer LRNLayerParser::parse(std::string toParse)
 
     LocalResponseNormalizationLayerFactory factory = LocalResponseNormalizationLayerFactory();
     factory.setName(LayerParserDistribution::LOCAL_RESPONSE_NORMALIZATION);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto it = LineBreakParser::splitIntoLines(toParse).begin();
     ++it;

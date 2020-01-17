@@ -18,12 +18,30 @@ NeuralNetwork NeuralNetworkFactory::buildNeuralNetwork()
 
 NeuralNetworkFactory NeuralNetworkFactory::setName(std::string name)
 {
-    this -> name = name;
+    this->name = name;
     return *this;
 }
 
 NeuralNetworkFactory NeuralNetworkFactory::setLayers(std::list<NeuralNetworkLayer> layers)
 {
-    this -> layers = layers;
+    this->layers = layers;
+    return *this;
+}
+
+NeuralNetworkFactory NeuralNetworkFactory::setHeight(int height)
+{
+    this->height = height;
+    return *this;
+}
+
+NeuralNetworkFactory NeuralNetworkFactory::setWidth(int width)
+{
+    this->width = width;
+    return *this;
+}
+
+NeuralNetworkFactory NeuralNetworkFactory::setChannels(int channels)
+{
+    this->channels = channels;
     return *this;
 }

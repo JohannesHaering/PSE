@@ -1,6 +1,3 @@
-#ifndef LAYER_PARSER_DISTRIBUTION_H_
-#define LAYER_PARSER_DISTRIBUTION_H_
-
 #include "NeuralNetworkLayer.hpp"
 #include "LineBreakParser.hpp"
 #include "LayerParserDistribution.hpp"

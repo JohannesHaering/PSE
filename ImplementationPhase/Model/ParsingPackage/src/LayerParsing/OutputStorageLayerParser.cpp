@@ -18,13 +18,13 @@ NeuralNetworkLayer OutputStorageLayerParser::parse(std::string toParse)
 
     OutputStorageLayerFactory factory = OutputStorageLayerFactory();
     factory.setName(LayerParserDistribution::OUTPUT_STORAGE);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+    auto parts1It = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER).begin();
     if(*parts1It != OUTPUT_DATA)
         throw std::invalid_argument("Wrong format");
 

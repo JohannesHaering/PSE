@@ -13,8 +13,14 @@ public:
     NeuralNetwork buildNeuralNetwork();
     NeuralNetworkFactory setName(std::string name);
     NeuralNetworkFactory setLayers(std::list<NeuralNetworkLayer> layers);
+    NeuralNetworkFactory setHeight(int height);
+    NeuralNetworkFactory setWidth(int width);
+    NeuralNetworkFactory setChannels(int channels);
 
 private:
+    int height;
+    int width;
+    int channels;
     std::string name;
     std::list<NeuralNetworkLayer> layers;
 };

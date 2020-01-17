@@ -18,7 +18,7 @@ NeuralNetworkLayer ConvolutionalLayerParser::parse(std::string toParse)
 
     ConvolutionalLayerFactory factory = ConvolutionalLayerFactory();
     factory.setName(LayerParserDistribution::CONVOLUTIONAL);
-    factory.setInputDimensions(inputDimensions);
+    factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();

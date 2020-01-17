@@ -14,6 +14,6 @@ NeuralNetworkLayer CollectResultsLayerParser::parse(std::string toParse){
     
     return CollectResultLayerFactory()
         .setName(LayerParserDistribution::COLLECT_RESULTS)
-        .setInputDimensions(inputDimensions)
+        .setInputDimensions(LayerParser::inputDimensions)
         .buildLayer();
 }
