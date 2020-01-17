@@ -6,7 +6,8 @@
 
 #include <string>
 
-class LayerParserDistribution : public LineBreakParser<NeuralNetworkLayer> {
+class LayerParserDistribution : public LineBreakParser<NeuralNetworkLayer>
+{
 public:
     NeuralNetworkLayer parse(std::string toParse);
 
@@ -22,6 +23,7 @@ public:
     const std::string COLLECT_RESULTS = "collect";
     const std::string INCEPTION = "inception";
     const std::string OUTPUT_STORAGE = "output_storage";
+
 private:
     NeuralNetworkLayer parseConvolutionalLayer(std::string toParse);
     NeuralNetworkLayer parseActivationLayer(std::string toParse);
