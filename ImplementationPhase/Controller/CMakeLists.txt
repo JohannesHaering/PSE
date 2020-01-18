@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-#add_subdirectory(CommunicationModule)
+add_subdirectory(CommunicationModule)
 add_subdirectory(ControllerFacadeModule)
 add_subdirectory(DispatcherModule)
 add_subdirectory(InferencingModule)

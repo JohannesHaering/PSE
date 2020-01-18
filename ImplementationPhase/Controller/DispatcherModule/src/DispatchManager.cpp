@@ -1,4 +1,10 @@
-#include "DispatchManager.h"
+#include "DispatchManager.hpp"
+#include "Channel.hpp"
+#include "Mode.hpp"
+#include "NeuralNetworkAdapter.hpp"
+//#include "Device.hpp"
+
+#include <opencv2/opencv.hpp>
 
 //DispatchManager::DispatchManager() {}
 //DispatchManager::DispatchManager(DispatchManager const& copy); //not implemented
@@ -10,13 +16,13 @@ DispatchManager& DispatchManager::getInstance()
 	return instance;
 }
 
-Mode DispatchManager::getMode() { return mode; }
+Mode& DispatchManager::getMode() { return mode; }
 
-void DispatchManager::setMode(Mode operatingMode) { this->mode = operatingMode; }
+void DispatchManager::setMode(Mode& operatingMode) { this->mode = operatingMode; }
 
-void DispatchManager::setNeuralNetworkList(std::list<NeuralNetwork> neuralNetworkList) { this->neuralNetworkList = neuralNetworkList; }
+void DispatchManager::setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList) { this->neuralNetworkList = neuralNetworkList; }
 
-std::list<NeuralNetwork> DispatchManager::getNeuralNetworkList() { return neuralNetworkList; }
+std::list<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { return neuralNetworkList; }
 
 std::list<Mode> DispatchManager::getModeList() 
 {
@@ -24,7 +30,7 @@ std::list<Mode> DispatchManager::getModeList()
 	return NULL;
 }
 
-ResultManager DispatchManager::dispatchImages(std::list<image> imageList) 
+ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList) 
 {
 	//TODO
 }
