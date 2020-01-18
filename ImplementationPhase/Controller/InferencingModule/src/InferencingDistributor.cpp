@@ -4,7 +4,7 @@
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "Model.hpp"
+#include "ModelFacade.hpp"
 #include <vector>
 #include <string>
 

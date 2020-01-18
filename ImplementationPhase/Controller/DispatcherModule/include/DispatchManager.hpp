@@ -20,16 +20,16 @@ class DispatchManager
 	        // Stop the compiler generating methods of copy the object
 		DispatchManager(DispatchManager const& copy); //don't implement!
 		DispatchManager& operator=(DispatchManager const& copy); //don't implement!
-		Mode& mode;
+		Mode* mode;
 		std::list<Device> deviceList;
 		std::list<NeuralNetworkAdapter> neuralNetworkList;
-		std::map<Device,Channel> deviceChannelMap;
+		std::map<Device,Channel*> deviceChannelMap;
 
 	public:
-		static DispatchManager& getInstance(); 
-		void setMode(Mode& operatingmode);
-		Mode& getMode();
-		std::list<Mode> getModeList();
+		static DispatchManager getInstance(); 
+		void setMode(Mode* operatingmode);
+		Mode* getMode();
+		std::list<Mode*> getModeList();
 		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
 		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
 		ResultManager dispatchImages(std::list<cv::Mat> imageList);

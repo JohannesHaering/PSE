@@ -7,7 +7,7 @@
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
-#include "Model.hpp"
+#include "ModelFacade.hpp"
 
 class InferencingDistributor : public Distributor {
 
