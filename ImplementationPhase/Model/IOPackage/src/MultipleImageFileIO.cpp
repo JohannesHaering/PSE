@@ -17,3 +17,15 @@ Data<std::list<cv::Mat>> MultipleImageFileIO::readFile(std::list<std::string> pa
     }
     return Data<std::list<cv::Mat>>(images);
 }
+
+bool writeFile(Data<std::list<cv::Mat>> image, std::list<std::string> paths){
+    auto imagesIt = image.getData().begin();
+    auto pathsIt = paths.begin();
+
+    bool success = true;
+    for(; pathsIt != nullptr || imagesIt != nullptr; ++imagesIt, ++pathsIt)
+        success &= ImageFileIO::writeFile(*imagesIt, *pathsIt);
+    
+    return success;
+}
+
