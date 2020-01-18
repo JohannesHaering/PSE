@@ -7,11 +7,14 @@
 
 #include <string>
 
-class DetectionResultParser : public Parser<DetectionResult> {
-    public:
-        DetectionResult parse(std::string toParse);
-    private:
-        std::string basePartsDelimeter = "#";
-        std::string boundingBoxDelimeter = "|";
+class DetectionResultParser : public Parser<DetectionResult>
+{
+public:
+    DetectionResult parse(std::string toParse);
+    std::string parseBack(DetectionResult detectionResult);
+
+private:
+    std::string basePartsDelimeter = "#";
+    std::string boundingBoxDelimeter = "|";
 };
 #endif

@@ -18,6 +18,6 @@ add_library(IMAGEFACADE "src/ImageFacade.cpp" "include/ImageFacade.hpp")
 target_include_directories(IMAGEFACADE PUBLIC "include/")
 target_link_libraries(IMAGEFACADE PUBLIC IO CAMERA IMAGEPARSER)
 
-add_library(PARSERESULTFACADE "src/ParseResultFacade.cpp" "include/ParseResultFacade.hpp")
+add_library(PARSERESULTFACADE "src/ResultFacade.cpp" "include/ResultFacade.hpp")
 target_include_directories(PARSERESULTFACADE PUBLIC "include/")
-target_link_libraries(PARSERESULTFACADE PUBLIC DETECTIONRESULT DETECTIONRESULTPARSER)
+target_link_libraries(PARSERESULTFACADE PUBLIC DETECTIONRESULT DETECTIONRESULTPARSER IO CLASSIFICATIONRESULT CLASSIFICATIONDATASETPARSER)

@@ -23,3 +23,12 @@ ClassProbability ClassProbabilityParser::parse(std::string toParse)
 
     return ClassProbabilityFactory().build(classId, probability);
 }
+
+std::string ClassProbabilityParser::parseBack(ClassProbability classProbability)
+{
+    std::string output = "";
+    output.append(classProbability.getClassName());
+    output.append(delimeter);
+    output.append(std::to_string(classProbability.getProbability()));
+    return output;
+}

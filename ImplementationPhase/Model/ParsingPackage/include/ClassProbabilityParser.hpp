@@ -11,6 +11,7 @@ class ClassProbabilityParser : public Parser<ClassProbability>
 {
 public:
     ClassProbability parse(std::string toParse);
+    std::string parseBack(ClassProbability classProbability);
 
 private:
     std::string delimeter = ":";

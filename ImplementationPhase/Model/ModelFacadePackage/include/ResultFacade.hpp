@@ -12,5 +12,7 @@ class ParseResultFacade : public ModelFacade
 public:
     DetectionResult parseDetectionResult(std::string resultString);
     ClassificationResult parseClassificationResult(std::string resultString);
+    bool writeDetectionResult(DetectionResult result);
+    bool writeClassificationResult(ClassificationResult result);
 };
 #endif
