@@ -16,8 +16,9 @@ target_link_libraries(DETECTIONDATAFACADE PUBLIC IO DETECTIONDATA DETECTIONDATAP
 
 add_library(IMAGEFACADE "src/ImageFacade.cpp" "include/ImageFacade.hpp")
 target_include_directories(IMAGEFACADE PUBLIC "include/")
-target_link_libraries(IMAGEFACADE PUBLIC IO CAMERA IMAGEPARSER)
+target_link_libraries(IMAGEFACADE PUBLIC IO CAMERA IMAGEPARSER VIDEO)
+target_link_libraries( IMAGEFACADE ${OpenCV_LIBS} )
 
 add_library(PARSERESULTFACADE "src/ParseResultFacade.cpp" "include/ParseResultFacade.hpp")
 target_include_directories(PARSERESULTFACADE PUBLIC "include/")
-target_link_libraries(PARSERESULTFACADE PUBLIC DETECTIONRESULT DETECTIONRESULTPARSER)
+target_link_libraries(PARSERESULTFACADE PUBLIC DETECTIONRESULT DETECTIONRESULTPARSER CLASSIFICATIONRESULT CLASSIFICATIONRESULTPARSER)

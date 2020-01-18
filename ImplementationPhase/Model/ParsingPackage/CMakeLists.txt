@@ -29,7 +29,7 @@ target_link_libraries(DETECTIONDATAPARSER DETECTIONDATA)
 
 add_library(DETECTIONRESULTPARSER "src/DetectionResultParser.cpp" "include/DetectionResultParser.hpp")
 target_include_directories(DETECTIONRESULTPARSER PUBLIC "include/")
-target_link_libraries(DETECTIONRESULTPARSER PUBLIC FACTORY)
+target_link_libraries(DETECTIONRESULTPARSER PUBLIC FACTORY DETECTIONRESULT)
 
 add_library(IMAGEPARSER "src/ImageLocationParser.cpp" "src/ImageParser.cpp" "src/ImageParserWithSizing.cpp" "include/ImageLocationParser.hpp" "include/ImageParser.hpp" "include/ImageParserWithSizing.hpp")
 target_include_directories(IMAGEPARSER PUBLIC "include/")
@@ -39,4 +39,5 @@ target_include_directories(PARSER PUBLIC "include/")
 
 add_library(LINEBREAKPARSER "src/LineBreakParser.cpp" "include/LineBreakParser.hpp")
 target_include_directories(LINEBREAKPARSER PUBLIC "include/")
+target_link_libraries(LINEBREAKPARSER PUBLIC PARSER)
 

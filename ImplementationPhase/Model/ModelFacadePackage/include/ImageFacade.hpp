@@ -7,12 +7,13 @@
 #include <string>
 #include <list>
 
-class ImageFacade : public ModelFacade {
-    public:
-        cv::Mat getImage(std::string path, int width, int height, int channelNumb);
-        std::list<cv::Mat> getImages(std::list<std::string> paths, int width, int height, int channelNumb);
-        std::list<cv::Mat> getImagesFromTxtFile(std::string path, int width, int height, int channelNumb);
-        cv::Mat getImageFromCamera(int deviceId,  int width, int height, int channelNumb);
-        std::list<cv::Mat> getImagesFromVideo(std::string path, int width, int height, int channelNumb);
+class ImageFacade : public ModelFacade
+{
+public:
+    cv::Mat getImage(std::string path, int width, int height, int channelNumb);
+    std::list<cv::Mat> getImages(std::list<std::string> paths, int width, int height, int channelNumb);
+    std::list<cv::Mat> getImagesFromTxtFile(std::string path, int width, int height, int channelNumb);
+    cv::Mat getImageFromCamera(int deviceId, int width, int height, int channelNumb);
+    std::list<cv::Mat> getImagesFromVideo(std::string path, int width, int height, int channelNumb);
 };
 #endif
