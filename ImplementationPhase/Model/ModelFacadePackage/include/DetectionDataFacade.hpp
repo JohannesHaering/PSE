@@ -4,8 +4,9 @@
 #include "ModelFacade.hpp"
 #include "DetectionData.hpp"
 
-class DetectionDataFacade : public ModelFacade {
-    public:
-        DetectionData loadDetectionData(std::string directory);
+class DetectionDataFacade : public ModelFacade
+{
+public:
+    DetectionData loadDetectionData(std::string directory);
 };
 #endif
