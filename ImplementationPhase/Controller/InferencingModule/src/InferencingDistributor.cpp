@@ -8,9 +8,8 @@
 #include <vector>
 #include <string>
 
-InferencingDistributor::InferencingDistributor() 
+InferencingDistributor::InferencingDistributor() : dispatcher(DispatchManager::getInstance()), resultManager(ResultManager())
 {
-
 }
 
 /*
