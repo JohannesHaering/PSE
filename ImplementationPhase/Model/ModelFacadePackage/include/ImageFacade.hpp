@@ -15,6 +15,6 @@ class ImageFacade : public ModelFacade {
         cv::Mat getImageFromCamera(int deviceId,  int width, int height, int channelNumb);
         std::list<cv::Mat> getImagesFromVideo(std::string path, int width, int height, int channelNumb);
         bool writeImage(std::string path, cv::Mat image);
-        bool writeImages(std::list<std::string>> paths, std::list<cv::Mat> images);
+        bool writeImages(std::list<std::string> paths, std::list<cv::Mat> images);
 };
 #endif

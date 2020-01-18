@@ -5,6 +5,7 @@
 #include "CameraHandler.hpp"
 #include "VideoHandler.hpp"
 #include "ImageParserWithSizing.hpp"
+#include "ImageFacade.hpp"
 
 #include <opencv2/opencv.hpp>
 #include <string>
@@ -12,7 +13,7 @@
 
 cv::Mat ImageFacade::getImage(std::string path, int width, int height, int channelNumb)
 {
-    cv::Mat image = ImageFileIO().readFile(path);
+    cv::Mat image = ImageFileIO().readFile(path).getData();
     cv::Mat parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
     return parsedImage;
 }
@@ -38,7 +39,7 @@ cv::Mat ImageFacade::getImageFromCamera(int deviceId, int width, int height, int
     auto cameraHandler = CameraHandler(deviceId, 30);
     cv::Mat capturedImage = cameraHandler.getNextFrame();
     cv::Mat parsedCapturedImage = ImageParserWithSizing(width, height, channelNumb).parse(capturedImage);
-    ~cameraHandler();
+    ~cameraHandler;
     return parsedCapturedImage;
 }
 
@@ -60,6 +61,6 @@ bool writeImage(std::string path, cv::Mat image)
     return ImageFileIO().writeFile(Data<cv::Mat>(image), path);
 }
 
-bool writeImages(std::list<std::string>> paths, std::list<cv::Mat> images){
+bool writeImages(std::list<std::string> paths, std::list<cv::Mat> images){
     return MultipleImageFileIO().writeFile(Data<std::list<cv::Mat>>(images), paths);
 }

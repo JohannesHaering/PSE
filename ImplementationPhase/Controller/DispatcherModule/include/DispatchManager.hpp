@@ -3,7 +3,11 @@
 
 #include "NeuralNetworkAdapter.hpp"
 #include "Mode.hpp"
+#include "Channel.hpp"
 #include "ResultManager.hpp"
+
+#include <opencv2/opencv.hpp>
+
 #include <list>
 #include <map>
 #include <vector>
@@ -27,7 +31,7 @@ class DispatchManager
 		std::list<Mode> getModeList();
 		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
 		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
-		ResultManager dispatchImages(std::list<image> imageList);
+		ResultManager dispatchImages(std::list<cv::Mat> imageList);
 		static std::vector<Device> getAvailableDevices();
 };
 #endif
