@@ -10,6 +10,7 @@ class BoundingBoxParser : public Parser<BoundingBox>
 {
 public:
     BoundingBox parse(std::string toParse);
+    std::string parseBack(BoundingBox boundingBox);
 
 private:
     std::string basePartsDelimeter = "$";
