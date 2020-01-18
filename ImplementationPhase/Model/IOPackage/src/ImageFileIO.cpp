@@ -11,6 +11,7 @@ Data<cv::Mat> ImageFileIO::readFile(std::string path)
 }
 
 bool ImageFileIO::writeFile(Data<cv::Mat> image, std::string path) {
-    imwrite(image.getData(), path);
+    cv::Mat imageRaw = image.getData();
+    cv::imwrite(path, imageRaw);
     return true;
 }
