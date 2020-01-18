@@ -20,7 +20,8 @@ cv::Mat ImageFacade::getImage(std::string path, int width, int height, int chann
 std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int width, int height, int channelNumb)
 {
     std::list<cv::Mat> images;
-    for(auto it = paths.begin(); it != paths.end(); ++it){
+    for (auto it = paths.begin(); it != paths.end(); ++it)
+    {
         images.push_back(getImage(*it, width, height, channelNumb));
     }
     return images;
@@ -47,8 +48,18 @@ std::list<cv::Mat> ImageFacade::getImagesFromVideo(std::string path, int width, 
     auto videoHandler = VideoHandler(1);
     std::list<cv::Mat> frames = videoHandler.handleVideo(video);
     std::list<cv::Mat> parsedFrames;
-    for(auto it = frames.begin(); it != frames.end(); ++it){
+    for (auto it = frames.begin(); it != frames.end(); ++it)
+    {
         parsedFrames.push_back(ImageParserWithSizing(width, height, channelNumb).parse(*it));
     }
     return parsedFrames;
+}
+
+bool writeImage(std::string path, cv::Mat image)
+{
+    return ImageFileIO().writeFile(Data<cv::Mat>(image), path);
+}
+
+bool writeImages(std::list<std::string>> paths, std::list<cv::Mat> images){
+    return MultipleImageFileIO().writeFile(Data<std::list<cv::Mat>>(images), paths);
 }

@@ -8,6 +8,8 @@
 #include <list>
 #include <stdexcept>
 
+// Format:
+// imageID # neuralNetworkID # Classprobabilities
 ClassificationResult ClassificationResultParser::parse(std::string toParse)
 {
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
@@ -31,4 +33,26 @@ ClassificationResult ClassificationResultParser::parse(std::string toParse)
     }
 
     return ClassificationResultFactory().build(imageId, neuralNetworkId, parsedProbabilities);
+}
+
+std::string ClassificationResultParser::parseBack(ClassificationResult classificationResult)
+{
+    std::string output = "";
+    output.append(classificationResult.getImageID());
+    output.append(basePartsDelimeter);
+    output.append(classificationResult.getNeuralNetworkID());
+    output.append(basePartsDelimeter);
+
+    auto probabilities = classificationResult.getProbabilities();
+    auto it = probabilities.begin();
+    output.append(ClassProbabilityParser().parseBack(*it));
+    ++it;
+
+    for (; it != probabilities.end(); ++it)
+    {
+        output.append(probabilitiesDelimeter);
+        output.append(ClassProbabilityParser().parseBack(*it));
+    }
+
+    return output;
 }
