@@ -8,23 +8,23 @@
 
 #include <string>
 
-DetectionResult ParseResultFacade::parseDetectionResult(std::string resultString)
+DetectionResult ResultFacade::parseDetectionResult(std::string resultString)
 {
     return DetectionResultParser().parse(resultString);
 }
 
-ClassificationResult ParseResultFacade::parseClassificationResult(std::string resultString)
+ClassificationResult ResultFacade::parseClassificationResult(std::string resultString)
 {
     return ClassificationResultParser().parse(resultString);
 }
 
-bool writeDetectionResult(DetectionResult result, std::string path)
+bool ResultFacade::writeDetectionResult(DetectionResult result, std::string path)
 {
     std::string output = DetectionResultParser().parseBack(result);
     return TextFileIO().writeFile(path, Data(output));
 }
 
-bool writeClassificationResult(ClassificationResult result, std::string path)
+bool ResultFacade::writeClassificationResult(ClassificationResult result, std::string path)
 {
     std::string output = ClassificationResultParser().parseBack(result);
     return TextFileIO().writeFile(path, Data(output));
