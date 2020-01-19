@@ -3,7 +3,18 @@
 
 #include <list>
 #include <string>
-#include "NetworkLayer.hpp"
+// #include "NetworkLayer.hpp"
+
+#include "ConvolutionLayer.hpp"
+#include "ActivationLayer.hpp"
+#include "PollingLayer.hpp"
+#include "LocalResponseNormalizationLayer.hpp"
+#include "DenseLayer.hpp"
+#include "FlattenLayer.hpp"
+#include "DropoutLayer.hpp"
+#include "CollectResultsLayer.hpp"
+#include "OutputStorageLayer.hpp"
+#include "InceptionLayer.hpp"
 
 class NeuralNetwork {
 

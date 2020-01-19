@@ -1,4 +1,5 @@
 #include "InceptionLayer.hpp"
+#include "NeuralNetwork.hpp"
 
 InceptionLayer::InceptionLayer() : NetworkLayer(LayerType::INCEPTION), chains()
 {
