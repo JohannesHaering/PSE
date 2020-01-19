@@ -1,7 +1,7 @@
 #ifndef PAGER_H_
 #define PAGER_H_
 
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 
 class Pager {
 
@@ -16,7 +16,7 @@ class Pager {
 	protected: 
 		int currentPage;
 		int maxPage;
-		InferencePage page;
+		InferencePageAdapter page;
 		virtual void disable();
 
 };

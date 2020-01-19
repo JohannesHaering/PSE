@@ -1,6 +1,6 @@
 #include "InferencingDistributorDetection.hpp"
 
-InferencingDistributorDetection::InferencingDistributorDetection(InferencePage page)
+InferencingDistributorDetection::InferencingDistributorDetection(InferencePageAdapter page)
 {
 	this->page = page;
 }

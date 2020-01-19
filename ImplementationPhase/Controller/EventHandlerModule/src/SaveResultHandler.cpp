@@ -23,5 +23,6 @@ void SaveResultHandler::onAction()
 {
     int nn_id = nnpager.getCurrentPage();
     int img_id = ipager.getCurrentPage();
-	distributor.saveResult(std::to_string(nn_id), std::to_string(img_id));
+	std::string path = page.getPaths(".txt");
+	distributor.saveResult(std::to_string(nn_id), std::to_string(img_id), path);
 }
