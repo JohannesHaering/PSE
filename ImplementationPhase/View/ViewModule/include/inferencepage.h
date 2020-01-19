@@ -1,12 +1,21 @@
-#ifndef OBJECTDETECTIONINFERENCEPAGEADAPTER_H
-#define OBJECTDETECTIONINFERENCEPAGEADAPTER_H
-#include "inferencepageadapter.h"
-#include "objectdetectioninferencepage.h"
+#ifndef INFERENCEPAGE_H
+#define INFERENCEPAGE_H
 
-class ObjectDetectionInferencePageAdapter : public InferencePageAdapter
+#include <QDialog>
+#include<string>
+#include "imageclassificationcontrolpanel.h"
+#include "classificationresultpanel.h"
+namespace Ui {
+class InferencePage;
+}
+
+class InferencePage : public QDialog
 {
+    Q_OBJECT
+
 public:
-    ObjectDetectionInferencePageAdapter();
+    explicit InferencePage(QWidget *parent = nullptr);
+    ~InferencePage();
     std::string getOperatingMode();
     std::vector<Device> getDevices();
     void setDevices(std::vector<Device>* devices);
@@ -20,11 +29,14 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
-    ObjectDetectionInferencePage* getInferPage();
     void update();
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
+    //+ getInputPathes() : string[]
+    bool getAppendResult();
+private slots:
+
 private:
-    ObjectDetectionInferencePage* inferPage;
+    Ui::InferencePage *ui;
 };
 
-#endif // OBJECTDETECTIONINFERENCEPAGEADAPTER_H
+#endif // INFERENCEPAGE_H

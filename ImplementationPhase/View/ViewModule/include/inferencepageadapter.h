@@ -1,17 +1,12 @@
 #ifndef INFERENCEPAGEADAPTER_H
 #define INFERENCEPAGEADAPTER_H
-//#include "inferencepage.h"
-#include <string>
-#include "Device.hpp"
-#include <vector>
-#include "contentview.h"
+#include "inferencepage.h"
 
-class InferencePageAdapter : ContentView
+class InferencePageAdapter : public ContentView
 {
 public:
     std::string getOperatingMode();
     std::vector<Device> getDevices();
-	void setDevices(std::vector<Device> devices);
     std::string getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
@@ -22,11 +17,14 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
-	void startEnable(bool flag);
     InferencePageAdapter();
-	void update();
-    //InferencePage* getInferencePage();
-
+    InferencePage* getInferencePage();
+    void setDevices(std::vector<Device>* devices);
+    void update();
+    bool getAppendResult();
+    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
+private:
+    InferencePage* inferPage;
 };
 
 #endif // INFERENCEPAGEADAPTER_H
