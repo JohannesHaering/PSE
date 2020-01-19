@@ -7,12 +7,12 @@
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
-#include "Model.hpp"
+#include "ModelFacade.hpp"
 
 class InferencingDistributor : public Distributor {
 
     public:
-		InferencingDistributor();
+	InferencingDistributor();
         void startProcess();
         void saveResult(std::string nn_id, std::string input_id);
         void drawResult(std::string nn_id, std::string input_id);

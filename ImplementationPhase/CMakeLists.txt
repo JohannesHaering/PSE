@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(ImageClassifier)
 
+set(CMAKE_CXX_STANDARD 17)#new, for johannes stuff
+
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -36,3 +38,4 @@ add_subdirectory(test)
 add_subdirectory(Model)
 add_subdirectory(View)
 add_subdirectory(Controller)
+
