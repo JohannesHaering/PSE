@@ -7,7 +7,7 @@
 
 #include <string>
 
-class ParseResultFacade : public ModelFacade
+class ResultFacade : public ModelFacade
 {
 public:
     DetectionResult parseDetectionResult(std::string resultString);
