@@ -1,8 +1,9 @@
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
 #include "ViewFacade.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 #include "InputImageHandler.hpp"
+#include <stdexcept>
 
 /**
  * Creates a InputImageHandler.
@@ -23,16 +24,22 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
-	ViewFacade view = ViewFacade::getInstance();
-    int mode = page.getInputMode();
-	// normaler mode
-    if (mode == 0) 
-    {
-		return view.getDirectories(validformatsmanual);
-    } 
-	// text file
-    else if (mode == 1) {
-		return view.getDirectories(validformatstxt);
-    }
+	try {
+		ViewFacade view = ViewFacade::getInstance();
+		int mode = page.getInputMode();
+		// normaler mode
+		if (mode == 0)
+		{
+			return view.getDirectories(validformatsmanual);
+		}
+		// text file
+		else if (mode == 1) {
+			return view.getDirectories(validformatstxt);
+		}
+	}
+	catch (const std::invalid_argument& ia)
+	{
+		view.exceptionText("Invalid image");
+	}
 
 }

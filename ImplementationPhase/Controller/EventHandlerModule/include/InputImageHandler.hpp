@@ -3,7 +3,7 @@
 
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 
 class InputImageHandler : public FileExplorerHandler {
     
@@ -16,7 +16,7 @@ class InputImageHandler : public FileExplorerHandler {
         std::vector<std::string> validformatsmanual = {"jpg", "JPG", "png", "PNG"};
 		std::vector<std::string> validformatstxt = {"txt", "TXT"};
         Distributor distributor; 
-        InferencePage page;
+		InferencePageAdapter page;
 
     protected: 
         void sendDirectory(std::vector<std::string> dir);

@@ -5,7 +5,7 @@
 #include "PowerPredictorFromFile.hpp"
 #include "PerformancePredictorFromFile.hpp"
 
-PredictionHandler::PredictionHandler(InferencePage page) : 
+PredictionHandler::PredictionHandler(InferencePageAdapter page) :
 page(page), 
 powerPredictor(PowerPredictorFromFile()), 
 performancePredictor(PerformancePredictorFromFile()) 

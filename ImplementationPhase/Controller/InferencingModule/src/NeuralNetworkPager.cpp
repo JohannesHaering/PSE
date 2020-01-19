@@ -5,9 +5,9 @@
 * Creates a Pager that keeps track of neural networks.
 * Parameters:
 * -int maxPage: the maximum amount of pages that can be displayed
-* -InferencePage page: the page that displays the results
+* -InferencePageAdapter page: the page that displays the results
 */
-NeuralNetworkPager::NeuralNetworkPager(int maxPage, InferencePage page) {
+NeuralNetworkPager::NeuralNetworkPager(int maxPage, InferencePageAdapter page) {
     this->maxPage = maxPage;
     this->page = page;
 }

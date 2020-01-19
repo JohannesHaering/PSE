@@ -18,6 +18,7 @@
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "ControllerFacade.hpp"
+#include "InferencePageAdapter.hpp"
 
         ControllerFacade ControllerFacade::getInstance(){
             if (&instance == nullptr) {
@@ -86,7 +87,7 @@
 			ViewFacade view = ViewFacade::getInstance();
 			
             // Setup Classification
-			InferencePage classificationPage = view.getClassificationPage();
+			InferencePageAdapter classificationPage = view.getClassificationPage();
             classificationInferencer = InferencingDistributorClassification(classificationPage);
             NeuralNetworkPager neuralNetworkPager = NeuralNetworkPager(0, classificationPage);
             ImagePager imagePager = ImagePager(0, classificationPage);
@@ -102,7 +103,7 @@
             predictionHandlerClassification = PredictionHandler(classificationPage);
 		
             // Setup Detection
-			InferencePage detectionPage = view.getDetectionPage();
+			InferencePageAdapter detectionPage = view.getDetectionPage();
             detectionInferencer = InferencingDistributorDetection(detectionPage);
             NeuralNetworkPager neuralNetworkPagerDetection = NeuralNetworkPager(0, detectionPage);
             ImagePager imagePagerDetection = ImagePager(0, detectionPage);

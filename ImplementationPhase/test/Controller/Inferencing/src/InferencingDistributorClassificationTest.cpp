@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 
-class ClassificationPageMock : public InferencePage {
+class ClassificationPageMock : public InferencePageAdapter {
 
 public:
 	bool getShowResults()

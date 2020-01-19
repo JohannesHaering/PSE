@@ -2,7 +2,6 @@
 #define NEURAL_NETWORK_SETTER_H_
 
 #include "Inferencer.hpp"
-#include "Model.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
 
@@ -15,7 +14,6 @@ class NeuralNetworkSetter {
 
     private:
         Inferencer inferencer;    
-        Model model;    
 
 };
 #endif

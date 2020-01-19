@@ -6,7 +6,7 @@
 * Parameters:
 * -Inference page: the corresponding page
 */
-InferencingDistributorClassification::InferencingDistributorClassification(InferencePage page)
+InferencingDistributorClassification::InferencingDistributorClassification(InferencePageAdapter page)
 {
 	this->page = page;
 }
