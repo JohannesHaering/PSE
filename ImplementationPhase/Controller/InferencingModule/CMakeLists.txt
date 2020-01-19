@@ -15,6 +15,7 @@ add_library(IMAGEPAGER "src/ImagePager.cpp" "include/ImagePager.hpp")
 target_include_directories(IMAGEPAGER PUBLIC "include/")
 target_link_libraries(IMAGEPAGER PUBLIC INFERENCER)
 target_link_libraries(IMAGEPAGER PUBLIC PAGER)
+target_link_libraries(IMAGEPAGER PUBLIC INFERENCEPAGEADAPTER)
 
 add_library(INFERENCINGDISTRIBUTOR "src/InferencingDistributor.cpp" "include/InferencingDistributor.hpp")
 target_include_directories(INFERENCINGDISTRIBUTOR PUBLIC "include/")
@@ -36,6 +37,7 @@ target_link_libraries(INFERENCINGDISTRIBUTORDETECTION PUBLIC INFERENCINGDISTRIBU
 add_library(NEURALNETWORKPAGER "src/NeuralNetworkPager.cpp" "include/NeuralNetworkPager.hpp")
 target_include_directories(NEURALNETWORKPAGER PUBLIC "include/")
 target_link_libraries(NEURALNETWORKPAGER PUBLIC PAGER)
+target_link_libraries(NEURALNETWORKPAGER PUBLIC INFERENCEPAGEADAPTER)
 
 add_library(NEURALNETWORKSETTER "src/NeuralNetworkSetter.cpp" "include/NeuralNetworkSetter.hpp")
 target_include_directories(NEURALNETWORKSETTER PUBLIC "include/")

@@ -1,4 +1,4 @@
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "EventHandler.hpp"
 #include "FileExplorerHandler.hpp"
 #include <string>

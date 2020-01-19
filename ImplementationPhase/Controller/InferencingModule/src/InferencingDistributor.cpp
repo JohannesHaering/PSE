@@ -1,10 +1,10 @@
 #include "InferencingDistributor.hpp"
 #include "Distributor.hpp"
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "ParseResultFacade.hpp"
+#include "ResultFacade.hpp"
 #include <vector>
 #include <string>
 

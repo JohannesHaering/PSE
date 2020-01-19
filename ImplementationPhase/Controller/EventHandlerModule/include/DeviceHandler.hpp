@@ -1,7 +1,7 @@
 #ifndef DEVICE_HANDLER_H_
 #define DEVICE_HANDLER_H_
 
-#include "InferencePageAdapter.hpp"
+#include "inferencepageadapter.h"
 #include "ResultManager.hpp"
 
 class DeviceHandler 

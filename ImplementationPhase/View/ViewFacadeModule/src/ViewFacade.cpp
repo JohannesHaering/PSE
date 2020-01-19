@@ -3,7 +3,7 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "TopologyPage.hpp"
 #include "TrainingPage.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 #include "Result.hpp"
 
 class ViewFacade {
@@ -13,17 +13,22 @@ class ViewFacade {
 
         std::vector<std::string> getDirectories(std::vector<std::string> filetypes){}
 
-        static InferencePage getClassificationPage(){}
-        std::string getOperatingModeClassification(){}
-        std::string getDevicesClassification(){}
-        std::string getInputModeClassification(){}
-        std::string getNeuralNetworkPathClassification(){}
-        bool getShowResultsClassification(){}
-        bool getSaveResultsClassification(){}
-        int getImageAmountClassification(){}
-        std::vector<std::string> getInputPathesClassification(){}
-        std::vector<std::string> getAppendResultClassification(){}
-        void setPowerPredictionClassification(int amount){}
+		static InferencePageAdapter getClassificationPage() {
+			return InferencePageAdapter
+			();
+		}
+		std::string getOperatingModeClassification() { return ""; }
+        std::string getDevicesClassification(){ return ""; }
+        std::string getInputModeClassification(){ return ""; }
+        std::string getNeuralNetworkPathClassification(){ return ""; }
+		bool getShowResultsClassification() { return true; }
+        bool getSaveResultsClassification(){ return true; }
+		int getImageAmountClassification() { return 0; }
+		std::vector<std::string> getInputPathesClassification() {
+			return { "" };
+		}
+        std::vector<std::string> getAppendResultClassification(){ return { "" }; }
+		void setPowerPredictionClassification(int amount) { }
         void setPerformancePredictionClassification(int amount){}
         void showPageClassification(bool flag){}
         void startButtonEnableClassification(bool flag){}
@@ -32,17 +37,17 @@ class ViewFacade {
         void nextImageButtonEnableClass(bool flag){}
         void prevImageButtonEnableClass(bool flag){}
         void setResultClassification(Result result){}
-        std::vector<std::string> getPlatformsClassification(){}
+        std::vector<std::string> getPlatformsClassification(){ return { "" }; }
 
-        std::string getOperatingModeDetection(){}
-        std::string getDevicesDetection(){}
-        std::string getInputModeDetection(){}
-        std::string getNeuralNetworkPathDetection(){}
-        bool getShowResultsDetection(){}
-        bool getSaveResultsDetection(){}
-        int getImageAmountDetection(){}
-        std::vector<std::string> getInputPathesDetection(){}
-        std::vector<std::string> getAppendResultDetection(){}
+		std::string getOperatingModeDetection() { return ""; }
+        std::string getDevicesDetection(){ return ""; }
+        std::string getInputModeDetection(){ return ""; }
+        std::string getNeuralNetworkPathDetection(){ return ""; }
+		bool getShowResultsDetection() { return true; }
+		bool getSaveResultsDetection() { return true; }
+		int getImageAmountDetection() { return 0; }
+        std::vector<std::string> getInputPathesDetection(){ return { "" }; }
+        std::vector<std::string> getAppendResultDetection(){ return { "" }; }
         void setPowerPredictionDetection(int amount){}
         void setPerformancePredictionDetection(int amount){}
         void showPageDetection(bool flag){}
@@ -53,15 +58,15 @@ class ViewFacade {
         void prevImageButtonEnableDetection(bool flag){}
         void setResultDetection(Result result){}
 
-        static TrainingPage getTrainingPage(){}
+		static TrainingPage getTrainingPage() { return TrainingPage(); }
         void newTrainingFinished(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining){}
-        float getLearningRate(){}
-        float getPrecision(){}
-        std::string getName(){}
-        std::string getLearningMode(){}
+		float getLearningRate() { return 0.f; }
+		float getPrecision() { return 0.f; }
+		std::string getName() { return ""; }
+		std::string getLearningMode() { return ""; }
         void startButtonEnableTraining(bool flag){}
 
-        static TopologyPage getTopologyPage(){}
+		static TopologyPage getTopologyPage() { return TopologyPage(); }
         void topologyChanged(NeuralNetworkAdapter neuralNetworkAdapter){}
         void startButtonEnableTopology(bool flag){}
 
