@@ -5,12 +5,12 @@
 #include "NeuralNetworkPager.hpp"
 #include "ImagePager.hpp"
 #include "EventHandler.hpp"
-#include "InferencePageAdapter.hpp"
+#include "inferencepageadapter.h"
 
 class SaveResultHandler : public EventHandler {
 
     public:
-        SaveResultHandler(InferencingDistributor distributor, NeuralNetworkPager nnpager, ImagePager ipager, InferencePageAdapter page);
+        SaveResultHandler(InferencingDistributor distributor, NeuralNetworkPager nnpager, ImagePager ipager);
 		SaveResultHandler();
         void onAction();
 
@@ -18,7 +18,7 @@ class SaveResultHandler : public EventHandler {
         InferencingDistributor distributor;
         NeuralNetworkPager nnpager;
         ImagePager ipager;
-		InferencePageAdapter page;
+
 
 };
 #endif

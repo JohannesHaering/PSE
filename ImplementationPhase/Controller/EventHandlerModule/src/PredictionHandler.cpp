@@ -1,9 +1,10 @@
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "ResultManager.hpp"
 #include "DispatchManager.hpp"
 #include "PredictionHandler.hpp"
 #include "PowerPredictorFromFile.hpp"
 #include "PerformancePredictorFromFile.hpp"
+#include "inferencepageadapter.h"
 
 PredictionHandler::PredictionHandler(InferencePageAdapter page) :
 page(page), 
@@ -15,7 +16,7 @@ performancePredictor(PerformancePredictorFromFile())
  * Calculates new prediction.
  */ 
 void PredictionHandler::onAction(){
-	std::vector<std::string> devices = page.getDevices();
+	std::vector<Device> devices = page.getDevices();
 	float performancePrediction = performancePredictor.predict(devices);
     float powerPrediction = powerPredictor.predict(devices);
 

@@ -1,7 +1,7 @@
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
-#include "ViewFacade.hpp"
-#include "InferencePageAdapter.hpp"
+#include "viewfacade.h"
+#include "inferencepageadapter.h"
 #include "InputImageHandler.hpp"
 #include <stdexcept>
 
@@ -30,7 +30,7 @@ std::vector<std::string> InputImageHandler::fetchDirectory()
 		// normaler mode
 		if (mode == 0)
 		{
-			return view.getDirectories(validformatsmanual);
+			return page.getDirectories(validformatsmanual);
 		}
 		// text file
 		else if (mode == 1) {

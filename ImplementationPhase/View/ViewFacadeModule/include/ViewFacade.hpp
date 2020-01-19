@@ -6,7 +6,7 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "TopologyPage.hpp"
 #include "TrainingPage.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 #include "Result.hpp"
 
 class ViewFacade {
@@ -16,7 +16,7 @@ class ViewFacade {
 
         std::vector<std::string> getDirectories(std::vector<std::string> filetypes);
 
-        static InferencePage getClassificationPage();
+        static InferencePageAdapter getClassificationPage();
         std::string getOperatingModeClassification();
         std::string getDevicesClassification();
         std::string getInputModeClassification();
@@ -37,7 +37,7 @@ class ViewFacade {
         void setResultClassification(Result result);
         std::vector<std::string> getPlatformsClassification();
 
-		static InferencePage getDetectionPage();
+		static InferencePageAdapter getDetectionPage();
         std::string getOperatingModeDetection();
         std::string getDevicesDetection();
         std::string getInputModeDetection();

@@ -15,7 +15,7 @@ InferencingDistributorClassification::InferencingDistributorClassification(Infer
 * Enables or disables the Start button of the View
 */
 void InferencingDistributorClassification::enableStart(){
-    page.startButtonEnable(canStart());
+    page.startEnable(canStart());
 }
 
 /*
@@ -24,8 +24,7 @@ void InferencingDistributorClassification::enableStart(){
 */
 void InferencingDistributorClassification::startProcess(){
     dispatcher.setNeuralNetworkList(neuralNetworks);
-    //TODO: correct mode
-    std::vector<Device> platforms = page.getPlatforms();
+    std::vector<Device> platforms = page.getDevices();
     std::string operatingMode = page.getOperatingMode();
 	Mode mode = Mode();
 	mode.setModeName(operatingMode);

@@ -11,6 +11,7 @@ class NeuralNetworkSetter {
         NeuralNetworkSetter(Inferencer inferencer);
 		NeuralNetworkSetter();
         void setNeuralNetwork(std::vector<std::string> directories);
+		Inferencer getInferencer();
 
     private:
         Inferencer inferencer;    
