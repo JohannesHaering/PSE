@@ -39,6 +39,12 @@ target_include_directories(OUTPUTSTORAGELAYER PUBLIC "include/")
 add_library(INCEPTIONLAYER "src/InceptionLayer.cpp" "include/InceptionLayer.hpp")
 target_include_directories(INCEPTIONLAYER PUBLIC "include/")
 
+add_library(TYPE_ENUMERATIONS_NN INTERFACE)
+target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp" "include/PollingType.hpp" "include/LRNType.hpp")
+
+add_library(MATRIX_DEFINE INTERFACE)
+target_sources(MATRIX_DEFINE INTERFACE "include/MatrixDefine.hpp")
+
 # add_library(TYPE_ENUMERATIONS_NN "include/LayerType.hpp" "include/Activation.hpp" "include/PollingType.hpp" "include/LRNType.hpp")
 # target_include_directories(TYPE_ENUMERATIONS_NN PUBLIC "include/")
 

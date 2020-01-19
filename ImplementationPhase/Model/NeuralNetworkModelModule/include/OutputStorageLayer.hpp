@@ -13,6 +13,7 @@ class OutputStorageLayer  : public NetworkLayer {
   public:
     OutputStorageLayer();
     OutputStorageLayer(std::string name, MATRIX_3D(double) outputData);
+    OutputStorageLayer(std::string name, MATRIX_3D(double) outputData, int* inputDimensions);
     void setData(MATRIX_3D(double) outputData);
     MATRIX_3D(double) getData();
     // ~CollectResultsLayer();
