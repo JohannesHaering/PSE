@@ -2,6 +2,7 @@
 #include "DeviceHandler.hpp"
 #include "Device.hpp"
 #include "DispatchManager.hpp"
+#include <vector>
 
 DeviceHandler::DeviceHandler(InferencePage page) {}
 
