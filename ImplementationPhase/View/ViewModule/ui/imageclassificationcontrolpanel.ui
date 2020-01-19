@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageClassificationControlPanel</class>
+ <widget class="QWidget" name="ImageClassificationControlPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>250</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QCheckBox" name="showResults">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Show Results</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="imgAmount">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Single Image</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>More Images</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QCheckBox" name="saveResults">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save Results</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="chooseNeuralNetwork">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choose Neural Network</string>
+   </property>
+  </widget>
+  <widget class="DeviceCheckBoxManager" name="CheckBoxWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>230</y>
+     <width>141</width>
+     <height>121</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="mode">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>High Performance Mode</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>High Efficiency Mode</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Low Power Consumption Mode</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QCheckBox" name="appendResults">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Append Results</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="startImgClass">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>422</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start Image Classification</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addImage">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Image</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DeviceCheckBoxManager</class>
+   <extends>QWidget</extends>
+   <header>devicecheckboxmanager.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
