@@ -2,7 +2,7 @@
 #define LRN_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "LocalResponseNormalizationLayer.hpp"
 #include "LocalResponseNormalizationLayerFactory.hpp"
@@ -13,7 +13,8 @@
 class LRNLayerParser : LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(LocalResponseNormalizationLayer layer);
 
 private:
     const std::string LRN_TYPE = "type";

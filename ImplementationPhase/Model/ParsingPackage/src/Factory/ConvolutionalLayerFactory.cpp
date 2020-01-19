@@ -1,22 +1,22 @@
 #include "LayerFactory.hpp"
 #include "ConvolutionalLayerFactory.hpp"
-#include "ConvolutionalLayer.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "ConvolutionLayer.hpp"
+#include "NetworkLayer.hpp"
 
 #include <vector>
 
-NeuralNetworkLayer ConvolutionalLayerFactory::buildLayer()
+NetworkLayer ConvolutionalLayerFactory::buildLayer()
 {
-    return ConvolutionalLayer(name, inputDimensions, weightTensors, stride, padding);
+    return ConvolutionLayer(name, inputDimensions, weightTensors, stride, padding);
 }
 
-ConvolutionalLayerFactory ConvolutionalLayerFactory::setWeightTensors(std::vector<std::vector<std::vector<float>>> weightTensors)
+ConvolutionalLayerFactory ConvolutionalLayerFactory::setWeightTensors(std::vector<std::vector<std::vector<std::vector<float>>>> weightTensors)
 {
     this -> weightTensors = weightTensors;
     return *this;
 }
 
-PoolingLayConvolutionalLayerFactoryerFactory ConvolutionalLayerFactory::setStride(int stride)
+ConvolutionalLayerFactory ConvolutionalLayerFactory::setStride(int stride)
 {
     this -> stride = stride;
     return *this;

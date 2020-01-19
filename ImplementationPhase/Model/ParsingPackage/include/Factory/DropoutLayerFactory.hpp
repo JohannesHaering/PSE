@@ -1,13 +1,13 @@
 #ifndef DROPOUT_LAYER_FACTORY
 #define DROPOUT_LAYER_FACTORY
 
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerFactory.hpp"
 
 class DropoutLayerFactory : public LayerFactory
 {
 public:
-    NeuralNetworkLayer buildLayer() override;
+    NetworkLayer buildLayer() override;
     DropoutLayerFactory setDropoutRate(float dropoutRate);
 
 private:

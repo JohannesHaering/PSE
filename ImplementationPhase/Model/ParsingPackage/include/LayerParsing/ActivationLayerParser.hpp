@@ -2,20 +2,21 @@
 #define ACTIVATION_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "ActivationLayerFactory.hpp"
 #include "ActivationLayer.hpp"
 
 #include <string>
-
 class ActivationLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(ActivationLayer layer);
 
 private:
     float extractAlpha(std::string alphaString);
+    std::string saveAlpha(float alpha);
 
     const std::string USED_FUNCTION = "function";
     const std::string SIGMOID = "sigmoid";
@@ -28,4 +29,4 @@ private:
     const std::string ALPHA = "alpha";
     const float STANDARD_ALPHA = 0.01f;    
 };
-
+#endif

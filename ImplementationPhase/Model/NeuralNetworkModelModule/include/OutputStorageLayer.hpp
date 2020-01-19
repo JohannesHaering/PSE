@@ -8,13 +8,13 @@
 class OutputStorageLayer  : public NetworkLayer {
 
   private:
-    MATRIX_3D(double) outputData;
+    MATRIX_3D(float) outputData;
 
   public:
     OutputStorageLayer();
-    OutputStorageLayer(std::string name, MATRIX_3D(double) outputData);
-    void setData(MATRIX_3D(double) outputData);
-    MATRIX_3D(double) getData();
+    OutputStorageLayer(std::string name, MATRIX_3D(float) outputData);
+    void setData(MATRIX_3D(float) outputData);
+    MATRIX_3D(float) getData();
     // ~CollectResultsLayer();
 };
 #endif

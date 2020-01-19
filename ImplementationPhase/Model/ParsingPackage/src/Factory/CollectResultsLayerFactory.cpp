@@ -1,9 +1,9 @@
-#include "CollectResultLayerFactory.hpp"
-#include "CollectResultLayer.hpp"
+#include "CollectResultsLayerFactory.hpp"
+#include "CollectResultsLayer.hpp"
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
-NeuralNetworkLayer CollectResultsLayerFactory::buildLayer()
+NetworkLayer CollectResultsLayerFactory::buildLayer()
 {
-    return CollectResultLayer(name, inputDimensions);
+    return CollectResultsLayer(name, inputDimensions);
 }

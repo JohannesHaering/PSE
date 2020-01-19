@@ -1,5 +1,5 @@
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
 #include <string>
 #include <vector>

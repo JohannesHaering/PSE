@@ -1,10 +1,10 @@
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LocalResponseNormalizationLayer.hpp"
 #include "LocalResponseNormalizationLayerFactory.hpp"
 #include "LRNType.hpp"
 
-NeuralNetworkLayer LocalResponseNormalizationLayerFactory::buildLayer()
+NetworkLayer LocalResponseNormalizationLayerFactory::buildLayer()
 {
     return LocalResponseNormalizationLayer(name, inputDimensions, type, depth);
 }

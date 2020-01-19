@@ -2,10 +2,10 @@
 #define POLLING_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "PollingLayer.hpp"
-#include "PoolingLayerFactory.hpp"
+#include "PollingLayerFactory.hpp"
 #include "PollingType.hpp"
 
 #include <string>
@@ -13,12 +13,13 @@
 class PollingLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(PollingLayer layer);
 
 private:
     const std::string SIZE = "size";
     const std::string STRIDE = "stride";
     const std::string POLLING_TYPE = "type";
-    const PollingType STANDARD_POLLING_TYPE = PollingType::MAX;
+    PollingType STANDARD_POLLING_TYPE = PollingType::MAX;
 };
 #endif

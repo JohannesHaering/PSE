@@ -1,18 +1,20 @@
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LineBreakParser.hpp"
 #include "Parser.hpp"
+#include "LayerParserDistribution.hpp"
 
 #include <string>
 #include <list>
 #include <algorithm>
 #include <stdexcept>
 #include <vector>
+#include <cstring>
 
 // Format
 // inputDimensions={<int[]>}
 // other information
-void LayerParser::pextractGeneralInformationarse(std::string toParse)
+void LayerParser::extractGeneralInformation(std::string toParse)
 {
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();
@@ -29,6 +31,7 @@ void LayerParser::pextractGeneralInformationarse(std::string toParse)
 std::string LayerParser::removeCharacter(std::string text, char toErase)
 {
     text.erase(std::remove(text.begin(), text.end(), toErase), text.end());
+	return text;
 }
 
 std::string LayerParser::extractValuePart(std::string text)
@@ -40,31 +43,37 @@ std::string LayerParser::extractValuePart(std::string text)
 
 int *LayerParser::parseIntArray(std::string text)
 {
+    text = removeCharacter(text, VALUE_BEGIN);
+    text = removeCharacter(text, VALUE_END);
     std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
     int *arr = new int[elements.size()];
     int i = 0;
     for (auto it = elements.begin(); it != elements.end(); ++it)
     {
-        arr[i] = ::atoi(*it);
+        std::string value = *it;
+        arr[i] = ::atoi(value.c_str());
         ++i;
     }
     return arr;
 }
 
-std::vector<double> LayerParser::parseFloatVector(std::string text)
+std::vector<float> LayerParser::parseFloatArray(std::string text)
 {
+    text = removeCharacter(text, VALUE_BEGIN);
+    text = removeCharacter(text, VALUE_END);
     std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
-    std::vector<double> vector;
+    std::vector<float> vector;
     for (auto it = elements.begin(); it != elements.end(); ++it)
     {
-        vector.push_back(::atof(*it));
+        std::string value = *it;
+        vector.push_back(::atof(value.c_str()));
     }
     return vector;
 }
 
-std::vector<std::vector<double>> parse2DFloatArray(std::string text)
+std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 {
-    std::vector<std::vector<std::vector<float>>> tensor;
+    std::vector<std::vector<float>> tensor;
     int x = 0; // in which outerst vector we are
     std::string currentArray = "";
     // 0 -> open bracket, next char can be a [ or a value
@@ -83,7 +92,7 @@ std::vector<std::vector<double>> parse2DFloatArray(std::string text)
             else
             {
                 state = 1;
-                currentArray.append(*charIt);
+                currentArray.push_back(*charIt);
             }
             continue;
         }
@@ -98,7 +107,7 @@ std::vector<std::vector<double>> parse2DFloatArray(std::string text)
             }
             else
             {
-                currentArray.append(*charIt);
+                currentArray.push_back(*charIt);
             }
             continue;
         }
@@ -111,7 +120,7 @@ std::vector<std::vector<double>> parse2DFloatArray(std::string text)
                 state = 2;
                 continue;
             }
-            if (*charIt == VALUE_PARTS_DELIMETER)
+            if (std::string(1, *charIt) == VALUE_PARTS_DELIMETER)
             {
                 state = 0;
                 continue;
@@ -129,7 +138,7 @@ std::vector<std::vector<double>> parse2DFloatArray(std::string text)
     return tensor;
 }
 
-std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text)
+std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std::string text)
 {
     std::vector<std::vector<std::vector<float>>> tensor;
     int x = 0; // in which outerst vector we are
@@ -151,7 +160,7 @@ std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text)
             else
             {
                 state = 1;
-                currentArray.append(*charIt);
+                currentArray.push_back(*charIt);
             }
             continue;
         }
@@ -166,7 +175,7 @@ std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text)
             }
             else
             {
-                currentArray.append(*charIt);
+                currentArray.push_back(*charIt);
             }
             continue;
         }
@@ -180,10 +189,10 @@ std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text)
                 state = 2;
                 continue;
             }
-            if (*charIt == VALUE_PARTS_DELIMETER)
+            if (std::string(1, *charIt) == VALUE_PARTS_DELIMETER)
             {
-                ++y
-                    state = 0;
+                ++y;
+                state = 0;
                 continue;
             }
 
@@ -197,4 +206,158 @@ std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text)
     }
 
     return tensor;
+}
+
+std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFloatArray(std::string text)
+{
+    std::vector<std::vector<std::vector<std::vector<float>>>> tensor;
+    std::string currentArray = "";
+
+    auto it = text.begin();
+    int i = 0;
+    ++it;
+    for (; it != text.end(); ++it)
+    {
+        currentArray += *it;
+        if (*it == VALUE_END)
+        {
+            ++it;
+            if (*it == VALUE_END)
+            {
+                ++it;
+                if (*it == VALUE_END)
+                {
+                    ++it;
+                    currentArray += "]]]";
+                    tensor.at(i) = parse3DFloatArray(currentArray);
+                    ++i;
+                }
+                else
+                {
+                    --it;
+                    --it;
+                }
+            }
+            else
+            {
+                --it;
+            }
+        }
+    }
+
+    return tensor;
+}
+
+std::string LayerParser::saveGeneralInformation(NetworkLayer layer)
+{
+    std::string output = "";
+    output += LayerParser::VALUE_BEGIN;
+    switch (layer.getLayerType())
+    {
+    case LayerType::ACTIVATION:
+        output += LayerParserDistribution().ACTIVATION;
+        break;
+    case LayerType::COLLECT_RESULTS:
+        output += LayerParserDistribution().COLLECT_RESULTS;
+        break;
+    case LayerType::CONVOLUTION:
+        output += LayerParserDistribution().CONVOLUTIONAL;
+        break;
+    case LayerType::DENSE:
+        output += LayerParserDistribution().DENSE;
+        break;
+    case LayerType::DROPOUT:
+        output += LayerParserDistribution().DROPOUT;
+        break;
+    case LayerType::FLATTEN:
+        output += LayerParserDistribution().FLATTEN;
+        break;
+    case LayerType::INCEPTION:
+        output += LayerParserDistribution().INCEPTION;
+        break;
+    case LayerType::LRN:
+        output += LayerParserDistribution().LOCAL_RESPONSE_NORMALIZATION;
+        break;
+    case LayerType::OUTPUT_STORAGE:
+        output += LayerParserDistribution().OUTPUT_STORAGE;
+        break;
+    case LayerType::POLLING:
+        output += LayerParserDistribution().POLLING;
+        break;
+    }
+    output += LayerParser::VALUE_END;
+    output += INPUT_DIMENSIONS + VALUE_TYPE_DELIMETER;
+    output += saveIntArray(layer.getInputDimensions());
+    output += "\n";
+	return output;
+}
+
+std::string LayerParser::saveIntArray(int *arr)
+{
+    std::string output = std::to_string(VALUE_BEGIN);
+    output += std::to_string(*arr);
+    for (auto it = ++arr; it != nullptr; ++it)
+    {
+        output += VALUE_PARTS_DELIMETER;
+        output += std::to_string(*arr);
+    }
+    output += std::to_string(VALUE_END);
+
+    return output;
+}
+
+std::string LayerParser::saveFloatArray(std::vector<float> arr)
+{
+    std::string output = std::to_string(VALUE_BEGIN);
+    output += std::to_string(arr.at(0));
+    for (int i = 1; i < arr.size(); ++i)
+    {
+        output += VALUE_PARTS_DELIMETER;
+        output += std::to_string(arr.at(i));
+    }
+    output += std::to_string(VALUE_END);
+
+    return output;
+}
+
+std::string LayerParser::save2DFloatArray(std::vector<std::vector<float>> arr)
+{
+    std::string output = std::to_string(VALUE_BEGIN);
+    output += saveFloatArray(arr.at(0));
+    for (int i = 1; i < arr.size(); ++i)
+    {
+        output += VALUE_PARTS_DELIMETER;
+        output += saveFloatArray(arr.at(0));
+    }
+    output += std::to_string(VALUE_END);
+
+    return output;
+}
+
+std::string LayerParser::save3DFloatArray(std::vector<std::vector<std::vector<float>>> arr)
+{
+    std::string output = std::to_string(VALUE_BEGIN);
+    output += save2DFloatArray(arr.at(0));
+    for (int i = 1; i < arr.size(); ++i)
+    {
+        output += VALUE_PARTS_DELIMETER;
+        output += save2DFloatArray(arr.at(0));
+    }
+    output += std::to_string(VALUE_END);
+
+    return output;
+}
+
+std::string LayerParser::save4DFloatArray(std::vector<std::vector<std::vector<std::vector<float>>>> arr)
+{
+    std::string output = std::to_string(VALUE_BEGIN);
+    output += save3DFloatArray(arr.at(0));
+    for (int i = 1; i < arr.size(); ++i)
+    {
+        output += VALUE_PARTS_DELIMETER;
+        output += save3DFloatArray(arr.at(0));
+    }
+    output += std::to_string(VALUE_END);
+
+    return output;
 }

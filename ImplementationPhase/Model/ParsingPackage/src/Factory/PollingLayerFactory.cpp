@@ -1,15 +1,15 @@
 #include "PollingLayerFactory.hpp"
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "PollingLayer.hpp"
 #include "PollingType.hpp"
 
-NeuralNetworkLayer PollingLayerFactory::buildLayer()
+NetworkLayer PollingLayerFactory::buildLayer()
 {
     return PollingLayer(name, inputDimensions, size, stride, type);
 }
 
-PollingLayerFactory PollingLayerFactory::setType(PoolingType type)
+PollingLayerFactory PollingLayerFactory::setType(PollingType type)
 {
     this -> type = type;
     return *this;

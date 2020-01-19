@@ -1,19 +1,23 @@
 #include "CollectResultsLayerParser.hpp"
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "CollectResultsLayerFactory.hpp"
-#include "CollectResultLayer.hpp"
+#include "CollectResultsLayer.hpp"
 #include "LayerParserDistribution.hpp"
 
 #include <string>
 
-
-NeuralNetworkLayer CollectResultsLayerParser::parse(std::string toParse){
+NetworkLayer CollectResultsLayerParser::parse(std::string toParse)
+{
     LayerParser::extractGeneralInformation(toParse);
-    
-    return CollectResultLayerFactory()
-        .setName(LayerParserDistribution::COLLECT_RESULTS)
-        .setInputDimensions(LayerParser::inputDimensions)
-        .buildLayer();
+
+    return CollectResultsLayerFactory().setName(LayerParserDistribution().COLLECT_RESULTS).setInputDimensions(LayerParser::inputDimensions).buildLayer();
+}
+
+std::string CollectResultsLayerParser::parseBack(CollectResultsLayer layer)
+{
+    std::string output = "";
+    output += saveGeneralInformation(layer);
+    return output;
 }

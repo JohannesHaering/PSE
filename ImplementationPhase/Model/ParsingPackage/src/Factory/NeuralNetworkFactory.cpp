@@ -1,5 +1,5 @@
 #include "NeuralNetwork.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "NeuralNetworkFactory.hpp"
 
 #include <string>
@@ -22,7 +22,7 @@ NeuralNetworkFactory NeuralNetworkFactory::setName(std::string name)
     return *this;
 }
 
-NeuralNetworkFactory NeuralNetworkFactory::setLayers(std::list<NeuralNetworkLayer> layers)
+NeuralNetworkFactory NeuralNetworkFactory::setLayers(std::list<NetworkLayer> layers)
 {
     this->layers = layers;
     return *this;

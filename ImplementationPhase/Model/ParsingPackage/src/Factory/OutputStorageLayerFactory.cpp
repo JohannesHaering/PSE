@@ -1,13 +1,13 @@
 #include "OutputStorageLayerFactory.hpp"
 #include "OutputStorageLayer.hpp"
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
 #include <vector>
 
-NeuralNetworkLayer OutputStorageLayerFactory::buildLayer()
+NetworkLayer OutputStorageLayerFactory::buildLayer()
 {
-    return new OutputStorageLayer(name, inputDimensions, data);
+    return OutputStorageLayer(name, inputDimensions, data);
 }
 
 OutputStorageLayerFactory OutputStorageLayerFactory::setData(std::vector<std::vector<std::vector<float>>> data)

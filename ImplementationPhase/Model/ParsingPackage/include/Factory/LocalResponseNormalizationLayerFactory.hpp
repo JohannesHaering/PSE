@@ -2,13 +2,13 @@
 #define LOCAL_RESPONSE_NORMALIZATION_LAYER_FACTORY_H_
 
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LRNType.hpp"
 
 class LocalResponseNormalizationLayerFactory : public LayerFactory
 {
 public:
-    NeuralNetworkLayer buildLayer() override;
+    NetworkLayer buildLayer() override;
     LocalResponseNormalizationLayerFactory setType(LRNType type);
     LocalResponseNormalizationLayerFactory setDepth(int depth);
 

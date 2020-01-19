@@ -2,7 +2,7 @@
 #define OUTPUT_STORAGE_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "OutputStorageLayer.hpp"
 #include "OutputStorageLayerFactory.hpp"
@@ -10,10 +10,11 @@
 #include <string>
 #include <vector>
 
-class OutputStorageLayerLayerParser : public LayerParser
+class OutputStorageLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(OutputStorageLayer layer);
 
 private:
     const std::string OUTPUT_DATA = "outputdata";

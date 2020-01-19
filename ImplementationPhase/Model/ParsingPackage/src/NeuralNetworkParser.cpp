@@ -4,7 +4,7 @@
 #include "NeuralNetwork.hpp"
 #include "LayerParserDistribution.hpp"
 #include "NeuralNetworkFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
 #include <string>
 #include <list>
@@ -46,7 +46,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
     ++it;
 
     // Here the layer configurations are comming
-    std::list<NeuralNetworkLayer> layers;
+    std::list<NetworkLayer> layers;
     std::string currentLayerBlock = "";
     // 0 -> adding lines
     int currentState = 0;
@@ -69,4 +69,29 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 std::string NeuralNetworkParser::removeCharacter(std::string text, char toErase)
 {
     text.erase(std::remove(text.begin(), text.end(), toErase), text.end());
+}
+
+std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork){
+    std::string output = "";
+    output += TYPE_BEGIN;
+    output += neuralNetwork.getName();
+    output += TYPE_END;
+    output += "\n";
+    output += HEIGHT;
+    output += VALUE_PART_DELIMETER;
+    output += std::to_string(neuralNetwork.getHeight());
+    output += "\n";
+    output += WIDTH;
+    output += VALUE_PART_DELIMETER;
+    output += std::to_string(neuralNetwork.getWidth());
+    output += "\n";
+    output += CHANNELS;
+    output += VALUE_PART_DELIMETER;
+    output += std::to_string(neuralNetwork.getChannels());
+    output += "\n";
+    auto it = neuralNetwork.getFirstLayer();
+    for(auto it = neuralNetwork.getFirstLayer(); it != neuralNetwork.getLastLayer(); ){
+        output += LayerParserDistribution().parseBack(it);
+    }
+    return output;
 }

@@ -2,7 +2,7 @@
 #define FLATTEN_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "FlattenLayer.hpp"
 #include "FlattenLayerFactory.hpp"
@@ -12,6 +12,7 @@
 class FlattenLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(FlattenLayer layer);
 };
 #endif

@@ -2,9 +2,9 @@
 #define CONVOLUTIONAL_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
-#include "ConvolutionalLayer.hpp"
+#include "ConvolutionLayer.hpp"
 #include "ConvolutionalLayerFactory.hpp"
 
 #include <string>
@@ -12,7 +12,8 @@
 class ConvolutionalLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(ConvolutionLayer layer);
 
 private:
     const std::string WEIGHTS_TENSOR = "tensor";

@@ -2,16 +2,17 @@
 #define COLLECT_RESULT_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
-#include "CollectResultLayerFactory.hpp"
-#include "CollectResultLayer.hpp"
+#include "CollectResultsLayerFactory.hpp"
+#include "CollectResultsLayer.hpp"
 
 #include <string>
 
 class CollectResultsLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(CollectResultsLayer layer);
 };
 #endif

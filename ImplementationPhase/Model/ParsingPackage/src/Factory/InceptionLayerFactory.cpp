@@ -1,10 +1,10 @@
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerFactory.hpp"
 #include "NeuralNetwork.hpp"
 #include "InceptionLayerFactory.hpp"
 #include "InceptionLayer.hpp"
 
-NeuralNetworkLayer InceptionLayerFactory::buildLayer()
+NetworkLayer InceptionLayerFactory::buildLayer()
 {
     return InceptionLayer(name, inputDimensions, chain);
 }

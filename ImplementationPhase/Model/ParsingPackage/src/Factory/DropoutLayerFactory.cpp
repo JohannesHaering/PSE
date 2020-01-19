@@ -1,9 +1,9 @@
 #include "DropoutLayerFactory.hpp"
 #include "DropoutLayer.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerFactory.hpp"
 
-NeuralNetworkLayer DropoutLayerFactory::buildLayer()
+NetworkLayer DropoutLayerFactory::buildLayer()
 {
     return DropoutLayer(name, inputDimensions, dropoutRate);
 }

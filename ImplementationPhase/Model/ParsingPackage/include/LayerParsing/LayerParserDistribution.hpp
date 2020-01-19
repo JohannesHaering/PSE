@@ -1,15 +1,16 @@
 #ifndef LAYER_PARSER_DISTRIBUTION_H_
 #define LAYER_PARSER_DISTRIBUTION_H_
 
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LineBreakParser.hpp"
 
 #include <string>
 
-class LayerParserDistribution : public LineBreakParser<NeuralNetworkLayer>
+class LayerParserDistribution : public LineBreakParser<NetworkLayer>
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse);
+    std::string parseBack(NetworkLayer *layer);
 
     const char TYPE_BEGIN = '[';
     const char TYPE_END = ']';
@@ -26,15 +27,15 @@ public:
     const std::string OUTPUT_STORAGE = "output_storage";
 
 private:
-    NeuralNetworkLayer parseConvolutionalLayer(std::string toParse);
-    NeuralNetworkLayer parseActivationLayer(std::string toParse);
-    NeuralNetworkLayer parsePollingLayer(std::string toParse);
-    NeuralNetworkLayer parseLocalResponseNormalizationLayer(std::string toParse);
-    NeuralNetworkLayer parseDenseLayer(std::string toParse);
-    NeuralNetworkLayer parseFlattenLayer(std::string toParse);
-    NeuralNetworkLayer parseDropoutLayer(std::string toParse);
-    NeuralNetworkLayer parseCollectResultLayer(std::string toParse);
-    NeuralNetworkLayer parseOutputStorageLayer(std::string toParse);
-    NeuralNetworkLayer parseInceptionLayer(std::string toParse);
+    NetworkLayer parseConvolutionalLayer(std::string toParse);
+    NetworkLayer parseActivationLayer(std::string toParse);
+    NetworkLayer parsePollingLayer(std::string toParse);
+    NetworkLayer parseLocalResponseNormalizationLayer(std::string toParse);
+    NetworkLayer parseDenseLayer(std::string toParse);
+    NetworkLayer parseFlattenLayer(std::string toParse);
+    NetworkLayer parseDropoutLayer(std::string toParse);
+    NetworkLayer parseCollectResultLayer(std::string toParse);
+    NetworkLayer parseOutputStorageLayer(std::string toParse);
+    NetworkLayer parseInceptionLayer(std::string toParse);
 };
 #endif

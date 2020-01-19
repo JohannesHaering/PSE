@@ -1,6 +1,6 @@
 #include "FlattenLayerParser.hpp"
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "FlattenLayer.hpp"
 #include "FlattenLayerFactory.hpp"
@@ -10,12 +10,20 @@
 #include <list>
 #include <stdexcept>
 
-NeuralNetworkLayer FlattenLayerParser::parse(std::string toParse)
+NetworkLayer FlattenLayerParser::parse(std::string toParse)
 {
-    LayerParser::extractGeneralInformation();
+    LayerParser::extractGeneralInformation(toParse);
     FlattenLayerFactory factory = FlattenLayerFactory();
     factory.setInputDimensions(LayerParser::inputDimensions);
-    factory.setName(LayerParserDistribution::FLATTEN);
+    factory.setName(LayerParserDistribution().FLATTEN);
 
     return factory.buildLayer();
+}
+
+std::string FlattenLayerParser::parseBack(FlattenLayer layer)
+{
+    std::string output = "";
+    output += LayerParser::saveGeneralInformation(layer);
+
+    return output;
 }

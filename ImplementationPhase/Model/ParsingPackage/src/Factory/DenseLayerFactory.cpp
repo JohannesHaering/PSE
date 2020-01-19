@@ -1,11 +1,11 @@
 #include "DenseLayerFactory.hpp"
 #include "DenseLayer.hpp"
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
 #include <vector>
 
-NeuralNetworkLayer DenseLayerFactory::buildLayer()
+NetworkLayer DenseLayerFactory::buildLayer()
 {
     return DenseLayer(name, inputDimensions, matrix);
 }

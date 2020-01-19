@@ -10,6 +10,7 @@ class NeuralNetworkParser : public LineBreakParser<NeuralNetwork>
 {
 public:
     NeuralNetwork parse(std::string toParse);
+    std::string parseBack(NeuralNetwork NeuralNetwork);
 
 private:
     const char TYPE_BEGIN = '[';

@@ -1,6 +1,6 @@
 #include "DenseLayerParser.hpp"
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "DenseLayer.hpp"
 #include "DenseLayerFactory.hpp"
 #include "LayerParserDistribution.hpp"
@@ -11,12 +11,12 @@
 #include <list>
 #include <stdexcept>
 
-NeuralNetworkLayer DenseLayerParser::parse(std::string toParse)
+NetworkLayer DenseLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
 
     DenseLayerFactory factory = DenseLayerFactory();
-    factory.setName(LayerParserDistribution::DENSE);
+    factory.setName(LayerParserDistribution().DENSE);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto lines = LineBreakParser::splitIntoLines(toParse);
@@ -30,4 +30,15 @@ NeuralNetworkLayer DenseLayerParser::parse(std::string toParse)
     factory.setMatrix(LayerParser::parse2DFloatArray(*parts1It));
 
     return factory.buildLayer();
+}
+
+std::string DenseLayerParser::parseBack(DenseLayer layer)
+{
+    std::string output = "";
+    output += saveGeneralInformation(layer);
+    output += WEIGHTS_TENSOR;
+    output += LayerParser::VALUE_TYPE_DELIMETER;
+    output += LayerParser::save2DFloatArray(layer.getMatrix());
+    output += "\n";
+    return output;
 }

@@ -1,8 +1,8 @@
 #include "FlattenLayerFactory.hpp"
 #include "FlattenLayer.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerFactory.hpp"
 
-NeuralNetworkLayer FlattenLayerFactory::buildLayer(){
+NetworkLayer FlattenLayerFactory::buildLayer(){
     return FlattenLayer(name, inputDimensions);
 }

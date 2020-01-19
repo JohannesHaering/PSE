@@ -1,7 +1,7 @@
 #include "InceptionLayerParser.hpp"
 #include "NeuralNetworkParser.hpp"
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "InceptionLayerFactory.hpp"
 #include "InceptionLayer.hpp"
@@ -11,11 +11,11 @@
 
 #include <string>
 
-NeuralNetworkLayer InceptionLayerParser::parse(std::string toParse)
+NetworkLayer InceptionLayerParser::parse(std::string toParse)
 {
-    LayerParser::extractGeneralInformation();
+    LayerParser::extractGeneralInformation(toParse);
     InceptionLayerFactory factory = InceptionLayerFactory();
-    factory.setName(LayerParserDistribution::INCEPTION);
+    factory.setName(LayerParserDistribution().INCEPTION);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
     auto it = LineBreakParser::splitIntoLines(toParse).begin();
@@ -24,4 +24,12 @@ NeuralNetworkLayer InceptionLayerParser::parse(std::string toParse)
     factory.addLayerChain(chain);
 
     return factory.buildLayer();
+}
+
+std::string InceptionLayerParser::parseBack(InceptionLayer layer)
+{
+    std::string output = "";
+    output += LayerParser::saveGeneralInformation(layer);
+    output += NeuralNetworkParser().parseBack(layer.getFirstChain());
+    return output;
 }

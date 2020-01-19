@@ -2,9 +2,9 @@
 #define COLLECT_RESULT_LAYER_FACTORY_H_
 
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 
 class CollectResultsLayerFactory : public LayerFactory {
-    NeuralNetworkLayer CollectResultLayerFactory::buildLayer() override;
+    NetworkLayer buildLayer() override;
 };
 #endif

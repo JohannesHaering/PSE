@@ -1,10 +1,10 @@
 #include "ActivationLayerFactory.hpp"
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "ActivationLayer.hpp"
 #include "Activation.hpp"
 
-NeuralNetworkLayer ActivationLayerFactory::buildLayer()
+NetworkLayer ActivationLayerFactory::buildLayer()
 {
     return ActivationLayer(name, inputDimensions, activation);
 }

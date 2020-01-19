@@ -2,7 +2,7 @@
 #define INCEPTION_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "InceptionLayerFactory.hpp"
 #include "InceptionLayer.hpp"
@@ -12,6 +12,7 @@
 class InceptionLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(InceptionLayer layer);
 };
 #endif

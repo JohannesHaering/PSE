@@ -2,7 +2,7 @@
 #define DROPOUT_LAYER_PARSER_H
 
 #include "LayerParser.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "DropoutLayer.hpp"
 #include "DropoutLayerFactory.hpp"
@@ -12,7 +12,8 @@
 class DropoutLayerParser : public LayerParser
 {
 public:
-    NeuralNetworkLayer parse(std::string toParse);
+    NetworkLayer parse(std::string toParse) override;
+    std::string parseBack(DropoutLayer layer);
 
 private:
     const std::string DROPOUT_RATE = "rate";

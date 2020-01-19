@@ -2,18 +2,18 @@
 #define ACTIVATION_LAYER_FACTORY
 
 #include "LayerFactory.hpp"
-#include "NeuralNetworkLayer.hpp"
+#include "NetworkLayer.hpp"
 #include "Activation.hpp"
 
 class ActivationLayerFactory : public LayerFactory
 {
 public:
-    NeuralNetworkLayer buildLayer() override;
-    ActivationLayerFactory setActivation(Activation activation);
-    ActivationLayerFactory setAlpha(float alpha);
+	NetworkLayer buildLayer() override;
+	ActivationLayerFactory setActivation(Activation activation);
+	ActivationLayerFactory setAlpha(float alpha);
 
 private:
-    Activation activation;
-    float alpha;
-}:
+	Activation activation;
+	float alpha;
+};
 #endif
