@@ -11,11 +11,11 @@ class NeuralNetworkAdapter {
 		NeuralNetworkAdapter();
         NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
 
-        void addLayer(NetworkLayer layer);
-		NetworkLayer getFirstLayer();
-		NetworkLayer getLastLayer();
-		NetworkLayer getNextLayer();
-		NetworkLayer getPreviousLayer();
+        void addLayer(NetworkLayer *layer);
+		NetworkLayer *getFirstLayer();
+		NetworkLayer *getLastLayer();
+		NetworkLayer *getNextLayer();
+		NetworkLayer *getPreviousLayer();
 
     private: 
         NeuralNetwork neuralNetwork;    

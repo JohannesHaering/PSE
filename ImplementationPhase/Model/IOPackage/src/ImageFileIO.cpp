@@ -9,3 +9,9 @@ Data<cv::Mat> ImageFileIO::readFile(std::string path)
     auto image = cv::imread(path, cv::IMREAD_COLOR);
     return Data<cv::Mat>(image);
 }
+
+bool ImageFileIO::writeFile(Data<cv::Mat> image, std::string path) {
+    cv::Mat imageRaw = image.getData();
+    cv::imwrite(path, imageRaw);
+    return true;
+}

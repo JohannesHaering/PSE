@@ -8,6 +8,8 @@
 #include <list>
 #include <stdexcept>
 
+// Format:
+// imageId # neuralNetworkId# # BoundingBoxes
 DetectionResult DetectionResultParser::parse(std::string toParse)
 {
     auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
@@ -31,4 +33,26 @@ DetectionResult DetectionResultParser::parse(std::string toParse)
     }
 
     return DetectionResultFactory().build(imageId, neuralNetworkId, parsedBoundingBoxes);
+}
+
+std::string DetectionResultParser::parseBack(DetectionResult detectionResult)
+{
+    std::string output = "";
+    output.append(detectionResult.getImageID());
+    output.append(basePartsDelimeter);
+    output.append(detectionResult.getNeuralNetworkID());
+    output.append(basePartsDelimeter);
+
+    auto boundingBoxes = detectionResult.getBoundingBoxes();
+    auto it = boundingBoxes.begin();
+    output.append(BoundingBoxParser().parseBack(*it));
+    ++it;
+
+    for (; it != boundingBoxes.end(); ++it)
+    {
+        output.append(boundingBoxDelimeter);
+        output.append(BoundingBoxParser().parseBack(*it));
+    }
+
+    return output;
 }

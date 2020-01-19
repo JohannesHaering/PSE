@@ -4,6 +4,8 @@
 #include "Result.hpp"
 #include "ResultManager.hpp"
 
+ResultManager::ResultManager() {}
+
 ResultManager::ResultManager(std::list<Result> resultList) : resultList(resultList){}
 
 std::list<Result> ResultManager::getResultsByImage(std::string imageID) 

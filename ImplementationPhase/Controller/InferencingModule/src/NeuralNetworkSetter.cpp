@@ -1,5 +1,5 @@
 #include "Inferencer.hpp"
-#include "Model.hpp"
+#include "ModelFacade.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include "NeuralNetworkSetter.hpp"
 #include <vector>

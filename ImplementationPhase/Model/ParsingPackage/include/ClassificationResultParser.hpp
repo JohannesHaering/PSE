@@ -11,6 +11,7 @@ class ClassificationResultParser : public Parser<ClassificationResult>
 {
 public:
     ClassificationResult parse(std::string toParse);
+    std::string parseBack(ClassificationResult classificationResult);
 
 private:
     std::string basePartsDelimeter = "#";

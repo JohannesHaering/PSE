@@ -4,13 +4,12 @@
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "Model.hpp"
+#include "ModelFacade.hpp"
 #include <vector>
 #include <string>
 
-InferencingDistributor::InferencingDistributor() 
+InferencingDistributor::InferencingDistributor() : dispatcher(DispatchManager::getInstance()), resultManager(ResultManager())
 {
-
 }
 
 /*
