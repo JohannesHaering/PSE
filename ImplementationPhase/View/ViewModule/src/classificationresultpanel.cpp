@@ -91,3 +91,4 @@ void ClassificationResultPanel::on_saveResultButton_clicked()
 {
   //  ControllerFacade::getInstance.saveResultsClassification();
 }
+

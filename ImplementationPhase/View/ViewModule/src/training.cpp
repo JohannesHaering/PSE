@@ -7,6 +7,7 @@ Training::Training(QWidget *parent) :
     ui(new Ui::Training)
 {
     ui->setupUi(this);
+    renderer = new TrainingRenderer();
 }
 
 Training::~Training()
@@ -18,7 +19,10 @@ void Training::on_chooseNeuralNetwork_clicked(){
     vector<string> types = {"png"};
     neuralNetworkPaths = contView->getFileFromExplorer(types);
 }
-
+void Training::newTrainingFinished(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining){
+     graphicPixmap = new QPixmap(renderer->drawGraphic(pointsArrayTest,pointsArrayTraining));
+     ui->trainingGraphic->setPixmap(*graphicPixmap);
+}
 std::string Training::getNeuralNetworkPaths(){
     return neuralNetworkPaths;
 }
@@ -40,7 +44,8 @@ std::string Training::getTypeOfLearning(){
 }
 void Training::on_chooseDataset_clicked()
 {
-    vector<string> types = {"png"};
-    neuralNetworkPaths = contView->getFileFromExplorer(types);
+    std::vector<float> points = {0.5,0.8,0.4};
+    std::vector<float> points2 = {0.2,0.3,0.8,0.9};
+    newTrainingFinished(points,points2);
 }
 

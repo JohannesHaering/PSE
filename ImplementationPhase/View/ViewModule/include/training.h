@@ -1,7 +1,7 @@
 #ifndef TRAINING_H
 #define TRAINING_H
 #include "contentview.h"
-
+#include "trainingrenderer.h"
 #include <QDialog>
 
 namespace Ui {
@@ -13,7 +13,7 @@ class Training : public QDialog, public ContentView
     Q_OBJECT
 
 public:
-    void newTrainingFinished(float pointsArrayTest[], float pointsArrayTraining[]);
+    void newTrainingFinished(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining);
     float getLearningRate();
     float getPrecision();
     std::string getName();
@@ -27,6 +27,8 @@ private slots:
     void on_chooseDataset_clicked();
 
 private:
+    QPixmap* graphicPixmap;
+    TrainingRenderer* renderer;
     Ui::Training *ui;
     ContentView *contView;
     void displayGraphic(std::string imgPath);

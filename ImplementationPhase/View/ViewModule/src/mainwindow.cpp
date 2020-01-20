@@ -22,11 +22,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::on_imageClassification_clicked()
-{
-   imageClassification->getInferencePage()->setModal(true);
-   imageClassification->getInferencePage()->exec();
-}
 Training* MainWindow::getTraining(){
     return training;
 }
@@ -56,7 +51,11 @@ void MainWindow::on_objectDetection_clicked()
     objectDetection->getInferPage()->setModal(true);
     objectDetection->getInferPage()->exec();
 }
-
+void MainWindow::on_imageClassification_clicked()
+{
+   imageClassification->getInferencePage()->setModal(true);
+   imageClassification->getInferencePage()->exec();
+}
 void MainWindow::on_pushButton_clicked()
 {
     Render* render = new Render();
