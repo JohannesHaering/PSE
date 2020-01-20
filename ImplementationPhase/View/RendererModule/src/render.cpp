@@ -72,7 +72,7 @@ void Render::on_trainingbutt_clicked()
     TrainingRenderer* rend = new TrainingRenderer();
     std::vector<float> points = {0.5,0.8,0.4};
     std::vector<float> points2 = {0.2,0.3,0.8,0.9};
-   pixmap = new QPixmap(rend->drawGraphic(points,points2));
+    pixmap = new QPixmap(rend->drawGraphic(points,points2));
     ui->img->setPixmap(*pixmap);
 
 }

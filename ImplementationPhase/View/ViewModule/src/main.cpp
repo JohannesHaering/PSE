@@ -1,13 +1,12 @@
 #include "mainwindow.h"
-
+#include "viewfacade.h"
 #include <QApplication>
 #include<QLabel>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    QLabel *label = new QLabel;
-    label->setText("pesho");
-    w.show();
+    ViewFacade* viewFacade = ViewFacade::getInstance();
+    MainWindow* w = viewFacade->getMainMenu();
+    w->show();
     return a.exec();
 }

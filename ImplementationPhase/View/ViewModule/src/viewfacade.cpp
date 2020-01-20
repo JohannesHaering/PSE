@@ -4,6 +4,7 @@
 ViewFacade* ViewFacade::instance = 0;
 ViewFacade::ViewFacade()
 {
+    mainMenu = new MainWindow();
 }
 ViewFacade* ViewFacade::getInstance()
 {
@@ -13,6 +14,9 @@ ViewFacade* ViewFacade::getInstance()
     }
 
     return instance;
+}
+MainWindow* ViewFacade::getMainMenu(){
+    return  mainMenu;
 }
 Training* ViewFacade::getTraining(){
     return mainMenu->getTraining();
