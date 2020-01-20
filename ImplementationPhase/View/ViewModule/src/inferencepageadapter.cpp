@@ -49,6 +49,6 @@ void InferencePageAdapter::setDevices(std::vector<Device>* devices){
 void InferencePageAdapter::update(){
     inferPage->update();
 }
-void InferencePageAdapter::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath){
-    inferPage->resultsChanged(nnName,imgName,imgPath,resultPath);
+void InferencePageAdapter::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
+    inferPage->resultsChanged(nnName,imgName,imgPath,result);
 }

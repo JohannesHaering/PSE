@@ -1,6 +1,6 @@
 #include <string>
 #include <stdexcept>
-#include "..\include\classprobability.h"
+#include "classprobability.h"
 
 ClassProbability::ClassProbability(std::string name, float probability) : className(name), probability(probability)
 {

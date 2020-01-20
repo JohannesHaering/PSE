@@ -18,5 +18,5 @@ std::string Topology::getTopologyPath(){
 void Topology::on_pushButton_clicked()
 {
     std::vector<std::string> types = {"exe"};
-    topologyPath = contView->getFilesFromExplorer(types);
+    topologyPath = contView->getFileFromExplorer(types);
 }

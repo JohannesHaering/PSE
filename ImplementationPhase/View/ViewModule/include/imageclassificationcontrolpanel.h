@@ -37,8 +37,6 @@ private slots:
 private:
     ContentView *contView;
     Ui::ImageClassificationControlPanel *ui;
-    static ImageClassificationControlPanel* instance;
-    ImageClassificationControlPanel(int a);
 };
 
 #endif // IMAGECLASSIFICATIONCONTROLPANEL_H

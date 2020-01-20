@@ -16,7 +16,7 @@ Training::~Training()
 
 void Training::on_chooseNeuralNetwork_clicked(){
     vector<string> types = {"png"};
-    neuralNetworkPaths = contView->getFilesFromExplorer(types);
+    neuralNetworkPaths = contView->getFileFromExplorer(types);
 }
 
 std::string Training::getNeuralNetworkPaths(){
@@ -41,6 +41,6 @@ std::string Training::getTypeOfLearning(){
 void Training::on_chooseDataset_clicked()
 {
     vector<string> types = {"png"};
-    neuralNetworkPaths = contView->getFilesFromExplorer(types);
+    neuralNetworkPaths = contView->getFileFromExplorer(types);
 }
 

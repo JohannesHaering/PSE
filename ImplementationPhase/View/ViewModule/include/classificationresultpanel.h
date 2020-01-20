@@ -1,6 +1,6 @@
 #ifndef CLASSIFICATIONRESULTPANEL_H
 #define CLASSIFICATIONRESULTPANEL_H
-#include "../../RendererModule/include/classificationresultrenderer.h"
+#include "classificationresultrenderer.h"
 #include <QWidget>
 #include "contentview.h"
 namespace Ui {
@@ -18,7 +18,7 @@ public:
     void update();
     void setCurrentResultPath(std::string path);
     static ClassificationResultPanel* getInstance();
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
+    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult Result);
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
     void nextImageEnable(bool flag);
@@ -36,12 +36,14 @@ private slots:
     void on_saveResultButton_clicked();
 
 private:
-    ClassificationResultRenderer renderer;
+    ClassificationResultRenderer* renderer;
     Ui::ClassificationResultPanel *ui;
     std::string currentImagePath;
     std::string currentResultPath;
-    void displayImage(std::string path);
-    void displayResult(std::string path);
+    QPixmap* resultPixmap;
+    QPixmap* imagePixmap;
+    void displayImage();
+    void displayResult();
     static ClassificationResultPanel* instance;
     ClassificationResultPanel(int a);
 };

@@ -30,7 +30,7 @@ public:
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
     void update();
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
+    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
     //+ getInputPathes() : string[]
     bool getAppendResult();
 private slots:

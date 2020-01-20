@@ -1,5 +1,5 @@
 #include <string>
-#include "../include/device.h"
+#include "device.h"
 
 Device::Device(std::string type, std::string name, long ram, double performance) :
     type(type), name(name), ram(ram), performance(performance) {}
