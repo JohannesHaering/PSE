@@ -1,4 +1,4 @@
-#include "../include/detectioncontrolpanel.h"
+#include "detectioncontrolpanel.h"
 #include "ui_detectioncontrolpanel.h"
 #include <vector>
 using namespace std;

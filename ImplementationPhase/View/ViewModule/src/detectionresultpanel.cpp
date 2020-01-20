@@ -1,4 +1,4 @@
-#include "../include/detectionresultpanel.h"
+#include "detectionresultpanel.h"
 #include "ui_detectionresultpanel.h"
 
 DetectionResultPanel::DetectionResultPanel(QWidget *parent) :

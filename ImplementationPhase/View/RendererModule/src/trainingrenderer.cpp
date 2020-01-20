@@ -6,7 +6,6 @@ TrainingRenderer::TrainingRenderer()
 {
 
 }
-
 QPixmap TrainingRenderer::drawGraphic(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining){
     QSplineSeries *series = new QSplineSeries();
     series->setName("Test Accuracy");

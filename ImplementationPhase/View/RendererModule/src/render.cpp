@@ -29,7 +29,7 @@ void Render::on_start_clicked()
         ClassProbability *prob2 = new ClassProbability("kari", 0.5);
         ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
         std::list<ClassProbability> *prob = new std::list<ClassProbability>;
-      //  std::list<ClassProbability>::iterator it;
+      //std::list<ClassProbability>::iterator it;
         prob->push_back(*prob1);
         prob->push_back(*prob2);
         prob->push_back(*prob3);
@@ -45,7 +45,7 @@ void Render::on_addImage_clicked()
 {
     std::vector<std::string> types = {"JPG", "png", "PNG", "jpeg", "JPEG"};
     ContentView contView;
-    path = contView.getFilesFromExplorer(types);
+    path = contView.getFileFromExplorer(types);
     QString pathImg = QString::fromStdString(path);
     pixmap = new QPixmap(pathImg);
     ui->img->setPixmap(pixmap->scaled(1150,450));

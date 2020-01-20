@@ -3,7 +3,6 @@
 #include <string>
 #include <QMessageBox>
 #include "inferencepage.h"
-using namespace std;
 ImageClassificationControlPanel::ImageClassificationControlPanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ImageClassificationControlPanel)
@@ -48,6 +47,14 @@ void ImageClassificationControlPanel::setDevices(std::vector<Device>* devices){
 //clicked buttons
 void ImageClassificationControlPanel::on_addImage_clicked()
 {
+    std::vector<Device> *devices = new std::vector<Device>();
+    Device *device1 = new Device("","cpu1",22,33);
+    Device *device2 = new Device("","cpu2",22,33);
+    Device *device3 = new Device("","cpu3",22,33);
+    devices->push_back(*device1);
+    devices->push_back(*device2);
+    devices->push_back(*device3);
+    setDevices(devices);
     //ControllerFacade::getInstance().getImageInputClassification();
 }
 void ImageClassificationControlPanel::on_startImgClass_clicked()

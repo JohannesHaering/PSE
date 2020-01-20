@@ -22,7 +22,7 @@ public:
     void setDevices(std::vector<Device>* devices);
     void update();
     bool getAppendResult();
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
+    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
 private:
     InferencePage* inferPage;
 };

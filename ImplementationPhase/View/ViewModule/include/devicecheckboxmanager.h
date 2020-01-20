@@ -3,7 +3,7 @@
 #include "device.h"
 #include <QWidget>
 #include <QCheckBox>
-
+#include <QVBoxLayout>
 namespace Ui {
 class DeviceCheckBoxManager;
 }
@@ -16,10 +16,10 @@ public:
     explicit DeviceCheckBoxManager(QWidget *parent = nullptr);
     ~DeviceCheckBoxManager();
     void setDevices(std::vector<Device>* devices);
-
     std::vector<Device> getDevices();
 private:
     Ui::DeviceCheckBoxManager *ui;
+    QVBoxLayout* layout;
     std::vector<Device>* devicesVector;
     QCheckBox* checkboxes[];
 };
