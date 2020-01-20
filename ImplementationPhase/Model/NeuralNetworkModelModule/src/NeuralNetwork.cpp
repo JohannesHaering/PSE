@@ -8,15 +8,13 @@ NeuralNetwork::NeuralNetwork(std::string name, int width, int heigth, int channe
   it = layers.begin();
 }
 
-void NeuralNetwork::addLayer(NetworkLayer* layer)
-{
+void NeuralNetwork::addLayer(NetworkLayer* layer) {
   layers.push_back(layer);
 }
 
 void NeuralNetwork::setName(std::string name) { this->name = name; }
 
-void NeuralNetwork::setInputDimensions(int width, int heigth, int channelNumb)
-{
+void NeuralNetwork::setInputDimensions(int width, int heigth, int channelNumb) {
   this->width = width;
   this->heigth = heigth;
   this->channelNumb = channelNumb;
@@ -30,14 +28,12 @@ int NeuralNetwork::getHeigth() { return heigth; }
 
 int NeuralNetwork::getChannelNumb() { return channelNumb; }
 
-NetworkLayer* NeuralNetwork::getFirstLayer()
-{
+NetworkLayer* NeuralNetwork::getFirstLayer() {
   it = layers.begin();
   return *it;
 }
 
-NetworkLayer* NeuralNetwork::getLastLayer()
-{
+NetworkLayer* NeuralNetwork::getLastLayer() {
   it = layers.end();
   return *it;
 }
@@ -46,7 +42,6 @@ NetworkLayer* NeuralNetwork::getNextLayer() { return *(++it); }
 
 NetworkLayer* NeuralNetwork::getPreviousLayer() { return *(--it); }
 
-NeuralNetwork::~NeuralNetwork()
-{
+NeuralNetwork::~NeuralNetwork() {
   layers.clear();
 }

@@ -19,7 +19,6 @@ class ActivationLayer  : public NetworkLayer {
     void setAlpha(float alpha);
     Activation getFunction();
     float getAlpha();
-    virtual int* getTensorDimenssions();
     // ~ActivationLayer();
 };
 #endif

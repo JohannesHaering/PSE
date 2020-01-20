@@ -6,22 +6,10 @@ ActivationLayer::ActivationLayer(std::string name, int* inputDimensions, Activat
 
 ActivationLayer::ActivationLayer(std::string name, int* inputDimensions, Activation function, float alpha) : NetworkLayer(name, inputDimensions, LayerType::ACTIVATION), function(function), alpha(alpha) {}
 
-void ActivationLayer::setFunction(Activation function)
-{
-  this->function = function;
-}
+void ActivationLayer::setFunction(Activation function) { this->function = function; }
 
-void ActivationLayer::setAlpha(float alpha)
-{
-  this->alpha = alpha;
-}
+void ActivationLayer::setAlpha(float alpha) { this->alpha = alpha; }
 
-Activation ActivationLayer::getFunction()
-{
-  return function;
-}
+Activation ActivationLayer::getFunction() { return function; }
 
-float ActivationLayer::getAlpha()
-{
-  return alpha;
-}
+float ActivationLayer::getAlpha() { return alpha; }
