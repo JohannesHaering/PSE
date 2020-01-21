@@ -4,7 +4,6 @@
 #include <QString>
 #include <QMessageBox>
 #include "inferencepage.h"
-#include <opencv2/core/mat.hpp>
 ClassificationResultPanel::ClassificationResultPanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ClassificationResultPanel)
