@@ -12,31 +12,22 @@ DetectionResultPanel::~DetectionResultPanel()
 {
     delete ui;
 }
-void DetectionResultPanel::setCurrentImagePath(std::string path){
-    this->currentImagePath = path;
+void DetectionResultPanel::displayImage(){
+    ui->imageLabel->setPixmap(imagePixmap->scaled(250,250));
 }
-void DetectionResultPanel::setCurrentResultPath(std::string path){
-    this->currentResultPath = path;
-}
-void DetectionResultPanel::displayImage(std::string path){
-    QString pathImg = QString::fromStdString(path);
-    QPixmap pix(pathImg);
-    ui->imageLabel->setPixmap(pix.scaled(250,250));
-}
-void DetectionResultPanel::displayResult(std::string path){
-    QString pathImg = QString::fromStdString(path);
-    QPixmap pix(pathImg);
-    ui->resultLabel->setPixmap(pix.scaled(250,250));
+void DetectionResultPanel::displayResult(){
+    ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
 }
 void DetectionResultPanel::update(){
-    displayImage(currentImagePath);
-    displayResult(currentResultPath);
+    displayImage();
+    displayResult();
+    ui->imgName->setText(QString::fromStdString(currentImageName));
+    ui->nnName->setText(QString::fromStdString(currentNNName));
 }
-void DetectionResultPanel::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath){
-    ui->imgName->setText(QString::fromStdString(imgName));
-    ui->nnName->setText(QString::fromStdString(nnName));
-    this->setCurrentImagePath(imgPath);
-    this->setCurrentResultPath(resultPath);
+void DetectionResultPanel::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string result){
+    currentNNName = nnName;
+    currentImageName = imgName;
+
 }
 void DetectionResultPanel::nextNNEnable(bool flag){
     ui->nextNNButton->setEnabled(flag);

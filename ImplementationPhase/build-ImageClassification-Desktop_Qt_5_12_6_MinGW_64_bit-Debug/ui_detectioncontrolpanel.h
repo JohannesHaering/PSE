@@ -48,7 +48,7 @@ public:
         addImage->setGeometry(QRect(20, 40, 161, 31));
         CheckBoxWidget = new DeviceCheckBoxManager(DetectionControlPanel);
         CheckBoxWidget->setObjectName(QString::fromUtf8("CheckBoxWidget"));
-        CheckBoxWidget->setGeometry(QRect(20, 210, 141, 121));
+        CheckBoxWidget->setGeometry(QRect(20, 210, 191, 121));
         appendResults = new QCheckBox(DetectionControlPanel);
         appendResults->setObjectName(QString::fromUtf8("appendResults"));
         appendResults->setGeometry(QRect(30, 360, 111, 41));

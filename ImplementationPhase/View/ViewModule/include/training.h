@@ -18,22 +18,20 @@ public:
     float getPrecision();
     std::string getName();
     std::string getLearningMode();
-    explicit Training(QWidget *parent = nullptr);
-    ~Training();
     std::string getNeuralNetworkPaths();
     std::string getTypeOfLearning();
+    ~Training();
+    explicit Training(QWidget *parent = nullptr);
 private slots:
     void on_chooseNeuralNetwork_clicked();
     void on_chooseDataset_clicked();
-
+    void on_train_clicked();
 private:
     QPixmap* graphicPixmap;
-    TrainingRenderer* renderer;
     Ui::Training *ui;
     ContentView *contView;
     void displayGraphic(std::string imgPath);
     std::string neuralNetworkPaths;
 
 };
-
 #endif // TRAINING_H

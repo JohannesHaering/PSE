@@ -57,8 +57,3 @@ void ObjectDetectionInferencePage::prevImageEnable(bool flag){
 void ObjectDetectionInferencePage::saveResultEnable(bool flag){
      ui->resultPanel->saveResultEnable(flag);
 }
-void ObjectDetectionInferencePage::on_start_clicked()
-{
-    ui->resultPanel->resultsChanged("pesho","ivan", ui->controlPanel->getImagePaths(),ui->controlPanel->getImagePaths());
-    ui->resultPanel->update();
-}

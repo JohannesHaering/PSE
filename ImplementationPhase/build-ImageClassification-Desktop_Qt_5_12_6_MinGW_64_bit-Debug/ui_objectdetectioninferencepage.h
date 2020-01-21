@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QPushButton>
 #include "detectioncontrolpanel.h"
 #include "detectionresultpanel.h"
 
@@ -23,7 +22,6 @@ class Ui_ObjectDetectionInferencePage
 public:
     DetectionControlPanel *controlPanel;
     DetectionResultPanel *resultPanel;
-    QPushButton *start;
 
     void setupUi(QDialog *ObjectDetectionInferencePage)
     {
@@ -36,9 +34,6 @@ public:
         resultPanel = new DetectionResultPanel(ObjectDetectionInferencePage);
         resultPanel->setObjectName(QString::fromUtf8("resultPanel"));
         resultPanel->setGeometry(QRect(250, 0, 550, 480));
-        start = new QPushButton(resultPanel);
-        start->setObjectName(QString::fromUtf8("start"));
-        start->setGeometry(QRect(454, 10, 91, 41));
 
         retranslateUi(ObjectDetectionInferencePage);
 
@@ -48,7 +43,6 @@ public:
     void retranslateUi(QDialog *ObjectDetectionInferencePage)
     {
         ObjectDetectionInferencePage->setWindowTitle(QApplication::translate("ObjectDetectionInferencePage", "Object Detection", nullptr));
-        start->setText(QApplication::translate("ObjectDetectionInferencePage", "start", nullptr));
     } // retranslateUi
 
 };
