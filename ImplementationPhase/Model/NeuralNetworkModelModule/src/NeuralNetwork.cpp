@@ -30,17 +30,28 @@ int NeuralNetwork::getChannelNumb() { return channelNumb; }
 
 NetworkLayer* NeuralNetwork::getFirstLayer() {
   it = layers.begin();
-  return *it;
+  if(layers.size() == 0) return nullptr;
+  return *(it++);
 }
 
 NetworkLayer* NeuralNetwork::getLastLayer() {
+  if(layers.size() == 0) return nullptr;
   it = layers.end();
+  return *(--it);
+}
+
+NetworkLayer* NeuralNetwork::getNextLayer() {
+  if(++it == layers.end()) return nullptr;
   return *it;
 }
 
-NetworkLayer* NeuralNetwork::getNextLayer() { return *(++it); }
+NetworkLayer* NeuralNetwork::getPreviousLayer() {
+  if(--it == layers.begin()) return nullptr;
+  return *it;
+}
 
-NetworkLayer* NeuralNetwork::getPreviousLayer() { return *(--it); }
+int NeuralNetwork::NeuralNetwork::getLayerCount() { return layers.size(); }
+
 
 NeuralNetwork::~NeuralNetwork() {
   layers.clear();
