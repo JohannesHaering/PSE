@@ -32,6 +32,6 @@ private:
     ContentView *contView;
     void displayGraphic(std::string imgPath);
     std::string neuralNetworkPaths;
-
+    TrainingRenderer* renderer;
 };
 #endif // TRAINING_H

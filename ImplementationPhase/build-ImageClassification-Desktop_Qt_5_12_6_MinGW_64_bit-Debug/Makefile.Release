@@ -3759,10 +3759,6 @@ release/objectdetectioninferencepage.o: ../View/ViewModule/src/objectdetectionin
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtGui/qinputmethod.h \
-		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QPushButton \
-		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.12.6/mingw73_64/include/QtGui/qicon.h \
 		../View/ViewModule/include/detectioncontrolpanel.h \
 		../View/ViewModule/include/detectionresultpanel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\objectdetectioninferencepage.o ..\View\ViewModule\src\objectdetectioninferencepage.cpp

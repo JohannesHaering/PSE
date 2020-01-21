@@ -1,11 +1,11 @@
 #ifndef CONTENTVIEW_H
 #define CONTENTVIEW_H
-
 #include <QWidget>
 #include <string>
 #include <QString>
 #include <QVector>
 #include <vector>
+
 class ContentView
 {
 public:
@@ -15,7 +15,7 @@ public:
     std::string getDirectoryFromExplorer(std::vector<std::string> types);
     std::string getSaveFileName();
     void showError(std::string error);
-    QImage convertCvtoQImg();
+  //  QPixmap convertCvtoQImg(cv::Mat mat);
 private:
       QWidget *widg;
 signals:
