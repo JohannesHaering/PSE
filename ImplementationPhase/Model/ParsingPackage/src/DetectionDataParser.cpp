@@ -2,6 +2,7 @@
 #include "SingleDetectionDatasetParser.hpp"
 #include "DetectionData.hpp"
 #include "SingleDetectionDataset.hpp"
+#include "Parser.hpp"
 
 #include <list>
 #include <string>

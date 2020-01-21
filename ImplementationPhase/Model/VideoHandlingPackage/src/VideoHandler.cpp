@@ -9,4 +9,5 @@ VideoHandler::VideoHandler(int frameInterval) : frameInterval(frameInterval) {}
 std::list<cv::Mat> VideoHandler::handleVideo(cv::VideoCapture video)
 {
     std::list<cv::Mat> frames = VideoCutter().cutIntoFrames(video, frameInterval);
+    return frames;
 }
