@@ -1,6 +1,6 @@
 #include <vector>
 #include <assert.h>
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "TrainingPage.hpp"
 #include "NewTrainStepHandler.hpp"
 

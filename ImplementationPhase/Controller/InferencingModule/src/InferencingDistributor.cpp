@@ -1,16 +1,15 @@
 #include "InferencingDistributor.hpp"
 #include "Distributor.hpp"
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "Model.hpp"
+#include "ResultFacade.hpp"
 #include <vector>
 #include <string>
 
-InferencingDistributor::InferencingDistributor() 
+InferencingDistributor::InferencingDistributor() : dispatcher(DispatchManager::getInstance()), resultManager(ResultManager())
 {
-
 }
 
 /*
@@ -19,11 +18,11 @@ InferencingDistributor::InferencingDistributor()
 * -int neuralNetworkId: number of neural network of the wanted result
 * -int imageId: number if image of the wanted result
 */
-void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId) 
+void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId, std::string path)
 {
     Result* result = (Result*)resultManager.getSingleResult(neuralNetworkId, imageId);
-    Model model = model.getInstance();
-    model.saveResult(*result);
+	ParseResultFacade model = ParseResultFacade();
+    model.writeClassificationResult(*result, path);
 }
 
 /*

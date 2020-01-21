@@ -1,3 +1,5 @@
+#ifndef DEVICE_H_
+#define DEVICE_H_
 #include <string>
 class Device {
 	private:
@@ -12,3 +14,4 @@ class Device {
 		long getRAM();
 		double getPerformance();
 };
+#endif
