@@ -44,6 +44,7 @@ class NeuralNetwork {
     NetworkLayer* getLastLayer();
     NetworkLayer* getNextLayer();
     NetworkLayer* getPreviousLayer();
+    int getLayerCount();
     ~NeuralNetwork();
 };
 #endif
