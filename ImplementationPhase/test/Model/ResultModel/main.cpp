@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-#include "ResultManager.h"
-#include "ClassificationResult.h"
-#include "DetectionResult.h"
-#include "ClassProbability.h"
-//#include "Result.h"
+#include "ResultManager.hpp"
+#include "ClassificationResult.hpp"
+#include "DetectionResult.hpp"
+#include "ClassProbability.hpp"
+//#include "Result.hpp"
 
 using namespace std;
 

@@ -1,22 +1,18 @@
 cmake_minimum_required(VERSION 3.10)
 
-# set the project name
-project(PredictionModule C CXX)
-
-add_library(CURRENTPERFORMANCEPREDICTOR "src/CurrentPerformancePredictor.cpp" "include/CurrentPerformancePredictor.hpp")
+add_library(CURRENTPERFORMANCEPREDICTOR "include/CurrentPerformancePredictor.hpp" "src/CurrentPerformancePredictor.cpp")
 target_include_directories(CURRENTPERFORMANCEPREDICTOR PUBLIC "include/")
+target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC PERFORMANCEPREDICTORFROMFILE)
+target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC CHANNEL IMAGEFACADE NEURALNETWORKFACADE NEURALNETWORK)
 
-add_library(PERFORMANCEPREDICTORFROMFILE "src/PerformancePredictorFromFile.cpp" "include/PerformancePredictorFromFile.hpp")
+add_library(PERFORMANCEPREDICTORFROMFILE "include/PerformancePredictorFromFile.hpp" "src/PerformancePredictorFromFile.cpp")
 target_include_directories(PERFORMANCEPREDICTORFROMFILE PUBLIC "include/")
+target_link_libraries(PERFORMANCEPREDICTORFROMFILE PUBLIC CHANNEL)
 
-add_library(POWERPREDICTORFROMFILE "src/PowerPredictorFromFile.cpp" "include/PowerPredictorFromFile.hpp")
+add_library(POWERPREDICTORFROMFILE "include/PowerPredictorFromFile.hpp" "src/PowerPredictorFromFile.cpp")
 target_include_directories(POWERPREDICTORFROMFILE PUBLIC "include/")
+target_link_libraries(POWERPREDICTORFROMFILE PUBLIC CHANNEL)
 
-add_library(PREDICTOR "src/Predictor.cpp" "include/Predictor.hpp")
+add_library(PREDICTOR "include/Predictor.hpp" "src/Predictor.cpp")
 target_include_directories(PREDICTOR PUBLIC "include/")
 
-
-target_link_libraries(PredictionModule PUBLIC CURRENTPERFORMANCEPREDICTOR)
-target_link_libraries(PredictionModule PUBLIC PERFORMANCEPREDICTORFROMFILE)
-target_link_libraries(PredictionModule PUBLIC POWERPREDICTORFROMFILE)
-target_link_libraries(PredictionModule PUBLIC PREDICTOR)
