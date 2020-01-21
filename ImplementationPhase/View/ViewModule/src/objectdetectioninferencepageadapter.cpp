@@ -25,6 +25,9 @@ bool ObjectDetectionInferencePageAdapter::getShowResults(){
 bool ObjectDetectionInferencePageAdapter::getSaveResults(){
     return inferPage->getSaveResults();
 }
+void ObjectDetectionInferencePageAdapter::update(){
+     inferPage->update();
+}
 //buttons
 void ObjectDetectionInferencePageAdapter::nextNNEnable(bool flag){
      inferPage->nextNNEnable(flag);

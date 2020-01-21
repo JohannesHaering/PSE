@@ -4,6 +4,7 @@
 #include <QString>
 #include <QMessageBox>
 #include "inferencepage.h"
+#include <opencv2/core/mat.hpp>
 ClassificationResultPanel::ClassificationResultPanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ClassificationResultPanel)
@@ -29,13 +30,13 @@ void ClassificationResultPanel::displayResult(){
     ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
 }
 void ClassificationResultPanel::update(){
-  //displayImage();
+    displayImage();
     displayResult();
 }
-void ClassificationResultPanel::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
+void ClassificationResultPanel::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
     ui->imgName->setText(QString::fromStdString(imgName));
     ui->nnName->setText(QString::fromStdString(nnName));
-    this->setCurrentImagePath(imgPath);
+    imagePixmap = new QPixmap(convertCvtoQImg(mat));
     resultPixmap = new QPixmap(renderer->drawGraphic(result));
 }
 //buttons
@@ -57,7 +58,7 @@ void ClassificationResultPanel::saveResultEnable(bool flag){
 //clicked buttons
 void ClassificationResultPanel::on_prevImgButton_clicked()
 {
-   // ControllerFacade::getInstance().prevImageClassification();
+    //ControllerFacade::getInstance().prevImageClassification();
 }
 
 void ClassificationResultPanel::on_nextImgButton_clicked()

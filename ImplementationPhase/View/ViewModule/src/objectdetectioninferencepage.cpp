@@ -18,6 +18,9 @@ std::string ObjectDetectionInferencePage::getNeuralNetworkPath(){
 std::string ObjectDetectionInferencePage::getOperatingMode(){
     return ui->controlPanel->getOperatingMode();
 }
+void ObjectDetectionInferencePage::update(){
+    ui->resultPanel->update();
+}
 //Check Boxes
 bool ObjectDetectionInferencePage::getAppendResult(){
     return  ui->controlPanel->getCheckBoxAppendResults();

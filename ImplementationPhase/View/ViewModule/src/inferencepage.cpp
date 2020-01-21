@@ -40,8 +40,8 @@ void InferencePage::setDevices(std::vector<Device>* devices){
 void InferencePage::update(){
     ui->resultPanel->update();
 }
-void InferencePage::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
-    ui->resultPanel->resultsChanged(nnName,imgName,imgPath,result);
+void InferencePage::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
+    ui->resultPanel->resultsChanged(nnName,imgName,mat,result);
 }
 void InferencePage::nextNNEnable(bool flag){
     ui->resultPanel->nextNNEnable(flag);
