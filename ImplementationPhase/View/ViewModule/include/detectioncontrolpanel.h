@@ -37,7 +37,6 @@ private slots:
 
 private:
     Ui::DetectionControlPanel *ui;
-    ContentView *contView;
 };
 
 #endif // DETECTIONCONTROLPANEL_H

@@ -1042,6 +1042,7 @@ release/moc_mainwindow.cpp: ../View/ViewModule/include/mainwindow.h \
 		../View/ViewModule/include/result.h \
 		../View/ViewModule/include/objectdetectioninferencepage.h \
 		../View/ViewModule/include/training.h \
+		../View/RendererModule/include/trainingrenderer.h \
 		../View/ViewModule/include/objectdetectioninferencepageadapter.h \
 		../View/ViewModule/include/inferencepageadapter.h \
 		release/moc_predefs.h \
@@ -1391,6 +1392,9 @@ release/moc_training.cpp: ../View/ViewModule/include/training.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtCore/QString \
 		C:/Qt/5.12.6/mingw73_64/include/QtCore/QVector \
+		../View/RendererModule/include/trainingrenderer.h \
+		../View/RendererModule/include/renderer.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtGui/QImage \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qdialog.h \
 		release/moc_predefs.h \
@@ -3459,8 +3463,10 @@ release/main.o: ../View/ViewModule/src/main.cpp ../View/ViewModule/include/mainw
 		../View/ViewModule/include/result.h \
 		../View/ViewModule/include/objectdetectioninferencepage.h \
 		../View/ViewModule/include/training.h \
+		../View/RendererModule/include/trainingrenderer.h \
 		../View/ViewModule/include/objectdetectioninferencepageadapter.h \
 		../View/ViewModule/include/inferencepageadapter.h \
+		../View/ViewModule/include/viewfacade.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -3599,6 +3605,7 @@ release/mainwindow.o: ../View/ViewModule/src/mainwindow.cpp ../View/ViewModule/i
 		../View/ViewModule/include/result.h \
 		../View/ViewModule/include/objectdetectioninferencepage.h \
 		../View/ViewModule/include/training.h \
+		../View/RendererModule/include/trainingrenderer.h \
 		../View/ViewModule/include/objectdetectioninferencepageadapter.h \
 		../View/ViewModule/include/inferencepageadapter.h \
 		ui_mainwindow.h \
@@ -4120,6 +4127,9 @@ release/training.o: ../View/ViewModule/src/training.cpp ../View/ViewModule/inclu
 		C:/Qt/5.12.6/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtCore/QString \
 		C:/Qt/5.12.6/mingw73_64/include/QtCore/QVector \
+		../View/RendererModule/include/trainingrenderer.h \
+		../View/RendererModule/include/renderer.h \
+		C:/Qt/5.12.6/mingw73_64/include/QtGui/QImage \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/qdialog.h \
 		ui_training.h \
@@ -4284,6 +4294,7 @@ release/viewfacade.o: ../View/ViewModule/src/viewfacade.cpp ../View/ViewModule/i
 		../View/ViewModule/include/result.h \
 		../View/ViewModule/include/topology.h \
 		../View/ViewModule/include/training.h \
+		../View/RendererModule/include/trainingrenderer.h \
 		../View/ViewModule/include/objectdetectioninferencepage.h \
 		../View/ViewModule/include/mainwindow.h \
 		C:/Qt/5.12.6/mingw73_64/include/QtWidgets/QMainWindow \

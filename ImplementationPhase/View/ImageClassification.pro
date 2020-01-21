@@ -80,7 +80,6 @@ FORMS += \
     ViewModule/ui/topology.ui \
     ViewModule/ui/training.ui \
     RendererModule/ui/render.ui
-
 INCLUDEPATH += \
     ViewModule/include \
     RendererModule/include

@@ -27,8 +27,8 @@ public:
      InferencePageAdapter* getImageClassification();
      Training* getTraining();
      MainWindow* getMainMenu();
-    /* Static access method. */
-    static ViewFacade* getInstance();
+     /* Static access method. */
+     static ViewFacade* getInstance();
 };
 
 #endif // VIEWFACADE_H

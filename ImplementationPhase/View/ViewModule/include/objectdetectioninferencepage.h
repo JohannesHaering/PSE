@@ -31,8 +31,6 @@ public:
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
     std::string getImageAmount();
 private slots:
-    void on_start_clicked();
-
 private:
     Ui::ObjectDetectionInferencePage *ui;
 };

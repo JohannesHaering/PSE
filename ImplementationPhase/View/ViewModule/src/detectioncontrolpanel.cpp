@@ -43,7 +43,7 @@ std::string DetectionControlPanel::getImagePaths(){
 //clicked buttons
 void DetectionControlPanel::on_addImage_clicked()
 {
-    //ControllerFacade::getInstance().getImageInputDetection()
+    //ControllerFacade::getInstance().getImageInputDetection();
 }
 
 void DetectionControlPanel::on_chooseNeuralNetwork_clicked()

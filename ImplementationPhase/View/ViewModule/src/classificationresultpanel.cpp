@@ -27,17 +27,15 @@ void ClassificationResultPanel::displayImage(){
 }
 void ClassificationResultPanel::displayResult(){
     ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
-
 }
 void ClassificationResultPanel::update(){
-   // displayImage();
+  //displayImage();
     displayResult();
 }
 void ClassificationResultPanel::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
     ui->imgName->setText(QString::fromStdString(imgName));
     ui->nnName->setText(QString::fromStdString(nnName));
     this->setCurrentImagePath(imgPath);
-    //this->setCurrentResultPath(resultPath);
     resultPixmap = new QPixmap(renderer->drawGraphic(result));
 }
 //buttons
@@ -59,16 +57,6 @@ void ClassificationResultPanel::saveResultEnable(bool flag){
 //clicked buttons
 void ClassificationResultPanel::on_prevImgButton_clicked()
 {
-    ClassProbability *prob1 = new ClassProbability("pesho", 0.1);
-    ClassProbability *prob2 = new ClassProbability("kari", 0.5);
-    ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
-    std::list<ClassProbability> *prob = new std::list<ClassProbability>;
-    prob->push_back(*prob1);
-    prob->push_back(*prob2);
-    prob->push_back(*prob3);
-    ClassificationResult result("1","2",*prob);
-    resultsChanged("kari","stefi","dsadsa",result);
-    update();
    //ControllerFacade::getInstance().prevImageClassification();
 }
 

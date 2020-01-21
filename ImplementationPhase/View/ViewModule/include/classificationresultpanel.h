@@ -17,7 +17,6 @@ public:
     void setCurrentImagePath(std::string path);
     void update();
     void setCurrentResultPath(std::string path);
-    static ClassificationResultPanel* getInstance();
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult Result);
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
@@ -44,8 +43,6 @@ private:
     QPixmap* imagePixmap;
     void displayImage();
     void displayResult();
-    static ClassificationResultPanel* instance;
-    ClassificationResultPanel(int a);
 };
 
 #endif // CLASSIFICATIONRESULTPANEL_H

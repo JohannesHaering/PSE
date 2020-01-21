@@ -32,19 +32,6 @@
      <height>480</height>
     </rect>
    </property>
-   <widget class="QPushButton" name="start">
-    <property name="geometry">
-     <rect>
-      <x>454</x>
-      <y>10</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>start</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <customwidgets>

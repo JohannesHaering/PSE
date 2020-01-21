@@ -14,11 +14,6 @@ Training::~Training()
 {
     delete ui;
 }
-
-void Training::on_chooseNeuralNetwork_clicked(){
-    vector<string> types = {"png"};
-    neuralNetworkPaths = contView->getFileFromExplorer(types);
-}
 void Training::newTrainingFinished(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining){
      graphicPixmap = new QPixmap(renderer->drawGraphic(pointsArrayTest,pointsArrayTraining));
      ui->trainingGraphic->setPixmap(*graphicPixmap);
@@ -44,8 +39,12 @@ std::string Training::getTypeOfLearning(){
 }
 void Training::on_chooseDataset_clicked()
 {
-    std::vector<float> points = {0.5,0.8,0.4};
-    std::vector<float> points2 = {0.2,0.3,0.8,0.9};
-    newTrainingFinished(points,points2);
+    //ControllerFacade::getInstance().getImageInputTraining;
 }
-
+void Training::on_chooseNeuralNetwork_clicked(){
+    //ControllerFacade::getInstance().getNeuralNetworkInputTraining();
+}
+void Training::on_train_clicked()
+{
+    //ControllerFacade::getInstance().startProcessTraining();
+}
