@@ -8,13 +8,13 @@
 class DenseLayer  : public NetworkLayer {
 
   private:
-    MATRIX_2D(double) matrix;
+    MATRIX_2D(float) matrix;
 
   public:
     DenseLayer();
-    DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(double) matrix);
-    void setMatrix(MATRIX_2D(double) matrix);
-    MATRIX_2D(double) getMatrix();
+    DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(float) matrix);
+    void setMatrix(MATRIX_2D(float) matrix);
+    MATRIX_2D(float) getMatrix();
     virtual int* getTensorDimensions();
     // ~DenseLayer();
 };

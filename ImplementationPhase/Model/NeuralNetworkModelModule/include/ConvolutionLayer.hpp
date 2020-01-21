@@ -8,17 +8,17 @@
 class ConvolutionLayer  : public NetworkLayer {
 
   private:
-    TENSOR(double) weightsTensor;
+    TENSOR(float) weightsTensor;
     int stride;
     int padding;
 
   public:
     ConvolutionLayer();
-    ConvolutionLayer(std::string name, int* inputDimensions, TENSOR(double) weights, int stride, int padding);
-    void setWeightsTensor(TENSOR(double) weights);
+    ConvolutionLayer(std::string name, int* inputDimensions, TENSOR(float) weights, int stride, int padding);
+    void setWeightsTensor(TENSOR(float) weights);
     void setStride(int stride);
     void setPadding(int padding);
-    TENSOR(double) getWeightsTensor();
+    TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();
     virtual int* getTensorDimensions();

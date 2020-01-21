@@ -19,12 +19,12 @@ TEST_F(NeuralNetworkTest, DefaultName) {
 
 TEST_F(NeuralNetworkTest, AddConvolutionalLayer) {
 
-  double lower_bound = 0;
-  double upper_bound = 10;
-  std::uniform_real_distribution<double> unif(lower_bound,upper_bound);
+  float lower_bound = 0;
+  float upper_bound = 10;
+  std::uniform_real_distribution<float> unif(lower_bound,upper_bound);
   std::default_random_engine re;
 
-  TENSOR(double) testTensor(4);
+  TENSOR(float) testTensor(4);
 
   for (int i = 0; i < testTensor.size(); i++) {
     testTensor[i].resize(4);
@@ -116,9 +116,9 @@ TEST_F(NeuralNetworkTest, AddFlattenLayer) {
 
 TEST_F(NeuralNetworkTest, MNIST_Test) {
 
-  double lower_bound = 0;
-  double upper_bound = 10;
-  std::uniform_real_distribution<double> unif(lower_bound,upper_bound);
+  float lower_bound = 0;
+  float upper_bound = 10;
+  std::uniform_real_distribution<float> unif(lower_bound,upper_bound);
   std::default_random_engine re;
 
   // CONV 3x3x1 x8; stride=1; padding=0
@@ -127,7 +127,7 @@ TEST_F(NeuralNetworkTest, MNIST_Test) {
   // DENSE 13*13*8x10
   // ACTIVATION SOFTMAX
 
-  TENSOR(double) mnistConvTensor(3); // 3x3x1 x8
+  TENSOR(float) mnistConvTensor(3); // 3x3x1 x8
 
   for (int i = 0; i < mnistConvTensor.size(); i++) {
     mnistConvTensor[i].resize(3);
@@ -142,7 +142,7 @@ TEST_F(NeuralNetworkTest, MNIST_Test) {
     }
   }
 
-  MATRIX_2D(double) mnistDenseMatrix(13*13*8); // 3x3x1 x8
+  MATRIX_2D(float) mnistDenseMatrix(13*13*8); // 3x3x1 x8
 
   for (int i = 0; i < mnistDenseMatrix.size(); i++) {
     mnistDenseMatrix[i].resize(10);
