@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ObjectDetectionInferencePage</class>
+ <widget class="QDialog" name="ObjectDetectionInferencePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Object Detection</string>
+  </property>
+  <widget class="DetectionControlPanel" name="controlPanel" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>250</width>
+     <height>480</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="DetectionResultPanel" name="resultPanel" native="true">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>0</y>
+     <width>550</width>
+     <height>480</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DetectionControlPanel</class>
+   <extends>QWidget</extends>
+   <header>detectioncontrolpanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DetectionResultPanel</class>
+   <extends>QWidget</extends>
+   <header>detectionresultpanel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

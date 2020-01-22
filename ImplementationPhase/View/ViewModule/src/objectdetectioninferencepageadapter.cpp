@@ -7,8 +7,11 @@ ObjectDetectionInferencePageAdapter::ObjectDetectionInferencePageAdapter()
 std::string ObjectDetectionInferencePageAdapter::getOperatingMode(){
     return inferPage->getOperatingMode();
 }
-std::string ObjectDetectionInferencePageAdapter::getDevices(){
+std::vector<Device> ObjectDetectionInferencePageAdapter::getDevices(){
     return inferPage->getDevices();
+}
+void ObjectDetectionInferencePageAdapter::setDevices(std::vector<Device> *devices){
+    inferPage->setDevices(devices);
 }
 std::string ObjectDetectionInferencePageAdapter::getInputMode(){
     return inferPage->getInputMode();
@@ -22,20 +25,21 @@ bool ObjectDetectionInferencePageAdapter::getShowResults(){
 bool ObjectDetectionInferencePageAdapter::getSaveResults(){
     return inferPage->getSaveResults();
 }
+//buttons
 void ObjectDetectionInferencePageAdapter::nextNNEnable(bool flag){
-    return inferPage->nextNNEnable(flag);
+     inferPage->nextNNEnable(flag);
 }
 void ObjectDetectionInferencePageAdapter::prevNNEnable(bool flag){
-    return inferPage->prevNNEnable(flag);
+     inferPage->prevNNEnable(flag);
 }
 void ObjectDetectionInferencePageAdapter::nextImageEnable(bool flag){
-    return inferPage->nextImageEnable(flag);
+     inferPage->nextImageEnable(flag);
 }
 void ObjectDetectionInferencePageAdapter::prevImageEnable(bool flag){
-    return inferPage->prevImageEnable(flag);
+     inferPage->prevImageEnable(flag);
 }
 void ObjectDetectionInferencePageAdapter::saveResultEnable(bool flag){
-    return inferPage->saveResultEnable(flag);
+     inferPage->saveResultEnable(flag);
 }
 ObjectDetectionInferencePage* ObjectDetectionInferencePageAdapter::getInferPage(){
     return inferPage;

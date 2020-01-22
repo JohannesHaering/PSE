@@ -1,12 +1,24 @@
-#ifndef INFERENCEPAGEADAPTER_H
-#define INFERENCEPAGEADAPTER_H
-#include "inferencepage.h"
+#ifndef INFERENCEPAGE_H
+#define INFERENCEPAGE_H
 
-class InferencePageAdapter : public ContentView
+#include <QDialog>
+#include<string>
+#include "imageclassificationcontrolpanel.h"
+#include "classificationresultpanel.h"
+namespace Ui {
+class InferencePage;
+}
+
+class InferencePage : public QDialog
 {
+    Q_OBJECT
+
 public:
+    explicit InferencePage(QWidget *parent = nullptr);
+    ~InferencePage();
     std::string getOperatingMode();
     std::vector<Device> getDevices();
+    void setDevices(std::vector<Device>* devices);
     std::string getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
@@ -17,22 +29,14 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
-    InferencePageAdapter();
-<<<<<<< HEAD
-	void setPerformancePrediction(float num);
-	void setPowerPrediction(float num);
-	void update();
-    //InferencePage* getInferencePage();
-
-=======
-    InferencePage* getInferencePage();
-    void setDevices(std::vector<Device>* devices);
     void update();
-    bool getAppendResult();
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
+    //+ getInputPathes() : string[]
+    bool getAppendResult();
+private slots:
+
 private:
-    InferencePage* inferPage;
->>>>>>> staging_view
+    Ui::InferencePage *ui;
 };
 
-#endif // INFERENCEPAGEADAPTER_H
+#endif // INFERENCEPAGE_H
