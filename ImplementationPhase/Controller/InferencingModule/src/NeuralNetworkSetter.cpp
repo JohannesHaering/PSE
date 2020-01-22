@@ -25,3 +25,12 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
     inferencer.addNeuralNetwork(neuralNetworks);
 }
 
+QString vectorToString(std::vector<std::string> formats) {
+	std::string filter = "";
+	for (std::vector<std::string>::iterator it = formats.begin(); it != formats.end(); ++it) {
+		filter += *it + "-files (*." + *it + ") ;; ";
+	}
+	filter.truncate(filter.lastIndexOf(QChar(';'));
+	filter.truncate(filter.lastIndexOf(QChar(';'));
+	return filter;
+}

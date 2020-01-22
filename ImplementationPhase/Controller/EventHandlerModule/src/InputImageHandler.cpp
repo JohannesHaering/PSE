@@ -25,7 +25,7 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
 	try {
-		ViewFacade view = ViewFacade::getInstance();
+		ContentView page = distributor.getPage();
 		int mode = page.getInputMode();
 		// normaler mode
 		if (mode == 0)

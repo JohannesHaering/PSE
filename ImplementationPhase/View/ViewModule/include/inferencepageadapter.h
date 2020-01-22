@@ -6,7 +6,7 @@
 #include <vector>
 #include "contentview.h"
 
-class InferencePageAdapter : ContentView
+class InferencePageAdapter : public ContentView
 {
 public:
     std::string getOperatingMode();
@@ -24,6 +24,8 @@ public:
     void saveResultEnable(bool flag);
 	void startEnable(bool flag);
     InferencePageAdapter();
+	void setPerformancePrediction(float num);
+	void setPowerPrediction(float num);
 	void update();
     //InferencePage* getInferencePage();
 

@@ -22,11 +22,13 @@
 #include "viewfacade.h"
 
         ControllerFacade* ControllerFacade::getInstance(){
-            if (&instance == nullptr) {
-                ControllerFacade::instance = new ControllerFacade();
-            }
-            return instance;
-        }
+				if (!instance)
+				{
+					instance = new ControllerFacade();
+				}
+				return instance;
+			}
+        
 
         // Classification Methods
         void ControllerFacade::startProcessClassification(){ classificationInferencer->startProcess(); }

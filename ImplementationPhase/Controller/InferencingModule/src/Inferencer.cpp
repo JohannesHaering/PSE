@@ -16,3 +16,5 @@ void Inferencer::addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwor
 */
 int Inferencer::getAmountNeuralNetworks() { return neuralNetworks.size(); }
 
+*ContentView Inferencer::getPage() { return page; }
+
