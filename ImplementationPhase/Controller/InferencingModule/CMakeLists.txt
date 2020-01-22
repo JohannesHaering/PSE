@@ -6,6 +6,7 @@ project(EventHandlerModule C CXX)
 add_library(INFERENCER "src/Inferencer.cpp" "include/Inferencer.hpp")
 target_include_directories(INFERENCER PUBLIC "include/")
 target_link_libraries(INFERENCER PUBLIC NEURALNETWORKADAPTER)
+target_link_libraries(INFERENCER PUBLIC CONTENTVIEW)
 
 add_library(DISTRIBUTOR "src/Distributor.cpp" "include/Distributor.hpp")
 target_include_directories(DISTRIBUTOR PUBLIC "include/")

@@ -46,7 +46,7 @@ target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARS
 add_library(NEURALNETWORKPARSER
 "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")
 target_include_directories(NEURALNETWORKPARSER PUBLIC "include/")
-target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORK PARSER LINEBREAKPARSER NEURALNETWORKFACTORY LAYERPARSER)
+target_link_libraries(NEURALNETWORKPARSER PUBLIC NEURALNETWORK PARSER LINEBREAKPARSER NEURALNETWORKFACTORY LAYERPARSER)
 
 add_library(BOUNDINGBOXPARSER "src/BoundingBoxParser.cpp" "include/BoundingBoxParser.hpp")
 target_include_directories(BOUNDINGBOXPARSER PUBLIC "include/")

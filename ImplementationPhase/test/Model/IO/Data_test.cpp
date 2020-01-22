@@ -1,6 +1,6 @@
 #include "Data.hpp"
 
-#include <gtest/getst.h>
+#include <gtest/gtest.h>
 #include <string>
 
 TEST (DataTest, string) {

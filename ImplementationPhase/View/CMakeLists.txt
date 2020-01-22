@@ -2,20 +2,24 @@ cmake_minimum_required(VERSION 3.10)
 
 project ( ImageClassification )
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+#set(CMAKE_AUTOMOC ON)
+#set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Charts REQUIRED)
-find_package(Qt5Widgets REQUIRED)
 
-set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
+#find_package(Qt5 COMPONENTS Widgets Charts REQUIRED)
 
-set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
+
+#find_package(Qt5Core REQUIRED)
+#find_package(Qt5Gui REQUIRED)
+#find_package(Qt5Charts REQUIRED)
+#find_package(Qt5Widgets REQUIRED)
+
+#set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
+
+#set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 # include(${QT_USE_FILE})
 
-# set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 include_directories(
   ${Qt5Core_INCLUDE_DIRS}
