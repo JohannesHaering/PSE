@@ -5,6 +5,7 @@ project(ViewFacadeModule C CXX)
 
 add_library(VIEWFACADE "src/viewfacade.cpp" "include/viewfacade.h")
 target_include_directories(VIEWFACADE PUBLIC "include/")
+target_link_libraries(VIEWFACADE PUBLIC DEVICE)
 
 add_library(INFERENCEPAGEADAPTER "src/inferencepageadapter.cpp" "include/inferencepageadapter.h")
 target_include_directories(INFERENCEPAGEADAPTER PUBLIC "include/")

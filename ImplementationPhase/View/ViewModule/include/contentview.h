@@ -6,4 +6,4 @@ class ContentView
 
 };
 
-#endif // VIEWFACADE_H
+#endif

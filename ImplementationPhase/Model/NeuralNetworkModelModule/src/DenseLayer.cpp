@@ -1,13 +1,13 @@
 #include "DenseLayer.hpp"
 
 DenseLayer::DenseLayer() : NetworkLayer(LayerType::DENSE) {}
-DenseLayer::DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(double) matrix) : NetworkLayer(name, inputDimensions, LayerType::DENSE), matrix(matrix) {}
-void DenseLayer::setMatrix(MATRIX_2D(double) matrix)
+DenseLayer::DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(float) matrix) : NetworkLayer(name, inputDimensions, LayerType::DENSE), matrix(matrix) {}
+void DenseLayer::setMatrix(MATRIX_2D(float) matrix)
 {
   this->matrix = matrix;
 }
 
-MATRIX_2D(double) DenseLayer::getMatrix()
+MATRIX_2D(float) DenseLayer::getMatrix()
 {
   return matrix;
 }
