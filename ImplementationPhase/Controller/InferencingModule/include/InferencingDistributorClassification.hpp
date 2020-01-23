@@ -10,9 +10,10 @@ class InferencingDistributorClassification : virtual public InferencingDistribut
         InferencingDistributorClassification(InferencePageAdapter page);
         void enableStart();
         void startProcess();
+		void saveResult(std::string neuralNetworkId, std::string imageId, std::string path);
 
     protected: 
-        void drawResult(Result result);        
+        void drawResult(std::string nn_id, std::string input_id);
 
 };
 #endif

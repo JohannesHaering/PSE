@@ -5,6 +5,7 @@
 #include "HighPerformanceMode.hpp"
 #include "MultipleImageFileIO.hpp"
 #include "ClassificationResult.hpp"
+#include "ResultFacade.hpp"
 #include <opencv2/opencv.hpp>
 
 /*
@@ -21,7 +22,7 @@ InferencingDistributorClassification::InferencingDistributorClassification(Infer
 * Enables or disables the Start button of the View
 */
 void InferencingDistributorClassification::enableStart(){
-    page.startButtonEnable(canStart());
+    page.startEnable(canStart());
 }
 
 /*
@@ -35,7 +36,6 @@ void InferencingDistributorClassification::startProcess()
     std::vector<Device> platforms = page.getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
-	std::string modenames[3] = { "High Efficiency", "Low Powerconsumption", "High Performance" };
     int opMode = page.getOperatingMode();
 	Mode* mode;
 	if (opMode == 0) 
@@ -56,7 +56,8 @@ void InferencingDistributorClassification::startProcess()
 	MultipleImageFileIO* io = new MultipleImageFileIO();	
 	std::list<std::string> dirList(directories.begin(), directories.end());
 	Data<std::list<cv::Mat>> imageList = io->readFile(dirList);
-
+	
+	//images.insert(directories.begin(), imageList.getData().begin());
     resultManager = dispatcher.dispatchImages(imageList.getData());
 }
 
@@ -64,8 +65,21 @@ void InferencingDistributorClassification::startProcess()
 * Sends the given result to the view. 
 */
 void InferencingDistributorClassification::drawResult(std::string nn_id, std::string input_id) {
-	ClassificationResult* result = (Result*)resultManager.getSingleResult(nn_id, input_id);
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, input_id);
 	
-    page.resultsChanged(result->getNeuralNetworkID, result->getImageID, );
+    //page.resultsChanged(result->getNeuralNetworkID, result->getImageID, );
 }    
     
+
+/*
+* Finds the given result and calls the model to save it
+* Parameters:
+* -int neuralNetworkId: number of neural network of the wanted result
+* -int imageId: number if image of the wanted result
+*/
+void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId, std::string path)
+{
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(neuralNetworkId, imageId);
+	ResultFacade model = ResultFacade();
+	model.writeClassificationResult(*result, path);
+}

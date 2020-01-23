@@ -10,7 +10,7 @@ InferencingDistributorDetection::InferencingDistributorDetection(InferencePageAd
 */
 void InferencingDistributorDetection::enableStart()
 {
-    page.startButtonEnable(this->canStart());
+    page.startEnable(this->canStart());
 }
 
 /*
