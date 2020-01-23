@@ -2,7 +2,6 @@
 #define NEURAL_NETWORK_SETTER_H_
 
 #include "Inferencer.hpp"
-#include "Model.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
 
@@ -12,10 +11,10 @@ class NeuralNetworkSetter {
         NeuralNetworkSetter(Inferencer inferencer);
 		NeuralNetworkSetter();
         void setNeuralNetwork(std::vector<std::string> directories);
+		Inferencer getInferencer();
 
     private:
         Inferencer inferencer;    
-        Model model;    
 
 };
 #endif

@@ -19,7 +19,7 @@
 class ControllerFacade {
     
     public:
-        static ControllerFacade getInstance();
+        static ControllerFacade* getInstance();
 
         // Classification Methods
         void startProcessClassification();
@@ -59,44 +59,44 @@ class ControllerFacade {
     private:
         ControllerFacade();
 
-        static ControllerFacade instance;
+        static ControllerFacade* instance;
 
         // Classsification components
-        InferencingDistributor classificationInferencer;
-        SaveResultHandler saveHandlerClassification;
-        InputImageHandler inputHandlerClassification;
-        NeuralNetworkHandler neuralNetworkHandlerClassification;
-        StartHandler startHandlerClassification;
-        PagerHandler nnNextHandlerClassification;
-        PagerHandler nnPrevHandlerClassification;
-        PagerHandler imgNextHandlerClassification;
-        PagerHandler imgPrevHandlerClassification;
-        NewResultHandler newResultHandlerClassification;
-        PredictionHandler predictionHandlerClassification;
+        InferencingDistributor* classificationInferencer;
+        SaveResultHandler* saveHandlerClassification;
+        InputImageHandler* inputHandlerClassification;
+        NeuralNetworkHandler* neuralNetworkHandlerClassification;
+        StartHandler* startHandlerClassification;
+        PagerHandler* nnNextHandlerClassification;
+        PagerHandler* nnPrevHandlerClassification;
+        PagerHandler* imgNextHandlerClassification;
+        PagerHandler* imgPrevHandlerClassification;
+        NewResultHandler* newResultHandlerClassification;
+        PredictionHandler* predictionHandlerClassification;
 
         // Detection components
-        InferencingDistributor detectionInferencer;
-        SaveResultHandler saveHandlerDetection;
-        InputImageHandler inputHandlerDetection;
-        NeuralNetworkHandler neuralNetworkHandlerDetection;
-        StartHandler startHandlerDetection;
-        PagerHandler nnNextHandlerDetection;
-        PagerHandler nnPrevHandlerDetection;
-        PagerHandler imgNextHandlerDetection;
-        PagerHandler imgPrevHandlerDetection;
-        NewResultHandler newResultHandlerDetection;
-        PredictionHandler predictionHandlerDetection;
+        InferencingDistributor* detectionInferencer;
+        SaveResultHandler* saveHandlerDetection;
+        InputImageHandler* inputHandlerDetection;
+        NeuralNetworkHandler* neuralNetworkHandlerDetection;
+        StartHandler* startHandlerDetection;
+        PagerHandler* nnNextHandlerDetection;
+        PagerHandler* nnPrevHandlerDetection;
+        PagerHandler* imgNextHandlerDetection;
+        PagerHandler* imgPrevHandlerDetection;
+        NewResultHandler* newResultHandlerDetection;
+        PredictionHandler* predictionHandlerDetection;
 
         // Training components
-        TrainingDistributor trainingDistributor;
-        InputImageHandler inputHandlerTraining;
-        NeuralNetworkHandler neuralNetworkHandlerTraining;
-        StartHandler startHandlerTraining;
-        NewTrainStepHandler trainstepHandlerTraining;
+        TrainingDistributor* trainingDistributor;
+        InputImageHandler* inputHandlerTraining;
+        NeuralNetworkHandler* neuralNetworkHandlerTraining;
+        StartHandler* startHandlerTraining;
+        NewTrainStepHandler* trainstepHandlerTraining;
 
         // Topology components
-        TopologyInferencer topologyInferencer;
-        NeuralNetworkHandler neuralNetworkHandlerTopology;
-        StartHandler startHandlerTopology;
+        TopologyInferencer* topologyInferencer;
+        NeuralNetworkHandler* neuralNetworkHandlerTopology;
+        StartHandler* startHandlerTopology;
 
 };

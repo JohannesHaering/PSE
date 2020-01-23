@@ -1,9 +1,10 @@
-#include "InferencePage.hpp"
+#include "inferencepageadapter.h"
 #include "DeviceHandler.hpp"
 #include "Device.hpp"
 #include "DispatchManager.hpp"
+#include <vector>
 
-DeviceHandler::DeviceHandler(InferencePage page) {}
+DeviceHandler::DeviceHandler(InferencePageAdapter page) {}
 
 /**
  * Calculates new prediction.

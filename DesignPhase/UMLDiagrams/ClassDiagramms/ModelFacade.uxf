@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>917</x>
-      <y>525</y>
-      <w>413</w>
-      <h>91</h>
+      <x>1310</x>
+      <y>350</y>
+      <w>590</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ModelFacade::ImageFacade
 --
@@ -26,10 +26,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>826</x>
-      <y>329</y>
-      <w>147</w>
-      <h>91</h>
+      <x>1180</x>
+      <y>70</y>
+      <w>210</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ModelFacade::Facade
 {abstract}
@@ -44,10 +44,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>525</y>
-      <w>420</w>
-      <h>91</h>
+      <x>680</x>
+      <y>350</y>
+      <w>600</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ModelFacade::DetectionDatasetFacade
 --
@@ -60,9 +60,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>525</y>
-      <w>434</w>
-      <h>91</h>
+      <y>350</y>
+      <w>620</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ModelFacade::ClassificationDatasetFacade
 --
@@ -75,10 +75,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1344</x>
-      <y>525</y>
-      <w>336</w>
-      <h>91</h>
+      <x>1920</x>
+      <y>350</y>
+      <w>480</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>ModelFacade::ParseResultFacade
 --
@@ -91,10 +91,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
-      <y>413</y>
-      <w>700</w>
-      <h>126</h>
+      <x>310</x>
+      <y>190</y>
+      <w>1000</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>980.0;10.0;980.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -102,10 +102,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>896</x>
-      <y>413</y>
-      <w>630</w>
-      <h>126</h>
+      <x>1280</x>
+      <y>190</y>
+      <w>900</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;880.0;100.0;880.0;160.0</additional_attributes>
@@ -113,10 +113,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>413</y>
-      <w>259</w>
-      <h>126</h>
+      <x>940</x>
+      <y>190</y>
+      <w>370</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;10.0;350.0;100.0;10.0;100.0;10.0;160.0</additional_attributes>
@@ -124,10 +124,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>896</x>
-      <y>413</y>
-      <w>224</w>
-      <h>126</h>
+      <x>1280</x>
+      <y>190</y>
+      <w>320</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;300.0;100.0;300.0;160.0</additional_attributes>

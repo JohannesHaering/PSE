@@ -8,6 +8,7 @@
 
 class ResultManager {
 	public:
+		ResultManager();
 		ResultManager(std::list<Result> resultList);
 		std::list<Result> getResultsByImage(std::string imageID);
 		std::list<Result> getResultsByNeuralNetwork(std::string neuralNetworkID);

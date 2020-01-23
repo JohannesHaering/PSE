@@ -1,5 +1,7 @@
 #include "Pager.hpp"
 #include "NextHandler.hpp"
+#include "ViewFacade.hpp"
+#include <stdexcept>
 
 
 NextHandler::NextHandler(Pager pager) : pager(pager) { }
@@ -14,9 +16,9 @@ void NextHandler::onAction()
 	{
 		pager.next();
 	}
-	catch (const char* msg) 
+	catch (const std::invalid_argument& ia)
 	{
-
+		ViewFacade::getInstance().exceptionText("No next exists");
 	}
 	
 }

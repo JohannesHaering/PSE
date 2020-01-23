@@ -1,12 +1,13 @@
 #include "Pager.hpp"
 #include "ImagePager.hpp"
+#include "InferencePageAdapter.hpp"
 
 /*
 * Creates a Pager that keeps track of the displayed Images
 * Parameters:
 * -int maxPage: the maximum numbers of images that can be displayed
 */
-ImagePager::ImagePager(int maxPage, InferencePage page) {
+ImagePager::ImagePager(int maxPage, InferencePageAdapter page) {
     this->maxPage = maxPage;
     this->page = page;
 }

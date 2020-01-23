@@ -1,0 +1,20 @@
+#include "LayerFactory.hpp"
+#include "NetworkLayer.hpp"
+#include "LocalResponseNormalizationLayer.hpp"
+#include "LocalResponseNormalizationLayerFactory.hpp"
+#include "LRNType.hpp"
+
+NetworkLayer LocalResponseNormalizationLayerFactory::buildLayer()
+{
+    return LocalResponseNormalizationLayer(name, inputDimensions, type, depth);
+}
+LocalResponseNormalizationLayerFactory LocalResponseNormalizationLayerFactory::setType(LRNType type)
+{
+    this -> type = type;
+    return *this;
+}
+LocalResponseNormalizationLayerFactory LocalResponseNormalizationLayerFactory::setDepth(int depth)
+{
+    this -> depth;
+    return *this;
+}

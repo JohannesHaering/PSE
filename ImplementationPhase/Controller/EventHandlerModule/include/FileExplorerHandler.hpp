@@ -1,7 +1,7 @@
 #ifndef FILE_EXPLORER_HANDLER_H_
 #define FILE_EXPLORER_HANDLER_H_
 
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "EventHandler.hpp"
 #include <string>
 #include <vector>
