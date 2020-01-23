@@ -2,7 +2,7 @@
 #define IMAGE_PAGER_H_
 
 #include "Pager.hpp"
-#include "InferencePageAdapter.hpp"
+#include "inferencepageadapter.h"
 
 class ImagePager : public Pager {
 

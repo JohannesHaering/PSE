@@ -17,3 +17,10 @@ target_include_directories(DETECTIONPAGEADAPTER PUBLIC "include/")
 add_library(CONTENTVIEW "src/contentview.cpp" "include/contentview.h")
 target_include_directories(CONTENTVIEW PUBLIC "include/")
 
+add_library(CLASSIFICATIONRESULTPANEL "src/classificationresultpanel.cpp" "include/classificationresultpanel.h")
+target_include_directories(CLASSIFICATIONRESULTPANEL PUBLIC "include/")
+target_link_libraries(CLASSIFICATIONRESULTPANEL PUBLIC CLASSIFICATIONRESULTRENDERER)
+
+add_library(TRAINING "src/classificationresultpanel.cpp" "include/classificationresultpanel.h")
+target_include_directories(TRAINING PUBLIC "include/")
+target_link_libraries(TRAINING PUBLIC TRAININGRENDERER)

@@ -14,6 +14,7 @@
 #include "TrainingDistributor.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
+#include "DeviceHandler.hpp"
 
 
 class ControllerFacade {
@@ -32,6 +33,7 @@ class ControllerFacade {
         void getNeuralNetworkInputClassifcation();
         void newResultClassification();
         void newPredictionClassification();
+		void searchDevicesClassification();
 
         // Detection Methods
         void startProcessDetection();
@@ -44,6 +46,7 @@ class ControllerFacade {
         void getNeuralNetworkInputDetection();
         void newResultDetection();
         void newPredictionDetection();
+		void searchDevicesDetection();
 
         // Training methods
         void startProcessTraining();
@@ -73,6 +76,7 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerClassification;
         NewResultHandler* newResultHandlerClassification;
         PredictionHandler* predictionHandlerClassification;
+		DeviceHandler* deviceHandlerClassification;
 
         // Detection components
         InferencingDistributor* detectionInferencer;
@@ -86,6 +90,7 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerDetection;
         NewResultHandler* newResultHandlerDetection;
         PredictionHandler* predictionHandlerDetection;
+		DeviceHandler* deviceHandlerDetection;
 
         // Training components
         TrainingDistributor* trainingDistributor;

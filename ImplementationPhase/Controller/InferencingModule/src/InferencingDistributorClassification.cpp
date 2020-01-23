@@ -1,5 +1,10 @@
 #include "InferencingDistributor.hpp"
 #include "InferencingDistributorClassification.hpp"
+#include "HighEfficiencyMode.hpp"
+#include "LowPowerMode.hpp"
+#include "HighPerformanceMode.hpp"
+#include "MultipleImageFileIO.hpp"
+#include <opencv2/opencv.hpp>
 
 /*
 * Creates a InferencingDistributor for Classification.
@@ -27,15 +32,31 @@ void InferencingDistributorClassification::startProcess()
 	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
     dispatcher.setNeuralNetworkList(nnlist);
     std::vector<Device> platforms = page.getDevices();
-    std::string operatingMode = page.getOperatingMode();
-	Mode mode = Mode();
-	mode.setModeName(operatingMode);
-	mode.setAllowedDeviceList(platforms);
-	mode.setImageList(directories);
-	mode.setNeuralNetworkList(nnlist);
+	std::list<Device> platformlist(platforms.begin(), platforms.end());
+	std::list<std::string> dirlist(directories.begin(), directories.end());
+	std::string modenames[3] = { "High Efficiency", "Low Powerconsumption", "High Performance" };
+    int opMode = page.getOperatingMode();
+	Mode* mode;
+	if (opMode == 0) 
+	{
+		mode = new HighEfficiencyMode();
+	}
+	else if (opMode == 1)
+	{
+		mode = new LowPowerMode();
+	}
+	else
+	{
+		mode = new HighPerformanceMode();
+	}
+	mode->setAllowedDeviceList(platformlist);
+	mode->setNeuralNetworkList(nnlist);
     dispatcher.setMode(mode);
-	std::list<std::string> imglist(directories.begin(), directories.end());
-    resultManager = dispatcher.dispatchImages(imglist);
+	MultipleImageFileIO* io = new MultipleImageFileIO();	
+	std::list<std::string> dirList(directories.begin(), directories.end());
+	Data<std::list<cv::Mat>> imageList = io->readFile(dirList);
+
+    resultManager = dispatcher.dispatchImages(imageList.getData());
 }
 
 /*

@@ -51,6 +51,8 @@ void ControllerFacade::newResultClassification(){ newResultHandlerClassification
 
 void ControllerFacade::newPredictionClassification(){ predictionHandlerClassification->onAction(); }
 
+void ControllerFacade::searchDevicesClassification() { deviceHandlerClassification->onAction(); }
+
 // Detection Methods
 void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }
 
@@ -71,6 +73,8 @@ void ControllerFacade::getNeuralNetworkInputDetection(){ neuralNetworkHandlerDet
 void ControllerFacade::newResultDetection(){ newResultHandlerDetection->onAction(); }
 
 void ControllerFacade::newPredictionDetection(){ predictionHandlerDetection->onAction(); }
+
+void ControllerFacade::searchDevicesDetection() { deviceHandlerDetection->onAction(); }
 
 // Training methods
 void ControllerFacade::startProcessTraining(){ startHandlerTraining->onAction(); }
@@ -104,6 +108,7 @@ ControllerFacade::ControllerFacade() {
 	imgPrevHandlerClassification = new PrevHandler(imagePager);
     newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     predictionHandlerClassification = new PredictionHandler(classificationPage);
+	deviceHandlerClassification = new DeviceHandler(classificationPage);
 		
     // Setup Detection
 	InferencePageAdapter detectionPage = *view->getObjectDetection();

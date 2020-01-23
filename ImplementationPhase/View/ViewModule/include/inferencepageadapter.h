@@ -6,7 +6,7 @@
 class InferencePageAdapter : public ContentView
 {
 public:
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::vector<Device> getDevices();
     std::string getInputMode();
     std::string getNeuralNetworkPath();

@@ -1,6 +1,6 @@
 #include "Pager.hpp"
 #include "ImagePager.hpp"
-#include "InferencePageAdapter.hpp"
+#include "inferencepageadapter.h"
 
 /*
 * Creates a Pager that keeps track of the displayed Images

@@ -2,8 +2,8 @@
 #define TOPOLOGY_INFERENCER_H_
 
 #include "Inferencer.hpp"
-#include "ViewFacade.hpp"
-#include "TopologyPage.hpp"
+#include "viewfacade.h"
+#include "topology.h"
 
 class TopologyInferencer : public Inferencer {
 
@@ -15,7 +15,7 @@ public:
 
 private:
 	NeuralNetworkAdapter neuralNetwork;
-	TopologyPage page;
+	Topology page;
 
 };
 #endif

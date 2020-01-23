@@ -118,3 +118,4 @@ add_executable(
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} ${QT5_LIBRARIES})
 
 add_subdirectory(ViewModule)
+add_subdirectory(RendererModule)
