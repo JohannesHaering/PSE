@@ -28,17 +28,20 @@ std::vector<Device> DetectionControlPanel::getDevices(){
 void DetectionControlPanel::setDevices(std::vector<Device>* devices){
     ui->CheckBoxWidget->setDevices(devices);
 }
-std::string DetectionControlPanel::getOperatingMode(){
-    return ui->mode->currentText().toUtf8().constData();
+int DetectionControlPanel::getOperatingMode(){
+    return ui->mode->currentIndex();
 }
-std::string DetectionControlPanel::getInputMode(){
-    return ui->imgAmount->currentText().toUtf8().constData();
+int DetectionControlPanel::getInputMode(){
+    return ui->imgAmount->currentIndex();
 }
 std::string DetectionControlPanel::getNeuralNetworkPath(){
     return neuralNetworkPaths;
 }
 std::string DetectionControlPanel::getImagePaths(){
     return imagePaths;
+}
+void DetectionControlPanel::startEnable(bool flag){
+    ui->startObjectDet->setEnabled(flag);
 }
 //clicked buttons
 void DetectionControlPanel::on_addImage_clicked()

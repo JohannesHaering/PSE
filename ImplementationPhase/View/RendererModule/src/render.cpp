@@ -10,6 +10,7 @@
 #include <QFileDialog>
 #include "classificationresultrenderer.h"
 #include "trainingrenderer.h"
+#include "viewfacade.h"
 Render::Render(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Render)
@@ -24,26 +25,28 @@ Render::~Render()
 
 void Render::on_start_clicked()
 {
-        ClassificationResultRenderer *rend = new ClassificationResultRenderer();
-        ClassProbability *prob1 = new ClassProbability("pesho", 0.1);
-        ClassProbability *prob2 = new ClassProbability("kari", 0.5);
-        ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
-        std::list<ClassProbability> *prob = new std::list<ClassProbability>;
-      //std::list<ClassProbability>::iterator it;
-        prob->push_back(*prob1);
-        prob->push_back(*prob2);
-        prob->push_back(*prob3);
-        ClassificationResult result("1","2",*prob);
-        pixmap = new QPixmap(rend->drawGraphic(result));
-        drawRectangle(pixmap,30,50,30,40,"green");
-        ui->img->setPixmap(*pixmap);
+//        ClassificationResultRenderer *rend = new ClassificationResultRenderer();
+//        ClassProbability *prob1 = new ClassProbability("pesho", 0.1);
+//        ClassProbability *prob2 = new ClassProbability("kari", 0.5);
+//        ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
+//        std::list<ClassProbability> *prob = new std::list<ClassProbability>;
+//      //std::list<ClassProbability>::iterator it;
+//        prob->push_back(*prob1);
+//        prob->push_back(*prob2);
+//        prob->push_back(*prob3);
+//        ClassificationResult result("1","2",*prob);
+//        pixmap = new QPixmap(rend->drawGraphic(result));
+//        drawRectangle(pixmap,30,50,30,40,"green");
+//        ui->img->setPixmap(*pixmap);
+    ViewFacade *view = ViewFacade::getInstance();
+    view->getImageClassification()->showError("asdf");
 
 
 }
 
 void Render::on_addImage_clicked()
 {
-    std::vector<std::string> types = {"JPG", "png", "PNG", "jpeg", "JPEG"};
+    std::vector<std::string> types = {"PNG","JPG","png","jpg","jpeg","JPEG"};
     ContentView contView;
     path = contView.getFileFromExplorer(types);
     QString pathImg = QString::fromStdString(path);

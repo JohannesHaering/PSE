@@ -16,22 +16,21 @@ class InferencePage : public QDialog
 public:
     explicit InferencePage(QWidget *parent = nullptr);
     ~InferencePage();
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::vector<Device> getDevices();
     void setDevices(std::vector<Device>* devices);
-    std::string getInputMode();
+    int getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
     bool getSaveResults();
-    std::string getImageAmount();
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
+    void startEnable(bool flag);
     void update();
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
-    //+ getInputPathes() : string[]
+    void resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result);
     bool getAppendResult();
 private slots:
 

@@ -23,11 +23,11 @@ bool ImageClassificationControlPanel::getSaveResultsCheckBox(){
 bool ImageClassificationControlPanel::getShowResultsCheckBox(){
    return ui->showResults->isChecked();
 }
-std::string ImageClassificationControlPanel::getOperatingMode(){
-return ui->mode->currentText().toUtf8().constData();
+int ImageClassificationControlPanel::getOperatingMode(){
+return ui->mode->currentIndex();
 }
-std::string ImageClassificationControlPanel::getInputMode(){
-    return ui->imgAmount->currentText().toUtf8().constData();
+int ImageClassificationControlPanel::getInputMode(){
+    return ui->imgAmount->currentIndex();
 }
 bool ImageClassificationControlPanel::getAppendResult(){
     return ui->appendResults->isChecked();
@@ -43,6 +43,9 @@ std::vector<Device> ImageClassificationControlPanel::getDevices(){
 }
 void ImageClassificationControlPanel::setDevices(std::vector<Device>* devices){
     ui->CheckBoxWidget->setDevices(devices);
+}
+void ImageClassificationControlPanel::startEnable(bool flag){
+    ui->startImgClass->setEnabled(flag);
 }
 //clicked buttons
 void ImageClassificationControlPanel::on_addImage_clicked()

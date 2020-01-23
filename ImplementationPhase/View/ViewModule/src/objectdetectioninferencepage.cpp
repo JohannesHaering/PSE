@@ -15,8 +15,11 @@ ObjectDetectionInferencePage::~ObjectDetectionInferencePage()
 std::string ObjectDetectionInferencePage::getNeuralNetworkPath(){
     return ui->controlPanel->getNeuralNetworkPath();
 }
-std::string ObjectDetectionInferencePage::getOperatingMode(){
+int ObjectDetectionInferencePage::getOperatingMode(){
     return ui->controlPanel->getOperatingMode();
+}
+void ObjectDetectionInferencePage::update(){
+    ui->resultPanel->update();
 }
 //Check Boxes
 bool ObjectDetectionInferencePage::getAppendResult(){
@@ -28,10 +31,7 @@ bool ObjectDetectionInferencePage::getSaveResults(){
 bool ObjectDetectionInferencePage::getShowResults(){
     return  ui->controlPanel->getShowResultsCheckBox();
 }
-std::string ObjectDetectionInferencePage::getImageAmount(){
-    return ui->controlPanel->getInputMode();
-}
-std::string ObjectDetectionInferencePage::getInputMode(){
+int ObjectDetectionInferencePage::getInputMode(){
     return ui->controlPanel->getInputMode();
 }
 //devices
@@ -56,4 +56,7 @@ void ObjectDetectionInferencePage::prevImageEnable(bool flag){
 }
 void ObjectDetectionInferencePage::saveResultEnable(bool flag){
      ui->resultPanel->saveResultEnable(flag);
+}
+void ObjectDetectionInferencePage::startEnable(bool flag){
+    ui->controlPanel->startEnable(flag);
 }

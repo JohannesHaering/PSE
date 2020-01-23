@@ -21,14 +21,15 @@ public:
     bool getShowResultsCheckBox();
     bool getSaveResultsCheckBox();
     std::string getNeuralNetworkPath();
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::string neuralNetworkPaths;
     std::string imagePaths;
-    std::string getInputMode();
+    int getInputMode();
     std::string getImagePaths();
     static ImageClassificationControlPanel* getInstance();
     void setDevices(std::vector<Device>* devices);
     bool getAppendResult();
+    void startEnable(bool flag);
 private slots:
     void on_chooseNeuralNetwork_clicked();
     void on_addImage_clicked();

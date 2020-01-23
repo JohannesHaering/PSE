@@ -25,10 +25,7 @@ bool InferencePage::getAppendResult(){
 bool InferencePage::getShowResults(){
     return  ui->controlPanel->getShowResultsCheckBox();
 }
-std::string InferencePage::getImageAmount(){
-    return ui->controlPanel->getInputMode();
-}
-std::string InferencePage::getInputMode(){
+int InferencePage::getInputMode(){
     return ui->controlPanel->getInputMode();
 }
 std::vector<Device> InferencePage::getDevices(){
@@ -40,8 +37,8 @@ void InferencePage::setDevices(std::vector<Device>* devices){
 void InferencePage::update(){
     ui->resultPanel->update();
 }
-void InferencePage::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
-    ui->resultPanel->resultsChanged(nnName,imgName,imgPath,result);
+void InferencePage::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
+    ui->resultPanel->resultsChanged(nnName,imgName,mat,result);
 }
 void InferencePage::nextNNEnable(bool flag){
     ui->resultPanel->nextNNEnable(flag);
@@ -58,6 +55,9 @@ void InferencePage::prevImageEnable(bool flag){
 void InferencePage::saveResultEnable(bool flag){
     ui->resultPanel->saveResultEnable(flag);
 }
-std::string InferencePage::getOperatingMode(){
-    ui->controlPanel->getOperatingMode();
+void InferencePage::startEnable(bool flag){
+    ui->controlPanel->startEnable(flag);
+}
+int InferencePage::getOperatingMode(){
+    return ui->controlPanel->getOperatingMode();
 }

@@ -5,24 +5,25 @@
 class InferencePageAdapter : public ContentView
 {
 public:
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::vector<Device> getDevices();
-    std::string getInputMode();
+    int getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
     bool getSaveResults();
-    std::string getImageAmount();
+    int getImageAmount();
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
+    void startEnable(bool flag);
     InferencePageAdapter();
     InferencePage* getInferencePage();
     void setDevices(std::vector<Device>* devices);
     void update();
     bool getAppendResult();
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
+    void resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result);
 private:
     InferencePage* inferPage;
 };
