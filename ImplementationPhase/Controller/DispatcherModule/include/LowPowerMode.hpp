@@ -7,5 +7,6 @@
 class LowPowerMode : public Mode{
 	public:
 		std::pair<float, float> calculate(std::list<Device> deviceList, int imageAmount);
+		std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> Mode::getImageDistribution(std::list<cv::mat> imageList) override; 
 };
 #endif
