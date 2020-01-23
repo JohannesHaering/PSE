@@ -4,7 +4,7 @@ NeuralNetwork::NeuralNetwork() : NeuralNetwork("Default_Network_Name") {}
 
 NeuralNetwork::NeuralNetwork(std::string name) : NeuralNetwork(name, 0, 0, 0) {}
 
-NeuralNetwork::NeuralNetwork(std::string name, int width, int heigth, int channelNumb) : name(name), layers(), width(width), heigth(heigth), channelNumb(channelNumb) {
+NeuralNetwork::NeuralNetwork(std::string name, int width, int height, int channels) : name(name), layers(), width(width), height(height), channels(channels) {
   it = layers.begin();
 }
 
@@ -14,19 +14,19 @@ void NeuralNetwork::addLayer(NetworkLayer* layer) {
 
 void NeuralNetwork::setName(std::string name) { this->name = name; }
 
-void NeuralNetwork::setInputDimensions(int width, int heigth, int channelNumb) {
+void NeuralNetwork::setInputDimensions(int width, int height, int channels) {
   this->width = width;
-  this->heigth = heigth;
-  this->channelNumb = channelNumb;
+  this->height = height;
+  this->channels = channels;
 }
 
 std::string NeuralNetwork::getName() { return name; }
 
 int NeuralNetwork::getWidth() { return width; }
 
-int NeuralNetwork::getHeigth() { return heigth; }
+int NeuralNetwork::getHeight() { return height; }
 
-int NeuralNetwork::getChannelNumb() { return channelNumb; }
+int NeuralNetwork::getChannels() { return channels; }
 
 NetworkLayer* NeuralNetwork::getFirstLayer() {
   it = layers.begin();

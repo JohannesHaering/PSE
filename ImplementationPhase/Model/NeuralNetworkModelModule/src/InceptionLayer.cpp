@@ -9,6 +9,11 @@ InceptionLayer::InceptionLayer(std::string name, int* inputDimensions) : Network
   it = chains.begin();
 }
 
+InceptionLayer::InceptionLayer(std::string name, int* inputDimensions, NeuralNetwork chain) : NetworkLayer(name, inputDimensions, LayerType::INCEPTION), chains() {
+  it = chains.begin();
+  addLayerChain(chain);
+}
+
 void InceptionLayer::addLayerChain(NeuralNetwork chain) {
   chains.push_back(chain);
 }
