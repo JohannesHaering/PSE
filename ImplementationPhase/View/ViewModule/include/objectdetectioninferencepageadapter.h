@@ -7,10 +7,10 @@ class ObjectDetectionInferencePageAdapter : public InferencePageAdapter
 {
 public:
     ObjectDetectionInferencePageAdapter();
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::vector<Device> getDevices();
     void setDevices(std::vector<Device>* devices);
-    std::string getInputMode();
+    int getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
     bool getSaveResults();

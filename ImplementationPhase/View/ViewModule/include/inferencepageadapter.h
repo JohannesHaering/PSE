@@ -5,13 +5,13 @@
 class InferencePageAdapter : public ContentView
 {
 public:
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::vector<Device> getDevices();
-    std::string getInputMode();
+    int getInputMode();
     std::string getNeuralNetworkPath();
     bool getShowResults();
     bool getSaveResults();
-    std::string getImageAmount();
+    int getImageAmount();
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
     void nextImageEnable(bool flag);

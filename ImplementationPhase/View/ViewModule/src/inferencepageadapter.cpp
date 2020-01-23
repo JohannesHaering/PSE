@@ -4,13 +4,13 @@ InferencePageAdapter::InferencePageAdapter()
 {
     inferPage = new InferencePage();
 }
-std::string InferencePageAdapter::getOperatingMode(){
+int InferencePageAdapter::getOperatingMode(){
     return inferPage->getOperatingMode();
 }
 std::vector<Device> InferencePageAdapter::getDevices(){
     return inferPage->getDevices();
 }
-std::string InferencePageAdapter::getInputMode(){
+int InferencePageAdapter::getInputMode(){
     return inferPage->getInputMode();
 }
 std::string InferencePageAdapter::getNeuralNetworkPath(){

@@ -25,10 +25,7 @@ bool InferencePage::getAppendResult(){
 bool InferencePage::getShowResults(){
     return  ui->controlPanel->getShowResultsCheckBox();
 }
-std::string InferencePage::getImageAmount(){
-    return ui->controlPanel->getInputMode();
-}
-std::string InferencePage::getInputMode(){
+int InferencePage::getInputMode(){
     return ui->controlPanel->getInputMode();
 }
 std::vector<Device> InferencePage::getDevices(){
@@ -58,6 +55,6 @@ void InferencePage::prevImageEnable(bool flag){
 void InferencePage::saveResultEnable(bool flag){
     ui->resultPanel->saveResultEnable(flag);
 }
-std::string InferencePage::getOperatingMode(){
-    ui->controlPanel->getOperatingMode();
+int InferencePage::getOperatingMode(){
+    return ui->controlPanel->getOperatingMode();
 }

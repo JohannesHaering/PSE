@@ -21,10 +21,10 @@ public:
     bool getShowResultsCheckBox();
     bool getSaveResultsCheckBox();
     std::string getNeuralNetworkPath();
-    std::string getOperatingMode();
+    int getOperatingMode();
     std::string neuralNetworkPaths;
     std::string imagePaths;
-    std::string getInputMode();
+    int getInputMode();
     std::string getImagePaths();
     static ImageClassificationControlPanel* getInstance();
     void setDevices(std::vector<Device>* devices);
