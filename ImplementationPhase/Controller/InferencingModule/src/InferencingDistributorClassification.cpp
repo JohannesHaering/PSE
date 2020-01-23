@@ -4,6 +4,7 @@
 #include "LowPowerMode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "MultipleImageFileIO.hpp"
+#include "ClassificationResult.hpp"
 #include <opencv2/opencv.hpp>
 
 /*
@@ -62,7 +63,9 @@ void InferencingDistributorClassification::startProcess()
 /*
 * Sends the given result to the view. 
 */
-void InferencingDistributorClassification::drawResult(Result result) {
-    page.setResult(result);
+void InferencingDistributorClassification::drawResult(std::string nn_id, std::string input_id) {
+	ClassificationResult* result = (Result*)resultManager.getSingleResult(nn_id, input_id);
+	
+    page.resultsChanged(result->getNeuralNetworkID, result->getImageID, );
 }    
     
