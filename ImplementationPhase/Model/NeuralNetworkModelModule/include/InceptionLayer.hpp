@@ -17,6 +17,7 @@ class InceptionLayer  : public NetworkLayer {
   public:
     InceptionLayer();
     InceptionLayer(std::string name, int* inputDimensions);
+    InceptionLayer(std::string name, int* inputDimensions, NeuralNetwork chain);
     void addLayerChain(NeuralNetwork chain);
     NeuralNetwork getFirstChain();
     NeuralNetwork getNextChain();
