@@ -5,7 +5,11 @@
 #include <QString>
 #include <QVector>
 #include <vector>
+<<<<<<< HEAD
 
+=======
+#include <opencv2/core/mat.hpp>
+>>>>>>> stefi_implementation
 class ContentView
 {
 public:
@@ -15,7 +19,11 @@ public:
     std::string getDirectoryFromExplorer(std::vector<std::string> types);
     std::string getSaveFileName();
     void showError(std::string error);
+<<<<<<< HEAD
   //  QPixmap convertCvtoQImg(cv::Mat mat);
+=======
+    QPixmap convertCvtoQImg(cv::Mat mat);
+>>>>>>> stefi_implementation
 private:
       QWidget *widg;
 signals:

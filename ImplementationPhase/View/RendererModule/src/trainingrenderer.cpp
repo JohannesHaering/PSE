@@ -15,8 +15,6 @@ QPixmap TrainingRenderer::drawGraphic(std::vector<float> pointsArrayTest, std::v
     seriesTraining->setName("Training Accuracy");
     seriesTraining->setColor(Qt::green);
     series->setColor(Qt::red);
-   // series->append(0,0);
-   // seriesTraining->append(0,0);
     for(std::vector<float>::iterator it = pointsArrayTest.begin(); it != pointsArrayTest.end(); ++it) {
         i++;
         QPoint point(i*(width/pointsArrayTest.size()),*it * 100);

@@ -14,9 +14,15 @@ class ObjectDetectionInferencePage : public QDialog
 public:
     explicit ObjectDetectionInferencePage(QWidget *parent = nullptr);
     ~ObjectDetectionInferencePage();
+<<<<<<< HEAD
     std::string getOperatingMode();
     std::vector<Device> getDevices();
     std::string getInputMode();
+=======
+    int getOperatingMode();
+    std::vector<Device> getDevices();
+    int getInputMode();
+>>>>>>> stefi_implementation
     std::string getNeuralNetworkPath();
     bool getAppendResult();
     void setDevices(std::vector<Device>* devices);

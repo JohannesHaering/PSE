@@ -4,7 +4,7 @@ ObjectDetectionInferencePageAdapter::ObjectDetectionInferencePageAdapter()
 {
     inferPage = new ObjectDetectionInferencePage();
 }
-std::string ObjectDetectionInferencePageAdapter::getOperatingMode(){
+int ObjectDetectionInferencePageAdapter::getOperatingMode(){
     return inferPage->getOperatingMode();
 }
 std::vector<Device> ObjectDetectionInferencePageAdapter::getDevices(){
@@ -13,7 +13,7 @@ std::vector<Device> ObjectDetectionInferencePageAdapter::getDevices(){
 void ObjectDetectionInferencePageAdapter::setDevices(std::vector<Device> *devices){
     inferPage->setDevices(devices);
 }
-std::string ObjectDetectionInferencePageAdapter::getInputMode(){
+int ObjectDetectionInferencePageAdapter::getInputMode(){
     return inferPage->getInputMode();
 }
 std::string ObjectDetectionInferencePageAdapter::getNeuralNetworkPath(){
@@ -24,6 +24,9 @@ bool ObjectDetectionInferencePageAdapter::getShowResults(){
 }
 bool ObjectDetectionInferencePageAdapter::getSaveResults(){
     return inferPage->getSaveResults();
+}
+void ObjectDetectionInferencePageAdapter::update(){
+     inferPage->update();
 }
 //buttons
 void ObjectDetectionInferencePageAdapter::nextNNEnable(bool flag){

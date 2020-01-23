@@ -4,13 +4,13 @@ InferencePageAdapter::InferencePageAdapter()
 {
     inferPage = new InferencePage();
 }
-std::string InferencePageAdapter::getOperatingMode(){
+int InferencePageAdapter::getOperatingMode(){
     return inferPage->getOperatingMode();
 }
 std::vector<Device> InferencePageAdapter::getDevices(){
     return inferPage->getDevices();
 }
-std::string InferencePageAdapter::getInputMode(){
+int InferencePageAdapter::getInputMode(){
     return inferPage->getInputMode();
 }
 std::string InferencePageAdapter::getNeuralNetworkPath(){
@@ -49,6 +49,6 @@ void InferencePageAdapter::setDevices(std::vector<Device>* devices){
 void InferencePageAdapter::update(){
     inferPage->update();
 }
-void InferencePageAdapter::resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result){
-    inferPage->resultsChanged(nnName,imgName,imgPath,result);
+void InferencePageAdapter::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
+    inferPage->resultsChanged(nnName,imgName,mat,result);
 }

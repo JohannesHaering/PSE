@@ -2,30 +2,29 @@ cmake_minimum_required(VERSION 3.10)
 
 project ( ImageClassification )
 
-#set(CMAKE_AUTOMOC ON)
-#set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Gui REQUIRED)
+find_package(Qt5Charts REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui)
+
+set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 
 
-#find_package(Qt5 COMPONENTS Widgets Charts REQUIRED)
-
-
-#find_package(Qt5Core REQUIRED)
-#find_package(Qt5Gui REQUIRED)
-#find_package(Qt5Charts REQUIRED)
-#find_package(Qt5Widgets REQUIRED)
-
-#set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
-
-#set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
+set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 # include(${QT_USE_FILE})
 
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+# set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
 
 include_directories(
   ${Qt5Core_INCLUDE_DIRS}
   ${Qt5Gui_INCLUDE_DIRS}
   ${Qt5Charts_INCLUDE_DIRS}
   ${Qt5Widgets_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
   ViewModule/include
   RendererModule/include
 )
@@ -101,8 +100,8 @@ set(IMAGE_CLASSIFICATION_UIS
 
 qt5_wrap_ui(IMAGE_CLASSIFICATION_UI_GENERATED_HEADERS ${IMAGE_CLASSIFICATION_UIS})
 QT5_WRAP_CPP(IMAGE_CLASSIFICATION_MOC_HEADERS ${IMAGE_CLASSIFICATION_HEADERS})
+
 # qt5_add_resources(GENERATED_SOURCES ${RESOURCES})
-# qt5_wrap_cpp(GENERATED_SOURCES ${HEADERS})
 
 include_directories("${CMAKE_BINARY_DIR}")
 
@@ -116,6 +115,9 @@ add_executable(
 
 # Link the app!
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} ${QT5_LIBRARIES})
+
+target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} ${QT5_LIBRARIES} ${OpenCV_LIBS})
+#target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} CONTROLLERFACADE)
 
 add_subdirectory(ViewModule)
 add_subdirectory(RendererModule)
