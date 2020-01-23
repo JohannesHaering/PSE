@@ -4,36 +4,17 @@ ConvolutionLayer::ConvolutionLayer() : NetworkLayer(LayerType::CONVOLUTION), str
 
 ConvolutionLayer::ConvolutionLayer(std::string name, int* inputDimensions, TENSOR(float) weights, int stride, int padding) : NetworkLayer(name, inputDimensions, LayerType::CONVOLUTION), weightsTensor(weights), stride(stride), padding(padding) {}
 
-void ConvolutionLayer::setWeightsTensor(TENSOR(float) weights)
-{
-  weightsTensor = weights;
-}
+void ConvolutionLayer::setWeightsTensor(TENSOR(float) weights) { weightsTensor = weights; }
 
-void ConvolutionLayer::setStride(int stride)
-{
-  this->stride = stride;
-}
+void ConvolutionLayer::setStride(int stride) { this->stride = stride; }
 
-void ConvolutionLayer::setPadding(int padding)
-{
-  this->padding = padding;
-}
+void ConvolutionLayer::setPadding(int padding) { this->padding = padding; }
 
-TENSOR(float) ConvolutionLayer::getWeightsTensor()
-{
-  return weightsTensor;
-}
+TENSOR(float) ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
 
-int ConvolutionLayer::getStride()
-{
-  return stride;
-}
+int ConvolutionLayer::getStride() { return stride; }
 
-int ConvolutionLayer::getPadding()
-{
-  return padding;
-}
+int ConvolutionLayer::getPadding() { return padding; }
 
-int* ConvolutionLayer::getTensorDimenssions() {
-  return new int[4] {(int) weightsTensor[0][0][0].size(), (int) weightsTensor[0][0].size(), (int) weightsTensor[0].size(), (int) weightsTensor.size()};
-}
+int* ConvolutionLayer::getTensorDimensions() {
+ return new int[4] { (int) weightsTensor[0][0][0].size(), (int) weightsTensor[0][0].size(), (int) weightsTensor[0].size(), (int) weightsTensor.size()}; }

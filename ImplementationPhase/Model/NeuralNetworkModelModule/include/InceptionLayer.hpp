@@ -4,7 +4,9 @@
 #include <list>
 #include <string>
 #include "NetworkLayer.hpp"
-#include "NeuralNetwork.hpp"
+// #include "NeuralNetwork.hpp"
+
+class NeuralNetwork;
 
 class InceptionLayer  : public NetworkLayer {
 

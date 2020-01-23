@@ -21,7 +21,7 @@ class PollingLayer  : public NetworkLayer {
     PollingType getType();
     int getSize();
     int getStride();
-    virtual int* getTensorDimenssions();
+    virtual int* getTensorDimensions();
     // ~PolingLayer();
 };
 #endif
