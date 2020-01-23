@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ImageClassification"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Controller\;CMake Files\Controller\ControllerFacadeModule\;CMake Files\Controller\InferencingModule\;CMake Files\Controller\EventHandlerModule\;CMake Files\Controller\NeuralNetworkModelAdapterModule\;CMake Files\Controller\CommunicationModule\;CMake Files\Controller\DispatcherModule\;CMake Files\Controller\PredictionModule\;CMake Files\Controller\TrainingModule\;CMake Files\View\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\usr\lib64\cmake\opencv4\;CMake Files\..\googletest-src\;CMake Files\..\googletest-src\googlemock\;CMake Files\..\googletest-src\googlemock\cmake\;CMake Files\..\googletest-src\googletest\;CMake Files\..\googletest-src\googletest\cmake\;CMake Files\test\;CMake Files\test\Model\;CMake Files\test\Model\ResultModel\;CMake Files\test\Model\IO\;CMake Files\test\Model\ModelFacade\;CMake Files\test\Model\NeuralNetworkModel\;CMake Files\test\Model\VideoHandling\;CMake Files\test\Model\Parsing\;CMake Files\test\View\;CMake Files\test\View\ViewModel\;CMake Files\test\View\Renderer\;CMake Files\test\Controller\;CMake Files\test\Controller\Communication\;CMake Files\test\Controller\ControllerFacade\;CMake Files\test\Controller\Dispatcher\;CMake Files\test\Controller\Inferencing\;CMake Files\test\Controller\NeuralNetworkModelAdapter\;CMake Files\test\Controller\Prediction\;CMake Files\test\Controller\ResultModelAdapter\;CMake Files\test\Controller\Training\;CMake Files\Model\;CMake Files\Model\ResultModelModule\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/steki/Desktop/PSE/View"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project">
+				<Option output="/home/steki/Desktop/PSE/View/Project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steki/Desktop/PSE/View"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_CHARTS_LIB"/>
+					<Add directory="/home/steki/Desktop/PSE/View"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View"/>
+					<Add directory="/home/steki/Desktop/PSE/View/Project_autogen/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/include"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/include"/>
+					<Add directory="/home/steki/Desktop/PSE"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCharts"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 Project"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project/fast">
+				<Option output="/home/steki/Desktop/PSE/View/Project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/steki/Desktop/PSE/View"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_CHARTS_LIB"/>
+					<Add directory="/home/steki/Desktop/PSE/View"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View"/>
+					<Add directory="/home/steki/Desktop/PSE/View/Project_autogen/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/include"/>
+					<Add directory="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/include"/>
+					<Add directory="/home/steki/Desktop/PSE"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCharts"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 Project/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project_autogen">
+				<Option working_dir="/home/steki/Desktop/PSE/View"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 Project_autogen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/steki/Desktop/PSE/View/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/src/classificationresultrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/src/detectionresultrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/src/render.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/src/renderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/src/trainingrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/RendererModule/ui/render.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/classificationresult.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/classificationresultpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/classprobability.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/contentview.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/detectioncontrolpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/detectionresultpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/device.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/devicecheckboxmanager.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/imageclassificationcontrolpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/inferencepage.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/inferencepageadapter.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/main.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/mainwindow.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/objectdetectioninferencepage.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/objectdetectioninferencepageadapter.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/result.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/topology.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/training.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/view.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/src/viewfacade.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/classificationresultpanel.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/detectioncontrolpanel.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/detectionresultpanel.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/devicecheckboxmanager.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/imageclassificationcontrolpanel.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/inferencepage.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/mainwindow.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/objectdetectioninferencepage.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/topology.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/ViewModule/ui/training.ui">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/Project_autogen/mocs_compilation.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_classificationresultrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_classificationresultrenderer.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_detectionresultrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_detectionresultrenderer.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_render.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_render.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_renderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_renderer.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_trainingrenderer.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/RendererModule/include/moc_trainingrenderer.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classificationresult.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classificationresult.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classificationresultpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classificationresultpanel.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classprobability.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_classprobability.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_contentview.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_contentview.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_detectioncontrolpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_detectioncontrolpanel.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_detectionresultpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_detectionresultpanel.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_device.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_device.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_devicecheckboxmanager.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_devicecheckboxmanager.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_imageclassificationcontrolpanel.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_imageclassificationcontrolpanel.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_inferencepage.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_inferencepage.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_inferencepageadapter.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_inferencepageadapter.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_mainwindow.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_mainwindow.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_objectdetectioninferencepage.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_objectdetectioninferencepage.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_objectdetectioninferencepageadapter.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_objectdetectioninferencepageadapter.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_result.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_result.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_topology.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_topology.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_training.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_training.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_view.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_view.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_viewfacade.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/View/ViewModule/include/moc_viewfacade.cpp.rule">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/CMakeLists.txt.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/ControllerFacadeModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\ControllerFacadeModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/InferencingModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\InferencingModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/EventHandlerModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\EventHandlerModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/NeuralNetworkModelAdapterModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\NeuralNetworkModelAdapterModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/CommunicationModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\CommunicationModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/DispatcherModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\DispatcherModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/PredictionModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\PredictionModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Controller/TrainingModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Controller\TrainingModule\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/View/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\View\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTsLibPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Charts/Qt5ChartsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../../../../../usr/lib64/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\googletest-src\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\googletest-src\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\..\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\..\googletest-src\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\..\googletest-src\googletest\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\..\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\..\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\..\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/../googletest-src/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\..\googletest-src\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/ResultModel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\ResultModel\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/IO/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\IO\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/ModelFacade/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\ModelFacade\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/NeuralNetworkModel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\NeuralNetworkModel\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/VideoHandling/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\VideoHandling\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Model/Parsing/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Model\Parsing\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/View/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\View\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/View/ViewModel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\View\ViewModel\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/View/Renderer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\View\Renderer\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/Communication/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\Communication\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/ControllerFacade/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\ControllerFacade\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/Dispatcher/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\Dispatcher\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/Inferencing/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\Inferencing\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/NeuralNetworkModelAdapter/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\NeuralNetworkModelAdapter\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/Prediction/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\Prediction\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/ResultModelAdapter/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\ResultModelAdapter\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/test/Controller/Training/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\Controller\Training\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Model/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Model\"/>
+		</Unit>
+		<Unit filename="/home/steki/Desktop/PSE/ImplementationPhase/Model/ResultModelModule/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Model\ResultModelModule\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
