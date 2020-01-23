@@ -1,4 +1,4 @@
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "InferencingDistributor.hpp"
 #include "Pager.hpp"
 

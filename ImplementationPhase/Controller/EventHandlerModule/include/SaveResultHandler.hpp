@@ -10,12 +10,12 @@
 class SaveResultHandler : public EventHandler {
 
     public:
-        SaveResultHandler(InferencingDistributor distributor, NeuralNetworkPager nnpager, ImagePager ipager);
+        SaveResultHandler(InferencingDistributor* distributor, NeuralNetworkPager nnpager, ImagePager ipager);
 		SaveResultHandler();
         void onAction();
 
     protected: 
-        InferencingDistributor distributor;
+        InferencingDistributor* distributor;
         NeuralNetworkPager nnpager;
         ImagePager ipager;
 

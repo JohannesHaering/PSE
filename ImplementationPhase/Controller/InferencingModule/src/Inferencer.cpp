@@ -1,5 +1,6 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "Inferencer.hpp"
+#include "contentview.h"
 #include <vector>
  
  /*
@@ -16,5 +17,5 @@ void Inferencer::addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwor
 */
 int Inferencer::getAmountNeuralNetworks() { return neuralNetworks.size(); }
 
-*ContentView Inferencer::getPage() { return page; }
+ContentView* Inferencer::getPage() { return page; }
 

@@ -1,6 +1,7 @@
 #ifndef INFERENCEPAGEADAPTER_H
 #define INFERENCEPAGEADAPTER_H
 #include "inferencepage.h"
+#include "classificationresult.h"
 
 class InferencePageAdapter : public ContentView
 {
@@ -18,13 +19,6 @@ public:
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
     InferencePageAdapter();
-<<<<<<< HEAD
-	void setPerformancePrediction(float num);
-	void setPowerPrediction(float num);
-	void update();
-    //InferencePage* getInferencePage();
-
-=======
     InferencePage* getInferencePage();
     void setDevices(std::vector<Device>* devices);
     void update();
@@ -32,7 +26,6 @@ public:
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult result);
 private:
     InferencePage* inferPage;
->>>>>>> staging_view
 };
 
 #endif // INFERENCEPAGEADAPTER_H

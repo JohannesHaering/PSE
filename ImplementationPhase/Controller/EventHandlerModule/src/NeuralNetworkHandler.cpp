@@ -27,7 +27,7 @@ void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		neuralnetworksetter.getInferencer().getPage().showError("Invalid neural network");
+		neuralnetworksetter.getInferencer().getPage()->showError("Invalid neural network");
 	}
 }
 
@@ -35,7 +35,7 @@ void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
  * Calls the view to open a file explorer and gets the chosen directories.
  */
 std::vector<std::string> NeuralNetworkHandler::fetchDirectory() {
-	return neuralnetworksetter.getInferencer().getPage().getFilesFromExplorer(validformats);
+	return neuralnetworksetter.getInferencer().getPage()->getFilesFromExplorer(validformats);
 }
 
 

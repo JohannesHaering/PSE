@@ -116,3 +116,5 @@ add_executable(
 
 # Link the app!
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} ${QT5_LIBRARIES})
+
+add_subdirectory(ViewModule)

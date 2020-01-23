@@ -13,8 +13,8 @@ class InputImageHandler : public FileExplorerHandler {
         void onAction();
 
     private: 
-        std::vector<std::string> validformatsmanual = {"jpg", "JPG", "png", "PNG"};
-		std::vector<std::string> validformatstxt = {"txt", "TXT"};
+        std::vector<std::string> validformatsmanual = {"jpg", "png"};
+		std::vector<std::string> validformatstxt = {"txt"};
         Distributor distributor; 
 		InferencePageAdapter page;
 
