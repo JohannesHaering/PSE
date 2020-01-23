@@ -8,7 +8,7 @@ HighPerformanceMode::HighPerformanceMode() : Mode("HighPerformanceMode") {}
 //Basic implementation, assignes (if possible) equal amount of img to each Device.
 //Each Device has to run all NeuralNetworks on each image.
 //Can be vastly improved
-list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
+std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
 {
   std::list<Device> deviceList = this->getAllowedDeviceList();
   int deviceAmount = deviceList.size();
@@ -16,7 +16,7 @@ list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistrib
   int imagesPerDevice = imageAmount / deviceAmount; //take care of rounding
   int roundingError = imageAmount - imagesPerDevice;
 
-  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> result;
+  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> result;
 
   std::list<cv::Mat> imageAssignements;
   int startImage = 0;
@@ -37,6 +37,6 @@ list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistrib
 
     result.push_back(resultEntry);
   }
-
+  return result;
 }
 

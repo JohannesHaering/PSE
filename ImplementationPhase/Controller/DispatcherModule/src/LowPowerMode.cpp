@@ -10,7 +10,7 @@ LowPowerMode::LowPowerMode() : Mode("LowPowerMode") {}
 //Basic implementation, assignes (if possible) equal amount of img to each Device.
 //Each Device has to run all NeuralNetworks on each image.
 //Can be vastly improved
-list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
+std::list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
 {
   std::list<Device> deviceList = this->getAllowedDeviceList();
   std::list<std::string> deviceStringList;
@@ -35,12 +35,12 @@ list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistrib
     ++deviceIterator;
   }	  
 
-  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> result;
+  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> result;
   std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> resultEntry;
   get<0>(resultEntry) = lowestPowerDevice;
   get<1>(resultEntry) = this->neuralNetworkList;
   get<2>(resultEntry) = imageList;
   result.push_back(resultEntry);
 
+  return result;
 }
-

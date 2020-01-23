@@ -9,7 +9,7 @@ HighEfficiencyMode::HighEfficiencyMode() : Mode("HighEfficiencyMode") {}
 
 //Basic implementation, assignes all images to the most efficient device.
 //Can be improved, e.g. by taking into consideration the host power usage and therefore using less efficient devices too.
-list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
+std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> Mode::getImageDistribution(std::list<cv::mat> imageList) 
 {
   std::list<Device> deviceList = this->getAllowedDeviceList();
   std::list<std::string> deviceStringList;
@@ -40,12 +40,13 @@ list<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> Mode::getImageDistrib
     ++deviceIterator;
   }	  
 
-  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> result;
+  std::list<std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>>> result;
   std::tuple<Device, std::list<NeuralNetwork>, std::list<cv::Mat>> resultEntry;
   get<0>(resultEntry) = mostEfficientDevice;
   get<1>(resultEntry) = this->neuralNetworkList;
   get<2>(resultEntry) = imageList;
   result.push_back(resultEntry);
 
+  return result;
 }
 
