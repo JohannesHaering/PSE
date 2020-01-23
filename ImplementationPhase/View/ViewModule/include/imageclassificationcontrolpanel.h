@@ -21,17 +21,10 @@ public:
     bool getShowResultsCheckBox();
     bool getSaveResultsCheckBox();
     std::string getNeuralNetworkPath();
-<<<<<<< HEAD
-    std::string getOperatingMode();
-    std::string neuralNetworkPaths;
-    std::string imagePaths;
-    std::string getInputMode();
-=======
     int getOperatingMode();
     std::string neuralNetworkPaths;
     std::string imagePaths;
     int getInputMode();
->>>>>>> stefi_implementation
     std::string getImagePaths();
     static ImageClassificationControlPanel* getInstance();
     void setDevices(std::vector<Device>* devices);

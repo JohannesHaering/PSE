@@ -17,11 +17,7 @@ public:
     void setCurrentImagePath(std::string path);
     void update();
     void setCurrentResultPath(std::string path);
-<<<<<<< HEAD
-    void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, ClassificationResult Result);
-=======
     void resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult Result);
->>>>>>> stefi_implementation
     void nextNNEnable(bool flag);
     void prevNNEnable(bool flag);
     void nextImageEnable(bool flag);
