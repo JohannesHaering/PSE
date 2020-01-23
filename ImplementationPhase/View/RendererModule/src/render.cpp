@@ -46,7 +46,7 @@ void Render::on_start_clicked()
 
 void Render::on_addImage_clicked()
 {
-    std::vector<std::string> types = {"JPG", "png", "PNG", "jpeg", "JPEG"};
+    std::vector<std::string> types = {"PNG","JPG","png","jpg","jpeg","JPEG"};
     ContentView contView;
     path = contView.getFileFromExplorer(types);
     QString pathImg = QString::fromStdString(path);

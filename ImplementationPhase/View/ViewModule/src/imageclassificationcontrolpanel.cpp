@@ -44,6 +44,9 @@ std::vector<Device> ImageClassificationControlPanel::getDevices(){
 void ImageClassificationControlPanel::setDevices(std::vector<Device>* devices){
     ui->CheckBoxWidget->setDevices(devices);
 }
+void ImageClassificationControlPanel::startEnable(bool flag){
+    ui->startImgClass->setEnabled(flag);
+}
 //clicked buttons
 void ImageClassificationControlPanel::on_addImage_clicked()
 {

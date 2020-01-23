@@ -57,3 +57,6 @@ void ObjectDetectionInferencePage::prevImageEnable(bool flag){
 void ObjectDetectionInferencePage::saveResultEnable(bool flag){
      ui->resultPanel->saveResultEnable(flag);
 }
+void ObjectDetectionInferencePage::startEnable(bool flag){
+    ui->controlPanel->startEnable(flag);
+}

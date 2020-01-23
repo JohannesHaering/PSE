@@ -28,6 +28,7 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
+    void startEnable(bool flag);
     void update();
     void resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result);
     bool getAppendResult();

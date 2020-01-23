@@ -55,6 +55,9 @@ void InferencePage::prevImageEnable(bool flag){
 void InferencePage::saveResultEnable(bool flag){
     ui->resultPanel->saveResultEnable(flag);
 }
+void InferencePage::startEnable(bool flag){
+    ui->controlPanel->startEnable(flag);
+}
 int InferencePage::getOperatingMode(){
     return ui->controlPanel->getOperatingMode();
 }

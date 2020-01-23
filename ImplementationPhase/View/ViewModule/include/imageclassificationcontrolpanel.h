@@ -29,6 +29,7 @@ public:
     static ImageClassificationControlPanel* getInstance();
     void setDevices(std::vector<Device>* devices);
     bool getAppendResult();
+    void startEnable(bool flag);
 private slots:
     void on_chooseNeuralNetwork_clicked();
     void on_addImage_clicked();
