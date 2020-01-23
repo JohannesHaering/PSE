@@ -40,6 +40,9 @@ void InferencePageAdapter::prevImageEnable(bool flag){
 void InferencePageAdapter::saveResultEnable(bool flag){
      inferPage->saveResultEnable(flag);
 }
+void InferencePageAdapter::startEnable(bool flag){
+    inferPage->startEnable(flag);
+}
 InferencePage* InferencePageAdapter::getInferencePage(){
     return inferPage;
 }

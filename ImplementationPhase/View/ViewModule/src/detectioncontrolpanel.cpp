@@ -40,6 +40,9 @@ std::string DetectionControlPanel::getNeuralNetworkPath(){
 std::string DetectionControlPanel::getImagePaths(){
     return imagePaths;
 }
+void DetectionControlPanel::startEnable(bool flag){
+    ui->startObjectDet->setEnabled(flag);
+}
 //clicked buttons
 void DetectionControlPanel::on_addImage_clicked()
 {

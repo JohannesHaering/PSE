@@ -28,6 +28,7 @@ public:
     std::string getImagePaths();    
     void setDevices(std::vector<Device>* devices);
     static DetectionControlPanel* getInstance();
+    void startEnable(bool flag);
 private slots:
     void on_addImage_clicked();
 

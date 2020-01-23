@@ -17,6 +17,7 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
+    void startEnable(bool flag);
     InferencePageAdapter();
     InferencePage* getInferencePage();
     void setDevices(std::vector<Device>* devices);

@@ -1,7 +1,7 @@
 #ifndef CLASSIFICATIONRESULTRENDERER_H
 #define CLASSIFICATIONRESULTRENDERER_H
 #include "renderer.h"
-#include "../../ViewModule/include/classificationresult.h"
+#include "classificationresult.h"
 class ClassificationResultRenderer : public Renderer
 {
 public:

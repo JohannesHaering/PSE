@@ -22,6 +22,16 @@ std::vector<std::string> ContentView::getFilesFromExplorer(std::vector<std::stri
     }
     return paths;
 }
+QString* ContentView::vectorToString(std::vector<std::string> formats) {
+    std::string filter = "";
+    for (std::vector<std::string>::iterator it = formats.begin(); it != formats.end(); ++it) {
+        filter += *it + "(*." + *it + ") ;; ";
+    }
+    QString* filterEnd = new QString(QString::fromStdString(filter));
+    filterEnd->truncate(filterEnd->lastIndexOf(QChar(';')));
+    filterEnd->truncate(filterEnd->lastIndexOf(QChar(';')));
+    return filterEnd;
+}
 std::string ContentView::getDirectoryFromExplorer(std::vector<std::string> types){
     widg = new QWidget();
     QString dir = QFileDialog::getExistingDirectory(widg, "Open Directory","/home", QFileDialog::ShowDirsOnly| QFileDialog::DontResolveSymlinks);
@@ -29,7 +39,7 @@ std::string ContentView::getDirectoryFromExplorer(std::vector<std::string> types
 }
 std::string ContentView::getFileFromExplorer(std::vector<std::string> types){
     widg = new QWidget();
-    QString path = QFileDialog::getOpenFileName(widg,"Open a file", "C://","");
+    QString path = QFileDialog::getOpenFileName(widg,"Open a file","~",*vectorToString(types),new QString(QString::fromStdString(types[0])));
     return path.toUtf8().constData();
 }
 void ContentView::showError(std::string error){

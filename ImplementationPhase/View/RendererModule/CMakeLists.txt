@@ -1,10 +1,20 @@
 cmake_minimum_required(VERSION 3.10)
 
-# set the project name
-project(RendererModule C CXX)
+project ( RendererModule )
 
-add_library(CLASSIFICATIONRESULTRENDERER "src/classificationresultrenderer.cpp" "include/classificationresultrenderer.h")
-target_include_directories(CLASSIFICATIONRESULTRENDERER PUBLIC "include/")
+set(CMAKE_AUTOUIC_SEARCH_PATHS "ui/")
 
-add_library(TRAININGRENDERER "src/trainingrenderer.cpp" "include/trainingrenderer.h")
-target_include_directories(TRAININGRENDERER PUBLIC "include/")
+add_library(RENDERER_MODULE
+  "src/classificationresultrenderer.cpp"
+  "src/detectionresultrenderer.cpp"
+  "src/render.cpp"
+  "src/renderer.cpp"
+  "src/trainingrenderer.cpp"
+  "include/classificationresultrenderer.h"
+  "include/detectionresultrenderer.h"
+  "include/render.h"
+  "include/renderer.h"
+  "include/trainingrenderer.h"
+)
+target_include_directories(RENDERER_MODULE PUBLIC "include/")
+target_link_libraries(RENDERER_MODULE PUBLIC VIEW_MODULE)

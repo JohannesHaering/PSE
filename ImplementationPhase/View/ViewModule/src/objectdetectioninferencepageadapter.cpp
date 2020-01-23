@@ -44,6 +44,9 @@ void ObjectDetectionInferencePageAdapter::prevImageEnable(bool flag){
 void ObjectDetectionInferencePageAdapter::saveResultEnable(bool flag){
      inferPage->saveResultEnable(flag);
 }
+void ObjectDetectionInferencePageAdapter::startEnable(bool flag){
+    inferPage->startEnable(flag);
+}
 ObjectDetectionInferencePage* ObjectDetectionInferencePageAdapter::getInferPage(){
     return inferPage;
 }
