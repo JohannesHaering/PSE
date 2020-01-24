@@ -12,6 +12,7 @@ class Pager {
 		int getCurrentPage();
 		bool nextEnable();
 		bool prevEnable();
+		ContentView getGUIPage();
 
 	protected: 
 		int currentPage;

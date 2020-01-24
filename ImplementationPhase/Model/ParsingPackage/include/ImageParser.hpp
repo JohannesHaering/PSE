@@ -9,6 +9,7 @@
 
 class ImageParser : public Parser<cv::Mat> {
     public:
+		ImageParser();
         ImageParser(int width, int height, int channelNumb);
         virtual cv::Mat parse(cv::Mat toParse);
     protected:

@@ -36,10 +36,10 @@ void PredictionHandler::onAction(){
 		performancePrediction += it->second;
 	}
 
-	std::map<std::string, float>::iterator it = powerPredictionValues.begin();
-	while (it != powerPredictionValues.end())
+	std::map<std::string, float>::iterator iterator = powerPredictionValues.begin();
+	while (iterator != powerPredictionValues.end())
 	{
-		powerPrediction += it->second;
+		powerPrediction += iterator->second;
 	}
 
     page.setPerformancePrediction(performancePrediction);

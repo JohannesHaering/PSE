@@ -6,7 +6,9 @@
 
 NetworkLayer InceptionLayerFactory::buildLayer()
 {
-    return InceptionLayer(name, inputDimensions, chain);
+    auto layer =  InceptionLayer(name, inputDimensions);
+	layer.addLayerChain(chain);
+	return layer;
 }
 InceptionLayerFactory InceptionLayerFactory::addLayerChain(NeuralNetwork chain)
 {

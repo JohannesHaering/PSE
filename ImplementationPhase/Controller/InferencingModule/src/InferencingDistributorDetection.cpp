@@ -18,6 +18,6 @@ void InferencingDistributorDetection::enableStart()
 */
 void InferencingDistributorDetection::drawResult(Result result) 
 {
-    page.setResult(result);
+    //page.setResult(result);
 }    
 

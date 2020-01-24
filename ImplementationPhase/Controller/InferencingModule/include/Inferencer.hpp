@@ -4,7 +4,6 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "contentview.h"
 #include <vector>
-#include "contentview.h"
 
 class Inferencer {
 
