@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <assert.h>
-#include "ViewFacade.hpp"
-#include "TrainingPage.hpp"
+#include "viewfacade.h"
+#include "training.h"
 
 class NewTrainStepHandler {
     
@@ -13,7 +13,7 @@ class NewTrainStepHandler {
         void newAccuracyPoints(std::vector<float> training, std::vector<float> test);
 
     private: 
-        TrainingPage page;    
+        Training* page;    
 
 };
 #endif

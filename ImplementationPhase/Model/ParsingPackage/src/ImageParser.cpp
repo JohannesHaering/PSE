@@ -5,4 +5,8 @@
 #include <string>
 #include <list>
 
+ImageParser::ImageParser() {
+
+}
+
 ImageParser::ImageParser(int width, int height, int channelNumb) : width(width), height(height), channelNumb(channelNumb) {}

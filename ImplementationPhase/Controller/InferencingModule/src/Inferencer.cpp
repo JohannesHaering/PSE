@@ -1,5 +1,6 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "Inferencer.hpp"
+#include "contentview.h"
 #include <vector>
  
  /*
@@ -15,4 +16,6 @@ void Inferencer::addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwor
 * Returns the amount of saved neural networks.
 */
 int Inferencer::getAmountNeuralNetworks() { return neuralNetworks.size(); }
+
+ContentView* Inferencer::getPage() { return page; }
 

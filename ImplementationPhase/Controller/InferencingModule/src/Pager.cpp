@@ -1,4 +1,4 @@
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 #include "InferencingDistributor.hpp"
 #include "Pager.hpp"
 
@@ -70,4 +70,8 @@ bool Pager::nextEnable()
 bool Pager::prevEnable()
 {
 	return currentPage > 0;
+}
+
+ContentView Pager::getGUIPage() {
+	return page;
 }

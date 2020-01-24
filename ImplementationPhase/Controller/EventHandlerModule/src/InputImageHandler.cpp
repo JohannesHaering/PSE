@@ -25,21 +25,21 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
 	try {
-		ViewFacade view = ViewFacade::getInstance();
-		int mode = page.getInputMode();
+		InferencePageAdapter* page = (InferencePageAdapter*) distributor.getPage();
+		int mode = page->getInputMode();
 		// normaler mode
 		if (mode == 0)
 		{
-			return page.getDirectories(validformatsmanual);
+			return page->getFilesFromExplorer(validformatsmanual);
 		}
 		// text file
 		else if (mode == 1) {
-			return view.getDirectories(validformatstxt);
+			return page->getFilesFromExplorer(validformatstxt);
 		}
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		view.exceptionText("Invalid image");
+		page.showError("Invalid image");
 	}
 
 }

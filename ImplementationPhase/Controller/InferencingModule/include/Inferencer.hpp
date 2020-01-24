@@ -9,7 +9,7 @@ class Inferencer {
 
     protected:
 		std::vector<NeuralNetworkAdapter> neuralNetworks;
-		ContentView page;
+		ContentView* page;
 
     public: 
 		void addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwork);
@@ -17,7 +17,7 @@ class Inferencer {
 		virtual void startProcess(); 
 		virtual bool canStart();
 		virtual void enableStart(); 
-		ContentView getPage();
+		ContentView* getPage();
 
 
 };

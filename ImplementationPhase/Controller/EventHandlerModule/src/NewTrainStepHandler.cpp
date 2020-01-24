@@ -1,11 +1,11 @@
 #include <vector>
 #include <assert.h>
 #include "viewfacade.h"
-#include "TrainingPage.hpp"
+#include "training.h"
 #include "NewTrainStepHandler.hpp"
 
 
-NewTrainStepHandler::NewTrainStepHandler() : page(ViewFacade::getTrainingPage()) { }
+NewTrainStepHandler::NewTrainStepHandler() : page(ViewFacade::getInstance()->getTraining()) { }
 
 /*
 * Calls the view to display more training points.
@@ -16,5 +16,5 @@ NewTrainStepHandler::NewTrainStepHandler() : page(ViewFacade::getTrainingPage())
 */
 void NewTrainStepHandler::newAccuracyPoints(std::vector<float> training, std::vector<float> test) {
     assert(training.size() == test.size());
-    page.newTrainingFinished(training, test);          
+    page->newTrainingFinished(training, test);          
 }
