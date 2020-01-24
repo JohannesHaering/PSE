@@ -3,6 +3,6 @@
 
 enum PollingType {
   MAX,
-  AVEREAGE
+  AVERAGE
 };
 #endif

@@ -21,7 +21,7 @@ class ConvolutionLayer  : public NetworkLayer {
     TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();
-    virtual int* getTensorDimenssions();
+    virtual int* getTensorDimensions();
     // ~ConvolutionLayer();
 };
 #endif
