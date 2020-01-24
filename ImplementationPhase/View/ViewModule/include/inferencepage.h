@@ -30,6 +30,8 @@ public:
     void saveResultEnable(bool flag);
     void startEnable(bool flag);
     void update();
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
     void resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result);
     bool getAppendResult();
 private slots:

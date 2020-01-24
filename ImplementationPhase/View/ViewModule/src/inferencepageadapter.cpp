@@ -25,6 +25,12 @@ bool InferencePageAdapter::getSaveResults(){
 bool InferencePageAdapter::getAppendResult(){
     return inferPage->getAppendResult();
 }
+void InferencePageAdapter::setPowerPrediction(float amount){
+    inferPage->setPowerPrediction(amount);
+}
+void InferencePageAdapter::setPerformancePrediction(float amount){
+    inferPage->setPerformancePrediction(amount);
+}
 void InferencePageAdapter::nextNNEnable(bool flag){
      inferPage->nextNNEnable(flag);
 }

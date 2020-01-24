@@ -59,7 +59,7 @@ void Render::on_save_clicked()
     QByteArray bytes;
     QBuffer buffer(&bytes);
     buffer.open(QIODevice::WriteOnly);
-    QString savePath = QFileDialog::getSaveFileName(this,tr("open file"),"",tr("JPEG (*.jpg *.jpeg);;PNG (*.png)"));
+    QString savePath = QFileDialog::getSaveFileName(this,tr("open file"),"",tr("Files (*.jpg *.jpeg *.png)"));
     pixmap->save(savePath);
 }
 

@@ -18,6 +18,8 @@ public:
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
     void startEnable(bool flag);
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
     InferencePageAdapter();
     InferencePage* getInferencePage();
     void setDevices(std::vector<Device>* devices);

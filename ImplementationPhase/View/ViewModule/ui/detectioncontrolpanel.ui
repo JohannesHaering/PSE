@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>250</width>
-    <height>480</height>
+    <height>638</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,7 +67,7 @@
     <rect>
      <x>30</x>
      <y>360</y>
-     <width>111</width>
+     <width>141</width>
      <height>41</height>
     </rect>
    </property>
@@ -78,8 +78,8 @@
   <widget class="QPushButton" name="startObjectDet">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>412</y>
+     <x>40</x>
+     <y>560</y>
      <width>161</width>
      <height>41</height>
     </rect>
@@ -113,7 +113,7 @@
     <rect>
      <x>20</x>
      <y>160</y>
-     <width>141</width>
+     <width>181</width>
      <height>31</height>
     </rect>
    </property>
@@ -145,6 +145,58 @@
      <string>Low Power Consumption Mode</string>
     </property>
    </item>
+  </widget>
+  <widget class="QLabel" name="powerPredictionText">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>440</y>
+     <width>121</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Power Predcition</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="performancePrediction">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>470</y>
+     <width>58</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="powerPrediction">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>440</y>
+     <width>58</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="performancePredictionText">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>470</y>
+     <width>151</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Performance Prediction</string>
+   </property>
   </widget>
  </widget>
  <customwidgets>
