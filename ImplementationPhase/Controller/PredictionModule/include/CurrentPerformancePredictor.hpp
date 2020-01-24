@@ -3,7 +3,7 @@
 
 #include "PerformancePredictorFromFile.hpp"
 #include "Channel.hpp"
-#include "NeuralNetworkdAdapter.hpp"
+#include "NeuralNetworkAdapter.hpp"
 
 #include <opencv2/opencv.hpp>
 #include <list>

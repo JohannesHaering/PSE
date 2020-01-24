@@ -12,7 +12,6 @@
 class InferencingDistributor : public Distributor {
 
 	public:
-		InferencingDistributor();
         void startProcess();
         void saveResult(std::string nn_id, std::string input_id, std::string path);
         void drawResult(std::string nn_id, std::string input_id);

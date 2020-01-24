@@ -8,7 +8,7 @@
 #include "Channel.hpp"
 #include "CPUChannel.hpp"
 #include "FPGAChannel.hpp"
-#include "GPUChanel.hpp"
+#include "GPUChannel.hpp"
 #include "ASICChannel.hpp"
 
 #include <string>
@@ -45,22 +45,22 @@ std::map<std::string, float> CurrentPerformancePredictor::predict(std::list<std:
 
 	while (std::getline(file, temp))
 	{
-		if (temp == "CPU")
+		if (temp.compare("CPU") == 0)
 		{
 			state = 0;
 			continue;
 		}
-		if (temp == "FPGA")
+		if (temp.compare("FPGA") == 0)
 		{
 			state = 1;
 			continue;
 		}
-		if (temp == "GPU")
+		if (temp.compare("GPU") == 0)
 		{
 			state = 2;
 			continue;
 		}
-		if (temp == "ASIC")
+		if (temp.compare("ASIC") == 0)
 		{
 			state = 3;
 			continue;
@@ -122,24 +122,24 @@ std::map<std::string, float> CurrentPerformancePredictor::predict(std::list<std:
 	{
 		// Create device speficic channel
 		Channel* currentChannel;
-		if (it->getType().compare("CPU"))
+		if (it->getType().compare("CPU") == 0)
 		{
-			currentChannel = CPUChannel(*it, neuralNetworkList);
+			currentChannel = (Channel*) new CPUChannel(*it, neuralNetworkList);
 			cpuMap.find((*it).getName())->second = measureTime(currentChannel, neuralNetworkList, imageList);
 		}
-		if (it->getType().compare("FPGA"))
+		if (it->getType().compare("FPGA") == 0)
 		{
-			currentChannel = FPGAChannel(*it, neuralNetworkList);
+			currentChannel = (Channel*) new FPGAChannel(*it, neuralNetworkList);
 			fpgaMap.find((*it).getName())->second = measureTime(currentChannel, neuralNetworkList, imageList);
 		}
-		if (it->getType().compare("GPU"))
+		if (it->getType().compare("GPU") == 0)
 		{
-			currentChannel = GPUChannel(*it, neuralNetworkList);
+			currentChannel = (Channel*) new GPUChannel(*it, neuralNetworkList);
 			gpuMap.find((*it).getName())->second = measureTime(currentChannel, neuralNetworkList, imageList);
 		}
-		if (it->getType().compare("ASIC"))
+		if (it->getType().compare("ASIC") == 0)
 		{
-			currentChannel = ASICChannel(*it, neuralNetworkList);
+			currentChannel = (Channel*) new ASICChannel(*it, neuralNetworkList);
 			asicMap.find((*it).getName())->second = measureTime(currentChannel, neuralNetworkList, imageList);
 		}
     }
