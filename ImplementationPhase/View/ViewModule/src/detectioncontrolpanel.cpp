@@ -43,6 +43,16 @@ std::string DetectionControlPanel::getImagePaths(){
 void DetectionControlPanel::startEnable(bool flag){
     ui->startObjectDet->setEnabled(flag);
 }
+void DetectionControlPanel::setPowerPrediction(float amount){
+    powerPrediction = amount;
+}
+void DetectionControlPanel::setPerformancePrediction(float amount){
+    performancePrediction = amount;
+}
+void DetectionControlPanel::updateValues(){
+ui->performancePrediction->setText(QString::number(performancePrediction));
+ui->powerPrediction->setText(QString::number(powerPrediction));
+}
 //clicked buttons
 void DetectionControlPanel::on_addImage_clicked()
 {

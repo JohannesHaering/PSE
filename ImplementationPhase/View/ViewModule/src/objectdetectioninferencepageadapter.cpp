@@ -25,6 +25,12 @@ bool ObjectDetectionInferencePageAdapter::getShowResults(){
 bool ObjectDetectionInferencePageAdapter::getSaveResults(){
     return inferPage->getSaveResults();
 }
+void ObjectDetectionInferencePageAdapter::setPowerPrediction(float amount){
+   inferPage->setPowerPrediction(amount);
+}
+void ObjectDetectionInferencePageAdapter::setPerformancePrediction(float amount){
+    inferPage->setPerformancePrediction(amount);
+}
 void ObjectDetectionInferencePageAdapter::update(){
      inferPage->update();
 }

@@ -29,6 +29,9 @@ public:
     void setDevices(std::vector<Device>* devices);
     static DetectionControlPanel* getInstance();
     void startEnable(bool flag);
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
+    void updateValues();
 private slots:
     void on_addImage_clicked();
 
@@ -37,6 +40,8 @@ private slots:
     void on_startObjectDet_clicked();
 
 private:
+    float powerPrediction;
+    float performancePrediction;
     Ui::DetectionControlPanel *ui;
 };
 

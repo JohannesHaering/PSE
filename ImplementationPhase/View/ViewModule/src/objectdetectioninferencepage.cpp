@@ -20,6 +20,7 @@ int ObjectDetectionInferencePage::getOperatingMode(){
 }
 void ObjectDetectionInferencePage::update(){
     ui->resultPanel->update();
+    ui->controlPanel->updateValues();
 }
 //Check Boxes
 bool ObjectDetectionInferencePage::getAppendResult(){
@@ -47,6 +48,12 @@ void ObjectDetectionInferencePage::nextNNEnable(bool flag){
 }
 void ObjectDetectionInferencePage::prevNNEnable(bool flag){
      ui->resultPanel->prevNNEnable(flag);
+}
+void ObjectDetectionInferencePage::setPowerPrediction(float amount){
+    ui->controlPanel->setPowerPrediction(amount);
+}
+void ObjectDetectionInferencePage::setPerformancePrediction(float amount){
+    ui->controlPanel->setPerformancePrediction(amount);
 }
 void ObjectDetectionInferencePage::nextImageEnable(bool flag){
      ui->resultPanel->nextImageEnable(flag);

@@ -47,6 +47,17 @@ void ImageClassificationControlPanel::setDevices(std::vector<Device>* devices){
 void ImageClassificationControlPanel::startEnable(bool flag){
     ui->startImgClass->setEnabled(flag);
 }
+
+void ImageClassificationControlPanel::setPowerPrediction(float amount){
+    powerPrediction = amount;
+}
+void ImageClassificationControlPanel::setPerformancePrediction(float amount){
+    performancePrediction = amount;
+}
+void ImageClassificationControlPanel::updateValues(){
+ui->performancePrediction->setText(QString::number(performancePrediction));
+ui->powerPrediction->setText(QString::number(powerPrediction));
+}
 //clicked buttons
 void ImageClassificationControlPanel::on_addImage_clicked()
 {

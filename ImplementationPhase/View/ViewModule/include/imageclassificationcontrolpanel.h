@@ -30,12 +30,17 @@ public:
     void setDevices(std::vector<Device>* devices);
     bool getAppendResult();
     void startEnable(bool flag);
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
+    void updateValues();
 private slots:
     void on_chooseNeuralNetwork_clicked();
     void on_addImage_clicked();
     void on_startImgClass_clicked();
 
 private:
+    float powerPrediction;
+    float performancePrediction;
     ContentView *contView;
     Ui::ImageClassificationControlPanel *ui;
 };

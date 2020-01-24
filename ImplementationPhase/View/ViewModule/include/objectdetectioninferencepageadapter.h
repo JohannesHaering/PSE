@@ -23,6 +23,8 @@ public:
     ObjectDetectionInferencePage* getInferPage();
     void startEnable(bool flag);
     void update();
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
 private:
     ObjectDetectionInferencePage* inferPage;

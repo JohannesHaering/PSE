@@ -27,6 +27,8 @@ public:
     void nextImageEnable(bool flag);
     void prevImageEnable(bool flag);
     void saveResultEnable(bool flag);
+    void setPowerPrediction(float amount);
+    void setPerformancePrediction(float amount);
     void startEnable(bool flag);
     void update();
     void resultsChanged(std::string nnName, std::string imgName, std::string imgPath, std::string resultPath);
