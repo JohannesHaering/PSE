@@ -3,12 +3,26 @@
 
 #include <list>
 #include <string>
-#include "NetworkLayer.hpp"
+// #include "NetworkLayer.hpp"
+
+#include "ConvolutionLayer.hpp"
+#include "ActivationLayer.hpp"
+#include "PollingLayer.hpp"
+#include "LocalResponseNormalizationLayer.hpp"
+#include "DenseLayer.hpp"
+#include "FlattenLayer.hpp"
+#include "DropoutLayer.hpp"
+#include "CollectResultsLayer.hpp"
+#include "OutputStorageLayer.hpp"
+#include "InceptionLayer.hpp"
 
 class NeuralNetwork {
 
   private:
     std::string name;
+    int width;
+    int height;
+    int channels;
     std::list<NetworkLayer*> layers;
     // NetworkLayer *firstLayer;
     // NetworkLayer *currentLayer;
@@ -18,13 +32,19 @@ class NeuralNetwork {
   public:
     NeuralNetwork();
     NeuralNetwork(std::string name);
+    NeuralNetwork(std::string name, int width, int height, int channels);
     void addLayer(NetworkLayer* layer);
     void setName(std::string name);
+    void setInputDimensions(int width, int height, int channels);
     std::string getName();
+    int getWidth();
+    int getHeight();
+    int getChannels();
     NetworkLayer* getFirstLayer();
     NetworkLayer* getLastLayer();
     NetworkLayer* getNextLayer();
     NetworkLayer* getPreviousLayer();
+    int getLayerCount();
     ~NeuralNetwork();
 };
 #endif

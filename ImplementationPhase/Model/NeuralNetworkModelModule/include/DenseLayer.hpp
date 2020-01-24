@@ -15,7 +15,7 @@ class DenseLayer  : public NetworkLayer {
     DenseLayer(std::string name, int* inputDimensions, MATRIX_2D(float) matrix);
     void setMatrix(MATRIX_2D(float) matrix);
     MATRIX_2D(float) getMatrix();
-    virtual int* getTensorDimenssions();
+    virtual int* getTensorDimensions();
     // ~DenseLayer();
 };
 #endif

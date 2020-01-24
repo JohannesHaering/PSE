@@ -20,7 +20,7 @@ private:
     std::string getName();
     LayerType getLayerType();
     int* getInputDimensions();
-    virtual int* getTensorDimenssions();
+    virtual int* getTensorDimensions();
     // ~NetworkLayer();
 };
 #endif
