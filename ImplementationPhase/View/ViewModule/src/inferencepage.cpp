@@ -36,6 +36,13 @@ void InferencePage::setDevices(std::vector<Device>* devices){
 }
 void InferencePage::update(){
     ui->resultPanel->update();
+    ui->controlPanel->updateValues();
+}
+void InferencePage::setPowerPrediction(float amount){
+    ui->controlPanel->setPowerPrediction(amount);
+}
+void InferencePage::setPerformancePrediction(float amount){
+    ui->controlPanel->setPerformancePrediction(amount);
 }
 void InferencePage::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
     ui->resultPanel->resultsChanged(nnName,imgName,mat,result);

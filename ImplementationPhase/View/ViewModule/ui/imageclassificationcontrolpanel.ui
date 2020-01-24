@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>250</width>
-    <height>480</height>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,7 +64,7 @@
     <rect>
      <x>20</x>
      <y>190</y>
-     <width>141</width>
+     <width>171</width>
      <height>31</height>
     </rect>
    </property>
@@ -112,7 +112,7 @@
     <rect>
      <x>30</x>
      <y>380</y>
-     <width>111</width>
+     <width>151</width>
      <height>41</height>
     </rect>
    </property>
@@ -123,9 +123,9 @@
   <widget class="QPushButton" name="startImgClass">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>422</y>
-     <width>161</width>
+     <x>10</x>
+     <y>570</y>
+     <width>191</width>
      <height>41</height>
     </rect>
    </property>
@@ -144,6 +144,58 @@
    </property>
    <property name="text">
     <string>Add Image</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="powerPredictionText">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>450</y>
+     <width>121</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Power Prediction:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="powerPrediction">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>450</y>
+     <width>58</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="performancePredictionText">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>500</y>
+     <width>151</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Performance Prediction:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="performancePrediction">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>500</y>
+     <width>58</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
