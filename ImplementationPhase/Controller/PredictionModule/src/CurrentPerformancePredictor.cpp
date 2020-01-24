@@ -28,7 +28,8 @@ std::map<std::string, float> CurrentPerformancePredictor::predict(std::list<std:
 	std::list<NeuralNetworkAdapter> neuralNetworkList;
 	neuralNetworkList.push_back(neuralNetwork);
 
-	cv::Mat image = ImageFacade().getImage(imagePath, neuralNetwork.getWidth(), neuralNetwork.getHeight(), neuralNetwork.getChannelNumb());
+	//cv::Mat image = ImageFacade().getImage(imagePath, neuralNetwork.getWidth(), neuralNetwork.getHeight(), neuralNetwork.getChannelNumb());
+	cv::Mat image = ImageFacade().getImage(imagePath, *neuralNetwork.getFirstLayer()->getInputDimensions(), *neuralNetwork.getFirstLayer()->getInputDimensions(), 3);
 	std::list<cv::Mat> imageList;
 	imageList.push_back(image);
 
@@ -169,7 +170,7 @@ std::map<std::string, float> CurrentPerformancePredictor::predict(std::list<std:
         prediction.insert(*it);
     }
     outputFile.close();
-
+	return prediction;
 }
 
 float CurrentPerformancePredictor::measureTime(Channel* channel, std::list<NeuralNetworkAdapter> neuralNetworks, std::list<cv::Mat> images)
