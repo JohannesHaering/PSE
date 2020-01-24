@@ -7,7 +7,7 @@ TopologyInferencer::TopologyInferencer() : page(ViewFacade::getInstance()->getTo
 * Changes the displayed topology of a neural network.
 */
 void TopologyInferencer::startProcess() {
-	page.topologyChanged(neuralNetwork);
+	//page.topologyChanged(neuralNetwork);
 	page.update();
 }
 
@@ -25,5 +25,5 @@ bool TopologyInferencer::canStart() {
 * Enables or disables the Start button accordingly.
 */
 void TopologyInferencer::enableStart() {
-	page.startButtonEnable(canStart());
+	//page.startEnable(canStart());
 }

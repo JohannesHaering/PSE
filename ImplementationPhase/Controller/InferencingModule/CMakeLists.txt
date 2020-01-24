@@ -54,6 +54,7 @@ target_link_libraries(PAGER PUBLIC INFERENCINGDISTRIBUTOR)
 add_library(TOPOLOGYINFERENCER "src/TopologyInferencer.cpp" "include/TopologyInferencer.hpp")
 target_include_directories(TOPOLOGYINFERENCER PUBLIC "include/")
 target_link_libraries(TOPOLOGYINFERENCER PUBLIC VIEW_MODULE)
+target_link_libraries(TOPOLOGYINFERENCER PUBLIC NEURALNETWORKADAPTER)
 
 add_library(TRAININGDISTRIBUTOR "src/TrainingDistributor.cpp" "include/TrainingDistributor.hpp")
 target_include_directories(TRAININGDISTRIBUTOR PUBLIC "include/")

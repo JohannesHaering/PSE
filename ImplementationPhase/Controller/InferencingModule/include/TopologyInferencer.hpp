@@ -4,6 +4,7 @@
 #include "Inferencer.hpp"
 #include "viewfacade.h"
 #include "topology.h"
+#include "NeuralNetworkAdapter.hpp"
 
 class TopologyInferencer : public Inferencer {
 

@@ -21,7 +21,6 @@ class InferencingDistributor : public Distributor {
 
     protected: 
 		InferencePageAdapter page;
-        DispatchManager dispatcher; 
         ResultManager resultManager;
         virtual void drawResult(Result result);
 

@@ -16,7 +16,7 @@ public:
     std::map<std::string, float> predict(std::list<std::string> deviceIds) override;
 private:
     void save(std::map<std::string, float> values);
-    float measureTime(Channel channel, std::list<NeuralNetworkAdapter> neuralNetworks, std::list<cv::Mat> images);
+    float measureTime(Channel* channel, std::list<NeuralNetworkAdapter> neuralNetworks, std::list<cv::Mat> images);
     std::string nerualNetworkPath = "..\\Data\\test_neuralnetwork.cfg";
     std::string imagePath = "..\\Data\\test_image.jpeg";
 };

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 add_library(CURRENTPERFORMANCEPREDICTOR "include/CurrentPerformancePredictor.hpp" "src/CurrentPerformancePredictor.cpp")
 target_include_directories(CURRENTPERFORMANCEPREDICTOR PUBLIC "include/")
 target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC PERFORMANCEPREDICTORFROMFILE)
-target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC CHANNEL IMAGEFACADE NEURALNETWORKFACADE NEURALNETWORK)
+target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC CHANNEL IMAGEFACADE NEURALNETWORKFACADE NEURALNETWORKADAPTER)
 
 add_library(PERFORMANCEPREDICTORFROMFILE "include/PerformancePredictorFromFile.hpp" "src/PerformancePredictorFromFile.cpp")
 target_include_directories(PERFORMANCEPREDICTORFROMFILE PUBLIC "include/")

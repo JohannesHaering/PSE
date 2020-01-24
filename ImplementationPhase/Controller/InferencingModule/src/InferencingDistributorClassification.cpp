@@ -32,7 +32,8 @@ void InferencingDistributorClassification::enableStart(){
 void InferencingDistributorClassification::startProcess()
 {
 	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
-    dispatcher.setNeuralNetworkList(nnlist);
+	DispatchManager dispatcher = DispatchManager::getInstance();
+	dispatcher.setNeuralNetworkList(nnlist);
     std::vector<Device> platforms = page.getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
