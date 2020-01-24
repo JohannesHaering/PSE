@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "NextHandler.hpp"
 #include "NeuralNetworkPager.hpp"
-#include "ViewFacade.hpp"
+#include "viewfacade.h"
 
 struct NextHandlerTests : testing::Test 
 {
@@ -10,7 +10,7 @@ struct NextHandlerTests : testing::Test
 	NextHandler* handler;
 
 	NextHandlerTests() {
-		pager = new NeuralNetworkPager(2, ViewFacade::getClassificationPage());
+		pager = new NeuralNetworkPager(2, ViewFacade::getInstance()->getImageClassification());
 		handler = new NextHandler(*pager);
 	}
 
