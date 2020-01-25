@@ -5,10 +5,9 @@
 #include <opencv2/opencv.hpp>
 
 class ImageParserWithSizing : public ImageParser {
-        public:
-			ImageParserWithSizing();
-			ImageParserWithSizing(int width, int height, int channels);
-        cv::Mat parse(cv::Mat toParse) override;
+public:
+	ImageParserWithSizing(int width, int height, int channels);
+	cv::Mat parse(cv::Mat toParse) override;
 };
 
 #endif
