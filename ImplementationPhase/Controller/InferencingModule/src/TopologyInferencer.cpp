@@ -1,7 +1,7 @@
 #include "TopologyInferencer.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 
-TopologyInferencer::TopologyInferencer() : page(ViewFacade::getInstance()->getTopology()) { }
+TopologyInferencer::TopologyInferencer() : page(ViewFacade::getInstance()->getTopologyPanel()) { }
 
 /*
 * Changes the displayed topology of a neural network.

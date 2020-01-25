@@ -1,7 +1,7 @@
 #ifndef PAGER_H_
 #define PAGER_H_
 
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class Pager {
 

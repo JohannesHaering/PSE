@@ -3,8 +3,8 @@
 
 #include "NeuralNetworkAdapter.hpp"
 #include "Inferencer.hpp"
-#include "viewfacade.h"
-#include "topology.h"
+#include "ViewFacade.hpp"
+#include "TopologyPanel.hpp"
 
 // class NeuralNetworkAdapter;
 class TopologyInferencer : public Inferencer {
@@ -17,7 +17,7 @@ public:
 
 private:
 	NeuralNetworkAdapter neuralNetwork;
-	Topology page;
+	TopologyPanel page;
 
 };
 #endif

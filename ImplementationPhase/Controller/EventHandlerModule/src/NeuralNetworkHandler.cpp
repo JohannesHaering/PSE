@@ -2,7 +2,7 @@
 #include "NeuralNetworkSetter.hpp"
 #include "FileExplorerHandler.hpp"
 #include "NeuralNetworkHandler.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include <stdexcept>
 
 /**

@@ -3,7 +3,7 @@
 
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class InputImageHandler : public FileExplorerHandler {
 

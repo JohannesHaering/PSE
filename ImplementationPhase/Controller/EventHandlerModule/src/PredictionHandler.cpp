@@ -1,10 +1,10 @@
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "ResultManager.hpp"
 #include "DispatchManager.hpp"
 #include "PredictionHandler.hpp"
 #include "PowerPredictorFromFile.hpp"
 #include "PerformancePredictorFromFile.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 #include <list>
 
 PredictionHandler::PredictionHandler(InferencePageAdapter page) :

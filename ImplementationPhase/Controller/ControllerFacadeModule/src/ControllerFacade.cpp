@@ -18,8 +18,8 @@
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "ControllerFacade.hpp"
-#include "inferencepageadapter.h"
-#include "viewfacade.h"
+#include "InferencePageAdapter.hpp"
+#include "ViewFacade.hpp"
 
 ControllerFacade* ControllerFacade::getInstance(){
 	if (!instance)

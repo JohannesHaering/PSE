@@ -1,6 +1,6 @@
 #include "Inferencer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "contentview.h"
+#include "ContentView.hpp"
 #include <vector>
 
  /*

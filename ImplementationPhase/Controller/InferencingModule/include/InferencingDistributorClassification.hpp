@@ -2,7 +2,7 @@
 #define INFERENCING_DISTRIBUTOR_CLASSIFICATION_H_
 
 #include "InferencingDistributor.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class InferencingDistributorClassification : virtual public InferencingDistributor {
 

@@ -2,12 +2,12 @@
 #define INFERENCING_DISTRIBUTOR_H_
 
 #include "Distributor.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class InferencingDistributor : public Distributor {
 

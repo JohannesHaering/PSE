@@ -5,7 +5,7 @@
 #include "NeuralNetworkPager.hpp"
 #include "ImagePager.hpp"
 #include "EventHandler.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class SaveResultHandler : public EventHandler {
 

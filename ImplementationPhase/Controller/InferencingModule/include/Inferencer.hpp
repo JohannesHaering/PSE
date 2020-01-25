@@ -2,7 +2,7 @@
 #define INFERENCER_H_
 
 #include "NeuralNetworkAdapter.hpp"
-#include "contentview.h"
+#include "ContentView.hpp"
 #include <vector>
 
 // class NeuralNetworkAdapter;
