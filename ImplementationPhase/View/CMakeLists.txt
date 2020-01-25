@@ -31,16 +31,23 @@ include_directories(
 
 add_subdirectory(ViewModule)
 add_subdirectory(RendererModule)
+add_subdirectory(ExternalTestClassesView)
 
 # Link view and renderer libraries here
-add_library(IMAGE_CLASSIFICATION_VIEW INTERFACE)
-target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE VIEW_MODULE RENDERER_MODULE)
+# add_library(IMAGE_CLASSIFICATION_VIEW INTERFACE)
+# target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE VIEW_MODULE RENDERER_MODULE)
+# target_link_libraries(VIEW_MODULE PUBLIC CONTROLLERFACADE)
+# target_link_libraries(RENDERER_MODULE PUBLIC CONTROLLERFACADE)
 
 # include_directories("${CMAKE_BINARY_DIR}")
 
 # Link the app!
-target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE ${QT5_LIBRARIES} ${OpenCV_LIBS})
+# target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE ${QT5_LIBRARIES} ${OpenCV_LIBS})
+# target_link_libraries(VIEW_MODULE PUBLIC ${QT5_LIBRARIES} ${OpenCV_LIBS})
+# target_link_libraries(RENDERER_MODULE PUBLIC ${QT5_LIBRARIES} ${OpenCV_LIBS})
 
 # Build the app! (just a main function to test; would prbably moved to Controller)
 add_executable(${IMAGE_CLASSIFICATION_TARGET} "src/main.cpp")
-target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} IMAGE_CLASSIFICATION_VIEW)
+# target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} IMAGE_CLASSIFICATION_VIEW)
+target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} VIEW_MODULE)
+target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} RENDERER_MODULE)
