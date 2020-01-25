@@ -10,7 +10,7 @@ NeuralNetwork NeuralNetworkFactory::buildNeuralNetwork()
     NeuralNetwork neuralNetwork(name);
     for (auto it = layers.begin(); it != layers.end(); ++it)
     {
-        neuralNetwork.addLayer(*it);
+        neuralNetwork.addLayer(&(*it));
     }
 
     return neuralNetwork;

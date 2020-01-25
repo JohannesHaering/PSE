@@ -18,7 +18,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 # Name the QT5 libraries
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 
-# set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
 
 include_directories(
   # ${Qt5Core_INCLUDE_DIRS} # included as dependency with ${Qt5Widgets_INCLUDE_DIRS}

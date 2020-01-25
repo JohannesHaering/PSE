@@ -4,6 +4,7 @@ add_library(CURRENTPERFORMANCEPREDICTOR "include/CurrentPerformancePredictor.hpp
 target_include_directories(CURRENTPERFORMANCEPREDICTOR PUBLIC "include/")
 target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC PERFORMANCEPREDICTORFROMFILE)
 target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC CHANNEL IMAGEFACADE NEURALNETWORKFACADE NEURALNETWORK)
+target_link_libraries(CURRENTPERFORMANCEPREDICTOR PUBLIC NEURALNETWORKADAPTER)
 
 add_library(PERFORMANCEPREDICTORFROMFILE "include/PerformancePredictorFromFile.hpp" "src/PerformancePredictorFromFile.cpp")
 target_include_directories(PERFORMANCEPREDICTORFROMFILE PUBLIC "include/")
@@ -15,4 +16,3 @@ target_link_libraries(POWERPREDICTORFROMFILE PUBLIC CHANNEL)
 
 add_library(PREDICTOR "include/Predictor.hpp" "src/Predictor.cpp")
 target_include_directories(PREDICTOR PUBLIC "include/")
-
