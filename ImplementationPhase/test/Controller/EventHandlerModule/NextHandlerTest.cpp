@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "NextHandler.hpp"
 #include "NeuralNetworkPager.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 
 struct NextHandlerTests : testing::Test 
 {
