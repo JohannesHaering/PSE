@@ -10,9 +10,9 @@
  * Parameters:
  * -Inferencer inferencer: The inferencer to set the neural networks to.
  */
-NeuralNetworkHandler::NeuralNetworkHandler(Inferencer inferencer)
+NeuralNetworkHandler::NeuralNetworkHandler(Inferencer* inferencer)
 {
-    neuralnetworksetter = NeuralNetworkSetter(inferencer);
+    *neuralnetworksetter = NeuralNetworkSetter(inferencer);
 }
 
 /**
@@ -23,11 +23,11 @@ NeuralNetworkHandler::NeuralNetworkHandler(Inferencer inferencer)
 void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
 {
 	try {
-		neuralnetworksetter.setNeuralNetwork(directories);
+        neuralnetworksetter->setNeuralNetwork(directories);
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		neuralnetworksetter.getInferencer().getPage()->showError("Invalid neural network");
+        neuralnetworksetter->getInferencer()->getPage()->showError("Invalid neural network");
 	}
 }
 
@@ -35,7 +35,7 @@ void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
  * Calls the view to open a file explorer and gets the chosen directories.
  */
 std::vector<std::string> NeuralNetworkHandler::fetchDirectory() {
-	return neuralnetworksetter.getInferencer().getPage()->getFilesFromExplorer(validformats);
+    return neuralnetworksetter->getInferencer()->getPage()->getFilesFromExplorer(validformats);
 }
 
 

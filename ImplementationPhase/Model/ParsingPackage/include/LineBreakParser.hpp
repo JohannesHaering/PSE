@@ -4,11 +4,10 @@
 #include "Parser.hpp"
 #include <string>
 #include <list>
-
 template <class T>
 class LineBreakParser : public Parser<T>
 {
-  protected:
-    std::list<std::string> splitIntoLines(std::string text);
+  public:
+    static std::list<std::string> splitIntoLines(std::string text);
 };
 #endif

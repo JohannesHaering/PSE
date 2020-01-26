@@ -9,6 +9,7 @@ class InputImageHandler : public FileExplorerHandler {
 
     public:
         InputImageHandler(Distributor *distributor);
+        ~InputImageHandler();
         void onAction();
 
     private:

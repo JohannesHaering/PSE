@@ -12,7 +12,7 @@
 class LayerParser : public LineBreakParser<NetworkLayer>
 {
 public:
-    virtual NetworkLayer parse(std::string toParse);
+    virtual NetworkLayer parse(std::string toParse) = 0;
 
 protected:
     std::string removeCharacter(std::string text, char toErase);

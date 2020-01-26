@@ -102,7 +102,7 @@ ControllerFacade::ControllerFacade() {
     ImagePager* imagePager = new ImagePager(0, classificationPage);
     saveHandlerClassification = new SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     inputHandlerClassification = new InputImageHandler(classificationInferencer);
-    neuralNetworkHandlerClassification = new NeuralNetworkHandler(*classificationInferencer);
+    neuralNetworkHandlerClassification = new NeuralNetworkHandler(classificationInferencer);
     startHandlerClassification = new StartHandler(classificationInferencer);
     nnNextHandlerClassification = new NextHandler(neuralNetworkPager);
 	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);

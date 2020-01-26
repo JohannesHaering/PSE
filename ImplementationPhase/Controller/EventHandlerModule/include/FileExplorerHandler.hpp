@@ -12,8 +12,8 @@ class FileExplorerHandler : public EventHandler {
         void onAction();
 
     protected:
-        std::vector<std::string> fetchDirectory();
-        virtual void sendDirectory(std::vector<std::string>);
+        virtual std::vector<std::string> fetchDirectory() = 0;
+        virtual void sendDirectory(std::vector<std::string>) = 0;
 
 };
 #endif

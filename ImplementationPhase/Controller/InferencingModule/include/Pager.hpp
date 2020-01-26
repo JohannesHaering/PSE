@@ -18,7 +18,7 @@ class Pager {
 		int currentPage;
 		int maxPage;
 		InferencePageAdapter *page;
-		virtual void disable();
+        virtual void disable() = 0;
 
 };
 #endif

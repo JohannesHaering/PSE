@@ -6,8 +6,9 @@
 #include "MultipleImageFileIO.hpp"
 #include "ClassificationResult.hpp"
 #include "ResultFacade.hpp"
+#include "ResultManager.hpp"
 #include <opencv2/opencv.hpp>
-
+#include "Data.hpp"
 /*
 * Creates a InferencingDistributor for Classification.
 * Parameters:
@@ -56,10 +57,11 @@ void InferencingDistributorClassification::startProcess()
     dispatcher.setMode(mode);
 	MultipleImageFileIO* io = new MultipleImageFileIO();	
 	std::list<std::string> dirList(directories.begin(), directories.end());
-	Data<std::list<cv::Mat>> imageList = io->readFile(dirList);
+    Data<std::list<cv::Mat>> imageList = io->readFile(dirList);
 	
+    std::list<cv::Mat> lists = imageList.getData();
 	//images.insert(directories.begin(), imageList.getData().begin());
-    resultManager = dispatcher.dispatchImages(imageList.getData());
+    resultManager = dispatcher.dispatchImages(lists);
 }
 
 /*
@@ -68,7 +70,7 @@ void InferencingDistributorClassification::startProcess()
 void InferencingDistributorClassification::drawResult(std::string nn_id, std::string input_id) {
 	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, input_id);
 	cv::Mat image;
-    page->resultsChanged(result->getNeuralNetworkID, result->getImageID, image, *result);
+    page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), image, *result);
 }    
     
 

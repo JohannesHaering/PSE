@@ -30,6 +30,7 @@ target_link_libraries(INFERENCINGDISTRIBUTOR PUBLIC PARSERESULTFACADE)
 add_library(INFERENCINGDISTRIBUTORCLASSIFICATION "src/InferencingDistributorClassification.cpp" "include/InferencingDistributorClassification.hpp")
 target_include_directories(INFERENCINGDISTRIBUTORCLASSIFICATION PUBLIC "include/")
 target_link_libraries(INFERENCINGDISTRIBUTORCLASSIFICATION PUBLIC INFERENCINGDISTRIBUTOR)
+target_link_libraries(INFERENCINGDISTRIBUTORCLASSIFICATION PUBLIC MODE)
 
 add_library(INFERENCINGDISTRIBUTORDETECTION "src/InferencingDistributorDetection.cpp" "include/InferencingDistributorDetection.hpp")
 target_include_directories(INFERENCINGDISTRIBUTORDETECTION PUBLIC "include/")
