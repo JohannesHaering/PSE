@@ -8,7 +8,7 @@ class NextHandler : public PagerHandler {
     
     public:
         NextHandler(Pager* pager);
-        void onAction(); 
+        void onAction() override;
 
 };
 #endif

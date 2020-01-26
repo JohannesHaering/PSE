@@ -12,6 +12,6 @@ public:
     {
         this->data = data;
     }
-    virtual T getData();
+    T getData();
 };
 #endif

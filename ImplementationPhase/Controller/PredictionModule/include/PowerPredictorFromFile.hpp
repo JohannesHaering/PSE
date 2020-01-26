@@ -7,5 +7,6 @@ class PowerPredictorFromFile : public Predictor
 {
 public:
     PowerPredictorFromFile();
+    std::map<std::string, float> predict(std::list<std::string> deviceIds) override;
 };
 #endif

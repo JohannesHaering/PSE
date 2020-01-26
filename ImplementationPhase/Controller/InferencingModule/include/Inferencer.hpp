@@ -16,9 +16,9 @@ class Inferencer {
     public:
 		void addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwork);
 		int getAmountNeuralNetworks();
-		virtual void startProcess();
-		virtual bool canStart();
-		virtual void enableStart();
+        virtual void startProcess() = 0;
+        virtual bool canStart() = 0;;
+        virtual void enableStart() = 0;;
 		ContentView* getPage();
 
 };

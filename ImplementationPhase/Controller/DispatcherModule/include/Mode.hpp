@@ -12,10 +12,6 @@
 #include "Device.hpp"
 
 class Mode {
-	private:
- 		std::string modeName;
-		std::list<Device> deviceList;
-		std::list<NeuralNetworkAdapter> neuralNetworkList;
 	public: 
 		std::string getModeName();
 		void setAllowedDeviceList(std::list<Device> deviceList);
@@ -25,5 +21,8 @@ class Mode {
 	protected:
 		Mode(std::string modeName);
 		virtual std::list<std::tuple<Device, std::list<NeuralNetworkAdapter>, std::list<cv::Mat>>> getImageDistribution(std::list<cv::Mat>) = 0;
+        std::string modeName;
+        std::list<Device> deviceList;
+        std::list<NeuralNetworkAdapter> neuralNetworkList;
 };
 #endif

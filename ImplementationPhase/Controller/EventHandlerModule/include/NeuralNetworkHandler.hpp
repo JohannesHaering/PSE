@@ -6,12 +6,12 @@
 
 class NeuralNetworkHandler : public FileExplorerHandler {
     public:
-        NeuralNetworkHandler(Inferencer inferencer);
+        NeuralNetworkHandler(Inferencer *inferencer);
         NeuralNetworkHandler();
 
     private:
         std::vector<std::string> validformats = {".cfg"};
-        NeuralNetworkSetter neuralnetworksetter;
+        NeuralNetworkSetter *neuralnetworksetter;
 
     protected:
         void sendDirectory(std::vector<std::string> dir);

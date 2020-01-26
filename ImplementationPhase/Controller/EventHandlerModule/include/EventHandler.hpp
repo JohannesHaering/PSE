@@ -3,6 +3,6 @@
 
 class EventHandler {
     public:
-        virtual void onAction();
+        virtual void onAction() = 0;
 };
 #endif

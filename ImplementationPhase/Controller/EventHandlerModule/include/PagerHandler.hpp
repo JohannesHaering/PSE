@@ -7,7 +7,7 @@
 class PagerHandler : public EventHandler {
     
     public:
-        void onAction();
+        virtual void onAction() = 0;
 
     protected:
         Pager* pager;

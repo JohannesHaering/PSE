@@ -12,9 +12,6 @@ public:
     {
     }
     virtual T parse(std::string toParse);
-	
-
-protected:
-    std::list<std::string> splitBySymbol(std::string text, std::string symbol);
+    static std::list<std::string> splitBySymbol(std::string text, std::string symbol);
 };
 #endif

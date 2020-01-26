@@ -1,12 +1,12 @@
 #include "ViewFacade.hpp"
-#include "ControllerFacade.hpp"
+// #include "ControllerFacade.hpp"
 
 
 ViewFacade* ViewFacade::instance = 0;
 
 ViewFacade::ViewFacade() {
+  // ControllerFacade::getInstance();
     mainMenu = new MainWindow();
-    ControllerFacade::getInstance();
 }
 
 ViewFacade* ViewFacade::getInstance() {

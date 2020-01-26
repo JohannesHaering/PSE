@@ -11,7 +11,7 @@ PrevHandler::PrevHandler(Pager *pager)
 /*
 * Calls the prev() function of the referenced Pager.
 */
-void PrevHandler::prev() 
+void PrevHandler::onAction()
 {
 	try 
 	{

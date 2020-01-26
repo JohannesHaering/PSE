@@ -7,7 +7,7 @@
 class InferencingDistributorDetection : public InferencingDistributor {
 
     public: 
-        InferencingDistributorDetection(InferencePageAdapter page);
+        InferencingDistributorDetection(InferencePageAdapter* page);
         void enableStart();
 
     protected: 

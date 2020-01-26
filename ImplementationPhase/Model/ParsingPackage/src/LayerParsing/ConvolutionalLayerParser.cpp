@@ -20,7 +20,7 @@ NetworkLayer ConvolutionalLayerParser::parse(std::string toParse)
     factory.setName(LayerParserDistribution().CONVOLUTIONAL);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
-    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
+    std::list<std::string> lines = LineBreakParser<NetworkLayer>::splitIntoLines(toParse);
     auto it = lines.begin();
     ++it;
 

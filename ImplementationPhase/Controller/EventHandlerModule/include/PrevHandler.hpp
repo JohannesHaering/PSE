@@ -8,7 +8,7 @@ class PrevHandler : public PagerHandler {
 
     public:
         PrevHandler(Pager *pager);
-        void prev();  
+        void onAction() override;
 
 };
 #endif
