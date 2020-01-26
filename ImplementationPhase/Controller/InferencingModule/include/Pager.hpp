@@ -12,12 +12,12 @@ class Pager {
 		int getCurrentPage();
 		bool nextEnable();
 		bool prevEnable();
-		ContentView getGUIPage();
+		ContentView* getGUIPage();
 
 	protected: 
 		int currentPage;
 		int maxPage;
-		InferencePageAdapter page;
+		InferencePageAdapter *page;
 		virtual void disable();
 
 };

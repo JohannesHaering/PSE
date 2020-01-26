@@ -7,11 +7,8 @@
 class PrevHandler : public PagerHandler {
 
     public:
-        PrevHandler(Pager pager);
-        void prev();
- 
-    private:
-        Pager pager;    
+        PrevHandler(Pager *pager);
+        void prev();  
 
 };
 #endif

@@ -14,8 +14,6 @@ class FileExplorerHandler : public EventHandler {
     protected:
         std::vector<std::string> fetchDirectory();
         virtual void sendDirectory(std::vector<std::string>);
-        // FileExplorerHandler();
-        // ViewFacade view;
 
 };
 #endif

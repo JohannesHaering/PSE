@@ -15,6 +15,6 @@
 bool InferencingDistributor::canStart() {
     return &neuralNetworks != NULL && neuralNetworks.size() != 0 && 
                 &directories != NULL && directories.size() != 0 &&
-                (page.getShowResults() || page.getSaveResults());
+                (page->getShowResults() || page->getSaveResults());
 }
 

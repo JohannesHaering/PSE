@@ -7,25 +7,31 @@
 #include "InferencePageAdapter.hpp"
 #include <list>
 
-PredictionHandler::PredictionHandler(InferencePageAdapter page) :
+PredictionHandler::PredictionHandler(InferencePageAdapter *page) :
 page(page), 
-powerPredictor(PowerPredictorFromFile()), 
-performancePredictor(PerformancePredictorFromFile()) 
+powerPredictor(new PowerPredictorFromFile()), 
+performancePredictor(new PerformancePredictorFromFile()) 
 {}
+
+PredictionHandler::~PredictionHandler() 
+{
+	delete powerPredictor;
+	delete performancePredictor;
+}
 
 /**
  * Calculates new prediction.
  */ 
 void PredictionHandler::onAction(){
-	std::vector<Device> devices = page.getDevices();
+	std::vector<Device> devices = page->getDevices();
 	std::list<std::string> devicelist;
 
 	for (std::vector<Device>::iterator it = devices.begin(); it != devices.end(); ++it) {
 		devicelist.push_back(it->getName());
 	}
 
-	std::map<std::string, float> performancePredictionValues = performancePredictor.predict(devicelist);
-	std::map<std::string, float> powerPredictionValues = powerPredictor.predict(devicelist);
+	std::map<std::string, float> performancePredictionValues = performancePredictor->predict(devicelist);
+	std::map<std::string, float> powerPredictionValues = powerPredictor->predict(devicelist);
 
 	float performancePrediction = 0;
 	float powerPrediction = 0;
@@ -42,8 +48,8 @@ void PredictionHandler::onAction(){
 		powerPrediction += iterator->second;
 	}
 
-    page.setPerformancePrediction(performancePrediction);
-    page.setPowerPrediction(powerPrediction);
+    page->setPerformancePrediction(performancePrediction);
+    page->setPowerPrediction(powerPrediction);
 
-	page.update();
+	page->update();
 }

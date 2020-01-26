@@ -7,7 +7,7 @@
 class InferencingDistributorClassification : virtual public InferencingDistributor {
 
     public: 
-        InferencingDistributorClassification(InferencePageAdapter page);
+        InferencingDistributorClassification(InferencePageAdapter *page);
         void enableStart();
         void startProcess();
 		void saveResult(std::string neuralNetworkId, std::string imageId, std::string path);

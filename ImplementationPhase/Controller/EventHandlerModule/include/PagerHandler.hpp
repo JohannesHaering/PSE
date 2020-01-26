@@ -10,7 +10,7 @@ class PagerHandler : public EventHandler {
         void onAction();
 
     protected:
-        Pager pager;
+        Pager* pager;
 
 };
 #endif

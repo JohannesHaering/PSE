@@ -10,14 +10,14 @@
 class PredictionHandler 
 {
     public: 
-		PredictionHandler(InferencePageAdapter page);
-		PredictionHandler();
+		PredictionHandler(InferencePageAdapter *page);
+		~PredictionHandler();
 		void onAction();
 
     private: 
-		PowerPredictorFromFile powerPredictor;
-		PerformancePredictorFromFile performancePredictor;
-		InferencePageAdapter page;
+		PowerPredictorFromFile *powerPredictor;
+		PerformancePredictorFromFile *performancePredictor;
+		InferencePageAdapter *page;
 
 };
 #endif

@@ -7,7 +7,7 @@
 class NeuralNetworkPager : public Pager {
 
     public:
-        NeuralNetworkPager(int maxPage, InferencePageAdapter page);
+        NeuralNetworkPager(int maxPage, InferencePageAdapter *page);
 
     private: 
         void disable();   
