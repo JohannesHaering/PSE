@@ -5,14 +5,14 @@
 
 
 TrainingDistributor::TrainingDistributor() {
-	this->view = view.getInstance();
+	this->page = ViewFacade::getInstance()->getTrainingPanel();
 }
 
 /*
  * Starts the process and creates a trainer to deploy the data to.
  */
 void TrainingDistributor::TrainingDistributor::startProcess() {
-	float desprecision = view.getPrecision(); 
+	float desprecision = page->getPrecision();
 	Trainer trainer = Trainer(neuralNetwork, desprecision, directories);
 }
 
@@ -30,5 +30,5 @@ bool TrainingDistributor::canStart() {
  * Enables or disables the start button of the view accordingly. 
  */ 
 void TrainingDistributor::enableStart() {
-	view.startButtonEnableTraining(canStart());
+	page->enableStart(canStart());
 }

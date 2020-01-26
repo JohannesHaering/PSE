@@ -3,8 +3,8 @@
 
 #include "NeuralNetworkAdapter.hpp"
 #include "Mode.hpp"
-#include "Channel.hpp"
 #include "ResultManager.hpp"
+#include "Channel.hpp"
 
 #include <opencv2/opencv.hpp>
 

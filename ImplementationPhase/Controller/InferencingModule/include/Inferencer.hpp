@@ -21,6 +21,5 @@ class Inferencer {
 		virtual void enableStart();
 		ContentView* getPage();
 
-
 };
 #endif
