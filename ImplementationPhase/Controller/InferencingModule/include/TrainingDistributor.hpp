@@ -17,7 +17,7 @@ class TrainingDistributor : public Distributor {
 	private:
 		NeuralNetworkAdapter neuralNetwork;
 		std::vector<std::string> directories; 	
-		Training* page;
+		TrainingPanel* page;
 
 };
 #endif
