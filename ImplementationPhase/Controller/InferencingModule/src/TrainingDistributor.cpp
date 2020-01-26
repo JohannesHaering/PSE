@@ -5,7 +5,7 @@
 
 
 TrainingDistributor::TrainingDistributor() {
-	this->page = ViewFacade::getInstance()->getTraining();
+	this->page = ViewFacade::getInstance()->getTrainingPanel();
 }
 
 /*
