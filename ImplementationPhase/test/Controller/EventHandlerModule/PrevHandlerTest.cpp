@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "PrevHandler.hpp"
 #include "NeuralNetworkPager.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 
 struct PrevHandlerTests : testing::Test 
 {
