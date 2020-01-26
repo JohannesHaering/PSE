@@ -37,6 +37,12 @@ std::string TrainingPanel::getName(){
 std::string TrainingPanel::getTypeOfLearning(){
     return ui->comboBox->currentText().toUtf8().constData();
 }
+
+void TrainingPanel::enableStart(bool flag) {
+  ui->train->setEnabled(flag);
+}
+
+
 void TrainingPanel::on_chooseDataset_clicked()
 {
     //ControllerFacade::getInstance().getImageInputTraining;

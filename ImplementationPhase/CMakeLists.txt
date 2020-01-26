@@ -40,7 +40,7 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(Qt5_DIR /opt/Qt/5.14.0/gcc_64/lib/cmake/Qt5)
+# set(Qt5_DIR /opt/Qt/5.14.0/gcc_64/lib/cmake/Qt5)
 #set(Qt5_DIR C:/Qt/5.9.9/winrt_x64_msvc2015/lib/cmake/Qt5)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)

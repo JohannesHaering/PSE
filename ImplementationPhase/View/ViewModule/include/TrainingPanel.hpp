@@ -20,6 +20,7 @@ public:
     std::string getLearningMode();
     std::string getNeuralNetworkPaths();
     std::string getTypeOfLearning();
+    void enableStart(bool flag);
     ~TrainingPanel();
     explicit TrainingPanel(QWidget *parent = nullptr);
 private slots:

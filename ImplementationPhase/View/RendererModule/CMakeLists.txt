@@ -21,5 +21,5 @@ target_include_directories(RENDERER_MODULE PUBLIC "include/")
 
 target_link_libraries(RENDERER_MODULE PUBLIC VIEW_MODULE)
 target_link_libraries(RENDERER_MODULE PUBLIC EXTERNAL_TEST_CLASSES_VIEW)
-target_link_libraries(RENDERER_MODULE PUBLIC CONTROLLERFACADE)
+# target_link_libraries(RENDERER_MODULE PUBLIC CONTROLLERFACADE)
 target_link_libraries(RENDERER_MODULE PUBLIC ${QT5_LIBRARIES} ${OpenCV_LIBS})

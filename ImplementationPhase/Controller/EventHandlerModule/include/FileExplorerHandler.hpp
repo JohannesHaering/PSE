@@ -8,14 +8,14 @@
 
 class FileExplorerHandler : public EventHandler {
 
-    public: 
+    public:
         void onAction();
 
-    protected:  
+    protected:
         std::vector<std::string> fetchDirectory();
         virtual void sendDirectory(std::vector<std::string>);
-		FileExplorerHandler();
-        ViewFacade view;
+        // FileExplorerHandler();
+        // ViewFacade view;
 
 };
 #endif
