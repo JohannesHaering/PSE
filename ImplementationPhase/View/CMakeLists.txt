@@ -8,6 +8,8 @@ find_package(Qt5Widgets REQUIRED)
 # find_package(Qt5Gui REQUIRED) # added as dependency for Qt5Widgets
 find_package(OpenCV REQUIRED)
 
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 
 set(CMAKE_AUTOMOC ON)
