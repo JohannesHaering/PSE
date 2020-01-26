@@ -21,10 +21,12 @@
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
 
-ControllerFacade* ControllerFacade::getInstance(){
+ControllerFacade* ControllerFacade::instance = 0;
+
+ControllerFacade* ControllerFacade::getInstance() {
 	if (!instance)
 	{
-	instance = new ControllerFacade();
+		instance = new ControllerFacade();
 	}
 	return instance;
 }
@@ -140,4 +142,5 @@ ControllerFacade::ControllerFacade() {
     neuralNetworkHandlerTopology = new NeuralNetworkHandler(*topologyInferencer);
     startHandlerTopology = new StartHandler(*topologyInferencer);
 	*/
+	view->getMainMenu()->show();
 }

@@ -76,7 +76,7 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerClassification;
         NewResultHandler* newResultHandlerClassification;
         PredictionHandler* predictionHandlerClassification;
-		DeviceHandler* deviceHandlerClassification;
+        DeviceHandler* deviceHandlerClassification;
 
         // Detection components
         InferencingDistributor* detectionInferencer;
@@ -90,7 +90,7 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerDetection;
         NewResultHandler* newResultHandlerDetection;
         PredictionHandler* predictionHandlerDetection;
-		DeviceHandler* deviceHandlerDetection;
+        DeviceHandler* deviceHandlerDetection;
 
         // Training components
         // TrainingDistributor* trainingDistributor;

@@ -1,10 +1,12 @@
 #include "ViewFacade.hpp"
+#include "ControllerFacade.hpp"
 
 
 ViewFacade* ViewFacade::instance = 0;
 
 ViewFacade::ViewFacade() {
     mainMenu = new MainWindow();
+    ControllerFacade::getInstance();
 }
 
 ViewFacade* ViewFacade::getInstance() {
@@ -33,3 +35,9 @@ ObjectDetectionInferencePageAdapter* ViewFacade::getObjectDetection() {
 InferencePageAdapter* ViewFacade::getImageClassification() {
     return mainMenu->getImageClassification();
 }
+
+// int ViewFacade::startUI(int argc, char *argv[]) {
+//   QApplication a(argc, argv);
+//   mainMenu->show();
+//   return a.exec();
+// }
