@@ -1,7 +1,7 @@
 #include "DetectionControlPanel.hpp"
 #include "ui_DetectionControlPanel.h"
 #include <vector>
-using namespace std;
+#include "ControllerFacade.hpp"
 DetectionControlPanel::DetectionControlPanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DetectionControlPanel)
@@ -56,12 +56,12 @@ ui->powerPrediction->setText(QString::number(powerPrediction));
 //clicked buttons
 void DetectionControlPanel::on_addImage_clicked()
 {
-    //ControllerFacade::getInstance().getImageInputDetection();
+   // ControllerFacade::getInstance()->getImageInputDetection();
 }
 
 void DetectionControlPanel::on_chooseNeuralNetwork_clicked()
 {
-   //ControllerFacade::getInstance().getNeuralNetworkInputDetection();
+   //ControllerFacade::getInstance()->getNeuralNetworkInputDetection();
 }
 
 void DetectionControlPanel::on_startObjectDet_clicked()

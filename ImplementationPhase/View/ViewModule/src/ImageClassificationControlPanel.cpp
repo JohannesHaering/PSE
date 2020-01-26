@@ -61,12 +61,12 @@ ui->powerPrediction->setText(QString::number(powerPrediction));
 //clicked buttons
 void ImageClassificationControlPanel::on_addImage_clicked()
 {
-    //ControllerFacade::getInstance().getImageInputClassification();
+   //ControllerFacade::getInstance()->getImageInputClassification();
 }
 void ImageClassificationControlPanel::on_startImgClass_clicked()
 {
-  //  ControllerFacade::getInstance().startProcessClassification();
+    //ControllerFacade::getInstance()->startProcessClassification();
 }
 void ImageClassificationControlPanel::on_chooseNeuralNetwork_clicked(){
-    // ControllerFacade::getInstance().getNeuralNetworkInputClassifcation()
+    //ControllerFacade::getInstance()->getNeuralNetworkInputClassifcation();
 }

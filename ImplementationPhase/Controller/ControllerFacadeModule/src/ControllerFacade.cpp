@@ -24,11 +24,11 @@
 ControllerFacade* ControllerFacade::instance = 0;
 
 ControllerFacade* ControllerFacade::getInstance() {
-	if (!instance)
-	{
-		instance = new ControllerFacade();
-	}
-	return instance;
+  if (!instance)
+  {
+  instance = new ControllerFacade();
+  }
+  return instance;
 }
 
 
@@ -93,7 +93,7 @@ void ControllerFacade::startProcessTopology() { startHandlerTopology->onAction()
 void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTopology->onAction(); }
 
 ControllerFacade::ControllerFacade() {
-	ViewFacade* view = ViewFacade::getInstance();
+  ViewFacade* view = ViewFacade::getInstance();
 
      // Setup Classification
 	InferencePageAdapter *classificationPage = view->getImageClassification();
@@ -113,8 +113,8 @@ ControllerFacade::ControllerFacade() {
 	deviceHandlerClassification = new DeviceHandler(classificationPage);
 
     // Setup Detection
-	/*
-	InferencePageAdapter detectionPage = *view->getObjectDetection();
+  /*
+  InferencePageAdapter detectionPage = *view->getObjectDetection();
     detectionInferencer = new InferencingDistributorDetection(detectionPage);
     NeuralNetworkPager neuralNetworkPagerDetection = NeuralNetworkPager(0, detectionPage);
     ImagePager imagePagerDetection = ImagePager(0, detectionPage);
@@ -122,13 +122,13 @@ ControllerFacade::ControllerFacade() {
     inputHandlerDetection = new InputImageHandler(*detectionInferencer);
     neuralNetworkHandlerDetection = new NeuralNetworkHandler(*detectionInferencer);
     startHandlerDetection = new StartHandler(*detectionInferencer);
-	nnNextHandlerDetection = new NextHandler(neuralNetworkPagerDetection);
-	nnPrevHandlerDetection = new PrevHandler(neuralNetworkPagerDetection);
-	imgNextHandlerDetection = new NextHandler(imagePagerDetection);
-	imgPrevHandlerDetection = new PrevHandler(imagePagerDetection);
+  nnNextHandlerDetection = new NextHandler(neuralNetworkPagerDetection);
+  nnPrevHandlerDetection = new PrevHandler(neuralNetworkPagerDetection);
+  imgNextHandlerDetection = new NextHandler(imagePagerDetection);
+  imgPrevHandlerDetection = new PrevHandler(imagePagerDetection);
     newResultHandlerDetection = new NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
     predictionHandlerDetection = new PredictionHandler(detectionPage);
-	*/
+  */
     // Setup Training
     // trainingDistributor = new TrainingDistributor();
     // inputHandlerTraining = new InputImageHandler(*trainingDistributor);
@@ -137,10 +137,9 @@ ControllerFacade::ControllerFacade() {
     // trainstepHandlerTraining = new NewTrainStepHandler();
 
     // Setup Topology
-	/*
+  /*
     topologyInferencer = new TopologyInferencer();
     neuralNetworkHandlerTopology = new NeuralNetworkHandler(*topologyInferencer);
     startHandlerTopology = new StartHandler(*topologyInferencer);
-	*/
-	view->getMainMenu()->show();
+  */
 }
