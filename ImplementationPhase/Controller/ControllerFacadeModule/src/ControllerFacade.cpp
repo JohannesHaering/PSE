@@ -96,14 +96,14 @@ ControllerFacade::ControllerFacade() {
 	ViewFacade* view = ViewFacade::getInstance();
 
      // Setup Classification
-	InferencePageAdapter classificationPage = *view->getImageClassification();
+	InferencePageAdapter *classificationPage = view->getImageClassification();
     classificationInferencer = new InferencingDistributorClassification(classificationPage);
-    NeuralNetworkPager neuralNetworkPager =  NeuralNetworkPager(0, classificationPage);
-    ImagePager imagePager = ImagePager(0, classificationPage);
+    NeuralNetworkPager* neuralNetworkPager = new NeuralNetworkPager(0, classificationPage);
+    ImagePager* imagePager = new ImagePager(0, classificationPage);
     saveHandlerClassification = new SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
-    inputHandlerClassification = new InputImageHandler(*classificationInferencer);
+    inputHandlerClassification = new InputImageHandler(classificationInferencer);
     neuralNetworkHandlerClassification = new NeuralNetworkHandler(*classificationInferencer);
-    startHandlerClassification = new StartHandler(*classificationInferencer);
+    startHandlerClassification = new StartHandler(classificationInferencer);
     nnNextHandlerClassification = new NextHandler(neuralNetworkPager);
 	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);
 	imgNextHandlerClassification = new NextHandler(imagePager);
