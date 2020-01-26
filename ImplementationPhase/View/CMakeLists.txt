@@ -6,7 +6,7 @@ find_package(Qt5Charts REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 # find_package(Qt5Core REQUIRED) # added as dependency for Qt5Widgets
 # find_package(Qt5Gui REQUIRED) # added as dependency for Qt5Widgets
-find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui)
+find_package(OpenCV REQUIRED)
 
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 

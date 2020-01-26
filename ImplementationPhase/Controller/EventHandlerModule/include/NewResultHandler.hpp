@@ -9,8 +9,7 @@
 class NewResultHandler : public SaveResultHandler {
 
     public: 
-		NewResultHandler(InferencingDistributor* distributor, NeuralNetworkPager nnpager, ImagePager ipager);
-		NewResultHandler();
+		NewResultHandler(InferencingDistributor* distributor, NeuralNetworkPager* nnpager, ImagePager* ipager);
 		void onAction();
 };
 #endif

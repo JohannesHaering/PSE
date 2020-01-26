@@ -8,13 +8,12 @@
 class NeuralNetworkSetter {
 
     public: 
-        NeuralNetworkSetter(Inferencer inferencer);
-		NeuralNetworkSetter();
+        NeuralNetworkSetter(Inferencer *inferencer);
         void setNeuralNetwork(std::vector<std::string> directories);
-		Inferencer getInferencer();
+		Inferencer* getInferencer();
 
     private:
-        Inferencer inferencer;    
+        Inferencer *inferencer;    
 
 };
 #endif

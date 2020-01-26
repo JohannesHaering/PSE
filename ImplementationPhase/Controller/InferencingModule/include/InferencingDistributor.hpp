@@ -12,14 +12,14 @@
 class InferencingDistributor : public Distributor {
 
 	public:
-        void startProcess();
-        void saveResult(std::string nn_id, std::string input_id, std::string path);
-        void drawResult(std::string nn_id, std::string input_id);
+        virtual void startProcess();
+        virtual void saveResult(std::string nn_id, std::string input_id, std::string path);
+        virtual void drawResult(std::string nn_id, std::string input_id);
         bool canStart();
         virtual void enableStart();
 
     protected: 
-		InferencePageAdapter page;
+		InferencePageAdapter* page;
         ResultManager resultManager;
         virtual void drawResult(Result result);
 

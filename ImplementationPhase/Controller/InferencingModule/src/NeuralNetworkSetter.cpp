@@ -9,7 +9,7 @@
 * Parameters:
 * -Inferencer inferencer: the inferencer to set the neural networks
 */
-NeuralNetworkSetter::NeuralNetworkSetter(Inferencer inferencer) : inferencer(inferencer) { }
+NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(inferencer) { }
 
 /*
 * Takes the directories of the neural networks and sets the complete neural networks objects to the inferencer.
@@ -22,13 +22,13 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
     for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
     }  
-    inferencer.addNeuralNetwork(neuralNetworks);
+    inferencer->addNeuralNetwork(neuralNetworks);
 }
 
 /*
 * Returns the inferencer assigned to this object.
 */
-Inferencer NeuralNetworkSetter::getInferencer() {
+Inferencer* NeuralNetworkSetter::getInferencer() {
 	return inferencer;
 }
 

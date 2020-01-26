@@ -8,15 +8,14 @@
 class InputImageHandler : public FileExplorerHandler {
 
     public:
-        InputImageHandler(Distributor distributor);
-		InputImageHandler();
+        InputImageHandler(Distributor *distributor);
         void onAction();
 
     private:
         std::vector<std::string> validformatsmanual = {"jpg", "png"};
 		std::vector<std::string> validformatstxt = {"txt"};
-        Distributor distributor;
-		InferencePageAdapter page;
+        Distributor *distributor;
+		InferencePageAdapter *page;
 
     protected:
         void sendDirectory(std::vector<std::string> dir);

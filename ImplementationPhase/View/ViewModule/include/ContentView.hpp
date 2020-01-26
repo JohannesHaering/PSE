@@ -5,7 +5,8 @@
 #include <QString>
 #include <QVector>
 #include <vector>
-#include <opencv2/core/mat.hpp>
+#include <opencv2/opencv.hpp>
+
 class ContentView
 {
 public:

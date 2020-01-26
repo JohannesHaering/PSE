@@ -69,6 +69,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 std::string NeuralNetworkParser::removeCharacter(std::string text, char toErase)
 {
     text.erase(std::remove(text.begin(), text.end(), toErase), text.end());
+	return text;
 }
 
 std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork){

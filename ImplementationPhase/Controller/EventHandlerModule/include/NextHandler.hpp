@@ -7,11 +7,8 @@
 class NextHandler : public PagerHandler {
     
     public:
-        NextHandler(Pager pager);
-        void onAction();
- 
-    private:
-        Pager pager;    
+        NextHandler(Pager* pager);
+        void onAction(); 
 
 };
 #endif

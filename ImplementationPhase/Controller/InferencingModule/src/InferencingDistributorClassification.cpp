@@ -13,7 +13,7 @@
 * Parameters:
 * -Inference page: the corresponding page
 */
-InferencingDistributorClassification::InferencingDistributorClassification(InferencePageAdapter page)
+InferencingDistributorClassification::InferencingDistributorClassification(InferencePageAdapter* page)
 {
 	this->page = page;
 }
@@ -22,7 +22,7 @@ InferencingDistributorClassification::InferencingDistributorClassification(Infer
 * Enables or disables the Start button of the View
 */
 void InferencingDistributorClassification::enableStart(){
-    page.startEnable(canStart());
+    page->startEnable(canStart());
 }
 
 /*
@@ -34,10 +34,10 @@ void InferencingDistributorClassification::startProcess()
 	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
 	DispatchManager dispatcher = DispatchManager::getInstance();
 	dispatcher.setNeuralNetworkList(nnlist);
-    std::vector<Device> platforms = page.getDevices();
+    std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
-    int opMode = page.getOperatingMode();
+    int opMode = page->getOperatingMode();
 	Mode* mode;
 	if (opMode == 0) 
 	{
@@ -67,8 +67,8 @@ void InferencingDistributorClassification::startProcess()
 */
 void InferencingDistributorClassification::drawResult(std::string nn_id, std::string input_id) {
 	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, input_id);
-	
-    //page.resultsChanged(result->getNeuralNetworkID, result->getImageID, );
+	cv::Mat image;
+    page->resultsChanged(result->getNeuralNetworkID, result->getImageID, image, *result);
 }    
     
 

@@ -7,12 +7,12 @@
  * Parameters:
  * -Inferencer inferencer: The inferencer to start the process of.
  */
-StartHandler::StartHandler(Inferencer inferencer) : inferencer(inferencer) { }
+StartHandler::StartHandler(Inferencer *inferencer) : inferencer(inferencer) { }
 
 /**
  * Starts the process of the referenced inferencer.
  */
 void StartHandler::onAction()
 {
-    inferencer.startProcess();
+    inferencer->startProcess();
 }

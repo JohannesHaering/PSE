@@ -11,7 +11,7 @@
  * -NeuralNetworkPager nnpager: The
  * -ImagePager ipager
  */
-NewResultHandler::NewResultHandler(InferencingDistributor* distributor, NeuralNetworkPager nnpager, ImagePager ipager) :
+NewResultHandler::NewResultHandler(InferencingDistributor* distributor, NeuralNetworkPager *nnpager, ImagePager *ipager) :
 SaveResultHandler(distributor, nnpager, ipager) 
 { }
 
@@ -21,7 +21,7 @@ SaveResultHandler(distributor, nnpager, ipager)
 void NewResultHandler::onAction(){
     int amountimg = distributor->getAmountImages();
     int amountnn = distributor->getAmountNeuralNetworks();
-    ipager.reset(amountimg);
-    nnpager.reset(amountnn);
+    ipager->reset(amountimg);
+    nnpager->reset(amountnn);
     distributor->drawResult(0,0);
 }

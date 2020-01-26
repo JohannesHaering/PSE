@@ -7,12 +7,11 @@
 class DeviceHandler 
 {
     public: 
-		DeviceHandler(InferencePageAdapter page);
-		DeviceHandler();
+		DeviceHandler(InferencePageAdapter* page);
 		void onAction();
 
     private: 
-		InferencePageAdapter page;
+		InferencePageAdapter* page;
 
 };
 #endif

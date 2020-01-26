@@ -4,7 +4,7 @@
 #include "DispatchManager.hpp"
 #include <vector>
 
-DeviceHandler::DeviceHandler(InferencePageAdapter page) {}
+DeviceHandler::DeviceHandler(InferencePageAdapter* page) : page(page) {}
 
 /**
  * Calculates new prediction.
@@ -16,6 +16,6 @@ void DeviceHandler::onAction(){
 		dev->push_back(*it);
 	}
 	dev->push_back(devices.front());
-	page.setDevices(dev);
-	page.update();
+	page->setDevices(dev);
+	page->update();
 }
