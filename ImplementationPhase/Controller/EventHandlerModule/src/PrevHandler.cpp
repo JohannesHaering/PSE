@@ -1,6 +1,6 @@
 #include "Pager.hpp"
 #include "PrevHandler.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include <stdexcept>
 
 PrevHandler::PrevHandler(Pager pager) : pager(pager) {}

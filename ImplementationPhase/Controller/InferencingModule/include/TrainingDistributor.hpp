@@ -2,7 +2,7 @@
 #define TRAINING_DISTRIBUTOR_H_
 
 #include "Distributor.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "Trainer.hpp"
 #include "NeuralNetworkAdapter.hpp"
 

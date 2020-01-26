@@ -1,6 +1,6 @@
 #include "Pager.hpp"
 #include "NextHandler.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include <stdexcept>
 
 

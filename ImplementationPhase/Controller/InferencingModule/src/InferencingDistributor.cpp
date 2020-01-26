@@ -1,6 +1,6 @@
 #include "InferencingDistributor.hpp"
 #include "Distributor.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "DispatchManager.hpp"
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"

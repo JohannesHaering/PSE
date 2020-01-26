@@ -15,4 +15,3 @@ target_link_libraries(POWERPREDICTORFROMFILE PUBLIC CHANNEL)
 
 add_library(PREDICTOR "include/Predictor.hpp" "src/Predictor.cpp")
 target_include_directories(PREDICTOR PUBLIC "include/")
-

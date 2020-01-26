@@ -1,4 +1,4 @@
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 #include "DeviceHandler.hpp"
 #include "Device.hpp"
 #include "DispatchManager.hpp"

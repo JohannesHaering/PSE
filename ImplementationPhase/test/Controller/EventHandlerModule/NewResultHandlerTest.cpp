@@ -2,7 +2,7 @@
 #include "NewResultHandler.hpp"
 #include "NeuralNetworkPager.hpp"
 #include "ImagePager.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "InferencingDistributorClassification.hpp"
 
 struct NewResultHandlerTests : testing::Test 

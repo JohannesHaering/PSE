@@ -1,5 +1,5 @@
 #include "Distributor.hpp"
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "Trainer.hpp"
 #include "TrainingDistributor.hpp"
 

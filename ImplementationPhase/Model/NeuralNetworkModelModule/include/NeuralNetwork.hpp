@@ -3,7 +3,7 @@
 
 #include <list>
 #include <string>
-// #include "NetworkLayer.hpp"
+// #include "NetworkLayer.hpp" // added as a dependency of the speciffic layers
 
 #include "ConvolutionLayer.hpp"
 #include "ActivationLayer.hpp"

@@ -1,7 +1,7 @@
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
-#include "viewfacade.h"
-#include "inferencepageadapter.h"
+#include "ViewFacade.hpp"
+#include "InferencePageAdapter.hpp"
 #include "InputImageHandler.hpp"
 #include <stdexcept>
 

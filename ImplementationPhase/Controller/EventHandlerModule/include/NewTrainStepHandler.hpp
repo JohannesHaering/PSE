@@ -3,17 +3,17 @@
 
 #include <vector>
 #include <assert.h>
-#include "viewfacade.h"
-#include "training.h"
+#include "ViewFacade.hpp"
+#include "TrainingPanel.hpp"
 
 class NewTrainStepHandler {
-    
-    public: 
+
+    public:
         NewTrainStepHandler();
         void newAccuracyPoints(std::vector<float> training, std::vector<float> test);
 
-    private: 
-        Training* page;    
+    private:
+        TrainingPanel* page;
 
 };
 #endif

@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)#new, for johannes stuff
 
+#set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
+
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -48,8 +50,6 @@ set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 # include(${QT_USE_FILE})
 
-# set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC")
-
 include_directories(
   ${Qt5Core_INCLUDE_DIRS}
   ${Qt5Gui_INCLUDE_DIRS}
@@ -57,7 +57,7 @@ include_directories(
   ${Qt5Widgets_INCLUDE_DIRS}
 )
 
-add_subdirectory(View)
-add_subdirectory(Controller)
-add_subdirectory(test)
 add_subdirectory(Model)
+add_subdirectory(Controller)
+add_subdirectory(View)
+add_subdirectory(test)

@@ -11,14 +11,14 @@
 #include "PrevHandler.hpp"
 #include "NewResultHandler.hpp"
 #include "PredictionHandler.hpp"
-#include "TrainingDistributor.hpp"
+// #include "TrainingDistributor.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "DeviceHandler.hpp"
 
 
 class ControllerFacade {
-    
+
     public:
         static ControllerFacade* getInstance();
 
@@ -49,10 +49,10 @@ class ControllerFacade {
 		void searchDevicesDetection();
 
         // Training methods
-        void startProcessTraining();
-        void getImageInputTraining();
-        void getNeuralNetworkInputTraining();
-        void newTrainStep(std::vector<float> training, std::vector<float> test);
+        // void startProcessTraining();
+        // void getImageInputTraining();
+        // void getNeuralNetworkInputTraining();
+        // void newTrainStep(std::vector<float> training, std::vector<float> test);
 
         // Topology methods
         void startProcessTopology();
@@ -93,11 +93,11 @@ class ControllerFacade {
 		DeviceHandler* deviceHandlerDetection;
 
         // Training components
-        TrainingDistributor* trainingDistributor;
-        InputImageHandler* inputHandlerTraining;
-        NeuralNetworkHandler* neuralNetworkHandlerTraining;
-        StartHandler* startHandlerTraining;
-        NewTrainStepHandler* trainstepHandlerTraining;
+        // TrainingDistributor* trainingDistributor;
+        // InputImageHandler* inputHandlerTraining;
+        // NeuralNetworkHandler* neuralNetworkHandlerTraining;
+        // StartHandler* startHandlerTraining;
+        // NewTrainStepHandler* trainstepHandlerTraining;
 
         // Topology components
         TopologyInferencer* topologyInferencer;

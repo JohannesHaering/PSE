@@ -1,11 +1,11 @@
 #ifndef PREDICTION_HANDLER_H_
 #define PREDICTION_HANDLER_H_
 
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "ResultManager.hpp"
 #include "PerformancePredictorFromFile.hpp"
 #include "PowerPredictorFromFile.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class PredictionHandler 
 {

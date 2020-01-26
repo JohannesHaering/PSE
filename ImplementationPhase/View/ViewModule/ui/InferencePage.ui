@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InferencePage</class>
+ <widget class="QDialog" name="InferencePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Image Classification</string>
+  </property>
+  <widget class="ImageClassificationControlPanel" name="controlPanel" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>250</width>
+     <height>631</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="ClassificationResultPanel" name="resultPanel" native="true">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>0</y>
+     <width>550</width>
+     <height>631</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClassificationResultPanel</class>
+   <extends>QWidget</extends>
+   <header>ClassificationResultPanel.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImageClassificationControlPanel</class>
+   <extends>QWidget</extends>
+   <header>ImageClassificationControlPanel.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
