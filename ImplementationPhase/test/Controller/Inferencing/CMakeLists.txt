@@ -17,7 +17,7 @@ cmake_minimum_required(VERSION 3.10)
 
 #add_executable(PAGERTEST "src/PagerTest.cpp")
 #target_link_libraries(PAGERTEST PUBLIC NEURALNETWORKPAGER)
-#target_link_libraries(PAGERTEST PUBLIC VIEWFACADE)
+#target_link_libraries(PAGERTEST PUBLIC VIEW_MODULE)
 
 #add_executable(NEURALNETWORKSETTERTEST "src/NeuralNetworkSetterTest.cpp")
 #target_link_libraries(NEURALNETWORKSETTERTEST PUBLIC NEURALNETWORKSETTER)

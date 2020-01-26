@@ -2,7 +2,7 @@
 #define NEURAL_NETWORK_PAGER_H_
 
 #include "Pager.hpp"
-#include "inferencepageadapter.hpp"
+#include "InferencePageAdapter.hpp"
 
 class NeuralNetworkPager : public Pager {
 

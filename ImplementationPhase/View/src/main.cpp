@@ -1,8 +1,8 @@
-#include "mainwindow.h"
-#include "viewfacade.h"
+// #include "MainWindow.hpp"
+#include "ViewFacade.hpp"
 #include <QApplication>
-int main(int argc, char *argv[])
-{
+
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     ViewFacade* viewFacade = ViewFacade::getInstance();
     MainWindow* w = viewFacade->getMainMenu();

@@ -1,20 +1,21 @@
 #ifndef FILE_EXPLORER_HANDLER_H_
 #define FILE_EXPLORER_HANDLER_H_
 
-#include "viewfacade.h"
+#include "ViewFacade.hpp"
 #include "EventHandler.hpp"
 #include <string>
 #include <vector>
 
 class FileExplorerHandler : public EventHandler {
 
-    public: 
+    public:
         void onAction();
 
-    protected:  
+    protected:
         std::vector<std::string> fetchDirectory();
         virtual void sendDirectory(std::vector<std::string>);
-        ViewFacade view;
+        // FileExplorerHandler();
+        // ViewFacade view;
 
 };
 #endif

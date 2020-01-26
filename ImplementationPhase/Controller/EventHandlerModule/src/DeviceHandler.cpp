@@ -1,4 +1,4 @@
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 #include "DeviceHandler.hpp"
 #include "Device.hpp"
 #include "DispatchManager.hpp"
@@ -11,6 +11,11 @@ DeviceHandler::DeviceHandler(InferencePageAdapter page) {}
  */ 
 void DeviceHandler::onAction(){
 	std::vector<Device> devices = DispatchManager::getAvailableDevices();
-	page.setDevices(devices);
+	std::vector<Device>* dev = new std::vector<Device>;
+	for (std::vector<Device>::iterator it = devices.begin(); it != devices.end(); ++it) {
+		dev->push_back(*it);
+	}
+	dev->push_back(devices.front());
+	page.setDevices(dev);
 	page.update();
 }

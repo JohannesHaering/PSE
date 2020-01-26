@@ -9,8 +9,7 @@ void NetworkLayer::setName(std::string name) {
 }
 
 void NetworkLayer::setInputDimensions(int* inputDimensions) {
-  if(sizeof(inputDimensions)/sizeof(inputDimensions[0] == 3))
-  {
+  if(sizeof(inputDimensions)/sizeof(inputDimensions[0] == 3)) {
     inputDimensions = new int[3] {inputDimensions[0], inputDimensions[1], inputDimensions[2]};
     // this->inputDimensions[0] = inputDimensions[0];
     // this->inputDimensions[1] = inputDimensions[1];
@@ -18,22 +17,10 @@ void NetworkLayer::setInputDimensions(int* inputDimensions) {
   }
 }
 
-std::string NetworkLayer::getName()
-{
-  return name;
-}
+std::string NetworkLayer::getName() { return name; }
 
-LayerType NetworkLayer::getLayerType()
-{
-  return layerType;
-}
+LayerType NetworkLayer::getLayerType() { return layerType; }
 
-int* NetworkLayer::getInputDimensions()
-{
-  return inputDimensions;
-}
+int* NetworkLayer::getInputDimensions() { return inputDimensions; }
 
-
-int* NetworkLayer::getTensorDimenssions() {
-  return new int[4] {0, 0, 0, 0};
-}
+int* NetworkLayer::getTensorDimensions() { return new int[4] {0, 0, 0, 0}; }

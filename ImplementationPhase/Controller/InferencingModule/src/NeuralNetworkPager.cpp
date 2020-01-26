@@ -16,6 +16,7 @@ NeuralNetworkPager::NeuralNetworkPager(int maxPage, InferencePageAdapter page) {
 * Checks if a button should be disabled and calls the view.
 */
 void NeuralNetworkPager::disable() {
-    page.nextNeuralNetworkButtonEnable(nextEnable());
-    page.prevNeuralNetworkButtonEnable(prevEnable());
+    page.nextNNEnable(nextEnable());
+    page.prevNNEnable(prevEnable());
 }    
+

@@ -25,3 +25,10 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
     inferencer.addNeuralNetwork(neuralNetworks);
 }
 
+/*
+* Returns the inferencer assigned to this object.
+*/
+Inferencer NeuralNetworkSetter::getInferencer() {
+	return inferencer;
+}
+

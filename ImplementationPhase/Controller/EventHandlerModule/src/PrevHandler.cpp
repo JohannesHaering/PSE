@@ -16,7 +16,7 @@ void PrevHandler::prev()
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		ViewFacade::getInstance().exceptionText("No previous exists");
+		pager.getGUIPage().showError("No previous exists");
 	}
 
 }

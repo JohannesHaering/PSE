@@ -1,7 +1,8 @@
-#include "NeuralNetworkAdapter.hpp"
 #include "Inferencer.hpp"
+#include "NeuralNetworkAdapter.hpp"
+#include "ContentView.hpp"
 #include <vector>
- 
+
  /*
   * Saves the given neural networks
   * Parameters:
@@ -16,3 +17,4 @@ void Inferencer::addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwor
 */
 int Inferencer::getAmountNeuralNetworks() { return neuralNetworks.size(); }
 
+ContentView* Inferencer::getPage() { return page; }

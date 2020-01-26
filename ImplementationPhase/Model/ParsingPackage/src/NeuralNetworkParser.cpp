@@ -23,25 +23,25 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin;
+    auto parts1It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin();
     if (*parts1It != HEIGHT)
         throw std::invalid_argument("Wrong format");
     ++parts1It;
-    factory.setHeight(::atoi(*parts1It));
+    factory.setHeight(std::atoi(parts1It->c_str()));
     ++it;
 
-    auto parts2It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin;
+    auto parts2It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin();
     if (*parts2It != WIDTH)
         throw std::invalid_argument("Wrong format");
     ++parts2It;
-    factory.setWidth(::atoi(*parts2It));
+    factory.setWidth(std::atoi(parts2It->c_str()));
     ++it;
 
-    auto parts3It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin;
+    auto parts3It = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER).begin();
     if (*parts3It != CHANNELS)
         throw std::invalid_argument("Wrong format");
     ++parts3It;
-    factory.setChannels(::atoi(*parts3It));
+    factory.setChannels(std::atoi(parts3It->c_str()));
 
     ++it;
 

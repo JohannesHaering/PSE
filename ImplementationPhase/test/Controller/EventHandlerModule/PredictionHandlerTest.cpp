@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 #include "PredictionHandler.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 
-class InferencerPredictionMock : public InferencePage
+class InferencerPredictionMock : public InferencePageAdapter
 {
 
 public:

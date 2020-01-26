@@ -18,7 +18,6 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 # Name the QT5 libraries
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 
-# set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
 
 include_directories(
   # ${Qt5Core_INCLUDE_DIRS} # included as dependency with ${Qt5Widgets_INCLUDE_DIRS}
@@ -32,16 +31,19 @@ include_directories(
 
 add_subdirectory(ViewModule)
 add_subdirectory(RendererModule)
+add_subdirectory(ExternalTestClassesView)
 
 # Link view and renderer libraries here
-add_library(IMAGE_CLASSIFICATION_VIEW INTERFACE)
-target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE VIEW_MODULE RENDERER_MODULE)
+# add_library(IMAGE_CLASSIFICATION_VIEW INTERFACE)
+# target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE VIEW_MODULE RENDERER_MODULE)
 
 # include_directories("${CMAKE_BINARY_DIR}")
 
 # Link the app!
-target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE ${QT5_LIBRARIES} ${OpenCV_LIBS})
+# target_link_libraries(IMAGE_CLASSIFICATION_VIEW INTERFACE ${QT5_LIBRARIES} ${OpenCV_LIBS})
 
 # Build the app! (just a main function to test; would prbably moved to Controller)
 add_executable(${IMAGE_CLASSIFICATION_TARGET} "src/main.cpp")
-target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} IMAGE_CLASSIFICATION_VIEW)
+# target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} IMAGE_CLASSIFICATION_VIEW)
+target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} VIEW_MODULE)
+target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} RENDERER_MODULE)

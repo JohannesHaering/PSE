@@ -1,7 +1,7 @@
 #ifndef PAGER_H_
 #define PAGER_H_
 
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class Pager {
 
@@ -12,6 +12,7 @@ class Pager {
 		int getCurrentPage();
 		bool nextEnable();
 		bool prevEnable();
+		ContentView getGUIPage();
 
 	protected: 
 		int currentPage;

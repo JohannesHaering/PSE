@@ -44,7 +44,7 @@ NetworkLayer PollingLayerParser::parse(std::string toParse)
 
     if (*parts3It == "average")
     {
-        factory.setType(PollingType::AVEREAGE);
+        factory.setType(PollingType::AVERAGE);
     }
     else
     {
@@ -73,7 +73,7 @@ std::string PollingLayerParser::parseBack(PollingLayer layer)
     case PollingType::MAX:
         output += "max";
         break;
-    case PollingType::AVEREAGE:
+    case PollingType::AVERAGE:
         output += "average";
         break;
     }

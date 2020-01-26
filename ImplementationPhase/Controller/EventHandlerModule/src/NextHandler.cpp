@@ -18,7 +18,7 @@ void NextHandler::onAction()
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		ViewFacade::getInstance().exceptionText("No next exists");
+		pager.getGUIPage().showError("No next exists");
 	}
 	
 }

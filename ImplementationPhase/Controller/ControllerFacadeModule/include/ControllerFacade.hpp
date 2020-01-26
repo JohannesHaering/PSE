@@ -11,13 +11,14 @@
 #include "PrevHandler.hpp"
 #include "NewResultHandler.hpp"
 #include "PredictionHandler.hpp"
-#include "TrainingDistributor.hpp"
+// #include "TrainingDistributor.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
+#include "DeviceHandler.hpp"
 
 
 class ControllerFacade {
-    
+
     public:
         static ControllerFacade* getInstance();
 
@@ -32,6 +33,7 @@ class ControllerFacade {
         void getNeuralNetworkInputClassifcation();
         void newResultClassification();
         void newPredictionClassification();
+		void searchDevicesClassification();
 
         // Detection Methods
         void startProcessDetection();
@@ -44,12 +46,13 @@ class ControllerFacade {
         void getNeuralNetworkInputDetection();
         void newResultDetection();
         void newPredictionDetection();
+		void searchDevicesDetection();
 
         // Training methods
-        void startProcessTraining();
-        void getImageInputTraining();
-        void getNeuralNetworkInputTraining();
-        void newTrainStep(std::vector<float> training, std::vector<float> test);
+        // void startProcessTraining();
+        // void getImageInputTraining();
+        // void getNeuralNetworkInputTraining();
+        // void newTrainStep(std::vector<float> training, std::vector<float> test);
 
         // Topology methods
         void startProcessTopology();
@@ -73,6 +76,7 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerClassification;
         NewResultHandler* newResultHandlerClassification;
         PredictionHandler* predictionHandlerClassification;
+		DeviceHandler* deviceHandlerClassification;
 
         // Detection components
         InferencingDistributor* detectionInferencer;
@@ -86,13 +90,14 @@ class ControllerFacade {
         PagerHandler* imgPrevHandlerDetection;
         NewResultHandler* newResultHandlerDetection;
         PredictionHandler* predictionHandlerDetection;
+		DeviceHandler* deviceHandlerDetection;
 
         // Training components
-        TrainingDistributor* trainingDistributor;
-        InputImageHandler* inputHandlerTraining;
-        NeuralNetworkHandler* neuralNetworkHandlerTraining;
-        StartHandler* startHandlerTraining;
-        NewTrainStepHandler* trainstepHandlerTraining;
+        // TrainingDistributor* trainingDistributor;
+        // InputImageHandler* inputHandlerTraining;
+        // NeuralNetworkHandler* neuralNetworkHandlerTraining;
+        // StartHandler* startHandlerTraining;
+        // NewTrainStepHandler* trainstepHandlerTraining;
 
         // Topology components
         TopologyInferencer* topologyInferencer;

@@ -33,7 +33,7 @@ bool NeuralNetworkFacade::saveNeuralNetworks(std::list<NeuralNetwork> neuralNetw
 {
     bool succes = true;
     auto nIt = neuralNetworks.begin();
-    auto pIt = neuralNetworks.begin();
+    auto pIt = paths.begin();
     for (; nIt != neuralNetworks.end() && pIt != paths.end(); ++nIt, ++pIt)
         succes &= saveNeuralNetwork(*nIt, *pIt);
     return succes;

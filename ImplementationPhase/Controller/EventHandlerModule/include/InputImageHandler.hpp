@@ -3,24 +3,24 @@
 
 #include "Distributor.hpp"
 #include "FileExplorerHandler.hpp"
-#include "inferencepageadapter.h"
+#include "InferencePageAdapter.hpp"
 
 class InputImageHandler : public FileExplorerHandler {
-    
+
     public:
         InputImageHandler(Distributor distributor);
 		InputImageHandler();
         void onAction();
 
-    private: 
-        std::vector<std::string> validformatsmanual = {"jpg", "JPG", "png", "PNG"};
-		std::vector<std::string> validformatstxt = {"txt", "TXT"};
-        Distributor distributor; 
+    private:
+        std::vector<std::string> validformatsmanual = {"jpg", "png"};
+		std::vector<std::string> validformatstxt = {"txt"};
+        Distributor distributor;
 		InferencePageAdapter page;
 
-    protected: 
+    protected:
         void sendDirectory(std::vector<std::string> dir);
-		std::vector<std::string> InputImageHandler::fetchDirectory();
+        std::vector<std::string> fetchDirectory();
 
 };
 #endif
