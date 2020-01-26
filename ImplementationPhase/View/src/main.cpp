@@ -1,11 +1,10 @@
 // #include "MainWindow.hpp"
-#include "ViewFacade.hpp"
+#include "ControllerFacade.hpp"
 #include <QApplication>
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    ViewFacade* viewFacade = ViewFacade::getInstance();
-    MainWindow* w = viewFacade->getMainMenu();
-    w->show();
+    ControllerFacade::getInstance();
+    ViewFacade::getInstance()->getMainMenu()->show();
     return a.exec();
 }
