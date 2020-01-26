@@ -20,7 +20,7 @@
 #include "ControllerFacade.hpp"
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
-
+ControllerFacade* ControllerFacade::instance = 0;
 ControllerFacade* ControllerFacade::getInstance(){
 	if (!instance)
 	{

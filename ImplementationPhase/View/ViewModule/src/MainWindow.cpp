@@ -44,6 +44,7 @@ void MainWindow::on_training_clicked()
 {
     training->setModal(true);
     training->exec();
+    training->destroyed();
 }
 
 void MainWindow::on_objectDetection_clicked()
