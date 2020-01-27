@@ -9,9 +9,9 @@
 class LayerFactory
 {
 public:
-    virtual NetworkLayer buildLayer();
-    LayerFactory setInputDimensions(int* dimensions);
-    LayerFactory setName(std::string name);
+    virtual NetworkLayer buildLayer() = 0;
+    LayerFactory* setInputDimensions(int* dimensions);
+    LayerFactory* setName(std::string name);
 
 protected:
     int* inputDimensions;

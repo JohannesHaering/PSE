@@ -9,8 +9,14 @@
  * Calls the view to open a fileexplorer and gives those to the corresponding object.
  */
 void FileExplorerHandler::onAction(){
-    std::vector<std::string> res = fetchDirectory();
-    sendDirectory(res);
+    try {
+        std::vector<std::string> res = fetchDirectory();
+        sendDirectory(res);
+    }
+    catch (const std::invalid_argument& ia)
+    {
+        page->showError(ia.what());
+    }
 }
 
 

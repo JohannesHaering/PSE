@@ -14,6 +14,7 @@ class FileExplorerHandler : public EventHandler {
     protected:
         virtual std::vector<std::string> fetchDirectory() = 0;
         virtual void sendDirectory(std::vector<std::string>) = 0;
+        InferencePageAdapter *page;
 
 };
 #endif
