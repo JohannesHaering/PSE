@@ -14,4 +14,5 @@ std::list<std::string> Parser<T>::splitBySymbol(std::string text, std::string sy
         output.push_back(token);
         text.erase(0, pos + symbol.length());
     }
+    return output;
 }

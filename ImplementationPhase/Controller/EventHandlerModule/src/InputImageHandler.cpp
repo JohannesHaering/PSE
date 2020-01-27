@@ -24,7 +24,6 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
-	try {
 		InferencePageAdapter* page = (InferencePageAdapter*) distributor->getPage();
 		int mode = page->getInputMode();
 		// normaler mode
@@ -36,10 +35,4 @@ std::vector<std::string> InputImageHandler::fetchDirectory()
 		else if (mode == 1) {
 			return page->getFilesFromExplorer(validformatstxt);
 		}
-	}
-	catch (const std::invalid_argument& ia)
-	{
-		page->showError("Invalid image");
-	}
-
 }

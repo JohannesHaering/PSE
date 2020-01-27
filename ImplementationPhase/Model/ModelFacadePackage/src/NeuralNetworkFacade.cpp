@@ -2,6 +2,7 @@
 #include "TextFileIO.hpp"
 #include "NeuralNetworkParser.hpp"
 #include "NeuralNetwork.hpp"
+#include "Data.hpp"
 
 #include <string>
 #include <list>

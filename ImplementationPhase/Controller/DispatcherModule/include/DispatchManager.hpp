@@ -16,7 +16,7 @@
 class DispatchManager 
 {
 	private:
-		DispatchManager();	
+        DispatchManager() = default;
 	        // Stop the compiler generating methods of copy the object
 		DispatchManager(DispatchManager const& copy); //don't implement!
 		DispatchManager& operator=(DispatchManager const& copy); //don't implement!
@@ -26,7 +26,7 @@ class DispatchManager
 		std::map<Device,Channel*> deviceChannelMap;
 
 	public:
-		static DispatchManager getInstance(); 
+        static DispatchManager &getInstance();
 		void setMode(Mode* operatingmode);
 		Mode* getMode();
 		std::list<Mode*> getModeList();
