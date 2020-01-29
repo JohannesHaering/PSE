@@ -16,6 +16,7 @@ class NeuralNetworkAdapter {
 		NetworkLayer *getLastLayer();
 		NetworkLayer *getNextLayer();
 		NetworkLayer *getPreviousLayer();
+		std::string getName();
 
     private: 
         NeuralNetwork neuralNetwork;    

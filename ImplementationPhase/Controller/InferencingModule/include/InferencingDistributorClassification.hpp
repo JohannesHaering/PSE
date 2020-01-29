@@ -3,6 +3,7 @@
 
 #include "InferencingDistributor.hpp"
 #include "InferencePageAdapter.hpp"
+#include "opencv2/opencv.hpp"
 
 class InferencingDistributorClassification : virtual public InferencingDistributor {
 
@@ -10,10 +11,11 @@ class InferencingDistributorClassification : virtual public InferencingDistribut
         InferencingDistributorClassification(InferencePageAdapter *page);
         void enableStart();
         void startProcess();
-		void saveResult(std::string neuralNetworkId, std::string imageId, std::string path);
+		void saveResult(int neuralNetworkId, int imageId, std::string path);
+		void drawResult(int neuralNetworkId, int imageId);
 
     protected: 
-        void drawResult(std::string nn_id, std::string input_id);
+		std::vector<cv::Mat> images;
 
 };
 #endif

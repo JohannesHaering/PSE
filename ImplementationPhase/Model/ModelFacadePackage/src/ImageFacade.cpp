@@ -18,6 +18,10 @@ cv::Mat ImageFacade::getImage(std::string path, int width, int height, int chann
     return parsedImage;
 }
 
+cv::Mat ImageFacade::getImage(std::string path) {
+	return ImageFileIO().readFile(path).getData();
+}
+
 std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int width, int height, int channelNumb)
 {
     std::list<cv::Mat> images;
@@ -26,6 +30,16 @@ std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int widt
         images.push_back(getImage(*it, width, height, channelNumb));
     }
     return images;
+}
+
+std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths)
+{
+	std::list<cv::Mat> images;
+	for (auto it = paths.begin(); it != paths.end(); ++it)
+	{
+		images.push_back(getImage(*it));
+	}
+	return images;
 }
 
 std::list<cv::Mat> ImageFacade::getImagesFromTxtFile(std::string path, int width, int height, int channelNumb)
