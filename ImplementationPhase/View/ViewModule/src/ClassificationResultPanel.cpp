@@ -58,25 +58,25 @@ void ClassificationResultPanel::saveResultEnable(bool flag){
 //clicked buttons
 void ClassificationResultPanel::on_prevImgButton_clicked()
 {
-   // ControllerFacade::getInstance()->prevImageClassification();
+   ControllerFacade::getInstance()->prevImageClassification();
 }
 
 void ClassificationResultPanel::on_nextImgButton_clicked()
 {
- //   ControllerFacade::getInstance()->nextImageClassification();
+    ControllerFacade::getInstance()->nextImageClassification();
 }
 
 void ClassificationResultPanel::on_prevNNButton_clicked()
 {
-   // ControllerFacade::getInstance()->prevNeuralNetworkClassification();
+    ControllerFacade::getInstance()->prevNeuralNetworkClassification();
 }
 
 void ClassificationResultPanel::on_nextNNButton_clicked()
 {
-    //ControllerFacade::getInstance()->nextNeuralNetworkClassification();
+    ControllerFacade::getInstance()->nextNeuralNetworkClassification();
 }
 
 void ClassificationResultPanel::on_saveResultButton_clicked()
 {
-   //ControllerFacade::getInstance().saveResultsClassification();
+   ControllerFacade::getInstance()->saveResultsClassification();
 }

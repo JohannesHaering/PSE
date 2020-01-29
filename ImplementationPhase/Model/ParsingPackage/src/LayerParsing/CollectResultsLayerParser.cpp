@@ -12,7 +12,7 @@ NetworkLayer CollectResultsLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
 
-    return CollectResultsLayerFactory().setName(LayerParserDistribution().COLLECT_RESULTS).setInputDimensions(LayerParser::inputDimensions).buildLayer();
+    return CollectResultsLayerFactory().setName(LayerParserDistribution().COLLECT_RESULTS)->setInputDimensions(LayerParser::inputDimensions)->buildLayer();
 }
 
 std::string CollectResultsLayerParser::parseBack(CollectResultsLayer layer)

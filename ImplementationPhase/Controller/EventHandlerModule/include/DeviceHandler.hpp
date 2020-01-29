@@ -3,6 +3,7 @@
 
 #include "InferencePageAdapter.hpp"
 #include "ResultManager.hpp"
+#include "DispatchManager.hpp"
 
 class DeviceHandler 
 {

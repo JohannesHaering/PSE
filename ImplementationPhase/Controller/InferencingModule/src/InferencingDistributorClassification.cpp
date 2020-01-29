@@ -9,6 +9,7 @@
 #include "ResultManager.hpp"
 #include <opencv2/opencv.hpp>
 #include "Data.hpp"
+#
 /*
 * Creates a InferencingDistributor for Classification.
 * Parameters:
@@ -33,8 +34,8 @@ void InferencingDistributorClassification::enableStart(){
 void InferencingDistributorClassification::startProcess()
 {
 	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
-	DispatchManager dispatcher = DispatchManager::getInstance();
-	dispatcher.setNeuralNetworkList(nnlist);
+    DispatchManager& dispatcher = DispatchManager::getInstance();
+    dispatcher.setNeuralNetworkList(nnlist);
     std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
@@ -55,13 +56,8 @@ void InferencingDistributorClassification::startProcess()
 	mode->setAllowedDeviceList(platformlist);
 	mode->setNeuralNetworkList(nnlist);
     dispatcher.setMode(mode);
-	MultipleImageFileIO* io = new MultipleImageFileIO();	
-	std::list<std::string> dirList(directories.begin(), directories.end());
-    Data<std::list<cv::Mat>> imageList = io->readFile(dirList);
-	
-    std::list<cv::Mat> lists = imageList.getData();
-	//images.insert(directories.begin(), imageList.getData().begin());
-    resultManager = dispatcher.dispatchImages(lists);
+    std::list<cv::Mat> imageList;
+    resultManager = dispatcher.dispatchImages(imageList);
 }
 
 /*

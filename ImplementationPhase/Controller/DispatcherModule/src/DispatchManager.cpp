@@ -10,10 +10,10 @@
 //DispatchManager::DispatchManager(DispatchManager const& copy); //not implemented
 //DispatchManager::DispatchManager& operator=(DispatchManager const& copy); //not implemented
 
-DispatchManager DispatchManager::getInstance() 
+DispatchManager &DispatchManager::getInstance()
 {
 	static DispatchManager instance;
-	return instance;
+    return instance;
 }
 
 Mode* DispatchManager::getMode() { return mode; }
@@ -37,4 +37,9 @@ ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList)
 	std::list<Result> resultList;
 	ResultManager resultMgr(resultList);
 	return resultMgr;
+}
+
+std::vector<Device> DispatchManager::getAvailableDevices() {
+    //TODO
+    return std::vector<Device>();
 }

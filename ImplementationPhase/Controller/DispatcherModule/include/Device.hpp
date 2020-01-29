@@ -3,8 +3,8 @@
 #include <string>
 class Device {
 	private:
-		std::string name;
 		std::string type;
+        std::string name;
 		long ram;
 		double performance;
 	public:
