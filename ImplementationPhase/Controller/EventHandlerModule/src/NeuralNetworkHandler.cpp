@@ -12,7 +12,7 @@
  */
 NeuralNetworkHandler::NeuralNetworkHandler(Inferencer* inferencer)
 {
-    *neuralnetworksetter = NeuralNetworkSetter(inferencer);
+    neuralnetworksetter = new NeuralNetworkSetter(inferencer);
 }
 
 /**

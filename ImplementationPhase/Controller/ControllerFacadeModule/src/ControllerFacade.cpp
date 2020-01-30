@@ -20,6 +20,7 @@
 #include "ControllerFacade.hpp"
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
+#include <iostream>
 
 ControllerFacade* ControllerFacade::instance = 0;
 
@@ -94,9 +95,8 @@ void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTop
 
 ControllerFacade::ControllerFacade() {
   ViewFacade* view = ViewFacade::getInstance();
-
      // Setup Classification
-	InferencePageAdapter *classificationPage = view->getImageClassification();
+    InferencePageAdapter *classificationPage = view->getImageClassification();
     classificationInferencer = new InferencingDistributorClassification(classificationPage);
     NeuralNetworkPager* neuralNetworkPager = new NeuralNetworkPager(0, classificationPage);
     ImagePager* imagePager = new ImagePager(0, classificationPage);
@@ -110,8 +110,7 @@ ControllerFacade::ControllerFacade() {
 	imgPrevHandlerClassification = new PrevHandler(imagePager);
     newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     predictionHandlerClassification = new PredictionHandler(classificationPage);
-	deviceHandlerClassification = new DeviceHandler(classificationPage);
-
+    deviceHandlerClassification = new DeviceHandler(classificationPage);
     // Setup Detection
   /*
   InferencePageAdapter detectionPage = *view->getObjectDetection();
@@ -129,8 +128,8 @@ ControllerFacade::ControllerFacade() {
     newResultHandlerDetection = new NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
     predictionHandlerDetection = new PredictionHandler(detectionPage);
   */
-    // Setup Training
-    // trainingDistributor = new TrainingDistributor();
+     // Setup Training
+     // trainingDistributor = new TrainingDistributor();
     // inputHandlerTraining = new InputImageHandler(*trainingDistributor);
     // neuralNetworkHandlerTraining = new NeuralNetworkHandler(*trainingDistributor);
     // startHandlerTraining = new StartHandler(*trainingDistributor);

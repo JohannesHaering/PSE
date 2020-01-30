@@ -8,10 +8,11 @@ private:
     T data;
 
 public:
-    Data<T>(T data)
-    {
+    Data<T>(T data) {
         this->data = data;
     }
-    T getData();
+    T getData() {
+        return data;
+    }
 };
 #endif
