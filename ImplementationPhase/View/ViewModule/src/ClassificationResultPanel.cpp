@@ -35,7 +35,7 @@ void ClassificationResultPanel::displayResult(){
     ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
 }
 void ClassificationResultPanel::update(){
-    if(imagePixmap != NULL && resultPixmap != NULL){
+    if(canUpdate){
         displayImage();
         displayResult();
     }
@@ -45,6 +45,7 @@ void ClassificationResultPanel::resultsChanged(std::string nnName, std::string i
     ui->nnName->setText(QString::fromStdString(nnName));
     imagePixmap = new QPixmap(convertCvtoQImg(mat));
     resultPixmap = new QPixmap(renderer->drawGraphic(result));
+    canUpdate = true;
 }
 //buttons
 void ClassificationResultPanel::nextNNEnable(bool flag){

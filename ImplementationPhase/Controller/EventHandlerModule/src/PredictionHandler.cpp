@@ -23,6 +23,7 @@ PredictionHandler::~PredictionHandler()
  * Calculates new prediction.
  */ 
 void PredictionHandler::onAction(){
+
 	std::vector<Device> devices = page->getDevices();
 	std::list<std::string> devicelist;
 
@@ -37,19 +38,19 @@ void PredictionHandler::onAction(){
 	float powerPrediction = 0;
 
 	std::map<std::string, float>::iterator it = performancePredictionValues.begin();
-	while (it != performancePredictionValues.end())
-	{
+    for ( it = performancePredictionValues.begin(); it != performancePredictionValues.end(); it++ )
+    {
 		performancePrediction += it->second;
-	}
+    }
 
 	std::map<std::string, float>::iterator iterator = powerPredictionValues.begin();
-	while (iterator != powerPredictionValues.end())
-	{
+    for ( it = powerPredictionValues.begin(); it != powerPredictionValues.end(); it++ )
+    {
 		powerPrediction += iterator->second;
 	}
 
     page->setPerformancePrediction(performancePrediction);
     page->setPowerPrediction(powerPrediction);
 
-	page->update();
+    page->update();
 }

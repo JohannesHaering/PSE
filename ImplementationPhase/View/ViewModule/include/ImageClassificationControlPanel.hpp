@@ -38,6 +38,7 @@ private slots:
     void on_addImage_clicked();
     void on_startImgClass_clicked();
     void on_deviceSearch_clicked();
+    void on_calculate_clicked();
 
 private:
     float powerPrediction;

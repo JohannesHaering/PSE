@@ -61,6 +61,9 @@ ui->performancePrediction->setText(QString::number(performancePrediction));
 ui->powerPrediction->setText(QString::number(powerPrediction));
 }
 //clicked buttons
+void ImageClassificationControlPanel::on_calculate_clicked(){
+    ControllerFacade::getInstance()->newPredictionClassification();
+}
 void ImageClassificationControlPanel::on_deviceSearch_clicked()
 {
     ControllerFacade::getInstance()->searchDevicesClassification();

@@ -54,7 +54,7 @@ void ControllerFacade::newResultClassification(){ newResultHandlerClassification
 
 void ControllerFacade::newPredictionClassification(){ predictionHandlerClassification->onAction(); }
 
-void ControllerFacade::searchDevicesClassification() { std::cout<<"Bitte"; deviceHandlerClassification->onAction(); }
+void ControllerFacade::searchDevicesClassification() { deviceHandlerClassification->onAction(); }
 
 // Detection Methods
 void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }

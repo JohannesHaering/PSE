@@ -42,10 +42,10 @@
   <widget class="QPushButton" name="prevImgButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>562</y>
-     <width>111</width>
-     <height>31</height>
+     <x>10</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -55,36 +55,38 @@
   <widget class="QPushButton" name="nextNNButton">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>560</y>
-     <width>111</width>
-     <height>31</height>
+     <x>420</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Next NN</string>
+    <string>Next Neural 
+Network</string>
    </property>
   </widget>
   <widget class="QPushButton" name="prevNNButton">
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>560</y>
-     <width>111</width>
-     <height>31</height>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Previous NN</string>
+    <string>Previous 
+ Neural Network</string>
    </property>
   </widget>
   <widget class="QPushButton" name="nextImgButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>560</y>
-     <width>111</width>
-     <height>31</height>
+     <x>140</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -120,10 +122,10 @@
   <widget class="QPushButton" name="saveResultButton">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>600</y>
-     <width>101</width>
-     <height>31</height>
+     <x>220</x>
+     <y>580</y>
+     <width>111</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">

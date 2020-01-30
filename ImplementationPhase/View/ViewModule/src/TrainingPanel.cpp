@@ -49,7 +49,7 @@ void TrainingPanel::on_chooseDataset_clicked()
     //ControllerFacade::getInstance()->getImageInputTraining();
 }
 void TrainingPanel::on_chooseNeuralNetwork_clicked(){
-   // ControllerFacade::getInstance()->getNeuralNetworkInputTraining();
+    //ControllerFacade::getInstance()->getNeuralNetworkInputTraining();
 }
 void TrainingPanel::on_train_clicked()
 {
