@@ -8,6 +8,6 @@
 
 class SingleDetectionDatasetParser : public LineBreakParser<SingleDetectionDataset> {
     public:
-        SingleDetectionDataset parse(std::string toParse);
+        SingleDetectionDataset parse(std::string toParse) override;
 };
 #endif

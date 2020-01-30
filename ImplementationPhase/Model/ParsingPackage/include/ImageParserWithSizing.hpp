@@ -7,7 +7,7 @@
 class ImageParserWithSizing : public ImageParser {
 public:
 	ImageParserWithSizing(int width, int height, int channels);
-	cv::Mat parse(cv::Mat toParse) override;
+    cv::Mat parse(cv::Mat toParse);
 };
 
 #endif
