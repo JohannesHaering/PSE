@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     topology = new TopologyPanel();
     imageClassification = new InferencePageAdapter();
     objectDetection = new ObjectDetectionInferencePageAdapter();
+    ui->topology->setEnabled(false);
+    ui->objectDetection->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
