@@ -54,7 +54,12 @@
    </item>
    <item>
     <property name="text">
-     <string>More Images</string>
+     <string>Multiple Images</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>From textfile</string>
     </property>
    </item>
   </widget>

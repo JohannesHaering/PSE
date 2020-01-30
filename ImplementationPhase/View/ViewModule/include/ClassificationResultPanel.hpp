@@ -40,7 +40,7 @@ private:
     Ui::ClassificationResultPanel *ui;
     std::string currentImagePath;
     std::string currentResultPath;
-    bool canUpdate = false;
+    // bool canUpdate = false;
     QPixmap* resultPixmap;
     QPixmap* imagePixmap;
     void displayImage();

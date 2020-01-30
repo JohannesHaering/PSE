@@ -38,6 +38,7 @@ std::vector<std::string> InputImageHandler::fetchDirectory()
         }
         // text file
         else {
-            return page->getFilesFromExplorer(validformatsmanual);
+            // TODO
+            return {page->getFileFromExplorer(validformatsmanual)};
         }
 }
