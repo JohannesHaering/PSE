@@ -14,7 +14,7 @@ public:
     QString* vectorToString(std::vector<std::string> formats);
     std::string getFileFromExplorer(std::vector<std::string> types);
     std::vector<std::string> getFilesFromExplorer(std::vector<std::string> types);
-    std::string getDirectoryFromExplorer(std::vector<std::string> types);
+    std::string getDirectoryFromExplorer();
     std::string getSaveFileName();
     virtual void showError(std::string error);
     QPixmap convertCvtoQImg(cv::Mat mat);

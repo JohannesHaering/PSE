@@ -2,10 +2,13 @@
 #include "ViewFacade.hpp"
 #include "Trainer.hpp"
 #include "TrainingDistributor.hpp"
+#include "NeuralNetworkAdapter.hpp"
 
 
 TrainingDistributor::TrainingDistributor() {
 	this->page = ViewFacade::getInstance()->getTrainingPanel();
+    this->neuralNetworks = std::vector<NeuralNetworkAdapter>();
+    this->directories = std::vector<std::string>();
 }
 
 /*
@@ -13,14 +16,15 @@ TrainingDistributor::TrainingDistributor() {
  */
 void TrainingDistributor::TrainingDistributor::startProcess() {
 	float desprecision = page->getPrecision();
-	Trainer trainer = Trainer(neuralNetwork, desprecision, directories);
+    //TODO
+    Trainer trainer = Trainer(neuralNetworks[0], desprecision, directories);
 }
 
 /*
  * Checks if all needed data is given to start the process. 
  */
 bool TrainingDistributor::canStart() {
-	if (&neuralNetwork == NULL || &directories == NULL) {
+    if (neuralNetworks.size() == 0 || directories.size() == 0) {
 		return false;
 	}
 	return true; 
@@ -31,4 +35,8 @@ bool TrainingDistributor::canStart() {
  */ 
 void TrainingDistributor::enableStart() {
 	page->enableStart(canStart());
+}
+
+ContentView* TrainingDistributor::getPage() {
+    return this->page;
 }

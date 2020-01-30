@@ -46,12 +46,12 @@ void TrainingPanel::enableStart(bool flag) {
 
 void TrainingPanel::on_chooseDataset_clicked()
 {
-    //ControllerFacade::getInstance()->getImageInputTraining();
+    ControllerFacade::getInstance()->getImageInputTraining();
 }
 void TrainingPanel::on_chooseNeuralNetwork_clicked(){
-   // ControllerFacade::getInstance()->getNeuralNetworkInputTraining();
+    ControllerFacade::getInstance()->getNeuralNetworkInputTraining();
 }
 void TrainingPanel::on_train_clicked()
 {
-   // ControllerFacade::getInstance().startProcessTraining();
+    ControllerFacade::getInstance()->startProcessTraining();
 }

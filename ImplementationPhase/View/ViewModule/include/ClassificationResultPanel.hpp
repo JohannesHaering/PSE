@@ -35,6 +35,7 @@ private slots:
     void on_saveResultButton_clicked();
 
 private:
+    bool canUpdate = false;
     ClassificationResultRenderer* renderer;
     Ui::ClassificationResultPanel *ui;
     std::string currentImagePath;
