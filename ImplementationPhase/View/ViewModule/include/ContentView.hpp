@@ -16,7 +16,7 @@ public:
     std::vector<std::string> getFilesFromExplorer(std::vector<std::string> types);
     std::string getDirectoryFromExplorer(std::vector<std::string> types);
     std::string getSaveFileName();
-    void showError(std::string error);
+    virtual void showError(std::string error);
     QPixmap convertCvtoQImg(cv::Mat mat);
 private:
       QWidget *widg;
