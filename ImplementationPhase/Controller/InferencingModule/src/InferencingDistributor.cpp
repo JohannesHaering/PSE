@@ -18,3 +18,6 @@ bool InferencingDistributor::canStart() {
                 (page->getShowResults() || page->getSaveResults());
 }
 
+ContentView* InferencingDistributor::getPage() {
+    return this->page;
+}

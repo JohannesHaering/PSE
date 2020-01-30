@@ -24,13 +24,15 @@ void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 
 std::vector<std::string> InputImageHandler::fetchDirectory() 
 {
-        InferencePageAdapter* page = static_cast<InferencePageAdapter*>(distributor->getPage());
-        std::cout<<"fetching\n";
+        InferencePageAdapter* page = dynamic_cast<InferencePageAdapter*>(distributor->getPage());
 		int mode = page->getInputMode();
-        std::cout<<"fetchin2\n";
 
 		// normaler mode
-        if (mode == 1)
+        if (mode == 0) {
+            return {page->getFileFromExplorer(validformatsmanual)};
+        }
+
+        if (mode == 2)
 		{
             return page->getFilesFromExplorer(validformatstxt);
 		}

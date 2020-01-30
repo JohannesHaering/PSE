@@ -87,3 +87,4 @@ void InferencingDistributorClassification::saveResult(int neuralNetworkId, int i
 	ResultFacade model = ResultFacade();
 	model.writeClassificationResult(*result, path);
 }
+
