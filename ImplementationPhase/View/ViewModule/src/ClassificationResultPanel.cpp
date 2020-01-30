@@ -35,8 +35,10 @@ void ClassificationResultPanel::displayResult(){
     ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
 }
 void ClassificationResultPanel::update(){
-    displayImage();
-    displayResult();
+    if(imagePixmap != NULL && resultPixmap != NULL){
+        displayImage();
+        displayResult();
+    }
 }
 void ClassificationResultPanel::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
     ui->imgName->setText(QString::fromStdString(imgName));

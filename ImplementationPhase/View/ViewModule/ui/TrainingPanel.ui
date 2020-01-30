@@ -55,14 +55,14 @@
   <widget class="QLineEdit" name="learningRate">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>130</x>
      <y>200</y>
      <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>0.1</string>
    </property>
   </widget>
   <widget class="QLabel" name="learningRateLabel">
@@ -70,7 +70,7 @@
     <rect>
      <x>10</x>
      <y>200</y>
-     <width>71</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -81,27 +81,27 @@
   <widget class="QLineEdit" name="precision">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>130</x>
      <y>230</y>
      <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>0.95</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="name">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>130</x>
      <y>260</y>
-     <width>191</width>
+     <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>TrainedNetwork</string>
    </property>
   </widget>
   <widget class="QLabel" name="precisionLabel">
@@ -109,7 +109,7 @@
     <rect>
      <x>10</x>
      <y>230</y>
-     <width>91</width>
+     <width>131</width>
      <height>16</height>
     </rect>
    </property>
@@ -122,7 +122,7 @@
     <rect>
      <x>10</x>
      <y>260</y>
-     <width>81</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>

@@ -41,5 +41,6 @@ ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList)
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
     //TODO
-    return std::vector<Device>();
+    Device cpu = Device("CPU", "generic cpu", 24, 1.0);
+    return { cpu };
 }
