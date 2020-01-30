@@ -6,6 +6,7 @@
 #include "Data.hpp"
 #include <opencv2/opencv.hpp>
 #include <vector>
+#include <list>
 
 TEST(readFileTest, emptyPath)
 {
