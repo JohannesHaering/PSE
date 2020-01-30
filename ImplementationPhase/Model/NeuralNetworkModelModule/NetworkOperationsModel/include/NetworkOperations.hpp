@@ -3,19 +3,20 @@
 
 // #include <list>
 #include <string>
-#include "MatrixDefine.hpp"
+// #include "MatrixDefine.hpp"
+#include "LayerCode.hpp"
 
 class NetworkOperations {
 
   private:
     std::string platformName;
-    std::vector<*LayerCode> layerHandlers;
+    std::vector<LayerCode*> layerHandlers;
 
   public:
-    void NetworkOperations();
-    void NetworkOperations(std::string platformName);
+    NetworkOperations();
+    NetworkOperations(std::string platformName);
     int addKernelCode(LayerType layerType, std::vector<std::string> kernelCode);
-    Matrix_3D(float) executeCalculation(NetworkLayer *layer, Matrix_3D(float) inputData);
+    MATRIX_3D(float) executeCalculation(NetworkLayer *layer, MATRIX_3D(float) inputData);
     TENSOR(float) executeBackPropagation(NetworkLayer *layer, TENSOR(float) inputData);
     std::string getplatformName();
 };

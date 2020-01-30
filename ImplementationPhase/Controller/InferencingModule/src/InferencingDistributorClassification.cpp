@@ -76,7 +76,7 @@ void InferencingDistributorClassification::drawResult(std::string nn_id, std::st
 * -int neuralNetworkId: number of neural network of the wanted result
 * -int imageId: number if image of the wanted result
 */
-void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId, std::string path)
+void InferencingDistributorClassification::saveResult(std::string neuralNetworkId, std::string imageId, std::string path)
 {
 	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(neuralNetworkId, imageId);
 	ResultFacade model = ResultFacade();
