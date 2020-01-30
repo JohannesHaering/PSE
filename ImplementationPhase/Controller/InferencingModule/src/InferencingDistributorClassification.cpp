@@ -9,8 +9,7 @@
 #include "ResultManager.hpp"
 #include "ImageFacade.hpp"
 #include <opencv2/opencv.hpp>
-#include "Data.hpp"
-#
+
 /*
 * Creates a InferencingDistributor for Classification.
 * Parameters:
@@ -41,8 +40,8 @@ void InferencingDistributorClassification::startProcess()
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
     int opMode = page->getOperatingMode();
-	std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist);
-	images = std::vector<cv::Mat>(imglist.begin(), imglist.end());
+    std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist, 0, 0, 0);
+    images = std::vector<cv::Mat>(imglist.begin(), imglist.end());
 	Mode* mode;
 	if (opMode == 0) 
 	{

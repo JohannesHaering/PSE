@@ -10,9 +10,9 @@
 class ImageFacade : public ModelFacade {
     public:
         cv::Mat getImage(std::string path, int width, int height, int channelNumb);
-		cv::Mat getImage(std::string path);
+//		cv::Mat getImage(std::string path);
         std::list<cv::Mat> getImages(std::list<std::string> paths, int width, int height, int channelNumb);
-		std::list<cv::Mat> getImages(std::list<std::string> paths);
+//		std::list<cv::Mat> getImages(std::list<std::string> paths);
         std::list<cv::Mat> getImagesFromTxtFile(std::string path, int width, int height, int channelNumb);
         cv::Mat getImageFromCamera(int deviceId,  int width, int height, int channelNumb);
         std::list<cv::Mat> getImagesFromVideo(std::string path, int width, int height, int channelNumb);

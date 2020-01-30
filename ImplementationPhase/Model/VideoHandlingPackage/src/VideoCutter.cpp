@@ -4,7 +4,7 @@
 #include <list>
 #include <stdexcept>
 
-std::list<cv::Mat> cutIntoFrames(cv::VideoCapture video, int frameInterval)
+std::list<cv::Mat> VideoCutter::cutIntoFrames(cv::VideoCapture video, int frameInterval)
 {
     if (!video.isOpened())
     {
@@ -31,4 +31,5 @@ std::list<cv::Mat> cutIntoFrames(cv::VideoCapture video, int frameInterval)
         }
         counter += 1;
     }
+    return frames;
 }
