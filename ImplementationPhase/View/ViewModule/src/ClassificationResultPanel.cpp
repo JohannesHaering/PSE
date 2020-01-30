@@ -11,6 +11,11 @@ ClassificationResultPanel::ClassificationResultPanel(QWidget *parent) :
 {
     ui->setupUi(this);
     renderer = new ClassificationResultRenderer();
+    nextNNEnable(false);
+    prevNNEnable(false);
+    nextImageEnable(false);
+    saveResultEnable(false);
+    prevImageEnable(false);
 }
 
 ClassificationResultPanel::~ClassificationResultPanel()

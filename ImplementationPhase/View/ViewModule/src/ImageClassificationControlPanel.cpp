@@ -9,6 +9,7 @@ ImageClassificationControlPanel::ImageClassificationControlPanel(QWidget *parent
     ui(new Ui::ImageClassificationControlPanel)
 {
     ui->setupUi(this);
+    startEnable(false);
 }
 
 ImageClassificationControlPanel::~ImageClassificationControlPanel()
@@ -60,6 +61,10 @@ ui->performancePrediction->setText(QString::number(performancePrediction));
 ui->powerPrediction->setText(QString::number(powerPrediction));
 }
 //clicked buttons
+void ImageClassificationControlPanel::on_deviceSearch_clicked()
+{
+    ControllerFacade::getInstance()->searchDevicesClassification();
+}
 void ImageClassificationControlPanel::on_addImage_clicked()
 {
     ControllerFacade::getInstance()->getImageInputClassification();

@@ -15,7 +15,7 @@ QPixmap ContentView::convertCvtoQImg(cv::Mat mat){
 }
 std::vector<std::string> ContentView::getFilesFromExplorer(std::vector<std::string> types){
     widg = new QWidget();
-    QStringList ls = QFileDialog::getOpenFileNames(widg,"open files");
+    QStringList ls = QFileDialog::getOpenFileNames(widg,"open files",*vectorToString(types), * new QString(QString::fromStdString(types[0])));
     std::vector<std::string> paths;
     for (int i = 0; i < ls.size(); ++i){
          paths.push_back(ls.at(i).toUtf8().constData());

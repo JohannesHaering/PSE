@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>480</height>
+    <height>685</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,8 +42,8 @@
   <widget class="QPushButton" name="prevImgButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>402</y>
+     <x>30</x>
+     <y>562</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -55,8 +55,8 @@
   <widget class="QPushButton" name="nextNNButton">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>400</y>
+     <x>410</x>
+     <y>560</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -68,8 +68,8 @@
   <widget class="QPushButton" name="prevNNButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>400</y>
+     <x>290</x>
+     <y>560</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -81,8 +81,8 @@
   <widget class="QPushButton" name="nextImgButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>400</y>
+     <x>160</x>
+     <y>560</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -94,8 +94,8 @@
   <widget class="QLabel" name="imageLabel">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>110</y>
+     <x>20</x>
+     <y>80</y>
      <width>250</width>
      <height>250</height>
     </rect>
@@ -120,8 +120,8 @@
   <widget class="QPushButton" name="saveResultButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>440</y>
+     <x>210</x>
+     <y>600</y>
      <width>101</width>
      <height>31</height>
     </rect>

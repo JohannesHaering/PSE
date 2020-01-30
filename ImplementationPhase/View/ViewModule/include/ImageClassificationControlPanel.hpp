@@ -37,6 +37,7 @@ private slots:
     void on_chooseNeuralNetwork_clicked();
     void on_addImage_clicked();
     void on_startImgClass_clicked();
+    void on_deviceSearch_clicked();
 
 private:
     float powerPrediction;
