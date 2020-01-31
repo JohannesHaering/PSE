@@ -18,7 +18,7 @@ Data<std::list<cv::Mat>> MultipleImageFileIO::readFile(std::list<std::string> pa
     return Data<std::list<cv::Mat>>(images);
 }
 
-bool writeFile(std::list<std::string> paths, Data<std::list<cv::Mat>> data){
+bool MultipleImageFileIO::writeFile(Data<std::list<cv::Mat>> data, std::list<std::string> paths){
     auto images = data.getData();
 
     auto imagesIt = images.begin();

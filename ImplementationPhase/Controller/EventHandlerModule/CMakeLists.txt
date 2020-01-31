@@ -11,7 +11,7 @@ target_include_directories(FILEEXPLORERHANDLER PUBLIC "include/")
 target_link_libraries(FILEEXPLORERHANDLER PUBLIC EVENTHANDLER)
 target_link_libraries(FILEEXPLORERHANDLER PUBLIC VIEW_MODULE)
 
-add_library(INPUTIMAGEHANDLER "src/InputImageHandler.cpp" "include/InputImageHandler.hpp")
+add_library(INPUTIMAGEHANDLER "src/InputImageHandler.cpp" "include/InputImageHandler.hpp" "src/InputImageHandlerTrainer.cpp" "include/InputImageHandlerTrainer.hpp")
 target_include_directories(INPUTIMAGEHANDLER PUBLIC "include/")
 target_link_libraries(INPUTIMAGEHANDLER PUBLIC FILEEXPLORERHANDLER)
 target_link_libraries(INPUTIMAGEHANDLER PUBLIC DISTRIBUTOR)

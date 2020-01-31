@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>480</height>
+    <height>685</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,10 +42,10 @@
   <widget class="QPushButton" name="prevImgButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>402</y>
-     <width>111</width>
-     <height>31</height>
+     <x>10</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -55,36 +55,38 @@
   <widget class="QPushButton" name="nextNNButton">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>400</y>
-     <width>111</width>
-     <height>31</height>
+     <x>420</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Next NN</string>
+    <string>Next Neural 
+Network</string>
    </property>
   </widget>
   <widget class="QPushButton" name="prevNNButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>400</y>
-     <width>111</width>
-     <height>31</height>
+     <x>290</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>Previous NN</string>
+    <string>Previous 
+ Neural Network</string>
    </property>
   </widget>
   <widget class="QPushButton" name="nextImgButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>400</y>
-     <width>111</width>
-     <height>31</height>
+     <x>140</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -94,8 +96,8 @@
   <widget class="QLabel" name="imageLabel">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>110</y>
+     <x>20</x>
+     <y>80</y>
      <width>250</width>
      <height>250</height>
     </rect>
@@ -120,10 +122,10 @@
   <widget class="QPushButton" name="saveResultButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>440</y>
-     <width>101</width>
-     <height>31</height>
+     <x>220</x>
+     <y>580</y>
+     <width>111</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">

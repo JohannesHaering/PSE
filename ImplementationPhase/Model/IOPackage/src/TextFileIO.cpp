@@ -13,6 +13,6 @@ Data<std::string> TextFileIO::readFile(std::string path)
 
 bool TextFileIO::writeFile(std::string path, Data<std::string> data)
 {
-    auto success = FileIO::writePureFile(path, data.getData());
+    bool success = FileIO::writePureFile(path, data.getData());
     return success;
 }

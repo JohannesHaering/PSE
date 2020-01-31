@@ -14,12 +14,14 @@
 #include "PrevHandler.hpp"
 #include "NewResultHandler.hpp"
 #include "PredictionHandler.hpp"
-// #include "TrainingDistributor.hpp"
+#include "TrainingDistributor.hpp"
+#include "InputImageHandlerTrainer.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "ControllerFacade.hpp"
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
+#include <iostream>
 
 ControllerFacade* ControllerFacade::instance = 0;
 
@@ -56,47 +58,46 @@ void ControllerFacade::newPredictionClassification(){ predictionHandlerClassific
 void ControllerFacade::searchDevicesClassification() { deviceHandlerClassification->onAction(); }
 
 // Detection Methods
-void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }
+//void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }
 
-void ControllerFacade::saveResultsDetection(){ saveHandlerDetection->onAction(); }
+//void ControllerFacade::saveResultsDetection(){ saveHandlerDetection->onAction(); }
 
-void ControllerFacade::nextNeuralNetworkDetection(){ nnNextHandlerDetection->onAction(); }
+//void ControllerFacade::nextNeuralNetworkDetection(){ nnNextHandlerDetection->onAction(); }
 
-void ControllerFacade::prevNeuralNetworkDetection(){ nnPrevHandlerDetection->onAction(); }
+//void ControllerFacade::prevNeuralNetworkDetection(){ nnPrevHandlerDetection->onAction(); }
 
-void ControllerFacade::nextImageDetection(){ imgNextHandlerDetection->onAction(); }
+//void ControllerFacade::nextImageDetection(){ imgNextHandlerDetection->onAction(); }
 
-void ControllerFacade::prevImageDetection(){ imgPrevHandlerDetection->onAction(); }
+//void ControllerFacade::prevImageDetection(){ imgPrevHandlerDetection->onAction(); }
 
-void ControllerFacade::getImageInputDetection(){ inputHandlerDetection->onAction(); }
+//void ControllerFacade::getImageInputDetection(){ inputHandlerDetection->onAction(); }
 
-void ControllerFacade::getNeuralNetworkInputDetection(){ neuralNetworkHandlerDetection->onAction(); }
+//void ControllerFacade::getNeuralNetworkInputDetection(){ neuralNetworkHandlerDetection->onAction(); }
 
-void ControllerFacade::newResultDetection(){ newResultHandlerDetection->onAction(); }
+//void ControllerFacade::newResultDetection(){ newResultHandlerDetection->onAction(); }
 
-void ControllerFacade::newPredictionDetection(){ predictionHandlerDetection->onAction(); }
+//void ControllerFacade::newPredictionDetection(){ predictionHandlerDetection->onAction(); }
 
-void ControllerFacade::searchDevicesDetection() { deviceHandlerDetection->onAction(); }
+//void ControllerFacade::searchDevicesDetection() { deviceHandlerDetection->onAction(); }
 
 // Training methods
-// void ControllerFacade::startProcessTraining(){ startHandlerTraining->onAction(); }
-//
-// void ControllerFacade::getImageInputTraining(){ inputHandlerTraining->onAction(); }
-//
-// void ControllerFacade::getNeuralNetworkInputTraining(){ neuralNetworkHandlerTraining->onAction(); }
-//
-// void ControllerFacade::newTrainStep(std::vector<float> training, std::vector<float> test){ trainstepHandlerTraining->newAccuracyPoints(training, test); }
+ void ControllerFacade::startProcessTraining(){ startHandlerTraining->onAction(); }
+
+ void ControllerFacade::getImageInputTraining(){ inputHandlerTraining->onAction(); }
+
+ void ControllerFacade::getNeuralNetworkInputTraining(){ neuralNetworkHandlerTraining->onAction(); }
+
+ void ControllerFacade::newTrainStep(std::vector<float> training, std::vector<float> test){ trainstepHandlerTraining->newAccuracyPoints(training, test); }
 
 // Topology methods
-void ControllerFacade::startProcessTopology() { startHandlerTopology->onAction(); }
+//void ControllerFacade::startProcessTopology() { startHandlerTopology->onAction(); }
 
-void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTopology->onAction(); }
+//void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTopology->onAction(); }
 
 ControllerFacade::ControllerFacade() {
   ViewFacade* view = ViewFacade::getInstance();
-
      // Setup Classification
-	InferencePageAdapter *classificationPage = view->getImageClassification();
+    InferencePageAdapter *classificationPage = view->getImageClassification();
     classificationInferencer = new InferencingDistributorClassification(classificationPage);
     NeuralNetworkPager* neuralNetworkPager = new NeuralNetworkPager(0, classificationPage);
     ImagePager* imagePager = new ImagePager(0, classificationPage);
@@ -110,8 +111,7 @@ ControllerFacade::ControllerFacade() {
 	imgPrevHandlerClassification = new PrevHandler(imagePager);
     newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     predictionHandlerClassification = new PredictionHandler(classificationPage);
-	deviceHandlerClassification = new DeviceHandler(classificationPage);
-
+    deviceHandlerClassification = new DeviceHandler(classificationPage);
     // Setup Detection
   /*
   InferencePageAdapter detectionPage = *view->getObjectDetection();
@@ -129,12 +129,12 @@ ControllerFacade::ControllerFacade() {
     newResultHandlerDetection = new NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
     predictionHandlerDetection = new PredictionHandler(detectionPage);
   */
-    // Setup Training
-    // trainingDistributor = new TrainingDistributor();
-    // inputHandlerTraining = new InputImageHandler(*trainingDistributor);
-    // neuralNetworkHandlerTraining = new NeuralNetworkHandler(*trainingDistributor);
-    // startHandlerTraining = new StartHandler(*trainingDistributor);
-    // trainstepHandlerTraining = new NewTrainStepHandler();
+     // Setup Training
+     trainingDistributor = new TrainingDistributor();
+     inputHandlerTraining = new InputImageHandlerTrainer(trainingDistributor);
+     neuralNetworkHandlerTraining = new NeuralNetworkHandler(trainingDistributor);
+     startHandlerTraining = new StartHandler(trainingDistributor);
+     trainstepHandlerTraining = new NewTrainStepHandler();
 
     // Setup Topology
   /*

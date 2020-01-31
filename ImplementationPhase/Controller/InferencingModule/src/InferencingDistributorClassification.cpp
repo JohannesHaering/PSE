@@ -7,9 +7,9 @@
 #include "ClassificationResult.hpp"
 #include "ResultFacade.hpp"
 #include "ResultManager.hpp"
+#include "ImageFacade.hpp"
 #include <opencv2/opencv.hpp>
-#include "Data.hpp"
-#
+
 /*
 * Creates a InferencingDistributor for Classification.
 * Parameters:
@@ -40,6 +40,8 @@ void InferencingDistributorClassification::startProcess()
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
     int opMode = page->getOperatingMode();
+    std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist, 0, 0, 0);
+    images = std::vector<cv::Mat>(imglist.begin(), imglist.end());
 	Mode* mode;
 	if (opMode == 0) 
 	{
@@ -63,10 +65,11 @@ void InferencingDistributorClassification::startProcess()
 /*
 * Sends the given result to the view. 
 */
-void InferencingDistributorClassification::drawResult(std::string nn_id, std::string input_id) {
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, input_id);
-	cv::Mat image;
-    page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), image, *result);
+void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
+	std::string nn_id = neuralNetworks[neuralNetworkId].getName();
+	std::string img_id = directories[imageId].erase(0, directories[imageId].find_last_of("/")).erase(directories[imageId].find_last_of("."));
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
+    page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
 }    
     
 
@@ -76,9 +79,12 @@ void InferencingDistributorClassification::drawResult(std::string nn_id, std::st
 * -int neuralNetworkId: number of neural network of the wanted result
 * -int imageId: number if image of the wanted result
 */
-void InferencingDistributor::saveResult(std::string neuralNetworkId, std::string imageId, std::string path)
+void InferencingDistributorClassification::saveResult(int neuralNetworkId, int imageId, std::string path)
 {
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(neuralNetworkId, imageId);
+	std::string nn_id = neuralNetworks[neuralNetworkId].getName();
+	std::string img_id = directories[imageId].erase(0, directories[imageId].find_last_of("/")).erase(directories[imageId].find_last_of("."));
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
 	ResultFacade model = ResultFacade();
 	model.writeClassificationResult(*result, path);
 }
+

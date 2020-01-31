@@ -7,6 +7,8 @@
 #include "ViewFacade.hpp"
 #include "ObjectDetectionInferencePage.hpp"
 #include "RenderPanel.hpp"
+#include "ControllerFacade.hpp"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -16,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     topology = new TopologyPanel();
     imageClassification = new InferencePageAdapter();
     objectDetection = new ObjectDetectionInferencePageAdapter();
+    ui->topology->setEnabled(false);
+    ui->objectDetection->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -54,6 +58,7 @@ void MainWindow::on_objectDetection_clicked()
 void MainWindow::on_imageClassification_clicked()
 {
    imageClassification->getInferencePage()->setModal(true);
+   ControllerFacade::getInstance()->searchDevicesClassification();
    imageClassification->getInferencePage()->exec();
 }
 void MainWindow::on_pushButton_clicked()

@@ -13,10 +13,11 @@ class InferencingDistributor : public Distributor {
 
 	public:
         virtual void startProcess() = 0;
-        virtual void saveResult(std::string nn_id, std::string input_id, std::string path) = 0;
-        virtual void drawResult(std::string nn_id, std::string input_id) = 0;
+        virtual void saveResult(int nn_id, int input_id, std::string path) = 0;
+        virtual void drawResult(int nn_id, int input_id) = 0;
         bool canStart();
         virtual void enableStart() = 0;
+        ContentView* getPage() override;
 
     protected: 
 		InferencePageAdapter* page;

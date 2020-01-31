@@ -3,11 +3,12 @@
 
 #include "Parser.hpp"
 #include "DetectionData.hpp"
+#include "SingleDetectionDatasetParser.hpp"
 
 #include <string>
 #include <list>
 
-class DetectionDataParser : public Parser<DetectionData>
+class DetectionDataParser : public SingleDetectionDatasetParser
 {
 public:
     DetectionData parse(std::list<std::string> toParse);

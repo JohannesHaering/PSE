@@ -14,3 +14,9 @@ ActivationLayerFactory ActivationLayerFactory::setActivation(Activation activati
     this -> activation = activation;
     return *this;
 }
+
+ActivationLayerFactory ActivationLayerFactory::setAlpha(float alpha)
+{
+    this -> alpha = alpha;
+    return *this;
+}

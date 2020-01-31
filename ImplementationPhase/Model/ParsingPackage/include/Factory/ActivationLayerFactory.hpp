@@ -9,8 +9,8 @@ class ActivationLayerFactory : public LayerFactory
 {
 public:
 	NetworkLayer buildLayer() override;
-	ActivationLayerFactory setActivation(Activation activation);
-	ActivationLayerFactory setAlpha(float alpha);
+    ActivationLayerFactory setActivation(Activation activation);
+    ActivationLayerFactory setAlpha(float alpha);
 
 private:
 	Activation activation;

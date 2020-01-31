@@ -5,7 +5,7 @@
 #include <iostream>
 #include <filesystem>
 
-std::list<std::string> readDirectory(std::string directory)
+std::list<std::string> ModelFacade::readDirectory(std::string directory)
 {
     std::list<std::string> files;
 

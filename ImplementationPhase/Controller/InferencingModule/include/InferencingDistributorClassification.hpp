@@ -3,17 +3,19 @@
 
 #include "InferencingDistributor.hpp"
 #include "InferencePageAdapter.hpp"
+//#include "ImageFacade.hpp"
+#include "opencv2/opencv.hpp"
 
 class InferencingDistributorClassification : virtual public InferencingDistributor {
 
     public: 
         InferencingDistributorClassification(InferencePageAdapter *page);
-        void enableStart();
-        void startProcess();
-		void saveResult(std::string neuralNetworkId, std::string imageId, std::string path);
+        void enableStart() override;
+        void startProcess() override;
+        void saveResult(int neuralNetworkId, int imageId, std::string path) override;
+        void drawResult(int neuralNetworkId, int imageId) override;
 
     protected: 
-        void drawResult(std::string nn_id, std::string input_id);
-
+		std::vector<cv::Mat> images;
 };
 #endif

@@ -13,10 +13,9 @@ class TrainingDistributor : public Distributor {
 		void startProcess();
 		bool canStart();
 		void enableStart();
+        ContentView* getPage() override;
 
-	private:
-		NeuralNetworkAdapter neuralNetwork;
-		std::vector<std::string> directories; 	
+	private:	
 		TrainingPanel* page;
 
 };
