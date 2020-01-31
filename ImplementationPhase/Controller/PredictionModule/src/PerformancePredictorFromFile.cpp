@@ -5,7 +5,7 @@ PerformancePredictorFromFile::PerformancePredictorFromFile(){
 }
 
 std::map<std::string, float> PerformancePredictorFromFile::predict(std::list<std::string> deviceIds) {
-    std::map<std::string, float>* list = new std::map<std::string, float>();
-    list->insert({"CPU", 10});
-    return *list;
+    std::map<std::string, float> list;
+    list.insert({"CPU", 10});
+    return list;
 }
