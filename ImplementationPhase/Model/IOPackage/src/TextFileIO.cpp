@@ -10,6 +10,8 @@ Data<std::string> TextFileIO::readFile(std::string path)
     if (path == "")
         return "";
     int length = path.length();
+	if (length == 0)
+		return "";
     if (path[length - 1] != 't' || path[length - 2] != 'x' || path[length - 3] != 't' || path[length - 4] != '.')
     {
         return "";
@@ -27,9 +29,11 @@ bool TextFileIO::writeFile(std::string path, Data<std::string> data)
         return false;
 
     int length = path.length();
-    if (path[length - 1] != 't' || path[length - 2] || 'x' && path[length - 3] || 't' && path[length - 4] || '.')
+	if (length == 0)
+		return false;
+    if (path[length - 1] != 't' || path[length - 2] != 'x' || path[length - 3] != 't' || path[length - 4] != '.')
     {
-        return "";
+        return false;
     }
 
     bool success = FileIO::writePureFile(path, data.getData());

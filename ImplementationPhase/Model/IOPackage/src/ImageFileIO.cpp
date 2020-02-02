@@ -31,6 +31,9 @@ bool ImageFileIO::writeFile(Data<cv::Mat> image, std::string path)
 bool ImageFileIO::isImageFile(std::string path)
 {
     int length = path.length();
+	if (length < 4) {
+		return false;
+	}
     if (path[length - 1] == 'p' && path[length - 2] == 'm' && path[length - 3] == 'b' && path[length - 4] == '.')
     {
         return true;

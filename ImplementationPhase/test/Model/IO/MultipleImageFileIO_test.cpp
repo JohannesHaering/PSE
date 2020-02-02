@@ -14,37 +14,38 @@ TEST(readFileTest, emptyPath)
     std::list<std::string> paths;
     paths.push_back("");
     auto input = io.readFile(paths);
-    cv::Mat mat;
-    EXPECT_EQ(mat, *input.getData().begin());
+    cv::Mat mat =  *input.getData().begin();
+    EXPECT_EQ(0, mat.total());
 }
 
 TEST(readFileTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\testdata\\testBMP.bmp");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
     auto input = io.readFile(paths);
     auto mat = *input.getData().begin();
-    EXPECT_EQ(64, mat.size()[0]);
-    EXPECT_EQ(64, mat.size()[1]);
+    EXPECT_EQ(64*64, mat.total());
 }
 
 TEST(readFileTest, noImageFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\testTXT.txt");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testTXT.txt");
     auto input = io.readFile(paths);
-    cv::Mat mat;
-    EXPECT_EQ(mat, input.getData());
+	cv::Mat mat = *input.getData().begin();
+    EXPECT_EQ(0, mat.total());
 }
 
 TEST(readFileTest, notExisting)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\NotExisting.bmp");
-    EXPECT_THROW(io.readFile(paths)), std::ifstream::failure);
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\NotExisting.bmp");
+	auto input = io.readFile(paths);
+	cv::Mat mat = *input.getData().begin();
+	EXPECT_EQ(0, mat.total());
 }
 
 TEST(writeFileTest, emptyPath)
@@ -55,7 +56,7 @@ TEST(writeFileTest, emptyPath)
     cv::Mat mat;
     std::list<cv::Mat> images;
     images.push_back(mat);
-    auto success = io.writeFile(paths, Data<std::list<cv::Mat>>(images));
+    auto success = io.writeFile(Data<std::list<cv::Mat>>(images), paths);
     EXPECT_EQ(false, success);
 }
 
@@ -63,11 +64,11 @@ TEST(writeFileTest, emptyData)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\testdata\\testBMP.bmp");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
     cv::Mat mat;
     std::list<cv::Mat> images;
     images.push_back(mat);
-    auto success = io.writeFile(paths, Data<std::list<cv::Mat>>(images));
+    auto success = io.writeFile(Data<std::list<cv::Mat>>(images), paths);
     EXPECT_EQ(false, success);
 }
 
@@ -75,7 +76,7 @@ TEST(writeFileTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\testdata\\testBMP.bmp");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
     std::vector<float> data;
     for (int i = 0; i < 64; i++)
     {
@@ -84,10 +85,10 @@ TEST(writeFileTest, file)
             data.push_back(128);
         }
     }
-    cv::Mat mat(64, 64, CV_32F, data);
+    cv::Mat mat(64, 64, CV_32F, cv::Scalar(0,0,0));
     std::list<cv::Mat> images;
     images.push_back(mat);
-    auto success = io.writeFile(paths, Data<std::list<cv::Mat>>(images));
+    auto success = io.writeFile(Data<std::list<cv::Mat>>(images), paths);
     EXPECT_EQ(true, success);
 }
 
@@ -95,7 +96,7 @@ TEST(writeFileTest, noTextFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("..\\..\\Data\\testdata\\testTXT.txt");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
     std::vector<float> data;
     for (int i = 0; i < 64; i++)
     {
@@ -104,10 +105,10 @@ TEST(writeFileTest, noTextFile)
             data.push_back(128);
         }
     }
-    cv::Mat mat(64, 64, CV_32F, data);
+    cv::Mat mat(64, 64, CV_32F, cv::Scalar(0,0,0));
     std::list<cv::Mat> images;
     images.push_back(mat);
-    auto success = io.writeFile(paths, Data<std::list<cv::Mat>>(images));
+    auto success = io.writeFile(Data<std::list<cv::Mat>>(images), paths);
     EXPECT_EQ(false, success);
 }
 

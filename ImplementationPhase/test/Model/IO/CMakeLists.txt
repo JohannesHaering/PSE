@@ -1,7 +1,20 @@
 cmake_minimum_required(VERSION 3.10)
 
 add_executable(DataTest "Data_test.cpp")
-add_executable(IOTest "ImageFileIO_test.cpp" "MultipleImageIO_test.cpp" "TextFileIO_test.cpp" "MultipleTextFileIO_test.cpp" "VideoFileIO_test.cpp")
 target_link_libraries(DataTest PUBLIC DATA)
-target_link_libraries(IOTest PUBLIC IO)
+
+add_executable(ImageFileIOTest "ImageFileIO_test.cpp")
+target_link_libraries(ImageFileIOTest PUBLIC DATA ${OpenCV_LIBS} IO)
+
+add_executable(MultipleImageIOTest "MultipleImageFileIO_test.cpp")
+target_link_libraries(MultipleImageIOTest PUBLIC DATA ${OpenCV_LIBS} IO)
+
+add_executable(TextFileIOTest "TextFileIO_test.cpp")
+target_link_libraries(TextFileIOTest PUBLIC DATA IO)
+
+add_executable(MultipleTextFileIOTest "MultipleTextFileIO_test.cpp")
+target_link_libraries(MultipleTextFileIOTest PUBLIC DATA IO)
+
+add_executable(VideoFileIOTest "VideoFileIO_test.cpp")
+target_link_libraries(VideoFileIOTest PUBLIC DATA ${OpenCV_LIBS} IO)
 

@@ -12,7 +12,7 @@ TEST (DataTest, stringO) {
 
 TEST (DataTest, floatO) {
     Data<float> data = Data<float>(3.1);
-    EXPECT_EQ(3.1, data.getData());
+    EXPECT_NEAR(3.1, data.getData(), 0.01);
 }
 
 TEST (DataTest, nullO) {

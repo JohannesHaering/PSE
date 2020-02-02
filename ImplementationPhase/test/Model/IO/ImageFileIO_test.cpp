@@ -11,38 +11,40 @@ TEST(readFileTest, emptyPath)
 {
     auto io = ImageFileIO();
     auto input = io.readFile("");
-    cv::Mat mat;
-    EXPECT_EQ(mat, input.getData());
+    cv::Mat mat = input.getData();
+    EXPECT_EQ(0, mat.total());
 }
 
 TEST(readFileTest, file)
 {
     auto io = ImageFileIO();
-    auto input = io.readFile("..\\..\\Data\\testdata\\testBMP.bmp");
-    auto mat = input.getData();
-    EXPECT_EQ(64, mat.size()[0]);
-    EXPECT_EQ(64, mat.size()[1]);
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    cv::Mat mat = input.getData();
+    EXPECT_EQ(64*64, mat.total());
 }
 
 TEST(readFileTest, noImageFile)
 {
     auto io = ImageFileIO();
-    auto input = io.readFile("..\\..\\Data\\testTXT.txt");
-    cv::Mat mat;
-    EXPECT_EQ(mat, input.getData());
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testTXT.txt");
+	cv::Mat mat = input.getData();
+	EXPECT_EQ(0, mat.total());
 }
 
 TEST(readFileTest, notExisting)
 {
     auto io = ImageFileIO();
-    EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.bmp"), std::ifstream::failure);
+	auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\NotExisting.bmp");
+	cv::Mat mat = input.getData();
+	EXPECT_EQ(0, mat.total());
+	EXPECT_EQ(0, mat.total());
 }
 
 TEST(writeFileTest, emptyPath)
 {
     auto io = ImageFileIO();
     cv::Mat mat;
-    auto success = io.writeFile("", Data<cv::Mat>(mat));
+    auto success = io.writeFile(Data<cv::Mat>(mat), "");
     EXPECT_EQ(false, success);
 }
 
@@ -50,7 +52,7 @@ TEST(writeFileTest, emptyData)
 {
     auto io = ImageFileIO();
     cv::Mat mat;
-    auto success = io.writeFile("..\\..\\Data\\testdata\\testBMP.bmp", Data<cv::Mat>(mat));
+    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
     EXPECT_EQ(false, success);
 }
 
@@ -65,8 +67,8 @@ TEST(writeFileTest, file)
             data.push_back(128);
         }
     }
-    cv::Mat mat(64, 64, CV_32F, data);
-    auto success = io.writeFile("..\\..\\Data\\testdata\\testBMP.bmp", Data<cv::Mat>(mat));
+    cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
+    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
     EXPECT_EQ(true, success);
 }
 
@@ -81,8 +83,8 @@ TEST(writeFileTest, noTextFile)
             data.push_back(128);
         }
     }
-    cv::Mat mat(64, 64, CV_32F, data);
-    auto success = io.writeFile("..\\..\\Data\\testdata\\testTXT.txt", Data<cv::Mat>(mat));
+    cv::Mat mat(64, 64, CV_32F);
+    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
     EXPECT_EQ(false, success);
 }
 

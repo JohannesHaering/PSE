@@ -13,19 +13,20 @@ TEST(readFileTest, emptyPath){
 
 TEST(readFileTest, file){
     auto io = TextFileIO();
-    auto input = io.readFile("..\\..\\Data\\testdata\\testTXT.txt");
-    EXPECT_EQ("foo", input.getData());
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    EXPECT_EQ("foo\n", input.getData());
 }
 
 TEST(readFileTest, noTextFile){
     auto io = TextFileIO();
-    auto input = io.readFile("..\\..\\Data\\testBMP.bmp");
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testBMP.bmp");
     EXPECT_EQ("", input.getData());
 }
 
 TEST(readFileTest, notExisting) {
   auto io = TextFileIO();
-  EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.txt"), std::ifstream::failure);
+  auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\NotExisting.txt");
+  EXPECT_EQ("", input.getData());
 }
 TEST(writeFileTest, emptyPath){
     auto io = TextFileIO();
@@ -34,19 +35,19 @@ TEST(writeFileTest, emptyPath){
 }
 TEST(writeFileTest, emptyData){
     auto io = TextFileIO();
-    auto success = io.writeFile("..\\..\\Data\\testdata\\testTXT.txt", Data<std::string>(""));
+    auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt", Data<std::string>(""));
     EXPECT_EQ(false, success);
 }
 
 TEST(writeFileTest, file){
     auto io = TextFileIO();
-    auto success = io.writeFile("..\\..\\Data\\testdata\\testTXT.txt", Data<std::string>("foo"));
+    auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt", Data<std::string>("foo"));
     EXPECT_EQ(true, success);
 }
 
 TEST(writeFileTest, noTextFile){
     auto io = TextFileIO();
-    auto success = io.writeFile("..\\..\\Data\\testBMP.bmp", Data<std::string>("foo"));
+    auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testBMP.bmp", Data<std::string>("foo"));
     EXPECT_EQ(false, success);
 }
 
