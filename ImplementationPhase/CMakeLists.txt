@@ -48,7 +48,7 @@ find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
-# include(${QT_USE_FILE})
+#include(${QT_USE_FILE})
 
 include_directories(
   ${Qt5Core_INCLUDE_DIRS}
