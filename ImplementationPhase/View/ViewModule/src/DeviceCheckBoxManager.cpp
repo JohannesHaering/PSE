@@ -21,9 +21,15 @@ DeviceCheckBoxManager::~DeviceCheckBoxManager()
     delete ui;
 }
 void DeviceCheckBoxManager::setDevices(std::vector<Device>* devices){
+    QLayoutItem *item;
+    while((item = layout->takeAt(0))) {
+        delete item->widget();
+        delete item;
+    }
     *checkboxes = new QCheckBox[devices->size()];
     int i = 0;
     devicesVector=devices;
+    //layout->removeWidget(checkboxes)
     for(std::vector<Device>::iterator it = devices->begin(); it != devices->end(); ++it) {
         checkboxes[i] = new QCheckBox(QString::fromStdString(it->getName()));
         layout->addWidget(checkboxes[i]);

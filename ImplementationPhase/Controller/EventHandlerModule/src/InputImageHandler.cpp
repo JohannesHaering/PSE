@@ -20,22 +20,27 @@ InputImageHandler::InputImageHandler(Distributor *distributor) : distributor(dis
 void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 {
     distributor->setInput(directories);
-}   
+}
 
-std::vector<std::string> InputImageHandler::fetchDirectory() 
+std::vector<std::string> InputImageHandler::fetchDirectory()
 {
-        InferencePageAdapter* page = static_cast<InferencePageAdapter*>(distributor->getPage());
-        std::cout<<"fetching\n";
-		int mode = page->getInputMode();
-        std::cout<<"fetchin2\n";
+        InferencePageAdapter* page = dynamic_cast<InferencePageAdapter*>(distributor->getPage());
+        int mode = page->getInputMode();
 
-		// normaler mode
-        if (mode == 1)
-		{
+        // normaler mode
+        if (mode == 0) {
+            return {page->getFileFromExplorer(validformatsmanual)};
+        }
+        else if (mode == 1) {
+            // TODO
+            return {page->getFilesFromExplorer(validformatsmanual)};
+        }
+        else if (mode == 2)
+        {
             return page->getFilesFromExplorer(validformatstxt);
-		}
-		// text file
+        }
         else {
-            return page->getFilesFromExplorer(validformatsmanual);
-		}
+            // TODO
+            return {page->getFilesFromExplorer(validformatsmanual)};
+        }
 }

@@ -18,6 +18,7 @@ class InputImageHandler : public FileExplorerHandler {
     protected:
         void sendDirectory(std::vector<std::string> dir);
         std::vector<std::string> fetchDirectory();
+        ContentView* page;
 
 };
 #endif

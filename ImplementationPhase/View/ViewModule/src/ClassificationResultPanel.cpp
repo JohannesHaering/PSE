@@ -11,6 +11,11 @@ ClassificationResultPanel::ClassificationResultPanel(QWidget *parent) :
 {
     ui->setupUi(this);
     renderer = new ClassificationResultRenderer();
+    nextNNEnable(false);
+    prevNNEnable(false);
+    nextImageEnable(false);
+    saveResultEnable(false);
+    prevImageEnable(false);
 }
 
 ClassificationResultPanel::~ClassificationResultPanel()
@@ -30,14 +35,17 @@ void ClassificationResultPanel::displayResult(){
     ui->resultLabel->setPixmap(resultPixmap->scaled(250,250));
 }
 void ClassificationResultPanel::update(){
-    displayImage();
-    displayResult();
+    if(canUpdate){
+        displayImage();
+        displayResult();
+    }
 }
 void ClassificationResultPanel::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
     ui->imgName->setText(QString::fromStdString(imgName));
     ui->nnName->setText(QString::fromStdString(nnName));
     imagePixmap = new QPixmap(convertCvtoQImg(mat));
     resultPixmap = new QPixmap(renderer->drawGraphic(result));
+    canUpdate = true;
 }
 //buttons
 void ClassificationResultPanel::nextNNEnable(bool flag){

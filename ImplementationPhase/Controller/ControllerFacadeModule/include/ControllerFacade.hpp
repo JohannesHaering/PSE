@@ -11,7 +11,7 @@
 #include "PrevHandler.hpp"
 #include "NewResultHandler.hpp"
 #include "PredictionHandler.hpp"
-// #include "TrainingDistributor.hpp"
+#include "TrainingDistributor.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "DeviceHandler.hpp"
@@ -36,27 +36,27 @@ class ControllerFacade {
 		void searchDevicesClassification();
 
         // Detection Methods
-        void startProcessDetection();
-        void saveResultsDetection();
-        void nextNeuralNetworkDetection();
-        void prevNeuralNetworkDetection();
-        void nextImageDetection();
-        void prevImageDetection();
-        void getImageInputDetection();
-        void getNeuralNetworkInputDetection();
-        void newResultDetection();
-        void newPredictionDetection();
-		void searchDevicesDetection();
+//        void startProcessDetection();
+//        void saveResultsDetection();
+//        void nextNeuralNetworkDetection();
+//        void prevNeuralNetworkDetection();
+//        void nextImageDetection();
+//        void prevImageDetection();
+//        void getImageInputDetection();
+//        void getNeuralNetworkInputDetection();
+//        void newResultDetection();
+//        void newPredictionDetection();
+//		void searchDevicesDetection();
 
         // Training methods
-        // void startProcessTraining();
-        // void getImageInputTraining();
-        // void getNeuralNetworkInputTraining();
-        // void newTrainStep(std::vector<float> training, std::vector<float> test);
+         void startProcessTraining();
+         void getImageInputTraining();
+         void getNeuralNetworkInputTraining();
+         void newTrainStep(std::vector<float> training, std::vector<float> test);
 
         // Topology methods
-        void startProcessTopology();
-        void getNeuralNetworkInputTopology();
+//        void startProcessTopology();
+//        void getNeuralNetworkInputTopology();
 
 
     private:
@@ -79,29 +79,29 @@ class ControllerFacade {
         DeviceHandler* deviceHandlerClassification;
 
         // Detection components
-        InferencingDistributor* detectionInferencer;
-        SaveResultHandler* saveHandlerDetection;
-        InputImageHandler* inputHandlerDetection;
-        NeuralNetworkHandler* neuralNetworkHandlerDetection;
-        StartHandler* startHandlerDetection;
-        PagerHandler* nnNextHandlerDetection;
-        PagerHandler* nnPrevHandlerDetection;
-        PagerHandler* imgNextHandlerDetection;
-        PagerHandler* imgPrevHandlerDetection;
-        NewResultHandler* newResultHandlerDetection;
-        PredictionHandler* predictionHandlerDetection;
-        DeviceHandler* deviceHandlerDetection;
+//        InferencingDistributor* detectionInferencer;
+//        SaveResultHandler* saveHandlerDetection;
+//        InputImageHandler* inputHandlerDetection;
+//        NeuralNetworkHandler* neuralNetworkHandlerDetection;
+//        StartHandler* startHandlerDetection;
+//        PagerHandler* nnNextHandlerDetection;
+//        PagerHandler* nnPrevHandlerDetection;
+//        PagerHandler* imgNextHandlerDetection;
+//        PagerHandler* imgPrevHandlerDetection;
+//        NewResultHandler* newResultHandlerDetection;
+//        PredictionHandler* predictionHandlerDetection;
+//        DeviceHandler* deviceHandlerDetection;
 
-        // Training components
-        // TrainingDistributor* trainingDistributor;
-        // InputImageHandler* inputHandlerTraining;
-        // NeuralNetworkHandler* neuralNetworkHandlerTraining;
-        // StartHandler* startHandlerTraining;
-        // NewTrainStepHandler* trainstepHandlerTraining;
+         //Training components
+         TrainingDistributor* trainingDistributor;
+         InputImageHandler* inputHandlerTraining;
+         NeuralNetworkHandler* neuralNetworkHandlerTraining;
+         StartHandler* startHandlerTraining;
+         NewTrainStepHandler* trainstepHandlerTraining;
 
         // Topology components
-        TopologyInferencer* topologyInferencer;
-        NeuralNetworkHandler* neuralNetworkHandlerTopology;
-        StartHandler* startHandlerTopology;
+//        TopologyInferencer* topologyInferencer;
+//        NeuralNetworkHandler* neuralNetworkHandlerTopology;
+//        StartHandler* startHandlerTopology;
 
 };

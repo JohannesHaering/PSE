@@ -15,7 +15,6 @@ void DeviceHandler::onAction(){
 	for (std::vector<Device>::iterator it = devices.begin(); it != devices.end(); ++it) {
 		dev->push_back(*it);
 	}
-	dev->push_back(devices.front());
 	page->setDevices(dev);
-	page->update();
+    //page->update();
 }

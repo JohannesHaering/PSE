@@ -17,6 +17,7 @@ class InferencingDistributor : public Distributor {
         virtual void drawResult(int nn_id, int input_id) = 0;
         bool canStart();
         virtual void enableStart() = 0;
+        ContentView* getPage() override;
 
     protected: 
 		InferencePageAdapter* page;
