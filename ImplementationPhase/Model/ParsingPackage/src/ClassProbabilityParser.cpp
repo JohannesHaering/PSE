@@ -19,7 +19,7 @@ ClassProbability ClassProbabilityParser::parse(std::string toParse)
     auto classId = *iterator;
     ++iterator;
     auto probabilityString = *iterator;
-    float probability = ::atof(probabilityString.c_str());
+    float probability = std::stof(probabilityString.c_str());
 
     return ClassProbabilityFactory().build(classId, probability);
 }

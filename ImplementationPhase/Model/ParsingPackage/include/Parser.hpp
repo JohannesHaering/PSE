@@ -11,9 +11,7 @@ public:
     Parser()
     {
     }
-    virtual T parse(std::string toParse) {
 
-    }
     static std::list<std::string> splitBySymbol(std::string text, std::string symbol)
     {
         std::list<std::string> output;

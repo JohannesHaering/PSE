@@ -22,7 +22,6 @@ NetworkLayer DropoutLayerParser::parse(std::string toParse)
 
     auto it = LineBreakParser::splitIntoLines(toParse).begin();
     ++it;
-
     auto parts1It = Parser::splitBySymbol(*it, LayerParser::VALUE_PARTS_DELIMETER).begin();
     if (*parts1It != DROPOUT_RATE)
     {
@@ -31,7 +30,7 @@ NetworkLayer DropoutLayerParser::parse(std::string toParse)
     else
     {
         ++parts1It;
-        factory.setDropoutRate(::atof((*parts1It).c_str()));
+        factory.setDropoutRate(std::stof((*parts1It).c_str()));
     }
 
     return factory.buildLayer();

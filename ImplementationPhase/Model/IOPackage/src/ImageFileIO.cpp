@@ -17,12 +17,11 @@ Data<cv::Mat> ImageFileIO::readFile(std::string path)
 
 bool ImageFileIO::writeFile(Data<cv::Mat> image, std::string path)
 {
-    if(!isImageFile(path))
-        return false
+	if (!isImageFile(path))
+		return false;
 
-    cv::Mat mat;
     cv::Mat imageRaw = image.getData();
-    if(mat == imageRaw)
+    if(imageRaw.empty())
         return false;
         
     cv::imwrite(path, imageRaw);
@@ -40,7 +39,7 @@ bool ImageFileIO::isImageFile(std::string path)
     {
         return true;
     }
-    if (path[length - 1] == "g" && path[length - 2] == 'n' && path[length - 3] == 'p' && path[length - 4] == '.')
+    if (path[length - 1] == 'g' && path[length - 2] == 'n' && path[length - 3] == 'p' && path[length - 4] == '.')
     {
         return true;
     }

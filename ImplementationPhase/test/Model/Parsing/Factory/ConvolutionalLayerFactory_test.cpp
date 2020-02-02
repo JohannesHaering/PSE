@@ -17,7 +17,7 @@ TEST(BuildTest, valid){
     sub2.push_back(sub3);
     sub1.push_back(sub2);
     weights.push_back(sub1);
-    auto layer = ConvolutionalLayerFactory().setPadding(1).setStride(1).setWeightTensors(weights).setInputDimensions(dim).setName(name).buildLayer();
+    auto layer = ConvolutionalLayerFactory().setPadding(1).setStride(1).setWeightTensors(weights).setInputDimensions(dim)->setName(name)->buildLayer();
     EXPECT_EQ(LayerType::CONVOLUTION, layer.getLayerType());
     EXPECT_EQ(name, layer.getName());
     EXPECT_EQ(dim, layer.getInputDimensions());

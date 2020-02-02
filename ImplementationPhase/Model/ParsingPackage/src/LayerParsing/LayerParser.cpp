@@ -66,7 +66,7 @@ std::vector<float> LayerParser::parseFloatArray(std::string text)
     for (auto it = elements.begin(); it != elements.end(); ++it)
     {
         std::string value = *it;
-        vector.push_back(::atof(value.c_str()));
+        vector.push_back(std::stof(value.c_str()));
     }
     return vector;
 }

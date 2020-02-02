@@ -82,7 +82,7 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
     }
     else
     {
-        return ::atof((*(parts.end())).c_str());
+        return std::stof((*(parts.end())).c_str());
     }
 }
 

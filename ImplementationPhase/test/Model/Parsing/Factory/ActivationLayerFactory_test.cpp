@@ -11,10 +11,11 @@
 TEST(BuildTest, valid){
     int dim[] = {1,2,3};
     std::string name = "nn";
-    auto layer = ActivationLayerFactory().setActivation(Activation::SOFTMAX).setAlpha(0.5f).setInputDimensions(dim).setName(name).buildLayer();
+    auto layer = ActivationLayerFactory().setActivation(Activation::SOFTMAX).setAlpha(0.5f).setInputDimensions(dim)->setName(name)->buildLayer();
     EXPECT_EQ(LayerType::ACTIVATION, layer.getLayerType());
     EXPECT_EQ(name, layer.getName());
     EXPECT_EQ(dim, layer.getInputDimensions());
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
