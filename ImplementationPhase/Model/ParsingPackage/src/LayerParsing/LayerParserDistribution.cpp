@@ -30,11 +30,14 @@
 
 NetworkLayer LayerParserDistribution::parse(std::string toParse)
 {
-    auto firstLine = *(LineBreakParser::splitIntoLines(toParse).begin());
+	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
+    auto firstLine = *(lines.begin());
     firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_BEGIN), firstLine.end());
     firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_END), firstLine.end());
 
-    toParse.substr(firstLine.size() + 4, toParse.size());
+	std::string extras = "[\n]";
+	// Remove first line
+    toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
 
     if (firstLine == CONVOLUTIONAL)
     {

@@ -92,3 +92,6 @@ target_link_libraries(OutputStorageLayerParserTest PUBLIC LAYERPARSER NETWORKLAY
 
 add_executable(PoolingLayerParserTest "LayerParsing/PoolingLayerParser_test.cpp")
 target_link_libraries(PoolingLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER POLLINGLAYER)
+
+add_executable(NeuralNetworkParserTest "NeuralNetworkParser_test.cpp")
+target_link_libraries(NeuralNetworkParserTest PUBLIC NETWORKLAYER NEURALNETWORKPARSER NEURALNETWORK DROPOUTLAYER)
