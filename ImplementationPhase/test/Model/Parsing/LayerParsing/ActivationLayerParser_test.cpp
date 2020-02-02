@@ -27,8 +27,9 @@ TEST(LayerParserTest, invalid)
 TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
-  auto layer = ActivationLayer("name", dim, Activation::RELU, 0.2);
-  EXPECT_EQ("[activation]\ninputdim=[1,2,3]\nfunction=relu\nalpha=0.2", ActivationLayerParser().parseBack(layer));
+  auto layer = ActivationLayer("name", dim, Activation::LEAKING_RELU, 0.2);
+  auto out = ActivationLayerParser().parseBack(layer);
+  EXPECT_EQ("[activation]\ninputdim=[1,2,3]\nfunction=lrelu\nalpha=0.200000\n", out);
 }
 
 int main(int argc, char **argv)

@@ -15,7 +15,7 @@ TEST(BuildTest, valid)
   auto layer = LocalResponseNormalizationLayerFactory().setDepth(1).setType(LRNType::INTER_CHANNEL).setName(name)->setInputDimensions(dim)->buildLayer();
   EXPECT_EQ(LayerType::LRN, layer.getLayerType());
   EXPECT_EQ(name, layer.getName());
-  EXPECT_EQ(dim, layer.getInputDimensions());
+  EXPECT_EQ(dim[0], layer.getInputDimensions()[0]);
 }
 
 int main(int argc, char **argv)

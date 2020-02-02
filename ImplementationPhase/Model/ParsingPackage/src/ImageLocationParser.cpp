@@ -3,9 +3,8 @@
 #include <string>
 #include <list>
 
-template <class T>
-std::list<std::string> parse(std::string toParse)
+std::list<std::string> ImageLocationParser::parse(std::string toParse)
 {
-    auto output = LineBreakParser<T>::splitIntoLines(toParse);
+    auto output = LineBreakParser::splitIntoLines(toParse);
     return output;
 }

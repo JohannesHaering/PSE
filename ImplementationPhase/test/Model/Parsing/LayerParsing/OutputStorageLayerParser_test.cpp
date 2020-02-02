@@ -12,14 +12,14 @@
 
 TEST(LayerParserTest, valid)
 {
-  std::string in = "inputdim=[1,2,3]\ndata=[[[1]]]";
+  std::string in = "inputdim=[1,2,3]\noutputdata=[[[1]]]";
   auto layer = OutputStorageLayerParser().parse(in);
   EXPECT_EQ(LayerType::OUTPUT_STORAGE, layer.getLayerType());
 }
 
 TEST(LayerParserTest, invalid)
 {
-  std::string in = "inputdim=[1,2,3]\ndat=[[[1]]]";
+  std::string in = "inputdim=[1,2,3]\noutputa=[[[1]]]";
   EXPECT_THROW(OutputStorageLayerParser().parse(in), std::invalid_argument);
 }
 
@@ -33,7 +33,7 @@ TEST(LayerBackParserTest, valid)
   sub1.push_back(sub2);
   data.push_back(sub1);
   auto layer = OutputStorageLayer("", data, dim);
-  EXPECT_EQ("[output_storage]\ninputdim=[1,2,3]\ndata=[[[1]]]", OutputStorageLayerParser().parseBack(layer));
+  EXPECT_EQ("[output_storage]\ninputdim=[1,2,3]\noutputdata=[[[1.000000]]]\n", OutputStorageLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

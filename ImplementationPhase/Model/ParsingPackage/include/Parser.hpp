@@ -23,6 +23,7 @@ public:
             output.push_back(token);
             text.erase(0, pos + symbol.length());
         }
+		output.push_back(text);
         return output;
     }
 };

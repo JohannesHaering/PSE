@@ -5,14 +5,15 @@
 
 #include "ClassificationResultFactory.hpp"
 #include "ClassProbability.hpp"
+#include "ClassificationResult.hpp"
 
 TEST (FactoryTest, valid){
-    auto probabilities = std::list<ClassProbability>();
+	std::list<ClassProbability> probabilities = std::list<ClassProbability>();
     probabilities.push_back(ClassProbability("name", 0.1));
-    auto result = ClassificationResultFactory().build("name", "nn", probabilities);
+	ClassificationResult result = ClassificationResultFactory().build("name", "nn", probabilities);
     EXPECT_EQ("name", result.getImageID());
     EXPECT_EQ("nn", result.getNeuralNetworkID());
-    EXPECT_EQ(probabilities, result.getProbabilities());
+    EXPECT_EQ(1, result.getProbabilities().size());
 }
 
 int main(int argc, char **argv) {

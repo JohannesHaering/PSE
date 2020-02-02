@@ -49,8 +49,11 @@ TEST(LayerBackParserTest, valid)
   auto sub2 = std::vector<std::vector<float>>();
   auto sub3 = std::vector<float>();
   sub3.push_back(1);
+  sub2.push_back(sub3);
+  sub1.push_back(sub2);
+  tensor.push_back(sub1);
   auto layer = ConvolutionLayer("name", dim, tensor, 1, 1);
-  EXPECT_EQ("[convolution]\ninputdim=[1,2,3]\nstride=1\npadding=1\ntensor=[[[[1]]]]", ConvolutionalLayerParser().parseBack(layer));
+  EXPECT_EQ("[convolutional]\ninputdim=[1,2,3]\nstride=1\npadding=1\ntensor=[[[[1.000000]]]]\n", ConvolutionalLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

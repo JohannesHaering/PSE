@@ -28,7 +28,7 @@ TEST(ParseBackTest, valid)
     list.push_back(ClassProbability("name1", 1));
     auto in = ClassificationResult("i", "nn", list);
     auto out = ClassificationResultParser().parseBack(in);
-    EXPECT_EQ("i#nn#name1:1", out);
+    EXPECT_EQ("i#nn#name1:1.000000", out);
 }
 
 int main(int argc, char **argv)

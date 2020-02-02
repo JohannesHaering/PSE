@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-# set the project name
-# project(ParsingPackage C CXX)
-
 add_library(FACTORY 
 "src/Factory/BoundingBoxFactory.cpp" "include/Factory/BoundingBoxFactory.hpp" 
 "src/Factory/ClassificationResultFactory.cpp" "include/Factory/ClassificationResultFactory.hpp" 
@@ -66,7 +63,7 @@ target_link_libraries(CLASSPROBABILITYPARSER PUBLIC PARSER FACTORY CLASSPROBABIL
 
 add_library(DETECTIONDATAPARSER "src/DetectionDataParser.cpp" "src/SingleDetectionDatasetParser.cpp" "include/DetectionDataParser.hpp" "include/SingleDetectionDatasetParser.hpp")
 target_include_directories(DETECTIONDATAPARSER PUBLIC "include/")
-target_link_libraries(DETECTIONDATAPARSER PUBLIC PARSER DETECTIONDATA)
+target_link_libraries(DETECTIONDATAPARSER PUBLIC PARSER DETECTIONDATA LINEBREAKPARSER BOUNDINGBOXPARSER)
 
 add_library(DETECTIONRESULTPARSER "src/DetectionResultParser.cpp" "include/DetectionResultParser.hpp")
 target_include_directories(DETECTIONRESULTPARSER PUBLIC "include/")
@@ -74,7 +71,7 @@ target_link_libraries(DETECTIONRESULTPARSER PUBLIC FACTORY PARSER BOUNDINGBOXPAR
 
 add_library(IMAGEPARSING "src/ImageLocationParser.cpp" "src/ImageParser.cpp" "src/ImageParserWithSizing.cpp" "include/ImageLocationParser.hpp" "include/ImageParser.hpp" "include/ImageParserWithSizing.hpp")
 target_include_directories(IMAGEPARSING PUBLIC "include/")
-target_link_libraries(IMAGEPARSING PUBLIC PARSER ${OpenCV_LIBS})
+target_link_libraries(IMAGEPARSING PUBLIC PARSER LINEBREAKPARSER ${OpenCV_LIBS})
 
 add_library(PARSER "src/Parser.cpp" "include/Parser.hpp")
 target_include_directories(PARSER PUBLIC "include/")

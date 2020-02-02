@@ -9,8 +9,10 @@ TEST (SplitSymbolTest, twoParts) {
     auto in = "foo/bar";
     auto out = parser.splitBySymbol(in, "/");
     EXPECT_EQ(2, out.size());
-    EXPECT_EQ("foo", *out.begin());
-    EXPECT_EQ("bar", *out.end());
+	auto val1 = *out.begin();
+	auto val2 = *(--out.end());
+    EXPECT_EQ("foo", val1);
+    EXPECT_EQ("bar", val2);
 }
 
 int main(int argc, char **argv) {

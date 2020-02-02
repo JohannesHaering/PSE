@@ -28,7 +28,7 @@ TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
   auto layer = DropoutLayer("", dim, 0.1);
-  EXPECT_EQ("[dropout]\ninputdim=[1,2,3]\nrate=0.1", DropoutLayerParser().parseBack(layer));
+  EXPECT_EQ("[dropout]\ninputdim=[1,2,3]\nrate=0.100000\n", DropoutLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

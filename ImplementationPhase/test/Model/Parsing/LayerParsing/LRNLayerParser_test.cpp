@@ -35,7 +35,7 @@ TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
   auto layer = LocalResponseNormalizationLayer("", dim, LRNType::INTER_CHANNEL, 1);
-  EXPECT_EQ("[lrn]\ninputdim=[1,2,3]\ndepth=1\ntype=inter", LRNLayerParser().parseBack(layer));
+  EXPECT_EQ("[lrn]\ninputdim=[1,2,3]\ndepth=1\ntype=inter\n", LRNLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

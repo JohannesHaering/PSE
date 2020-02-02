@@ -27,7 +27,7 @@ TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
   auto layer = CollectResultsLayer("name", dim);
-  EXPECT_EQ("[collect]\ninputdim=[1,2,3]", CollectResultsLayerParser().parseBack(layer));
+  EXPECT_EQ("[collect]\ninputdim=[1,2,3]\n", CollectResultsLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

@@ -14,7 +14,7 @@ TEST(BuildTest, valid){
     auto layer = ActivationLayerFactory().setActivation(Activation::SOFTMAX).setAlpha(0.5f).setInputDimensions(dim)->setName(name)->buildLayer();
     EXPECT_EQ(LayerType::ACTIVATION, layer.getLayerType());
     EXPECT_EQ(name, layer.getName());
-    EXPECT_EQ(dim, layer.getInputDimensions());
+    EXPECT_EQ(dim[0], layer.getInputDimensions()[0]);
 }
 
 int main(int argc, char **argv) {

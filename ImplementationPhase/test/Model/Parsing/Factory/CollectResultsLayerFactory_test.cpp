@@ -14,7 +14,7 @@ TEST(BuildTest, valid){
     auto layer = CollectResultsLayerFactory().setInputDimensions(dim)->setName(name)->buildLayer();
     EXPECT_EQ(LayerType::COLLECT_RESULTS, layer.getLayerType());
     EXPECT_EQ(name, layer.getName());
-    EXPECT_EQ(dim, layer.getInputDimensions());
+    EXPECT_EQ(dim[0], layer.getInputDimensions()[0]);
     
 }
 

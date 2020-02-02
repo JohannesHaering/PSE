@@ -31,7 +31,7 @@ TEST(LayerBackParserTest, valid)
   sub1.push_back(1);
   tensor.push_back(sub1);
   auto layer = DenseLayer("", dim, tensor);
-  EXPECT_EQ("[dense]\ninputdim=[1,2,3]\ntensor=[[1]]", DenseLayerParser().parseBack(layer));
+  EXPECT_EQ("[dense]\ninputdim=[1,2,3]\ntensor=[[1.000000]]\n", DenseLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

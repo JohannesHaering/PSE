@@ -27,8 +27,8 @@ ClassProbability ClassProbabilityParser::parse(std::string toParse)
 std::string ClassProbabilityParser::parseBack(ClassProbability classProbability)
 {
     std::string output = "";
-    output.append(classProbability.getClassName());
-    output.append(delimeter);
-    output.append(std::to_string(classProbability.getProbability()));
+    output += (classProbability.getClassName());
+	output += (delimeter);
+	output += (std::to_string(classProbability.getProbability()));
     return output;
 }

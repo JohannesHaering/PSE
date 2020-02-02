@@ -47,7 +47,7 @@ TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
   auto layer = PollingLayer("", dim, 3, 1, PollingType::MAX);
-  EXPECT_EQ("[polling]\ninputdim=[1,2,3]\nsize=3\nstride=1\ntype=max", PollingLayerParser().parseBack(layer));
+  EXPECT_EQ("[polling]\ninputdim=[1,2,3]\nsize=3\nstride=1\ntype=max\n", PollingLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

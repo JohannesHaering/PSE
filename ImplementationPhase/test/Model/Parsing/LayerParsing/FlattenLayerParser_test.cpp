@@ -17,17 +17,11 @@ TEST(LayerParserTest, valid)
   EXPECT_EQ(LayerType::FLATTEN, layer.getLayerType());
 }
 
-TEST(LayerParserTest, invalid)
-{
-  std::string in = "x=[1,2,3]\nfunction=rel\nalpha=0.2";
-  EXPECT_THROW(FlattenLayerParser().parse(in), std::invalid_argument);
-}
-
 TEST(LayerBackParserTest, valid)
 {
   int dim[] = {1, 2, 3};
    auto layer = FlattenLayer("name", dim);
-   EXPECT_EQ("[flatten]\ninputdim=[1,2,3]", FlattenLayerParser().parseBack(layer));
+   EXPECT_EQ("[flatten]\ninputdim=[1,2,3]\n", FlattenLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)
