@@ -50,12 +50,14 @@ void PredictionHandler::onAction(){
 		powerPrediction += it->second;
 	}
 
+	performancePrediction = this->test();
+
     page->setPerformancePrediction(performancePrediction);
     page->setPowerPrediction(powerPrediction);
 
     page->update();
 }
-/*
+
 float PredictionHandler::test() {
 	// Setup OpenCl
 	glGetDeviceIDs(NULL, CL_DEVICE_TYPE_CPU, 1, &device, NULL);
@@ -87,4 +89,3 @@ float PredictionHandler::test() {
 
 	return data[0];
 }
-*/
