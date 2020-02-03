@@ -48,7 +48,9 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 	cl::Platform::get(&platforms);
 	for (auto &p : platforms) {
 		std::string platver = p.getInfo<CL_PLATFORM_VERSION>();
-		devices.push_back(Device("CPU", platver, 24, 1.0));
+		if (platver.find("OpenCL 2.") != std::string::npos) {
+			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
+		}
 	}
     return devices;
 }
