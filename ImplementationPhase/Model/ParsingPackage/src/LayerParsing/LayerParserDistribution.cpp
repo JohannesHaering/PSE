@@ -30,11 +30,14 @@
 
 NetworkLayer LayerParserDistribution::parse(std::string toParse)
 {
-    auto firstLine = *(LineBreakParser::splitIntoLines(toParse).begin());
+	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
+    auto firstLine = *(lines.begin());
     firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_BEGIN), firstLine.end());
     firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_END), firstLine.end());
 
-    toParse.substr(firstLine.size() + 4, toParse.size());
+	std::string extras = "[\n]";
+	// Remove first line
+    toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
 
     if (firstLine == CONVOLUTIONAL)
     {
@@ -85,57 +88,36 @@ NetworkLayer LayerParserDistribution::parse(std::string toParse)
 std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
 {
     std::string output = "";
-    output += TYPE_BEGIN;
     switch ((*layer).getLayerType())
     {
     case LayerType::ACTIVATION:
-        output += ACTIVATION;
-        output += TYPE_END;
         output += ActivationLayerParser().parseBack(*dynamic_cast<ActivationLayer*>(layer));
         break;
     case LayerType::COLLECT_RESULTS:
-        output += COLLECT_RESULTS;
-        output += TYPE_END;
         output += CollectResultsLayerParser().parseBack(*dynamic_cast<CollectResultsLayer*>(layer));
         break;
     case LayerType::CONVOLUTION:
-        output += CONVOLUTIONAL;
-        output += TYPE_END;
         output += ConvolutionalLayerParser().parseBack(*dynamic_cast<ConvolutionLayer*>(layer));
         break;
     case LayerType::DENSE:
-        output += DENSE;
-        output += TYPE_END;
         output += DenseLayerParser().parseBack(*dynamic_cast<DenseLayer*>(layer));
         break;
     case LayerType::DROPOUT:
-        output += DROPOUT;
-        output += TYPE_END;
         output += DropoutLayerParser().parseBack(*dynamic_cast<DropoutLayer*>(layer));
         break;
     case LayerType::FLATTEN:
-        output += FLATTEN;
-        output += TYPE_END;
         output += FlattenLayerParser().parseBack(*dynamic_cast<FlattenLayer*>(layer));
         break;
     case LayerType::INCEPTION:
-        output += INCEPTION;
-        output += TYPE_END;
         output += InceptionLayerParser().parseBack(*dynamic_cast<InceptionLayer*>(layer));
         break;
     case LayerType::LRN:
-        output += LOCAL_RESPONSE_NORMALIZATION;
-        output += TYPE_END;
         output += LRNLayerParser().parseBack(*dynamic_cast<LocalResponseNormalizationLayer*>(layer));
         break;
     case LayerType::OUTPUT_STORAGE:
-        output += OUTPUT_STORAGE;
-        output += TYPE_END;
         output += OutputStorageLayerParser().parseBack(*dynamic_cast<OutputStorageLayer*>(layer));
         break;
     case LayerType::POLLING:
-        output += POLLING;
-        output += TYPE_END;
         output += PollingLayerParser().parseBack(*dynamic_cast<PollingLayer*>(layer));
         break;
     }

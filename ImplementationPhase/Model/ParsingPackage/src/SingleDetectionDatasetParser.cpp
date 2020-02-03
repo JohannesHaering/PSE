@@ -18,8 +18,7 @@
 // <classId>:<probability>
 SingleDetectionDataset SingleDetectionDatasetParser::parse(std::string toParse)
 {
-    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
-
+    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);  
     auto iterator = lines.begin();
     auto imageID = *iterator;
     ++iterator;

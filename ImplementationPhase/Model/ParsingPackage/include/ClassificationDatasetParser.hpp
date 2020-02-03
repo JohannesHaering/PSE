@@ -9,7 +9,7 @@
 class ClassificationDatasetParser : public Parser<ClassificationResult>
 {
 public:
-    ClassificationResult parse(std::string toParser) override;
+    ClassificationResult parse(std::string toParser);
 
 private:
     std::string basePartsDelimeter = "#";
