@@ -41,6 +41,13 @@ ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList)
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
     //TODO
+	std::vector<Device> devices;
     Device cpu = Device("CPU", "generic cpu", 24, 1.0);
-    return { cpu };
+	std::vector<cl::Platform> platforms;
+	cl::Platform::get(&platforms);
+	for (auto &p : platforms) {
+		std::string platver = p.getInfo<CL_PLATFORM_VERSION>();
+		devices.push_back(Device("CPU", platver, 24, 1.0));
+	}
+    return devices;
 }
