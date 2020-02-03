@@ -5,6 +5,7 @@
 //#include "Device.hpp"
 
 #include <opencv2/opencv.hpp>
+#include <CL/cl2.hpp>
 
 //DispatchManager::DispatchManager() {}
 //DispatchManager::DispatchManager(DispatchManager const& copy); //not implemented
