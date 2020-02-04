@@ -85,5 +85,9 @@ target_link_libraries(LINEBREAKPARSER PUBLIC PARSER)
 
 add_library(MNISTDATAPARSER "include/MNISTDataParser.hpp" "src/MNISTDataParser.cpp")
 target_include_directories(MNISTDATAPARSER PUBLIC "include/")
-target_link_libraries(MNISTDATAPARSER PUBLIC ${OpenCV_LIBS});
+target_link_libraries(MNISTDATAPARSER PUBLIC ${OpenCV_LIBS})
+
+add_library(EVENNOTEVENPARSER "include/EvenNotEvenParser.hpp" "src/EvenNotEvenParser.cpp")
+target_include_directories(EVENNOTEVENPARSER PUBLIC "include/")
+target_link_libraries(EVENNOTEVENPARSER PUBLIC ${OpenCV_LIBS})
 
