@@ -83,3 +83,7 @@ add_library(LINEBREAKPARSER "src/LineBreakParser.cpp" "include/LineBreakParser.h
 target_include_directories(LINEBREAKPARSER PUBLIC "include/")
 target_link_libraries(LINEBREAKPARSER PUBLIC PARSER)
 
+add_library(MNISTDATAPARSER "include/MNISTDataParser.hpp" "src/MNISTDataParser.cpp")
+target_include_directories(MNISTDATAPARSER PUBLIC "include/")
+target_link_libraries(MNISTDATAPARSER PUBLIC ${OpenCV_LIBS});
+
