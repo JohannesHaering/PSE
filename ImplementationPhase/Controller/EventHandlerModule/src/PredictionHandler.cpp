@@ -6,6 +6,7 @@
 #include "PerformancePredictorFromFile.hpp"
 #include "InferencePageAdapter.hpp"
 #include <list>
+#include <CL/cl2.hpp>
 
 PredictionHandler::PredictionHandler(InferencePageAdapter *page) :
 page(page),

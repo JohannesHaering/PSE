@@ -5,6 +5,7 @@
 //#include "Device.hpp"
 
 #include <opencv2/opencv.hpp>
+#include <CL/cl2.hpp>
 
 //DispatchManager::DispatchManager() {}
 //DispatchManager::DispatchManager(DispatchManager const& copy); //not implemented
@@ -41,6 +42,15 @@ ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList)
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
     //TODO
+	std::vector<Device> devices;
     Device cpu = Device("CPU", "generic cpu", 24, 1.0);
-    return { cpu };
+	std::vector<cl::Platform> platforms;
+	cl::Platform::get(&platforms);
+	for (auto &p : platforms) {
+		std::string platver = p.getInfo<CL_PLATFORM_VERSION>();
+		if (platver.find("OpenCL 2.") != std::string::npos) {
+			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
+		}
+	}
+    return devices;
 }
