@@ -24,8 +24,10 @@ SingleDetectionDataset SingleDetectionDatasetParser::parse(std::string toParse)
     ++iterator;
     auto imageLocation = *iterator;
     ++iterator;
-    std::list<BoundingBox> boundingBoxes;
+    std::list<BoundingBox> boundingBoxes = std::list<BoundingBox>();
     for(; iterator != lines.end(); ++iterator){
+		if (*iterator == "")
+			continue;
         boundingBoxes.push_back(BoundingBoxParser().parse(*iterator));
     }
     

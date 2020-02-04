@@ -81,9 +81,6 @@ target_link_libraries(DropoutLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER DRO
 add_executable(FlattenLayerParserTest "LayerParsing/FlattenLayerParser_test.cpp")
 target_link_libraries(FlattenLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER FLATTENLAYER)
 
-add_executable(LayerParserTest "LayerParsing/LayerParser_test.cpp")
-target_link_libraries(LayerParserTest PUBLIC LAYERPARSER NETWORKLAYER)
-
 add_executable(LRNLayerParserTest "LayerParsing/LRNLayerParser_test.cpp")
 target_link_libraries(LRNLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER LOCALRESPONSENORMALIZATIONLAYER)
 
