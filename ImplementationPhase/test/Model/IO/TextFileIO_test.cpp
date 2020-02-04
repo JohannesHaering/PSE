@@ -13,7 +13,7 @@ TEST(readFileTest, emptyPath){
 
 TEST(readFileTest, file){
     auto io = TextFileIO();
-    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXTRead.txt");
     EXPECT_EQ("foo\n", input.getData());
 }
 
@@ -41,7 +41,7 @@ TEST(writeFileTest, emptyData){
 
 TEST(writeFileTest, file){
     auto io = TextFileIO();
-    auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt", Data<std::string>("foo"));
+    auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txtWrite", Data<std::string>("foo"));
     EXPECT_EQ(true, success);
 }
 

@@ -14,7 +14,7 @@ Data<std::string> TextFileIO::readFile(std::string path)
 		return "";
     if (path[length - 1] != 't' || path[length - 2] != 'x' || path[length - 3] != 't' || path[length - 4] != '.')
     {
-        return "";
+        return Data<std::string>("");
     }
 
     Data<std::string> data = Data<std::string>(FileIO::readPureFile(path));
