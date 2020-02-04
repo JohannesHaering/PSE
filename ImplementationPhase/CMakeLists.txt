@@ -30,7 +30,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
                  EXCLUDE_FROM_ALL)
 
 # Require OpenCV. if not configured for now, add # before next 2 lines
-set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern/opencv/build/x64/vc14/lib)
+#set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern/opencv/build/x64/vc14/lib)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 

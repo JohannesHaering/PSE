@@ -9,13 +9,14 @@
 
 class MNISTDataParser {
 public:
-    MNISTDataParser();
-    std::vector<cv::Mat> parseTraining();
-    std::vector<cv::Mat> parseTest();
-    std::vector<std::vector<float>> parseTrainingLabel();
-    std::vector<std::vector<float>> parseTestLabel();
+	MNISTDataParser();
+	std::vector<cv::Mat> parseTraining();
+	std::vector<cv::Mat> parseTest();
+	std::vector<std::vector<float>> parseTrainingLabel();
+	std::vector<std::vector<float>> parseTestLabel();
 private:
-    mnist::MNIST_dataset<std::vector, std::vector<uint8_t>, uint8_t> dataset;
-    cv::Mat parse(std::vector<uint8_t> image);
-    std::string MNIST_DATA_LOCATION = "/home/zusez4/Documents/manu_NN/data/mnist/";	
-}
+	mnist::MNIST_dataset<std::vector, std::vector, uint8_t, uint8_t> dataset;
+	cv::Mat parse(std::vector<uint8_t> image);
+	std::string MNIST_DATA_LOCATION = "/home/zusez4/Documents/manu_NN/data/mnist/";
+};
+#endif
