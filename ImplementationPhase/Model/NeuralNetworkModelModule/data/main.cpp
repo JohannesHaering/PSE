@@ -1,5 +1,14 @@
-#include "fc_sm_layer.h"
-#include "fc_layer.h"
+#include "Dense.hpp"
+#include "Softmax.hpp"
+#include "Sigmoid.hpp"
+#include "ReLu.hpp"
+#include "LeakyReLu.hpp"
+#include "Layer.hpp"
+#include "Trainer.hpp"
+
+#include "mnist_reader.hpp"
+
+#include <string>
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -8,8 +17,6 @@
 #include <string>
 #include <vector>
 #include <random>
-//#include "helper.h"
-#include "mnist/include/mnist/mnist_reader.hpp"
 
 int image_empty(std::vector<float> img) 
 {
@@ -51,19 +58,19 @@ void print_weights(std::vector<std::vector<float>> weights)
 	std::cout << std::endl;
 }
 
-int get_label(std::vector<int> labels) 
+float get_label(std::vector<float> labels) 
 {
 	for (int i = 0; i < labels.size(); i++) {
 		if (labels[i] == 1) return i;
 	}
 }
 
-void print_label(std::vector<int> labels)
+void print_label(std::vector<float> labels)
 {
 	std::cout << "Image label is: " << get_label(labels) << std::endl;
 }
 
-void print_result(std::vector<float> *output_out, std::vector<int> *labels) 
+void print_result(std::vector<float> *output_out, std::vector<float> *labels) 
 {
 	std::cout << "printing" << output_out->size() << " elements." << std::endl;
 	for (int i = 0; i < output_out->size(); i++) std::cout << " output is: " << (*output_out)[i] << " should be: " << (*labels)[i] << std::endl;
@@ -79,10 +86,10 @@ void update_input(std::vector<float> *input_in, auto images, int counter)
 	//print_image(*input_in);
 }
 
-void update_labels(std::vector<int> *labels, auto dataset_labels, int counter)
+void update_labels(std::vector<float> *labels, auto dataset_labels, int counter)
 {
 	for (int i = 0; i < labels->size(); i++) 
-		(*labels)[i] = (dataset_labels[counter] == i) ? 1 : 0;
+		(*labels)[i] = (dataset_labels[counter] == i) ? 1.0f : 0.0f;
 }
 
 
@@ -91,6 +98,7 @@ int main(int argc, char** argv)
 	char dataset = 'E'; //MNIST, EVEN, EVEN_LARGE;
 	int max = 100;
 	if (argc == 2) max = atoi(argv[1]);
+	if (argc == 3) dataset = argv[2][0];
 	float learningRate = 0.01;
 	srand (static_cast <unsigned> (time(0)));
 	
@@ -98,12 +106,8 @@ int main(int argc, char** argv)
 	int hiddenSize = 300;
 	int outputSize = 10;
 	std::vector<float> input_in; //image input size
-	std::vector<float> input_out;
-	std::vector<float> hidden_out; //softmax does not change size
-	std::vector<float> output_out; //softmax does not change size
-	std::vector<float> feedback_sm;
-	std::vector<float> feedback_hd;
-	std::vector<int> labels; //one label per output
+	std::vector<float> output_out;
+	std::vector<float> labels; //one label per output
 	
 	std::vector<std::vector<uint8_t>> dataset_train_images;
 	std::vector<uint8_t> dataset_train_labels;
@@ -113,8 +117,8 @@ int main(int argc, char** argv)
 	int num_training_examples;
 	int num_test_examples;
 
-	std::string MNIST_DATA_LOCATION = "/home/zusez4/Documents/manu_NN/data/mnist/";	
-	auto mnist_dataset = mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>(MNIST_DATA_LOCATION);
+	std::string MNIST_DATA_LOCATION_FOO = "/home/zusez4/Documents/manu_NN/data/mnist/";	
+	auto mnist_dataset = mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>(MNIST_DATA_LOCATION_FOO);
 	
 	switch(dataset) {
 		case 'M':
@@ -122,8 +126,9 @@ int main(int argc, char** argv)
 			dataset_test_images.resize(mnist_dataset.test_images.size());
 			dataset_train_labels = mnist_dataset.training_labels;
 			dataset_test_labels = mnist_dataset.test_labels;
-			for (int i =0; i < mnist_dataset.training_images.size(); i++) dataset_train_images[0] = mnist_dataset.training_images[0];
-			for (int i =0; i < mnist_dataset.test_images.size(); i++) dataset_test_images[0] = mnist_dataset.test_images[0];
+			std::cout << "size: " << mnist_dataset.training_images[0].size() << std::endl;
+			//for (int i =0; i < mnist_dataset.training_images.size(); i++) dataset_train_images[i] = mnist_dataset.training_images[i];
+			//for (int i =0; i < mnist_dataset.test_images.size(); i++) dataset_test_images[i] = mnist_dataset.test_images[i];
 			inputSize = 28*28;
 			hiddenSize = 300;
 			outputSize = 10;
@@ -177,43 +182,32 @@ int main(int argc, char** argv)
 	std::cout << "Nbr of test labels = " << dataset_test_labels.size() << std::endl;
 	
 	//input works forward and backward
-	fc_layer inLayer = fc_layer(inputSize, hiddenSize, learningRate);
-	fc_layer hdLayer = fc_layer(hiddenSize, outputSize, learningRate);
-	fc_sm_layer smLayer = fc_sm_layer(outputSize, outputSize, learningRate);
+	Dense inLayer = Dense(inputSize, hiddenSize);
+	ReLu  ReLuActivationLayer = ReLu();
+	Dense hdLayer = Dense(hiddenSize, outputSize);
+	Softmax smLayer = Softmax();
+	
+	std::vector<Layer*> LayerVec = std::vector<Layer*>();
+	LayerVec.push_back(&inLayer);
+	LayerVec.push_back(&ReLuActivationLayer); 
+	LayerVec.push_back(&hdLayer); 
+	LayerVec.push_back(&smLayer);
+	Trainer trainer = Trainer(LayerVec, learningRate);
 	
 	
 
 	for (int counter = 0; counter < max; counter++)
 	{
 		int training_example = rand() % num_training_examples; // 60k training examples
-		update_input(&input_in, dataset_train_images, training_example); //last vals should be counter
+		update_input(&input_in, dataset_train_images, training_example); 
 		update_labels(&labels, dataset_train_labels, training_example);
 	
 		// inferencing	
-		input_out = inLayer.fprop(input_in);
-		hidden_out = hdLayer.fprop(input_out);
-		output_out = smLayer.fprop(hidden_out);
+		trainer.Infer(input_in);
 
 		// start training
-		feedback_sm = smLayer.bprop(labels);
-		feedback_hd = hdLayer.bprop(feedback_sm);
-		inLayer.bprop(feedback_hd);
-		std::cout << "iteration: " << counter << " example" << training_example << " error: " << smLayer.calcCEError();
-		std::cout << " correct: " << get_label(labels) << " " << std::endl << std::endl;
+		trainer.Train(labels);
 
-		//analysis	
-		if (counter == max-1) {
-			std::cout << std::endl << "printing hd biase" << std::endl;
-			print_biase(hdLayer.get_biase());
-			std::cout << "printing error from output to hidden ";
-			print_biase(feedback_sm);
-			std::cout << "printing hd output ";
-			print_biase(hidden_out);
-			std::cout << std::endl <<  "printing in biase" << std::endl;
-			print_biase(inLayer.get_biase());
-			std::cout << "printing error from hidden to in ";
-			print_biase(feedback_hd);
-		}
 
 	}
 	std::cout << "testing done" << std::endl;
@@ -223,10 +217,7 @@ int main(int argc, char** argv)
 		update_input(&input_in, dataset_test_images, counter);
 		update_labels(&labels, dataset_test_labels, counter);
 
-		input_out = inLayer.fprop(input_in);
-		hidden_out = hdLayer.fprop(input_out);
-		output_out = smLayer.fprop(hidden_out);
-
+		output_out = trainer.Infer(input_in);
 		print_result(&output_out, &labels);
 	}
 	
