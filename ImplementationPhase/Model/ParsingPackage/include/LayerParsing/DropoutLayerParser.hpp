@@ -1,5 +1,5 @@
 #ifndef DROPOUT_LAYER_PARSER_H_
-#define DROPOUT_LAYER_PARSER_H
+#define DROPOUT_LAYER_PARSER_H_
 
 #include "LayerParser.hpp"
 #include "NetworkLayer.hpp"

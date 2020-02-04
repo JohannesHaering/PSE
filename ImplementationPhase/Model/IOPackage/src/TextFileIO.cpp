@@ -8,10 +8,10 @@
 Data<std::string> TextFileIO::readFile(std::string path)
 {
     if (path == "")
-        return "";
+        return Data<std::string>("");
     int length = path.length();
 	if (length == 0)
-		return "";
+		return Data<std::string>("");
     if (path[length - 1] != 't' || path[length - 2] != 'x' || path[length - 3] != 't' || path[length - 4] != '.')
     {
         return Data<std::string>("");
