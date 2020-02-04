@@ -1,3 +1,4 @@
+#include "MaxPool2D.hpp"
 #include <vector>
 
 #include MaxPooling2D.h
