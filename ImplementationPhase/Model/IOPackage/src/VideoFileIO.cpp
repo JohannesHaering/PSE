@@ -11,7 +11,8 @@ Data<cv::VideoCapture> VideoFileIO::readFile(std::string path)
     int length = path.length();
     if (path[length - 1] == 'i' && path[length - 2] == 'v' && path[length - 3] == 'a' && path[length - 4] == '.')
     {
-        return true;
+	cv::VideoCapture videoCapture;
+        return Data<cv::VideoCapture>(videoCapture);
     }
     cv::VideoCapture video(path);
     return Data<cv::VideoCapture>(video);
