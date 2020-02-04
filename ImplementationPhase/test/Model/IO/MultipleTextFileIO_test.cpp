@@ -19,7 +19,7 @@ TEST(readFileTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXTRead.txt");
     auto input = io.readFile(paths);
     EXPECT_EQ("foo\n", *(input.getData().begin()));
 }
@@ -59,7 +59,7 @@ TEST(writeFileTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXTWrite.txt");
     auto strings = std::list<std::string>();
     strings.push_back("foo");
     auto success = io.writeFile(paths,Data<std::list<std::string>>(strings));

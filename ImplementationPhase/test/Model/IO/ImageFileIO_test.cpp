@@ -18,7 +18,7 @@ TEST(readFileTest, emptyPath)
 TEST(readFileTest, file)
 {
     auto io = ImageFileIO();
-    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp");
     cv::Mat mat = input.getData();
     EXPECT_EQ(64*64, mat.total());
 }
@@ -59,30 +59,14 @@ TEST(writeFileTest, emptyData)
 TEST(writeFileTest, file)
 {
     auto io = ImageFileIO();
-    std::vector<float> data;
-    for (int i = 0; i < 64; i++)
-    {
-        for (int j = 0; i < 64; i++)
-        {
-            data.push_back(128);
-        }
-    }
     cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
-    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPWrite.bmp");
     EXPECT_EQ(true, success);
 }
 
 TEST(writeFileTest, noTextFile)
 {
     auto io = ImageFileIO();
-    std::vector<float> data;
-    for (int i = 0; i < 64; i++)
-    {
-        for (int j = 0; i < 64; i++)
-        {
-            data.push_back(128);
-        }
-    }
     cv::Mat mat(64, 64, CV_32F);
     auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
     EXPECT_EQ(false, success);
