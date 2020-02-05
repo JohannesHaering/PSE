@@ -13,6 +13,7 @@ class PredictionHandler
 		PredictionHandler(InferencePageAdapter *page);
 		~PredictionHandler();
 		void onAction();
+		float test();
 
     private: 
 		PowerPredictorFromFile *powerPredictor;

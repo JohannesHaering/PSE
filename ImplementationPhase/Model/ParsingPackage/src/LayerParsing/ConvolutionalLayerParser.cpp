@@ -24,19 +24,22 @@ NetworkLayer ConvolutionalLayerParser::parse(std::string toParse)
     auto it = lines.begin();
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
-    if (*parts1It != STRIDE)
+	std::list<std::string> val1 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	std::list<std::string>::iterator parts1It = val1.begin();
+    if ((*parts1It).compare(STRIDE))
         throw std::invalid_argument("Wrong Format");
     factory.setStride(::atoi((*(++parts1It)).c_str()));
     ++it;
 
-    auto parts2It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+	std::list<std::string> val2 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	std::list<std::string>::iterator parts2It = val2.begin();
     if (*parts2It != PADDING)
         throw std::invalid_argument("Wrong Format");
     factory.setPadding(::atoi((*(++parts2It)).c_str()));
     ++it;
 
-    auto parts3It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+	std::list<std::string> val3 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	std::list<std::string>::iterator parts3It = val3.begin();
     if(*parts3It != WEIGHTS_TENSOR)
         throw std::invalid_argument("Wrong format");
 

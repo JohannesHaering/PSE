@@ -6,7 +6,7 @@
 #include <string>
 #include <list>
 
-class MultipleTextFileIO : public FileIO
+class MultipleTextFileIO : public TextFileIO
 {
 public:
     Data<std::list<std::string>> readFile(std::list<std::string> paths);

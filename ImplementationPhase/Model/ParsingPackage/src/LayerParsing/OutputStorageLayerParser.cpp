@@ -24,7 +24,8 @@ NetworkLayer OutputStorageLayerParser::parse(std::string toParse)
     auto it = lines.begin();
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER).begin();
+	std::list<std::string> val = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
+    auto parts1It = val.begin();
     if (*parts1It != OUTPUT_DATA)
         throw std::invalid_argument("Wrong format");
 

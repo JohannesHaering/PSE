@@ -17,6 +17,6 @@ public:
     std::string parseBack(DenseLayer layer);
 
 private:
-    const std::string WEIGHTS_TENSOR = "weights_tensor";
+    const std::string WEIGHTS_TENSOR = "tensor";
 };
 #endif

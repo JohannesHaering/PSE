@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)#new, for johannes stuff
 
 #set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
+#set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -lOpenCL")
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -30,7 +31,7 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
                  EXCLUDE_FROM_ALL)
 
 # Require OpenCV. if not configured for now, add # before next 2 lines
-set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern/opencv/build/x64/vc14/lib)
+# set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern/opencv/build/x64/vc14/lib)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
@@ -44,6 +45,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # set(Qt5_DIR C:/Qt/5.9.9/winrt_x86_msvc2017/lib/cmake/Qt5)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
+find_package(OpenCL REQUIRED)
 
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 

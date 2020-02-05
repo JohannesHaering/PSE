@@ -31,7 +31,7 @@ NetworkLayer ActivationLayerParser::parse(std::string toParse)
         throw std::invalid_argument("Wrong format");
     }
 
-    std::string switcher = *(valueParts.end());
+    std::string switcher = *(--valueParts.end());
     if (switcher == SIGMOID)
     {
         factory.setActivation(Activation::SIGMOID);
@@ -82,7 +82,7 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
     }
     else
     {
-        return ::atof((*(parts.end())).c_str());
+        return std::stof((*(--parts.end())).c_str());
     }
 }
 

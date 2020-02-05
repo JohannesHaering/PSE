@@ -20,17 +20,20 @@ NetworkLayer LRNLayerParser::parse(std::string toParse)
     factory.setName(LayerParserDistribution().LOCAL_RESPONSE_NORMALIZATION);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
-    auto it = LineBreakParser::splitIntoLines(toParse).begin();
+	std::list<std::string> var = LineBreakParser::splitIntoLines(toParse);
+	auto	it = var.begin();
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER).begin();
+	std::list<std::string> val = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
+    auto parts1It = val.begin();
     if (*parts1It != DEPTH)
         throw std::invalid_argument("Wrong format");
     ++parts1It;
     factory.setDepth(::atoi((*parts1It).c_str()));
 
     ++it;
-    auto parts2It = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER).begin();
+	val = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
+    auto parts2It = val.begin();
     if (*parts2It != LRN_TYPE)
         throw std::invalid_argument("Wrong format");
     ++parts2It;
