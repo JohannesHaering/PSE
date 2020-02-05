@@ -32,7 +32,7 @@ class DispatchManager
 		std::list<Mode*> getModeList();
 		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
 		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
-		ResultManager dispatchImages(std::list<cv::Mat> imageList);
+		ResultManager dispatchImages(std::vector<std::string> imageList);
 		static std::vector<Device> getAvailableDevices();
 };
 #endif

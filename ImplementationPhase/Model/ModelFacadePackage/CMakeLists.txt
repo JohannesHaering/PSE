@@ -8,11 +8,11 @@ target_include_directories(MODELFACADE PUBLIC "include/")
 
 add_library(CLASSIFICATIONDATASETFACADE "src/ClassificationDatasetFacade.cpp" "include/ClassificationDatasetFacade.hpp")
 target_include_directories(CLASSIFICATIONDATASETFACADE PUBLIC "include/")
-target_link_libraries(CLASSIFICATIONDATASETFACADE PUBLIC IO CLASSIFICATIONRESULT CLASSIFICATIONDATASETPARSER DATA)
+target_link_libraries(CLASSIFICATIONDATASETFACADE PUBLIC IO CLASSIFICATIONRESULT CLASSIFICATIONDATASETPARSER DATA MODELFACADE)
 
 add_library(DETECTIONDATAFACADE "src/DetectionDataFacade.cpp" "include/DetectionDataFacade.hpp")
 target_include_directories(DETECTIONDATAFACADE PUBLIC "include/")
-target_link_libraries(DETECTIONDATAFACADE PUBLIC IO DETECTIONDATA DETECTIONDATAPARSER DATA)
+target_link_libraries(DETECTIONDATAFACADE PUBLIC IO DETECTIONDATA DETECTIONDATAPARSER DATA MODELFACADE)
 
 add_library(IMAGEFACADE "src/ImageFacade.cpp" "include/ImageFacade.hpp")
 target_include_directories(IMAGEFACADE PUBLIC "include/")

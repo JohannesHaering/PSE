@@ -58,8 +58,7 @@ void InferencingDistributorClassification::startProcess()
 	mode->setAllowedDeviceList(platformlist);
 	mode->setNeuralNetworkList(nnlist);
     dispatcher.setMode(mode);
-    std::list<cv::Mat> imageList;
-    resultManager = dispatcher.dispatchImages(imageList);
+    resultManager = dispatcher.dispatchImages(directories);
 }
 
 /*

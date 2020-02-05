@@ -15,14 +15,12 @@ cv::Mat ImageFacade::getImage(std::string path, int width, int height, int chann
 {
     cv::Mat image = ImageFileIO().readFile(path).getData();
     cv::Mat parsedImage;
-    if(width != 0) parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
-    else parsedImage = image;
+    if(width != 0)
+		parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
+    else 
+		parsedImage = image;
     return parsedImage;
 }
-
-//cv::Mat ImageFacade::getImage(std::string path) {
-//	return ImageFileIO().readFile(path).getData();
-//}
 
 std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int width, int height, int channelNumb)
 {
@@ -33,16 +31,6 @@ std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int widt
     }
     return images;
 }
-
-//std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths)
-//{
-//	std::list<cv::Mat> images;
-//	for (auto it = paths.begin(); it != paths.end(); ++it)
-//	{
-//		images.push_back(getImage(*it));
-//	}
-//	return images;
-//}
 
 std::list<cv::Mat> ImageFacade::getImagesFromTxtFile(std::string path, int width, int height, int channelNumb)
 {
@@ -71,11 +59,11 @@ std::list<cv::Mat> ImageFacade::getImagesFromVideo(std::string path, int width, 
     return parsedFrames;
 }
 
-bool writeImage(std::string path, cv::Mat image)
+bool ImageFacade::writeImage(std::string path, cv::Mat image)
 {
     return ImageFileIO().writeFile(Data<cv::Mat>(image), path);
 }
 
-bool writeImages(std::list<std::string> paths, std::list<cv::Mat> images){
+bool ImageFacade::writeImages(std::list<std::string> paths, std::list<cv::Mat> images){
     return MultipleImageFileIO().writeFile(Data<std::list<cv::Mat>>(images), paths);
 }

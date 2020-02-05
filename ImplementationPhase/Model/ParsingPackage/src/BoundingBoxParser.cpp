@@ -30,10 +30,10 @@ BoundingBox BoundingBoxParser::parse(std::string toParse)
     ++iterator;
     auto probabilities = *iterator;
 
-    float xf = ::atof(x.c_str());
-    float yf = ::atof(y.c_str());
-    float widthf = ::atof(width.c_str());
-    float heightf = ::atof(height.c_str());
+    float xf = std::stof(x.c_str());
+    float yf = std::stof(y.c_str());
+    float widthf = std::stof(width.c_str());
+    float heightf = std::stof(height.c_str());
 
     std::list<ClassProbability> parsedProbabilities;
     auto probabilityParser = ClassProbabilityParser();

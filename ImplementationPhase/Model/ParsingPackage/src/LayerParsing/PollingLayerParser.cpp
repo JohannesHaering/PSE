@@ -20,24 +20,28 @@ NetworkLayer PollingLayerParser::parse(std::string toParse)
     factory.setName(LayerParserDistribution().POLLING);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
-    auto it = LineBreakParser::splitIntoLines(toParse).begin();
+	std::list<std::string> var = LineBreakParser::splitIntoLines(toParse);
+    auto it = var.begin();
     ++it;
 
-    auto parts1It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+	std::list<std::string> val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+    auto parts1It = val.begin();
     if (*parts1It != SIZE)
         throw std::invalid_argument("Wrong format");
     ++parts1It;
     factory.setSize(::atoi((*parts1It).c_str()));
     ++it;
 
-    auto parts2It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+	val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+    auto parts2It = val.begin();
     if (*parts2It != STRIDE)
         throw std::invalid_argument("Wrong format");
     ++parts2It;
     factory.setStride(::atoi((*parts2It).c_str()));
     ++it;
 
-    auto parts3It = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER).begin();
+	val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+    auto parts3It = val.begin();
     if (*parts3It != POLLING_TYPE)
         throw std::invalid_argument("Wrong format");
     ++parts3It;

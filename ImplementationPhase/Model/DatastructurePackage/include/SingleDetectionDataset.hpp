@@ -13,7 +13,7 @@ public:
     std::list<BoundingBox> getBoundingBoxes();
 
 private:
-std::string imageID;
+    std::string imageID;
     std::string imageLocation;
     std::list<BoundingBox> boundingBoxes;
 };

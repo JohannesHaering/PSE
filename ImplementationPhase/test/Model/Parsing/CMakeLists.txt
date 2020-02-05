@@ -1,1 +1,94 @@
 cmake_minimum_required(VERSION 3.10)
+
+add_executable(BoundingBoxParserTest "BoundingBoxParser_test.cpp")
+target_link_libraries(BoundingBoxParserTest PUBLIC BOUNDINGBOXPARSER BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULTPARSER PARSER)
+
+add_executable(ClassificationResultParserTest "ClassificationResultParser_test.cpp")
+target_link_libraries(ClassificationResultParserTest PUBLIC CLASSIFICATIONRESULTPARSER PARSER FACTORY CLASSIFICATIONRESULT CLASSPROBABILITY CLASSPROBABILITYPARSER)
+
+add_executable(ClassProbabbilityParserTest "ClassProbabilityParser_test.cpp")
+target_link_libraries(ClassProbabbilityParserTest PUBLIC CLASSPROBABILITYPARSER PARSER FACTORY CLASSPROBABILITY)
+
+add_executable(DetectionResultParserTest "DetectionResultParser_test.cpp")
+target_link_libraries(DetectionResultParserTest PUBLIC DETECTIONRESULTPARSER FACTORY PARSER BOUNDINGBOXPARSER DETECTIONRESULT)
+
+add_executable(DetectionDataParserTest "DetectionDataParser_test.cpp")
+target_link_libraries(DetectionDataParserTest PUBLIC DETECTIONDATAPARSER PARSER DETECTIONDATA FACTORY)
+
+add_executable(ImageLocationParserTest "ImageLocationParser_test.cpp")
+target_link_libraries(ImageLocationParserTest PUBLIC IMAGEPARSING)
+
+add_executable(LineBreakParserTest "LineBreakParser_test.cpp")
+target_link_libraries(LineBreakParserTest PUBLIC LINEBREAKPARSER)
+
+add_executable(ParserTest "Parser_test.cpp")
+target_link_libraries(ParserTest PUBLIC PARSER)
+
+add_executable(SingleDetectionDatasetParserTest "SingleDetectionDatasetParser_test.cpp")
+target_link_libraries(SingleDetectionDatasetParserTest PUBLIC DETECTIONDATAPARSER PARSER DETECTIONDATA)
+
+add_executable(ActivationLayerFactoryTest "Factory/ActivationLayerFactory_test.cpp")
+target_link_libraries(ActivationLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER ACTIVATIONLAYER)
+
+add_executable(CollectResultsFactoryTest "Factory/CollectResultsFactory_test.cpp")
+target_link_libraries(CollectResultsFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER COLLECTRESULTSLAYER)
+
+add_executable(ConvolutionalFactoryTest "Factory/ConvolutionalLayerFactory_test.cpp")
+target_link_libraries(ConvolutionalFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER CONVOLUTIONLAYER)
+
+add_executable(DenseLayerFactoryTest "Factory/DenseLayerFactory_test.cpp")
+target_link_libraries(DenseLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER DENSELAYER)
+
+add_executable(DropoutLayerFactoryTest "Factory/DropoutLayerFactory_test.cpp")
+target_link_libraries(DropoutLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER DROPOUTLAYER)
+
+add_executable(FlattenLayerFactoryTest "Factory/FlattenLayerFactory_test.cpp")
+target_link_libraries(FlattenLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER FLATTENLAYER)
+
+add_executable(InceptionLayerFactoryTest "Factory/InceptionLayerFactory_test.cpp")
+target_link_libraries(InceptionLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER INCEPTIONLAYER)
+
+add_executable(LRNLayerFactoryTest "Factory/LRNLayerFactory_test.cpp")
+target_link_libraries(LRNLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER LOCALRESPONSENORMALIZATIONLAYER)
+
+add_executable(OutputStorageLayerFactoryTest "Factory/OutputStorageLayerFactory_test.cpp")
+target_link_libraries(OutputStorageLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER OUTPUTSTORAGELAYER)
+
+add_executable(PollingLayerFactoryTest "Factory/PollingLayerFactory_test.cpp")
+target_link_libraries(PollingLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER POLLINGLAYER)
+
+add_executable(BoundingBoxFactoryTest "Factory/BoundingBoxFactory_test.cpp")
+target_link_libraries(BoundingBoxFactoryTest PUBLIC FACTORY BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULT)
+
+add_executable(ClassificationResultFactoryTest "Factory/ClassificationResultFactory_test.cpp")
+target_link_libraries(ClassificationResultFactoryTest PUBLIC FACTORY CLASSPROBABILITY CLASSIFICATIONRESULT)
+
+add_executable(ActivationLayerParserTest "LayerParsing/ActivationLayerParser_test.cpp")
+target_link_libraries(ActivationLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER ACTIVATIONLAYER)
+
+add_executable(CollectResultsLayerParserTest "LayerParsing/CollectResultsLayerParser_test.cpp")
+target_link_libraries(CollectResultsLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER COLLECTRESULTSLAYER)
+
+add_executable(ConvolutionalLayerParserTest "LayerParsing/ConvolutionalLayerParser_test.cpp")
+target_link_libraries(ConvolutionalLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER CONVOLUTIONLAYER)
+
+add_executable(DenseLayerParserTest "LayerParsing/DenseLayerParser_test.cpp")
+target_link_libraries(DenseLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER DENSELAYER)
+
+add_executable(DropoutLayerParserTest "LayerParsing/DropoutLayerParser_test.cpp")
+target_link_libraries(DropoutLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER DROPOUTLAYER)
+
+add_executable(FlattenLayerParserTest "LayerParsing/FlattenLayerParser_test.cpp")
+target_link_libraries(FlattenLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER FLATTENLAYER)
+
+add_executable(LRNLayerParserTest "LayerParsing/LRNLayerParser_test.cpp")
+target_link_libraries(LRNLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER LOCALRESPONSENORMALIZATIONLAYER)
+
+add_executable(OutputStorageLayerParserTest "LayerParsing/OutputStorageLayerParser_test.cpp")
+target_link_libraries(OutputStorageLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER OUTPUTSTORAGELAYER)
+
+add_executable(PoolingLayerParserTest "LayerParsing/PoolingLayerParser_test.cpp")
+target_link_libraries(PoolingLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER POLLINGLAYER)
+
+add_executable(NeuralNetworkParserTest "NeuralNetworkParser_test.cpp")
+target_link_libraries(NeuralNetworkParserTest PUBLIC NETWORKLAYER NEURALNETWORKPARSER NEURALNETWORK DROPOUTLAYER)

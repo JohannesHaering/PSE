@@ -62,7 +62,7 @@ std::map<std::string, float> Predictor::parseToFloat(std::list<std::string> valu
         value = (*it);
 
         // Parse the value
-        float floatValue = ::atof(value.c_str());
+        float floatValue = std::stof(value.c_str());
 
         // Create Pair
         std::pair<std::string, float> pair = std::pair(deviceId, floatValue);

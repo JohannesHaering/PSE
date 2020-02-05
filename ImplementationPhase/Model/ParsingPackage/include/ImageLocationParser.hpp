@@ -8,6 +8,6 @@
 class ImageLocationParser : public LineBreakParser<std::list<std::string>>
 {
     public:
-        std::list<std::string> parse(std::string toParse) override;
+        std::list<std::string> parse(std::string toParse);
 };
 #endif

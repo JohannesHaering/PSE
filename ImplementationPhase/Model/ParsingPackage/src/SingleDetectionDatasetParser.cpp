@@ -18,15 +18,16 @@
 // <classId>:<probability>
 SingleDetectionDataset SingleDetectionDatasetParser::parse(std::string toParse)
 {
-    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
-
+    std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);  
     auto iterator = lines.begin();
     auto imageID = *iterator;
     ++iterator;
     auto imageLocation = *iterator;
     ++iterator;
-    std::list<BoundingBox> boundingBoxes;
+    std::list<BoundingBox> boundingBoxes = std::list<BoundingBox>();
     for(; iterator != lines.end(); ++iterator){
+		if (*iterator == "")
+			continue;
         boundingBoxes.push_back(BoundingBoxParser().parse(*iterator));
     }
     
