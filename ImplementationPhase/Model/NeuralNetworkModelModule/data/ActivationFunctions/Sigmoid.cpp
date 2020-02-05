@@ -2,9 +2,6 @@
 #include <vector>
 #include <cmath>
 
-//ActivationFunctions work on net[j], so a size does not need to be set on init
-
-
 std::vector<float>  Sigmoid::fprop(std::vector<float> net)
 {
 	output = std::vector<float>(net.size());
