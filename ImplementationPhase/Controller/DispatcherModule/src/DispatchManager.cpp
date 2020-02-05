@@ -1,6 +1,10 @@
 #include "DispatchManager.hpp"
+#include <vector>
 #include "Channel.hpp"
 #include "Mode.hpp"
+#include "HighPerformanceMode.hpp"
+#include "LowPowerMode.hpp"
+#include "HighEfficiencyMode"
 #include "NeuralNetworkAdapter.hpp"
 //#include "Device.hpp"
 
@@ -27,12 +31,15 @@ std::list<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { return
 
 std::list<Mode*> DispatchManager::getModeList() 
 {
-	//TODO
+	//Todo ? I guess it's done for now
 	std::list<Mode*> modeList;
+    modeList.push_back(new LowPowerMode());
+    modeList.push_back(new HighEfficiencyMode());
+    modeList.push_back(new HighPerformanceMode());
 	return modeList;
 }
 
-ResultManager DispatchManager::dispatchImages(std::list<cv::Mat> imageList) 
+ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
 {
 	//TODO
 	std::list<Result> resultList;
