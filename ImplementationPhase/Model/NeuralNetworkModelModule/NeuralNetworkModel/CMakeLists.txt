@@ -56,3 +56,11 @@ add_library(MATRIX_DEFINE INTERFACE)
 target_sources(MATRIX_DEFINE INTERFACE "include/MatrixDefine.hpp")
 
 target_link_libraries(NEURALNETWORK PUBLIC NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER)
+
+add_library(SOFTMAXLAYER "src/SoftmaxLayer.cpp" "include/SoftmaxLayer.hpp")
+target_include_directories(SOFTMAXLAYER PUBLIC "include/")
+target_link_libraries(SOFTMAXLAYER PUBLIC ACTIVATIONLAYER)
+
+add_library(SIGMOIDLAYER "src/SigmoidLayer.cpp" "include/SigmoidLayer.hpp")
+target_include_directories(SIGMOIDLAYER PUBLIC "include/")
+target_link_libraries(SIGMOIDLAYER PUBLIC ACTIVATIONLAYER)

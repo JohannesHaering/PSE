@@ -10,7 +10,7 @@ class InputImageHandlerTrainer : public InputImageHandler {
         InputImageHandlerTrainer(TrainingDistributor *distributor);
 
     private:
-        std::vector<std::string> validformatsmanual = {"jpg", "png"};
+        std::vector<std::string> validformatsmanual = {"jpg", "png", "*"};
         std::vector<std::string> validformatstxt = {"txt"};
         TrainingDistributor *trainingdistributor;
 

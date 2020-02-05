@@ -15,3 +15,5 @@ NetworkLayer *NeuralNetworkAdapter::getNextLayer() { return neuralNetwork.getNex
 NetworkLayer *NeuralNetworkAdapter::getPreviousLayer() { return neuralNetwork.getPreviousLayer(); }
 
 std::string NeuralNetworkAdapter::getName() { return neuralNetwork.getName(); }
+
+int NeuralNetworkAdapter::getLayerCount() { return neuralNetwork.getLayerCount(); }

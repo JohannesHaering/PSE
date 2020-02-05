@@ -17,7 +17,8 @@ TrainingDistributor::TrainingDistributor() {
 void TrainingDistributor::TrainingDistributor::startProcess() {
 	float desprecision = page->getPrecision();
     //TODO
-    Trainer trainer = Trainer(neuralNetworks[0], desprecision, directories);
+    Trainer trainer = Trainer(&(neuralNetworks[0]), desprecision, directories[0]);
+	trainer.startTraining();
 }
 
 /*
@@ -37,6 +38,6 @@ void TrainingDistributor::enableStart() {
 	page->enableStart(canStart());
 }
 
-ContentView* TrainingDistributor::getPage() {
+TrainingPanel* TrainingDistributor::getPage() {
     return this->page;
 }
