@@ -46,7 +46,7 @@ std::vector<std::vector<float>> DenseLayer::get_weights() { return weights; }
 
 std::vector<float> DenseLayer::get_biase() { return bias; }
 
-std::vector<float> DenseLayer::fprop(std::vector<float> new_input)
+std::vector<float> DenseLayer::forward(std::vector<float> new_input)
 {
 	for (int j = 0; j < outputSize; j++) net[j] = bias[j];
 	for (int i = 0; i < inputSize; i++)
@@ -60,7 +60,7 @@ std::vector<float> DenseLayer::fprop(std::vector<float> new_input)
 
 
 
-std::vector<float> DenseLayer::bprop(std::vector<float> feedback, float learningrate)
+std::vector<float> DenseLayer::backprob(std::vector<float> feedback, float learningrate)
 {
 	//calc derivate for next Layers
 	for (int input_i = 0; input_i < inputSize; input_i++) {

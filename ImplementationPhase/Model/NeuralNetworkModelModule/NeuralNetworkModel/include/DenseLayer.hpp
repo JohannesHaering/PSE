@@ -22,8 +22,8 @@ public:
 	DenseLayer(int inputSize, int outputSize, float learningRate);
 	void set_bias(std::vector<float> new_bias);
 	void set_weights(std::vector<std::vector<float>> new_weights);
-	std::vector<float> fprop(std::vector<float> input_data);
-	std::vector<float> bprop(std::vector<float> updates, float learningRate);
+	std::vector<float> forward(std::vector<float> input_data);
+	std::vector<float> backprob(std::vector<float> updates, float learningRate);
 	std::vector<std::vector<float>> get_weights();
 	std::vector<float> get_biase();
 };
