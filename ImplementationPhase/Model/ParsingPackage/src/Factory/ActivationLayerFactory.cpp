@@ -4,9 +4,9 @@
 #include "ActivationLayer.hpp"
 #include "Activation.hpp"
 
-NetworkLayer ActivationLayerFactory::buildLayer()
+NetworkLayer* ActivationLayerFactory::buildLayer()
 {
-    return ActivationLayer(name, inputDimensions, activation);
+    return new ActivationLayer(name, inputDimensions, activation);
 }
 
 ActivationLayerFactory ActivationLayerFactory::setActivation(Activation activation)
