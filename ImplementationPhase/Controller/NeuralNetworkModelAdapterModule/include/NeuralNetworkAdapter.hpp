@@ -21,6 +21,7 @@ class NeuralNetworkAdapter {
     int getWidth();
     int getHeight();
     int getChannels();
+    NeuralNetwork getNeuralNetwork();
     private: 
         NeuralNetwork neuralNetwork;    
         

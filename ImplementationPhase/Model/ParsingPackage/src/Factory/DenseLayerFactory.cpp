@@ -6,8 +6,10 @@
 #include <vector>
 
 NetworkLayer* DenseLayerFactory::buildLayer()
-{
-    return new DenseLayer(name, inputDimensions, matrix);
+{   
+    DenseLayer* layer = new DenseLayer(inputDimensions, matrix[0].size());
+    layer.set_weights(matrix);
+    return layer;
 }
 
 DenseLayerFactory DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
