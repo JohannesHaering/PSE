@@ -43,8 +43,6 @@ float CompleteTrainer::calcCEError(std::vector<float> target)
   if (target.size() != output.size()) {
     std::cout << "error, feedback and output size mismatch!" << std::endl; 
     return 42.0f;
-  } else {
-    std::cout << "arrived" << std::endl;
   }
 	float error = 0;
 	for (int i = 0; i < output.size(); i++) error -= target[i] * output[i];

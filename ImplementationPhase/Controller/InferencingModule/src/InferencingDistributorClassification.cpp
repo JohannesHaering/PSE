@@ -66,7 +66,7 @@ void InferencingDistributorClassification::startProcess()
 /*
 * Sends the given result to the view. 
 */
-void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
+void InferencingDistributorClassification::drawResult(int imageId, int neuralNetworkId) {
   std::cout << neuralNetworkId << imageId<<std::endl;
   std::string nn_id = neuralNetworks[neuralNetworkId].getName();
 	std::string img_id = directories[imageId];

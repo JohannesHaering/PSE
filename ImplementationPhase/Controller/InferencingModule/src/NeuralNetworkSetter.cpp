@@ -38,8 +38,24 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 
   SoftmaxLayer* smlayer = new SoftmaxLayer();
   network.addLayer(smlayer);
-	
+
+  NeuralNetwork network2 = NeuralNetwork("Das 2. beschte netz", 28, 28, 1);
+    
+   DenseLayer* dlayer3 = new DenseLayer(28 * 28, 300);
+   network2.addLayer(dlayer3);
+  
+   LeakyReLuLayer* llayer2 = new LeakyReLuLayer();
+   network2.addLayer(llayer2);
+   
+   DenseLayer* dlayer4 = new DenseLayer(300, 10);
+   network2.addLayer(dlayer4);
+  
+   SoftmaxLayer* smlayer2 = new SoftmaxLayer();
+   network2.addLayer(smlayer2);
+
+
   neuralNetworks.push_back(network);
+  neuralNetworks.push_back(network2);
 
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
