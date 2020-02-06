@@ -5,7 +5,7 @@
 #include <vector>
 #include "ActivationLayer.hpp"
 
-class ReluLayer : public ActivationLayer {
+class ReLuLayer : public ActivationLayer {
 
   public:
     std::vector<float> forward(std::vector<float> net);

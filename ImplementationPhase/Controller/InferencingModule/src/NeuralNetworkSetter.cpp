@@ -3,6 +3,7 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "NeuralNetworkSetter.hpp"
 #include "LeakyReLuLayer.hpp"
+#include "SoftmaxLayer.hpp"
 #include <vector>
 
 /*
@@ -25,10 +26,21 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
     }  */
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
-	DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
+	
+    DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
 	network.addLayer(dlayer);
-	LeakyReluLayer* llayer = new LeakyReluLayer();
-	neuralNetworks.push_back(network);
+
+	LeakyReLuLayer* llayer = new LeakyReLuLayer();
+    network.addLayer(llayer);
+
+	DenseLayer* dlayer2 = new DenseLayer(300, 10);
+	network.addLayer(dlayer2);
+
+    SoftmaxLayer* smlayer = new SoftmaxLayer();
+    network.addLayer(smlayer);
+	
+    neuralNetworks.push_back(network);
+
     inferencer->addNeuralNetwork(neuralNetworks);
 }
 

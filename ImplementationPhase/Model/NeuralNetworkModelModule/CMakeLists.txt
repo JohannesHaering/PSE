@@ -4,4 +4,4 @@ cmake_minimum_required(VERSION 3.10)
 project(NeuralNetworkPackage C CXX)
 
 add_subdirectory(NeuralNetworkModel)
-add_subdirectory(NetworkOperationsModel)
+#add_subdirectory(NetworkOperationsModel)

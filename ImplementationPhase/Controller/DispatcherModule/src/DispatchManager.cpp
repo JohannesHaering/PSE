@@ -4,7 +4,7 @@
 #include "Mode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "LowPowerMode.hpp"
-#include "HighEfficiencyMode"
+#include "HighEfficiencyMode.hpp"
 #include "NeuralNetworkAdapter.hpp"
 //#include "Device.hpp"
 

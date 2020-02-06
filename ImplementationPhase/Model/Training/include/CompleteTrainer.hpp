@@ -11,10 +11,10 @@ class CompleteTrainer
 {
 public:
 	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate);
+	std::vector<float> forward(std::vector<float> input);
 	void train(std::vector<float> target);
 private:
 	float learningRate;
 	NeuralNetworkAdapter* neuralNetwork;
-	std::vector<float> forward(std::vector<float> input);
 };
 #endif
