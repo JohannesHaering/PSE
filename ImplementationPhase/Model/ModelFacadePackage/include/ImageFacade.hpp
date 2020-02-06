@@ -6,9 +6,11 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <list>
+#include <vector>
 
 class ImageFacade : public ModelFacade {
     public:
+        std::vector<float> getImageGreyScale(std::string path, int width, int height, int channelNumb);
         cv::Mat getImage(std::string path, int width, int height, int channelNumb);
         std::list<cv::Mat> getImages(std::list<std::string> paths, int width, int height, int channelNumb);
         std::list<cv::Mat> getImagesFromTxtFile(std::string path, int width, int height, int channelNumb);
