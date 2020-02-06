@@ -48,9 +48,6 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    //std::vector<float> testacc = std::vector<float>{0.3f, 0.4f, 0.5f};
-   // std::vector<float> trainingacc = std::vector<float>{0.5f, 0.4f, 0.3f, 0.4f, 0.3f,0.5f, 0.4f, 0.3f, 0.4f, 0.3f,};
-
     //for(int i = 0; i < dataset_train_images.size(); i++)
     for(int i = 0; i < 100; i++)
     {
@@ -63,6 +60,6 @@ void Trainer::startTraining()
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       }
     }
-    //NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    //facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
 }
