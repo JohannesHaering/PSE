@@ -59,6 +59,5 @@ void InferencePageAdapter::update(){
     inferPage->update();
 }
 void InferencePageAdapter::resultsChanged(std::string nnName, std::string imgName, cv::Mat mat, ClassificationResult result){
-        std::cout<<"BRO" << std::endl;
         inferPage->resultsChanged(nnName,imgName,mat,result);
 }
