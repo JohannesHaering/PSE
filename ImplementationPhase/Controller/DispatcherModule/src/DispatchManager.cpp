@@ -9,6 +9,7 @@
 #include "Executor.hpp"
 //#include "Device.hpp"
 #include "ClassificationResult.hpp"
+#include "ImageFacade.hpp" 
 
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
@@ -44,18 +45,22 @@ std::list<Mode*> DispatchManager::getModeList()
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
 {
 	//TODO
-	std::list<Result*> resultList;
-    ClassProbability prob1 = ClassProbability("elefant", 0.1f);
-    ClassProbability prob2 = ClassProbability("dog", 0.5f);
-    ClassProbability prob3 = ClassProbability("pikachu", 0.9f);
-
-    std::list<ClassProbability> classlist = std::list<ClassProbability>{prob1, prob2, prob3};
-
-    ClassificationResult* res = new ClassificationResult("/home/pselabw1920/Downloads/Highlander-kitten-lying-1030x772.jpg", "das beschte netz", classlist);
-    resultList.push_back(res);
+  	std::list<Result*> resultList;
+    std::vector<std::vector<floats>> inputimages;
+    ImageFacade* imagefacade = new ImageFacade();
+    cv::Mat currentImage;
+    std::vector<float> currentInputVecotor;
+    Executor executor;
+    for (int i = 0; i < neuralNetworks.size(); i++) {
+      for (int j = 0; j < directories.size(); j++) {
+        currentImage = imagefacade.getImage(directories[j], neuralNetworks[i].getWidth(), neuralNetworks[i].getHeight(), neuralNetwork[i].getChannels());
+        currentInputVector = imagefacade.parseFloatsGreyScale(currentImage);
+        executor = new Executor(neuralNetworks[i]);
+      }
     //Executor* executor = new Executor(neuralNetworkList[0], );
-	ResultManager resultMgr = ResultManager(resultList);
-	return resultMgr;
+    }
+  	ResultManager resultMgr = ResultManager(resultList);
+  	return resultMgr;
 }
 
 std::vector<Device> DispatchManager::getAvailableDevices() {

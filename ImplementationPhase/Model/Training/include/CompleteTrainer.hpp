@@ -4,8 +4,6 @@
 #include <vector>
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-//Instanz, initiated with vector<Layer>. 
-//has a .train(std::vector<float> input, std::vector<int> target) function and a .infer(std::vector<float> input) function. 
 
 class CompleteTrainer
 {
@@ -13,7 +11,12 @@ public:
 	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate);
 	std::vector<float> forward(std::vector<float> input);
 	void train(std::vector<float> target);
+  float calcCEError(std::vector<float> target);
+
 private:
+	std::vector<float> output;
+	std::vector<float> feedback;
+
 	float learningRate;
 	NeuralNetworkAdapter* neuralNetwork;
 };

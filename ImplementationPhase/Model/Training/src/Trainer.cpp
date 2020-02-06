@@ -11,7 +11,8 @@
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f)) 
 {
     trainer = CompleteTrainer(neuralNetwork, 0.01f);  
-    
+    trainingAcc = std::vector<float>();
+    testAcc = std::vector<float>();    
     //TODO somehow update this to use trainData string and replace trainData string by somewhat smarter
     loadDataset();
 
@@ -47,64 +48,22 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    std::vector<float> testacc = std::vector<float>{0.3f, 0.4f, 0.5f};
-    std::vector<float> trainingacc = std::vector<float>{0.5f, 0.4f, 0.3f};
-    
+    //std::vector<float> testacc = std::vector<float>{0.3f, 0.4f, 0.5f};
+   // std::vector<float> trainingacc = std::vector<float>{0.5f, 0.4f, 0.3f, 0.4f, 0.3f,0.5f, 0.4f, 0.3f, 0.4f, 0.3f,};
+
     //for(int i = 0; i < dataset_train_images.size(); i++)
     for(int i = 0; i < 100; i++)
     {
-        trainer.forward(dataset_train_images[i]);
-        trainer.train(dataset_test_images[i]);
+      trainer.forward(dataset_train_images[i]);
+      trainer.train(dataset_test_labels[i]);
 
-        if (i % 10 == 0){
-                testAcc(); 
-        }
+      if (i % 10 == 0){
+        trainer.forward(dataset_test_images[i]);
+        std::cout << trainer.calcCEError(dataset_test_labels[i]);
+        testAcc.push_back(trainer.calcCEError(dataset_test_labels[i]));
+        ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
+      }
+
 
     }
-    std::cout << std::endl;
-    ControllerFacade::getInstance()->newTrainStep(trainingacc, testacc); 
 }
-
-float Trainer::testAcc()
-{
-    std::cout << "f";
-    return 42.0;
-}
-
-
-
-
-
-
-/*
-CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate) : neuralNetwork(neuralNetwork), learningRate(learningRate) {}
-
-
-void CompleteTrainer::train(std::vector<float> target)
-{
-	std::vector<float> output;
-	std::vector<float> tmp = target;
-	NetworkLayer* lastlayer = neuralNetwork->getLastLayer();
-
-	for (auto layer = neuralNetwork->getFirstLayer(); layer != lastlayer; layer = neuralNetwork->getNextLayer()) 
-	{
-		output = layer->backprob(target, learningRate);
-		tmp = output;
-	}
-	learningRate *= 0.99;
-}
-
-
-std::vector<float> CompleteTrainer::forward(std::vector<float> input)
-{
-	std::vector<float> tmp = input;
-	std::vector<float> output;
-	NetworkLayer* lastlayer = neuralNetwork->getLastLayer();
-
-	for (NetworkLayer* layer = neuralNetwork->getFirstLayer(); layer != lastlayer; layer = neuralNetwork->getNextLayer())
-	{
-		output = layer->forward(input);
-		tmp = output;
-	}
-	return output;
-}*/

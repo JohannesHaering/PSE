@@ -44,3 +44,7 @@ void Executor::loadDataset()
                 dataset_test_labels[i][j] = (mnist_dataset.test_labels[i] == j) ? 1.0f : 0.0f;
     }
 }
+
+std::vector<float> Executor::execute(std::vector<float>) {
+    
+}

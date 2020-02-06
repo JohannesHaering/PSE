@@ -15,23 +15,24 @@ public:
 	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData);
 	void startTraining();
 private:
-	//void train(std::vector<float> target);
 	void loadDataset();
-    float testAcc();
 	void saveNewNeuralNetwork();
+  //float testAcc();
 	float getNewTrainingsAccuracy();
 	float getNewTestAccuracy();
 
 	float desiredPrecision;
+  //float testAccVal;
+	//float trainingsAcc;
+  std::vector<float> testAcc;
+  std::vector<float> trainingAcc;
 	NeuralNetworkAdapter* neuralNetwork;
 	std::string trainData;
-	float testAccVal;
-	float trainingsAcc;
-    CompleteTrainer trainer;
+  CompleteTrainer trainer;
     
-    std::vector<std::vector<float>> dataset_train_images;
-    std::vector<std::vector<float>> dataset_test_images;
-    std::vector<std::vector<float>> dataset_train_labels;
-    std::vector<std::vector<float>> dataset_test_labels;
+  std::vector<std::vector<float>> dataset_train_images;
+  std::vector<std::vector<float>> dataset_test_images;
+  std::vector<std::vector<float>> dataset_train_labels;
+  std::vector<std::vector<float>> dataset_test_labels;
 };
 #endif
