@@ -11,7 +11,7 @@
 #include <list>
 #include <stdexcept>
 
-NetworkLayer DenseLayerParser::parse(std::string toParse)
+NetworkLayer* DenseLayerParser::parse(std::string toParse)
 {
 	LayerParser::extractGeneralInformation(toParse);
 

@@ -10,6 +10,6 @@
 class ClassificationResultFactory
 {
 public:
-    ClassificationResult build(std::string imageId, std::string neuralNetworkId, std::list<ClassProbability> probabilities);
+    ClassificationResult* build(std::string imageId, std::string neuralNetworkId, std::list<ClassProbability> probabilities);
 };
 #endif

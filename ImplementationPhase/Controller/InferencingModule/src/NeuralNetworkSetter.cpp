@@ -1,7 +1,9 @@
 #include "Inferencer.hpp"
-#include "NeuralNetworkFacade.hpp"
+// #include "NeuralNetworkFacade.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include "NeuralNetworkSetter.hpp"
+#include "LeakyReLuLayer.hpp"
+#include "SoftmaxLayer.hpp"
 #include <vector>
 
 /*
@@ -18,11 +20,45 @@ NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(in
 */
 void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories) {
     std::vector<NeuralNetworkAdapter> neuralNetworks; 
+	/*
 	NeuralNetworkFacade neuralNetworkFacade;
     for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
-    }  
-    inferencer->addNeuralNetwork(neuralNetworks);
+    }  */
+	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
+	
+  DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
+	network.addLayer(dlayer);
+
+	LeakyReLuLayer* llayer = new LeakyReLuLayer();
+  network.addLayer(llayer);
+
+	DenseLayer* dlayer2 = new DenseLayer(300, 10);
+	network.addLayer(dlayer2);
+
+  SoftmaxLayer* smlayer = new SoftmaxLayer();
+  network.addLayer(smlayer);
+
+  NeuralNetwork network2 = NeuralNetwork("Das 2. beschte netz", 28, 28, 1);
+    
+   DenseLayer* dlayer3 = new DenseLayer(28 * 28, 300);
+   network2.addLayer(dlayer3);
+  
+   LeakyReLuLayer* llayer2 = new LeakyReLuLayer();
+   network2.addLayer(llayer2);
+   
+   DenseLayer* dlayer4 = new DenseLayer(300, 10);
+   network2.addLayer(dlayer4);
+  
+   SoftmaxLayer* smlayer2 = new SoftmaxLayer();
+   network2.addLayer(smlayer2);
+
+
+  neuralNetworks.push_back(network);
+  neuralNetworks.push_back(network2);
+
+  inferencer->addNeuralNetwork(neuralNetworks);
+  inferencer->enableStart();
 }
 
 /*

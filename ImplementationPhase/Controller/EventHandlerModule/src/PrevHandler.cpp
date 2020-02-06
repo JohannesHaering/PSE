@@ -3,9 +3,11 @@
 #include "ViewFacade.hpp"
 #include <stdexcept>
 
-PrevHandler::PrevHandler(Pager *pager) 
+PrevHandler::PrevHandler(Pager* pager, Pager* otherPager, InferencingDistributorClassification* inferencer) 
 {
 	this->pager = pager;
+  this->otherPager = otherPager;
+  this->inferencer = inferencer;
 }
         
 /*
@@ -16,6 +18,7 @@ void PrevHandler::onAction()
 	try 
 	{
 		pager->prev();
+    inferencer->drawResult(pager->getCurrentPage(), otherPager->getCurrentPage());
 	}
 	catch (const std::invalid_argument& ia)
 	{

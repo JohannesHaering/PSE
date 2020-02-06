@@ -3,6 +3,7 @@
 
 #include "EventHandler.hpp"
 #include "Pager.hpp"
+#include "InferencingDistributorClassification.hpp"
 
 class PagerHandler : public EventHandler {
     
@@ -11,6 +12,7 @@ class PagerHandler : public EventHandler {
 
     protected:
         Pager* pager;
-
+        Pager* otherPager;
+        InferencingDistributorClassification* inferencer;
 };
 #endif

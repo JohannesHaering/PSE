@@ -2,23 +2,13 @@
 #define ACTIVATIONLAYER_H_
 
 #include <string>
+#include <vector>
 #include "NetworkLayer.hpp"
-#include "Activation.hpp"
 
-class ActivationLayer  : public NetworkLayer {
-
-  private:
-    Activation function;
-    float alpha;
+class ActivationLayer : public NetworkLayer {
 
   public:
-    ActivationLayer();
-    ActivationLayer(std::string name, int* inputDimensions, Activation function);
-    ActivationLayer(std::string name, int* inputDimensions, Activation function, float alpha);
-    void setFunction(Activation function);
-    void setAlpha(float alpha);
-    Activation getFunction();
-    float getAlpha();
-    // ~ActivationLayer();
+	  virtual std::vector<float> backprob(std::vector<float> feedback) = 0;
+	  std::vector<float> backprob(std::vector<float> feedback, float learningrate) override;
 };
 #endif
