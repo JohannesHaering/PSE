@@ -16,6 +16,7 @@ public:
     NeuralNetworkFactory setHeight(int height);
     NeuralNetworkFactory setWidth(int width);
     NeuralNetworkFactory setChannels(int channels);
+    NeuralNetworkFactory setLabels(std::list<std::string> labels);
 
 private:
     int height;
@@ -23,5 +24,6 @@ private:
     int channels;
     std::string name;
     std::list<NetworkLayer> layers;
+    std::list<std::string> labels;
 };
 #endif

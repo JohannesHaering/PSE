@@ -13,7 +13,7 @@ NeuralNetwork NeuralNetworkFactory::buildNeuralNetwork()
         auto layer = *it;
         neuralNetwork.addLayer(&layer);
     }
-
+    neuralNetwork.setLabels(labels);
     return neuralNetwork;
 }
 
@@ -44,5 +44,10 @@ NeuralNetworkFactory NeuralNetworkFactory::setWidth(int width)
 NeuralNetworkFactory NeuralNetworkFactory::setChannels(int channels)
 {
     this->channels = channels;
+    return *this;
+}
+
+NeuralNetworkFactory NeuralNetworkFactory::setLabels(std::list<std::string> labels) {
+    this->labels = labels;
     return *this;
 }

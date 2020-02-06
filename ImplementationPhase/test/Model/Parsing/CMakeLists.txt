@@ -92,3 +92,6 @@ target_link_libraries(PoolingLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER POL
 
 add_executable(NeuralNetworkParserTest "NeuralNetworkParser_test.cpp")
 target_link_libraries(NeuralNetworkParserTest PUBLIC NETWORKLAYER NEURALNETWORKPARSER NEURALNETWORK DROPOUTLAYER)
+
+add_executable(ImageParserWithSizingTest "ImageParserWithSizing_test.cpp")
+target_link_libraries(ImageParserWithSizingTest PUBLIC IMAGEPARSING ${OpenCV_LIBS})

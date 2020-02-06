@@ -16,9 +16,11 @@ private:
     const char TYPE_BEGIN = '[';
     const char TYPE_END = ']';
     const std::string VALUE_PART_DELIMETER = "=";
+    const std::string VALUE_DELIMETER = ",";
     const std::string HEIGHT = "height";
     const std::string WIDTH = "width";
     const std::string CHANNELS = "channels";
+    const std::string LABELS = "labels";
 
     std::string removeCharacter(std::string text, char toErase);
 };

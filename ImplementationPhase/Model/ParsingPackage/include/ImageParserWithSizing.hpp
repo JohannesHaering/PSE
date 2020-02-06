@@ -8,6 +8,7 @@ class ImageParserWithSizing : public ImageParser {
 public:
 	ImageParserWithSizing(int width, int height, int channels);
     cv::Mat parse(cv::Mat toParse);
+	std::vector<float> parseFloatsGreyScale(cv::Mat toParse);
 };
 
 #endif
