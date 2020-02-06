@@ -15,12 +15,22 @@ std::vector<float> SoftmaxLayer::forward(std::vector<float> net)
 	return output;
 }
 
+float SoftmaxLayer::calcCEError(std::vector<float> tartget) //uses labels, output and currentSize 
+{
+	error = 0;
+	for (int i = 0; i < output.size(); i++) error -= target[i] * log(output[i]);
+	return error;
+}
+
+
+
 float SoftmaxLayer::calcCEError() //uses labels, output and currentSize 
 {
 	error = 0;
 	for (int i = 0; i < output.size(); i++) error -= target[i] * log(output[i]);
 	return error;
 }
+
 
 std::vector<float> SoftmaxLayer::backprob(std::vector<float> target)
 {
