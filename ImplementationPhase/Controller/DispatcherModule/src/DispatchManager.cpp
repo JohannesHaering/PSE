@@ -10,6 +10,7 @@
 //#include "Device.hpp"
 #include "ClassificationResult.hpp"
 #include "ImageFacade.hpp" 
+#include "ResultFacade.hpp"
 
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
@@ -28,9 +29,9 @@ Mode* DispatchManager::getMode() { return mode; }
 
 void DispatchManager::setMode(Mode *operatingMode) { this->mode = operatingMode; }
 
-void DispatchManager::setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList) { this->neuralNetworkList = neuralNetworkList; }
+void DispatchManager::setNeuralNetworkList(std::vector<NeuralNetworkAdapter> neuralNetworkList) { this->neuralNetworkList = neuralNetworkList; }
 
-std::list<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { return neuralNetworkList; }
+std::vector<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { return neuralNetworkList; }
 
 std::list<Mode*> DispatchManager::getModeList() 
 {
@@ -48,16 +49,22 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
   	std::list<Result*> resultList;
     std::vector<std::vector<floats>> inputimages;
     ImageFacade* imagefacade = new ImageFacade();
+    ResultFacade* resultfacade = new ResultFacade();
     cv::Mat currentImage;
+    std::list<std::string> labels = std::list<std::string>{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
     std::vector<float> currentInputVecotor;
+    std::vector<float> outputvector;
     Executor executor;
     for (int i = 0; i < neuralNetworks.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
         currentImage = imagefacade.getImage(directories[j], neuralNetworks[i].getWidth(), neuralNetworks[i].getHeight(), neuralNetwork[i].getChannels());
         currentInputVector = imagefacade.parseFloatsGreyScale(currentImage);
         executor = new Executor(neuralNetworks[i]);
+        outputvector = executor->execute(currentInputVector);
+        Result* newres = resultFacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), labels, outputvector);
+        resultList.push_back(newres);
+        std::cout<<outputvector[0] + "," + outputvector[1];
       }
-    //Executor* executor = new Executor(neuralNetworkList[0], );
     }
   	ResultManager resultMgr = ResultManager(resultList);
   	return resultMgr;

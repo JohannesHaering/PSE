@@ -46,5 +46,12 @@ void Executor::loadDataset()
 }
 
 std::vector<float> Executor::execute(std::vector<float>) {
+
+    NetworkLayer* lastlayer = neuralNetwork->getLastLayer();                                                                                                                                 
+    for (NetworkLayer* layer = neuralNetwork->getFirstLayer(); layer != lastlayer; layer = neuralNetwork->getNextLayer())
+    {
+       output = layer->forward(input);  
+    }
+    return output;
     
 }
