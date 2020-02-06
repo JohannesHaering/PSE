@@ -10,6 +10,7 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <list>
+#include <vector>
 
 cv::Mat ImageFacade::getImage(std::string path, int width, int height, int channelNumb)
 {
@@ -66,4 +67,10 @@ bool ImageFacade::writeImage(std::string path, cv::Mat image)
 
 bool ImageFacade::writeImages(std::list<std::string> paths, std::list<cv::Mat> images){
     return MultipleImageFileIO().writeFile(Data<std::list<cv::Mat>>(images), paths);
+}
+
+std::vector<float> ImageFacade::getImageGreyScale(std::string path, int width, int height, int channels) {
+    cv::Mat image = ImageFileIO().readFile(path).getData();
+    std::vector<float> parsed = ImageParserWithSizing(width, height, channels).parseFloatsGreyScale(image);
+    return parsed;
 }

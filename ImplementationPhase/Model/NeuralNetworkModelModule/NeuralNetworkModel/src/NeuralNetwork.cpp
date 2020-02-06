@@ -20,6 +20,10 @@ void NeuralNetwork::setInputDimensions(int width, int height, int channels) {
   this->channels = channels;
 }
 
+void NeuralNetwork::setLabels(std::list<std::string> labels) {
+    this->labels = labels;
+}
+
 std::string NeuralNetwork::getName() { return name; }
 
 int NeuralNetwork::getWidth() { return width; }
@@ -27,6 +31,8 @@ int NeuralNetwork::getWidth() { return width; }
 int NeuralNetwork::getHeight() { return height; }
 
 int NeuralNetwork::getChannels() { return channels; }
+
+std::list<std::string> NeuralNetwork::getLabels() { return labels; }
 
 NetworkLayer* NeuralNetwork::getFirstLayer() {
   it = layers.begin();
