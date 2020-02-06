@@ -105,9 +105,11 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += "\n";
 	output += LABELS;
 	output += VALUE_PART_DELIMETER;
-	std::list<std::string>::iterator labelIt = neuralNetwork.getLabels().begin();
+	std::list<std::string> labels = neuralNetwork.getLabels();
+	auto labelIt = labels.begin();
 	output += *labelIt;
-	for (; labelIt != neuralNetwork.getLabels().end(); ++labelIt) {
+	++labelIt;
+	for (; labelIt != labels.end(); ++labelIt) {
 		output += VALUE_DELIMETER;
 		output += *labelIt;
 	}

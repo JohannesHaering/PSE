@@ -24,6 +24,6 @@ private:
     int channels;
     std::string name;
     std::list<NetworkLayer> layers;
-    std::vector<std::string> labels
+    std::list<std::string> labels;
 };
 #endif

@@ -13,7 +13,7 @@ NeuralNetwork NeuralNetworkFactory::buildNeuralNetwork()
         auto layer = *it;
         neuralNetwork.addLayer(&layer);
     }
-
+    neuralNetwork.setLabels(labels);
     return neuralNetwork;
 }
 
