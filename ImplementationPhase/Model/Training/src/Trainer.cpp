@@ -5,7 +5,7 @@
 #include <vector>
 #include "Trainer.hpp"
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
-
+//#include "NeuralNetworkFacade.hpp"
 
 
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f)) 
@@ -62,7 +62,7 @@ void Trainer::startTraining()
         testAcc.push_back(trainer.calcCEError(dataset_test_labels[i]));
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       }
-
-
     }
+    //NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    //facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
 }

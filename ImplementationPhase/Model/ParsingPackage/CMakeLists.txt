@@ -11,17 +11,17 @@ target_link_libraries(FACTORY PUBLIC BOUNDINGBOX RESULT CLASSPROBABILITY CLASSIF
 #[[
 add_library(NEURALNETWORKFACTORY 
 "src/Factory/ActivationLayerFactory.cpp" "include/Factory/ActivationLayerFactory.hpp" 
-"src/Factory/CollectResultsLayerFactory.cpp" "include/Factory/CollectResultsLayerFactory.hpp" 
-"src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
+#"src/Factory/CollectResultsLayerFactory.cpp" "include/Factory/CollectResultsLayerFactory.hpp" 
+#"src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
 "src/Factory/DenseLayerFactory.cpp" "include/Factory/DenseLayerFactory.hpp" 
-"src/Factory/DropoutLayerFactory.cpp" "include/Factory/DropoutLayerFactory.hpp" 
-"src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp" 
-"src/Factory/InceptionLayerFactory.cpp" "include/Factory/InceptionLayerFactory.hpp" 
+#"src/Factory/DropoutLayerFactory.cpp" "include/Factory/DropoutLayerFactory.hpp" 
+#"src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp" 
+#"src/Factory/InceptionLayerFactory.cpp" "include/Factory/InceptionLayerFactory.hpp" 
 "src/Factory/LayerFactory.cpp" "include/Factory/LayerFactory.hpp" 
-"src/Factory/LocalResponseNormalizationLayerFactory.cpp" "include/Factory/LocalResponseNormalizationLayerFactory.hpp" 
-"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp" 
-"src/Factory/OutputStorageLayerFactory.cpp" "include/Factory/OutputStorageLayerFactory.hpp" 
-"src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp")
+#"src/Factory/LocalResponseNormalizationLayerFactory.cpp" "include/Factory/LocalResponseNormalizationLayerFactory.hpp" 
+"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp") 
+#"src/Factory/OutputStorageLayerFactory.cpp" "include/Factory/OutputStorageLayerFactory.hpp" 
+#"src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp")
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
 target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER)
 
@@ -45,10 +45,7 @@ add_library(NEURALNETWORKPARSER
 "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")
 target_include_directories(NEURALNETWORKPARSER PUBLIC "include/")
 target_link_libraries(NEURALNETWORKPARSER PUBLIC NEURALNETWORK PARSER LINEBREAKPARSER NEURALNETWORKFACTORY LAYERPARSER)
-
-#]]
-
-
+]]
 add_library(BOUNDINGBOXPARSER "src/BoundingBoxParser.cpp" "include/BoundingBoxParser.hpp")
 target_include_directories(BOUNDINGBOXPARSER PUBLIC "include/")
 target_link_libraries(BOUNDINGBOXPARSER PUBLIC BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULTPARSER PARSER FACTORY)
