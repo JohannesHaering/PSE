@@ -9,7 +9,7 @@
 class DenseLayerFactory : public LayerFactory
 {
 public:
-    NetworkLayer buildLayer() override;
+    NetworkLayer* buildLayer() override;
     DenseLayerFactory setMatrix(std::vector<std::vector<float>> matrix);
 private:
     std::vector<std::vector<float>> matrix;

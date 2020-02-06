@@ -17,7 +17,7 @@ TrainingPanel::~TrainingPanel()
 }
 void TrainingPanel::newTrainingFinished(std::vector<float> pointsArrayTest, std::vector<float> pointsArrayTraining){
      graphicPixmap = new QPixmap(renderer->drawGraphic(pointsArrayTest,pointsArrayTraining));
-     ui->trainingGraphic->setPixmap(*graphicPixmap);
+     ui->trainingGraphic->setPixmap(graphicPixmap->scaled(400, 250));
 }
 std::string TrainingPanel::getNeuralNetworkPaths(){
     return neuralNetworkPaths;

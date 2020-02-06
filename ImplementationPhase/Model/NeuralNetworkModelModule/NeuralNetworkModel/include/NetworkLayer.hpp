@@ -2,25 +2,31 @@
 #define NETWORKLAYER_H_
 
 #include <string>
-// #include <vector>
+#include <vector>
 #include "LayerType.hpp"
 
 class NetworkLayer {
 
 private:
-    std::string name;
-    int inputDimensions[3];
-    LayerType layerType;
+	// std::string name;
+	int inputDimensions[3];
+	LayerType layerType;
 
-  public:
-    NetworkLayer(std::string name, int* inputDimensions, LayerType layerType);
-    NetworkLayer(LayerType layerType);
-    void setName(std::string name);
-    void setInputDimensions(int* inputDimensions);
-    std::string getName();
-    LayerType getLayerType();
-    int* getInputDimensions();
-    virtual int* getTensorDimensions();
-    // ~NetworkLayer();
+public:
+	/* NetworkLayer(std::string name, int* inputDimensions, LayerType layerType);
+	NetworkLayer(LayerType layerType);
+
+	void setName(std::string name);
+	void setInputDimensions(int* inputDimensions);
+	std::string getName();*/
+	LayerType getLayerType();
+	int* getInputDimensions();
+	// virtual int* getTensorDimensions();
+	// ~NetworkLayer();
+	virtual std::vector<float> forward(std::vector<float> net) = 0;
+	virtual std::vector<float> backprob(std::vector<float> net, float learningrate) = 0;
+protected:
+	std::vector<float> input;
+	std::vector<float> output;
 };
 #endif

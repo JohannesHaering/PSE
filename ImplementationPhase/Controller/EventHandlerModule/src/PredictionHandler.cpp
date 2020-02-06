@@ -6,7 +6,8 @@
 #include "PerformancePredictorFromFile.hpp"
 #include "InferencePageAdapter.hpp"
 #include <list>
-#include <C:/oclMultiThreads/NVIDIA GPU Computing SDK/OpenCL/common/inc/CL/cl2.hpp>
+//#include <C:/oclMultiThreads/NVIDIA GPU Computing SDK/OpenCL/common/inc/CL/cl2.hpp>
+
 
 PredictionHandler::PredictionHandler(InferencePageAdapter *page) :
 page(page),

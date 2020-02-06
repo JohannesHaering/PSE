@@ -8,10 +8,11 @@ InputImageHandlerTrainer::InputImageHandlerTrainer(TrainingDistributor *distribu
 
 std::vector<std::string> InputImageHandlerTrainer::fetchDirectory()
 {
-        TrainingPanel* page = dynamic_cast<TrainingPanel*>(trainingdistributor->getPage());
+        TrainingPanel* page = trainingdistributor->getPage();
         return page->getFilesFromExplorer(validformatsmanual);
 }
 
 void InputImageHandlerTrainer::sendDirectory(std::vector<std::string> dir) {
     trainingdistributor->setInput(dir);
+    trainingdistributor->enableStart();
 }

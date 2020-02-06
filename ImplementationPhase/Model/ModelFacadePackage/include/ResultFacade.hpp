@@ -13,8 +13,8 @@ class ResultFacade : public ModelFacade
 {
 public:
     DetectionResult parseDetectionResult(std::string resultString);
-    ClassificationResult parseClassificationResult(std::string resultString);
-    ClassificationResult parseClassificationResult(std::string imageID, std::string neuralNetworkID, std::list<std::string> labels, std::vector<float> probabilities);
+    ClassificationResult* parseClassificationResult(std::string resultString);
+    ClassificationResult* parseClassificationResult(std::string imageID, std::string neuralNetworkID, std::list<std::string> labels, std::vector<float> probabilities);
     bool writeDetectionResult(DetectionResult result, std::string path);
     bool writeClassificationResult(ClassificationResult result, std::string path);
 };

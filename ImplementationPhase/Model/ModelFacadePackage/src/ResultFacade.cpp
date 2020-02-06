@@ -15,12 +15,12 @@ DetectionResult ResultFacade::parseDetectionResult(std::string resultString)
     return DetectionResultParser().parse(resultString);
 }
 
-ClassificationResult ResultFacade::parseClassificationResult(std::string resultString)
+ClassificationResult* ResultFacade::parseClassificationResult(std::string resultString)
 {
     return ClassificationResultParser().parse(resultString);
 }
 
-ClassificationResult ResultFacade::parseClassificationResult(std::string imageID, std::string neuralNetworkID, std::list<std::string> labels, std::vector<float> probabilities) {
+ClassificationResult* ResultFacade::parseClassificationResult(std::string imageID, std::string neuralNetworkID, std::list<std::string> labels, std::vector<float> probabilities) {
     return ClassificationResultParser().parse(imageID, neuralNetworkID, labels, probabilities);
 }
 

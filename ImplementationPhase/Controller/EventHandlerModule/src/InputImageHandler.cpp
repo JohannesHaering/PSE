@@ -20,6 +20,7 @@ InputImageHandler::InputImageHandler(Distributor *distributor) : distributor(dis
 void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 {
     distributor->setInput(directories);
+    distributor->enableStart();
 }
 
 std::vector<std::string> InputImageHandler::fetchDirectory()

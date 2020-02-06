@@ -12,8 +12,8 @@
 class ClassificationResultParser : public Parser<ClassificationResult>
 {
 public:
-    ClassificationResult parse(std::string toParse);
-    ClassificationResult parse(std::string imageId, std::string neuralNetworkId, std::list<std::string> labels, std::vector<float> probabilities);
+    ClassificationResult* parse(std::string toParse);
+    ClassificationResult* parse(std::string imageId, std::string neuralNetworkId, std::list<std::string> labels, std::vector<float> probabilities);
     std::string parseBack(ClassificationResult classificationResult);
 
 private:
