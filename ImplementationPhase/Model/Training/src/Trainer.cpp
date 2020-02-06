@@ -59,7 +59,6 @@ void Trainer::startTraining()
 
       if (i % 10 == 0){
         trainer.forward(dataset_test_images[i]);
-        std::cout << trainer.calcCEError(dataset_test_labels[i]);
         testAcc.push_back(trainer.calcCEError(dataset_test_labels[i]));
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       }

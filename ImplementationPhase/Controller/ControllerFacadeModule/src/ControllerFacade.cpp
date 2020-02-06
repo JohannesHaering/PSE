@@ -105,10 +105,10 @@ ControllerFacade::ControllerFacade() {
     inputHandlerClassification = new InputImageHandler(classificationInferencer);
     neuralNetworkHandlerClassification = new NeuralNetworkHandler(classificationInferencer);
     startHandlerClassification = new StartHandler(classificationInferencer);
-    nnNextHandlerClassification = new NextHandler(neuralNetworkPager);
-	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);
-	imgNextHandlerClassification = new NextHandler(imagePager);
-	imgPrevHandlerClassification = new PrevHandler(imagePager);
+    nnNextHandlerClassification = new NextHandler(neuralNetworkPager, imagePager, classificationInferencer);
+  	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager, imagePager, classificationInferencer);
+  	imgNextHandlerClassification = new NextHandler(imagePager, neuralNetworkPager, classificationInferencer);
+  	imgPrevHandlerClassification = new PrevHandler(imagePager, neuralNetworkPager, classificationInferencer);
     newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     predictionHandlerClassification = new PredictionHandler(classificationPage);
     deviceHandlerClassification = new DeviceHandler(classificationPage);
