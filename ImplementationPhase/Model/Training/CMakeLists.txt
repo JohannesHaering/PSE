@@ -9,5 +9,5 @@ target_link_libraries(COMPLETETRAINER NEURALNETWORKADAPTER)
 
 add_library(TRAINER "src/Trainer.cpp" "include/Trainer.hpp")
 target_include_directories(TRAINER PUBLIC "include/")
-target_link_libraries(TRAINER NEURALNETWORKADAPTER COMPLETETRAINER CONTROLLERFACADE)
+target_link_libraries(TRAINER PUBLIC NEURALNETWORKADAPTER COMPLETETRAINER CONTROLLERFACADE)
 
