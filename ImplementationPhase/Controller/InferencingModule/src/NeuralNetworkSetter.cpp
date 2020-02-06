@@ -25,7 +25,9 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
     for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
     }  */
+	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
+	network.setLabels(labels);
 	
   DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
 	network.addLayer(dlayer);
@@ -40,6 +42,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   network.addLayer(smlayer);
 
   NeuralNetwork network2 = NeuralNetwork("Das 2. beschte netz", 28, 28, 1);
+  network2.setLabels(labels);
     
    DenseLayer* dlayer3 = new DenseLayer(28 * 28, 300);
    network2.addLayer(dlayer3);
