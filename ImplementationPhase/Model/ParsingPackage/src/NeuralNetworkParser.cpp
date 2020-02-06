@@ -23,6 +23,16 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
 	++it;
 
+	// Extract labels
+	std::list<std::string> parts = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
+	auto partsIt = parts.begin();
+	if(*partsIt != LABELS)
+		throw std::invalid_argument("Wrong format");
+	++it;
+	std::list<std::string> labels = Parser::splitBySymbol(*it, VALUE_DELIMETER);
+	factory.setLabels(labels);
+
+
 	std::list<std::string> val = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto parts1It = val.begin();
 	if (*parts1It != HEIGHT)
@@ -92,6 +102,15 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += TYPE_BEGIN;
 	output += neuralNetwork.getName();
 	output += TYPE_END;
+	output += "\n";
+	output += LABELS;
+	output += VALUE_PART_DELIMETER;
+	std::list<std::string>::iterator labelIt = neuralNetwork.getLabels().begin();
+	output += *labelIt;
+	for (; labelIt != neuralNetwork.getLabels().end(); ++labelIt) {
+		output += VALUE_DELIMETER;
+		output += *labelIt;
+	}
 	output += "\n";
 	output += HEIGHT;
 	output += VALUE_PART_DELIMETER;

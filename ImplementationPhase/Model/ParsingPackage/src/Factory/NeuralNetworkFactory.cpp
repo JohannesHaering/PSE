@@ -46,3 +46,8 @@ NeuralNetworkFactory NeuralNetworkFactory::setChannels(int channels)
     this->channels = channels;
     return *this;
 }
+
+NeuralNetworkFactory NeuralNetworkFactory::setLabels(std::list<std::string> labels) {
+    this->labels = labels;
+    return *this;
+}
