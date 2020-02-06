@@ -18,5 +18,6 @@ public:
 
 private:
     const std::string WEIGHTS_TENSOR = "tensor";
+    const std::string BIASES = "bias";
 };
 #endif

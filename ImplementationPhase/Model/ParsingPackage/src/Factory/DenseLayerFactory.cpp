@@ -7,11 +7,16 @@
 
 NetworkLayer DenseLayerFactory::buildLayer()
 {
-    return DenseLayer(name, inputDimensions, matrix);
+    return DenseLayer(name, inputDimensions, matrix, bias);
 }
 
 DenseLayerFactory DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
 {
     this -> matrix = matrix;
+    return *this;
+}
+
+DenseLayerFactory DenseLayerFactory::setBiases(std::vector<float> bias) {
+    this->bias = bias;
     return *this;
 }
