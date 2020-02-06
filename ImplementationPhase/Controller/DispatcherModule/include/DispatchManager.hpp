@@ -30,8 +30,8 @@ class DispatchManager
 		void setMode(Mode* operatingmode);
 		Mode* getMode();
 		std::list<Mode*> getModeList();
-		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
-		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
+		void setNeuralNetworkList(std::vector<NeuralNetworkAdapter> neuralNetworkList);
+		std::vector<NeuralNetworkAdapter> getNeuralNetworkList();
 		ResultManager dispatchImages(std::vector<std::string> directories);
 		//ResultManager dispatchImages(std::vector<std::string> imageList);
 		static std::vector<Device> getAvailableDevices();

@@ -9,8 +9,8 @@
 class Executor
 {
 public:
-	Executor(NeuralNetworkAdapter* neuralNetwork, std::vector<std::string> inputData);
-    std::vector<std::string> execute();
+	Executor(NeuralNetworkAdapter* neuralNetwork);
+    std::vector<float> execute(std::vector<float> input);
 private:
     std::vector<std::string> inputData;
 	void loadDataset();

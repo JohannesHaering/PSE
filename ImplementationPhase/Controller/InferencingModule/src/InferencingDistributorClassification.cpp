@@ -34,9 +34,8 @@ void InferencingDistributorClassification::enableStart(){
 */
 void InferencingDistributorClassification::startProcess()
 {
-	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
     DispatchManager& dispatcher = DispatchManager::getInstance();
-    dispatcher.setNeuralNetworkList(nnlist);
+    dispatcher.setNeuralNetworkList(neuralNetworks);
     std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
@@ -58,7 +57,7 @@ void InferencingDistributorClassification::startProcess()
 		mode = new HighPerformanceMode();
 	}
 	mode->setAllowedDeviceList(platformlist);
-	mode->setNeuralNetworkList(nnlist);
+	//mode->setNeuralNetworkList(neuralNetworks);
     dispatcher.setMode(mode);
     resultManager = dispatcher.dispatchImages(directories);
     ControllerFacade::getInstance()->newResultClassification();
@@ -68,11 +67,11 @@ void InferencingDistributorClassification::startProcess()
 * Sends the given result to the view. 
 */
 void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
-    std::cout<<"HIER" << std::endl;
-    std::string nn_id = neuralNetworks[neuralNetworkId].getName();
-	std::string img_id = directories[imageId].erase(0, directories[imageId].find_last_of("/")).erase(directories[imageId].find_last_of("."));
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
-    page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
+  std::string nn_id = neuralNetworks[neuralNetworkId].getName();
+	std::string img_id = directories[imageId];
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
+  page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
+  page->update();
 }    
     
 
@@ -86,7 +85,7 @@ void InferencingDistributorClassification::saveResult(int neuralNetworkId, int i
 {
 	std::string nn_id = neuralNetworks[neuralNetworkId].getName();
 	std::string img_id = directories[imageId];
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
 	ResultFacade model = ResultFacade();
 	model.writeClassificationResult(*result, path);
 }

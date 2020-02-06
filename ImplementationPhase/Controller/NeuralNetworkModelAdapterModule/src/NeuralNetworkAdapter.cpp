@@ -17,3 +17,9 @@ NetworkLayer *NeuralNetworkAdapter::getPreviousLayer() { return neuralNetwork.ge
 std::string NeuralNetworkAdapter::getName() { return neuralNetwork.getName(); }
 
 int NeuralNetworkAdapter::getLayerCount() { return neuralNetwork.getLayerCount(); }
+
+int NeuralNetworkAdapter::getWidth() { return neuralNetwork.getWidth(); }
+
+int NeuralNetworkAdapter::getHeight() { return neuralNetwork.getHeight(); }
+
+int NeuralNetworkAdapter::getChannels() { return neuralNetwork.getChannels(); }

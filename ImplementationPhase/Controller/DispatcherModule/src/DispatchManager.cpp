@@ -11,6 +11,7 @@
 #include "ClassificationResult.hpp"
 #include "ImageFacade.hpp" 
 #include "ResultFacade.hpp"
+#include "Executor.hpp"
 
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
@@ -45,25 +46,20 @@ std::list<Mode*> DispatchManager::getModeList()
 
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
 {
-	//TODO
   	std::list<Result*> resultList;
-    std::vector<std::vector<floats>> inputimages;
     ImageFacade* imagefacade = new ImageFacade();
     ResultFacade* resultfacade = new ResultFacade();
-    cv::Mat currentImage;
     std::list<std::string> labels = std::list<std::string>{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    std::vector<float> currentInputVecotor;
+    std::vector<float> currentInputVector;
     std::vector<float> outputvector;
-    Executor executor;
-    for (int i = 0; i < neuralNetworks.size(); i++) {
+    Executor* executor;
+    for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
-        currentImage = imagefacade.getImage(directories[j], neuralNetworks[i].getWidth(), neuralNetworks[i].getHeight(), neuralNetwork[i].getChannels());
-        currentInputVector = imagefacade.parseFloatsGreyScale(currentImage);
-        executor = new Executor(neuralNetworks[i]);
+        currentInputVector = imagefacade->getImageGreyScale(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
+        executor = new Executor(&neuralNetworkList[i]);
         outputvector = executor->execute(currentInputVector);
-        Result* newres = resultFacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), labels, outputvector);
+        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), labels, outputvector);
         resultList.push_back(newres);
-        std::cout<<outputvector[0] + "," + outputvector[1];
       }
     }
   	ResultManager resultMgr = ResultManager(resultList);
@@ -71,7 +67,6 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
 }
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
-    //TODO
 	std::vector<Device> devices;
     Device cpu = Device("CPU", "generic cpu", 24, 1.0);
 	std::vector<cl::Platform> platforms;

@@ -3,42 +3,25 @@
 #include <map>
 #include "Result.hpp"
 #include "ResultManager.hpp"
+#include <iostream>
 
-ResultManager::ResultManager() {}
-
-ResultManager::ResultManager(std::list<Result*> resultList) : resultList(resultList){}
-
-std::list<Result*> ResultManager::getResultsByImage(std::string imageID) 
+ResultManager::ResultManager() 
 {
-	resultList = std::list<Result*>();
-	auto it = imageMap.find(imageID);
-	while (it != imageMap.end()) 
-	{
-		Result* newRes = it->second;
-		resultList.push_back(newRes);
-		++it;
-	}
-	return resultList;
-};
+		resultMap = std::map<std::string, Result*>();
+}
 
-
-std::list<Result*> ResultManager::getResultsByNeuralNetwork(std::string neuralNetworkID)
+ResultManager::ResultManager(std::list<Result*> resultList) //: resultList(resultList)
 {
-	resultList = std::list<Result*>();
-	auto it = neuralNetworkMap.find(neuralNetworkID);
-	while (it != imageMap.end()) {
-		resultList.push_back(it->second);
-		++it;
-	}
-	return resultList;
-};
+		resultMap = std::map<std::string, Result*>();
+    for (auto res : resultList) organizeResults(res);
+}
+
 
 Result* ResultManager::getSingleResult(std::string imageID, std::string neuralNetworkID) 
 {
-	auto it = imageMap.find(imageID);
-	while (it != imageMap.end()) {
-		if (it->first == neuralNetworkID) 
-			return it->second;
+	auto it = resultMap.find(neuralNetworkID + imageID);
+	if (it != resultMap.end()) {
+		return it->second;
 	}
 	return nullptr; //result not found
 };
@@ -57,9 +40,6 @@ void ResultManager::addResults(std::list<Result*> results)
 
 void ResultManager::organizeResults(Result* result) 
 {
-	resultList.push_back(result);
-	auto newNeuralNetworkEntry = std::pair<std::string, Result*>(result->getNeuralNetworkID(), resultList.back());
-	auto newImageEntry = std::pair<std::string, Result*>(result->getImageID(), resultList.back());
-	neuralNetworkMap.insert(newNeuralNetworkEntry);
-	imageMap.insert(newImageEntry);
+  auto tmp = std::pair<std::string, Result*>(result->getNeuralNetworkID() + result->getImageID(), result);
+	resultMap.insert(tmp);
 };
