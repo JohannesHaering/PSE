@@ -25,6 +25,10 @@ public:
     const std::string COLLECT_RESULTS = "collect";
     const std::string INCEPTION = "inception";
     const std::string OUTPUT_STORAGE = "output_storage";
+    const std::string SIGMOID = "sigmoid";
+    const std::string SOFTMAX = "softmax";
+    const std::string RELU = "relu";
+    const std::string LEAKYRELU = "leakyrelu";
 
 private:
     NetworkLayer parseConvolutionalLayer(std::string toParse);

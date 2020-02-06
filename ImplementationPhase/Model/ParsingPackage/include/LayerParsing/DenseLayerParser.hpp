@@ -13,7 +13,7 @@
 class DenseLayerParser : public LayerParser
 {
 public:
-    NetworkLayer parse(std::string toParse) override;
+    NetworkLayer* parse(std::string toParse) override;
     std::string parseBack(DenseLayer layer);
 
 private:
