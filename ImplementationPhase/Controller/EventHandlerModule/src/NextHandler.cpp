@@ -4,9 +4,11 @@
 #include <stdexcept>
 
 
-NextHandler::NextHandler(Pager* pager) 
+NextHandler::NextHandler(Pager* pager, Pager* otherPager, InferencingDistributorClassification* inferencer)    
 { 
-	this->pager = pager; 
+	this->pager = pager;
+  this->otherPager = otherPager;
+  this->inferencer = inferencer; 
 }
 
 /*
@@ -18,6 +20,7 @@ void NextHandler::onAction()
 	try 
 	{
 		pager->next();
+    inferencer->drawResult(pager->getCurrentPage(), otherPager->getCurrentPage());
 	}
 	catch (const std::invalid_argument& ia)
 	{

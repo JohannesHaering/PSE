@@ -22,17 +22,18 @@ class DispatchManager
 		DispatchManager& operator=(DispatchManager const& copy); //don't implement!
 		Mode* mode;
 		std::list<Device> deviceList;
-		std::list<NeuralNetworkAdapter> neuralNetworkList;
+		std::vector<NeuralNetworkAdapter> neuralNetworkList;
 		std::map<Device,Channel*> deviceChannelMap;
 
 	public:
-        static DispatchManager &getInstance();
+    static DispatchManager &getInstance();
 		void setMode(Mode* operatingmode);
 		Mode* getMode();
 		std::list<Mode*> getModeList();
-		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
-		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
-		ResultManager dispatchImages(std::list<cv::Mat> imageList);
+		void setNeuralNetworkList(std::vector<NeuralNetworkAdapter> neuralNetworkList);
+		std::vector<NeuralNetworkAdapter> getNeuralNetworkList();
+		ResultManager dispatchImages(std::vector<std::string> directories);
+		//ResultManager dispatchImages(std::vector<std::string> imageList);
 		static std::vector<Device> getAvailableDevices();
 };
 #endif

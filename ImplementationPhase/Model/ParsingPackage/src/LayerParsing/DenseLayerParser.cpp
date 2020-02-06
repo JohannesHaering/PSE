@@ -11,7 +11,7 @@
 #include <list>
 #include <stdexcept>
 
-NetworkLayer DenseLayerParser::parse(std::string toParse)
+NetworkLayer* DenseLayerParser::parse(std::string toParse)
 {
 	LayerParser::extractGeneralInformation(toParse);
 
@@ -47,11 +47,11 @@ std::string DenseLayerParser::parseBack(DenseLayer layer)
 	output += saveGeneralInformation(layer);
 	output += WEIGHTS_TENSOR;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
-	output += LayerParser::save2DFloatArray(layer.getMatrix());
+	output += LayerParser::save2DFloatArray(layer.get_weights());
 	output += "\n";
 	output += BIASES;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
-	output += LayerParser::saveFloatArray(layer.getBias());
+	output += LayerParser::saveFloatArray(layer.get_biase());
 	output += "\n";
 
 	return output;

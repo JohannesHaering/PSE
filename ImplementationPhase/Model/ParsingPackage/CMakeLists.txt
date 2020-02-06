@@ -8,19 +8,20 @@ add_library(FACTORY
 target_include_directories(FACTORY PUBLIC "include/Factory")
 target_link_libraries(FACTORY PUBLIC BOUNDINGBOX RESULT CLASSPROBABILITY CLASSIFICATIONRESULT DETECTIONRESULT)
 
+#[[
 add_library(NEURALNETWORKFACTORY 
 "src/Factory/ActivationLayerFactory.cpp" "include/Factory/ActivationLayerFactory.hpp" 
-"src/Factory/CollectResultsLayerFactory.cpp" "include/Factory/CollectResultsLayerFactory.hpp" 
-"src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
+#"src/Factory/CollectResultsLayerFactory.cpp" "include/Factory/CollectResultsLayerFactory.hpp" 
+#"src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
 "src/Factory/DenseLayerFactory.cpp" "include/Factory/DenseLayerFactory.hpp" 
-"src/Factory/DropoutLayerFactory.cpp" "include/Factory/DropoutLayerFactory.hpp" 
-"src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp" 
-"src/Factory/InceptionLayerFactory.cpp" "include/Factory/InceptionLayerFactory.hpp" 
+#"src/Factory/DropoutLayerFactory.cpp" "include/Factory/DropoutLayerFactory.hpp" 
+#"src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp" 
+#"src/Factory/InceptionLayerFactory.cpp" "include/Factory/InceptionLayerFactory.hpp" 
 "src/Factory/LayerFactory.cpp" "include/Factory/LayerFactory.hpp" 
-"src/Factory/LocalResponseNormalizationLayerFactory.cpp" "include/Factory/LocalResponseNormalizationLayerFactory.hpp" 
-"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp" 
-"src/Factory/OutputStorageLayerFactory.cpp" "include/Factory/OutputStorageLayerFactory.hpp" 
-"src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp")
+#"src/Factory/LocalResponseNormalizationLayerFactory.cpp" "include/Factory/LocalResponseNormalizationLayerFactory.hpp" 
+"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp") 
+#"src/Factory/OutputStorageLayerFactory.cpp" "include/Factory/OutputStorageLayerFactory.hpp" 
+#"src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp")
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
 target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER)
 
@@ -44,7 +45,7 @@ add_library(NEURALNETWORKPARSER
 "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")
 target_include_directories(NEURALNETWORKPARSER PUBLIC "include/")
 target_link_libraries(NEURALNETWORKPARSER PUBLIC NEURALNETWORK PARSER LINEBREAKPARSER NEURALNETWORKFACTORY LAYERPARSER)
-
+]]
 add_library(BOUNDINGBOXPARSER "src/BoundingBoxParser.cpp" "include/BoundingBoxParser.hpp")
 target_include_directories(BOUNDINGBOXPARSER PUBLIC "include/")
 target_link_libraries(BOUNDINGBOXPARSER PUBLIC BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULTPARSER PARSER FACTORY)
@@ -79,4 +80,12 @@ target_include_directories(PARSER PUBLIC "include/")
 add_library(LINEBREAKPARSER "src/LineBreakParser.cpp" "include/LineBreakParser.hpp")
 target_include_directories(LINEBREAKPARSER PUBLIC "include/")
 target_link_libraries(LINEBREAKPARSER PUBLIC PARSER)
+
+#add_library(MNISTDATAPARSER "include/MNISTDataParser.hpp" "src/MNISTDataParser.cpp")
+#target_include_directories(MNISTDATAPARSER PUBLIC "include/")
+#target_link_libraries(MNISTDATAPARSER PUBLIC ${OpenCV_LIBS})
+
+#add_library(EVENNOTEVENPARSER "include/EvenNotEvenParser.hpp" "src/EvenNotEvenParser.cpp")
+#target_include_directories(EVENNOTEVENPARSER PUBLIC "include/")
+#target_link_libraries(EVENNOTEVENPARSER PUBLIC ${OpenCV_LIBS})
 

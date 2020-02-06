@@ -12,7 +12,7 @@
 
 // Format:
 // imageID # neuralNetworkID # Classprobabilities
-ClassificationResult ClassificationResultParser::parse(std::string toParse)
+ClassificationResult* ClassificationResultParser::parse(std::string toParse)
 {
 	auto parts = Parser::splitBySymbol(toParse, basePartsDelimeter);
 	if (parts.size() < 3 || parts.size() > 3)
@@ -37,7 +37,7 @@ ClassificationResult ClassificationResultParser::parse(std::string toParse)
 	return ClassificationResultFactory().build(imageId, neuralNetworkId, parsedProbabilities);
 }
 
-ClassificationResult ClassificationResultParser::parse(std::string imageId, std::string neuralNetworkId, std::list<std::string> labels, std::vector<float> probabilities) {
+ClassificationResult* ClassificationResultParser::parse(std::string imageId, std::string neuralNetworkId, std::list<std::string> labels, std::vector<float> probabilities) {
 	std::list<ClassProbability> parsedProbabilities = std::list<ClassProbability>();
 	int i = 0;
 	for (std::list<std::string>::iterator labelIt = labels.begin(); labelIt != labels.end(); ++labelIt) {

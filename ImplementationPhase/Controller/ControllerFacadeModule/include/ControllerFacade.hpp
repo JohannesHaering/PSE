@@ -65,7 +65,7 @@ class ControllerFacade {
         static ControllerFacade* instance;
 
         // Classsification components
-        InferencingDistributor* classificationInferencer;
+        InferencingDistributorClassification* classificationInferencer;
         SaveResultHandler* saveHandlerClassification;
         InputImageHandler* inputHandlerClassification;
         NeuralNetworkHandler* neuralNetworkHandlerClassification;

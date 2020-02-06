@@ -1,34 +1,39 @@
 #include "NetworkLayer.hpp"
 #include "LineBreakParser.hpp"
 #include "LayerParserDistribution.hpp"
-#include "ActivationLayerParser.hpp"
+/*#include "ActivationLayerParser.hpp"
 #include "CollectResultsLayerParser.hpp"
 #include "ConvolutionalLayerParser.hpp"
-#include "DenseLayerParser.hpp"
 #include "DropoutLayerParser.hpp"
 #include "FlattenLayerParser.hpp"
 #include "InceptionLayerParser.hpp"
 #include "LRNLayerParser.hpp"
 #include "OutputStorageLayerParser.hpp"
-#include "PollingLayerParser.hpp"
+#include "PollingLayerParser.hpp"*/
+#include "DenseLayerParser.hpp"
 #include "LayerType.hpp"
 
+/*
 #include "ActivationLayer.hpp"
 #include "CollectResultsLayer.hpp"
 #include "ConvolutionLayer.hpp"
-#include "DenseLayer.hpp"
 #include "DropoutLayer.hpp"
 #include "FlattenLayer.hpp"
 #include "InceptionLayer.hpp"
 #include "LocalResponseNormalizationLayer.hpp"
 #include "OutputStorageLayer.hpp"
-#include "PollingLayer.hpp"
+#include "PollingLayer.hpp"*/
+#include "DenseLayer.hpp"
+#include "ReLuLayer.hpp"
+#include "LeakyReLuLayer.hpp"
+#include "SigmoidLayer.hpp"
+#include "SoftmaxLayer.hpp"
 
 #include <string>
 #include <stdexcept>
 #include <algorithm>
 
-NetworkLayer LayerParserDistribution::parse(std::string toParse)
+NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 {
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto firstLine = *(lines.begin());
@@ -39,7 +44,7 @@ NetworkLayer LayerParserDistribution::parse(std::string toParse)
 	// Remove first line
     toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
 
-    if (firstLine == CONVOLUTIONAL)
+    /*if (firstLine == CONVOLUTIONAL)
     {
         return parseConvolutionalLayer(toParse);
     }
@@ -54,10 +59,6 @@ NetworkLayer LayerParserDistribution::parse(std::string toParse)
     else if (firstLine == LOCAL_RESPONSE_NORMALIZATION)
     {
         return parseLocalResponseNormalizationLayer(toParse);
-    }
-    else if (firstLine == DENSE)
-    {
-        return parseDenseLayer(toParse);
     }
     else if (firstLine == FLATTEN)
     {
@@ -78,6 +79,22 @@ NetworkLayer LayerParserDistribution::parse(std::string toParse)
     else if (firstLine == OUTPUT_STORAGE)
     {
         return parseOutputStorageLayer(toParse);
+    }*/
+    if (firstLine.compare(DENSE) == 0)
+    {
+        return parseDenseLayer(toParse);
+    }
+    else if (firstline.compare(SIGMOID) == 0) {
+        return new SigmoidLayer();
+    }
+    else if (firstline.compare(SOFTMAX) == 0) {
+        return new SoftmaxLayer();
+    }
+    else if (firstline.compare(RELU) == 0) {
+        return new ReLuLayer();
+    }
+    else if (firstline.compare(LEAKYRELU == 0)) {
+        return new LeakyReLuLayer();
     }
     else
     {
@@ -90,6 +107,7 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
     std::string output = "";
     switch ((*layer).getLayerType())
     {
+        /*
     case LayerType::ACTIVATION:
         output += ActivationLayerParser().parseBack(*dynamic_cast<ActivationLayer*>(layer));
         break;
@@ -120,10 +138,16 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
     case LayerType::POLLING:
         output += PollingLayerParser().parseBack(*dynamic_cast<PollingLayer*>(layer));
         break;
-    }
+    }*/
 	return output;
 }
 
+NetworkLayer LayerParserDistribution::parseDenseLayer(std::string toParse)
+{
+    return DenseLayerParser().parse(toParse);
+}
+
+/*
 NetworkLayer LayerParserDistribution::parseConvolutionalLayer(std::string toParse)
 {
     return ConvolutionalLayerParser().parse(toParse);
@@ -139,10 +163,6 @@ NetworkLayer LayerParserDistribution::parsePollingLayer(std::string toParse)
 NetworkLayer LayerParserDistribution::parseLocalResponseNormalizationLayer(std::string toParse)
 {
     return LRNLayerParser().parse(toParse);
-}
-NetworkLayer LayerParserDistribution::parseDenseLayer(std::string toParse)
-{
-    return DenseLayerParser().parse(toParse);
 }
 NetworkLayer LayerParserDistribution::parseFlattenLayer(std::string toParse)
 {
@@ -164,3 +184,4 @@ NetworkLayer LayerParserDistribution::parseInceptionLayer(std::string toParse)
 {
     return InceptionLayerParser().parse(toParse);
 }
+*/

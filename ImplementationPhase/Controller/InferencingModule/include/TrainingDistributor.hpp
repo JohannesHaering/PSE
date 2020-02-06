@@ -13,7 +13,7 @@ class TrainingDistributor : public Distributor {
 		void startProcess();
 		bool canStart();
 		void enableStart();
-        ContentView* getPage() override;
+		TrainingPanel* getPage() override;
 
 	private:	
 		TrainingPanel* page;
