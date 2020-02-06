@@ -1,4 +1,5 @@
 #include "CompleteTrainer.hpp"
+#include "ControllerFacade.hpp"
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
@@ -46,10 +47,8 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    std::vector<float> testacc;
-    std::vector<float> trainingacc;
-    testacc.push_back({0.3f, 0.4f, 0.5f});
-    trainingacc.push_back({0.5f, 0.4f, 0.3f});
+    std::vector<float> testacc = std::vector<float>{0.3f, 0.4f, 0.5f};
+    std::vector<float> trainingacc = std::vector<float>{0.5f, 0.4f, 0.3f};
     
     //for(int i = 0; i < dataset_train_images.size(); i++)
     for(int i = 0; i < 100; i++)
@@ -63,7 +62,7 @@ void Trainer::startTraining()
 
     }
     std::cout << std::endl;
-    
+    ControllerFacade::getInstance()->newTrainStep(trainingacc, testacc); 
 }
 
 float Trainer::testAcc()

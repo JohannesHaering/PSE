@@ -6,7 +6,9 @@
 #include "LowPowerMode.hpp"
 #include "HighEfficiencyMode.hpp"
 #include "NeuralNetworkAdapter.hpp"
+#include "Executor.hpp"
 //#include "Device.hpp"
+#include "ClassificationResult.hpp"
 
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
@@ -42,8 +44,17 @@ std::list<Mode*> DispatchManager::getModeList()
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
 {
 	//TODO
-	std::list<Result> resultList;
-	ResultManager resultMgr(resultList);
+	std::list<ClassificationResult> resultList;
+    ClassProbability prob1 = ClassProbability("elefant", 0.1f);
+    ClassProbability prob2 = ClassProbability("dog", 0.5f);
+    ClassProbability prob3 = ClassProbability("pikachu", 0.9f);
+
+    std::list<ClassProbability> classlist = std::list<ClassProbability>{prob1, prob2, prob3};
+
+    ClassificationResult* res = new ClassificationResult("cats", "dogs", classlist);
+    resultList.push_back(*res);
+    //Executor* executor = new Executor(neuralNetworkList[0], );
+	ResultManager resultMgr = ResultManager(resultList);
 	return resultMgr;
 }
 

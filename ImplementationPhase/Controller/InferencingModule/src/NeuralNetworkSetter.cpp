@@ -42,6 +42,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
     neuralNetworks.push_back(network);
 
     inferencer->addNeuralNetwork(neuralNetworks);
+    inferencer->enableStart();
 }
 
 /*
