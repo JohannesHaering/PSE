@@ -22,36 +22,53 @@ void Trainer::loadDataset()
     std::string MNIST_DATA_LOCATION = "/home/pselabw1920/Documents/mnist";
 	auto mnist_dataset = mnist::read_dataset<std::vector, std::vector, float, uint8_t>(MNIST_DATA_LOCATION);//TODO change uint8_t to float for img and labels. div img by 128 (256?);
 
+
     dataset_train_images = std::vector<std::vector<float>>(mnist_dataset.training_images.size());
     dataset_test_images  = std::vector<std::vector<float>>(mnist_dataset.test_images.size());
+    dataset_train_labels = std::vector<std::vector<float>>(mnist_dataset.training_images.size());
+    dataset_test_labels  = std::vector<std::vector<float>>(mnist_dataset.test_images.size());
+
     
     for (int i =0; i < mnist_dataset.training_images.size(); i++) {
-            dataset_train_images[i] = mnist_dataset.training_images[i];
-            for (int j = 0; j < 10; j++)
-                dataset_train_labels[j] = float(mnist_dataset.training_labels[j]);
-
+        dataset_train_images[i] = mnist_dataset.training_images[i];
+        dataset_train_labels[i].resize(10);
+        for (int j = 0; j < 10; j++) 
+                dataset_train_labels[i][j] = (mnist_dataset.training_labels[i] == j) ? 1.0f : 0.0f;
     }
+
     for (int i =0; i < mnist_dataset.test_images.size(); i++) {
         dataset_test_images[i] = mnist_dataset.test_images[i];
-        for(int j = 0; j < 10; j++)
-            dataset_test_labels[j] = float(mnist_dataset.test_labels[j]);
+        dataset_test_labels[i].resize(10);
+        for (int j = 0; j < 10; j++) 
+                dataset_test_labels[i][j] = (mnist_dataset.test_labels[i] == j) ? 1.0f : 0.0f;
     }
 }
 
 void Trainer::startTraining()
 {
-    for(int i = 0; i < dataset_train_images.size(); i++)
+    std::vector<float> testacc;
+    std::vector<float> trainingacc;
+    testacc.push_back({0.3f, 0.4f, 0.5f});
+    trainingacc.push_back({0.5f, 0.4f, 0.3f});
+    
+    //for(int i = 0; i < dataset_train_images.size(); i++)
+    for(int i = 0; i < 100; i++)
     {
         trainer.forward(dataset_train_images[i]);
         trainer.train(dataset_test_images[i]);
 
-        if (i % 100 == 0) testAcc();
+        if (i % 10 == 0){
+                testAcc(); 
+        }
+
     }
+    std::cout << std::endl;
     
 }
 
 float Trainer::testAcc()
 {
+    std::cout << "f";
     return 42.0;
 }
 

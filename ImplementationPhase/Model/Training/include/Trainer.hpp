@@ -31,7 +31,7 @@ private:
     
     std::vector<std::vector<float>> dataset_train_images;
     std::vector<std::vector<float>> dataset_test_images;
-    std::vector<float> dataset_train_labels;
-    std::vector<float> dataset_test_labels;
+    std::vector<std::vector<float>> dataset_train_labels;
+    std::vector<std::vector<float>> dataset_test_labels;
 };
 #endif

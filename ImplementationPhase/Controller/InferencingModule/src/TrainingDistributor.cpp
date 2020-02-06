@@ -15,10 +15,14 @@ TrainingDistributor::TrainingDistributor() {
  * Starts the process and creates a trainer to deploy the data to.
  */
 void TrainingDistributor::TrainingDistributor::startProcess() {
+    std::cout << "lebe noch1" << std::endl;
 	float desprecision = page->getPrecision();
     //TODO
+    std::cout << "lebe noch1.5" << std::endl;
     Trainer trainer = Trainer(&(neuralNetworks[0]), desprecision, directories[0]);
+    std::cout << "lebe noch2" << std::endl;
 	trainer.startTraining();
+    std::cout << "lebe immer noch3" << std::endl;
 }
 
 /*
