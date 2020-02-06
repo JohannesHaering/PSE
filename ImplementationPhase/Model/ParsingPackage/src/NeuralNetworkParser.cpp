@@ -16,6 +16,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
 	auto it = lines.begin();
 	auto firtstLine = *it;
+	// parse name of neural network
 	auto name = removeCharacter(removeCharacter(firtstLine, TYPE_BEGIN), TYPE_END);
 
 	NeuralNetworkFactory factory = NeuralNetworkFactory();
@@ -23,6 +24,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
 	++it;
 
+	// parse height of neural network
 	std::list<std::string> val = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto parts1It = val.begin();
 	if (*parts1It != HEIGHT)
@@ -31,6 +33,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	factory.setHeight(std::atoi(parts1It->c_str()));
 	++it;
 
+	// parse width of neural network
 	val = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto parts2It = val.begin();
 	if (*parts2It != WIDTH)
@@ -39,6 +42,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	factory.setWidth(std::atoi(parts2It->c_str()));
 	++it;
 
+	// parse channels of neural network
 	val = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto parts3It = val.begin();
 	if (*parts3It != CHANNELS)

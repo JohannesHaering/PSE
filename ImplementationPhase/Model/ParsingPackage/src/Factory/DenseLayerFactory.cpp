@@ -5,9 +5,9 @@
 
 #include <vector>
 
-NetworkLayer DenseLayerFactory::buildLayer()
+NetworkLayer* DenseLayerFactory::buildLayer()
 {
-    return DenseLayer(name, inputDimensions, matrix);
+    return new DenseLayer(name, inputDimensions, matrix);
 }
 
 DenseLayerFactory DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
