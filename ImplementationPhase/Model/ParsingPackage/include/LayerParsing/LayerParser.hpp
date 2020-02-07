@@ -12,7 +12,7 @@
 class LayerParser : public LineBreakParser<NetworkLayer>
 {
 public:
-    virtual NetworkLayer parse(std::string toParse) = 0;
+    virtual NetworkLayer* parse(std::string toParse) = 0;
 
 protected:
     std::string removeCharacter(std::string text, char toErase);
@@ -23,7 +23,7 @@ protected:
     std::vector<std::vector<float>> parse2DFloatArray(std::string text);
     std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text);
     std::vector<std::vector<std::vector<std::vector<float>>>> parse4DFloatArray(std::string text);
-    std::string saveGeneralInformation(NetworkLayer layer);
+    std::string saveGeneralInformation(NetworkLayer* layer);
     std::string saveIntArray(int* arr);
     std::string saveFloatArray(std::vector<float> arr);
     std::string save2DFloatArray(std::vector<std::vector<float>> arr);

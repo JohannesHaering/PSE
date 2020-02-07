@@ -61,8 +61,8 @@ target_link_libraries(SAVERESULTHANDLER PUBLIC IMAGEPAGER)
 target_link_libraries(SAVERESULTHANDLER PUBLIC VIEW_MODULE)
 
 add_library(UPDATERESULTHANDLER "src/UpdateResultHandler.cpp" "include/UpdateResultHandler.hpp")
-target_include_directories(SAVERESULTHANDLER PUBLIC "include/")
-target_link_libraries(SAVERESULTHANDLER PUBLIC SAVERESULTHANDLER)
+target_include_directories(UPDATERESULTHANDLER PUBLIC "include/")
+target_link_libraries(UPDATERESULTHANDLER PUBLIC SAVERESULTHANDLER)
 
 add_library(STARTHANDLER "src/StartHandler.cpp" "include/StartHandler.hpp")
 target_include_directories(STARTHANDLER PUBLIC "include/")

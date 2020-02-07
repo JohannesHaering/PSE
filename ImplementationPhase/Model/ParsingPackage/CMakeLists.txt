@@ -34,8 +34,8 @@ add_library(LAYERPARSER
 #"src/LayerParsing/DropoutLayerParser.cpp" "include/LayerParsing/DropoutLayerParser.hpp"
 #"src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp"
 #"src/LayerParsing/InceptionLayerParser.cpp" "include/LayerParsing/InceptionLayerParser.hpp"
-#"src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp"
-#"src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp"
+"src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp"
+"src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp")
 #"src/LayerParsing/LRNLayerParser.cpp" "include/LayerParsing/LRNLayerParser.hpp"
 #"src/LayerParsing/OutputStorageLayerParser.cpp" "include/LayerParsing/OutputStorageLayerParser.hpp"
 #"src/LayerParsing/PollingLayerParser.cpp" "include/LayerParsing/PollingLayerParser.hpp")
@@ -43,8 +43,7 @@ target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
 target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER  NEURALNETWORK NETWORKLAYER ACTIVATIONLAYER DENSELAYER)
 #target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER  NEURALNETWORK NETWORKLAYER CONVOLUTIONLAYER ACTIVATIONLAYER POLLINGLAYER LOCALRESPONSENORMALIZATIONLAYER DENSELAYER FLATTENLAYER DROPOUTLAYER COLLECTRESULTSLAYER OUTPUTSTORAGELAYER INCEPTIONLAYER)
 
-add_library(NEURALNETWORKPARSER
-"src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")
+add_library(NEURALNETWORKPARSER "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")
 target_include_directories(NEURALNETWORKPARSER PUBLIC "include/")
 target_link_libraries(NEURALNETWORKPARSER PUBLIC NEURALNETWORK PARSER LINEBREAKPARSER NEURALNETWORKFACTORY LAYERPARSER)
 

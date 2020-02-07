@@ -203,11 +203,11 @@ std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFl
 	return tensor;
 }
 
-std::string LayerParser::saveGeneralInformation(NetworkLayer layer)
+std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 {
 	std::string output = "";
 	output += LayerParser::VALUE_BEGIN;
-	switch (layer.getLayerType())
+	switch (layer->getLayerType())
 	{
 	case LayerType::ACTIVATION:
 		output += LayerParserDistribution().ACTIVATION;
@@ -243,7 +243,7 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer layer)
 	output += LayerParser::VALUE_END;
 	output += "\n";
 	output += INPUT_DIMENSIONS + VALUE_TYPE_DELIMETER;
-	output += saveIntArray(layer.getInputDimensions());
+	output += saveIntArray(layer->getInputDimensions());
 	output += "\n";
 	return output;
 }

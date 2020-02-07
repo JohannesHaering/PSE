@@ -21,6 +21,7 @@
 #include "ControllerFacade.hpp"
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
+#include "UpdateResultHandler.hpp"
 #include <iostream>
 
 ControllerFacade* ControllerFacade::instance = 0;

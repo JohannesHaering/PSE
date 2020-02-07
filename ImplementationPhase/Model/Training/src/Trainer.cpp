@@ -5,7 +5,7 @@
 #include <vector>
 #include "Trainer.hpp"
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
-//#include "NeuralNetworkFacade.hpp"
+#include "NeuralNetworkFacade.hpp"
 
 
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), batchSize(batchSize), trainer(CompleteTrainer(neuralNetwork, 0.01f, batchSize))

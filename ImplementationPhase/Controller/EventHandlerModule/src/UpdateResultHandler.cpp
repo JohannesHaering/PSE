@@ -7,7 +7,7 @@ SaveResultHandler(distributor, nnpager, ipager)
 /*
 * Gets current neuralnetwork and image and calls the distributor to display those.
 */
-void SaveResultHandler::onAction()
+void UpdateResultHandler::onAction()
 {
     int nn_id = nnpager->getCurrentPage();
     int img_id = ipager->getCurrentPage();

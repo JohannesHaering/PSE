@@ -15,7 +15,7 @@
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "DeviceHandler.hpp"
-
+#include "UpdateResultHandler.hpp"
 
 class ControllerFacade {
 
@@ -78,7 +78,7 @@ class ControllerFacade {
         NewResultHandler* newResultHandlerClassification;
         PredictionHandler* predictionHandlerClassification;
         DeviceHandler* deviceHandlerClassification;
-		UpdateResultHandler* resultUpdaterClassification;
+    		UpdateResultHandler* resultUpdaterClassification;
 
         // Detection components
 //        InferencingDistributor* detectionInferencer;

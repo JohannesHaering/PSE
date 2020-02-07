@@ -1,5 +1,5 @@
-#ifndef NEW_RESULT_HANDLER_H_
-#define NEW_RESULT_HANDLER_H_
+#ifndef UPDATE_RESULT_HANDLER_H_
+#define UPDATE_RESULT_HANDLER_H_
 
 #include "InferencingDistributor.hpp"
 #include "NeuralNetworkPager.hpp"

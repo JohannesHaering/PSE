@@ -5,10 +5,10 @@
 
 #include <vector>
 
-NetworkLayer DenseLayerFactory::buildLayer()
+NetworkLayer* DenseLayerFactory::buildLayer()
 {   
-    DenseLayer layer = DenseLayer(sizeof(inputDimensions)/sizeof(int), matrix[0].size(), 0.1);
-    layer.set_weights(matrix);
+    DenseLayer* layer = new DenseLayer(sizeof(inputDimensions)/sizeof(int), matrix[0].size(), 0.1);
+    layer->set_weights(matrix);
     return layer;
 }
 

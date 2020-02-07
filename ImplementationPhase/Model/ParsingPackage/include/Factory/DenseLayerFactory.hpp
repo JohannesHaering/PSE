@@ -9,7 +9,7 @@
 class DenseLayerFactory : public LayerFactory
 {
 public:
-    NetworkLayer buildLayer();
+    NetworkLayer* buildLayer() override;
     DenseLayerFactory setMatrix(std::vector<std::vector<float>> matrix);
     DenseLayerFactory setBiases(std::vector<float> bias);
 private:

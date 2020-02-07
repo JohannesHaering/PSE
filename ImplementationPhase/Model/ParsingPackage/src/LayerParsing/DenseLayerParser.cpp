@@ -41,17 +41,18 @@ NetworkLayer* DenseLayerParser::parse(std::string toParse)
 	return factory.buildLayer();
 }
 
-std::string DenseLayerParser::parseBack(DenseLayer layer)
+std::string DenseLayerParser::parseBack(NetworkLayer* layer)
 {
+  DenseLayer* denselayer = (DenseLayer*)layer;
 	std::string output = "";
 	output += saveGeneralInformation(layer);
 	output += WEIGHTS_TENSOR;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
-	output += LayerParser::save2DFloatArray(layer.get_weights());
+	output += LayerParser::save2DFloatArray(denselayer->get_weights());
 	output += "\n";
 	output += BIASES;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
-	output += LayerParser::saveFloatArray(layer.get_biase());
+	output += LayerParser::saveFloatArray(denselayer->get_biase());
 	output += "\n";
 
 	return output;

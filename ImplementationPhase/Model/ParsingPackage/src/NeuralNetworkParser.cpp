@@ -61,7 +61,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	++it;
 
 	// Here the layer configurations are comming
-	std::list<NetworkLayer> layers;
+	std::list<NetworkLayer*> layers;
 	std::string currentLayerBlock = "";
 	// 0 -> adding lines
 	int currentState = 0;
