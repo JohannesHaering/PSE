@@ -1,13 +1,12 @@
 #include "Pager.hpp"
 #include "PrevHandler.hpp"
 #include "ViewFacade.hpp"
+#include "ControllerFacade.hpp"
 #include <stdexcept>
 
-PrevHandler::PrevHandler(Pager* pager, Pager* otherPager, InferencingDistributorClassification* inferencer) 
+PrevHandler::PrevHandler(Pager* pager) 
 {
 	this->pager = pager;
-  this->otherPager = otherPager;
-  this->inferencer = inferencer;
 }
         
 /*
@@ -18,7 +17,7 @@ void PrevHandler::onAction()
 	try 
 	{
 		pager->prev();
-    inferencer->drawResult(pager->getCurrentPage(), otherPager->getCurrentPage());
+		ControllerFacade::getInstance()->updateResultsClassification();
 	}
 	catch (const std::invalid_argument& ia)
 	{
