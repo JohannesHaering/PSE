@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10)
 
 add_library(COMPLETETRAINER "src/CompleteTrainer.cpp" "include/CompleteTrainer.hpp")
 target_include_directories(COMPLETETRAINER PUBLIC "include/")
-target_link_libraries(COMPLETETRAINER NEURALNETWORKADAPTER)
+target_link_libraries(COMPLETETRAINER PUBLIC NEURALNETWORKADAPTER NETWORKLAYER LAYERTYPE)
 
 add_library(TRAINER "src/Trainer.cpp" "include/Trainer.hpp")
 target_include_directories(TRAINER PUBLIC "include/")

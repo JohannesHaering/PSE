@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(NeuralNetworkModulePackage C CXX)
 
+add_library(LAYERTYPE "include/LayerType.hpp")
+target_include_directories(LAYERTYPE PUBLIC "include/")
+
 add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
 

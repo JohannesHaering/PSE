@@ -47,20 +47,21 @@ void Trainer::loadDataset()
         for (int j = 0; j < 10; j++) 
                 dataset_test_labels[i][j] = (mnist_dataset.test_labels[i] == j) ? 1.0f : 0.0f;
     }
+    std::cout << "size dataset_test_labels: " << dataset_test_labels.size() << " " << dataset_test_labels[0].size() << std::endl;
 }
 
 void Trainer::startTraining()
 {
-    for(int i = 0; i < 100; i++)
+    for(int i = 0; i < batchSize*5; i++)
     {
       trainer.forward(dataset_train_images[i]);
-      trainer.train(dataset_test_labels[i]);
+      trainer.train(dataset_train_labels[i]);
 
-      if (i % 10 == 0){
+      /*if (i % 10 == 0){
         trainer.forward(dataset_test_images[i]);
         testAcc.push_back(trainer.calcCEError(dataset_test_labels[i]));
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
-      }
+      }*/
     }
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();
     facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");

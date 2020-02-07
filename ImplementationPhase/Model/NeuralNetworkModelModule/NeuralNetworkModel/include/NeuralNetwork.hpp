@@ -43,6 +43,8 @@ class NeuralNetwork {
     int getHeight();
     int getChannels();
     std::list<std::string> getLabels();
+    std::list<NetworkLayer*>::iterator begin();
+    std::list<NetworkLayer*>::iterator end();
     NetworkLayer* getFirstLayer();
     NetworkLayer* getLastLayer();
     NetworkLayer* getNextLayer();

@@ -34,6 +34,15 @@ int NeuralNetwork::getChannels() { return channels; }
 
 std::list<std::string> NeuralNetwork::getLabels() { return labels; }
 
+
+std::list<NetworkLayer*>::iterator NeuralNetwork::begin() {
+  return layers.begin();
+}
+
+std::list<NetworkLayer*>::iterator NeuralNetwork::end() {
+  return layers.end();
+}
+
 NetworkLayer* NeuralNetwork::getFirstLayer() {
   it = layers.begin();
   if(layers.size() == 0) return nullptr;
@@ -47,13 +56,13 @@ NetworkLayer* NeuralNetwork::getLastLayer() {
 }
 
 NetworkLayer* NeuralNetwork::getNextLayer() {
-  if(++it == layers.end()) return nullptr;
-  return *it;
+  if(it == layers.end()) return nullptr;
+  return *(it++);
 }
 
 NetworkLayer* NeuralNetwork::getPreviousLayer() {
   if(--it == layers.begin()) return nullptr;
-  return *it;
+  return *(it);
 }
 
 int NeuralNetwork::NeuralNetwork::getLayerCount() { return layers.size(); }

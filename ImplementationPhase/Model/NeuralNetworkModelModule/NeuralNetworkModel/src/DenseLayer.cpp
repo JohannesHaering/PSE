@@ -51,11 +51,10 @@ void DenseLayer::set_weights(std::vector<std::vector<float>> new_weights)
 
 void DenseLayer::setBatchSize(int batchSize)
 {
-  std::cout << "batchSize" << batchSize <<std::endl;
+  std::cout << "DenseLayer: setting batchSize to " << batchSize <<std::endl;
   this->batchSize = batchSize;
-  inputStorageVector = std::vector<std::vector<float>>(batchSize);
-  feedbackStorageVector = std::vector<std::vector<float>>(batchSize);
-  std::cout << "batchSize" << batchSize <<std::endl;
+  inputStorageVector = std::vector<std::vector<float>>();
+  feedbackStorageVector = std::vector<std::vector<float>>();
 }
 
 std::vector<std::vector<float>> DenseLayer::get_weights() { return weights; }
@@ -90,16 +89,18 @@ std::vector<float> DenseLayer::backprob(std::vector<float> feedback, float learn
 
   if (iterationInBatch < batchSize) {
     //store input, output for later weight/bias update
-    inputStorageVector[iterationInBatch] = input;
-    feedbackStorageVector[iterationInBatch] = feedback;
+    inputStorageVector.push_back(input);
+    feedbackStorageVector.push_back(feedback);
     std::cout << "storing input and feedback. iteration: " << iterationInBatch << std::endl; 
     return backPropRes;
   }
   //update last vector entry and then process entire batch
   std::cout << "updating weights. iteration: " << iterationInBatch << std::endl;
+  std::cout << "size of inputStorageVector: " << inputStorageVector.size() << " " << inputStorageVector[0].size() << std::endl;
+  std::cout << "size of feedbackStorageVector: " << feedbackStorageVector.size() << " " << feedbackStorageVector[0].size() << std::endl;
 
-	inputStorageVector.back() = input;
-  feedbackStorageVector.back() = feedback;
+	inputStorageVector.push_back(input);
+  feedbackStorageVector.push_back(feedback);
   
   //update weights	
   double update;
@@ -122,6 +123,9 @@ std::vector<float> DenseLayer::backprob(std::vector<float> feedback, float learn
       update = feedbackStorageVector[iteration][output_j];
 		bias[output_j] -= update * learningRate;
   }
+  
+  inputStorageVector = std::vector<std::vector<float>>();
+  feedbackStorageVector = std::vector<std::vector<float>>();
 
   iterationInBatch = 0; //reset counter (next batch from now on)
 	return backPropRes;
