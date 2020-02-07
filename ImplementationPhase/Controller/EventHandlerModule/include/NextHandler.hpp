@@ -7,7 +7,7 @@
 class NextHandler : public PagerHandler {
     
     public:
-        NextHandler(Pager* pager, Pager* otherPager, InferencingDistributorClassification* inferencer);
+        NextHandler(Pager* pager);
         void onAction() override;
 
 };

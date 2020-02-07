@@ -12,7 +12,5 @@ class PagerHandler : public EventHandler {
 
     protected:
         Pager* pager;
-        Pager* otherPager;
-        InferencingDistributorClassification* inferencer;
 };
 #endif

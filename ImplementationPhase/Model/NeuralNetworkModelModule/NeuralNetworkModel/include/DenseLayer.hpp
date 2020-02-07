@@ -1,5 +1,7 @@
-#ifndef DENSE_LAYER_H_
-#define DENSE_LAYER_H_
+#ifndef DENSELAYER_H_
+#define DENSELAYER_H_
+
+#include <string>
 #include <math.h>
 #include <vector>
 #include "NetworkLayer.hpp"

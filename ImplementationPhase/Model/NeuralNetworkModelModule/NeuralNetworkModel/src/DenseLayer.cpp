@@ -1,4 +1,5 @@
 #include "DenseLayer.hpp"
+#include <vector>
 #include <math.h>
 #include <vector>
 #include <algorithm>
@@ -73,10 +74,6 @@ std::vector<float> DenseLayer::forward(std::vector<float> new_input)
   std::cout << "finished dense forward" << std::endl;
 	return net;
 }
-
-
-
-
 
 std::vector<float> DenseLayer::backprob(std::vector<float> feedback, float learningrate)
 {

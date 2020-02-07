@@ -107,6 +107,21 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
     std::string output = "";
     switch ((*layer).getLayerType())
     {
+        case LayerType::DENSE:
+            output += DenseLayerParser().parseBack(*dynamic_cast<DenseLayer*>(layer));
+            break;
+        case LayerType::LEAKYRELU:
+            output += "LEAKYRELU";
+            break;   
+        case LayerType::RELU:
+            output += "RELU";
+            break;
+        case LayerType::SOFTMAX:
+            output += "SOFTMAX";
+            break;         
+        case LayerType::SIGMOID:
+            output += "SIGMOID";
+            break;    
         /*
     case LayerType::ACTIVATION:
         output += ActivationLayerParser().parseBack(*dynamic_cast<ActivationLayer*>(layer));
@@ -116,9 +131,6 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
         break;
     case LayerType::CONVOLUTION:
         output += ConvolutionalLayerParser().parseBack(*dynamic_cast<ConvolutionLayer*>(layer));
-        break;
-    case LayerType::DENSE:
-        output += DenseLayerParser().parseBack(*dynamic_cast<DenseLayer*>(layer));
         break;
     case LayerType::DROPOUT:
         output += DropoutLayerParser().parseBack(*dynamic_cast<DropoutLayer*>(layer));

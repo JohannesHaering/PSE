@@ -49,7 +49,6 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
   	std::list<Result*> resultList;
     ImageFacade* imagefacade = new ImageFacade();
     ResultFacade* resultfacade = new ResultFacade();
-    std::list<std::string> labels = std::list<std::string>{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
     std::vector<float> currentInputVector;
     std::vector<float> outputvector;
     Executor* executor;
@@ -58,7 +57,7 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
         currentInputVector = imagefacade->getImageGreyScale(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
         executor = new Executor(&neuralNetworkList[i]);
         outputvector = executor->execute(currentInputVector);
-        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), labels, outputvector);
+        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), outputvector);
         resultList.push_back(newres);
       }
     }

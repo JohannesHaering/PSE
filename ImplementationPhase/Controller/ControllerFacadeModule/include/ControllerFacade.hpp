@@ -34,6 +34,7 @@ class ControllerFacade {
         void newResultClassification();
         void newPredictionClassification();
 		void searchDevicesClassification();
+		void updateResultsClassification();
 
         // Detection Methods
 //        void startProcessDetection();
@@ -77,6 +78,7 @@ class ControllerFacade {
         NewResultHandler* newResultHandlerClassification;
         PredictionHandler* predictionHandlerClassification;
         DeviceHandler* deviceHandlerClassification;
+		UpdateResultHandler* resultUpdaterClassification;
 
         // Detection components
 //        InferencingDistributor* detectionInferencer;

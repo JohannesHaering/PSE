@@ -25,3 +25,5 @@ int NeuralNetworkAdapter::getHeight() { return neuralNetwork.getHeight(); }
 int NeuralNetworkAdapter::getChannels() { return neuralNetwork.getChannels(); }
 
 NeuralNetwork NeuralNetworkAdapter::getNeuralNetwork() { return neuralNetwork; }
+
+std::list<std::string> NeuralNetworkAdapter::getLabels() { return neuralNetwork.getLabels(); }

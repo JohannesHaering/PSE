@@ -51,7 +51,6 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-
     for(int i = 0; i < 100; i++)
     {
       trainer.forward(dataset_train_images[i]);
@@ -63,6 +62,6 @@ void Trainer::startTraining()
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       }
     }
-    //NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    //facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
 }
