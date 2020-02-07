@@ -69,8 +69,8 @@ void InferencingDistributorClassification::startProcess()
 void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
   std::cout << neuralNetworkId << imageId<<std::endl;
   std::string nn_id = neuralNetworks[neuralNetworkId].getName();
-	std::string img_id = directories[imageId];
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
+  std::string img_id = directories[imageId];
+  ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
   page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
   page->saveResultEnable(true);
   page->update();
