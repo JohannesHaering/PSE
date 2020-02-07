@@ -11,7 +11,7 @@ Data<cv::Mat> ImageFileIO::readFile(std::string path)
         return Data<cv::Mat>(mat);
     }       
 
-    auto image = cv::imread(path, CV_LOAD_IMAGE_COLOR);
+    auto image = cv::imread(path, IMREAD_COLOR);
     return Data<cv::Mat>(image);
 }
 

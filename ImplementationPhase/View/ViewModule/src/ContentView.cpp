@@ -12,7 +12,7 @@ ContentView::ContentView()
 
 }
 QPixmap ContentView::convertCvtoQImg(cv::Mat mat){
-    return QPixmap::fromImage(QImage((unsigned char*) mat.data, mat.cols, mat.rows, QImage::Format_RGB32));
+    return QPixmap::fromImage(QImage((unsigned char*) mat.data, mat.cols, mat.rows, QImage::Format_BGR30));
 }
 std::vector<std::string> ContentView::getFilesFromExplorer(std::vector<std::string> types){
     widg = new QWidget();
