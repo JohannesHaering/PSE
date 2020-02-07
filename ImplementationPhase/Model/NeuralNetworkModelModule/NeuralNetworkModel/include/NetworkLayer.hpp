@@ -10,7 +10,9 @@ class NetworkLayer {
 private:
 	// std::string name;
 	int inputDimensions[3];
+protected:
 	LayerType layerType;
+  int batchSize;
 
 public:
 	/* NetworkLayer(std::string name, int* inputDimensions, LayerType layerType);
@@ -21,6 +23,7 @@ public:
 	std::string getName();*/
 	LayerType getLayerType();
 	int* getInputDimensions();
+  void setBatchSize(int batchsize);
 	// virtual int* getTensorDimensions();
 	// ~NetworkLayer();
 	virtual std::vector<float> forward(std::vector<float> net) = 0;

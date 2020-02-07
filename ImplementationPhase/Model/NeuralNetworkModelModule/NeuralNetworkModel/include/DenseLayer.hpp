@@ -16,6 +16,10 @@ private:
 	std::vector<float> input;
 	std::vector<float> output;
 	std::vector<float> backPropRes;
+  std::vector<std::vector<float>> inputStorageVector;
+  std::vector<std::vector<float>> feedbackStorageVector;
+  //void batchUpdate();
+  int iterationInBatch;
 
 public:
 	DenseLayer(int inputSize, int outputSize);
@@ -26,6 +30,7 @@ public:
 	std::vector<float> backprob(std::vector<float> updates, float learningRate);
 	std::vector<std::vector<float>> get_weights();
 	std::vector<float> get_biase();
+  void setBatchSize(int batchSize);
 };
 #endif
 

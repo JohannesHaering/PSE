@@ -8,7 +8,8 @@
 class LeakyReLuLayer : public ActivationLayer {
 
   public:
+    LeakyReLuLayer();
     std::vector<float> forward(std::vector<float> net);
-	std::vector<float> backprob(std::vector<float> feedback);
+	  std::vector<float> backprob(std::vector<float> feedback);
 };
 #endif

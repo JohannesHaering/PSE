@@ -4,6 +4,12 @@
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 
+SoftmaxLayer::SoftmaxLayer()
+{
+  layerType = LayerType::SOFTMAX;
+}
+
+
 
 std::vector<float> SoftmaxLayer::forward(std::vector<float> net)
 {

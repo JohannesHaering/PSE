@@ -19,6 +19,8 @@ void NetworkLayer::setInputDimensions(int* inputDimensions) {
 
 //std::string NetworkLayer::getName() { return name; }
 
+void NetworkLayer::setBatchSize(int batchSize) { this->batchSize = batchSize;}
+
 LayerType NetworkLayer::getLayerType() { return layerType; }
 
 int* NetworkLayer::getInputDimensions() { return inputDimensions; }

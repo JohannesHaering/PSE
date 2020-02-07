@@ -8,20 +8,23 @@
 //#include "NeuralNetworkFacade.hpp"
 
 
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f)) 
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), batchSize(batchSize), trainer(CompleteTrainer(neuralNetwork, 0.01f, batchSize))
 {
-    trainer = CompleteTrainer(neuralNetwork, 0.01f);  
+    //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
     testAcc = std::vector<float>();    
     //TODO somehow update this to use trainData string and replace trainData string by somewhat smarter
     loadDataset();
-
 }
+
+//Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData)
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : Trainer(neuralNetwork, desiredPrecision, trainData, 16) {}
+
 
 void Trainer::loadDataset()
 {
 	//TODO div img values by 128 (256?);
-    std::string MNIST_DATA_LOCATION = "/home/pselabw1920/Documents/mnist";
+  std::string MNIST_DATA_LOCATION = "/home/pselabw1920/Documents/mnist";
 	auto mnist_dataset = mnist::read_dataset<std::vector, std::vector, float, uint8_t>(MNIST_DATA_LOCATION);//TODO change uint8_t to float for img and labels. div img by 128 (256?);
 
 
@@ -48,10 +51,7 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    //std::vector<float> testacc = std::vector<float>{0.3f, 0.4f, 0.5f};
-   // std::vector<float> trainingacc = std::vector<float>{0.5f, 0.4f, 0.3f, 0.4f, 0.3f,0.5f, 0.4f, 0.3f, 0.4f, 0.3f,};
 
-    //for(int i = 0; i < dataset_train_images.size(); i++)
     for(int i = 0; i < 100; i++)
     {
       trainer.forward(dataset_train_images[i]);
