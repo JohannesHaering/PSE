@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_CXX_STANDARD 17)#new, for johannes stuff
-
-#set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++0x -fPIC")
-#set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -lOpenCL")
+set(CMAKE_CXX_STANDARD 17)
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -31,7 +28,6 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
                  EXCLUDE_FROM_ALL)
 
 # Require OpenCV. if not configured for now, add # before next 2 lines
-# set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extern/opencv/build/x64/vc14/lib)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
@@ -40,13 +36,7 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-#find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
-#find_package(OpenCL REQUIRED)
-
-#set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
-
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
-#include(${QT_USE_FILE})
 
 include_directories(
   ${Qt5Core_INCLUDE_DIRS}
@@ -61,6 +51,4 @@ add_subdirectory(View)
 #add_subdirectory(test)
 
 add_executable(${IMAGE_CLASSIFICATION_TARGET} "View/src/main.cpp")
-# target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} IMAGE_CLASSIFICATION_VIEW)
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} VIEW_MODULE)
-# target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} RENDERER_MODULE)
