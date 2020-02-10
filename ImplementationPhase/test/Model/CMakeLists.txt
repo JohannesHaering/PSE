@@ -6,4 +6,3 @@ add_subdirectory(ModelFacade)
 add_subdirectory(NeuralNetworkModel)
 add_subdirectory(VideoHandling)
 add_subdirectory(Parsing)
-

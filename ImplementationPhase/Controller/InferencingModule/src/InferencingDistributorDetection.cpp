@@ -1,6 +1,6 @@
 #include "InferencingDistributorDetection.hpp"
 
-InferencingDistributorDetection::InferencingDistributorDetection(InferencePage page)
+InferencingDistributorDetection::InferencingDistributorDetection(InferencePageAdapter* page)
 {
 	this->page = page;
 }
@@ -10,7 +10,7 @@ InferencingDistributorDetection::InferencingDistributorDetection(InferencePage p
 */
 void InferencingDistributorDetection::enableStart()
 {
-    page.startButtonEnable(this->canStart());
+    page->startEnable(this->canStart());
 }
 
 /*
@@ -18,6 +18,6 @@ void InferencingDistributorDetection::enableStart()
 */
 void InferencingDistributorDetection::drawResult(Result result) 
 {
-    page.setResult(result);
+    //page.setResult(result);
 }    
 

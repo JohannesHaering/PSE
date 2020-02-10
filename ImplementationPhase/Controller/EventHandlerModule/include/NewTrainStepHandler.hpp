@@ -4,16 +4,16 @@
 #include <vector>
 #include <assert.h>
 #include "ViewFacade.hpp"
-#include "TrainingPage.hpp"
+#include "TrainingPanel.hpp"
 
 class NewTrainStepHandler {
-    
-    public: 
+
+    public:
         NewTrainStepHandler();
         void newAccuracyPoints(std::vector<float> training, std::vector<float> test);
 
-    private: 
-        TrainingPage page;    
+    private:
+        TrainingPanel* page;
 
 };
 #endif

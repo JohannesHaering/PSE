@@ -10,7 +10,7 @@ struct PrevHandlerTests : testing::Test
 	PrevHandler* handler;
 
 	PrevHandlerTests() {
-		pager = new NeuralNetworkPager(2, ViewFacade::getClassificationPage());
+		pager = new NeuralNetworkPager(2, *ViewFacade::getInstance()->getImageClassification());
 		handler = new PrevHandler(*pager);
 	}
 

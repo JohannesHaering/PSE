@@ -12,6 +12,7 @@ class Distributor : public Inferencer {
 
 	protected:
 		std::vector<std::string> directories;
+		std::map<std::string, cv::Mat> images;
 
 };
 #endif

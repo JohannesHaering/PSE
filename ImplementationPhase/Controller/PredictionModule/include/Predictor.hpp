@@ -8,7 +8,7 @@
 class Predictor
 {
 public:
-    virtual std::map<std::string, float> predict(std::list<std::string> deviceIds);
+    virtual std::map<std::string, float> predict(std::list<std::string> deviceIds) = 0;
 
 protected:
     std::string filePath;

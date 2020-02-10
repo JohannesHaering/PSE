@@ -4,7 +4,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "Device.hpp"
-//#include "NeuralNetworkAdapter.hpp"
+#include "NeuralNetworkAdapter.hpp"
 
 #include "Mode.hpp"
 

@@ -2,19 +2,23 @@
 #define INFERENCER_H_
 
 #include "NeuralNetworkAdapter.hpp"
+#include "ContentView.hpp"
 #include <vector>
+
+// class NeuralNetworkAdapter;
 
 class Inferencer {
 
-	protected:
+    protected:
 		std::vector<NeuralNetworkAdapter> neuralNetworks;
+        ContentView* page;
 
-    public: 
+    public:
 		void addNeuralNetwork(std::vector<NeuralNetworkAdapter> neuralNetwork);
 		int getAmountNeuralNetworks();
-        virtual void startProcess(); 
-        virtual bool canStart();
-        virtual void enableStart(); 
-
+        virtual void startProcess() = 0;
+        virtual bool canStart() = 0;;
+        virtual void enableStart() = 0;;
+        virtual ContentView* getPage();
 };
 #endif

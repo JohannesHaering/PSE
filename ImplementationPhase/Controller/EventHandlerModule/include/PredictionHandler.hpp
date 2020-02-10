@@ -5,18 +5,20 @@
 #include "ResultManager.hpp"
 #include "PerformancePredictorFromFile.hpp"
 #include "PowerPredictorFromFile.hpp"
+#include "InferencePageAdapter.hpp"
 
 class PredictionHandler 
 {
     public: 
-		PredictionHandler(InferencePage page);
-		PredictionHandler();
+		PredictionHandler(InferencePageAdapter *page);
+		~PredictionHandler();
 		void onAction();
+		float test();
 
     private: 
-		PowerPredictorFromFile powerPredictor;
-		PerformancePredictorFromFile performancePredictor;
-		InferencePage page;
+		PowerPredictorFromFile *powerPredictor;
+		PerformancePredictorFromFile *performancePredictor;
+		InferencePageAdapter *page;
 
 };
 #endif

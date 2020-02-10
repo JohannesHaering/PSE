@@ -2,12 +2,12 @@
 #define NEURAL_NETWORK_PAGER_H_
 
 #include "Pager.hpp"
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 
 class NeuralNetworkPager : public Pager {
 
     public:
-        NeuralNetworkPager(int maxPage, InferencePage page);
+        NeuralNetworkPager(int maxPage, InferencePageAdapter *page);
 
     private: 
         void disable();   

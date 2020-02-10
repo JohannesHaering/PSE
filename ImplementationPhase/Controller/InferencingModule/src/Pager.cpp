@@ -71,3 +71,7 @@ bool Pager::prevEnable()
 {
 	return currentPage > 0;
 }
+
+ContentView* Pager::getGUIPage() {
+	return page;
+}

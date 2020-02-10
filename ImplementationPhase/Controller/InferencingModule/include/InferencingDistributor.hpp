@@ -7,23 +7,21 @@
 #include "ResultManager.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
-#include "Model.hpp"
+#include "InferencePageAdapter.hpp"
 
 class InferencingDistributor : public Distributor {
 
-    public:
-		InferencingDistributor();
-        void startProcess();
-        void saveResult(std::string nn_id, std::string input_id);
-        void drawResult(std::string nn_id, std::string input_id);
+	public:
+        virtual void startProcess() = 0;
+        virtual void saveResult(int nn_id, int input_id, std::string path) = 0;
+        virtual void drawResult(int nn_id, int input_id) = 0;
         bool canStart();
-        virtual void enableStart();
+        virtual void enableStart() = 0;
+        ContentView* getPage() override;
 
     protected: 
-        InferencePage page;
-        DispatchManager dispatcher; 
+		InferencePageAdapter* page;
         ResultManager resultManager;
-        virtual void drawResult(Result result);
 
 };
 #endif

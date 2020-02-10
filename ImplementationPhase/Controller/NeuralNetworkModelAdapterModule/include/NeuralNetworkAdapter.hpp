@@ -11,12 +11,13 @@ class NeuralNetworkAdapter {
 		NeuralNetworkAdapter();
         NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
 
-        void addLayer(NetworkLayer layer);
-		NetworkLayer getFirstLayer();
-		NetworkLayer getLastLayer();
-		NetworkLayer getNextLayer();
-		NetworkLayer getPreviousLayer();
-
+        void addLayer(NetworkLayer *layer);
+		NetworkLayer *getFirstLayer();
+		NetworkLayer *getLastLayer();
+		NetworkLayer *getNextLayer();
+		NetworkLayer *getPreviousLayer();
+		std::string getName();
+		int getLayerCount();
     private: 
         NeuralNetwork neuralNetwork;    
         

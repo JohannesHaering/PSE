@@ -1,3 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
 add_subdirectory(ResultModelModule)
+add_subdirectory(IOPackage)
+add_subdirectory(DatastructurePackage)
+add_subdirectory(ParsingPackage)
+add_subdirectory(VideoHandlingPackage)
+add_subdirectory(ModelFacadePackage)
+add_subdirectory(NeuralNetworkModelModule)

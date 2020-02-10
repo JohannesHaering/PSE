@@ -8,13 +8,13 @@
 
 class FileExplorerHandler : public EventHandler {
 
-    public: 
+    public:
         void onAction();
 
-    protected:  
-        std::vector<std::string> fetchDirectory();
-        virtual void sendDirectory(std::vector<std::string>);
-        ViewFacade view;
+    protected:
+        virtual std::vector<std::string> fetchDirectory() = 0;
+        virtual void sendDirectory(std::vector<std::string>) = 0;
+        InferencePageAdapter *page;
 
 };
 #endif

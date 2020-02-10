@@ -15,119 +15,131 @@
 #include "NewResultHandler.hpp"
 #include "PredictionHandler.hpp"
 #include "TrainingDistributor.hpp"
+#include "InputImageHandlerTrainer.hpp"
 #include "NewTrainStepHandler.hpp"
 #include "TopologyInferencer.hpp"
 #include "ControllerFacade.hpp"
+#include "InferencePageAdapter.hpp"
+#include "ViewFacade.hpp"
+#include <iostream>
 
-        ControllerFacade ControllerFacade::getInstance(){
-            if (&instance == nullptr) {
-                ControllerFacade::instance = ControllerFacade();
-            }
-            return instance;
-        }
+ControllerFacade* ControllerFacade::instance = 0;
 
-        // Classification Methods
-        void ControllerFacade::startProcessClassification(){ classificationInferencer.startProcess(); }
+ControllerFacade* ControllerFacade::getInstance() {
+  if (!instance)
+  {
+  instance = new ControllerFacade();
+  }
+  return instance;
+}
 
-        void ControllerFacade::saveResultsClassification(){ saveHandlerClassification.onAction(); }
 
-        void ControllerFacade::nextNeuralNetworkClassification(){ nnNextHandlerClassification.onAction(); }
+// Classification Methods
+void ControllerFacade::startProcessClassification(){ classificationInferencer->startProcess(); }
 
-        void ControllerFacade::prevNeuralNetworkClassification(){ nnPrevHandlerClassification.onAction(); }
+void ControllerFacade::saveResultsClassification(){ saveHandlerClassification->onAction(); }
 
-        void ControllerFacade::nextImageClassification(){ imgNextHandlerClassification.onAction(); }
+void ControllerFacade::nextNeuralNetworkClassification(){ nnNextHandlerClassification->onAction(); }
 
-        void ControllerFacade::prevImageClassification(){ imgPrevHandlerClassification.onAction(); }
+void ControllerFacade::prevNeuralNetworkClassification(){ nnPrevHandlerClassification->onAction(); }
 
-        void ControllerFacade::getImageInputClassification(){ inputHandlerClassification.onAction(); }
+void ControllerFacade::nextImageClassification(){ imgNextHandlerClassification->onAction(); }
 
-        void ControllerFacade::getNeuralNetworkInputClassifcation(){ neuralNetworkHandlerClassification.onAction(); }
+void ControllerFacade::prevImageClassification(){ imgPrevHandlerClassification->onAction(); }
 
-        void ControllerFacade::newResultClassification(){ newResultHandlerClassification.onAction(); }
+void ControllerFacade::getImageInputClassification(){ inputHandlerClassification->onAction(); }
 
-        void ControllerFacade::newPredictionClassification(){ predictionHandlerClassification.onAction(); }
+void ControllerFacade::getNeuralNetworkInputClassifcation(){ neuralNetworkHandlerClassification->onAction(); }
 
-        // Detection Methods
-        void ControllerFacade::startProcessDetection(){ detectionInferencer.startProcess(); }
+void ControllerFacade::newResultClassification(){ newResultHandlerClassification->onAction(); }
 
-        void ControllerFacade::saveResultsDetection(){ saveHandlerDetection.onAction(); }
+void ControllerFacade::newPredictionClassification(){ predictionHandlerClassification->onAction(); }
 
-        void ControllerFacade::nextNeuralNetworkDetection(){ nnNextHandlerDetection.onAction(); }
+void ControllerFacade::searchDevicesClassification() { deviceHandlerClassification->onAction(); }
 
-        void ControllerFacade::prevNeuralNetworkDetection(){ nnPrevHandlerDetection.onAction(); }
+// Detection Methods
+//void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }
 
-        void ControllerFacade::nextImageDetection(){ imgNextHandlerDetection.onAction(); }
+//void ControllerFacade::saveResultsDetection(){ saveHandlerDetection->onAction(); }
 
-        void ControllerFacade::prevImageDetection(){ imgPrevHandlerDetection.onAction(); }
+//void ControllerFacade::nextNeuralNetworkDetection(){ nnNextHandlerDetection->onAction(); }
 
-        void ControllerFacade::getImageInputDetection(){ inputHandlerDetection.onAction(); }
+//void ControllerFacade::prevNeuralNetworkDetection(){ nnPrevHandlerDetection->onAction(); }
 
-        void ControllerFacade::getNeuralNetworkInputDetection(){ neuralNetworkHandlerDetection.onAction(); }
+//void ControllerFacade::nextImageDetection(){ imgNextHandlerDetection->onAction(); }
 
-        void ControllerFacade::newResultDetection(){ newResultHandlerDetection.onAction(); }
+//void ControllerFacade::prevImageDetection(){ imgPrevHandlerDetection->onAction(); }
 
-        void ControllerFacade::newPredictionDetection(){ predictionHandlerDetection.onAction(); }
+//void ControllerFacade::getImageInputDetection(){ inputHandlerDetection->onAction(); }
 
-        // Training methods
-        void ControllerFacade::startProcessTraining(){ startHandlerTraining.onAction(); }
+//void ControllerFacade::getNeuralNetworkInputDetection(){ neuralNetworkHandlerDetection->onAction(); }
 
-        void ControllerFacade::getImageInputTraining(){ inputHandlerTraining.onAction(); }
+//void ControllerFacade::newResultDetection(){ newResultHandlerDetection->onAction(); }
 
-        void ControllerFacade::getNeuralNetworkInputTraining(){ neuralNetworkHandlerTraining.onAction(); }
+//void ControllerFacade::newPredictionDetection(){ predictionHandlerDetection->onAction(); }
 
-        void ControllerFacade::newTrainStep(std::vector<float> training, std::vector<float> test){ trainstepHandlerTraining.newAccuracyPoints(training, test); }
+//void ControllerFacade::searchDevicesDetection() { deviceHandlerDetection->onAction(); }
 
-        // Topology methods
-        void ControllerFacade::startProcessTopology() { startHandlerTopology.onAction(); }
+// Training methods
+ void ControllerFacade::startProcessTraining(){ startHandlerTraining->onAction(); }
 
-        void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTopology.onAction(); }
+ void ControllerFacade::getImageInputTraining(){ inputHandlerTraining->onAction(); }
 
-        ControllerFacade::ControllerFacade() {
-			ViewFacade view = ViewFacade::getInstance();
-			
-            // Setup Classification
-			InferencePage classificationPage = view.getClassificationPage();
-            classificationInferencer = InferencingDistributorClassification(classificationPage);
-            NeuralNetworkPager neuralNetworkPager = NeuralNetworkPager(0, classificationPage);
-            ImagePager imagePager = ImagePager(0, classificationPage);
-            saveHandlerClassification = SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
-            inputHandlerClassification = InputImageHandler(classificationInferencer);
-            neuralNetworkHandlerClassification = NeuralNetworkHandler(classificationInferencer);
-            startHandlerClassification = StartHandler(classificationInferencer);
-            nnNextHandlerClassification = NextHandler(neuralNetworkPager);
-			nnPrevHandlerClassification = PrevHandler(neuralNetworkPager);
-			imgNextHandlerClassification = NextHandler(imagePager);
-			imgPrevHandlerClassification = PrevHandler(imagePager);
-            newResultHandlerClassification = NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
-            predictionHandlerClassification = PredictionHandler(classificationPage);
-		
-            // Setup Detection
-			InferencePage detectionPage = view.getDetectionPage();
-            detectionInferencer = InferencingDistributorDetection(detectionPage);
-            NeuralNetworkPager neuralNetworkPagerDetection = NeuralNetworkPager(0, detectionPage);
-            ImagePager imagePagerDetection = ImagePager(0, detectionPage);
-            saveHandlerDetection = SaveResultHandler(detectionInferencer, neuralNetworkPagerDetection, imagePagerDetection);
-            inputHandlerDetection = InputImageHandler(detectionInferencer);
-            neuralNetworkHandlerDetection = NeuralNetworkHandler(detectionInferencer);
-            startHandlerDetection = StartHandler(detectionInferencer);
-			nnNextHandlerDetection = NextHandler(neuralNetworkPagerDetection);
-			nnPrevHandlerDetection = PrevHandler(neuralNetworkPagerDetection);
-			imgNextHandlerDetection = NextHandler(imagePagerDetection);
-			imgPrevHandlerDetection = PrevHandler(imagePagerDetection);
-            newResultHandlerDetection = NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
-            predictionHandlerDetection = PredictionHandler(detectionPage);
+ void ControllerFacade::getNeuralNetworkInputTraining(){ neuralNetworkHandlerTraining->onAction(); }
 
-            // Setup Training
-            trainingDistributor = TrainingDistributor();
-            inputHandlerTraining = InputImageHandler(trainingDistributor);
-            neuralNetworkHandlerTraining = NeuralNetworkHandler(trainingDistributor); 
-            startHandlerTraining = StartHandler(trainingDistributor);
-            trainstepHandlerTraining = NewTrainStepHandler();
+ void ControllerFacade::newTrainStep(std::vector<float> training, std::vector<float> test){ trainstepHandlerTraining->newAccuracyPoints(training, test); }
 
-            // Setup Topology
-            topologyInferencer = TopologyInferencer();
-            neuralNetworkHandlerTopology = NeuralNetworkHandler(topologyInferencer);
-            startHandlerTopology = StartHandler(topologyInferencer);
+// Topology methods
+//void ControllerFacade::startProcessTopology() { startHandlerTopology->onAction(); }
 
-            ViewFacade::getInstance().getClassificationPage().setActive(true);
-        }
+//void ControllerFacade::getNeuralNetworkInputTopology() { neuralNetworkHandlerTopology->onAction(); }
+
+ControllerFacade::ControllerFacade() {
+  ViewFacade* view = ViewFacade::getInstance();
+     // Setup Classification
+    InferencePageAdapter *classificationPage = view->getImageClassification();
+    classificationInferencer = new InferencingDistributorClassification(classificationPage);
+    NeuralNetworkPager* neuralNetworkPager = new NeuralNetworkPager(0, classificationPage);
+    ImagePager* imagePager = new ImagePager(0, classificationPage);
+    saveHandlerClassification = new SaveResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
+    inputHandlerClassification = new InputImageHandler(classificationInferencer);
+    neuralNetworkHandlerClassification = new NeuralNetworkHandler(classificationInferencer);
+    startHandlerClassification = new StartHandler(classificationInferencer);
+    nnNextHandlerClassification = new NextHandler(neuralNetworkPager);
+	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);
+	imgNextHandlerClassification = new NextHandler(imagePager);
+	imgPrevHandlerClassification = new PrevHandler(imagePager);
+    newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
+    predictionHandlerClassification = new PredictionHandler(classificationPage);
+    deviceHandlerClassification = new DeviceHandler(classificationPage);
+    // Setup Detection
+  /*
+  InferencePageAdapter detectionPage = *view->getObjectDetection();
+    detectionInferencer = new InferencingDistributorDetection(detectionPage);
+    NeuralNetworkPager neuralNetworkPagerDetection = NeuralNetworkPager(0, detectionPage);
+    ImagePager imagePagerDetection = ImagePager(0, detectionPage);
+    saveHandlerDetection = new SaveResultHandler(detectionInferencer, neuralNetworkPagerDetection, imagePagerDetection);
+    inputHandlerDetection = new InputImageHandler(*detectionInferencer);
+    neuralNetworkHandlerDetection = new NeuralNetworkHandler(*detectionInferencer);
+    startHandlerDetection = new StartHandler(*detectionInferencer);
+  nnNextHandlerDetection = new NextHandler(neuralNetworkPagerDetection);
+  nnPrevHandlerDetection = new PrevHandler(neuralNetworkPagerDetection);
+  imgNextHandlerDetection = new NextHandler(imagePagerDetection);
+  imgPrevHandlerDetection = new PrevHandler(imagePagerDetection);
+    newResultHandlerDetection = new NewResultHandler(classificationInferencer, neuralNetworkPagerDetection, imagePagerDetection);
+    predictionHandlerDetection = new PredictionHandler(detectionPage);
+  */
+     // Setup Training
+     trainingDistributor = new TrainingDistributor();
+     inputHandlerTraining = new InputImageHandlerTrainer(trainingDistributor);
+     neuralNetworkHandlerTraining = new NeuralNetworkHandler(trainingDistributor);
+     startHandlerTraining = new StartHandler(trainingDistributor);
+     trainstepHandlerTraining = new NewTrainStepHandler();
+
+    // Setup Topology
+  /*
+    topologyInferencer = new TopologyInferencer();
+    neuralNetworkHandlerTopology = new NeuralNetworkHandler(*topologyInferencer);
+    startHandlerTopology = new StartHandler(*topologyInferencer);
+  */
+}

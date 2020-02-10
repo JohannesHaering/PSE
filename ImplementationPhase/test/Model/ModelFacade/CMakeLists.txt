@@ -1,1 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
+
+add_executable(ClassifcationDatasetFacadeTest "ClassificationDatasetFacade_test.cpp")
+target_link_libraries(ClassifcationDatasetFacadeTest PUBLIC CLASSIFICATIONDATASETFACADE CLASSIFICATIONRESULT)
+
+add_executable(DetectionDataFacdeTest "DetectionDataFacde_test.cpp")
+target_link_libraries(DetectionDataFacdeTest PUBLIC DETECTIONDATAFACADE DETECTIONDATA)
+
+add_executable(ImageFacadeTest "ImageFacade_test.cpp")
+target_link_libraries(ImageFacadeTest PUBLIC ${OpenCV_LIBS} IMAGEFACADE)
+
+add_executable(ModelFacadeTest "ModelFacade_test.cpp")
+target_link_libraries(ModelFacadeTest PUBLIC MODELFACADE)
+
+add_executable(NeuralNetworkFacadeTest "NeuralNetworkFacade_test.cpp" )
+target_link_libraries(NeuralNetworkFacadeTest PUBLIC NEURALNETWORKFACADE NEURALNETWORK DROPOUTLAYER)

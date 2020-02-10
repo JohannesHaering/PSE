@@ -1,18 +1,18 @@
 #ifndef DEVICE_HANDLER_H_
 #define DEVICE_HANDLER_H_
 
-#include "InferencePage.hpp"
+#include "InferencePageAdapter.hpp"
 #include "ResultManager.hpp"
+#include "DispatchManager.hpp"
 
 class DeviceHandler 
 {
     public: 
-		DeviceHandler(InferencePage page);
-		DeviceHandler();
+		DeviceHandler(InferencePageAdapter* page);
 		void onAction();
 
     private: 
-		InferencePage page;
+		InferencePageAdapter* page;
 
 };
 #endif
