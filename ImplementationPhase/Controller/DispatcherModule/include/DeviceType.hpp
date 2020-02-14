@@ -2,6 +2,7 @@
 #define DEVICE_TYPE_H_
 
 enum DeviceType {
+  CPP,
   CPU,
   ASIC
 };

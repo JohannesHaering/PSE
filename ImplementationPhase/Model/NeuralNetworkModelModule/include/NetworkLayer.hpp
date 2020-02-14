@@ -6,6 +6,7 @@
 #include "LayerType.hpp"
 #include "DeviceType.hpp"
 #include "MatrixDefine.hpp"
+#include "DeviceType.hpp"
 #include <CL/cl2.hpp>
 
 class NetworkLayer {

@@ -5,16 +5,19 @@
 #include <math.h>
 #include <vector>
 #include "ConnectionLayer.hpp"
+#include "DenseLayerStrategy.hpp"
 
 class DenseLayer : public ConnectionLayer
 {
 private: 
-  std::vector<std::vector<float>> weights;
+  	std::vector<std::vector<float>> weights;
 	std::vector<float> bias;
 
 	float learningRate;
 	int inputSize;
 	int outputSize;
+
+	DenseLayerStrategy layerStrategy;
 
 public:
 	DenseLayer(int inputSize, int outputSize);
@@ -23,7 +26,8 @@ public:
 	void set_weights(std::vector<std::vector<float>> new_weights);
 	MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data) override;
 	MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates, float learningRate) override;
-  std::vector<std::vector<float>> get_weights();
+ 	std::vector<std::vector<float>> get_weights();
 	std::vector<float> get_biase();
+	void setMode(DeviceType device, cl_int deviceID) override;
 };
 #endif

@@ -19,25 +19,25 @@ target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER)
 
 add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
-target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER)
+target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY)
 
 target_link_libraries(NEURALNETWORK PUBLIC NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER)
 
 add_library(SOFTMAXLAYER "src/SoftmaxLayer.cpp" "include/SoftmaxLayer.hpp")
 target_include_directories(SOFTMAXLAYER PUBLIC "include/")
-target_link_libraries(SOFTMAXLAYER PUBLIC ACTIVATIONLAYER)
+target_link_libraries(SOFTMAXLAYER PUBLIC ACTIVATIONLAYER SOFTMAXSTRATEGY)
 
 add_library(SIGMOIDLAYER "src/SigmoidLayer.cpp" "include/SigmoidLayer.hpp")
 target_include_directories(SIGMOIDLAYER PUBLIC "include/")
-target_link_libraries(SIGMOIDLAYER PUBLIC ACTIVATIONLAYER)
+target_link_libraries(SIGMOIDLAYER PUBLIC ACTIVATIONLAYER SIGMOIDLAYERSTRATEGY)
 
 add_library(LEAKYRELULAYER "src/LeakyReLuLayer.cpp" "include/LeakyReLuLayer.hpp")
 target_include_directories(LEAKYRELULAYER PUBLIC "include/")
-target_link_libraries(LEAKYRELULAYER PUBLIC ACTIVATIONLAYER)
+target_link_libraries(LEAKYRELULAYER PUBLIC ACTIVATIONLAYER LEAKYRELULAYERSTRATEGY)
 
 add_library(RELULAYER "src/ReLuLayer.cpp" "include/ReLuLayer.hpp")
 target_include_directories(RELULAYER PUBLIC "include/")
-target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER)
+target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY)
 
 #add_library(TYPE_ENUMERATIONS_NN INTERFACE)
 #target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")
@@ -45,3 +45,25 @@ target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER)
 add_library(MATRIX_DEFINE INTERFACE)
 target_sources(MATRIX_DEFINE INTERFACE "include/MatrixDefine.hpp")
 
+add_library(NETWORKLAYERSTRATEGY "src/NetworkLayerStrategies/NetworkLayerStrategy.cpp" "include/NetworkLayerStrategies/NetworkLayerStrategy.hpp")
+target_include_directories(NETWORKLAYERSTRATEGY PUBLIC "include/")
+
+add_library(DENSELAYERSTRATEGY "include/NetworkLayerStrategies/DenseLayerStrategy.hpp" "src/NetworkLayerStrategies/DenseLayerCPP.cpp" "include/NetworkLayerStrategies/DenseLayerCPP.hpp")
+target_include_directories(DENSELAYERSTRATEGY PUBLIC "include/")
+target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)
+
+add_library(RELULAYERSTRATEGY "src/NetworkLayerStrategies/ReLuLayerStrategy.cpp" "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp")
+target_include_directories(RELULAYERSTRATEGY PUBLIC "include/")
+target_link_libraries(RELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)
+
+add_library(LEAKYRELULAYERSTRATEGY "src/NetworkLayerStrategies/LeakyReLuLayerStrategy.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp")
+target_include_directories(LEAKYRELULAYERSTRATEGY PUBLIC "include/")
+target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)
+
+add_library(SOFTMAXSTRATEGY "src/NetworkLayerStrategies/SoftmaxLayerStrategy.cpp" "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp")
+target_include_directories(SOFTMAXSTRATEGY PUBLIC "include/")
+target_link_libraries(SOFTMAXSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)
+
+add_library(SIGMOIDLAYERSTRATEGY "src/NetworkLayerStrategies/SigmoidLayerStrategy.cpp" "include/NetworkLayerStrategies/SigmoidLayerStrategy.hpp" "src/NetworkLayerStrategies/SigmoidLayerCPP.cpp" "include/NetworkLayerStrategies/SigmoidLayerCPP.hpp")
+target_include_directories(SIGMOIDLAYERSTRATEGY PUBLIC "include/")
+target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)

@@ -12,5 +12,7 @@ class SoftmaxLayer : public ActivationLayer {
     MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) net);
 	  MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback);
     float calcCEError(MatrixDefine::TENSOR(float) target);
+    void setMode(DeviceType device, cl_int deviceID);
+}
 };
 #endif
