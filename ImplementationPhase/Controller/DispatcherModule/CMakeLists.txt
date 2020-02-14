@@ -9,6 +9,9 @@ targeT_link_libraries(MODE PUBLIC DEVICE)
 target_link_libraries(MODE PUBLIC NEURALNETWORKADAPTER)
 target_link_libraries(MODE PUBLIC POWERPREDICTORFROMFILE)
 
+add_library(DEVICETYPE "include/DeviceType.hpp")
+target_include_directories(DEVICETYPE PUBLIC "include/")
+
 
 add_library(DISPATCHMANAGER "include/DispatchManager.hpp" "src/DispatchManager.cpp")
 target_include_directories(DISPATCHMANAGER PUBLIC "include/")

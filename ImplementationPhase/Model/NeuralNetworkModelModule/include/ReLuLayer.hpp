@@ -9,7 +9,7 @@ class ReLuLayer : public ActivationLayer {
 
   public:
     ReLuLayer();
-    std::vector<float> forward(std::vector<float> net);
-	  std::vector<float> backprob(std::vector<float> feedback);
+    MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) net) override;
+	  MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback) override;
 };
 #endif
