@@ -24,14 +24,13 @@ public:
 protected:
     virtual void splitData() = 0;
 
-    std::list<std::string> ids;
-    std::map<std::string, cv::Mat> images;
-
     const float TRAINING_PART = 0.7f;
     const float TEST_PART = 0.3f;
 
+    std::map<std::string, cv::Mat> images;
+    std::list<std::string> labelnames;
+
 private:
     std::string extractFileName(std::string path);
-    int size;
 };
 #endif

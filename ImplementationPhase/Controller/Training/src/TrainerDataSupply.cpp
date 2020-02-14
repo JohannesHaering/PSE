@@ -21,10 +21,9 @@ TrainerDataSupply::TrainerDataSupply(std::list<std::string> ids, std::string dir
             images[filename] = facade.getImage(*it, width, height, channels);
         }
     }
-    size = images.size();
 }
 
-std::list<std::string> TrainerDataSupply::getDataIds() { return ids; }
+std::list<std::string> TrainerDataSupply::getDataIds() { return labelnames; }
 
 cv::Mat TrainerDataSupply::getImage(std::string id) { return images[id]; }
 
@@ -38,4 +37,4 @@ std::string TrainerDataSupply::extractFileName(std::string path)
     return path;
 }
 
-int TrainerDataSupply::getSize(){ return size; }
+int TrainerDataSupply::getSize(){ return labelnames.size(); }

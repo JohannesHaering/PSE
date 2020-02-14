@@ -31,7 +31,6 @@ private:
     std::list<ClassificationResult> dataSet;
     std::list<ClassificationResult*> dataSetTraining;
     std::list<ClassificationResult*> dataSetTest;
-    std::map<std::string, cv::Mat> images;
     std::map<std::string, ClassificationResult*> dataMap;
     std::list<std::string> classnames;
 };

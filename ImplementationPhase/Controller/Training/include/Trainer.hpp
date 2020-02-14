@@ -6,6 +6,7 @@
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include "CompleteTrainer.hpp"
+#include "TrainerDataSupply.hpp"
 
 class Trainer
 {
@@ -14,22 +15,16 @@ public:
 	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize);
 	void startTraining();
 private:
-	void loadDataset();
 	void saveNewNeuralNetwork();
 	float getNewTrainingsAccuracy();
 	float getNewTestAccuracy();
 
-  int batchSize;
+	int batchSize;
 	float desiredPrecision;
-  std::vector<float> testAcc;
-  std::vector<float> trainingAcc;
+	std::vector<float> testAcc;
+	std::vector<float> trainingAcc;
 	NeuralNetworkAdapter* neuralNetwork;
-	std::string trainData;
-  CompleteTrainer trainer;
-    
-  std::vector<std::vector<float>> dataset_train_images;
-  std::vector<std::vector<float>> dataset_test_images;
-  std::vector<std::vector<float>> dataset_train_labels;
-  std::vector<std::vector<float>> dataset_test_labels;
+	CompleteTrainer trainer;
+	TrainerDataSupply* supplyer;
 };
 #endif
