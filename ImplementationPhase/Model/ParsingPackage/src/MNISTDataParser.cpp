@@ -1,8 +1,9 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
+#include <cinttypes>
 
 #include "MNISTDataParser.hpp"
-#include "mnist/include/mnist/mnist_reader.hpp"
+#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 
 MNISTDataParser::MNISTDataParser()
 {

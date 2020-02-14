@@ -64,9 +64,6 @@ void CompleteTrainer::train(std::vector<float> target)
   std::cout << "returning from train" << std::endl;
 }
 
-
-
-
 float CompleteTrainer::calcCEError(std::vector<float> target)
 {
   if (target.size() != output.size()) {

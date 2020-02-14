@@ -3,7 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <vector>
-
+#include <cinttypes>
 
 #include "mnist/include/mnist/mnist_reader.hpp"
 
@@ -17,6 +17,6 @@ public:
 private:
 	mnist::MNIST_dataset<std::vector, std::vector, uint8_t, uint8_t> dataset;
 	cv::Mat parse(std::vector<uint8_t> image);
-	std::string MNIST_DATA_LOCATION = "/home/zusez4/Documents/manu_NN/data/mnist/";
+	std::string MNIST_DATA_LOCATION = "/home/pselabw1920/Documents/mnist";
 };
 #endif

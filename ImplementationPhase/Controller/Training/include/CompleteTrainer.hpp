@@ -11,13 +11,13 @@ public:
 	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate, int batchSize);
 	std::vector<float> forward(std::vector<float> input);
 	void train(std::vector<float> target);
-  float calcCEError(std::vector<float> target);
+	float calcCEError(std::vector<float> target);
 
 private:
 	std::vector<float> output;
 	std::vector<float> feedback;
 
-  int batchSize;
+	int batchSize;
 	float learningRate;
 	NeuralNetworkAdapter* neuralNetwork;
 };
