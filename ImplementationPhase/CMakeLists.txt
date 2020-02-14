@@ -40,7 +40,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
-find_package(OpenCL REQUIRED)
+# find_package(OpenCL REQUIRED)
 
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
 
