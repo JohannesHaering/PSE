@@ -11,10 +11,11 @@ class LayerFactory
 public:
     virtual NetworkLayer* buildLayer() = 0;
     LayerFactory* setInputDimensions(int* dimensions);
-    LayerFactory* setName(std::string name);
+    LayerFactory* setBatchSize(int batchSize);
 
 protected:
     int* inputDimensions;
+    int batchSize;
     std::string name;
 };
 #endif

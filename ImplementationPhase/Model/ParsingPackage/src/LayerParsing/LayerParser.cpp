@@ -17,15 +17,24 @@
 void LayerParser::extractGeneralInformation(std::string toParse)
 {
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
-	auto it = lines.begin();
-	auto firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	std::list<std::string>::iterator it = lines.begin();
+	std::list<std::string> firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
-	if (*firstLine.begin() != INPUT_DIMENSIONS)
+	if (!(*firstLine.begin()).compare(INPUT_DIMENSIONS))
 		throw std::invalid_argument("Wrong format");
 
-	auto valuePart = *(--firstLine.end());
-
+	std::string valuePart = *(--firstLine.end());
 	inputDimensions = parseIntArray(valuePart);
+
+	++it;
+	std::list<std::string> secondLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*secondLine.begin()).compare(BATCH_SIZE))
+		throw std::invalid_argument("Wrong format");
+
+	std::string batchSizeString = *(--secondLine.end());
+	batchSize = std::stof(batchSizeString.c_str());
+
 }
 
 std::string LayerParser::removeCharacter(std::string text, char toErase)
@@ -244,6 +253,10 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	output += "\n";
 	output += INPUT_DIMENSIONS + VALUE_TYPE_DELIMETER;
 	output += saveIntArray(layer->getInputDimensions());
+	output += "\n";
+	output += BATCH_SIZE;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getBatchSize());
 	output += "\n";
 	return output;
 }

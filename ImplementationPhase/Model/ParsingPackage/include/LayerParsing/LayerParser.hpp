@@ -31,9 +31,11 @@ protected:
     std::string save4DFloatArray(std::vector<std::vector<std::vector<std::vector<float>>>> arr);
     const std::string VALUE_TYPE_DELIMETER = "=";
     const std::string INPUT_DIMENSIONS = "inputdim";
+    const std::string BATCH_SIZE = "batchsize";
     const std::string VALUE_PARTS_DELIMETER = ",";
     const char VALUE_BEGIN = '[';
     const char VALUE_END = ']';
     int *inputDimensions;
+    int batchSize;
 };
 #endif

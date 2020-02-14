@@ -16,11 +16,11 @@ NetworkLayer* DenseLayerParser::parse(std::string toParse)
 	LayerParser::extractGeneralInformation(toParse);
 
 	DenseLayerFactory factory = DenseLayerFactory();
-	factory.setName(LayerParserDistribution().DENSE);
 	factory.setInputDimensions(LayerParser::inputDimensions);
+	factory.setBatchSize(batchSize);
 
-	auto lines = LineBreakParser::splitIntoLines(toParse);
-	auto it = lines.begin();
+	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
+	std::list<std::string>::iterator it = lines.begin();
 	++it;
 
 	std::list<std::string> val = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
