@@ -1,4 +1,5 @@
 #include "LeakyReLuLayer.hpp"
+#include "Activation.hpp"
 #include <vector>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
@@ -6,6 +7,7 @@
 LeakyReLuLayer::LeakyReLuLayer()
 {
   layerType = LayerType::LEAKYRELU;
+  ActivationLayer::activationType = Activation::LEAKING_RELU;
 }
 
 std::vector<float> LeakyReLuLayer::forward(std::vector<float> net)

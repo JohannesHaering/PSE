@@ -1,10 +1,12 @@
 #include "SigmoidLayer.hpp"
+#include "Activation.hpp"
 #include <vector>
 #include <cmath>
 
 SigmoidLayer::SigmoidLayer()
 {
   layerType = LayerType::SIGMOID;
+  activationType = Activation::SIGMOID;
 }
 
 std::vector<float>  SigmoidLayer::forward(std::vector<float> net)

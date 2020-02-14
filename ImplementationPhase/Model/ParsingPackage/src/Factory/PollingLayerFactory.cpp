@@ -4,25 +4,36 @@
 #include "PollingLayer.hpp"
 #include "PollingType.hpp"
 
-NetworkLayer PollingLayerFactory::buildLayer()
+NetworkLayer* PollingLayerFactory::buildLayer()
 {
-    return PollingLayer(name, inputDimensions, size, stride, type);
+    PollingLayer* poolingLayer = new PollingLayer();
+    poolingLayer->setInputDimension(inputDimensions);
+    poolingLayer->setBatchSize(batchSize);
+    poolingLayer->setWidth(width);
+    poolingLayer->setHeight(height);
+    poolingLayer->setZ(z);
+
+    poolingLayer->setSize(size);
+    poolingLayer->setStride(stride);
+    poolingLayer->setType(type);
+
+    return poolingLayer;
 }
 
-PollingLayerFactory PollingLayerFactory::setType(PollingType type)
+PollingLayerFactory* PollingLayerFactory::setType(PollingType type)
 {
     this -> type = type;
-    return *this;
+    return this;
 }
 
-PollingLayerFactory PollingLayerFactory::setSize(int size)
+PollingLayerFactory* PollingLayerFactory::setSize(int size)
 {
     this -> size = size;
-    return *this;
+    return this;
 }
 
-PollingLayerFactory PollingLayerFactory::setStride(int stride)
+PollingLayerFactory* PollingLayerFactory::setStride(int stride)
 {
     this -> stride = stride;
-    return *this;
+    return this;
 }

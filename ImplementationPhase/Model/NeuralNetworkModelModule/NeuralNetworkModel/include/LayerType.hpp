@@ -1,7 +1,7 @@
 #ifndef LAYERTYPE_H_
 #define LAYERTYPE_H_
 
-enum LayerType {
+enum class LayerType {
   CONVOLUTION,
   ACTIVATION,
   POLLING,

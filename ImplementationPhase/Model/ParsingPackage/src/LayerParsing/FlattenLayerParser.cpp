@@ -10,17 +10,20 @@
 #include <list>
 #include <stdexcept>
 
-NetworkLayer FlattenLayerParser::parse(std::string toParse)
+NetworkLayer* FlattenLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
     FlattenLayerFactory factory = FlattenLayerFactory();
     factory.setInputDimensions(LayerParser::inputDimensions);
-    factory.setName(LayerParserDistribution().FLATTEN);
+    factory.setBatchSize(batchSize);
+    factory.setWidth(width);
+    factory.setHeight(height);
+    factory.setZ(z);
 
     return factory.buildLayer();
 }
 
-std::string FlattenLayerParser::parseBack(FlattenLayer layer)
+std::string FlattenLayerParser::parseBack(FlattenLayer* layer)
 {
     std::string output = "";
     output += LayerParser::saveGeneralInformation(layer);

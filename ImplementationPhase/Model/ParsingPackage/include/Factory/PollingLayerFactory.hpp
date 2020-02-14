@@ -9,10 +9,10 @@
 class PollingLayerFactory : public LayerFactory
 {
 public:
-	NetworkLayer buildLayer() override;
-	PollingLayerFactory setType(PollingType type);
-	PollingLayerFactory setSize(int size);
-	PollingLayerFactory setStride(int stride);
+	NetworkLayer* buildLayer() override;
+	PollingLayerFactory* setType(PollingType type);
+	PollingLayerFactory* setSize(int size);
+	PollingLayerFactory* setStride(int stride);
 
 private:
 	PollingType type;

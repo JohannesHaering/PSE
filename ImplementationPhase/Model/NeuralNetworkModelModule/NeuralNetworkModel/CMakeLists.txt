@@ -6,6 +6,8 @@ project(NeuralNetworkModulePackage C CXX)
 add_library(LAYERTYPE "include/LayerType.hpp")
 target_include_directories(LAYERTYPE PUBLIC "include/")
 
+add_library(MATRIXDEFINE "include/MatrixDefine.hpp")
+
 add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
 

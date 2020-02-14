@@ -1,10 +1,12 @@
 #include "ReLuLayer.hpp"
+#include "Activation.hpp"
 #include <vector>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 ReLuLayer::ReLuLayer()
 {
   layerType = LayerType::RELU;
+  ActivationLayer::activationType = Activation::RELU;
 }
 
 

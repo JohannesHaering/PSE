@@ -1,4 +1,5 @@
 #include "SoftmaxLayer.hpp"
+#include "Activation.hpp"
 #include <vector>
 #include <cmath>
 
@@ -7,6 +8,7 @@
 SoftmaxLayer::SoftmaxLayer()
 {
   layerType = LayerType::SOFTMAX;
+  ActivationLayer::activationType = Activation::SOFTMAX;
 }
 
 

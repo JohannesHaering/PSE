@@ -33,7 +33,34 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 		throw std::invalid_argument("Wrong format");
 
 	std::string batchSizeString = *(--secondLine.end());
-	batchSize = std::stof(batchSizeString.c_str());
+	batchSize = ::atoi(batchSizeString.c_str());
+
+	++it;
+	std::list<std::string> thirdLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*thirdLine.begin()).compare(WIDTH))
+		throw std::invalid_argument("Wrong format");
+
+	std::string widthString = *(--thirdLine.end());
+	width = ::atoi(widthString.c_str());
+
+	++it;
+	std::list<std::string> fourthLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*fourthLine.begin()).compare(HEIGHT))
+		throw std::invalid_argument("Wrong format");
+
+	std::string heightString = *(--fourthLine.end());
+	height = ::atoi(heightString.c_str());
+
+	++it;
+	std::list<std::string> fithLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*fithLine.begin()).compare(Z))
+		throw std::invalid_argument("Wrong format");
+
+	std::string zString = *(--fithLine.end());
+	z = ::atoi(zString.c_str());
 
 }
 
@@ -150,7 +177,7 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 	// 0 -> open bracket, next char can be a [ or a value
 	// 1 -> close bracket, next char can be ] or ,
 	// 2 -> expects close bracket or ,
- 	int state = 0;
+	int state = 0;
 	int i = 0;
 	int openBrackets = 0;
 	for (auto it = ++text.begin(); it != text.end(); ++it)
@@ -258,6 +285,19 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	output += VALUE_TYPE_DELIMETER;
 	output += std::to_string(layer->getBatchSize());
 	output += "\n";
+	output += WIDTH;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getWidth());
+	output += "\n";
+	output += HEIGHT;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getHeight());
+	output += "\n";
+	output += Z;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getZ());
+	output += "\n";
+
 	return output;
 }
 

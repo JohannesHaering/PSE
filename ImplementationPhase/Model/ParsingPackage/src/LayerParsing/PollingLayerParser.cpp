@@ -12,20 +12,19 @@
 #include <string>
 #include <stdexcept>
 
-NetworkLayer PollingLayerParser::parse(std::string toParse)
+NetworkLayer* PollingLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
 
     PollingLayerFactory factory = PollingLayerFactory();
-    factory.setName(LayerParserDistribution().POLLING);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
 	std::list<std::string> var = LineBreakParser::splitIntoLines(toParse);
-    auto it = var.begin();
+    std::list<std::string>::iterator it = var.begin();
     ++it;
 
 	std::list<std::string> val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
-    auto parts1It = val.begin();
+    std::list<std::string>::iterator parts1It = val.begin();
     if (*parts1It != SIZE)
         throw std::invalid_argument("Wrong format");
     ++parts1It;
@@ -33,7 +32,7 @@ NetworkLayer PollingLayerParser::parse(std::string toParse)
     ++it;
 
 	val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
-    auto parts2It = val.begin();
+    std::list<std::string>::iterator parts2It = val.begin();
     if (*parts2It != STRIDE)
         throw std::invalid_argument("Wrong format");
     ++parts2It;
@@ -41,7 +40,7 @@ NetworkLayer PollingLayerParser::parse(std::string toParse)
     ++it;
 
 	val = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
-    auto parts3It = val.begin();
+    std::list<std::string>::iterator parts3It = val.begin();
     if (*parts3It != POLLING_TYPE)
         throw std::invalid_argument("Wrong format");
     ++parts3It;
@@ -58,21 +57,21 @@ NetworkLayer PollingLayerParser::parse(std::string toParse)
     return factory.buildLayer();
 }
 
-std::string PollingLayerParser::parseBack(PollingLayer layer)
+std::string PollingLayerParser::parseBack(PollingLayer* layer)
 {
     std::string output = "";
     output += LayerParser::saveGeneralInformation(layer);
     output += SIZE;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer.getSize());
+    output += std::to_string(layer->getSize());
     output += "\n";
     output += STRIDE;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer.getStride());
+    output += std::to_string(layer->getStride());
     output += "\n";
     output += POLLING_TYPE;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    switch (layer.getType())
+    switch (layer->getType())
     {
     case PollingType::MAX:
         output += "max";

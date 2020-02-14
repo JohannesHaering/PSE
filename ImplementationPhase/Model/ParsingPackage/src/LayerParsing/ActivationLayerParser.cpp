@@ -12,12 +12,11 @@
 #include <string>
 #include <stdexcept>
 
-NetworkLayer ActivationLayerParser::parse(std::string toParse)
+NetworkLayer* ActivationLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
 
     ActivationLayerFactory factory = ActivationLayerFactory();
-    factory.setName(LayerParserDistribution().ACTIVATION);
     factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
@@ -86,14 +85,14 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
     }
 }
 
-std::string ActivationLayerParser::parseBack(ActivationLayer layer)
+std::string ActivationLayerParser::parseBack(ActivationLayer* layer)
 {
     std::string output = "";
     output += LayerParser::saveGeneralInformation(layer);
     output += USED_FUNCTION;
     output += LayerParser::VALUE_TYPE_DELIMETER;
 
-    switch (layer.getFunction())
+    switch (layer->getActivationType())
     {
     case Activation::SIGMOID:
         output += SIGMOID;
@@ -110,12 +109,12 @@ std::string ActivationLayerParser::parseBack(ActivationLayer layer)
     case Activation::LEAKING_RELU:
         output += LEAKING_RELU;
         output += "\n";
-        output += saveAlpha(layer.getAlpha());
+        output += saveAlpha(0.01f);
         break;
     case Activation::PARAMETRIC_RELU:
         output += PARAMETRIC_RELU;
         output += "\n";
-        output += saveAlpha(layer.getAlpha());
+        output += saveAlpha(0.01f);
         break;
     case Activation::SOFTMAX:
         output += SOFTMAX;

@@ -1,7 +1,7 @@
 #ifndef ACTIVATION_H_
 #define ACTIVATION_H_
 
-enum Activation {
+enum class Activation {
   SIGMOID,
   TANH,
   RELU,

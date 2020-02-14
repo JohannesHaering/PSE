@@ -7,18 +7,19 @@
 #include "LayerParserDistribution.hpp"
 #include "LineBreakParser.hpp"
 #include "Parser.hpp"
+#include "MatrixDefine.hpp"
 
 #include <string>
 #include <list>
 #include <stdexcept>
 
-NetworkLayer ConvolutionalLayerParser::parse(std::string toParse)
+NetworkLayer* ConvolutionalLayerParser::parse(std::string toParse)
 {
     LayerParser::extractGeneralInformation(toParse);
 
     ConvolutionalLayerFactory factory = ConvolutionalLayerFactory();
-    factory.setName(LayerParserDistribution().CONVOLUTIONAL);
     factory.setInputDimensions(LayerParser::inputDimensions);
+    factory.setBatchSize(batchSize);
 
     std::list<std::string> lines = LineBreakParser<NetworkLayer>::splitIntoLines(toParse);
     auto it = lines.begin();
@@ -43,28 +44,28 @@ NetworkLayer ConvolutionalLayerParser::parse(std::string toParse)
     if(*parts3It != WEIGHTS_TENSOR)
         throw std::invalid_argument("Wrong format");
 
-    auto valuePart = *(++parts3It);
-    auto tensor = LayerParser::parse4DFloatArray(valuePart);
+    std::string valuePart = *(++parts3It);
+    TENSOR(float) tensor = LayerParser::parse4DFloatArray(valuePart);
 
     factory.setWeightTensors(tensor);
 
     return factory.buildLayer();
 }
 
-std::string ConvolutionalLayerParser::parseBack(ConvolutionLayer layer){
+std::string ConvolutionalLayerParser::parseBack(ConvolutionLayer* layer){
     std::string output = "";
     output += saveGeneralInformation(layer);
     output += STRIDE;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer.getStride());
+    output += std::to_string(layer->getStride());
     output += "\n";
     output += PADDING;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer.getPadding());
+    output += std::to_string(layer->getPadding());
     output += "\n";
     output += WEIGHTS_TENSOR;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += LayerParser::save4DFloatArray(layer.getWeightsTensor());
+    output += LayerParser::save4DFloatArray(layer->getWeightsTensor());
     output += "\n";
 	return output;
 }

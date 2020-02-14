@@ -13,8 +13,8 @@
 class PollingLayerParser : public LayerParser
 {
 public:
-    NetworkLayer parse(std::string toParse) override;
-    std::string parseBack(PollingLayer layer);
+    NetworkLayer* parse(std::string toParse) override;
+    std::string parseBack(PollingLayer* layer);
 
 private:
     const std::string SIZE = "size";

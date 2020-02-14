@@ -12,8 +12,8 @@
 class ConvolutionalLayerParser : public LayerParser
 {
 public:
-    NetworkLayer parse(std::string toParse) override;
-    std::string parseBack(ConvolutionLayer layer);
+    NetworkLayer* parse(std::string toParse) override;
+    std::string parseBack(ConvolutionLayer* layer);
 
 private:
     const std::string WEIGHTS_TENSOR = "tensor";
