@@ -42,8 +42,8 @@ target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY)
 #add_library(TYPE_ENUMERATIONS_NN INTERFACE)
 #target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")
 
-add_library(MATRIX_DEFINE INTERFACE)
-target_sources(MATRIX_DEFINE INTERFACE "include/MatrixDefine.hpp")
+add_library(MATRIX_DEFINE "include/MatrixDefine.hpp")
+target_include_directories(RELULAYER PUBLIC "include/")
 
 add_library(NETWORKLAYERSTRATEGY "src/NetworkLayerStrategies/NetworkLayerStrategy.cpp" "include/NetworkLayerStrategies/NetworkLayerStrategy.hpp")
 target_include_directories(NETWORKLAYERSTRATEGY PUBLIC "include/")
