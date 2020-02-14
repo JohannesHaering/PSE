@@ -6,6 +6,10 @@ NeuralNetworkAdapter::NeuralNetworkAdapter(NeuralNetwork neuralNetwork) : neural
 
 void NeuralNetworkAdapter::addLayer(NetworkLayer *layer) { neuralNetwork.addLayer(layer); }
 
+std::list<NetworkLayer*>::iterator NeuralNetworkAdapter::begin() { return neuralNetwork.begin(); }
+
+std::list<NetworkLayer*>::iterator NeuralNetworkAdapter::end() { return neuralNetwork.end(); }
+
 NetworkLayer *NeuralNetworkAdapter::getFirstLayer() { return neuralNetwork.getFirstLayer(); }
 
 NetworkLayer *NeuralNetworkAdapter::getLastLayer() { return neuralNetwork.getLastLayer(); }
@@ -17,3 +21,13 @@ NetworkLayer *NeuralNetworkAdapter::getPreviousLayer() { return neuralNetwork.ge
 std::string NeuralNetworkAdapter::getName() { return neuralNetwork.getName(); }
 
 int NeuralNetworkAdapter::getLayerCount() { return neuralNetwork.getLayerCount(); }
+
+int NeuralNetworkAdapter::getWidth() { return neuralNetwork.getWidth(); }
+
+int NeuralNetworkAdapter::getHeight() { return neuralNetwork.getHeight(); }
+
+int NeuralNetworkAdapter::getChannels() { return neuralNetwork.getChannels(); }
+
+NeuralNetwork NeuralNetworkAdapter::getNeuralNetwork() { return neuralNetwork; }
+
+std::list<std::string> NeuralNetworkAdapter::getLabels() { return neuralNetwork.getLabels(); }

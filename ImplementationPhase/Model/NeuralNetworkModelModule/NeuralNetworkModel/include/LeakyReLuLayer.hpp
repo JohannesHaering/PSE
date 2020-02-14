@@ -5,9 +5,10 @@
 #include <vector>
 #include "ActivationLayer.hpp"
 
-class LeakyReluLayer : public ActivationLayer {
+class LeakyReLuLayer : public ActivationLayer {
 
   public:
+    LeakyReLuLayer();
     std::vector<float> forward(std::vector<float> net);
 	  std::vector<float> backprob(std::vector<float> feedback);
 };

@@ -29,17 +29,31 @@ NetworkLayer* DenseLayerParser::parse(std::string toParse)
 		throw std::invalid_argument("Wrong format");
 	++parts1It;
 	factory.setMatrix(LayerParser::parse2DFloatArray(*parts1It));
+	++it;
+
+	std::list<std::string> val2 = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
+	auto parts2It = val2.begin();
+	if (*parts2It != BIASES)
+		throw std::invalid_argument("Wrong format");
+	++parts1It;
+	factory.setBiases(LayerParser::parseFloatArray(*parts2It));
 
 	return factory.buildLayer();
 }
 
-std::string DenseLayerParser::parseBack(DenseLayer layer)
+std::string DenseLayerParser::parseBack(NetworkLayer* layer)
 {
+  DenseLayer* denselayer = (DenseLayer*)layer;
 	std::string output = "";
 	output += saveGeneralInformation(layer);
 	output += WEIGHTS_TENSOR;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
-	output += LayerParser::save2DFloatArray(layer.getMatrix());
+	output += LayerParser::save2DFloatArray(denselayer->get_weights());
 	output += "\n";
+	output += BIASES;
+	output += LayerParser::VALUE_TYPE_DELIMETER;
+	output += LayerParser::saveFloatArray(denselayer->get_biase());
+	output += "\n";
+
 	return output;
 }

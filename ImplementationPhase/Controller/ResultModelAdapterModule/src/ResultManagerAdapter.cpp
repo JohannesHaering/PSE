@@ -6,13 +6,13 @@
 
 ResultManagerAdapter::ResultManagerAdapter(ResultManager resultManager) : resultManager(resultManager){}
 
-std::list<Result> ResultManagerAdapter::getResultsByImage(std::string imageID)
+std::list<Result*> ResultManagerAdapter::getResultsByImage(std::string imageID)
 {
 	return resultManager.getResultsByImage(imageID);
 };
 
 
-std::list<Result> ResultManagerAdapter::getResultsByNeuralNetwork(std::string neuralNetworkID)
+std::list<Result*> ResultManagerAdapter::getResultsByNeuralNetwork(std::string neuralNetworkID)
 {
 	return resultManager.getResultsByNeuralNetwork(neuralNetworkID);
 };
@@ -22,12 +22,12 @@ Result* ResultManagerAdapter::getSingleResult(std::string imageID, std::string n
 	return resultManager.getSingleResult(imageID, neuralNetworkID);
 };
 
-void ResultManagerAdapter::addResult(Result result)
+void ResultManagerAdapter::addResult(Result* result)
 {
 	resultManager.addResult(result);
 };
 
-void ResultManagerAdapter::addResults(std::list<Result> results)
+void ResultManagerAdapter::addResults(std::list<Result*> results)
 {
 	resultManager.addResults(results);
 };

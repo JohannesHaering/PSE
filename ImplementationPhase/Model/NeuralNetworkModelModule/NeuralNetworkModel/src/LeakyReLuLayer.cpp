@@ -3,6 +3,11 @@
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 
+LeakyReLuLayer::LeakyReLuLayer()
+{
+  layerType = LayerType::LEAKYRELU;
+}
+
 std::vector<float> LeakyReLuLayer::forward(std::vector<float> net)
 {
 	output = std::vector<float>(net.size());

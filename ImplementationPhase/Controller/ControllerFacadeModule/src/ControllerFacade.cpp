@@ -21,6 +21,7 @@
 #include "ControllerFacade.hpp"
 #include "InferencePageAdapter.hpp"
 #include "ViewFacade.hpp"
+#include "UpdateResultHandler.hpp"
 #include <iostream>
 
 ControllerFacade* ControllerFacade::instance = 0;
@@ -56,6 +57,8 @@ void ControllerFacade::newResultClassification(){ newResultHandlerClassification
 void ControllerFacade::newPredictionClassification(){ predictionHandlerClassification->onAction(); }
 
 void ControllerFacade::searchDevicesClassification() { deviceHandlerClassification->onAction(); }
+
+void ControllerFacade::updateResultsClassification() { resultUpdaterClassification->onAction(); }
 
 // Detection Methods
 //void ControllerFacade::startProcessDetection(){ detectionInferencer->startProcess(); }
@@ -106,12 +109,13 @@ ControllerFacade::ControllerFacade() {
     neuralNetworkHandlerClassification = new NeuralNetworkHandler(classificationInferencer);
     startHandlerClassification = new StartHandler(classificationInferencer);
     nnNextHandlerClassification = new NextHandler(neuralNetworkPager);
-	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);
-	imgNextHandlerClassification = new NextHandler(imagePager);
-	imgPrevHandlerClassification = new PrevHandler(imagePager);
+  	nnPrevHandlerClassification = new PrevHandler(neuralNetworkPager);
+  	imgNextHandlerClassification = new NextHandler(imagePager);
+  	imgPrevHandlerClassification = new PrevHandler(imagePager);
     newResultHandlerClassification = new NewResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     predictionHandlerClassification = new PredictionHandler(classificationPage);
     deviceHandlerClassification = new DeviceHandler(classificationPage);
+	resultUpdaterClassification = new UpdateResultHandler(classificationInferencer, neuralNetworkPager, imagePager);
     // Setup Detection
   /*
   InferencePageAdapter detectionPage = *view->getObjectDetection();

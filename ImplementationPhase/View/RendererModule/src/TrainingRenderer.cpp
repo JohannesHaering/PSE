@@ -17,13 +17,13 @@ QPixmap TrainingRenderer::drawGraphic(std::vector<float> pointsArrayTest, std::v
     series->setColor(Qt::red);
     for(std::vector<float>::iterator it = pointsArrayTest.begin(); it != pointsArrayTest.end(); ++it) {
         i++;
-        QPoint point(i*(width/pointsArrayTest.size()),*it * 100);
+        QPoint point(i*(width/(pointsArrayTest.size() + 1)),*it * 100);
         series->append(point);
     }
     int j = 0;
     for(std::vector<float>::iterator it = pointsArrayTraining.begin(); it != pointsArrayTraining.end(); ++it) {
         j++;
-        QPoint point(j*(width/pointsArrayTest.size()), *it * 100);
+        QPoint point(j*(width/(pointsArrayTest.size() + 1)), *it * 100);
         seriesTraining->append(point);
     }
     QChartView* chartView = new QChartView();

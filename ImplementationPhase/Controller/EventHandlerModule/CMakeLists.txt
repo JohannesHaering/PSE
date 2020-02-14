@@ -39,11 +39,11 @@ target_link_libraries(NEWTRAINSTEPHANDLER PUBLIC VIEW_MODULE)
 
 add_library(NEXTHANDLER "src/NextHandler.cpp" "include/NextHandler.hpp")
 target_include_directories(NEXTHANDLER PUBLIC "include/")
-target_link_libraries(NEXTHANDLER PUBLIC PAGER)
+target_link_libraries(NEXTHANDLER PUBLIC PAGER INFERENCINGDISTRIBUTORCLASSIFICATION)
 
 add_library(PREVHANDLER "src/PrevHandler.cpp" "include/PrevHandler.hpp")
 target_include_directories(PREVHANDLER PUBLIC "include/")
-target_link_libraries(PREVHANDLER PUBLIC PAGER)
+target_link_libraries(PREVHANDLER PUBLIC PAGER INFERENCINGDISTRIBUTORCLASSIFICATION)
 
 add_library(PREDICTIONHANDLER "src/PredictionHandler.cpp" "include/PredictionHandler.hpp")
 target_include_directories(PREDICTIONHANDLER PUBLIC "include/")
@@ -59,6 +59,10 @@ target_link_libraries(SAVERESULTHANDLER PUBLIC INFERENCINGDISTRIBUTOR)
 target_link_libraries(SAVERESULTHANDLER PUBLIC NEURALNETWORKPAGER)
 target_link_libraries(SAVERESULTHANDLER PUBLIC IMAGEPAGER)
 target_link_libraries(SAVERESULTHANDLER PUBLIC VIEW_MODULE)
+
+add_library(UPDATERESULTHANDLER "src/UpdateResultHandler.cpp" "include/UpdateResultHandler.hpp")
+target_include_directories(UPDATERESULTHANDLER PUBLIC "include/")
+target_link_libraries(UPDATERESULTHANDLER PUBLIC SAVERESULTHANDLER)
 
 add_library(STARTHANDLER "src/StartHandler.cpp" "include/StartHandler.hpp")
 target_include_directories(STARTHANDLER PUBLIC "include/")

@@ -28,6 +28,7 @@ class NeuralNetwork {
     // NetworkLayer *currentLayer;
     // NetworkLayer *lastLayer;
     std::list<NetworkLayer*>::iterator it;
+    std::list<std::string> labels;
 
   public:
     NeuralNetwork();
@@ -36,10 +37,14 @@ class NeuralNetwork {
     void addLayer(NetworkLayer* layer);
     void setName(std::string name);
     void setInputDimensions(int width, int height, int channels);
+    void setLabels(std::list<std::string> labels);
     std::string getName();
     int getWidth();
     int getHeight();
     int getChannels();
+    std::list<std::string> getLabels();
+    std::list<NetworkLayer*>::iterator begin();
+    std::list<NetworkLayer*>::iterator end();
     NetworkLayer* getFirstLayer();
     NetworkLayer* getLastLayer();
     NetworkLayer* getNextLayer();

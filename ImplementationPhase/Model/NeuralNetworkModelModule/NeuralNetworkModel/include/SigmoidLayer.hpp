@@ -8,6 +8,7 @@
 class SigmoidLayer : public ActivationLayer {
 
   public:
+    SigmoidLayer();
     std::vector<float> forward(std::vector<float> net);
     std::vector<float> backprob(std::vector<float> feedback);
 };

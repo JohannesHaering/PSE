@@ -15,6 +15,5 @@ NewTrainStepHandler::NewTrainStepHandler() : page(ViewFacade::getInstance()->get
 * Training and test must be the same size
 */
 void NewTrainStepHandler::newAccuracyPoints(std::vector<float> training, std::vector<float> test) {
-    assert(training.size() == test.size());
     page->newTrainingFinished(training, test);
 }

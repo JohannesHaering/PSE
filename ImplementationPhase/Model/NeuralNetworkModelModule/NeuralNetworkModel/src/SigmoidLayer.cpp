@@ -2,6 +2,11 @@
 #include <vector>
 #include <cmath>
 
+SigmoidLayer::SigmoidLayer()
+{
+  layerType = LayerType::SIGMOID;
+}
+
 std::vector<float>  SigmoidLayer::forward(std::vector<float> net)
 {
 	output = std::vector<float>(net.size());

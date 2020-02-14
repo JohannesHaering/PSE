@@ -1,12 +1,13 @@
 #include "Pager.hpp"
 #include "NextHandler.hpp"
 #include "ViewFacade.hpp"
+#include "ControllerFacade.hpp"
 #include <stdexcept>
 
 
-NextHandler::NextHandler(Pager* pager) 
+NextHandler::NextHandler(Pager* pager)    
 { 
-	this->pager = pager; 
+	  this->pager = pager;
 }
 
 /*
@@ -18,6 +19,7 @@ void NextHandler::onAction()
 	try 
 	{
 		pager->next();
+		ControllerFacade::getInstance()->updateResultsClassification();
 	}
 	catch (const std::invalid_argument& ia)
 	{

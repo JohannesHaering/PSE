@@ -84,16 +84,16 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
     {
         return parseDenseLayer(toParse);
     }
-    else if (firstline.compare(SIGMOID) == 0) {
+    else if (firstLine.compare(SIGMOID) == 0) {
         return new SigmoidLayer();
     }
-    else if (firstline.compare(SOFTMAX) == 0) {
+    else if (firstLine.compare(SOFTMAX) == 0) {
         return new SoftmaxLayer();
     }
-    else if (firstline.compare(RELU) == 0) {
+    else if (firstLine.compare(RELU) == 0) {
         return new ReLuLayer();
     }
-    else if (firstline.compare(LEAKYRELU == 0)) {
+    else if (firstLine.compare(LEAKYRELU) == 0) {
         return new LeakyReLuLayer();
     }
     else
@@ -107,6 +107,21 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
     std::string output = "";
     switch ((*layer).getLayerType())
     {
+        case LayerType::DENSE:
+            output += DenseLayerParser().parseBack(dynamic_cast<DenseLayer*>(layer));
+            break;
+        case LayerType::LEAKYRELU:
+            output += "LEAKYRELU";
+            break;   
+        case LayerType::RELU:
+            output += "RELU";
+            break;
+        case LayerType::SOFTMAX:
+            output += "SOFTMAX";
+            break;         
+        case LayerType::SIGMOID:
+            output += "SIGMOID";
+            break;    
         /*
     case LayerType::ACTIVATION:
         output += ActivationLayerParser().parseBack(*dynamic_cast<ActivationLayer*>(layer));
@@ -116,9 +131,6 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
         break;
     case LayerType::CONVOLUTION:
         output += ConvolutionalLayerParser().parseBack(*dynamic_cast<ConvolutionLayer*>(layer));
-        break;
-    case LayerType::DENSE:
-        output += DenseLayerParser().parseBack(*dynamic_cast<DenseLayer*>(layer));
         break;
     case LayerType::DROPOUT:
         output += DropoutLayerParser().parseBack(*dynamic_cast<DropoutLayer*>(layer));
@@ -137,12 +149,12 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
         break;
     case LayerType::POLLING:
         output += PollingLayerParser().parseBack(*dynamic_cast<PollingLayer*>(layer));
-        break;
-    }*/
+        break;*/
+    }
 	return output;
 }
 
-NetworkLayer LayerParserDistribution::parseDenseLayer(std::string toParse)
+NetworkLayer* LayerParserDistribution::parseDenseLayer(std::string toParse)
 {
     return DenseLayerParser().parse(toParse);
 }

@@ -6,12 +6,19 @@
 #include <vector>
 
 NetworkLayer* DenseLayerFactory::buildLayer()
-{
-    return new DenseLayer(name, inputDimensions, matrix);
+{   
+    DenseLayer* layer = new DenseLayer(sizeof(inputDimensions)/sizeof(int), matrix[0].size(), 0.1);
+    layer->set_weights(matrix);
+    return layer;
 }
 
 DenseLayerFactory DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
 {
     this -> matrix = matrix;
+    return *this;
+}
+
+DenseLayerFactory DenseLayerFactory::setBiases(std::vector<float> bias) {
+    this->bias = bias;
     return *this;
 }
