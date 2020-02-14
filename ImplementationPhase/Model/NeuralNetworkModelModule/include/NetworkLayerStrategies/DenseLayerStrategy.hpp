@@ -11,9 +11,7 @@ class DenseLayerStrategy : public NetworkLayerStrategy
 protected: 
     std::vector<std::vector<float>>* weights;
 	std::vector<float>* bias;
-	std::vector<float>
 
-	float* learningRate;
 	int* inputSize;
 	int* outputSize;
 
