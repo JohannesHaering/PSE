@@ -8,6 +8,7 @@ target_include_directories(LAYERTYPE PUBLIC "include/")
 
 add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
+target_link_libraries(NEURALNETWORK PUBLIC NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER MAXPOOLLAYER)
 
 add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
@@ -17,11 +18,13 @@ add_library(ACTIVATIONLAYER "src/ActivationLayer.cpp" "include/ActivationLayer.h
 target_include_directories(ACTIVATIONLAYER PUBLIC "include/")
 target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER)
 
+add_library(MAXPOOLLAYER "src/MaxPoolLayer.cpp" "include/MaxPoolLayer.hpp")
+target_include_directories(MAXPOOLLAYER PUBLIC "include/")
+target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER)
+
 add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
 target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY)
-
-target_link_libraries(NEURALNETWORK PUBLIC NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER)
 
 add_library(SOFTMAXLAYER "src/SoftmaxLayer.cpp" "include/SoftmaxLayer.hpp")
 target_include_directories(SOFTMAXLAYER PUBLIC "include/")
