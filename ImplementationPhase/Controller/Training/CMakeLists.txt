@@ -15,6 +15,6 @@ add_library(DATASUPPLY
 "src/TrainerDataSupply.cpp" "include/TrainerDataSupply.hpp"
 "src/TrainerClassificationDataSupply.cpp" "include/TrainerClassificationDataSupply.hpp"
 "include/DataType.hpp")
-target_link_libraries(DATASUPPLY PUBLIC RESULT MODELFACADE MNISTDATAPARSER EVENNOTEVENPARSER IMAGEFACADE)
+target_link_libraries(DATASUPPLY PUBLIC RESULT MODELFACADE MNISTDATAPARSER EVENNOTEVENPARSER IMAGEFACADE MATRIXDEFINE)
 target_include_directories(DATASUPPLY PUBLIC "include/")
 

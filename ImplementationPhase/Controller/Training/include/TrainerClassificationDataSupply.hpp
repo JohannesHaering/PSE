@@ -6,6 +6,7 @@
 #include "TrainerDataSupply.hpp"
 #include "DataType.hpp"
 #include "ClassificationResult.hpp"
+#include "MatrixDefine.hpp"
 
 #include <string>
 #include <list>
@@ -19,7 +20,10 @@ public:
     TrainerClassificationDataSupply(DATATYPE type);
 
     std::vector<float> getOutputVector(std::string id) override;
-    std::vector<float> createOutputVector(Result result) override;
+    std::vector<float> createOutputVector(ClassificationResult result);
+    MatrixDefine::Tensor(float) getTrainingBatchInput(int batchSize, int numb) override;
+    MatrixDefine::Tensor(float) getTrainingBatchOutput(int batchSize, int numb) override;
+
     int getAmountClasses();
 
 protected:
@@ -28,10 +32,10 @@ protected:
 private:
     ClassificationResult createResult(int i, std::vector<float> label);
 
-    std::list<ClassificationResult> dataSet;
-    std::list<ClassificationResult*> dataSetTraining;
-    std::list<ClassificationResult*> dataSetTest;
+    std::vector<ClassificationResult> dataSet;
+    std::vector<ClassificationResult*> dataSetTraining;
+    std::vector<ClassificationResult*> dataSetTest;
     std::map<std::string, ClassificationResult*> dataMap;
-    std::list<std::string> classnames;
+    std::vector<std::string> classnames;
 };
 #endif

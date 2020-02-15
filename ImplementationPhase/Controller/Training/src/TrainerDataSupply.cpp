@@ -7,7 +7,7 @@
 #include <map>
 #include <opencv2/opencv.hpp>
 
-TrainerDataSupply::TrainerDataSupply(std::list<std::string> ids, std::string directory, int width, int height, int channels)
+TrainerDataSupply::TrainerDataSupply(std::string directory, int width, int height, int channels)
 {
     ImageFacade facade = ImageFacade();
     std::list<std::string> files = facade.readDirectory(directory);
