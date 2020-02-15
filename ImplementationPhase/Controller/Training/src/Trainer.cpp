@@ -8,7 +8,7 @@
 #include "NeuralNetworkFacade.hpp"
 
 
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), batchSize(batchSize), trainer(CompleteTrainer(neuralNetwork, 0.01f, batchSize))
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f))
 {
     //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
@@ -16,9 +16,6 @@ Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, st
     //TODO somehow update this to use trainData string and replace trainData string by somewhat smarter
     loadDataset();
 }
-
-//Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData)
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : Trainer(neuralNetwork, desiredPrecision, trainData, 16) {}
 
 
 void Trainer::loadDataset()
@@ -52,10 +49,13 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    for(int i = 0; i < batchSize*5; i++)
+    for(int b = 0; b < 5; b++) //train on 5 batches
     {
-      trainer.forward(dataset_train_images[i]);
-      trainer.train(dataset_train_labels[i]);
+      //supplier
+      trainer.forward(supplier->getTrainImageBatch());
+      trainer.train(supplier->getTrainLabelBatch());
+      //trainer.forward(dataset_train_images[i]);
+      //trainer.train(dataset_train_labels[i]);
 
       /*if (i % 10 == 0){
         trainer.forward(dataset_test_images[i]);

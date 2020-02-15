@@ -5,19 +5,21 @@
 #include "NetworkLayer.hpp"
 #include "MatrixDefine.hpp"
 
-class ConvolutionLayer  : public NetworkLayer {
+class ConvolutionLayer  : public ConnectionLayer {
 
   private:
     TENSOR(float) weightsTensor;
+    int filterSizeX;
+    int filterSizeY;
+    int filterSizeZ;
+    int numFilters;
     int stride;
     int padding;
 
   public:
     ConvolutionLayer();
-    ConvolutionLayer(std::string name, int* inputDimensions, TENSOR(float) weights, int stride, int padding);
-    void setWeightsTensor(TENSOR(float) weights);
-    void setStride(int stride);
-    void setPadding(int padding);
+    ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding);
+    //void setWeightsTensor(TENSOR(float) weights);
     TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();
