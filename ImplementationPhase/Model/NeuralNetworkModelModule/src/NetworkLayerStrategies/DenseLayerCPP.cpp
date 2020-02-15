@@ -15,7 +15,7 @@ outputSize(ouputSize)
 
 MatrixDefine::TENSOR(float) DenseLayerCPP::forward(MatrixDefine::TENSOR new_input)
 {
-    MatrixDefine::TENSOR(float) output = MatrixDefine::Tensor(float)[new_input.size()][0][0][*outputSize];
+    MatrixDefine::TENSOR(float) output = MatrixDefine::TENSOR(float)[new_input.size()][0][0][*outputSize];
     for (int batchIteration = 0; batchIteration < new_input.size(); batchIteration++) {
         output[batchIteration][0][0] = *bias;//deep copy?
         for (int i = 0; i < *inputSize; i++)
