@@ -34,14 +34,14 @@ std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int widt
 	return images;
 }
 
-std::vector<TENSOR(float)> ImageFacade::getImages(std::string directory, int batchSize, int width, int height, int channelNumb) {
+std::vector<MatrixDefine::TENSOR(float)> ImageFacade::getImages(std::string directory, int batchSize, int width, int height, int channelNumb) {
 	std::list<std::string> paths = ModelFacade::readDirectory(directory);
 	std::vector<std::vector<float>> images = std::vector<std::vector<float>>();
 
 	for (std::list<std::string>::iterator it = paths.begin(); it != paths.end(); ++it)
 		images.push_back(getImageGreyScale(*it, width, height, channelNumb));
 
-	std::vector<TENSOR(float)> tensors = std::vector<TENSOR(float)>();
+	std::vector<MatrixDefine::TENSOR(float)> tensors = std::vector<MatrixDefine::TENSOR(float)>();
 
 	int batch = 0;
 	std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
