@@ -5,6 +5,7 @@
 #include "ClassificationResult.hpp"
 #include "TextFileIO.hpp"
 #include "Data.hpp"
+#include "MatrixDefine.hpp"
 
 #include <string>
 #include <vector>
@@ -34,4 +35,14 @@ bool ResultFacade::writeClassificationResult(ClassificationResult result, std::s
 {
     std::string output = ClassificationResultParser().parseBack(result);
     return TextFileIO().writeFile(path, Data(output));
+}
+
+std::vector<ClassificationResult*> ResultFacade::parseClassificationResult(std::string neuralNetworkID, std::list<std::string> imageIDs, std::list<std::string> classNames, TENSOR(float) tensor) {
+    std::vector<ClassificationResult*> results = std::vector<ClassificationResult*>();
+    std::list<std::string>::iterator it = imageIDs.begin();
+    for (int i = 0; i < results.size(); i++) {
+        results.push_back(parseClassificationResult(*it, neuralNetworkID, classNames, tensor.at(i).at(0).at(0)));
+    }
+
+    return results;
 }
