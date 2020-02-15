@@ -69,54 +69,71 @@ TENSOR(float) ConvolutionLayer::forward(TENSOR(float) input)
     for (int filter = 0; filter < numFilters; filter++) 
     {
       //do convolution for each filter in each batchIteration
-      weightsTensor[b][filter] = Convolute(input[b], weightsTensor[filter], stride, padding);
+      output_forward[b][filter] = Convolute(input[b], weightsTensor[filter], stride, padding);
     }
 
   }
+  return output_forward;
 
 }
 
 
-float filterentryError(
+
+
+// Backprop from here on
+
+float calcWeightUpdate(TENSOR(float) input, TENSOR(float) feedback, int float, int filterPosZ, int filterPosY, int filterPosX)
+{
+  float update = 0;
+  for (int b = 0; b < input.size(); b++)
+  {
+    for (int ZPos = 0; ZPos < feedback[0].size(); ZPos++)
+      for (int YPos = 0; YPos < feedback[0][0].size(); YPos++)
+        for (int XPos = 0; XPos < feedback[0][0][0].size(); XPos++)
+        {
+          update += input[b][ZPos + filterPosZ][YPos + filterPosY][XPos + filterPosX] * feedback[b][ZPos][YPos][XPos];
+        }
+  }
+  return update;
+
+
+}
+
+
+MATRIX_3D backpropError(int b)
+{
+  MATRIX_3D(float) 3D_result = MATRIX_3D(float)(input[0].size(), MATRIX_2D(float)(input[0][0].size(), std::vector<float>(input[0][0][0].size(), 0.0f)));
+    for (int filter = 0; filter < numFilters; filter++)
+      for (int filterPosZ = 0; filterPosZ < ; filterPosZ++)
+        for (int filterPosY = 0; filterPosY < ; filterPosY++)
+          for (int filterPoxX = 0; filterPoxX < ; filterPoxX++)
+            for (int feedbackPosY = 0; feedbackPosY < ; feedbackPosY++)
+              for (int feedbackPosX = 0; feedbackPosX < ; feedbackPosX++)
+              {
+                3D_result[filterPosZ][filterPosY + feedbackPosY][filterPosX + feedbackPosX] += 
+                  weightsTensor[filter][filterPosZ][filterPosY][filterPosX] * feedback[b][filter][feedbackPosY][feedbackPosX];
+              }
+    return 3D_result;
+}
+
 
 TENSOR(float) ConvolutionLayer::backward(TENSOR(float) feedback, float learningRate)
 {
-  output_backward = TENSOR(float)(input.size(), MATRIX_3D(float)(input[0].size(), MATRIX_2D(float)(input[0][0].size(), std::vector<float>(input[0][0][0].size()))));
-  TENSOR(float) weightsNew = weightsTensor;
+  output_backward = TENSOR(float)(input.size());
 
-  //calc output_backward
-  for (int b = 0; b < input.size(); b++)
-  {
-    
-
-
-  }
-
-  float update;
+  //calc output_backward new2
+  for (int b = 0; b < output_backward.size(); b++)
+      output_backward[b] = backpropError(b);
+  
   //calc weight updates
-  for (int b = 0; b < input.size(); b++)
-  {
-    //update = 0;
     for (int filter = 0; filter < numFilters; filter++)
-    {
-      for (int filterY = 0; filterY < filterSizeY; filterY++)
-      {
-        for (int filterX = 0; filterX < filterSizeX; filterX++)
-        {
-          oldWeight = weightsTensor[b][filter][filterY][filterX];
-          weightsNew -= filterentryError(input[b], feedback[b], oldWeight, filter, filterX, filterY) * learningRate;    
-        }
-      }      
-
-    }
-
-
-
-  }
-
-
-
-  weightsTensor = weightsNew;
+      for (int filterZ = 0; filterZ < filterSizeZ; filterZ++)
+        for (int filterY = 0; filterY < filterSizeY; filterY++)
+          for (int filterX = 0; filterX < filterSizeX; filterX++)
+          {
+            // only update every weight once :)
+            weightsTensor[filter][filterZ][filterY][filterX] -= calcWeightUpdate(input, feedback, filter, filterZ, filterY, filterX) * learningRate;    
+          }
 
   return output_backward;
 }

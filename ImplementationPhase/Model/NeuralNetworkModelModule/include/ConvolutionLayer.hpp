@@ -19,7 +19,6 @@ class ConvolutionLayer  : public ConnectionLayer {
   public:
     ConvolutionLayer();
     ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding);
-    //void setWeightsTensor(TENSOR(float) weights);
     TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();
