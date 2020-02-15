@@ -49,15 +49,16 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
   	std::list<Result*> resultList;
     ImageFacade* imagefacade = new ImageFacade();
     ResultFacade* resultfacade = new ResultFacade();
-    std::vector<float> currentInputVector;
-    std::vector<float> outputvector;
+    MATRIX_3D currentInput;
+    TENSOR(float) output;
     Executor* executor;
     for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
-        currentInputVector = imagefacade->getImageGreyScale(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
+        currentInput = imagefacade->getImageGreyScale(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
+        TENSOR(float) input = TENSOR(float)(1, currentInput);
         executor = new Executor(&neuralNetworkList[i]);
-        outputvector = executor->execute(currentInputVector);
-        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), outputvector);
+        output = executor->execute(input);
+        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), output[0][0][0]);
         resultList.push_back(newres);
       }
     }

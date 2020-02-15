@@ -11,21 +11,19 @@
 
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), batchSize(batchSize), trainer(CompleteTrainer(neuralNetwork, 0.01f, batchSize))
 {
-    //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
     testAcc = std::vector<float>();    
     supplyer = new TrainerClassificationDataSupply(DATATYPE::MNIST);
 }
 
-//Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData)
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : Trainer(neuralNetwork, desiredPrecision, trainData, 16) {}
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : Trainer(neuralNetwork, desiredPrecision, trainData, batchSize) {}
 
 void Trainer::startTraining()
 {
-    for(int i = 0; i < batchSize*5; i++)
+    for(int i = 0; i < batchSize; i++)
     {
-      trainer.forward(supplyer->getImage(std::to_string(i)));
-      trainer.train(supplyer->getOutputVector(std::to_string(i)));
+      trainer.forward(supplyer->getTrainingBatchInput(batchSize, i));
+      trainer.train(supplyer->getTrainingBatchOutput(batchSize, i));
 
       /*if (i % 10 == 0){
         trainer.forward(dataset_test_images[i]);

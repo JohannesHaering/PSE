@@ -19,7 +19,7 @@ private:
 	float getNewTrainingsAccuracy();
 	float getNewTestAccuracy();
 
-	int batchSize;
+	int batchSize = 16;
 	float desiredPrecision;
 	std::vector<float> testAcc;
 	std::vector<float> trainingAcc;

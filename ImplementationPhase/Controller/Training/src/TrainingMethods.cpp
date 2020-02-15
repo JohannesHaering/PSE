@@ -19,22 +19,7 @@ float TrainingMethods::getTrainingsAccuracy()
 {
     return ((float)correctTestGuesses) / ((float)size);
 }
-/*
-std::vector<float> TrainingMethods::excecuteNeuralNetwork(NeuralNetwork toExcecute, cv::Mat image)
-{
-    std::list<NeuralNetwork> neuralNetworkList;
-    std::list<cv::Mat> imageList;
-    neuralNetworkList.push_back(toExcecute);
-    imageList.push_back(image);
 
-    Channel usedChannel = CPUChannel(DEVICE_ID, neuralNetworkList);
-    auto result = usedChannel.sendImageList(imageList);
-    
-    // get cached layer output
-
-    return supplyer->createOutputVector(result);
-}
-*/
 cv::Mat TrainingMethods::loadImage(std::string id)
 {
     return supplyer->getImage(id);

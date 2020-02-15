@@ -9,13 +9,13 @@ class CompleteTrainer
 {
 public:
 	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate, int batchSize);
-	std::vector<float> forward(std::vector<float> input);
-	void train(std::vector<float> target);
-	float calcCEError(std::vector<float> target);
+	TENSOR(float) forward(TENSOR(float) input);
+	void train(TENSOR(float) target);
+	float calcCEError(TENSOR(float) target);
 
 private:
-	std::vector<float> output;
-	std::vector<float> feedback;
+	TENSOR(float) output;
+	TENSOR(float) feedback;
 
 	int batchSize;
 	float learningRate;
