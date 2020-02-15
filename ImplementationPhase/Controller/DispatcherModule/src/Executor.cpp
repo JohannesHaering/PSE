@@ -11,9 +11,9 @@
 Executor::Executor(NeuralNetworkAdapter* neuralNetwork) : neuralNetwork(neuralNetwork) {}
 
 
-std::vector<float> Executor::execute(std::vector<float> input) {
+TENSOR(float) Executor::execute(TENSOR(float) input) {
 
-    std::vector<float> temp = input;
+    TENSOR(float) temp = input;
     NetworkLayer* lastlayer = neuralNetwork->getLastLayer();                                                                                                                                 
     for (NetworkLayer* layer = neuralNetwork->getFirstLayer();; layer = neuralNetwork->getNextLayer())
     {

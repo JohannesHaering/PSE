@@ -7,7 +7,6 @@
 #include "HighEfficiencyMode.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include "Executor.hpp"
-//#include "Device.hpp"
 #include "ClassificationResult.hpp"
 #include "ImageFacade.hpp" 
 #include "ResultFacade.hpp"
@@ -36,7 +35,6 @@ std::vector<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { retu
 
 std::list<Mode*> DispatchManager::getModeList() 
 {
-	//Todo ? I guess it's done for now
 	std::list<Mode*> modeList;
     modeList.push_back(new LowPowerMode());
     modeList.push_back(new HighEfficiencyMode());
@@ -49,8 +47,8 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
   	std::list<Result*> resultList;
     ImageFacade* imagefacade = new ImageFacade();
     ResultFacade* resultfacade = new ResultFacade();
-    std::vector<float> currentInputVector;
-    std::vector<float> outputvector;
+    TENSOR(float) currentInputVector;
+    TENSOR(float) outputvector;
     Executor* executor;
     for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {

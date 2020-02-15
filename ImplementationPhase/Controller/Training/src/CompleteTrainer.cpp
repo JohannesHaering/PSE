@@ -5,60 +5,37 @@
 #include <cmath>
 #include "LayerType.hpp"
 
-CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate, int batchSize) : neuralNetwork(neuralNetwork), learningRate(learningRate), batchSize(batchSize) 
+CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate) : neuralNetwork(neuralNetwork), learningRate(learningRate) {}
+
+
+TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 {
-  if (batchSize < 1) { std::cout <<"Error, batchSize < 1" << std::endl;}
-  if (batchSize > 1) {
-    std::cout << "updating batchSize from Layers to " << batchSize << std::endl;
-	  NetworkLayer* lastlayer = neuralNetwork->getLastLayer();
-    for (auto layer = neuralNetwork->getFirstLayer();; layer = neuralNetwork->getNextLayer())
-    {
-      if (layer->getLayerType() == LayerType::DENSE)
-        ((DenseLayer*) layer)->setBatchSize(batchSize);
-      if (layer == lastlayer) break;
-    }
-  }
-  std::cout << "finished batchSize update" << std::endl;
-}
+	TENSOR(float) tmp = input;
 
-
-std::vector<float> CompleteTrainer::forward(std::vector<float> input)
-{
-	std::vector<float> tmp = input;
-
-  int i = 0;
-  NetworkLayer *lastLayer = neuralNetwork->getLastLayer();
-  //for (auto& layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
-  for (NetworkLayer *layer = neuralNetwork->getFirstLayer();; layer = neuralNetwork->getNextLayer())
+  for (NetworkLayer *layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
   {
-    std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
+    //std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
 		output = layer->forward(tmp);
-    std::cout << "layertype: " << layer->getLayerType() << std::endl;
-    std::cout << "output size: " << output.size() << std::endl;
+    //std::cout << "layertype: " << layer->getLayerType() << std::endl;
+    //std::cout << "output size: " << output.size() << std::endl;
 		tmp = output;
-    if (layer == lastLayer) break;
 	}
   std::cout << "returning from forward" << std::endl;
 	return output;
 }
 
 
-void CompleteTrainer::train(std::vector<float> target)
+void CompleteTrainer::train(TENSOR(float) target)
 {
   std::cout << std::endl << "train in completeTrainer " <<std::endl;
-	std::vector<float> tmp = target;
-  int i = 0;
-  auto preFirst = neuralNetwork->begin();
-  preFirst--;
-  //for (auto& layer = neuralNetwork->end(); layer != preFirst ; layer--)
-  for (NetworkLayer *layer = neuralNetwork->getLastLayer();; layer = neuralNetwork->getPreviousLayer())
+	TENSOR(float) tmp = target;
+  for (NetworkLayer *layer = neuralNetwork->rbegin(); layer != neuralNetwork->rend(); layer++)
   {
-    std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
+    //std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
 		feedback = layer->backprob(tmp, learningRate);
-    std::cout << "layertype: " << layer->getLayerType() << std::endl;
-    std::cout << "feedback size: " << feedback.size() << std::endl;
+    //std::cout << "layertype: " << layer->getLayerType() << std::endl;
+    //std::cout << "feedback size: " << feedback.size() << std::endl;
 		tmp = feedback;
-    //if (layer == firstLayer) break;
 	}
 	learningRate *= 0.99;
   std::cout << "returning from train" << std::endl;
@@ -67,13 +44,19 @@ void CompleteTrainer::train(std::vector<float> target)
 
 
 
-float CompleteTrainer::calcCEError(std::vector<float> target)
+TENSOR(float) CompleteTrainer::calcCEError(TENSOR(float) target)
 {
   if (target.size() != output.size()) {
-    std::cout << "error, feedback and output size mismatch! target vs output : " << target.size() << " " << output.size() << std::endl; 
+    std::cout << "error, batchsize of target Tensor and output Tensor mismatch! target vs output : " << target.size() << " " << output.size() << std::endl; 
     return 42.0f;
   }
-	float error = 0;
-	for (int i = 0; i < output.size(); i++) error -= target[i] * output[i];
-	return error;
+  TENSOR(float) result = TENSOR(float)(target.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(1, 0.0f))));
+  for (int b = 0; b < target.size(); b++)
+  {
+	  for (int i = 0; i < target[0][0][0].size(); i++)
+    {
+      result[b][0][0][0] -= target[b][0][0][i] * output[b][0][0][i];
+    }
+  }
+	return result;
 }
