@@ -54,7 +54,7 @@ target_link_libraries(NETWORKLAYERSTRATEGY PUBLIC MATRIX_DEFINE)
 
 add_library(DENSELAYERSTRATEGY "include/NetworkLayerStrategies/DenseLayerStrategy.hpp" "src/NetworkLayerStrategies/DenseLayerCPP.cpp" "include/NetworkLayerStrategies/DenseLayerCPP.hpp")
 target_include_directories(DENSELAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies" )
-target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY)
+target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DENSELAYER)
 
 add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp")
 target_include_directories(RELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")

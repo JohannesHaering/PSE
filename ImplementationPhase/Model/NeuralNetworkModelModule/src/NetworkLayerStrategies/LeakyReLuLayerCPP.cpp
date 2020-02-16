@@ -10,7 +10,7 @@ LeakyReLuLayerCPP::LeakyReLuLayerCPP(){
 
 }
 
-TENSOR(float) LeakyReLuLayerCPP::forward(MatrixDefine::TENSOR net)
+TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR net)
 {
     TENSOR(float) output_forward = net;
     for (int b = 0; b < net.size(); b++)
@@ -21,7 +21,7 @@ TENSOR(float) LeakyReLuLayerCPP::forward(MatrixDefine::TENSOR net)
     return output;
 }
 
-TENSOR(float) LeakyReLuLayerCPP::backprob(MatrixDefine::TENSOR(float) feedback)
+TENSOR(float) LeakyReLuLayerCPP::backprob(TENSOR(float) feedback)
 {
     TENSOR(float) output_backward = feedback;
     for (int b = 0; b < feedback.size(); b++)
