@@ -47,15 +47,16 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
   	std::list<Result*> resultList;
     ImageFacade* imagefacade = new ImageFacade();
     ResultFacade* resultfacade = new ResultFacade();
-    MATRIX_3D currentInput;
+    cv::Mat image;
+    TENSOR(float) currentInput;
     TENSOR(float) output;
     Executor* executor;
     for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
-        currentInput = imagefacade->getImageGreyScale(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
-        TENSOR(float) input = TENSOR(float)(1, currentInput);
+        image = imagefacade->getImage(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
+        currentInput = imageFacade->createImageTensor({ image }, neuralNetworkList[i]->getWidth(), neuralNetworkList[i]->getHeight());
         executor = new Executor(&neuralNetworkList[i]);
-        output = executor->execute(input);
+        output = executor->execute(currentInput);
         Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), output[0][0][0]);
         resultList.push_back(newres);
       }
