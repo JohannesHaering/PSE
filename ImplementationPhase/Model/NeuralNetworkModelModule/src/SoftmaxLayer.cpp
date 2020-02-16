@@ -1,5 +1,5 @@
 #include "SoftmaxLayer.hpp"
-#include "SoftmaxLayerStrategy.hpp"
+#include "SoftmaxLayerCPP.hpp"
 #include <vector>
 #include <cmath>
 
@@ -31,7 +31,7 @@ std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels
 
 TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
 {
-  output_backward = layerStrategy->backward(feedback, output_forward);
+  output_backward = layerStrategy->backprob(feedback, output_forward);
 	return output_backward;
 }
 

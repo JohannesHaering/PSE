@@ -1,5 +1,6 @@
 #include "LeakyReLuLayer.hpp"
 #include <vector>
+#include "LeakyReLuLayerCPP.hpp"
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 LeakyReLuLayer::LeakyReLuLayer()

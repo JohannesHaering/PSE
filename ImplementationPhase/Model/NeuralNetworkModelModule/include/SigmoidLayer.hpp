@@ -12,7 +12,8 @@ class SigmoidLayer : public ActivationLayer {
 
   public:
     SigmoidLayer();
-    TENSOR(float) forward(TENSOR(float) net);
-    TENSOR(float) backprob(TENSOR(float) feedback);
+    TENSOR(float) forward(TENSOR(float) net) override;
+    TENSOR(float) backprob(TENSOR(float) feedback) override;
+    void setMode(DeviceType device, cl_int deviceID) override;
 };
 #endif

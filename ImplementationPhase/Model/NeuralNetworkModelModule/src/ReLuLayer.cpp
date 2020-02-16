@@ -20,7 +20,7 @@ TENSOR(float) ReLuLayer::forward(TENSOR(float) net)
 
 TENSOR(float) ReLuLayer::backprob(TENSOR(float) feedback)
 {
-  output_backward = layerStrategy->backward(feedback);
+  output_backward = layerStrategy->backprob(feedback);
 	return output_backward;
 }
 
