@@ -1,4 +1,4 @@
-#include "SoftmaxLayerCPP.hpp"
+#include "SigmoidLayerCPP.hpp"
 #include <vector>
 #include <math.h>
 #include <vector>
@@ -6,11 +6,11 @@
 #include <iostream>
 #include <random>
 
-SoftmaxLayerCPP::SoftmaxLayerCPP(){
+SigmoidLayerCPP::SigmoidLayerCPP(){
 
 }
 
-TENSOR(float) SoftmaxLayerCPP::forward(TENSOR(float) net)
+TENSOR(float) SigmoidLayerCPP::forward(TENSOR(float) net)
 {
     TENSOR(float) output = net;
     for (int b = 0; b < net.size(); b++)
@@ -21,7 +21,7 @@ TENSOR(float) SoftmaxLayerCPP::forward(TENSOR(float) net)
     return output;
 }
 
-TENSOR(float) SoftmaxLayerCPP::backprob(TENSOR(float) feedback)
+TENSOR(float) SigmoidLayerCPP::backprob(TENSOR(float) feedback)
 {
     TENSOR(float) output = feedback;
     for (int b = 0; b < feedback.size(); b++)
