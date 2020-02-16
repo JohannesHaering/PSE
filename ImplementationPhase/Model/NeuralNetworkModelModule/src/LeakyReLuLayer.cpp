@@ -1,26 +1,31 @@
 #include "LeakyReLuLayer.hpp"
-#include "Activation.hpp"
 #include <vector>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
-
 LeakyReLuLayer::LeakyReLuLayer()
 {
-  layerType = LayerType::LEAKYRELU;
-  ActivationLayer::activationType = Activation::LEAKING_RELU;
+  layerType = LayerType::RELU;
+  layerStrategy = LeakyReLuLayerCPP();
 }
 
-std::vector<float> LeakyReLuLayer::forward(std::vector<float> net)
+
+TENSOR(float) LeakyReLuLayer::forward(TENSOR(float) net)
 {
-	output = std::vector<float>(net.size());
-	for (int j = 0; j < net.size(); j++) output[j] = input[j] > 0 ? net[j] : 0.01*net[j];
-	return output;
+  this->net = net;
+  output_forward = layerStrategy.forward(net);
+	return output_forward;
 }
 
 
-std::vector<float> LeakyReLuLayer::backprob(std::vector<float> feedback)
+TENSOR(float) LeakyReLuLayer::backprob(TENSOR(float) feedback)
 {
-	std::vector<float> feedback_new(feedback.size());
-	for (int output_j = 0; output_j < feedback.size(); output_j++) feedback_new[output_j] = (feedback[output_j] > 0 ? feedback[output_j] : 0.01*feedback[output_j]);
-	return feedback_new;
+  output_backward = layerStrategy.forward(feedback);
+	return output_backward;
 }
+
+void LeakyReLuLayer::setMode(DeviceType device, cl_int deviceID) {
+  if (device == DeviceType::CPP) {
+    layerStrategy = LeakyReLuLayerCPP();
+  }
+}
+

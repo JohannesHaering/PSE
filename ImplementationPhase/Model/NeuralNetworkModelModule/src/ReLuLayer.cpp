@@ -1,26 +1,31 @@
 #include "ReLuLayer.hpp"
-#include "Activation.hpp"
 #include <vector>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 ReLuLayer::ReLuLayer()
 {
   layerType = LayerType::RELU;
-  ActivationLayer::activationType = Activation::RELU;
+  layerStrategy = ReLuLayerCPP();
 }
 
 
-std::vector<float> ReLuLayer::forward(std::vector<float> net)
+TENSOR(float) ReLuLayer::forward(TENSOR(float) net)
 {
-	output = std::vector<float>(net.size());
-	for (int j = 0; j < net.size(); j++) output[j] = input[j] > 0 ? net[j] : 0;
-	return output;
+  this->net = net;
+  output_forward = layerStrategy.forward(net);
+	return output_forward;
 }
 
 
-std::vector<float> ReLuLayer::backprob(std::vector<float> feedback)
+TENSOR(float) ReLuLayer::backprob(TENSOR(float) feedback)
 {
-	std::vector<float> feedback_new(feedback.size());
-	for (int output_j = 0; output_j < feedback.size(); output_j++) feedback_new[output_j] = (feedback[output_j] > 0 ? feedback[output_j] : 0);
-	return feedback_new;
+  output_backward = layerStrategy.forward(feedback);
+	return output_backward;
 }
+
+void ReLuLayer::setMode(DeviceType device, cl_int deviceID) {
+  if (device == DeviceType::CPP) {
+    layerStrategy = ReLuLayerCPP();
+  }
+}
+

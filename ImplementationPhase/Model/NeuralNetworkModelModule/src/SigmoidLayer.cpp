@@ -1,25 +1,31 @@
 #include "SigmoidLayer.hpp"
-#include "Activation.hpp"
+#include "SigmoidLayerCPP.hpp"
 #include <vector>
 #include <cmath>
 
 SigmoidLayer::SigmoidLayer()
 {
   layerType = LayerType::SIGMOID;
-  activationType = Activation::SIGMOID;
+  layerStrategy = SigmoidLayerCPP();
 }
 
-std::vector<float>  SigmoidLayer::forward(std::vector<float> net)
+TENSOR(float)  SigmoidLayer::forward(TENSOR(float) net)
 {
-	output = std::vector<float>(net.size());
-	for (int j = 0; j < net.size(); j++) output[j] = 1 / (1 + exp (-1*net[j]));
-	return output;
+  this->net = net;
+  output_forward = layerStrategy.forward(net);
+	return output_forward;
 }
 
 
-std::vector<float> SigmoidLayer::backprob(std::vector<float> feedback)
+TENSOR(float) SigmoidLayer::backprob(TENSOR(float) feedback)
 {
-	std::vector<float> feedback_new(feedback.size());
-	for (int output_j = 0; output_j < feedback.size(); output_j++) feedback_new[output_j] = (feedback[output_j] * (1 - feedback[output_j]));
-	return feedback_new;
+  output_backward = layerStrategy.backprob(feedback);
+	return output_backward;
 }
+
+void SigmoidLayer::setMode(DeviceType device, cl_int deviceID) {
+  if (device == DeviceType::CPP) {
+    layerStrategy = SigmoidLayerCPP();
+  }
+}
+
