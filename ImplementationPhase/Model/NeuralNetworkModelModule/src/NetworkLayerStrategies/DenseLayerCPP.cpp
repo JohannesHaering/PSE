@@ -65,3 +65,7 @@ TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningRate
     layer->set_bias(new_bias);
     return output;
 }
+
+TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningrate){
+
+}
