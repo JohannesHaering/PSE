@@ -7,7 +7,6 @@
 #include "HighEfficiencyMode.hpp"
 #include "NeuralNetworkAdapter.hpp"
 #include "Executor.hpp"
-//#include "Device.hpp"
 #include "ClassificationResult.hpp"
 #include "ImageFacade.hpp" 
 #include "ResultFacade.hpp"
@@ -36,7 +35,6 @@ std::vector<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { retu
 
 std::list<Mode*> DispatchManager::getModeList() 
 {
-	//Todo ? I guess it's done for now
 	std::list<Mode*> modeList;
     modeList.push_back(new LowPowerMode());
     modeList.push_back(new HighEfficiencyMode());

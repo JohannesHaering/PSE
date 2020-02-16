@@ -4,9 +4,7 @@ NeuralNetwork::NeuralNetwork() : NeuralNetwork("Default_Network_Name") {}
 
 NeuralNetwork::NeuralNetwork(std::string name) : NeuralNetwork(name, 0, 0, 0) {}
 
-NeuralNetwork::NeuralNetwork(std::string name, int width, int height, int channels) : name(name), layers(), width(width), height(height), channels(channels) {
-  it = layers.begin();
-}
+NeuralNetwork::NeuralNetwork(std::string name, int width, int height, int channels) : name(name), layers(), width(width), height(height), channels(channels) {}
 
 void NeuralNetwork::addLayer(NetworkLayer* layer) {
   layers.push_back(layer);
@@ -14,11 +12,6 @@ void NeuralNetwork::addLayer(NetworkLayer* layer) {
 
 void NeuralNetwork::setName(std::string name) { this->name = name; }
 
-void NeuralNetwork::setInputDimensions(int width, int height, int channels) {
-  this->width = width;
-  this->height = height;
-  this->channels = channels;
-}
 
 void NeuralNetwork::setLabels(std::list<std::string> labels) {
     this->labels = labels;
@@ -43,26 +36,12 @@ std::list<NetworkLayer*>::iterator NeuralNetwork::end() {
   return layers.end();
 }
 
-NetworkLayer* NeuralNetwork::getFirstLayer() {
-  it = layers.begin();
-  if(layers.size() == 0) return nullptr;
-  return *(it++);
+std::list<NetworkLayer*>::reverse_iterator NeuralNetwork::rbegin() {
+  return layers.rbegin();
 }
 
-NetworkLayer* NeuralNetwork::getLastLayer() {
-  if(layers.size() == 0) return nullptr;
-  it = layers.end();
-  return *(--it);
-}
-
-NetworkLayer* NeuralNetwork::getNextLayer() {
-  if(it == layers.end()) return nullptr;
-  return *(it++);
-}
-
-NetworkLayer* NeuralNetwork::getPreviousLayer() {
-  if(--it == layers.begin()) return nullptr;
-  return *(it);
+std::list<NetworkLayer*>::reverse_iterator NeuralNetwork::rend() {
+  return layers.rend();
 }
 
 int NeuralNetwork::NeuralNetwork::getLayerCount() { return layers.size(); }

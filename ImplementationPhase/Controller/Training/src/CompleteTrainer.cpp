@@ -5,9 +5,7 @@
 #include <cmath>
 #include "LayerType.hpp"
 
-CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate, int batchSize) : neuralNetwork(neuralNetwork), learningRate(learningRate), batchSize(batchSize) 
-{
-}
+CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate) : neuralNetwork(neuralNetwork), learningRate(learningRate) {}
 
 TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 {

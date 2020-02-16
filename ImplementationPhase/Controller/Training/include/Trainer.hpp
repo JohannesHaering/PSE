@@ -12,14 +12,13 @@ class Trainer
 {
 public:
 	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData);
-	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, int batchSize);
 	void startTraining();
 private:
 	void saveNewNeuralNetwork();
 	float getNewTrainingsAccuracy();
 	float getNewTestAccuracy();
 
-	int batchSize = 16;
+  static int batchSize = 16;
 	float desiredPrecision;
 	std::vector<float> testAcc;
 	std::vector<float> trainingAcc;

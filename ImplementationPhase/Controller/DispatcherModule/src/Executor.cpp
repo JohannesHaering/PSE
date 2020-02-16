@@ -17,9 +17,9 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
 
     for (NetworkLayer *layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
     {
-		output = layer->forward(tmp);
-		tmp = output;
-	}
+		  output = layer->forward(tmp);
+		  tmp = output;
+	  }
     std::cout << "returning from forward" << std::endl;
     return output;
     

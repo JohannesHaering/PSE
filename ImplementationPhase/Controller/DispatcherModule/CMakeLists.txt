@@ -9,13 +9,16 @@ targeT_link_libraries(MODE PUBLIC DEVICE)
 target_link_libraries(MODE PUBLIC NEURALNETWORKADAPTER)
 target_link_libraries(MODE PUBLIC POWERPREDICTORFROMFILE)
 
+add_library(DEVICETYPE "include/DeviceType.hpp")
+target_include_directories(DEVICETYPE PUBLIC "include/")
+
 
 add_library(DISPATCHMANAGER "include/DispatchManager.hpp" "src/DispatchManager.cpp")
 target_include_directories(DISPATCHMANAGER PUBLIC "include/")
 target_link_libraries(DISPATCHMANAGER PUBLIC CHANNEL)
 targeT_link_libraries(DISPATCHMANAGER PUBLIC DEVICE MODE)
 target_link_libraries(DISPATCHMANAGER PUBLIC NEURALNETWORKADAPTER)
-target_link_libraries(DISPATCHMANAGER PUBLIC OpenCL::OpenCL)
+#target_link_libraries(DISPATCHMANAGER PUBLIC OpenCL::OpenCL)
 target_link_libraries(DISPATCHMANAGER PUBLIC CLASSIFICATIONRESULT)
 target_link_libraries(DISPATCHMANAGER PUBLIC EXECUTOR)
 

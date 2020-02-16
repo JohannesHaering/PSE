@@ -16,8 +16,8 @@
 class DispatchManager 
 {
 	private:
-        DispatchManager() = default;
-	        // Stop the compiler generating methods of copy the object
+    DispatchManager() = default;
+	  // Stop the compiler generating methods of copy the object
 		DispatchManager(DispatchManager const& copy); //don't implement!
 		DispatchManager& operator=(DispatchManager const& copy); //don't implement!
 		Mode* mode;
