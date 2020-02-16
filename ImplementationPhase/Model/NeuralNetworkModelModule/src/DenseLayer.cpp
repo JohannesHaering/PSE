@@ -30,7 +30,7 @@ DenseLayer::DenseLayer(int inputSize, int outputSize, float learningRate) : inpu
 		for (int j = 0; j < outputSize; j++) sum += weights[i][j];
 	std::cout << "init sum: " << sum << std::endl;
 
-	layerStrategy = DenseLayerCPP(this, inputSize, outputSize);
+	layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
 }
 
 void DenseLayer::set_bias(std::vector<float> new_bias)
@@ -68,6 +68,6 @@ TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 
 void DenseLayer::setMode(DeviceType device, cl_int deviceID) {
   if (device == DeviceType::CPP) {
-    layerStrategy = DenseLayerCPP(this, inputSize, outputSize);
+    layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
   }
 }
