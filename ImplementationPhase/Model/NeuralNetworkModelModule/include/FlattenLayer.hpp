@@ -2,13 +2,19 @@
 #define FLATTENLAYER_H_
 
 #include <string>
-#include "NetworkLayer.hpp"
+#include "MatrixDefine.hpp"
 
-class FlattenLayer  : public NetworkLayer {
+class FlattenLayer : public ConnectionLayer{
+private: 
+  int oldx;
+  int oldy;
+  int oldz;
 
-  public:
-    FlattenLayer();
-    FlattenLayer(std::string name, int* inputDimensions);
-    // ~FlattenLayer();
+public:
+  FlattenLayer();
+	TENSOR(float) forward(TENSOR(float) input_data) override;
+	TENSOR(float) backprob(TENSOR(float) updates, float learningRate) override;
+	void setMode(DeviceType device, cl_int deviceID) override;
+
 };
 #endif
