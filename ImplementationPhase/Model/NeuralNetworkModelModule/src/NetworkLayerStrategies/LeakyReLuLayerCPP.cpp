@@ -29,5 +29,5 @@ TENSOR(float) LeakyReLuLayerCPP::backprob(TENSOR(float) feedback)
             for (int y = 0; y < feedback[0][0].size(); y++)
                 for (int x = 0; x < feedback[0][0][0].size(); x++)
                     output_backward[b][z][y][x] = feedback[b][z][y][x] > 0 ? feedback[b][z][y][x] : 0.01 * feedback[b][z][y][x];
-    return output;
+    return output_backward;
 }

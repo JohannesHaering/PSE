@@ -53,7 +53,7 @@ std::vector<float> DenseLayer::get_biase()
   return bias; 
 }
 
-TENSOR(float) DenseLayer::forward(TENSOR new_input)
+TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 {
   net = new_input;//store it for backprop
   output_forward = layerStrategy->forward(new_input);
