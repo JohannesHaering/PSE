@@ -4,7 +4,7 @@
 #include <string>
 #include <math.h>
 #include <vector>
-#include "DenseLayer.hpp"
+#include "NetworkLayerStrategy.hpp"
 
 class DenseLayerStrategy : public NetworkLayerStrategy
 {
@@ -16,7 +16,7 @@ protected:
 	int* outputSize;
 
 public:
-	virtual MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data);
-	virtual MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates, float learningRate);
+	virtual TENSOR(float) forward(TENSOR(float) input_data);
+	virtual TENSOR(float) backprob(TENSOR(float) updates, float learningRate);
 };
 #endif

@@ -10,7 +10,7 @@ class SoftmaxLayerCPP : public SoftmaxLayerStrategy
 {
     public:
         SoftmaxLayerCPP();
-        MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data) override;
-        MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates, MatrixDefine::TENSOR(float) output_forward) override;
+        TENSOR(float) forward(TENSOR(float) input_data) override;
+        TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward) override;
 };
 #endif

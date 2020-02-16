@@ -9,11 +9,11 @@
 class NetworkLayerStrategy {
 
 	protected:
-		MatrixDefine::TENSOR(float)* net;
+		TENSOR(float)* net;
     
     public:
-	    virtual MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input) = 0;
-	    virtual MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback, float learningrate) = 0;
+	    virtual TENSOR(float) forward(TENSOR(float) input) = 0;
+	    virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
 
 };
 #endif

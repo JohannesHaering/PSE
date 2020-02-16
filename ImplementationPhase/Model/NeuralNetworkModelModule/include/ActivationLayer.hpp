@@ -8,7 +8,7 @@
 class ActivationLayer : public NetworkLayer {
 
   public:
-	  virtual MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback) = 0;
-	  MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback, float learningrate) override;
+	  virtual TENSOR(float) backprob(TENSOR(float) feedback) = 0;
+	  TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) override;
 };
 #endif

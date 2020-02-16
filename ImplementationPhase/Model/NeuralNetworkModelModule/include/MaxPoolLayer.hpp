@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include "ConnectionLayer.hpp"
-#include "DenseLayerStrategy.hpp"
 
 class MaxPoolLayer : public ConnectionLayer
 {

@@ -9,7 +9,7 @@
 class SoftmaxLayerStrategy : public NetworkLayerStrategy
 {
 public:
-	virtual MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data);
-	virtual MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates, MatrixDefine::TENSOR(float) output_forward);
+	virtual TENSOR(float) forward(TENSOR(float) input_data);
+	virtual TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward);
 };
 #endif

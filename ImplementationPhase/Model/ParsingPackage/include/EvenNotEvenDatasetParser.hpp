@@ -12,4 +12,5 @@ public:
     std::vector<std::vector<float>> parseDatasetLabel(int numbBits);
 private:
     cv::Mat parseToMat(std::vector<int> bitst);
-}
+};
+#endif

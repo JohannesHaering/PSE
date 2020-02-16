@@ -13,9 +13,9 @@ inputSize(inputSize),
 outputSize(ouputSize)
 {}
 
-MatrixDefine::TENSOR(float) DenseLayerCPP::forward(MatrixDefine::TENSOR new_input)
+TENSOR(float) DenseLayerCPP::forward(TENSOR(float) new_input)
 {
-    MatrixDefine::TENSOR(float) output = MatrixDefine::TENSOR(float)[new_input.size()][0][0][*outputSize];
+    TENSOR(float) output = TENSOR(float)(new_input.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>*outputSize)));
     for (int batchIteration = 0; batchIteration < new_input.size(); batchIteration++) {
         output[batchIteration][0][0] = *bias;//deep copy?
         for (int i = 0; i < *inputSize; i++)
@@ -28,11 +28,11 @@ MatrixDefine::TENSOR(float) DenseLayerCPP::forward(MatrixDefine::TENSOR new_inpu
     return output;
 }
 
-MatrixDefine::TENSOR(float) DenseLayerCPP::backprob(MatrixDefine::TENSOR(float) feedback, float learningrate)
+TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningRate)
 {
     std::vector<std::vector<float>> new_weights = *weights;//deep copy?
     std::vector<float> new_bias = *bias; //deep copy?
-    MatrixDefine::TENSOR(float) output = MatrixDefine::TENSOR(float)[feedback.size()][0][0][*inputSize];
+    TENSOR(float) output = TENSOR(float)(feedback.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>*inputSize)));
 
     for (int batchIteration = 0; batchIteration < new_input.size(); batchIteration++) {
         //calc derivate for next Layers
