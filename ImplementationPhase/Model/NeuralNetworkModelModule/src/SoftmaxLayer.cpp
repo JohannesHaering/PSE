@@ -8,13 +8,13 @@
 SoftmaxLayer::SoftmaxLayer()
 {
   layerType = LayerType::SOFTMAX;
-  layerStrategy = SoftmaxLayerCPP();
+  layerStrategy = new SoftmaxLayerCPP();
 }
 
 TENSOR(float) SoftmaxLayer::forward(TENSOR(float) net)
 {
   this->net = net;
-  output_forward = layerStrategy.forward(net);
+  output_forward = layerStrategy->forward(net);
   return output_forward;
 }
 
@@ -31,12 +31,12 @@ std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels
 
 TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
 {
-  output_backward = layerStrategy.backward(feedback, output_forward);
+  output_backward = layerStrategy->backward(feedback, output_forward);
 	return output_backward;
 }
 
 void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {
   if (device == DeviceType::CPP) {
-    layerStrategy = SoftmaxLayerCPP();
+    layerStrategy = new SoftmaxLayerCPP();
   }
 }

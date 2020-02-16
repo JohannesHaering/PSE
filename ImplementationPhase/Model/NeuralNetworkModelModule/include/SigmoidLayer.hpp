@@ -4,8 +4,11 @@
 #include <string>
 #include <vector>
 #include "ActivationLayer.hpp"
+#include "SigmoidLayerStrategy.hpp"
 
 class SigmoidLayer : public ActivationLayer {
+
+  SigmoidLayerStrategy* layerStrategy;
 
   public:
     SigmoidLayer();

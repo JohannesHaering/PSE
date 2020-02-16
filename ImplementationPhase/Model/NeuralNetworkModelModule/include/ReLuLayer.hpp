@@ -4,10 +4,11 @@
 #include <string>
 #include <vector>
 #include "ActivationLayer.hpp"
+#include "ReLuLayerStrategy.hpp"
 
 class ReLuLayer : public ActivationLayer {
   private:
-    ReLuLayerStrategy layerStrategy;
+    ReLuLayerStrategy* layerStrategy;
   public:
     ReLuLayer();
     std::vector<float> forward(std::vector<float> net);

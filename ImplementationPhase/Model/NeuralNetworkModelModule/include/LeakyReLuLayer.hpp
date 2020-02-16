@@ -4,9 +4,12 @@
 #include <string>
 #include <vector>
 #include "ActivationLayer.hpp"
+#include "LeakyReLuStrategy.hpp"
 
 class LeakyReLuLayer : public ActivationLayer {
 
+  private: 
+    LeakyReLuStrategy* layerStrategy;
   public:
     LeakyReLuLayer();
     std::vector<float> forward(std::vector<float> net);

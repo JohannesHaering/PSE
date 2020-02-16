@@ -5,27 +5,27 @@
 ReLuLayer::ReLuLayer()
 {
   layerType = LayerType::RELU;
-  layerStrategy = ReLuLayerCPP();
+  layerStrategy = new ReLuLayerCPP();
 }
 
 
 TENSOR(float) ReLuLayer::forward(TENSOR(float) net)
 {
   this->net = net;
-  output_forward = layerStrategy.forward(net);
+  output_forward = layerStrategy->forward(net);
 	return output_forward;
 }
 
 
 TENSOR(float) ReLuLayer::backprob(TENSOR(float) feedback)
 {
-  output_backward = layerStrategy.forward(feedback);
+  output_backward = layerStrategy->backward(feedback);
 	return output_backward;
 }
 
 void ReLuLayer::setMode(DeviceType device, cl_int deviceID) {
   if (device == DeviceType::CPP) {
-    layerStrategy = ReLuLayerCPP();
+    layerStrategy =  new ReLuLayerCPP();
   }
 }
 
