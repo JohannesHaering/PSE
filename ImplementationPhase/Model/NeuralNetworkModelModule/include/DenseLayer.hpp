@@ -17,7 +17,7 @@ private:
 	int inputSize;
 	int outputSize;
 
-	DenseLayerStrategy layerStrategy;
+	DenseLayerStrategy* layerStrategy;
 
 public:
 	DenseLayer(int inputSize, int outputSize);

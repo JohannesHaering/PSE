@@ -1,8 +1,15 @@
-#include "ActivationLayer.hpp"
-#include "Activation.hpp"
+#ifndef ACTIVATIONLAYER_H_
+#define ACTIVATIONLAYER_H_
 
-std::vector<float> ActivationLayer::backprob(std::vector<float> feedback, float learningrate) {
-	return this->backprob(feedback);
-}
+#include <string>
+#include <vector>
+#include "NetworkLayer.hpp"
 
-Activation ActivationLayer::getActivationType() { return activationType; }
+class ActivationLayer : public NetworkLayer {
+
+  public:
+	  virtual TENSOR(float) backprob(TENSOR(float) feedback) = 0;
+	  TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) override;
+};
+#endif
+

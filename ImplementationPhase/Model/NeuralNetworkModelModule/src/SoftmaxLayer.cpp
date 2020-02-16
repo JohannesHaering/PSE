@@ -1,5 +1,5 @@
 #include "SoftmaxLayer.hpp"
-#include "Activation.hpp"
+#include "SoftmaxLayerStrategy.hpp"
 #include <vector>
 #include <cmath>
 
@@ -8,42 +8,35 @@
 SoftmaxLayer::SoftmaxLayer()
 {
   layerType = LayerType::SOFTMAX;
-  ActivationLayer::activationType = Activation::SOFTMAX;
+  layerStrategy = SoftmaxLayerCPP();
 }
 
-
-
-std::vector<float> SoftmaxLayer::forward(std::vector<float> net)
+TENSOR(float) SoftmaxLayer::forward(TENSOR(float) net)
 {
-	output = std::vector<float>(net.size());
-	
-	float sum = 0;
-	for (int j = 0; j < net.size(); j++) sum += exp(net[j]);
-	for (int j = 0; j < net.size(); j++) output[j] = exp(1*net[j]) / sum;
-	return output;
+  this->net = net;
+  output_forward = layerStrategy.forward(net);
+  return output_forward;
 }
 
-float SoftmaxLayer::calcCEError(std::vector<float> tartget) //uses labels, output and currentSize 
+std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels, output and currentSize 
 {
-	error = 0;
-	for (int i = 0; i < output.size(); i++) error -= target[i] * log(output[i]);
-	return error;
+  std::vector<float> result = std::vector<float>(target.size(), 0.0);
+  for (int b = 0; b < target.size(); b++) {
+  	for (int i = 0; i < output_forward.size(); i++) {
+      result[b] -= target[b][0][0][i] * log(output_forward[b][0][0][i]);
+    }
+  }
+	return result;
 }
 
-
-
-float SoftmaxLayer::calcCEError() //uses labels, output and currentSize 
+TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
 {
-	error = 0;
-	for (int i = 0; i < output.size(); i++) error -= target[i] * log(output[i]);
-	return error;
+  output_backward = layerStrategy.backward(feedback, output_forward);
+	return output_backward;
 }
 
-
-std::vector<float> SoftmaxLayer::backprob(std::vector<float> target)
-{
-	this->target = target;
-	std::vector<float> feedback_new(target.size());
-	for (int output_j = 0; output_j < target.size(); output_j++) feedback_new[output_j] = output[output_j] - target[output_j];
-	return feedback_new;
+void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {
+  if (device == DeviceType::CPP) {
+    layerStrategy = SoftmaxLayerCPP();
+  }
 }

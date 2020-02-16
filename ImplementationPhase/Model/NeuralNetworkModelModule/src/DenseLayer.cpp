@@ -56,13 +56,13 @@ std::vector<float> DenseLayer::get_biase()
 TENSOR(float) DenseLayer::forward(TENSOR new_input)
 {
   net = new_input;//store it for backprop
-  output_forward = layerStrategy.forward(new_input);
+  output_forward = layerStrategy->forward(new_input);
   return output_forward;
 }
 
 TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 {
-  output_backward = layerStrategy.backward(feedback, learningrate, net); 
+  output_backward = layerStrategy->backward(feedback, learningrate, net); 
   return output_backward;
 }
 
