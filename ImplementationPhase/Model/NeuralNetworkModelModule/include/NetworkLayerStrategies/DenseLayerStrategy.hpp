@@ -9,14 +9,11 @@
 class DenseLayerStrategy : public NetworkLayerStrategy
 {
 protected: 
-    std::vector<std::vector<float>>* weights;
-	std::vector<float>* bias;
-
-	int* inputSize;
-	int* outputSize;
+	int inputSize;
+	int outputSize;
 
 public:
 	virtual TENSOR(float) forward(TENSOR(float) input_data);
-	virtual TENSOR(float) backprob(TENSOR(float) updates, float learningRate);
+	virtual TENSOR(float) backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net);
 };
 #endif
