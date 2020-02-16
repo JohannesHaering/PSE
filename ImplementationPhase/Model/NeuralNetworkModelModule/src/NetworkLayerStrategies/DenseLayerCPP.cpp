@@ -8,10 +8,11 @@
 #include <random>
 
 DenseLayerCPP::DenseLayerCPP(DenseLayer* layer, int inputSize, int outputSize) : 
-layer(layer),
-inputSize(inputSize),
-outputSize(ouputSize)
-{}
+layer(layer)
+{
+  this->inputSize = inputSize;
+  this->outputSize = outputSize;
+}
 
 TENSOR(float) DenseLayerCPP::forward(TENSOR(float) net)
 {
@@ -34,7 +35,7 @@ TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningRate
 {
     std::vector<std::vector<float>> weights = layer->get_weights();
     std::vector<std::vector<float>> new_weights = layer->get_weights();//deep copy?
-    std::vector<float> new_bias = layer.get_biase(); //deep copy?
+    std::vector<float> new_bias = layer->get_biase(); //deep copy?
     TENSOR(float) output = TENSOR(float)(feedback.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(inputSize))));
 
     for (int batchIteration = 0; batchIteration < feedback.size(); batchIteration++) {
@@ -66,6 +67,3 @@ TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningRate
     return output;
 }
 
-TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) feedback, float learningrate){
-
-}

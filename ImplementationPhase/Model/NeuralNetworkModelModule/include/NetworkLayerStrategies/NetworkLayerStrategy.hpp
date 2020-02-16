@@ -13,7 +13,6 @@ class NetworkLayerStrategy {
     
     public:
 	    virtual TENSOR(float) forward(TENSOR(float) input) = 0;
-	    virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
 
 };
 #endif

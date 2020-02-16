@@ -19,7 +19,7 @@ TENSOR(float)  SigmoidLayer::forward(TENSOR(float) net)
 
 TENSOR(float) SigmoidLayer::backprob(TENSOR(float) feedback)
 {
-  output_backward = layerStrateg->backprob(feedback);
+  output_backward = layerStrategy->backprob(feedback);
 	return output_backward;
 }
 

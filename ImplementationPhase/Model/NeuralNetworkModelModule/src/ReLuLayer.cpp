@@ -1,4 +1,5 @@
 #include "ReLuLayer.hpp"
+#include "ReLuLayerCPP.hpp"
 #include <vector>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init

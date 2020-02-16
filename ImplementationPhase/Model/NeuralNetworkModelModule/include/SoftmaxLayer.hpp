@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "ActivationLayer.hpp"
+#include "SoftmaxLayer.hpp"
 
 class SoftmaxLayer : public ActivationLayer {
 
@@ -12,10 +13,9 @@ private:
 
 public:
     SoftmaxLayer();
-    MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) net);
-	MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) feedback);
-    float calcCEError(MatrixDefine::TENSOR(float) target);
+    TENSOR(float) forward(TENSOR(float) net);
+	  TENSOR(float) backprob(TENSOR(float) feedback);
+    float calcCEError(TENSOR(float) target);
     void setMode(DeviceType device, cl_int deviceID);
-}
 };
 #endif
