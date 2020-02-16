@@ -5,6 +5,7 @@
 #include <math.h>
 #include <vector>
 #include "DenseLayerStrategy.hpp"
+#include "DenseLayer.hpp"
 
 class DenseLayerCPP : public DenseLayerStrategy
 {

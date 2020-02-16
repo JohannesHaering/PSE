@@ -62,7 +62,7 @@ TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 
 TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 {
-  output_backward = layerStrategy->backward(feedback, learningrate, net); 
+  output_backward = layerStrategy->backprob(feedback, learningrate, net); 
   return output_backward;
 }
 

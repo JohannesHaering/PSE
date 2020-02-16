@@ -6,7 +6,8 @@
 #include "ActivationLayer.hpp"
 
 class ReLuLayer : public ActivationLayer {
-
+  private:
+    ReLuLayerStrategy layerStrategy;
   public:
     ReLuLayer();
     std::vector<float> forward(std::vector<float> net);
