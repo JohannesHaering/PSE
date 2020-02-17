@@ -163,6 +163,10 @@ void ConvolutionLayer::setWeightsTensor(TENSOR(float) newWeights)
   weightsTensor = newWeights;
 }
 
+void ConvolutionLayer::setStride(int stride) { this->stride = stride; }
+
+void ConvolutionLayer::setPadding(int padding) { this->padding = padding;  }
+
 TENSOR(float)
 ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
 
