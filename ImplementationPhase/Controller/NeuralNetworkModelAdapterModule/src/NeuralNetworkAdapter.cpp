@@ -3,6 +3,7 @@
 #include "NeuralNetwork.hpp"
 
 NeuralNetworkAdapter::NeuralNetworkAdapter(NeuralNetwork neuralNetwork) : neuralNetwork(neuralNetwork){}
+NeuralNetworkAdapter::NeuralNetworkAdapter(){}
 
 void NeuralNetworkAdapter::addLayer(NetworkLayer* layer) { neuralNetwork.addLayer(layer); }
 void NeuralNetworkAdapter::setName(std::string name) { neuralNetwork.setName(name); }

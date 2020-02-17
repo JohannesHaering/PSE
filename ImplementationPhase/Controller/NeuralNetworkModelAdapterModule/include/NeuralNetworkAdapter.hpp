@@ -8,7 +8,8 @@
 class NeuralNetworkAdapter {
 
     public:
-        NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
+    NeuralNetworkAdapter();
+      NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
         NeuralNetwork getNeuralNetwork();
         void addLayer(NetworkLayer* layer);
         void setName(std::string name);
