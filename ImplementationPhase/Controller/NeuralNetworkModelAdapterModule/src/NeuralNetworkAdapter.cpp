@@ -16,4 +16,4 @@ std::list<NetworkLayer*>::iterator NeuralNetworkAdapter::begin() { return neural
 std::list<NetworkLayer*>::iterator NeuralNetworkAdapter::end() { return neuralNetwork.end(); }
 std::list<NetworkLayer*>::reverse_iterator NeuralNetworkAdapter::rbegin() { return neuralNetwork.rbegin(); }
 std::list<NetworkLayer*>::reverse_iterator NeuralNetworkAdapter::rend() { return neuralNetwork.rend(); }
-int getLayerCount() { return neuralNetwork.getLayerCount(); }
+int NeuralNetworkAdapter::getLayerCount() { return neuralNetwork.getLayerCount(); }

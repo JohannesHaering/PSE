@@ -38,6 +38,14 @@ filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
 
 }
 
+ConvolutionLayer(TENSOR(float) filter, int stride, int padding) : stride(stride), padding(padding)
+{
+  weightsTensor = filter;
+  numFilters = filter.size();
+  filterSizeZ = filter[0].size();
+  filterSizeY = filter[0][0].size();
+  filterSizeX = filter[0][0][0].size();
+}
 
 float ConvolutionLayer::dotProduct(MATRIX_3D(float) net, MATRIX_3D(float) filter, int xStart, int yStart)
 { 
@@ -128,7 +136,7 @@ MATRIX_3D(float) ConvolutionLayer::backpropError(MATRIX_3D(float) feedback)
 }
 
 
-TENSOR(float) ConvolutionLayer::backward(TENSOR(float) feedback, float learningRate)
+TENSOR(float) ConvolutionLayer::backprob(TENSOR(float) feedback, float learningRate)
 {
   output_backward = TENSOR(float)(net.size());
 

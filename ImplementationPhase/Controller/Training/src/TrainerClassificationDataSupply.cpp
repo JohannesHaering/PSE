@@ -152,8 +152,8 @@ int TrainerClassificationDataSupply::getAmountClasses()
 	return classnames.size();
 }
 
-MatrixDefine::TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput(int batchSize, int numb, int width, int height) {
-	MatrixDefine::TENSOR(float) tensor;
+TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput(int batchSize, int numb, int width, int height) {
+	TENSOR(float) tensor;
 	std::vector<cv::Mat> batch = std::vector<cv::Mat>();
 
 	for (int i = 0; i < batchSize; i++) {
@@ -164,8 +164,8 @@ MatrixDefine::TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInp
 	return tensor;
 }
 
-MatrixDefine::TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int batchSize, int numb) {
-	MatrixDefine::TENSOR(float) tensor = MatrixDefine::TENSOR(float);
+TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int batchSize, int numb) {
+	TENSOR(float) tensor = TENSOR(float);
 	std::vector<ClassificationResult> batch = std::vector<ClassificationResult>();
 
 	for (int i = 0; i < batchSize; i++) {

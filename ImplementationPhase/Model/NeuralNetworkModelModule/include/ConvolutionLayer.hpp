@@ -4,6 +4,7 @@
 #include <string>
 #include "NetworkLayer.hpp"
 #include "MatrixDefine.hpp"
+#include "ConnectionLayer.hpp"
 
 class ConvolutionLayer  : public ConnectionLayer {
 
@@ -26,7 +27,10 @@ class ConvolutionLayer  : public ConnectionLayer {
 
   public:
     ConvolutionLayer();
+    ConvolutionLayer(TENSOR(float) filter, int stride, int padding);
     ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding);
+    TENSOR(float) forward(TENSOR(float) net) override;
+    TENSOR(float) backprob(TENSOR(float) feedback, float learningRate) override;
     TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();

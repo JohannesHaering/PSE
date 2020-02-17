@@ -42,8 +42,8 @@ add_library(RELULAYER "src/ReLuLayer.cpp" "include/ReLuLayer.hpp")
 target_include_directories(RELULAYER PUBLIC "include/")
 target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY)
 
-#add_library(TYPE_ENUMERATIONS_NN INTERFACE)
-#target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")
+add_library(TYPE_ENUMERATIONS_NN INTERFACE)
+target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")
 
 add_library(MATRIX_DEFINE "include/MatrixDefine.hpp")
 target_include_directories(MATRIX_DEFINE PUBLIC "include/")

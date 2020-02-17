@@ -12,7 +12,8 @@ class LeakyReLuLayer : public ActivationLayer {
     LeakyReLuLayerStrategy* layerStrategy;
   public:
     LeakyReLuLayer();
-    std::vector<float> forward(std::vector<float> net);
-	  std::vector<float> backprob(std::vector<float> feedback);
+    TENSOR(float) forward(TENSOR(float) net);
+	  TENSOR(float) backprob(TENSOR(float) feedback);
+    void setMode(DeviceType device, cl_int deviceID) override;
 };
 #endif

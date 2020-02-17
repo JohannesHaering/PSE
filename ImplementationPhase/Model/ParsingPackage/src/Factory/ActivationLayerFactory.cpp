@@ -23,7 +23,7 @@ NetworkLayer* ActivationLayerFactory::buildLayer()
     default:
         layer = new SoftmaxLayer();
     }
-    layer->setBatchSize(batchSize);
+    //layer->setBatchSize(batchSize);
     return layer;
 }
 

@@ -7,14 +7,13 @@
 
 #include "ConvolutionLayer.hpp"
 #include "ActivationLayer.hpp"
-#include "PollingLayer.hpp"
-#include "LocalResponseNormalizationLayer.hpp"
+#include "MaxPoolLayer.hpp"
 #include "DenseLayer.hpp"
 #include "FlattenLayer.hpp"
-#include "DropoutLayer.hpp"
-#include "CollectResultsLayer.hpp"
-#include "OutputStorageLayer.hpp"
-#include "InceptionLayer.hpp"
+#include "ReLuLayer.hpp"
+#include "LeakyReLuLayer.hpp"
+#include "SoftmaxLayer.hpp"
+#include "SigmoidLayer.hpp"
 
 class NeuralNetwork {
 
@@ -46,3 +45,4 @@ class NeuralNetwork {
     ~NeuralNetwork();
 };
 #endif
+

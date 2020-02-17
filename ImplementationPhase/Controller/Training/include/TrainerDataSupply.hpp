@@ -20,7 +20,7 @@ public:
     virtual std::vector<float> getOutputVector(std::string id) = 0;
     int getSize();
     virtual int getAmountClasses() = 0;
-    virtual MatrixDefine::TENSOR(float) getTrainingBatch(int batchSize, int numb) = 0;
+    virtual TENSOR(float) getTrainingBatch(int batchSize, int numb) = 0;
 
 protected:
     virtual void splitData() = 0;

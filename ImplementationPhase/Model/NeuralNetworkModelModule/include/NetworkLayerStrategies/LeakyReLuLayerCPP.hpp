@@ -4,13 +4,13 @@
 #include <string>
 #include <math.h>
 #include <vector>
-#include "ReLuLayerStrategy.hpp"
+#include "LeakyReLuLayerStrategy.hpp"
 
-class LeakyReLuLayerCPP : public ReLuLayerStrategy
+class LeakyReLuLayerCPP : public LeakyReLuLayerStrategy
 {
     public:
         LeakyReLuLayerCPP();
-        TENSOR(float) forward(TENSOR(float) input_data) override;
-        TENSOR(float) backprob(TENSOR(float) updates) override;
+        TENSOR(float) forward(TENSOR(float) input_data);
+        TENSOR(float) backprob(TENSOR(float) updates);
 };
 #endif

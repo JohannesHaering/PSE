@@ -37,11 +37,11 @@ bool ResultFacade::writeClassificationResult(ClassificationResult result, std::s
     return TextFileIO().writeFile(path, Data(output));
 }
 
-std::vector<ClassificationResult*> ResultFacade::parseClassificationResult(std::string neuralNetworkID, std::list<std::string> imageIDs, std::list<std::string> classNames, MatrixDefine::TENSOR(float) tensor) {
+std::vector<ClassificationResult*> ResultFacade::parseClassificationResult(std::string neuralNetworkID, std::list<std::string> imageIDs, std::list<std::string> classNames, TENSOR(float) tensor) {
     std::vector<ClassificationResult*> results = std::vector<ClassificationResult*>();
     std::list<std::string>::iterator it = imageIDs.begin();
     for (int i = 0; i < results.size(); i++) {
-        results.push_back(parseClassificationResult(*it, neuralNetworkID, classNames, tensor.at(i).at(0).at(0)));
+        results.push_back(parseClassificationResult(*it, neuralNetworkID, classNames, tensor[i][0][0]));
     }
 
     return results;

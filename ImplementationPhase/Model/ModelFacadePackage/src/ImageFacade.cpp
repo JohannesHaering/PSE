@@ -34,14 +34,14 @@ std::list<cv::Mat> ImageFacade::getImages(std::list<std::string> paths, int widt
 	return images;
 }
 
-std::vector<MatrixDefine::TENSOR(float)> ImageFacade::getImages(std::string directory, int batchSize, int width, int height) {
+std::vector<TENSOR(float)> ImageFacade::getImages(std::string directory, int batchSize, int width, int height) {
 	std::list<std::string> paths = ModelFacade::readDirectory(directory);
 	std::vector<std::vector<float>> images = std::vector<std::vector<float>>();
 
 	for (std::list<std::string>::iterator it = paths.begin(); it != paths.end(); ++it)
 		images.push_back(getImageGreyScale(*it, width, height, 1));
 
-	std::vector<MatrixDefine::TENSOR(float)> tensors = std::vector<MatrixDefine::TENSOR(float)>();
+	std::vector<TENSOR(float)> tensors = std::vector<TENSOR(float)>();
 
 	int batch = 0;
 	std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
@@ -109,17 +109,17 @@ std::vector<float> ImageFacade::getImageGreyScale(std::string path, int width, i
 	return parsed;
 }
 
-MatrixDefine::TENSOR(float){ ImageFacade::createImageTensor(std::vector<cv::Mat> images, int width, int height){
-	MatrixDefine::TENSOR(float) tensor = MatrixDefine::TENSOR(float);
+TENSOR(float) ImageFacade::createImageTensor(std::vector<cv::Mat> images, int width, int height){
+	TENSOR(float) tensor = TENSOR(float)();
 
 	for (int i = 0; images.size(); i++) {
-		std::vector<float> image = ImageParserWithSizing(width, height, 1).parseFloatGreyScale(images[i]);
-		std::vector<std::vector<std::vector<float>>> v = std::vector<std::vector<std::vector<float>>>();
-		std::vector<std::vector<float>> image2D = std::vector<std::vector<float>>();
+		std::vector<float> image = ImageParserWithSizing(width, height, 1).parseFloatsGreyScale(images[i]);
+		MATRIX_3D(float) v = MATRIX_3D(float)();
+		MATRIX_2D(float) image2D = MATRIX_2D(float)();
 		for (int y = 0; y < height; y++) {
 			std::vector<float> row = std::vector<float>();
 			for (int x = 0; x < width; x++) {
-				row.push_back(images[i][x + y * width]);
+				row.push_back(images[i].at<float>(x,y));
 			}
 			image2D.push_back(row);
 		}

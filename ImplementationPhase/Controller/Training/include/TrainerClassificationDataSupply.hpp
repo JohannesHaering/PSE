@@ -21,8 +21,8 @@ public:
 
     std::vector<float> getOutputVector(std::string id) override;
     std::vector<float> createOutputVector(ClassificationResult result);
-    MatrixDefine::Tensor(float) getTrainingBatchInput(int batchSize, int numb) override;
-    MatrixDefine::Tensor(float) getTrainingBatchOutput(int batchSize, int numb) override;
+    TENSOR(float) getTrainingBatchInput(int batchSize, int numb) override;
+    TENSOR(float) getTrainingBatchOutput(int batchSize, int numb) override;
 
     int getAmountClasses();
 

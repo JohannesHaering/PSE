@@ -17,8 +17,8 @@ public:
 	std::list<cv::Mat> getImagesFromTxtFile(std::string path, int width, int height, int channelNumb);
 	cv::Mat getImageFromCamera(int deviceId, int width, int height, int channelNumb);
 	std::list<cv::Mat> getImagesFromVideo(std::string path, int width, int height, int channelNumb);
-	std::vector<MatrixDefine::TENSOR(float)> getImages(std::string directory, int batchSize, int width, int height);
-	MatrixDefine::TENSOR createImageTensor(std::vector<cv::Mat> images, int width, int height);
+	std::vector<TENSOR(float)> getImages(std::string directory, int batchSize, int width, int height);
+	TENSOR(float) createImageTensor(std::vector<cv::Mat> images, int width, int height);
 	bool writeImage(std::string path, cv::Mat image);
 	bool writeImages(std::list<std::string> paths, std::list<cv::Mat> images);
 };
