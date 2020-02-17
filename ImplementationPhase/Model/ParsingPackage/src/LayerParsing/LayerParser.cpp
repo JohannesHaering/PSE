@@ -20,12 +20,6 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 	std::list<std::string>::iterator it = lines.begin();
 	std::list<std::string> firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
-	if (!(*firstLine.begin()).compare(INPUT_DIMENSIONS))
-		throw std::invalid_argument("Wrong format");
-
-	std::string valuePart = *(--firstLine.end());
-	inputDimensions = parseIntArray(valuePart);
-
 	++it;
 	std::list<std::string> secondLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
@@ -278,8 +272,6 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	}
 	output += LayerParser::VALUE_END;
 	output += "\n";
-	output += INPUT_DIMENSIONS + VALUE_TYPE_DELIMETER;
-	output += saveIntArray(layer->getInputDimensions());
 	output += "\n";
 	output += BATCH_SIZE;
 	output += VALUE_TYPE_DELIMETER;

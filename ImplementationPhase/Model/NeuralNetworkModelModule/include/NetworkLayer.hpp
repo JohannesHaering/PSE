@@ -28,6 +28,10 @@ public:
   void setWidth(int width);
   void setZ(int z);
   void setBatchSize(int batchsize);
+  int getHeight();
+  int getWidth();
+  int getZ();
+  int getBatchSize();
 
   int height;
   int width;

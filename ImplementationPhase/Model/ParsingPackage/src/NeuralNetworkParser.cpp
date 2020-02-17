@@ -129,10 +129,10 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
 
-	auto it = neuralNetwork.getFirstLayer();
+	auto it = neuralNetwork.begin();
 	do {
 		output += LayerParserDistribution().parseBack(it);
-	} while (it != neuralNetwork.getLastLayer());
+	} while (it != neuralNetwork.end());
 
 	return output;
 }

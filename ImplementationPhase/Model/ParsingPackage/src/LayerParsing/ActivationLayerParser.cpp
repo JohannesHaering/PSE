@@ -40,7 +40,7 @@ NetworkLayer* ActivationLayerParser::parse(std::string toParse)
     }
     else if (switcher == LEAKING_RELU)
     {
-        factory.setActivation(LayerType::LEAKING_RELU);
+        factory.setActivation(LayerType::LEAKYRELU);
     }
     else if (switcher == SOFTMAX)
     {
@@ -87,7 +87,7 @@ std::string ActivationLayerParser::parseBack(ActivationLayer* layer)
         output += RELU;
         output += "\n";
         break;
-    case LayerType::LEAKING_RELU:
+    case LayerType::LEAKYRELU:
         output += LEAKING_RELU;
         output += "\n";
         break;
