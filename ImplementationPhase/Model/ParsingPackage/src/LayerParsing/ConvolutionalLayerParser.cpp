@@ -52,20 +52,23 @@ NetworkLayer* ConvolutionalLayerParser::parse(std::string toParse)
     return factory.buildLayer();
 }
 
-std::string ConvolutionalLayerParser::parseBack(ConvolutionLayer* layer){
+std::string ConvolutionalLayerParser::parseBack(NetworkLayer* layer){
     std::string output = "";
+
+	ConvolutionLayer* denselayer = (ConvolutionLayer*)layer;
+
     output += saveGeneralInformation(layer);
     output += STRIDE;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer->getStride());
+    output += std::to_string(denselayer->getStride());
     output += "\n";
     output += PADDING;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += std::to_string(layer->getPadding());
+    output += std::to_string(denselayer->getPadding());
     output += "\n";
     output += WEIGHTS_TENSOR;
     output += LayerParser::VALUE_TYPE_DELIMETER;
-    output += LayerParser::save4DFloatArray(layer->getWeightsTensor());
+    output += LayerParser::save4DFloatArray(denselayer->getWeightsTensor());
     output += "\n";
 	return output;
 }
