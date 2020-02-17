@@ -15,7 +15,6 @@ add_library(NEURALNETWORKFACTORY
 "src/Factory/DenseLayerFactory.cpp" "include/Factory/DenseLayerFactory.hpp" 
 "src/Factory/LayerFactory.cpp" "include/Factory/LayerFactory.hpp" 
 "src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp"
-"src/Factory/PollingLayerFactory.cpp" "include/Factory/PollingLayerFactory.hpp"
 "src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp")
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
 target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER LAYERTYPE MATRIXDEFINE ACTIVATIONLAYER DENSELAYER RELULAYER LEAKYRELULAYER SOFTMAXLAYER SIGMOIDLAYER)
@@ -27,7 +26,6 @@ add_library(LAYERPARSER
 "src/LayerParsing/DenseLayerParser.cpp" "include/LayerParsing/DenseLayerParser.hpp"
 "src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp"
 "src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp"
-"src/LayerParsing/PollingLayerParser.cpp" "include/LayerParsing/PollingLayerParser.hpp"
 "src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp")
 target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
 target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER LAYERTYPE MATRIXDEFINE NEURALNETWORK NETWORKLAYER ACTIVATIONLAYER DENSELAYER)
