@@ -1,4 +1,5 @@
 #include "ReLuLayerCPP.hpp"
+#include "MatrixDefine.hpp"
 #include <vector>
 #include <math.h>
 #include <vector>

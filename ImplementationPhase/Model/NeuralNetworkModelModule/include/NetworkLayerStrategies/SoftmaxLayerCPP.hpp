@@ -5,12 +5,15 @@
 #include <math.h>
 #include <vector>
 #include "SoftmaxLayerStrategy.hpp"
+#include "MatrixDefine.hpp"
 
 class SoftmaxLayerCPP : public SoftmaxLayerStrategy
 {
-    public:
-        SoftmaxLayerCPP();
-        TENSOR(float) forward(TENSOR(float) input_data) override;
-        TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward) override;
+public:
+    SoftmaxLayerCPP();
+    TENSOR(float)
+    forward(TENSOR(float) input_data) override;
+    TENSOR(float)
+    backprob(TENSOR(float) updates, TENSOR(float) output_forward) override;
 };
 #endif

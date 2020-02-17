@@ -15,10 +15,10 @@ TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR(float) input_data)
 {
 	TENSOR(float) output_forward =  input_data;
     for (int b = 0; b < input_data.size(); b++)
-      for (int z = 0; z < net[0].size(); z++)
-          for (int y = 0; y < net[0][0].size(); y++)
-              for (int x = 0; x < net[0][0][0].size(); x++)
-                 output_forward[b][z][y][x] = net[b][z][y][x] > 0 ? net[b][z][y][x] : 0.01 * net[b][z][y][x];
+      for (int z = 0; z < input_data[0].size(); z++)
+          for (int y = 0; y < input_data[0][0].size(); y++)
+              for (int x = 0; x < input_data[0][0][0].size(); x++)
+                 output_forward[b][z][y][x] = input_data[b][z][y][x] > 0 ? input_data[b][z][y][x] : 0.01 * input_data[b][z][y][x];
     return output_forward;
 }
 

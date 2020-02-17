@@ -1,5 +1,6 @@
 #include "SigmoidLayer.hpp"
 #include "SigmoidLayerCPP.hpp"
+#include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
 

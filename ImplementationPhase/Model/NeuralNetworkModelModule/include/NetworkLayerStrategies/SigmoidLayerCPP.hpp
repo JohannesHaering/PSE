@@ -5,6 +5,7 @@
 #include <math.h>
 #include <vector>
 #include "SigmoidLayerStrategy.hpp"
+#include "MatrixDefine.hpp"
 
 class SigmoidLayerCPP : public SigmoidLayerStrategy
 {

@@ -4,6 +4,7 @@
 #include <string>
 #include <math.h>
 #include <vector>
+#include "MatrixDefine.hpp"
 #include "ReLuLayerStrategy.hpp"
 
 class ReLuLayerCPP : public ReLuLayerStrategy

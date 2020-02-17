@@ -5,6 +5,7 @@
 #include <math.h>
 #include <vector>
 #include "NetworkLayerStrategy.hpp"
+#include "MatrixDefine.hpp"
 
 class DenseLayerStrategy : public NetworkLayerStrategy
 {
