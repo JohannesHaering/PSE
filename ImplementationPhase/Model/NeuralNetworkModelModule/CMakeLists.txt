@@ -60,11 +60,11 @@ add_library(DENSELAYERSTRATEGY "include/NetworkLayerStrategies/DenseLayerStrateg
 target_include_directories(DENSELAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DENSELAYER MATRIX_DEFINE FUNCTIONALITY)
 
-add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp" "src/NetworkLayerStrategies/ReluLayerCPU.cpp" "include/NetworkLayerStrategies/ReluLayerCPU.hpp")
+add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp" "src/NetworkLayerStrategies/ReLuLayerCPU.cpp" "include/NetworkLayerStrategies/ReLuLayerCPU.hpp")
 target_include_directories(RELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(RELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
-add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp" "src/NetworkLayerStrategies/LeakyReluLayerCPU.cpp" "include/NetworkLayerStrategies/LeakyReluLayerCPU.hpp")
+add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPU.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPU.hpp")
 target_include_directories(LEAKYRELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
