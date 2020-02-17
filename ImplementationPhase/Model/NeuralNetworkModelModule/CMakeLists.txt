@@ -14,6 +14,10 @@ add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
 target_link_libraries(NETWORKLAYER PUBLIC MATRIX_DEFINE DEVICETYPE MATRIX_DEFINE)
 
+add_library(CONVOLUTIONLAYER "include/ConvolutionLayer.hpp" "src/ConvolutionLayer.cpp")
+target_include_directories(CONVOLUTIONLAYER PUBLIC "/include")
+target_link_libraries(CONVOLUTIONLAYER PUBLIC NETWORKLAYER DEVICETYPE MATRIX_DEFINE)
+
 add_library(ACTIVATIONLAYER "include/ActivationLayer.hpp")
 target_include_directories(ACTIVATIONLAYER PUBLIC "include/")
 target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER DEVICETYPE MATRIX_DEFINE)

@@ -34,7 +34,8 @@ class ConvolutionLayer  : public ConnectionLayer {
     TENSOR(float) getWeightsTensor();
     int getStride();
     int getPadding();
-    virtual int* getTensorDimensions();
+    virtual int* getTensorDimensions(); 
+	void setMode(DeviceType device, cl_int deviceID) override;
     // ~ConvolutionLayer();
 };
 #endif
