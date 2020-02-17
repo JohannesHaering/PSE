@@ -9,7 +9,7 @@
 class SoftmaxLayerStrategy : public NetworkLayerStrategy
 {
 public:
-	virtual TENSOR(float) forward(TENSOR(float) input_data);
-	virtual TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward);
+	virtual TENSOR(float) forward(TENSOR(float) input_data) = 0;
+	virtual TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward) = 0;
 };
 #endif

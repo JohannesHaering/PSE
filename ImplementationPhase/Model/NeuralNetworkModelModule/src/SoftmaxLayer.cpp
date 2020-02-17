@@ -1,5 +1,6 @@
 #include "SoftmaxLayer.hpp"
 #include "SoftmaxLayerCPP.hpp"
+#include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
 

@@ -6,6 +6,7 @@
 #include <vector>
 #include "DenseLayerStrategy.hpp"
 #include "DenseLayer.hpp"
+#include "MatrixDefine.hpp"
 
 class DenseLayerCPP : public DenseLayerStrategy
 {

@@ -1,4 +1,5 @@
 #include "MaxPoolLayer.hpp"
+#include "MatrixDefine.hpp"
 
 MaxPoolLayer::MaxPoolLayer() {
     layerType = LayerType::POLLING;

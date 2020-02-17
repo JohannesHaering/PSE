@@ -1,8 +1,10 @@
 #include "FlattenLayer.hpp"
+#include "MatrixDefine.hpp"
+#include "NetworkLayer.hpp"
 #include <iostream>
 
 FlattenLayer::FlattenLayer() {
-    layerType = LayerType::FLATTEN;
+    NetworkLAyer::layerType = LayerType::FLATTEN;
 }
 
 TENSOR(float) FlattenLayer::forward(TENSOR(float) input) {
