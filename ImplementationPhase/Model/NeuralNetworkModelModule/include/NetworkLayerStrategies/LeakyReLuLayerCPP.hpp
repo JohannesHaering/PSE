@@ -5,12 +5,13 @@
 #include <math.h>
 #include <vector>
 #include "ReLuLayerStrategy.hpp"
+#include "MatrixDefine.hpp"
 
 class LeakyReLuLayerCPP : public ReLuLayerStrategy
 {
     public:
         LeakyReLuLayerCPP();
-        TENSOR(float) forward(TENSOR(float) input_data) override;
-        TENSOR(float) backprob(TENSOR(float) updates) override;
+		TENSOR(float) forward(TENSOR(float) input_data) override;
+		TENSOR(float) backprob(TENSOR(float) updates) override;
 };
 #endif

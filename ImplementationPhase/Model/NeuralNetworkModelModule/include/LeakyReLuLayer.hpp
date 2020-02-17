@@ -8,11 +8,11 @@
 
 class LeakyReLuLayer : public ActivationLayer {
 
-  private: 
-    LeakyReLuLayerStrategy* layerStrategy;
-  public:
-    LeakyReLuLayer();
-    std::vector<float> forward(std::vector<float> net);
-	  std::vector<float> backprob(std::vector<float> feedback);
+private:
+	LeakyReLuLayerStrategy* layerStrategy;
+public:
+	LeakyReLuLayer();
+	std::vector<float> forward(std::vector<float> net);
+	std::vector<float> backprob(std::vector<float> feedback);
 };
 #endif
