@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include "MatrixDefine.hpp"
-#include <CL/cl2.hpp>
 
 class NetworkLayerStrategy
 {
