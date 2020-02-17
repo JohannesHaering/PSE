@@ -14,9 +14,9 @@ add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
 target_link_libraries(NETWORKLAYER PUBLIC MATRIX_DEFINE DEVICETYPE)
 
-add_library(ACTIVATIONLAYER "src/ActivationLayer.cpp" "include/ActivationLayer.hpp")
+add_library(ACTIVATIONLAYER "include/ActivationLayer.hpp")
 target_include_directories(ACTIVATIONLAYER PUBLIC "include/")
-target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER)
+target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER DEVICETYPE)
 
 add_library(MAXPOOLLAYER "src/MaxPoolLayer.cpp" "include/MaxPoolLayer.hpp")
 target_include_directories(MAXPOOLLAYER PUBLIC "include/")
@@ -24,23 +24,23 @@ target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER)
 
 add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
-target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY)
+target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY DEVICETYPE)
 
 add_library(SOFTMAXLAYER "src/SoftmaxLayer.cpp" "include/SoftmaxLayer.hpp")
 target_include_directories(SOFTMAXLAYER PUBLIC "include/")
-target_link_libraries(SOFTMAXLAYER PUBLIC ACTIVATIONLAYER SOFTMAXSTRATEGY)
+target_link_libraries(SOFTMAXLAYER PUBLIC ACTIVATIONLAYER SOFTMAXSTRATEGY DEVICETYPE)
 
 add_library(SIGMOIDLAYER "src/SigmoidLayer.cpp" "include/SigmoidLayer.hpp")
 target_include_directories(SIGMOIDLAYER PUBLIC "include/")
-target_link_libraries(SIGMOIDLAYER PUBLIC ACTIVATIONLAYER SIGMOIDLAYERSTRATEGY)
+target_link_libraries(SIGMOIDLAYER PUBLIC ACTIVATIONLAYER SIGMOIDLAYERSTRATEGY DEVICETYPE)
 
 add_library(LEAKYRELULAYER "src/LeakyReLuLayer.cpp" "include/LeakyReLuLayer.hpp")
 target_include_directories(LEAKYRELULAYER PUBLIC "include/")
-target_link_libraries(LEAKYRELULAYER PUBLIC ACTIVATIONLAYER LEAKYRELULAYERSTRATEGY)
+target_link_libraries(LEAKYRELULAYER PUBLIC ACTIVATIONLAYER LEAKYRELULAYERSTRATEGY DEVICETYPE)
 
 add_library(RELULAYER "src/ReLuLayer.cpp" "include/ReLuLayer.hpp")
 target_include_directories(RELULAYER PUBLIC "include/")
-target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY)
+target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY DEVICETYPE)
 
 #add_library(TYPE_ENUMERATIONS_NN INTERFACE)
 #target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")

@@ -12,16 +12,16 @@ class NetworkLayer {
 
 protected:
 	LayerType layerType;
-  TENSOR(float) net;
-  TENSOR(float) output_forward;
-  TENSOR(float) output_backward;
+	TENSOR(float) net;
+	TENSOR(float) output_forward;
+	TENSOR(float) output_backward;
 
 public:
 	LayerType getLayerType();
 
 	virtual TENSOR(float) forward(TENSOR(float) input) = 0;
 	virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
-  virtual void setMode(DeviceType device, cl_int deviceID);
+	virtual void setMode(DeviceType device, cl_int deviceID);
 };
 #endif
 
