@@ -2,12 +2,14 @@
 #define MNIST_DATA_PARSER_H_
 
 #include <vector>
+#include <string>
 #include "MatrixDefine.hpp"
 
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 
 class MNISTDataParser {
-public:
+public:\
+  MNISTDataParser();
 	MNISTDataParser(int batchSize);
 	TENSOR(float) parseTraining();
 	TENSOR(float) parseTest();

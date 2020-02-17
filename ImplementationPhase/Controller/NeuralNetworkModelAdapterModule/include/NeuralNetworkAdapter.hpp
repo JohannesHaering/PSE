@@ -9,7 +9,7 @@ class NeuralNetworkAdapter {
 
     public:
         NeuralNetworkAdapter(NeuralNetwork neuralNetwork);
-
+        NeuralNetwork getNeuralNetwork();
         void addLayer(NetworkLayer* layer);
         void setName(std::string name);
         void setLabels(std::list<std::string> labels);
@@ -24,7 +24,7 @@ class NeuralNetworkAdapter {
         std::list<NetworkLayer*>::reverse_iterator rend();
         int getLayerCount();
 
-    private: 
+    protected: 
         NeuralNetwork neuralNetwork;    
         
 };

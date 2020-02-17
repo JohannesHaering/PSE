@@ -22,7 +22,7 @@ Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, st
 
 void Trainer::loadDataset()
 {
-    supplyer = new TrainerClassificationDataSupply(DATATYPE::MNIST);
+    supplyer = new TrainerClassificationDataSupply(DATATYPE::MNIST, batchSize);
 }
 
 void Trainer::startTraining()
@@ -30,8 +30,8 @@ void Trainer::startTraining()
     for(int b = 0; b < 5; b++) //train on 5 batches
     {
       //supplier
-      trainer.forward(supplyer->getTrainImageBatch(batchSize, b));
-      trainer.train(supplyer->getTrainLabelBatch(batchSize, b));
+      trainer.forward(supplyer->getTrainingBatchInput(b));
+      trainer.train(supplyer->getTrainingBatchOutput(b));
       //trainer.forward(dataset_train_images[i]);
       //trainer.train(dataset_train_labels[i]);
 

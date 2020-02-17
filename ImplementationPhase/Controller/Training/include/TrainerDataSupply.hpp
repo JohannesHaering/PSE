@@ -13,8 +13,6 @@
 class TrainerDataSupply
 {
 public:
-    virtual int getAmountClasses() = 0;
-
     virtual TENSOR(float) getTrainingBatchInput(int numb) = 0;
     virtual TENSOR(float) getTrainingBatchOutput(int numb) = 0;
 

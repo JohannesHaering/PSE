@@ -4,14 +4,15 @@
 #include <vector>
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
+#include "MatrixDefine.hpp"
 
 class CompleteTrainer
 {
 public:
-	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate, int batchSize);
+	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate);
 	TENSOR(float) forward(TENSOR(float) input);
 	void train(TENSOR(float) target);
-	float calcCEError(TENSOR(float) target);
+	TENSOR(float) calcCEError(TENSOR(float) target);
 
 private:
 	TENSOR(float) output;

@@ -1,8 +1,13 @@
 #include <vector>
+#include <string>
 
 #include "MatrixDefine.hpp"
 #include "MNISTDataParser.hpp"
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
+
+MNISTDataParser::MNISTDataParser(){
+  MNISTDataParser(16);
+}
 
 MNISTDataParser::MNISTDataParser(int batchSize) : batchSize(batchSize)
 {

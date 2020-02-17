@@ -21,6 +21,7 @@ private:
 	float getNewTestAccuracy();
 	void loadDataset();
 
+  std::string trainData;
 	float desiredPrecision;
 	std::vector<float> testAcc;
 	std::vector<float> trainingAcc;

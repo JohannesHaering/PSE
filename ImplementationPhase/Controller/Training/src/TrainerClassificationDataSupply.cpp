@@ -6,13 +6,14 @@
 #include "MNISTDataParser.hpp"
 #include "EvenNotEvenDatasetParser.hpp"
 #include "ImageFacade.hpp"
+#include "DataType.hpp"
 
 #include <string>
 #include <list>
 #include <map>
 #include <opencv2/opencv.hpp>
 
-TrainerClassificationDataSupply::TrainerClassificationDataSupply(std::string directory, int batchSize, int width, int height, int channels)
+TrainerClassificationDataSupply::TrainerClassificationDataSupply(std::string directory, int width, int height, int channels, int batchSize)
 {
 	ImageFacade imageFacade = ImageFacade();
 	std::list<std::string> files = imageFacade.readDirectory(directory);
@@ -36,14 +37,14 @@ TrainerClassificationDataSupply::TrainerClassificationDataSupply(DATATYPE type, 
 	}
 	if (type == DATATYPE::MNIST)
 	{
-		mnistDataParser = MNISTDataParser(batchSize);		
+		MNISTDataParser* mnistDataParser = new MNISTDataParser(batchSize);		
 	}
 }
 
-TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput() {
+TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput(int numb) {
 	return mnistDataParser.parseTraining();
 }
 
-TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int batchSize, int numb) {
+TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int numb) {
 	return mnistDataParser.parseTrainingLabel();
 }
