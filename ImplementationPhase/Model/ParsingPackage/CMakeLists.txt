@@ -28,7 +28,7 @@ add_library(LAYERPARSER
 "src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp"
 "src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp")
 target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
-target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER LAYERTYPE MATRIX_DEFINE NEURALNETWORK NETWORKLAYER ACTIVATIONLAYER DENSELAYER)
+target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER LAYERTYPE MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER)
 
 
 add_library(NEURALNETWORKPARSER "src/NeuralNetworkParser.cpp" "include/NeuralNetworkParser.hpp")

@@ -1,7 +1,8 @@
-#include "NetworkLayer.hpp"
 #include "LineBreakParser.hpp"
 #include "LayerParserDistribution.hpp"
 #include "DenseLayerParser.hpp"
+
+#include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "DenseLayer.hpp"
 #include "ReLuLayer.hpp"
