@@ -70,7 +70,7 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
     }
 }
 
-std::string ActivationLayerParser::parseBack(ActivationLayer* layer)
+std::string ActivationLayerParser::parseBack(NetworkLayer* layer)
 {
     std::string output = "";
     output += LayerParser::saveGeneralInformation(layer);
