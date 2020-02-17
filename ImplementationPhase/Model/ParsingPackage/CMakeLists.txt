@@ -14,7 +14,7 @@ add_library(NEURALNETWORKFACTORY
 "src/Factory/ConvolutionalLayerFactory.cpp" "include/Factory/ConvolutionalLayerFactory.hpp" 
 "src/Factory/DenseLayerFactory.cpp" "include/Factory/DenseLayerFactory.hpp" 
 "src/Factory/LayerFactory.cpp" "include/Factory/LayerFactory.hpp" 
-"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp"
+"src/Factory/NeuralNetworkFactory.cpp" "include/Factory/NeuralNetworkFactory.hpp"   
 "src/Factory/FlattenLayerFactory.cpp" "include/Factory/FlattenLayerFactory.hpp")
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
 target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER LAYERTYPE MATRIXDEFINE ACTIVATIONLAYER DENSELAYER RELULAYER LEAKYRELULAYER SOFTMAXLAYER SIGMOIDLAYER)

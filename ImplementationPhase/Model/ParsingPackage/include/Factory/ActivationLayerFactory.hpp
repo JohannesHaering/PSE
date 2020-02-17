@@ -4,16 +4,17 @@
 #include "LayerFactory.hpp"
 #include "NetworkLayer.hpp"
 #include "Activation.hpp"
+#include "LayerType.hpp"
 
 class ActivationLayerFactory : public LayerFactory
 {
 public:
   	NetworkLayer* buildLayer() override;
-    ActivationLayerFactory setActivation(Activation activation);
+    ActivationLayerFactory setActivation(LayerType activation);
     ActivationLayerFactory setAlpha(float alpha);
 
 private:
-	Activation activation;
+	LayerType activation;
 	float alpha;
 };
 #endif

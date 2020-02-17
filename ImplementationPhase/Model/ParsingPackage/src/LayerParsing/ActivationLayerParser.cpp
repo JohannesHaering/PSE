@@ -5,7 +5,6 @@
 #include "ActivationLayerFactory.hpp"
 #include "ActivationLayer.hpp"
 #include "LayerParserDistribution.hpp"
-#include "Activation.hpp"
 #include "Parser.hpp"
 #include "LineBreakParser.hpp"
 
@@ -33,37 +32,23 @@ NetworkLayer* ActivationLayerParser::parse(std::string toParse)
     std::string switcher = *(--valueParts.end());
     if (switcher == SIGMOID)
     {
-        factory.setActivation(Activation::SIGMOID);
-    }
-    else if (switcher == TANH)
-    {
-        factory.setActivation(Activation::TANH);
+        factory.setActivation(LayerType::SIGMOID);
     }
     else if (switcher == RELU)
     {
-        factory.setActivation(Activation::RELU);
+        factory.setActivation(LayerType::RELU);
     }
     else if (switcher == LEAKING_RELU)
     {
-        factory.setActivation(Activation::LEAKING_RELU);
-        factory.setAlpha(extractAlpha(*it));
-    }
-    else if (switcher == PARAMETRIC_RELU)
-    {
-        factory.setActivation(Activation::PARAMETRIC_RELU);
-        factory.setAlpha(extractAlpha(*it));
+        factory.setActivation(LayerType::LEAKING_RELU);
     }
     else if (switcher == SOFTMAX)
     {
-        factory.setActivation(Activation::SOFTMAX);
-    }
-    else if (switcher == SWISH)
-    {
-        factory.setActivation(Activation::SWISH);
+        factory.setActivation(LayerType::SOFTMAX);
     }
     else
     {
-        factory.setActivation(Activation::SIGMOID);
+        factory.setActivation(LayerType::SIGMOID);
     }
 
     return factory.buildLayer();
@@ -92,36 +77,22 @@ std::string ActivationLayerParser::parseBack(ActivationLayer* layer)
     output += USED_FUNCTION;
     output += LayerParser::VALUE_TYPE_DELIMETER;
 
-    switch (layer->getActivationType())
+    switch (layer->getLayerType())
     {
-    case Activation::SIGMOID:
+    case LayerType::SIGMOID:
         output += SIGMOID;
         output += "\n";
         break;
-    case Activation::TANH:
-        output += TANH;
-        output += "\n";
-        break;
-    case Activation::RELU:
+    case LayerType::RELU:
         output += RELU;
         output += "\n";
         break;
-    case Activation::LEAKING_RELU:
+    case LayerType::LEAKING_RELU:
         output += LEAKING_RELU;
         output += "\n";
-        output += saveAlpha(0.01f);
         break;
-    case Activation::PARAMETRIC_RELU:
-        output += PARAMETRIC_RELU;
-        output += "\n";
-        output += saveAlpha(0.01f);
-        break;
-    case Activation::SOFTMAX:
+    case LayerType::SOFTMAX:
         output += SOFTMAX;
-        output += "\n";
-        break;
-    case Activation::SWISH:
-        output += SWISH;
         output += "\n";
         break;
     }
