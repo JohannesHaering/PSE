@@ -8,8 +8,7 @@
 
 NetworkLayer* ConvolutionalLayerFactory::buildLayer()
 {
-    /*ConvolutionLayer* layer = new ConvolutionLayer();
-    layer->setInputDimension(inputDimensions);
+    ConvolutionLayer* layer = new ConvolutionLayer();
     layer->setBatchSize(batchSize);
     layer->setWidth(width);
     layer->setHeight(height);
@@ -19,8 +18,7 @@ NetworkLayer* ConvolutionalLayerFactory::buildLayer()
     layer->setStride(stride);
     layer->setPadding(padding);
     
-    return layer;*/
-    return new ConvolutionLayer(3,3,z, 32,1,0);//please fix your factory Johannes
+    return layer;
 }
 
 ConvolutionalLayerFactory* ConvolutionalLayerFactory::setWeightTensors(TENSOR(float) weightTensors)

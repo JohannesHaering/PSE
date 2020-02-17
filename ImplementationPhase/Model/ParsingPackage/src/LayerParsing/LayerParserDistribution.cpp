@@ -1,6 +1,7 @@
 #include "LineBreakParser.hpp"
 #include "LayerParserDistribution.hpp"
 #include "DenseLayerParser.hpp"
+#include "MaxPoolLayParser.hpp"
 
 #include "NetworkLayer.hpp"
 #include "LayerType.hpp"
@@ -10,6 +11,7 @@
 #include "SigmoidLayer.hpp"
 #include "SoftmaxLayer.hpp"
 #include "ActivationLayerParser.hpp"
+#include "MaxPoolLayer.hpp"
 
 #include <string>
 #include <stdexcept>
@@ -31,16 +33,19 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 		return parseDenseLayer(toParse);
 	}
 	else if (firstLine.compare(SIGMOID) == 0) {
-		return new SigmoidLayer();
+		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(SOFTMAX) == 0) {
-		return new SoftmaxLayer();
+		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(RELU) == 0) {
-		return new ReLuLayer();
+		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(LEAKYRELU) == 0) {
-		return new LeakyReLuLayer();
+		return ActivationLayerParser().parse(toParse);
+	}
+	else if (firstLine.compare(MAXPOOL) == 0) {
+		return MaxPoolLayerParser().parse(toParse);
 	}
 	else
 	{
