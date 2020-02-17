@@ -13,7 +13,7 @@ LeakyReLuLayerCPP::LeakyReLuLayerCPP(){
 
 TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR(float) net)
 {
-	MatrixDefine::TENSOR(float) output_forward = net;
+	TENSOR(float) output_forward = net;
     for (int b = 0; b < net.size(); b++)
       for (int z = 0; z < net[0].size(); z++)
           for (int y = 0; y < net[0][0].size(); y++)
