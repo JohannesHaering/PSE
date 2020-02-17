@@ -14,7 +14,7 @@ protected:
 	int outputSize;
 
 public:
-	virtual TENSOR(float) forward(TENSOR(float) input_data);
-	virtual TENSOR(float) backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net);
+	virtual TENSOR(float) forward(TENSOR(float) input_data) = 0;
+	virtual TENSOR(float) backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net) = 0;
 };
 #endif

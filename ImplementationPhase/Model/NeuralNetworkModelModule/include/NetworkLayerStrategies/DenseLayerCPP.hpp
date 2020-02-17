@@ -15,6 +15,8 @@ class DenseLayerCPP : public DenseLayerStrategy
 
     public:
         DenseLayerCPP(DenseLayer* layer, int inputSize, int outputSize);
+	      TENSOR(float) forward(TENSOR(float) input_data) override;
+	      TENSOR(float) backprob(TENSOR(float) updates) override;
         TENSOR(float) forward(TENSOR(float) input_data) override;
         TENSOR(float) backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net) override;
 };
