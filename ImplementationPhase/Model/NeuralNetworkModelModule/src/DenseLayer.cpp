@@ -11,7 +11,7 @@ DenseLayer::DenseLayer(int inputSize, int outputSize) : DenseLayer::DenseLayer(i
 
 DenseLayer::DenseLayer(int inputSize, int outputSize, float learningRate) : inputSize(inputSize), outputSize(outputSize), learningRate(learningRate)
 {
-  	layerType = LayerType::DENSE;
+	layerType = LayerType::DENSE;
 	bias = std::vector<float>(outputSize, 0.1);
 	weights.resize(inputSize);
 	float r = sqrt(12.0 / (inputSize + outputSize));
@@ -43,31 +43,31 @@ void DenseLayer::set_weights(std::vector<std::vector<float>> new_weights)
 	weights = new_weights;
 }
 
-std::vector<std::vector<float>> DenseLayer::get_weights() 
-{ 
-  return weights; 
+std::vector<std::vector<float>> DenseLayer::get_weights()
+{
+	return weights;
 }
 
-std::vector<float> DenseLayer::get_biase() 
-{ 
-  return bias; 
+std::vector<float> DenseLayer::get_biase()
+{
+	return bias;
 }
 
 TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 {
-  net = new_input;//store it for backprop
-  output_forward = layerStrategy->forward(new_input);
-  return output_forward;
+	net = new_input;//store it for backprop
+	output_forward = layerStrategy->forward(new_input);
+	return output_forward;
 }
 
 TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 {
-  output_backward = layerStrategy->backprob(feedback, learningrate, net); 
-  return output_backward;
+	output_backward = layerStrategy->backprob(feedback, learningrate, net);
+	return output_backward;
 }
 
 void DenseLayer::setMode(DeviceType device, cl_int deviceID) {
-  if (device == DeviceType::CPP) {
-    layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
-  }
+	if (device == DeviceType::CPP) {
+		layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
+	}
 }

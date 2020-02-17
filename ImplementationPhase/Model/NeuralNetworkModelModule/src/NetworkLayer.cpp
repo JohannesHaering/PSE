@@ -1,5 +1,7 @@
 #include "NetworkLayer.hpp"
 
+NetworkLayer::~NetworkLayer() {}
+
 LayerType NetworkLayer::getLayerType() { return layerType; }
 
 void NetworkLayer::setHeight(int height) { this->height = height; }
