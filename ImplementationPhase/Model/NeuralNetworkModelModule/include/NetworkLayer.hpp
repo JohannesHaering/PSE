@@ -13,12 +13,9 @@ class NetworkLayer
 
 protected:
 	LayerType layerType;
-	TENSOR(float)
-	net;
-	TENSOR(float)
-	output_forward;
-	TENSOR(float)
-	output_backward;
+  TENSOR(float)	net;
+	TENSOR(float)	output_forward;
+	TENSOR(float)	output_backward;
 
 public:
 	LayerType getLayerType();
