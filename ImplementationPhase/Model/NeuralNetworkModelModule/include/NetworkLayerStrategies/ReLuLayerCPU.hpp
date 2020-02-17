@@ -9,7 +9,7 @@
 class ReLuLayerCPU : public ReLuLayerStrategy
 {
 public:
-    MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data) override;
-    MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates) override;
+    TENSOR(float) forward(TENSOR(float) input_data) override;
+    TENSOR(float) backprob(TENSOR(float) updates) override;
 };
 #endif

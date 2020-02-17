@@ -3,12 +3,16 @@
 
 #include "DenseLayerStrategy.hpp"
 #include "MatrixDefine.hpp"
+#include "DenseLayer.hpp"
+#include "DenseLayer.hpp"
 
 class DenseLayerCPU : public DenseLayerStrategy
 {
+private:
+	DenseLayer* layer;
 public:
-    DenseLayerCPU(std::vector<std::vector<float>> *weights, std::vector<float> *bias, int *inputSize, int *outputSize);
-    MatrixDefine::TENSOR(float) forward(MatrixDefine::TENSOR(float) input_data) override;
-    MatrixDefine::TENSOR(float) backprob(MatrixDefine::TENSOR(float) updates, float learningRate) override;
+    DenseLayerCPU(DenseLayer* layer, int inputSize, int outputSize);
+    TENSOR(float) forward(TENSOR(float) input_data) override;
+    TENSOR(float) backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net) override;
 };
 #endif

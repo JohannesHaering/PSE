@@ -4,8 +4,9 @@
 #include <vector>
 #include <CL/cl.h>
 
-MatrixDefine::TENSOR(float) ReLuLayerCPU::forward(MatrixDefine::TENSOR(float) input_data)
+TENSOR(float) ReLuLayerCPU::forward(TENSOR(float) input_data)
 {
+	size_t MAX_SOURCE_SIZE = 0x100000;
     for (int b = 0; b < input.size(); b++)
         for (int z = 0; z < input[b].size(); z++)
             for (int y = 0; y < input[b][z].size(); y++)
