@@ -131,7 +131,7 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 
 	auto it = neuralNetwork.begin();
 	do {
-		output += LayerParserDistribution().parseBack(it);
+		output += LayerParserDistribution().parseBack(*it);
 	} while (it != neuralNetwork.end());
 
 	return output;

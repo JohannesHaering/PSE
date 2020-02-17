@@ -8,6 +8,7 @@
 #include "LeakyReLuLayer.hpp"
 #include "SigmoidLayer.hpp"
 #include "SoftmaxLayer.hpp"
+#include "ActivationLayerParser.hpp"
 
 #include <string>
 #include <stdexcept>
@@ -55,16 +56,16 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
             output += DenseLayerParser().parseBack(dynamic_cast<DenseLayer*>(layer));
             break;
         case LayerType::LEAKYRELU:
-            output += "LEAKYRELU";
+            output += ActivationLayerParser().parseBack(layer);
             break;   
         case LayerType::RELU:
-            output += "RELU";
+            output += ActivationLayerParser().parseBack(layer);
             break;
         case LayerType::SOFTMAX:
-            output += "SOFTMAX";
+            output += ActivationLayerParser().parseBack(layer);
             break;         
         case LayerType::SIGMOID:
-            output += "SIGMOID";
+            output += ActivationLayerParser().parseBack(layer);
             break;    
     }
 	return output;
