@@ -36,6 +36,12 @@ TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
 	return output_backward;
 }
 
+TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback, float learningrate)
+{
+  output_backward = layerStrategy->backprob(feedback, output_forward);
+	return output_backward;
+}
+
 void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {
   if (device == DeviceType::CPP) {
     layerStrategy = new SoftmaxLayerCPP();

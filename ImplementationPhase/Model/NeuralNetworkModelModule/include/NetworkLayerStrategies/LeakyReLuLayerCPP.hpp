@@ -4,7 +4,7 @@
 #include <string>
 #include <math.h>
 #include <vector>
-#include "ReLuLayerStrategy.hpp"
+#include "LeakyReLuLayerStrategy.hpp"
 #include "MatrixDefine.hpp"
 
 class LeakyReLuLayerCPP : public LeakyReLuLayerStrategy

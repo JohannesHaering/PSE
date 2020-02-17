@@ -29,6 +29,6 @@ TENSOR(float) LeakyReLuLayerCPP::backprob(TENSOR(float) updates)
         for (int z = 0; z < updates[0].size(); z++)
             for (int y = 0; y < updates[0][0].size(); y++)
                 for (int x = 0; x < updates[0][0][0].size(); x++)
-                    output_backward[b][z][y][x] = updates[b][z][y][x] > 0 ? udaptes[b][z][y][x] : 0.01 * updates[b][z][y][x];
+                    output_backward[b][z][y][x] = updates[b][z][y][x] > 0 ? updates[b][z][y][x] : 0.01 * updates[b][z][y][x];
     return output_backward;
 }
