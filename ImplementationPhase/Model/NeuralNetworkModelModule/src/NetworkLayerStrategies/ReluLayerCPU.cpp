@@ -1,5 +1,6 @@
 #include "ReLuLayerCPU.hpp"
 #include "MatrixDefine.hpp"
+#include "LeakyReLuLayerStrategy.hpp"
 
 #include <vector>
 #include <CL/cl.h>
@@ -7,11 +8,11 @@
 TENSOR(float) ReLuLayerCPU::forward(TENSOR(float) input_data)
 {
 	size_t MAX_SOURCE_SIZE = 0x100000;
-    for (int b = 0; b < input.size(); b++)
-        for (int z = 0; z < input[b].size(); z++)
-            for (int y = 0; y < input[b][z].size(); y++)
+    for (int b = 0; b < input_data.size(); b++)
+        for (int z = 0; z < input_data[b].size(); z++)
+            for (int y = 0; y < input_data[b][z].size(); y++)
             {
-                std::vector<float> arr = input[i][z][y];
+                std::vector<float> arr = input_data[b][z][y];
                 cl_mem d_input;
                 cl_mem d_output;
 
@@ -29,7 +30,7 @@ TENSOR(float) ReLuLayerCPU::forward(TENSOR(float) input_data)
                 if (!fp)
                 {
                     fprintf(stderr, "Failed to load kernel.\n");
-                    return nullptr;
+                    return TENSOR(float)(0, MATRIX_3D(float)(0, MATRIX_2D(float)(0, std::vector<float>(0))));;
                 }
                 source_str = (char *)malloc(MAX_SOURCE_SIZE);
                 source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
@@ -89,7 +90,7 @@ TENSOR(float) ReLuLayerCPU::forward(TENSOR(float) input_data)
                 for (int x = 0; y < arr.size(); y++)
                     output.push_back(hostOutput[x]);
 
-                input[b][z][y] = output;
+				input_data[b][z][y] = output;
                 
                 // release OpenCL resources
                 clReleaseMemObject(input_mem_obj);
@@ -104,16 +105,16 @@ TENSOR(float) ReLuLayerCPU::forward(TENSOR(float) input_data)
                 free(hostOutput);
             }
 
-    return input;
+    return input_data;
 }
 
-MatrixDefine::TENSOR(float) ReLuLayerCPU::backprob(MatrixDefine::TENSOR(float) updates)
+TENSOR(float) ReLuLayerCPU::backprob(TENSOR(float) updates)
 {
-    MatrixDefine::TENSOR(float) output = feedback;
-    for (int b = 0; b < feedback.size(); b++)
-        for (int z = 0; z < feedback[0].size(); z++)
-            for (int y = 0; y < feedback[0][0].size(); y++)
-                for (int x = 0; x < feedback[0][0][0].size(); x++)
-                    output_backward[b][z][y][x] = feedback[b][z][y][x] > 0 ? feedback[b][z][y][x] : 0;
+    TENSOR(float) output = updates;
+    for (int b = 0; b < updates.size(); b++)
+        for (int z = 0; z < updates[0].size(); z++)
+            for (int y = 0; y < updates[0][0].size(); y++)
+                for (int x = 0; x < updates[0][0][0].size(); x++)
+					output_backward[b][z][y][x] = updates[b][z][y][x] > 0 ? updates[b][z][y][x] : 0;
     return output;
 }
