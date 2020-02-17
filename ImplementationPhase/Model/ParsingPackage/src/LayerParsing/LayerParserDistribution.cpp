@@ -44,7 +44,7 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(MAXPOOL) == 0) {
-		return new MaxPoolLayerParser();
+		return new MaxPoolLayer();
 	}
 	else
 	{
