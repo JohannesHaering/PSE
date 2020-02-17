@@ -7,11 +7,6 @@
 #include <iostream>
 #include <random>
 
-
-ConvolutionLayer::ConvolutionLayer(TENSOR(float) filter, int stride, int padding) {
-	ConvolutionLayer(3, 3, 6, 3, stride, padding);
-}
-
 ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding) : stride(stride), padding(padding), numFilters(numFilters),
                                                                                                                                  filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
 {
@@ -40,7 +35,7 @@ ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterS
   //layerStrategy = DenseLayerCPP(&weights, &bias, &learningRate, &netSize, &outputSize);
 }
 
-ConvolutionLayer(TENSOR(float) filter, int stride, int padding) : stride(stride), padding(padding)
+ConvolutionLayer::ConvolutionLayer(TENSOR(float) filter, int stride, int padding) : stride(stride), padding(padding)
 {
   weightsTensor = filter;
   numFilters = filter.size();
