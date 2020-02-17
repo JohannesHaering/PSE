@@ -18,10 +18,15 @@ TENSOR(float) LeakyReLuLayer::forward(TENSOR(float) net)
 	return output_forward;
 }
 
-
 TENSOR(float) LeakyReLuLayer::backprob(TENSOR(float) feedback)
 {
   output_backward = layerStrategy->backprob(feedback);
+	return output_backward;
+}
+
+TENSOR(float) LeakyReLuLayer::backprob(TENSOR(float) feedback, float learningRate)
+{
+	output_backward = layerStrategy->backprob(feedback);
 	return output_backward;
 }
 
