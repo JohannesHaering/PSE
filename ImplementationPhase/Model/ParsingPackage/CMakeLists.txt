@@ -19,8 +19,13 @@ add_library(NEURALNETWORKFACTORY
 target_include_directories(NEURALNETWORKFACTORY PUBLIC "include/Factory")
 target_link_libraries(NEURALNETWORKFACTORY PUBLIC NEURALNETWORK NETWORKLAYER LAYERTYPE MATRIX_DEFINE ACTIVATIONLAYER DENSELAYER RELULAYER LEAKYRELULAYER SOFTMAXLAYER SIGMOIDLAYER)
 
-add_library(LAYERPARSER "src/LayerParsing/ActivationLayerParser.cpp" "include/LayerParsing/ActivationLayerParser.hpp" "src/LayerParsing/ConvolutionalLayerParser.cpp" "include/LayerParsing/ConvolutionalLayerParser.hpp" "src/LayerParsing/DenseLayerParser.cpp" "include/LayerParsing/DenseLayerParser.hpp"
-"src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp" "src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp" "src/LayerParsing/MaxPoolLayerParser.cpp" "include/LayerParsing/MaxPoolLayerParser.hpp")
+add_library(LAYERPARSER 
+"src/LayerParsing/ActivationLayerParser.cpp" "include/LayerParsing/ActivationLayerParser.hpp" 
+"src/LayerParsing/ConvolutionalLayerParser.cpp" "include/LayerParsing/ConvolutionalLayerParser.hpp" 
+"src/LayerParsing/DenseLayerParser.cpp" "include/LayerParsing/DenseLayerParser.hpp"
+"src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp" 
+"src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp")
+#"src/LayerParsing/MaxPoolLayerParser.cpp" "include/LayerParsing/MaxPoolLayerParser.hpp")
 target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
 target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER LAYERTYPE MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER MAXPOOLLAYER)
 

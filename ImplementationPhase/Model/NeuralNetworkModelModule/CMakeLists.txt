@@ -24,7 +24,7 @@ target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER DEVICETYPE MATRIX_DEFI
 
 add_library(MAXPOOLLAYER "src/MaxPoolLayer.cpp" "include/MaxPoolLayer.hpp")
 target_include_directories(MAXPOOLLAYER PUBLIC "include/")
-target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE)
+target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE DEVICETYPE)
 
 add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
