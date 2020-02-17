@@ -16,26 +16,13 @@
 class TrainerClassificationDataSupply : public TrainerDataSupply
 {
 public:
-    TrainerClassificationDataSupply(std::string directory, int width, int height, int channels);
-    TrainerClassificationDataSupply(DATATYPE type);
+    TrainerClassificationDataSupply(std::string directory, int width, int height, int channels, int batchSize);
+    TrainerClassificationDataSupply(DATATYPE type, int batchSize);
 
-    std::vector<float> getOutputVector(std::string id) override;
-    std::vector<float> createOutputVector(ClassificationResult result);
-    TENSOR(float) getTrainingBatchInput(int batchSize, int numb) override;
-    TENSOR(float) getTrainingBatchOutput(int batchSize, int numb) override;
-
-    int getAmountClasses();
+    TENSOR(float) getTrainingBatchInput() override;
+    TENSOR(float) getTrainingBatchOutput() override;
 
 protected:
-    void splitData() override;
-
-private:
-    ClassificationResult createResult(int i, std::vector<float> label);
-
-    std::vector<ClassificationResult> dataSet;
-    std::vector<ClassificationResult*> dataSetTraining;
-    std::vector<ClassificationResult*> dataSetTest;
-    std::map<std::string, ClassificationResult*> dataMap;
-    std::vector<std::string> classnames;
+    MNISTDataParser mnistDataParser;
 };
 #endif

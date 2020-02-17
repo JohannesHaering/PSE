@@ -13,26 +13,22 @@
 class TrainerDataSupply
 {
 public:
-    TrainerDataSupply(std::string directory, int width, int height, int channels);
-
-	std::list<std::string> getDataIds();
-    cv::Mat getImage(std::string id);
-    virtual std::vector<float> getOutputVector(std::string id) = 0;
-    int getSize();
     virtual int getAmountClasses() = 0;
-    virtual TENSOR(float) getTrainingBatch(int batchSize, int numb) = 0;
+
+    virtual TENSOR(float) getTrainingBatchInput(int numb) = 0;
+    virtual TENSOR(float) getTrainingBatchOutput(int numb) = 0;
 
 protected:
-    virtual void splitData() = 0;
-
     const float TRAINING_PART = 0.7f;
     const float TEST_PART = 0.3f;
 
-    std::map<std::string, cv::Mat> images;
-    std::vector<std::string> ids;
-    std::list<std::string> labelnames;
+    std::vector<TENSOR(float)*> trainingInputBatches;
+    std::vector<TENSOR(float)*> testInputBatches;
+    std::vector<TENSOR(float)*> trainingOutputBatches;
+    std::vector<TENSOR(float)*> testOutputBatches;
+    std::vector<TENSOR(float)> allInputBatches;
+    std::vector<TENSOR(float)> allOutputBatches;
 
-private:
     std::string extractFileName(std::string path);
 };
 #endif
