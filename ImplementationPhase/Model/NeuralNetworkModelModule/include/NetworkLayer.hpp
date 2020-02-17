@@ -23,5 +23,15 @@ public:
 	virtual TENSOR(float) forward(TENSOR(float) input) = 0;
 	virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
 	virtual void setMode(DeviceType device, cl_int deviceID);
+  
+  void setHeight(int height);
+  void setWidth(int width);
+  void setZ(int z);
+  void setBatchSize(int batchsize);
+
+  int height;
+  int width;
+  int z;
+  int batchSize;
 };
 #endif
