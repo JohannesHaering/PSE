@@ -7,6 +7,11 @@
 #include <iostream>
 #include <random>
 
+
+ConvolutionLayer::ConvolutionLayer(TENSOR(float) filter, int stride, int padding) {
+	ConvolutionLayer(3, 3, 6, 3, stride, padding);
+}
+
 ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding) : stride(stride), padding(padding), numFilters(numFilters),
                                                                                                                                  filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
 {
