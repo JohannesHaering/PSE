@@ -29,6 +29,7 @@ public:
     const std::string SOFTMAX = "softmax";
     const std::string RELU = "relu";
     const std::string LEAKYRELU = "leakyrelu";
+    const std::string MAXPOOL = "maxpool";
 
 private:
     NetworkLayer* parseConvolutionalLayer(std::string toParse);
