@@ -13,6 +13,6 @@ class FlattenLayerParser : public LayerParser
 {
 public:
     NetworkLayer* parse(std::string toParse) override;
-    std::string parseBack(FlattenLayer* layer);
+    std::string parseBack(NetworkLayer* layer) override;
 };
 #endif

@@ -23,7 +23,7 @@ NetworkLayer* FlattenLayerParser::parse(std::string toParse)
     return factory.buildLayer();
 }
 
-std::string FlattenLayerParser::parseBack(FlattenLayer* layer)
+std::string FlattenLayerParser::parseBack(NetworkLayer* layer)
 {
     std::string output = "";
     output += LayerParser::saveGeneralInformation(layer);

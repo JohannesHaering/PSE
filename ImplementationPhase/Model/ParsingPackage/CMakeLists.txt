@@ -25,8 +25,8 @@ add_library(LAYERPARSER
 "src/LayerParsing/ConvolutionalLayerParser.cpp" "include/LayerParsing/ConvolutionalLayerParser.hpp"
 "src/LayerParsing/DenseLayerParser.cpp" "include/LayerParsing/DenseLayerParser.hpp"
 "src/LayerParsing/LayerParser.cpp" "include/LayerParsing/LayerParser.hpp"
-"src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp"
-"src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp")
+"src/LayerParsing/LayerParserDistribution.cpp" "include/LayerParsing/LayerParserDistribution.hpp")
+#"src/LayerParsing/FlattenLayerParser.cpp" "include/LayerParsing/FlattenLayerParser.hpp"
 target_include_directories(LAYERPARSER PUBLIC "include/LayerParsing")
 target_link_libraries(LAYERPARSER PUBLIC NEURALNETWORKFACTORY NEURALNETWORK PARSER LINEBREAKPARSER LAYERTYPE MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER)
 

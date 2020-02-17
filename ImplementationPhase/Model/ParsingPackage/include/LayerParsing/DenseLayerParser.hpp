@@ -14,7 +14,7 @@ class DenseLayerParser : public LayerParser
 {
 public:
     NetworkLayer* parse(std::string toParse) override;
-    std::string parseBack(NetworkLayer* layer);
+    std::string parseBack(NetworkLayer* layer) override;
 
 private:
     const std::string WEIGHTS_TENSOR = "tensor";

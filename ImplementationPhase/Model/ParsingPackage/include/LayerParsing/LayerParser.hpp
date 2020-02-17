@@ -12,34 +12,38 @@
 class LayerParser : public LineBreakParser<NetworkLayer>
 {
 public:
-    virtual NetworkLayer* parse(std::string toParse) = 0;
+	virtual NetworkLayer* parse(std::string toParse) = 0;
+	virtual std::string parseBack(NetworkLayer* layer) = 0;
 
 protected:
-    std::string removeCharacter(std::string text, char toErase);
-    std::string extractValuePart(std::string text);
-    int *parseIntArray(std::string text);
-    std::vector<float> parseFloatArray(std::string text);
-    void extractGeneralInformation(std::string text);
-    std::vector<std::vector<float>> parse2DFloatArray(std::string text);
-    std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text);
-    std::vector<std::vector<std::vector<std::vector<float>>>> parse4DFloatArray(std::string text);
-    std::string saveGeneralInformation(NetworkLayer* layer);
-    std::string saveIntArray(int* arr);
-    std::string saveFloatArray(std::vector<float> arr);
-    std::string save2DFloatArray(std::vector<std::vector<float>> arr);
-    std::string save3DFloatArray(std::vector<std::vector<std::vector<float>>> arr);
-    std::string save4DFloatArray(std::vector<std::vector<std::vector<std::vector<float>>>> arr);
-    const std::string VALUE_TYPE_DELIMETER = "=";
-    const std::string INPUT_DIMENSIONS = "inputdim";
-    const std::string BATCH_SIZE = "batchsize";
-    const std::string WIDTH = "width";
-    const std::string HEIGHT = "height";
-    const std::string Z = "z";
-    const std::string VALUE_PARTS_DELIMETER = ",";
-    const char VALUE_BEGIN = '[';
-    const char VALUE_END = ']';
-    int *inputDimensions;
-    int batchSize;
-    int height, width, z;
+	std::string removeCharacter(std::string text, char toErase);
+	std::string extractValuePart(std::string text);
+
+	void extractGeneralInformation(std::string text);
+	int* parseIntArray(std::string text);
+	std::vector<float> parseFloatArray(std::string text);
+	std::vector<std::vector<float>> parse2DFloatArray(std::string text);
+	std::vector<std::vector<std::vector<float>>> parse3DFloatArray(std::string text);
+	std::vector<std::vector<std::vector<std::vector<float>>>> parse4DFloatArray(std::string text);
+
+	std::string saveGeneralInformation(NetworkLayer* layer);
+	std::string saveIntArray(int* arr);
+	std::string saveFloatArray(std::vector<float> arr);
+	std::string save2DFloatArray(std::vector<std::vector<float>> arr);
+	std::string save3DFloatArray(std::vector<std::vector<std::vector<float>>> arr);
+	std::string save4DFloatArray(std::vector<std::vector<std::vector<std::vector<float>>>> arr);
+
+	const std::string VALUE_TYPE_DELIMETER = "=";
+	const std::string INPUT_DIMENSIONS = "inputdim";
+	const std::string BATCH_SIZE = "batchsize";
+	const std::string WIDTH = "width";
+	const std::string HEIGHT = "height";
+	const std::string Z = "z";
+	const std::string VALUE_PARTS_DELIMETER = ",";
+	const char VALUE_BEGIN = '[';
+	const char VALUE_END = ']';
+	int* inputDimensions;
+	int batchSize;
+	int height, width, z;
 };
 #endif
