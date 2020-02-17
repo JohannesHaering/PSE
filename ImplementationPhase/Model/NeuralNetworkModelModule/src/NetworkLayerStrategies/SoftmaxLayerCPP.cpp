@@ -40,3 +40,7 @@ TENSOR(float) SoftmaxLayerCPP::backprob(TENSOR(float) updates, TENSOR(float) out
                  output[b][z][y][x] =  output_forward[b][z][y][x] - updates[b][z][y][x];
     return output;
 }
+
+TENSOR(float) SoftmaxLayerCPP::backprob(TENSOR(float) updates){
+
+}
