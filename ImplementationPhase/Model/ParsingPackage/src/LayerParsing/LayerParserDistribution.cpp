@@ -1,7 +1,6 @@
 #include "LineBreakParser.hpp"
 #include "LayerParserDistribution.hpp"
 #include "DenseLayerParser.hpp"
-#include "MaxPoolLayParser.hpp"
 
 #include "NetworkLayer.hpp"
 #include "LayerType.hpp"
@@ -45,7 +44,7 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(MAXPOOL) == 0) {
-		return MaxPoolLayerParser().parse(toParse);
+		return new MaxPoolLayerParser();
 	}
 	else
 	{
