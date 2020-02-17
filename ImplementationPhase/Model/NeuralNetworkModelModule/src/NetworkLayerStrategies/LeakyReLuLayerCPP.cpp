@@ -11,10 +11,10 @@ LeakyReLuLayerCPP::LeakyReLuLayerCPP(){
 
 }
 
-TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR(float) net)
+TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR(float) input_data)
 {
-	TENSOR(float) output_forward = net;
-    for (int b = 0; b < net.size(); b++)
+	TENSOR(float) output_forward =  input_data;
+    for (int b = 0; b < input_data.size(); b++)
       for (int z = 0; z < net[0].size(); z++)
           for (int y = 0; y < net[0][0].size(); y++)
               for (int x = 0; x < net[0][0][0].size(); x++)
@@ -22,13 +22,13 @@ TENSOR(float) LeakyReLuLayerCPP::forward(TENSOR(float) net)
     return output_forward;
 }
 
-TENSOR(float) LeakyReLuLayerCPP::backprob(TENSOR(float) feedback)
+TENSOR(float) LeakyReLuLayerCPP::backprob(TENSOR(float) updates)
 {
-    TENSOR(float) output_backward = feedback;
-    for (int b = 0; b < feedback.size(); b++)
-        for (int z = 0; z < feedback[0].size(); z++)
-            for (int y = 0; y < feedback[0][0].size(); y++)
-                for (int x = 0; x < feedback[0][0][0].size(); x++)
-                    output_backward[b][z][y][x] = feedback[b][z][y][x] > 0 ? feedback[b][z][y][x] : 0.01 * feedback[b][z][y][x];
+    TENSOR(float) output_backward = updates;
+    for (int b = 0; b < updates.size(); b++)
+        for (int z = 0; z < updates[0].size(); z++)
+            for (int y = 0; y < updates[0][0].size(); y++)
+                for (int x = 0; x < updates[0][0][0].size(); x++)
+                    output_backward[b][z][y][x] = updates[b][z][y][x] > 0 ? udaptes[b][z][y][x] : 0.01 * updates[b][z][y][x];
     return output_backward;
 }

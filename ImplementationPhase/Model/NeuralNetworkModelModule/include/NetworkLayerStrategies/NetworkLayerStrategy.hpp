@@ -12,7 +12,7 @@ class NetworkLayerStrategy {
 		TENSOR(float)* net;
     
     public:
-	    virtual TENSOR(float) forward(TENSOR(float) input) = 0;
-
+	    virtual TENSOR(float) forward(TENSOR(float) input_data) = 0;
+virtual TENSOR(float) backprob(TENSOR(float) updates) = 0;
 };
 #endif

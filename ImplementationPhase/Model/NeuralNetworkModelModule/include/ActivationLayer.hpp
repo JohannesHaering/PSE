@@ -10,6 +10,6 @@ class ActivationLayer : public NetworkLayer {
 
   public:
 	  virtual TENSOR(float) forward(TENSOR(float) feedback) = 0;
-	  virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
+	virtual TENSOR(float) backprob(TENSOR(float) feedback) = 0;
 };
 #endif

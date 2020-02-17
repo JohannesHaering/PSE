@@ -10,7 +10,7 @@
 class LeakyReLuLayerCPP : public LeakyReLuLayerStrategy
 {
     public:
-        LeakyReLuLayerCPP();
+    LeakyReLuLayerCPP();
 		TENSOR(float) forward(TENSOR(float) input_data) override;
 		TENSOR(float) backprob(TENSOR(float) updates) override;
 };
