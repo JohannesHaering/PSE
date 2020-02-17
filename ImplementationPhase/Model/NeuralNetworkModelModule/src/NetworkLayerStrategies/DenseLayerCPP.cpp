@@ -68,6 +68,4 @@ TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) updates, float learningRate,
     return output;
 }
 
-TENSOR(float) DenseLayerCPP::forward(TENSOR(float) input_data){}
-
 TENSOR(float) DenseLayerCPP::backprob(TENSOR(float) updates){}
