@@ -5,6 +5,6 @@
 
 class VectorAdditionCPU {
 public:
-    static std::vector<float> addVector(std::vector<float> a, std::vector<float> b);
+    std::vector<float> addVector(std::vector<float> a, std::vector<float> b);
 };
 #endif

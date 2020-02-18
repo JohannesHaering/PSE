@@ -116,7 +116,7 @@
     return C;
 }*/
 
-static std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vector<float> b)
+std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vector<float> b)
 {
     float *A = (float *)malloc(sizeof(float) * a.size());
     float *B = (float *)malloc(sizeof(float) * b.size());
