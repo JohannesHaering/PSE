@@ -7,24 +7,6 @@
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
 
-int main()
-{
-    std::vector<float> A = std::vector<float>(10);
-    std::vector<float> B = std::vector<float>(10);
-
-    for (int i = 0; i < 10; i++)
-    {
-        A[i] = i;
-        B[i] = 9 - i;
-    }
-
-    std::vector<float> C = addVector(A, B);
-
-    for (int i = 0; i < 10; i++)
-        std::cout << "C[i] = " << C[i] << std::endl;
-
-    return 0;
-}
 
 std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
 {
@@ -154,4 +136,24 @@ std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
     free(source_str);
 
     return result;
+}
+
+
+int main()
+{
+    std::vector<float> A = std::vector<float>(10);
+    std::vector<float> B = std::vector<float>(10);
+
+    for (int i = 0; i < 10; i++)
+    {
+        A[i] = i;
+        B[i] = 9 - i;
+    }
+
+    std::vector<float> C = addVector(A, B);
+
+    for (int i = 0; i < 10; i++)
+        std::cout << "C[i] = " << C[i] << std::endl;
+
+    return 0;
 }
