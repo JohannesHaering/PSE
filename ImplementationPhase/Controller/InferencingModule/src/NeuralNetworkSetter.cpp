@@ -5,6 +5,8 @@
 #include "LeakyReLuLayer.hpp"
 #include "SoftmaxLayer.hpp"
 #include "FlattenLayer.hpp"
+#include "ConvolutionLayer.hpp"
+#include "MaxpoolLayer.hpp"
 #include <vector>
 
 
@@ -31,21 +33,26 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
 
+  ConvolutionLayer* clayer = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+  network.addLayer(clayer);
+
+  LeakyReLuLayer* llayer = new LeakyReLuLayer();
+  network.addLayer(llayer);
+
+  ConvolutionLayer* clayer = new ConvolutionLayer(3, 3, 32, 10, 1, 0);
+  network.addLayer(clayer);
+
+  network.addLayer(llayer);
+
   FlattenLayer* flayer = new FlattenLayer();
   network.addLayer(flayer);
 
-  DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
+  DenseLayer* dlayer = new DenseLayer(24 * 24 * 10, 10);
 	network.addLayer(dlayer);
-
-	LeakyReLuLayer* llayer = new LeakyReLuLayer();
-  network.addLayer(llayer);
-
-	DenseLayer* dlayer2 = new DenseLayer(300, 10);
-	network.addLayer(dlayer2);
 
   SoftmaxLayer* smlayer = new SoftmaxLayer();
   network.addLayer(smlayer);
-
+/*
   NeuralNetwork network2 = NeuralNetwork("Das 2. beschte netz", 28, 28, 1);
   network2.setLabels(labels);
     
@@ -61,9 +68,9 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
    SoftmaxLayer* smlayer2 = new SoftmaxLayer();
    network2.addLayer(smlayer2);
 
-
+*/
   neuralNetworks.push_back(network);
-  neuralNetworks.push_back(network2);
+ // neuralNetworks.push_back(network2);
 
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
