@@ -72,17 +72,17 @@ add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLaye
 target_include_directories(LEAKYRELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
-#add_library(LEAKYRELULAUERCPU "src/NetworkLayerStrategies/LeakyReLuLayerCPU.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPU.hpp")
-#target_include_directories(LEAKYRELULAUERCPU PUBLIC "include/NetworkLayerSrategies")
-#target_link_libraries(LEAKYRELULAUERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE LEAKYRELULAYERSTRATEGY)
+add_library(LEAKYRELULAUERCPU "src/NetworkLayerStrategies/LeakyReLuLayerCPU.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPU.hpp")
+target_include_directories(LEAKYRELULAUERCPU PUBLIC "include/NetworkLayerSrategies")
+target_link_libraries(LEAKYRELULAUERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE LEAKYRELULAYERSTRATEGY)
 
-#add_library(RELULAYERCPU "src/NetworkLayerStrategies/ReLuLayerCPU.cpp" "include/NetworkLayerStrategies/ReLuLayerCPU.hpp")
-#target_include_directories(RELULAYERCPU PUBLIC "include/NetworkLayerSrategies")
-#target_link_libraries(RELULAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY)
+add_library(RELULAYERCPU "src/NetworkLayerStrategies/ReLuLayerCPU.cpp" "include/NetworkLayerStrategies/ReLuLayerCPU.hpp")
+target_include_directories(RELULAYERCPU PUBLIC "include/NetworkLayerSrategies")
+target_link_libraries(RELULAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY)
 
-#add_library(DENSELAYERCPU "src/NetworkLayerStrategies/DenseLayerCPU.cpp" "include/NetworkLayerStrategies/DenseLayerCPU.hpp")
-#target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
-#target_link_libraries(DENSELAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY FUNCTIONALITY)
+add_library(DENSELAYERCPU "src/NetworkLayerStrategies/DenseLayerCPU.cpp" "include/NetworkLayerStrategies/DenseLayerCPU.hpp")
+target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
+target_link_libraries(DENSELAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY FUNCTIONALITY)
 
 add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp")
 target_include_directories(SOFTMAXSTRATEGY PUBLIC "include/NetworkLayerStrategies")
