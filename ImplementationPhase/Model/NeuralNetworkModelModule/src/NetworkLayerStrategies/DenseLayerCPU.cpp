@@ -18,8 +18,8 @@ TENSOR(float) DenseLayerCPU::forward(TENSOR(float) input_data)
     TENSOR(float) output = TENSOR(float)(input_data.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(outputSize))));
     for (int b = 0; b < input_data.size(); b++)
     {
-        std::vector<std::vector<float>> product = MatrixMultiplicationCPU::mult(layer->get_weights(), input_data[b][0]);
-        output[b][0][0] = VectorAdditionCPU::addVector(product[0], layer->get_biase());
+        std::vector<std::vector<float>> product = MatrixMultiplicationCPU().mult(layer->get_weights(), input_data[b][0]);
+        output[b][0][0] = VectorAdditionCPU().addVector(product[0], layer->get_biase());
     }
 
     return output;
