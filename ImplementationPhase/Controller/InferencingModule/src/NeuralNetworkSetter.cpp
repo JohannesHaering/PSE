@@ -6,7 +6,7 @@
 #include "SoftmaxLayer.hpp"
 #include "FlattenLayer.hpp"
 #include "ConvolutionLayer.hpp"
-#include "MaxpoolLayer.hpp"
+#include "MaxPoolLayer.hpp"
 #include <vector>
 
 
@@ -33,14 +33,14 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
 
-  ConvolutionLayer* clayer = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
-  network.addLayer(clayer);
+  ConvolutionLayer* clayer1 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+  network.addLayer(clayer1);
 
   LeakyReLuLayer* llayer = new LeakyReLuLayer();
   network.addLayer(llayer);
 
-  ConvolutionLayer* clayer = new ConvolutionLayer(3, 3, 32, 10, 1, 0);
-  network.addLayer(clayer);
+  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 32, 10, 1, 0);
+  network.addLayer(clayer2);
 
   network.addLayer(llayer);
 
