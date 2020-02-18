@@ -158,7 +158,6 @@ std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vecto
     char fileName[] = "./../../OpenCL/VectorAddition.cl";
     char *source_str;
     size_t source_size;
-    int row = widthA;
     int col = heightC;
     /* Load the source code containing the kernel*/
     fp = fopen(fileName, "r");
@@ -184,7 +183,6 @@ std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vecto
     memobjA = clCreateBuffer(context, CL_MEM_READ_WRITE, heightA * sizeof(float), NULL, &ret);
     memobjB = clCreateBuffer(context, CL_MEM_READ_WRITE, heightB * sizeof(float), NULL, &ret);
     memobjC = clCreateBuffer(context, CL_MEM_READ_WRITE, heightC * sizeof(float), NULL, &ret);
-    rowA = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int), NULL, &ret);
     colC = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int), NULL, &ret);
 
     // Copy the lists A and B to their respective memory buffers
@@ -192,7 +190,6 @@ std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vecto
                                heightA * sizeof(int), A, 0, NULL, NULL);
     ret = clEnqueueWriteBuffer(command_queue, memobjB, CL_TRUE, 0,
                                heightB * sizeof(int), B, 0, NULL, NULL);
-    ret = clEnqueueWriteBuffer(command_queue, rowA, CL_TRUE, 0, sizeof(int), &row, 0, NULL, NULL);
     ret = clEnqueueWriteBuffer(command_queue, colC, CL_TRUE, 0, sizeof(int), &col, 0, NULL, NULL);
 
     /* Create Kernel Program from the source */
@@ -210,12 +207,11 @@ std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vecto
     ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&memobjB);
     ret = clSetKernelArg(kernel, 2, sizeof(cl_mem), (void *)&memobjC);
     //ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&memobjA);
-    ret = clSetKernelArg(kernel, 3, sizeof(int), (void *)&row);
     ret = clSetKernelArg(kernel, 4, sizeof(int), (void *)&col);
     /* Execute OpenCL Kernel */
     //ret = clEnqueueTask(command_queue, kernel, 0, NULL,NULL);
-    size_t globalThreads[2] = {widthA, heightB};
-    size_t localThreads[2] = {16, 16};
+    size_t globalThreads[1] = {heightB};
+    size_t localThreads[1] = {16;
 
     clEnqueueNDRangeKernel(command_queue, kernel, 2, NULL, globalThreads, localThreads, NULL, 0, NULL);
     /* Copy results from the memory buffer */
