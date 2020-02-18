@@ -12,10 +12,6 @@ Data<std::string> TextFileIO::readFile(std::string path)
     int length = path.length();
 	if (length == 0)
 		return Data<std::string>("");
-    if (path[length - 1] != 't' || path[length - 2] != 'x' || path[length - 3] != 't' || path[length - 4] != '.')
-    {
-        return Data<std::string>("");
-    }
 
     Data<std::string> data = Data<std::string>(FileIO::readPureFile(path));
     return data;
