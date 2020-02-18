@@ -243,29 +243,14 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	case LayerType::ACTIVATION:
 		output += LayerParserDistribution().ACTIVATION;
 		break;
-	case LayerType::COLLECT_RESULTS:
-		output += LayerParserDistribution().COLLECT_RESULTS;
-		break;
 	case LayerType::CONVOLUTION:
 		output += LayerParserDistribution().CONVOLUTIONAL;
 		break;
 	case LayerType::DENSE:
 		output += LayerParserDistribution().DENSE;
 		break;
-	case LayerType::DROPOUT:
-		output += LayerParserDistribution().DROPOUT;
-		break;
 	case LayerType::FLATTEN:
 		output += LayerParserDistribution().FLATTEN;
-		break;
-	case LayerType::INCEPTION:
-		output += LayerParserDistribution().INCEPTION;
-		break;
-	case LayerType::LRN:
-		output += LayerParserDistribution().LOCAL_RESPONSE_NORMALIZATION;
-		break;
-	case LayerType::OUTPUT_STORAGE:
-		output += LayerParserDistribution().OUTPUT_STORAGE;
 		break;
 	case LayerType::POLLING:
 		output += LayerParserDistribution().POLLING;

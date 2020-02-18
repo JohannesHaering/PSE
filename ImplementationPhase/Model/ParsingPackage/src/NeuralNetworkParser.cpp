@@ -22,13 +22,13 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
 	NeuralNetworkFactory factory = NeuralNetworkFactory();
 	factory.setName(name);
-  
+
 	++it;
 
-  // Extract labels
+	// Extract labels
 	std::list<std::string> parts = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto partsIt = parts.begin();
-	if(*partsIt != LABELS)
+	if (*partsIt != LABELS)
 		throw std::invalid_argument("Wrong format");
 	++it;
 	std::list<std::string> labels = Parser::splitBySymbol(*it, VALUE_DELIMETER);
@@ -62,7 +62,7 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	++it;
 
 	// Here the layer configurations are comming
-	std::list<NetworkLayer*> layers;
+	std::list<NetworkLayer *> layers;
 	std::string currentLayerBlock = "";
 	// 0 -> adding lines
 	int currentState = 0;
@@ -101,7 +101,7 @@ std::string NeuralNetworkParser::removeCharacter(std::string text, char toErase)
 
 std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 {
-  std::cout<<"Start parse back"<<std::endl;
+	std::cout << "Start parse back" << std::endl;
 	std::string output = "";
 	output += TYPE_BEGIN;
 	output += neuralNetwork.getName();
@@ -113,8 +113,9 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	auto labelIt = labels.begin();
 	output += *labelIt;
 	++labelIt;
-  std::cout<<"Start parse back of the labels"<<std::endl;
-  for (; labelIt != labels.end(); ++labelIt) {
+	std::cout << "Start parse back of the labels" << std::endl;
+	for (; labelIt != labels.end(); ++labelIt)
+	{
 		output += VALUE_DELIMETER;
 		output += *labelIt;
 	}
@@ -131,11 +132,12 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += VALUE_PART_DELIMETER;
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
-  
-  std::cout<<"Start parse bacl of the lauers"<<std::endl;
-  for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
-    output += LayerParserDistribution().parseBack(*it);
-  }
+
+	std::cout << "Start parse back of the layers" << std::endl;
+	for (std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it)
+	{
+		output += LayerParserDistribution().parseBack(*it);
+	}
 
 	return output;
 }
