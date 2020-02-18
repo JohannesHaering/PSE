@@ -211,7 +211,7 @@ std::vector<float> VectorAdditionCPU::addVector(std::vector<float> a, std::vecto
     /* Execute OpenCL Kernel */
     //ret = clEnqueueTask(command_queue, kernel, 0, NULL,NULL);
     size_t globalThreads[1] = {heightB};
-    size_t localThreads[1] = {16;
+    size_t localThreads[1] = {16};
 
     clEnqueueNDRangeKernel(command_queue, kernel, 2, NULL, globalThreads, localThreads, NULL, 0, NULL);
     /* Copy results from the memory buffer */
