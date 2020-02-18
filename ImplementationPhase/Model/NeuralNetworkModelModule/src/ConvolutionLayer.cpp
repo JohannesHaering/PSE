@@ -101,6 +101,7 @@ ConvolutionLayer::forward(TENSOR(float) net)
 
 float ConvolutionLayer::calcWeightUpdate(TENSOR(float) feedback, int numFilters, int filterPosZ, int filterPosY, int filterPosX)
 {
+  std::cout << "entering calcWeightUpdate " std::endl;
   float update = 0;
   //std::cout << "sizes: " << net.size() << " " << feedback[0].size() << " "  << feedback[0][0].size() << " " << feedback[0][0][0].size() << std::endl;
   for (int b = 0; b < net.size(); b++)
@@ -167,8 +168,7 @@ void ConvolutionLayer::setStride(int stride) { this->stride = stride; }
 
 void ConvolutionLayer::setPadding(int padding) { this->padding = padding; }
 
-TENSOR(float)
-ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
+TENSOR(float) ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
 
 int ConvolutionLayer::getStride() { return stride; }
 
