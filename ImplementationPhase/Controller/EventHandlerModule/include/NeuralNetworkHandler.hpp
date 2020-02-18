@@ -14,6 +14,6 @@ class NeuralNetworkHandler : public FileExplorerHandler {
 
     private:
         NeuralNetworkSetter *neuralnetworksetter;
-        std::vector<std::string> validformats = {"cfg"};
+        std::vector<std::string> validformats = {"cfg", "txt"};
 };
 #endif
