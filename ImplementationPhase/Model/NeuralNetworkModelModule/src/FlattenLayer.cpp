@@ -1,10 +1,9 @@
 #include "FlattenLayer.hpp"
 #include "MatrixDefine.hpp"
 #include "NetworkLayer.hpp"
-#include <iostream>
-
+#include <CL/cl.h>
 FlattenLayer::FlattenLayer() {
-    NetworkLAyer::layerType = LayerType::FLATTEN;
+    NetworkLayer::layerType = LayerType::FLATTEN;
 }
 
 TENSOR(float) FlattenLayer::forward(TENSOR(float) input) {
@@ -44,3 +43,5 @@ TENSOR(float) FlattenLayer::backprob(TENSOR(float) updates, float learningrate) 
 
     return feedback;
 }
+
+void FlattenLayer::setMode(DeviceType device, cl_int id){}

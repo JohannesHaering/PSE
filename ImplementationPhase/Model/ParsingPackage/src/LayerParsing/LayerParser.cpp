@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <vector>
 #include <cstring>
+#include <iostream>
 
 // Format
 // inputDimensions={<int[]>}
@@ -315,7 +316,8 @@ std::string LayerParser::saveFloatArray(std::vector<float> arr)
 	output += std::to_string(arr.at(0));
 	for (int i = 1; i < arr.size(); ++i)
 	{
-		output += VALUE_PARTS_DELIMETER;
+    std::cout<<arr[i]<<std::endl;
+    output += VALUE_PARTS_DELIMETER;
 		output += std::to_string(arr.at(i));
 	}
 	output += (VALUE_END);

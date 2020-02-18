@@ -25,6 +25,6 @@ public:
     TENSOR(float) getTrainingBatchOutput(int numb) override;
 
 protected:
-    MNISTDataParser mnistDataParser;
+    MNISTDataParser* mnistDataParser;
 };
 #endif

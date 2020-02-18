@@ -10,6 +10,7 @@
 #include <list>
 #include <algorithm>
 #include <stdexcept>
+#include "iostream"
 
 NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 {
@@ -21,10 +22,10 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
 	NeuralNetworkFactory factory = NeuralNetworkFactory();
 	factory.setName(name);
-
+  
 	++it;
 
-// Extract labels
+  // Extract labels
 	std::list<std::string> parts = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto partsIt = parts.begin();
 	if(*partsIt != LABELS)
@@ -100,6 +101,7 @@ std::string NeuralNetworkParser::removeCharacter(std::string text, char toErase)
 
 std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 {
+  std::cout<<"Start parse back"<<std::endl;
 	std::string output = "";
 	output += TYPE_BEGIN;
 	output += neuralNetwork.getName();
@@ -111,7 +113,8 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	auto labelIt = labels.begin();
 	output += *labelIt;
 	++labelIt;
-	for (; labelIt != labels.end(); ++labelIt) {
+  std::cout<<"Start parse back of the labels"<<std::endl;
+  for (; labelIt != labels.end(); ++labelIt) {
 		output += VALUE_DELIMETER;
 		output += *labelIt;
 	}
@@ -128,11 +131,11 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += VALUE_PART_DELIMETER;
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
-
-	auto it = neuralNetwork.begin();
-	do {
-		output += LayerParserDistribution().parseBack(*it);
-	} while (it != neuralNetwork.end());
+  
+  std::cout<<"Start parse bacl of the lauers"<<std::endl;
+  for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
+    output += LayerParserDistribution().parseBack(*it);
+  }
 
 	return output;
 }

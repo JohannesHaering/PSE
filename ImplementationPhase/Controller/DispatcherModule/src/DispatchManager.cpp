@@ -55,9 +55,11 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
     for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
         image = imagefacade->getImage(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
+        std::cout<<"loaded image" << std::endl;
         std::vector<cv::Mat> images = std::vector<cv::Mat>();
         images.push_back(image);
         currentInput = imagefacade->createImageTensor( images, neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight());
+        std::cout<<"OK"<<std::endl;
         executor = new Executor(&neuralNetworkList[i]);
         output = executor->execute(currentInput);
         Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), output[0][0][0]);

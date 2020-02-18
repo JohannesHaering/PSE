@@ -4,7 +4,9 @@
 #include "NeuralNetworkSetter.hpp"
 #include "LeakyReLuLayer.hpp"
 #include "SoftmaxLayer.hpp"
+#include "FlattenLayer.hpp"
 #include <vector>
+
 
 /*
 * Creates a NeuralNetworkSetter.
@@ -28,7 +30,10 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
-	
+
+  FlattenLayer* flayer = new FlattenLayer();
+  network.addLayer(flayer);
+
   DenseLayer* dlayer = new DenseLayer(28 * 28, 300);
 	network.addLayer(dlayer);
 

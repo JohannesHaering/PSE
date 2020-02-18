@@ -8,7 +8,7 @@ target_include_directories(LAYERTYPE PUBLIC "include/")
 
 add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
-target_link_libraries(NEURALNETWORK PUBLIC MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER MAXPOOLLAYER)
+target_link_libraries(NEURALNETWORK PUBLIC MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER MAXPOOLLAYER FLATTENLAYER)
 
 add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
@@ -45,6 +45,10 @@ target_link_libraries(LEAKYRELULAYER PUBLIC ACTIVATIONLAYER LEAKYRELULAYERSTRATE
 add_library(RELULAYER "src/ReLuLayer.cpp" "include/ReLuLayer.hpp")
 target_include_directories(RELULAYER PUBLIC "include/")
 target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY DEVICETYPE)
+
+add_library(FLATTENLAYER "src/FlattenLayer.cpp" "include/FlattenLayer.hpp")
+target_include_directories(FLATTENLAYER PUBLIC "include/")
+target_link_libraries(FLATTENLAYER PUBLIC DEVICETYPE)
 
 add_library(TYPE_ENUMERATIONS_NN INTERFACE)
 target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")
@@ -90,3 +94,5 @@ target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DE
 
 #add_library(FUNCTIONALITY "include/NetworkLayerStrategies/MatrixMultiplicationCPU.hpp" "src/NetworkLayerStrategies/MatrixMultiplicationCPU.cpp" "include/NetworkLayerStrategies/VectorAdditionCPU.hpp" "src/NetworkLayerStrategies/VectorAdditionCPU.cpp")
 #target_include_directories(FUNCTIONALITY PUBLIC "include/NetworkLayerStrategies")
+
+

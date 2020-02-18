@@ -41,11 +41,22 @@ MNISTDataParser::MNISTDataParser(int batchSize) : batchSize(batchSize)
 
 TENSOR(float) MNISTDataParser::parseTraining()
 {
+  std::cout<<"Next Trainging Batch" << std::endl;
+  std::cout<<"BatchSize"<<batchSize<<std::endl;
   TENSOR(float) trainTensor = TENSOR(float)(batchSize);
+    if ( batchSize  > 16)
+    {
+      std::cout<<"Error with the batchsize"<<std::endl;
+    }
   for (uint i = 0; i < batchSize; i++) {
     trainImagePositions[i] = rand() % mnist_dataset.training_images.size();
     trainTensor[i] = dataset_train_images[trainImagePositions[i]];
+    if ( i > 16){
+      break;
+    }
+    std::cout<<i<<std::endl;
   }
+  std::cout<<"Return nect training batch"<<std::endl;
   return trainTensor;
 }
 

@@ -12,6 +12,10 @@
 
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f))
 {
+
+    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+   
     //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
     testAcc = std::vector<float>();    
@@ -22,7 +26,8 @@ Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, st
 
 void Trainer::loadDataset()
 {
-    supplyer = new TrainerClassificationDataSupply(DATATYPE::MNIST, batchSize);
+  std::cout<<"Get data" << std::endl;
+  supplyer = new TrainerClassificationDataSupply(DATATYPE::MNIST, batchSize);
 }
 
 void Trainer::startTraining()
@@ -30,6 +35,8 @@ void Trainer::startTraining()
     for(int b = 0; b < 5; b++) //train on 5 batches
     {
       //supplier
+      
+      std::cout<<"Next batch"<<std::endl;
       trainer.forward(supplyer->getTrainingBatchInput(b));
       trainer.train(supplyer->getTrainingBatchOutput(b));
       //trainer.forward(dataset_train_images[i]);
@@ -41,6 +48,6 @@ void Trainer::startTraining()
         ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       }*/
     }
-    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+  //  NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+   // facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
 }

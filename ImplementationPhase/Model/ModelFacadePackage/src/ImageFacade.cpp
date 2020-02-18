@@ -110,21 +110,19 @@ std::vector<float> ImageFacade::getImageGreyScale(std::string path, int width, i
 }
 
 TENSOR(float) ImageFacade::createImageTensor(std::vector<cv::Mat> images, int width, int height){
-	TENSOR(float) tensor = TENSOR(float)();
+	TENSOR(float) tensor = TENSOR(float)(images.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(height, std::vector<float>(width))));
 
-	for (int i = 0; images.size(); i++) {
+	for (int i = 0; i < images.size(); i++) {
 		std::vector<float> image = ImageParserWithSizing(width, height, 1).parseFloatsGreyScale(images[i]);
-		MATRIX_3D(float) v = MATRIX_3D(float)();
-		MATRIX_2D(float) image2D = MATRIX_2D(float)();
+    std::cout<<"Parsed Image" <<std::endl;
+    std::cout<<"Width"<<width<<" Height" << height << std::endl;
+    std::cout<<image.size()<<std::endl;   
 		for (int y = 0; y < height; y++) {
-			std::vector<float> row = std::vector<float>();
 			for (int x = 0; x < width; x++) {
-				row.push_back(images[i].at<float>(x,y));
-			}
-			image2D.push_back(row);
+        std::cout << "Copying at" << y << x << std::endl;
+	      tensor[i][0][y][x] = image[y * width + x];
+      }
 		}
-		v.push_back(image2D);
-		tensor.push_back(v);
 	}
 
 	return tensor;
