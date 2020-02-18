@@ -92,7 +92,7 @@ add_library(SIGMOIDLAYERSTRATEGY "include/NetworkLayerStrategies/SigmoidLayerStr
 target_include_directories(SIGMOIDLAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
-add_library(FUNCTIONALITY "include/NetworkLayerStrategies/MatrixMultiplicationCPU.hpp" "src/NetworkLayerStrategies/MatrixMultiplicationCPU.cpp" "include/NetworkLayerStrategies/VectorAdditionCPU.hpp" "src/NetworkLayerStrategies/VectorAdditionCPU.cpp")
-target_include_directories(FUNCTIONALITY PUBLIC "include/NetworkLayerStrategies")
+#add_library(FUNCTIONALITY "include/NetworkLayerStrategies/MatrixMultiplicationCPU.hpp" "src/NetworkLayerStrategies/MatrixMultiplicationCPU.cpp" "include/NetworkLayerStrategies/VectorAdditionCPU.hpp" "src/NetworkLayerStrategies/VectorAdditionCPU.cpp")
+#target_include_directories(FUNCTIONALITY PUBLIC "include/NetworkLayerStrategies")
 
 

@@ -32,9 +32,10 @@ void CompleteTrainer::train(TENSOR(float) target)
   {
     //std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
 		feedback = (*layer)->backprob(tmp, learningRate);
-    //std::cout << "layertype: " << layer->getLayerType() << std::endl;
+    //std::cout << "layertype: " << (*layer)->getLayerType() << std::endl;
     //std::cout << "feedback size: " << feedback.size() << std::endl;
 		tmp = feedback;
+    std::cout << tmp[0][0][0][0] << std::endl;
 	}
 	learningRate *= 0.99;
   std::cout << "returning from train" << std::endl;

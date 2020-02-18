@@ -62,8 +62,11 @@ TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 
 TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 {
+  std::cout<<weights[4][5];
 	output_backward = layerStrategy->backprob(feedback, learningrate, net);
-	return output_backward;
+  std::cout<<weights[4][5];
+
+  return output_backward;
 }
 
 void DenseLayer::setMode(DeviceType device, cl_int deviceID) {
