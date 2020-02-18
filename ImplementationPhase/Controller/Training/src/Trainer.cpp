@@ -10,7 +10,7 @@
 #include "TrainerDataSupply.hpp"
 #include "DataType.hpp"
 
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f))
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.001f))
 {
 
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();

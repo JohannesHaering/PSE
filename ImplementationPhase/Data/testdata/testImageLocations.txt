@@ -1,1 +1,0 @@
-C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp
