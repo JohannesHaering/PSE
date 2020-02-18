@@ -14,7 +14,7 @@ Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, st
 {
 
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.txt");
    
     //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
