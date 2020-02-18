@@ -21,6 +21,10 @@ TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 		tmp = output;
 	}
   std::cout << "returning from forward" << std::endl;
+//    for (int z = 0; z < tmp[0].size(); z++)
+  //    for (int y = 0; y < tmp[0][0].size(); y++)
+    //    for (int x = 0; x < tmp[0][0][0].size(); x++)
+      //    std::cout << tmp[0][z][y][x] << std::endl;
 	return output;
 }
 
@@ -35,7 +39,6 @@ void CompleteTrainer::train(TENSOR(float) target)
     //std::cout << "layertype: " << (*layer)->getLayerType() << std::endl;
     //std::cout << "feedback size: " << feedback.size() << std::endl;
 		tmp = feedback;
-    std::cout << tmp[0][0][0][0] << std::endl;
 	}
 	learningRate *= 0.99;
   std::cout << "returning from train" << std::endl;
