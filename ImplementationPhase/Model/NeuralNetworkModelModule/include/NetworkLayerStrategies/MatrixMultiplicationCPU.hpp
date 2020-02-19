@@ -2,7 +2,7 @@
 #define MATRIXMULTIPLICATIONCPU_H_
 
 #include <vector>
-#include <CL/cl.h>
+#include <CL/cl.hpp>
 
 class MatrixMultiplicationCPU {
 public:

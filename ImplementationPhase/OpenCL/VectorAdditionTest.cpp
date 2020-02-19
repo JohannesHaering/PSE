@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <iostream>
-#include <CL/cl.h>
+#include <CL/cl.hpp>
 
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
