@@ -170,6 +170,13 @@ void gemm (
       }
     }
 
+    for(int i = 0; i < size; i++){
+      for(int j = 0; j < size; j++){
+        cout << matrix_A.host[j*stride + i] << "\n";
+        cout << matrix_B.host[j*stride + i] << "\n";
+      }
+    }
+
     // -----------------------------------------------------------------------
     // Allocating device-side resources for matrices
     // -----------------------------------------------------------------------
