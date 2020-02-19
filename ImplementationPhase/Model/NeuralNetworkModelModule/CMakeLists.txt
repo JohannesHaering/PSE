@@ -10,12 +10,16 @@ add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
 target_link_libraries(NEURALNETWORK PUBLIC MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER MAXPOOLLAYER)
 
+add_library(OPENVINO "src/OpenVino/OpenVino.cpp" "include/OpenVino/OpenVino.hpp")
+target_include_directories(OPENVINO PUBLIC "include/OpenVino/")
+target_link_libraries(OPENVINO PUBLIC MATRIX_DEFINE)
+
 add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
 target_link_libraries(NETWORKLAYER PUBLIC MATRIX_DEFINE DEVICETYPE MATRIX_DEFINE)
 
 add_library(CONVOLUTIONLAYER "include/ConvolutionLayer.hpp" "src/ConvolutionLayer.cpp")
-target_include_directories(CONVOLUTIONLAYER PUBLIC "/include")
+target_include_directories(CONVOLUTIONLAYER PUBLIC "include/")
 target_link_libraries(CONVOLUTIONLAYER PUBLIC NETWORKLAYER DEVICETYPE MATRIX_DEFINE)
 
 add_library(ACTIVATIONLAYER "include/ActivationLayer.hpp")

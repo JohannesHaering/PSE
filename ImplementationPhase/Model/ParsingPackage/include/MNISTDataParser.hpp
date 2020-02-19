@@ -5,7 +5,7 @@
 #include <string>
 #include "MatrixDefine.hpp"
 
-#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
+#include "/home/steki/Desktop/mnist/include/mnist/mnist_reader.hpp"
 
 class MNISTDataParser {
 public:\

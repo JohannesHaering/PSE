@@ -4,7 +4,7 @@
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
 #include "Executor.hpp"
-#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
+#include "/home/steki/Desktop/mnist/include/mnist/mnist_reader.hpp"
 #include "MatrixDefine.hpp"
 
 Executor::Executor(NeuralNetworkAdapter* neuralNetwork) : neuralNetwork(neuralNetwork) {}
