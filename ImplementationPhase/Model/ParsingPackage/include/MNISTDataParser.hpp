@@ -5,7 +5,7 @@
 #include <string>
 #include "MatrixDefine.hpp"
 
-#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
+#include "/home/dimitar/Desktop/CWD/PSE/mnist/include/mnist/mnist_reader.hpp"
 
 class MNISTDataParser {
 public:\
@@ -20,7 +20,7 @@ private:
 	std::vector<uint> trainImagePositions;
 	std::vector<uint> testImagePositions;
 	mnist::MNIST_dataset<std::vector, std::vector<float>, uint8_t> mnist_dataset;
-	std::string MNIST_DATA_LOCATION = "/home/pselabw1920/Documents/mnist";
+	std::string MNIST_DATA_LOCATION = "/home/dimitar/Desktop/CWD/PSE/mnist";
 	TENSOR(float) dataset_train_images;
 	TENSOR(float) dataset_test_images;
 	TENSOR(float) dataset_train_labels;
