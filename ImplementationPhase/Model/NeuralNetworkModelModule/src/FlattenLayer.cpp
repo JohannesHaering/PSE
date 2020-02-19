@@ -1,7 +1,7 @@
 #include "FlattenLayer.hpp"
 #include "MatrixDefine.hpp"
 #include "NetworkLayer.hpp"
-#include <CL/cl.hpp>
+#include <CL/cl.h>
 FlattenLayer::FlattenLayer() {
     NetworkLayer::layerType = LayerType::FLATTEN;
 }

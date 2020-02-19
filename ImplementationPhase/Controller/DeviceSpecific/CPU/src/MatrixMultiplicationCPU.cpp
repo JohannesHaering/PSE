@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
-#include <CL/cl.hpp>
+#include <CL/cl.h>
 
 std::vector<std::vector<float>> *MatrixMultiplicationCPU::mult(std::vector<std::vector<float>> A, std::vector<std::vector<float>> B)
 {
