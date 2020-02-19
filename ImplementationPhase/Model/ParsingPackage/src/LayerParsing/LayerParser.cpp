@@ -274,6 +274,7 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 		output += LayerParserDistribution().POLLING;
 		break;
 	}
+	
 	output += LayerParser::VALUE_END;
 	output += "\n";
 	output += "\n";
