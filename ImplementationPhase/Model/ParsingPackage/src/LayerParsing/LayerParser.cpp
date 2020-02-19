@@ -240,7 +240,10 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	output += LayerParser::VALUE_BEGIN;
 	switch (layer->getLayerType())
 	{
-	case LayerType::ACTIVATION:
+	case LayerType::RELU:
+	case LayerType::LEAKYRELU:
+	case LayerType::SOFTMAX:
+	case LayerType::SIGMOID:
 		output += LayerParserDistribution().ACTIVATION;
 		break;
 	case LayerType::CONVOLUTION:
