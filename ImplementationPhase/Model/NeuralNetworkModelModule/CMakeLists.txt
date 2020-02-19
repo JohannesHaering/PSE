@@ -3,6 +3,27 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(NeuralNetworkModulePackage C CXX)
 
+set(InferenceEngine_DIR "/opt/intel/openvino/inference_engine/share")
+
+get_filename_component(CMAKE_PREFIX_PATH "${InferenceEngine_DIR}" ABSOLUTE)
+
+message(STATUS "Looking for inference engine configuration file at: ${CMAKE_PREFIX_PATH}")
+find_package(InferenceEngine 1.1)
+
+if (NOT InferenceEngine_FOUND)
+    message(FATAL_ERROR "Inference Engine was not found")
+endif()
+
+if ("${InferenceEngine_INCLUDE_DIRS}" STREQUAL "")
+    message(FATAL_ERROR "InferenceEngine_INCLUDE_DIRS was not set!")
+endif()
+message(STATUS "Found for inference engine include at: ${InferenceEngine_INCLUDE_DIRS}")
+
+if ("${InferenceEngine_LIBRARIES}" STREQUAL "")
+    message(FATAL_ERROR "InferenceEngine_LIBRARIES was not set!")
+endif()
+message(STATUS "Found for inference engine lib at: ${InferenceEngine_LIBRARIES}")
+
 add_library(LAYERTYPE "include/LayerType.hpp")
 target_include_directories(LAYERTYPE PUBLIC "include/")
 
@@ -12,7 +33,7 @@ target_link_libraries(NEURALNETWORK PUBLIC MATRIX_DEFINE NETWORKLAYER ACTIVATION
 
 add_library(OPENVINO "src/OpenVino/OpenVino.cpp" "include/OpenVino/OpenVino.hpp")
 target_include_directories(OPENVINO PUBLIC "include/OpenVino/")
-target_link_libraries(OPENVINO PUBLIC MATRIX_DEFINE)
+target_link_libraries(OPENVINO PUBLIC MATRIX_DEFINE "${InferenceEngine_LIBRARIES}")
 
 add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
