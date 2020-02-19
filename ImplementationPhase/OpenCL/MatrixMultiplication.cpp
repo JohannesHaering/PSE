@@ -83,7 +83,7 @@ void gemm (
     OpenCLProgramOneKernel& executable,
     std::vector<float> inputA,
     std::vector<float> inputB,
-    int matrixSize;
+    int matrixSize
 )
 {
     // -----------------------------------------------------------------------
@@ -159,9 +159,11 @@ void gemm (
         std::fill(row_C, row_C + size, cl_float(0));
     }
 
-    for(int i = 0; i < matrixA.size(); i++){
-        matrix_A.host[i] = inputA[i];
-        matrix_B.host[i] = inputB[i];
+    for(int i = 0; i < size; i++){
+      for(int j = 0; j < size; j++){
+        matrix_A.host[j*stride + i] = inputA[i];
+        matrix_B.host[j*stride + i] = inputB[i];
+      }
     }
 
     // -----------------------------------------------------------------------
@@ -293,6 +295,9 @@ void gemm (
 
         if(i == 0 && cmdparser.validation.getValue())
         {
+            cout << "Here" << "\n";
+            cout.flush();
+
             // Validate result for the first iteration only and
             // only if user wants this.
             // Please note, validation procedure cannot be run at
@@ -340,11 +345,19 @@ void gemm (
             );
             SAMPLE_CHECK_ERRORS(err);
 
+            
+
             // Finish here is only required for correct time measurment on the next iteration
             // It does not affect correctness of calculations because you use the in-order OpenCL queue here.
             err = clFinish(oclobjects.queue);
             SAMPLE_CHECK_ERRORS(err);
         }
+    }
+    for(int x = 0; x < matrixSize; x++){
+      for(int y = 0; y < matrixSize; y++){
+        cout<<"C "<< matrix_C.host[stride*y + x] << "\n";
+        cout.flush();
+      }
     }
 
     // All resources are deallocated automatically.
