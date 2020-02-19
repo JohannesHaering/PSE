@@ -49,11 +49,15 @@ bool checkValidity (
             cl_float accum = 0;
             for(size_t l = 0; l < size; ++l)
             {
-                accum += A[l*ldabc + i] * B[l*lstride + j*jstride];
+              cout << A[l*ldabc + i] << "\n";
+              cout << B[l*lstride + j*jstride]<<"\n";
+              cout.flush();
+              accum += A[l*ldabc + i] * B[l*lstride + j*jstride];
             }
 
             cl_float golden = accum;
-            cout<<C[j*ldabc+i]<<flush();
+            cout<<C[j*ldabc+i];
+            cout.flush();
             cl_float absdiff = abs(C[j*ldabc+i] - golden);
             if(absdiff > error_tol)
             {
@@ -158,7 +162,7 @@ void gemm (
         // the general case.
         std::fill(row_C, row_C + size, cl_float(0));
     }
-
+  
     for(int i = 0; i < size; i++){
       for(int j = 0; j < size; j++){
         matrix_A.host[j*stride + i] = inputA[i];
@@ -293,7 +297,7 @@ void gemm (
         cout << "Host perf: " << flops/time/1e9 << " GFLOPS\n";
         cout.flush();
 
-        if(i == 0 && cmdparser.validation.getValue())
+        if(i == 0)
         {
             cout << "Here" << "\n";
             cout.flush();
@@ -337,6 +341,13 @@ void gemm (
 
             cout.flush();
 
+    stride /= sizeof(cl_float);
+    for(int x = 0; x < matrixSize; x++){
+      for(int y = 0; y < matrixSize; y++){
+        cout<<"C "<< matrix_C.host[y*stride+x] << "\n";
+        cout.flush();
+      }
+    }
             err = clEnqueueUnmapMemObject(
                 oclobjects.queue,
                 matrix_C.device,
@@ -354,12 +365,10 @@ void gemm (
         }
     }
 
-    size_t lstride = Btransposed ? ldabc : 1;
-    size_t jstride = Btransposed ? 1 : ldabc;
     stride /= sizeof(cl_float);
     for(int x = 0; x < matrixSize; x++){
       for(int y = 0; y < matrixSize; y++){
-        cout<<"C "<< matrix_C.host[y*ldabc+x] << "\n";
+        cout<<"C "<< matrix_C.host[y*stride+x] << "\n";
         cout.flush();
       }
     }
