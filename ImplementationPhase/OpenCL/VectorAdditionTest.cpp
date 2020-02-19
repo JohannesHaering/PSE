@@ -2,10 +2,16 @@
 #include <stdlib.h>
 #include <vector>
 #include <iostream>
+#include <ctime>
+#include <limits>
 #include <CL/cl.h>
+
+#include "oclobject.hpp"
+#include "basic.hpp"
 
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
+
 
 
 std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
@@ -65,7 +71,7 @@ std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
 
     std::cout<< "Get plattform and device info" << std::endl;
     /* Get Platform and Device Info */
-    ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
+    ret =clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
     ret = clGetDeviceIDs(platform_id, CL_DEVICE_TYPE_CPU, 1, &device_id, &ret_num_devices);
 
     /* Create OpenCL context */
@@ -120,7 +126,7 @@ std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
     std::cout<< "Load result" << std::endl;
     for (int j = 0; j < heightC; j++)
     {
-        result[j] = *(Res + j);
+        result[j] = (C[j]);
     }
 
     ret = clFlush(command_queue);
