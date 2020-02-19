@@ -12,9 +12,9 @@
 
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f))
 {
-    //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
+    //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);
     trainingAcc = std::vector<float>();
-    testAcc = std::vector<float>();    
+    testAcc = std::vector<float>();
     //TODO somehow update this to use trainData string and replace trainData string by somewhat smarter
     loadDataset();
 }
@@ -38,7 +38,7 @@ void Trainer::startTraining()
       /*if (i % 10 == 0){
         trainer.forward(dataset_test_images[i]);
         testAcc.push_back(trainer.calcCEError(dataset_test_labels[i]));
-        ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
+        ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);
       }*/
     }
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();

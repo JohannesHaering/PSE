@@ -22,5 +22,5 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
 	  }
     std::cout << "returning from forward" << std::endl;
     return output;
-    
+
 }
