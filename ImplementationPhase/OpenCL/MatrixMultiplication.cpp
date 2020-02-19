@@ -53,7 +53,7 @@ bool checkValidity (
             }
 
             cl_float golden = accum;
-
+            cout<<C[j*ldabc+i]<<flush();
             cl_float absdiff = abs(C[j*ldabc+i] - golden);
             if(absdiff > error_tol)
             {
@@ -353,9 +353,13 @@ void gemm (
             SAMPLE_CHECK_ERRORS(err);
         }
     }
+
+    size_t lstride = Btransposed ? ldabc : 1;
+    size_t jstride = Btransposed ? 1 : ldabc;
+    stride /= sizeof(cl_float);
     for(int x = 0; x < matrixSize; x++){
       for(int y = 0; y < matrixSize; y++){
-        cout<<"C "<< matrix_C.host[stride*y + x] << "\n";
+        cout<<"C "<< matrix_C.host[y*ldabc+x] << "\n";
         cout.flush();
       }
     }
