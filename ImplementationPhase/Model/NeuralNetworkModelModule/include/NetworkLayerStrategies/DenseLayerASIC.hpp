@@ -1,16 +1,15 @@
-#ifndef RELULAYERASIC_H_
-#define RELULAYERASIC_H_
-
+#ifndef DENSELAYERASIC_H_
+#define DENSELAYERASIC_H_
 #include "MatrixDefine.hpp"
-#include "ReLuLayerStrategy.hpp"
+#include "DenseLayerStrategy.hpp"
 #include "OpenVino.hpp"
 #include <vector>
 
-class ReLuLayerASIC : public ReLuLayerStrategy
+class DenseLayerASIC : public DenseLayerStrategy
 {
 public:
-    ReLuLayerASIC();
+    DenseLayerASIC();
     TENSOR(float) forward(TENSOR(float) input_data) override;
     TENSOR(float) backprob(TENSOR(float) updates) override;
 };
-#endif
+#endif // DENSELAYERASIC_HPP

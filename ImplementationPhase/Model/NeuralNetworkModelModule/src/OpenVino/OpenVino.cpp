@@ -30,11 +30,6 @@ TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork
 
     // Obtain input tensor
     InferenceEngine::SizeVector inputDims = input->getTensorDesc().getDims();
-//    size_t inputDims1 = input->dims()[1];
-//    size_t inputDims2 = input->dims()[2];
-//    size_t inputDims3 = input->dims()[3];
- // size_t channels_number = input->dims()[2];
- // size_t image_size = input->dims()[1] * input->dims()[0];
     int i = 0;
     for (int b = 0; b < inputDims[3]; b++){
         for (int z = 0; z < inputDims[2]; z++){
@@ -54,9 +49,6 @@ TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork
     i = 0;
     TENSOR(float) returnTensor;
     InferenceEngine::SizeVector outputDims = output->getTensorDesc().getDims();
-//    size_t outputDims1 = output->dims()[1];
-//    size_t outputDims2 = output->dims()[2];
-//    size_t outputDims3 = output->dims()[3];
     for (int b = 0; b < outputDims[3]; b++){
         for (int z = 0; z < outputDims[2]; z++){
             for (int y = 0; y < outputDims[1]; y++){
