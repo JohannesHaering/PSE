@@ -1,8 +1,7 @@
 #include <gtest/gtest.h>
 #include <random>
 #include "NeuralNetwork.hpp"
-// #include <iostream>
-// #include "ConvolutionLayer.hpp"
+ #include <iostream>
 
 struct NeuralNetworkTest : public ::testing::Test {
   NeuralNetwork *testNetwork;
