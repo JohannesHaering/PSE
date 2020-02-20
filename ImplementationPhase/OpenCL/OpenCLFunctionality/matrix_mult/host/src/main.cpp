@@ -43,12 +43,12 @@ scoped_array<unsigned> rows_per_device; // num_devices elements
 
 // Function prototypes
 bool init_opencl();
-void init_problem(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB);
+void init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB);
 std::vector<float> run();
 void compute_reference();
 void verify();
 void cleanup();
-void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB);
+std::vector<std::vector<float>> multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB);
 
 // Entry point.
 int main(int argc, char **argv)
@@ -56,24 +56,23 @@ int main(int argc, char **argv)
   printf("Generating input matrices\n");
   input_a.reset(num_devices);
   output.reset(num_devices);
-  std::vector<float> matrixA = std::vector<float>(A_height * A_width);
-  for (int y = 0; y < A_height; y++)
+
+  std::vector<std::vector<float>> matrixA = std::vector<std::vector<float>>(1024, std::vector<float>(1024));
+  for (int y = 0; y < 1024; y++)
   {
-    for (int x = 0; x < A_width; x++)
+    for (int x = 0; x < 1024; x++)
     {
-      matrixA[y * A_width + x] = y + x;
+      matrixA[y][x] = y + x;
     }
-    printf("Done row of A\n");
   }
 
-  std::vector<float> matrixB = std::vector<float>(B_height * B_width);
-  for (int y = 0; y < B_height; y++)
+  std::vector<std::vector<float>> matrixB = std::vector<std::vector<float>>(1024, std::vector<float>(1024));
+  for (int y = 0; y < 1024; y++)
   {
-    for (int x = 0; x < B_width; x++)
+    for (int x = 0; x < 1024; x++)
     {
-      matrixB[y * B_width + x] = y + x;
-    }
-    printf("Done row of B\n");
+      matrixB[y][x] = y + x;
+    } 
   }
 
   printf("done generating\n");
@@ -83,7 +82,7 @@ int main(int argc, char **argv)
   return 0;
 }
 
-void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB)
+std::vector<std::vector<float>> multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
   A_height = matrixA.size();
   A_width = matrixA[0].size();
@@ -98,7 +97,7 @@ void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> 
   // Initialize OpenCL.
   if (!init_opencl())
   {
-    return -1;
+    return std::vector<std::vector<float>>(0, std::vector<float>(0));
   }
 
   // Initialize the problem data.
@@ -107,14 +106,17 @@ void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> 
 
   // Run the kernel.
   std::vector<float> matrixC = run();
-
-  std::cout << matrixC[0] << std::endl;
-  std::cout << matrixC[1] << std::endl;
-  std::cout << matrixC[2] << std::endl;
-  std::cout << matrixC[3] << std::endl;
+  std::vector<std::vector<float>> result = std::vector<std::vector<float>>(C_height, std::vector<float>(C_width));
+  for(int y = 0; y < C_height; y++){
+    for(int x = 0;  x < C_width; x++){
+      result[y][x] = matrixC[y * C_width + x];
+    }
+  }
 
   // Free the resources allocated
   cleanup();
+  
+  return result;
 }
 
 /////// HELPER FUNCTIONS ///////
@@ -237,7 +239,7 @@ bool init_opencl()
 }
 
 // Initialize the data for the problem. Requires num_devices to be known.
-void init_problem(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB)
+void init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
   if (num_devices == 0)
   {
