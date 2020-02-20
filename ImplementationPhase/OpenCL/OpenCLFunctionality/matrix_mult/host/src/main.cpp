@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 #include <math.h>
 #include <vector>
 
@@ -26,10 +27,10 @@ scoped_array<cl_mem> input_b_buf; // num_devices elements
 scoped_array<cl_mem> output_buf;  // num_devices elements
 #endif                            /* USE_SVM_API == 0 */
 // Problem data.
-unsigned A_height = 32 * BLOCK_SIZE;
-unsigned A_width = 16 * BLOCK_SIZE;
+unsigned A_height = 4;
+unsigned A_width = 4 ;
 const unsigned &B_height = A_width;
-unsigned B_width = 16 * BLOCK_SIZE;
+unsigned B_width = 4;
 const unsigned &C_height = A_height;
 const unsigned &C_width = B_width;
 
@@ -43,7 +44,7 @@ scoped_array<unsigned> rows_per_device; // num_devices elements
 // Function prototypes
 bool init_opencl();
 void init_problem(std::vector<float> matrixA, std::vector<float> matrixB);
-void run();
+std::vector<float> run();
 void compute_reference();
 void verify();
 void cleanup();
@@ -90,7 +91,12 @@ int main(int argc, char **argv)
   init_problem(matrixA, matrixB);
 
   // Run the kernel.
-  run();
+  std::vector<float> matrixC = run();
+
+  std::cout << matrixC[0] << std::endl;
+  std::cout << matrixC[1] << std::endl;
+  std::cout << matrixC[2] << std::endl;
+  std::cout << matrixC[3] << std::endl;
 
   // Free the resources allocated
   cleanup();
@@ -348,8 +354,21 @@ void run()
   }
 
   // Verify results.
-  compute_reference();
-  verify();
+  //compute_reference();
+  //verify();
+
+  std::vector<float> result = std::vector<float>(C_width * C_height);
+  for (unsigned y = 0, dev_index = 0; y < C_height; ++dev_index)
+  {
+    for (unsigned yy = 0; yy < rows_per_device[dev_index]; ++yy, ++y)
+    {
+      for (unsigned x = 0; x < C_width; ++x)
+      {
+          result[y * C_width + x] = output[dev_index][yy * C_width + x];
+      }
+    }
+  }
+  return result;  
 }
 
 void compute_reference()
