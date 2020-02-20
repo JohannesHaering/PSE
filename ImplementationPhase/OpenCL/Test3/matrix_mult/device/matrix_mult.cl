@@ -107,6 +107,8 @@ void matrixMult( // Input and output matrices
                  // Widths of matrices.
                  int A_width, int B_width)
 {
+    int SIMD_WORK_ITEMS = 4;
+    int BLOCK_SIZE = 64;
     // Local storage for a block of input matrices A and B
     __local float A_local[BLOCK_SIZE][BLOCK_SIZE];
     __local float B_local[BLOCK_SIZE][BLOCK_SIZE];

@@ -9,10 +9,6 @@
 #include "oclobject.hpp"
 #include "basic.hpp"
 
-#define MEM_SIZE (128)
-#define MAX_SOURCE_SIZE (0x100000)
-
-
 
 std::vector<float> addVector(std::vector<float> a, std::vector<float> b)
 {
