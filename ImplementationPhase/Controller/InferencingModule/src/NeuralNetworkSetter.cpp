@@ -24,11 +24,13 @@ NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(in
 */
 void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories) {
     std::vector<NeuralNetworkAdapter> neuralNetworks; 
-	/*
+	
 	NeuralNetworkFacade neuralNetworkFacade;
-    for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
+  NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork(directories[0]);
+  neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testnetwork.txt")
+    /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
-    }  */
+    }  /*
 	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
@@ -75,7 +77,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
    network2.addLayer(smlayer2);
 
 */
-  neuralNetworks.push_back(network);
+  //neuralNetworks.push_back(network);
  // neuralNetworks.push_back(network2);
 
   inferencer->addNeuralNetwork(neuralNetworks);
