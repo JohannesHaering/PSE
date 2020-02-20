@@ -27,12 +27,12 @@ scoped_array<cl_mem> input_b_buf; // num_devices elements
 scoped_array<cl_mem> output_buf;  // num_devices elements
 
 // Problem data.
-unsigned A_height = 2;
-unsigned A_width = 2;
-const unsigned &B_height = A_width;
+unsigned A_height;
+unsigned A_width;
+unsigned B_height = A_width;
 unsigned B_width = 2;
-const unsigned &C_height = A_height;
-const unsigned &C_width = B_width;
+unsigned C_height = A_height;
+unsigned C_width = B_width;
 
 scoped_array<scoped_aligned_ptr<float>> input_a; // num_devices elements
 scoped_aligned_ptr<float> input_b;
@@ -43,11 +43,12 @@ scoped_array<unsigned> rows_per_device; // num_devices elements
 
 // Function prototypes
 bool init_opencl();
-void init_problem(std::vector<float> matrixA, std::vector<float> matrixB);
+void init_problem(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB);
 std::vector<float> run();
 void compute_reference();
 void verify();
 void cleanup();
+void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB);
 
 // Entry point.
 int main(int argc, char **argv)
@@ -60,7 +61,7 @@ int main(int argc, char **argv)
   {
     for (int x = 0; x < A_width; x++)
     {
-      matrixA[y * A_width + x] = y * x;
+      matrixA[y * A_width + x] = y + x;
     }
     printf("Done row of A\n");
   }
@@ -70,12 +71,26 @@ int main(int argc, char **argv)
   {
     for (int x = 0; x < B_width; x++)
     {
-      matrixB[y * B_width + x] = y * x;
+      matrixB[y * B_width + x] = y + x;
     }
     printf("Done row of B\n");
   }
 
   printf("done generating\n");
+
+  multiply(matrixA, matrixB);
+
+  return 0;
+}
+
+void multiply(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB)
+{
+  A_height = matrixA.size();
+  A_width = matrixA[0].size();
+  B_height = A_width;
+  B_width = matrixB.size();
+  C_height = A_height;
+  C_width = B_width;
 
   printf("Matrix sizes:\n  A: %d x %d\n  B: %d x %d\n  C: %d x %d\n",
          A_height, A_width, B_height, B_width, C_height, C_width);
@@ -100,8 +115,6 @@ int main(int argc, char **argv)
 
   // Free the resources allocated
   cleanup();
-
-  return 0;
 }
 
 /////// HELPER FUNCTIONS ///////
@@ -224,28 +237,36 @@ bool init_opencl()
 }
 
 // Initialize the data for the problem. Requires num_devices to be known.
-void init_problem(std::vector<float> matrixA, std::vector<float> matrixB)
+void init_problem(std::vector<std::float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
   if (num_devices == 0)
   {
     checkError(-1, "No devices");
   }
-
+  unsigned currentRow = 0;
   for (unsigned i = 0; i < num_devices; ++i)
   {
     input_a[i].reset(rows_per_device[i] * A_width);
     output[i].reset(rows_per_device[i] * C_width);
 
-    for (unsigned j = 0; j < rows_per_device[i] * A_width; ++j)
+    for (unsigned j = 0; j < rows_per_device[i]; ++j)
     {
-      input_a[i][j] = matrixA[i * A_width + +j];
+      for (unsigned k = 0; k < A_width; ++k)
+      {
+        input_a[i][j * A_width + k] = matrixA[currentRow][j];
+      }
+      ++currentRow;
     }
+    ++currentRow;
   }
 
   input_b.reset(B_height * B_width);
   for (unsigned i = 0; i < B_height * B_width; ++i)
   {
-    input_b[i] = matrixB[i];
+    for (unsigned j = 0; j < B_width; ++j)
+    {
+      input_b[i] = matrixB[j][i];
+    }
   }
 }
 
@@ -364,11 +385,11 @@ std::vector<float> run()
     {
       for (unsigned x = 0; x < C_width; ++x)
       {
-          result[y * C_width + x] = output[dev_index][yy * C_width + x];
+        result[y * C_width + x] = output[dev_index][yy * C_width + x];
       }
     }
   }
-  return result;  
+  return result;
 }
 
 void compute_reference()
