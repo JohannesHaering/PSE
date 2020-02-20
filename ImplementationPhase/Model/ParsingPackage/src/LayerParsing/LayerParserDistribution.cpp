@@ -10,6 +10,10 @@
 #include "SigmoidLayer.hpp"
 #include "SoftmaxLayer.hpp"
 #include "ActivationLayerParser.hpp"
+#include "ConvolutionLayer.hpp"
+#include "ConvolutionLayerParser.hpp"
+#include "FlattenLayerParser.hpp"
+#include "MaxPoolLayerParser.hpp"
 #include "MaxPoolLayer.hpp"
 
 #include <string>
@@ -46,7 +50,7 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	else if (firstLine.compare(MAXPOOL) == 0) {
 		return new MaxPoolLayer();
 	}
-	else if (firstLine.compare(CONVOLUTION) == 0) {
+	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
 		return ConvolutionLayerParser().parse(toParse);
 	} 
 	else if (firstLine.compare(FLATTEN) == 0) {

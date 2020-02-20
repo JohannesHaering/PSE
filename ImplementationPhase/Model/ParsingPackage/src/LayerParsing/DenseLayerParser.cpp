@@ -46,7 +46,7 @@ std::string DenseLayerParser::parseBack(NetworkLayer* layer)
 	DenseLayer* denselayer = (DenseLayer*)layer;
 	std::string output = "";
 	//output += saveGeneralInformation(layer);
-	output += "[dense]"
+	output += "[dense]";
 	output += WEIGHTS_TENSOR;
 	output += LayerParser::VALUE_TYPE_DELIMETER;
 	output += LayerParser::save2DFloatArray(denselayer->get_weights());
