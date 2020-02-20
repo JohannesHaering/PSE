@@ -107,7 +107,6 @@ float ConvolutionLayer::calcWeightUpdate(TENSOR(float) feedback, int filterNum, 
     std::cout << " batchSize(net) " << net.size() << " batchSize(feedback)" << feedback.size() << std::endl;
     return (1/0);
   }
-  //std::cout << "sizes: " << net.size() << " " << feedback[0].size() << " "  << feedback[0][0].size() << " " << feedback[0][0][0].size() << std::endl;
   for (int b = 0; b < net.size(); b++)
   {
     for (int YPos = 0; YPos < feedback[0][0].size(); YPos++)
@@ -140,15 +139,12 @@ ConvolutionLayer::backpropError(MATRIX_3D(float) feedback)
 TENSOR(float)
 ConvolutionLayer::backprob(TENSOR(float) feedback, float learningRate)
 {
-  std::cout << "learningRate" << learningRate << std::endl;
   output_backward = TENSOR(float)(net.size());
 
   //calc output_backward new2
   for (int b = 0; b < output_backward.size(); b++)
     output_backward[b] = backpropError(feedback[b]);
   
-  std::cout << "asserting correct z size: " << std::endl;
-
   //calc weight updates
   for (int filter = 0; filter < numFilters; filter++)
     for (int filterZ = 0; filterZ < filterSizeZ; filterZ++)
@@ -157,9 +153,7 @@ ConvolutionLayer::backprob(TENSOR(float) feedback, float learningRate)
         {
           // only update every weight once :)
 
-          //std::cout << "first: " << weightsTensor[filter][filterZ][filterY][filterX] << std::endl;
           weightsTensor[filter][filterZ][filterY][filterX] -= calcWeightUpdate(feedback, filter, filterZ, filterY, filterX) * learningRate;
-          //std::cout << "after: " << weightsTensor[filter][filterZ][filterY][filterX] << std::endl;
         }
 
   return output_backward;
