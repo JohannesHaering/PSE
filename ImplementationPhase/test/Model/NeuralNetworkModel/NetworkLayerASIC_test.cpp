@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
-#include <random>
+//#include <random>
 #include "NeuralNetwork.hpp"
- #include <iostream>
+//#include <iostream>
 
 struct NetworkLayerASICTest : public ::testing::Test {
-  NetworkLayer *testLayer;
+    NetworkLayer *testLayer;
   void SetUp() {
 //      testNetwork = new NeuralNetwork();
   }
@@ -58,7 +58,7 @@ TEST_F(NetworkLayerASICTest, ReLuLayerASICTest) {
     }
 }
 
-// int main(int argc, char **argv) {
-//   ::testing::InitGoogleTest(&argc, argv);
-//   return RUN_ALL_TESTS();
-// }
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

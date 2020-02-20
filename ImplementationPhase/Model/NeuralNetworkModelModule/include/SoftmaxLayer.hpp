@@ -19,6 +19,6 @@ public:
     TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) override;
     TENSOR(float) backprob(TENSOR(float) feedback);
     std::vector<float> calcCEError(TENSOR(float) target);
-    void setMode(DeviceType device, cl_int deviceID) override;
+    void setMode(DeviceType device) override;
 };
 #endif

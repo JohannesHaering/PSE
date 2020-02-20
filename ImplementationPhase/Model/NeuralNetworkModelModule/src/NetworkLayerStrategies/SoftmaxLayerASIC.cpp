@@ -21,7 +21,7 @@ TENSOR(float) SoftmaxLayerASIC::forward(TENSOR(float) net)
     auto ng_function = std::make_shared<ngraph::Function>(ngraph::OutputVector{soft0}, ngraph::ParameterVector{arg0});
 
     InferenceEngine::CNNNetwork network (ng_function);
-    return OpenVino().inference({net}, &network);
+    return OpenVino().inference({std::pair(net, InferenceEngine::Layout::NHWC)}, &network);
 }
 
 TENSOR(float) SoftmaxLayerASIC::backprob(TENSOR(float) feedback)
@@ -39,6 +39,6 @@ TENSOR(float) SoftmaxLayerASIC::backprob(TENSOR(float) updates, TENSOR(float) ou
     auto ng_function = std::make_shared<ngraph::Function>(ngraph::OutputVector{subt0}, ngraph::ParameterVector{arg0,arg1});
 
     InferenceEngine::CNNNetwork network (ng_function);
-    return OpenVino().inference({output_forward,updates}, &network);
+    return OpenVino().inference({std::pair(output_forward, InferenceEngine::Layout::NHWC), std::pair(updates,InferenceEngine::Layout::NHWC)}, &network);
 }
 

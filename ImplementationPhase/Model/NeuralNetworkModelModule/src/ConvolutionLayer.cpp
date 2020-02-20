@@ -179,6 +179,6 @@ int *ConvolutionLayer::getTensorDimensions()
   return new int[4]{(int)weightsTensor[0][0][0].size(), (int)weightsTensor[0][0].size(), (int)weightsTensor[0].size(), (int)weightsTensor.size()};
 }
 
-void ConvolutionLayer::setMode(DeviceType device, cl_int deviceID)
+void ConvolutionLayer::setMode(DeviceType device)
 {
 }

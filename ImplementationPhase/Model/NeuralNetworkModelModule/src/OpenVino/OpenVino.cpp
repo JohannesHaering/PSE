@@ -46,7 +46,7 @@ TENSOR(float) OpenVino::inference(std::vector<std::pair<TENSOR(float),InferenceE
         InferenceEngine::SizeVector dims = inputBlob->getTensorDesc().getDims();
         /** Fill input tensor with input data. **/
 
-        InferenceEngine::MemoryBlob::Ptr minput = as<InferenceEngine::MemoryBlob>(inputBlob);
+        InferenceEngine::MemoryBlob::Ptr minput = InferenceEngine::as<InferenceEngine::MemoryBlob>(inputBlob);
         if (!minput) {
             break;
         }

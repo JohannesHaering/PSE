@@ -24,7 +24,7 @@ public:
 
 	virtual TENSOR(float) forward(TENSOR(float) input) = 0;
 	virtual TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) = 0;
-	virtual void setMode(DeviceType device, cl_int deviceID) = 0;
+	virtual void setMode(DeviceType device) = 0;
 
 	void setHeight(int height);
 	void setWidth(int width);

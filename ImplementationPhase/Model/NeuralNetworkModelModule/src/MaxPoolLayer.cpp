@@ -70,7 +70,7 @@ TENSOR(float) MaxPoolLayer::backprob(TENSOR(float) feedback, float learningRate)
     return output;
 }
 
-void MaxPoolLayer::setMode(DeviceType device, cl_int deviceID) {
+void MaxPoolLayer::setMode(DeviceType device) {
     switch(device) {
         case DeviceType::CPP :
             break;

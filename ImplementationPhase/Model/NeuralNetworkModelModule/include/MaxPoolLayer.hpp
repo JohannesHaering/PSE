@@ -17,6 +17,6 @@ public:
 	MaxPoolLayer();
 	TENSOR(float) forward(TENSOR(float) input_data) override;
 	TENSOR(float) backprob(TENSOR(float) updates, float learningRate) override;
-	void setMode(DeviceType device, cl_int deviceID) override;
+	void setMode(DeviceType device) override;
 };
 #endif

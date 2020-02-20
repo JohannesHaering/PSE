@@ -28,8 +28,7 @@ TENSOR(float) LeakyReLuLayerASIC::forward(TENSOR(float) net)
     auto ng_function = std::make_shared<ngraph::Function>(ngraph::OutputVector{prelu0}, ngraph::ParameterVector{arg0, arg1});
 
     InferenceEngine::CNNNetwork network (ng_function);
-
-    return OpenVino().inference({net, slope}, &network);
+    return OpenVino().inference({std::pair(net, InferenceEngine::Layout::NHWC), std::pair(slope,InferenceEngine::Layout::NHWC)}, &network);
 
 }
 

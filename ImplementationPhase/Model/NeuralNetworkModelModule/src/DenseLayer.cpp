@@ -67,7 +67,7 @@ TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 	return output_backward;
 }
 
-void DenseLayer::setMode(DeviceType device, cl_int deviceID) {
+void DenseLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);

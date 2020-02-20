@@ -19,8 +19,7 @@ TENSOR(float) SigmoidLayerASIC::forward(TENSOR(float) net)
     auto ng_function = std::make_shared<ngraph::Function>(ngraph::OutputVector{sigm0}, ngraph::ParameterVector{arg0});
 
     InferenceEngine::CNNNetwork network (ng_function);
-
-    return OpenVino().inference({net}, &network);
+    return OpenVino().inference({std::pair(net, InferenceEngine::Layout::NHWC)}, &network);
 
 }
 
@@ -40,5 +39,5 @@ TENSOR(float) SigmoidLayerASIC::backprob(TENSOR(float) feedback)
 
     InferenceEngine::CNNNetwork network (ng_function);
 
-    return OpenVino().inference({feedback, subtractMat}, &network);
+    return OpenVino().inference({std::pair(feedback, InferenceEngine::Layout::NHWC), std::pair(subtractMat,InferenceEngine::Layout::NHWC)}, &network);
 }
