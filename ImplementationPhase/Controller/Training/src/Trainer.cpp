@@ -13,7 +13,6 @@
 Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.001f))
 {
 
-    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
    // facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.txt");
    
     //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
@@ -56,5 +55,7 @@ void Trainer::startTraining()
       }*/
     }
   //  NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    NeuralNetworkFacade* facade = new NeuralNetworkFacade();
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/trainednetwork.txt");
    // facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
 }

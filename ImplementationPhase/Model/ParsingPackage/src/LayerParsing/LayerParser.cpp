@@ -320,7 +320,7 @@ std::string LayerParser::saveFloatArray(std::vector<float> arr)
 	output += std::to_string(arr.at(0));
 	for (int i = 1; i < arr.size(); ++i)
 	{
-    std::cout<<arr[i]<<std::endl;
+    //std::cout<<arr[i]<<std::endl;
     output += VALUE_PARTS_DELIMETER;
 		output += std::to_string(arr.at(i));
 	}

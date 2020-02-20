@@ -47,9 +47,7 @@ TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
             for (int y = 0; y < input_data[0][0].size(); y++)
                 for (int x = 0; x < input_data[0][0][0].size(); x++)
                 {
-                  std::cout << "Zuerst: " << output_forward[b][z][y][x];
                   output_forward[b][z][y][x] = exp(input_data[b][z][y][x] - max[b]) / sum[b] ;
-                  std::cout << " danach: " << output_forward[b][z][y][x] << std::endl;
                 }
       for (int i = 0; i < output_forward[0][0][0].size(); i++){
                   
@@ -87,12 +85,11 @@ TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates, float learningrate)
               for (int x = 0; x < updates[0][0][0].size(); x++)
                  output_backward[b][z][y][x] =  output_forward[b][z][y][x] - updates[b][z][y][x];
  
-  
+    std::cout << "Softmax output/expected: " << std::endl;
     for (int i = 0; i < output_forward[0][0][0].size(); i++){
-      std::cout << output_backward[0][0][0][i] << " " << std::endl;
+      std::cout << i << " is: " <<output_forward[0][0][0][i] << " should be " << updates[0][0][0][i] << std::endl;
     }
 
-    std::cout << "Exptest: " << exp(5) << std::endl;
   return output_backward;
 }
 

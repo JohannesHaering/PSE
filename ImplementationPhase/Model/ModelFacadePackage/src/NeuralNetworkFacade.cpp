@@ -28,8 +28,7 @@ std::list<NeuralNetwork> NeuralNetworkFacade::loadNeuralNetworks(std::list<std::
 bool NeuralNetworkFacade::saveNeuralNetwork(NeuralNetwork neuralNetwork, std::string path)
 {
     std::string output = NeuralNetworkParser().parseBack(neuralNetwork);
-    std::cout<<output<<std::endl;
-     return TextFileIO().writeFile(path, Data<std::string>(output));
+    return TextFileIO().writeFile(path, Data<std::string>(output));
 }
 
 bool NeuralNetworkFacade::saveNeuralNetworks(std::list<NeuralNetwork> neuralNetworks, std::list<std::string> paths)

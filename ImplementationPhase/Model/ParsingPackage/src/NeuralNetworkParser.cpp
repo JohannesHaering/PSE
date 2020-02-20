@@ -132,7 +132,7 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
   
-  std::cout<<"Start parse bacl of the lauers"<<std::endl;
+  std::cout<<"Start parse back of the lauers"<<std::endl;
   for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
     output += LayerParserDistribution().parseBack(*it);
   }
