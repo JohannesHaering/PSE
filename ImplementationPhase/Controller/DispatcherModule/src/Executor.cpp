@@ -4,7 +4,7 @@
 #include "NeuralNetworkAdapter.hpp"
 #include <vector>
 #include "Executor.hpp"
-#include "/home/steki/Desktop/mnist/include/mnist/mnist_reader.hpp"
+#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 #include "MatrixDefine.hpp"
 
 Executor::Executor(NeuralNetworkAdapter* neuralNetwork) : neuralNetwork(neuralNetwork) {}
@@ -19,7 +19,7 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
     {
 		  output = (*layer)->forward(tmp);
 		  tmp = output;
-	  }
+    }
     std::cout << "returning from forward" << std::endl;
     return output;
 

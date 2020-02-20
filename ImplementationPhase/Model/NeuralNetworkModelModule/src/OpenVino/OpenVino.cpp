@@ -23,6 +23,7 @@ TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork
 
     // Load network to the plugin
     auto executable_network = plugin.LoadNetwork(reinterpret_cast<InferenceEngine::ICNNNetwork &>(network), {});
+ //   InferenceEngine::Core ie;
     auto infer_request = executable_network.CreateInferRequest();
 
     auto input = infer_request.GetBlob(input_name);

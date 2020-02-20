@@ -3,7 +3,7 @@
 
 #include "MatrixDefine.hpp"
 #include "MNISTDataParser.hpp"
-#include "/home/steki/Desktop/mnist/include/mnist/mnist_reader.hpp"
+#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 
 MNISTDataParser::MNISTDataParser(){
   MNISTDataParser(16);
