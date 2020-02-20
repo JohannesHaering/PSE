@@ -14,5 +14,8 @@ public:
     TENSOR(float) forward(TENSOR(float) input_data) override;
     TENSOR(float) backprob(TENSOR(float) updates) override;
     TENSOR(float) backprob(TENSOR(float) updates, TENSOR(float) output_forward) override;
+private:
+    void calcMaxVec(std::vector<float> *maxVec, TENSOR(float) net);
+
 };
 #endif

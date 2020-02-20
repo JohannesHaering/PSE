@@ -44,4 +44,4 @@ TENSOR(float) FlattenLayer::backprob(TENSOR(float) updates, float learningrate) 
     return feedback;
 }
 
-void FlattenLayer::setMode(DeviceType device, cl_int id){}
+void FlattenLayer::setMode(DeviceType device){}

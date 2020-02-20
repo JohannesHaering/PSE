@@ -13,6 +13,8 @@
 #include "Executor.hpp"
 #include "MatrixDefine.hpp"
 
+#include <inference_engine.hpp>
+#include <ie_core.hpp>
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
 
@@ -81,5 +83,10 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
 		}
 	}
+	InferenceEngine::Core core;
+	std::vector<std::string> asicDevices= core.GetAvailableDevices();
+    for(std::vector<std::string>::iterator it = asicDevices.begin(); it != asicDevices.end(); ++it) {
+            devices.push_back(Device(*it,*it,24,1.0));
+    }
     return devices;
 }

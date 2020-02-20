@@ -1,5 +1,6 @@
 #include "ReLuLayer.hpp"
 #include "ReLuLayerCPP.hpp"
+#include "ReLuLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 
@@ -31,9 +32,17 @@ TENSOR(float) ReLuLayer::backprob(TENSOR(float) feedback, float learningrate)
 	return output_backward;
 }
 
-void ReLuLayer::setMode(DeviceType device, cl_int deviceID) {
-	if (device == DeviceType::CPP) {
-		layerStrategy = new ReLuLayerCPP();
-	}
+void ReLuLayer::setMode(DeviceType device) {
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new ReLuLayerCPP();
+        break;
+    case DeviceType::ASIC :
+        layerStrategy = new ReLuLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }
+
 

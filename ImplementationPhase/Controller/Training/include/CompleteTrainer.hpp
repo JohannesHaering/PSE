@@ -15,6 +15,7 @@ public:
 	TENSOR(float) calcCEError(TENSOR(float) target);
 
 private:
+  long processedBatches;
 	TENSOR(float) output;
 	TENSOR(float) feedback;
 

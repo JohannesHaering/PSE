@@ -8,7 +8,7 @@
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 
 class MNISTDataParser {
-public:\
+public:
   MNISTDataParser();
 	MNISTDataParser(int batchSize);
 	TENSOR(float) parseTraining();

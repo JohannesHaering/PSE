@@ -15,6 +15,7 @@ public:
 	TENSOR(float) forward(TENSOR(float) net) override;
 	TENSOR(float) backprob(TENSOR(float) feedback) override;
 	TENSOR(float) backprob(TENSOR(float) feedback, float learningrate) override;
-	void setMode(DeviceType device, cl_int deviceID) override;
+//    void setMode(DeviceType device) override;
+    void setMode(DeviceType device) override ;
 };
 #endif

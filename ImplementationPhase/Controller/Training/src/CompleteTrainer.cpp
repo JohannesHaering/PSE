@@ -22,13 +22,15 @@ TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 
 void CompleteTrainer::train(TENSOR(float) target)
 {
+  processedBatches++;
 	TENSOR(float) tmp = target;
   for (std::list<NetworkLayer*>::reverse_iterator layer = neuralNetwork->rbegin(); layer != neuralNetwork->rend(); layer++)
   {
 		feedback = (*layer)->backprob(tmp, learningRate);
 		tmp = feedback;
 	}
-	learningRate *= 0.999;
+  if (processedBatches % 500)
+  	learningRate /= 2;
   std::cout << "returning from train" << std::endl;
 }
 

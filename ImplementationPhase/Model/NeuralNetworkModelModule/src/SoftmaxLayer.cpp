@@ -1,5 +1,6 @@
 #include "SoftmaxLayer.hpp"
 #include "SoftmaxLayerCPP.hpp"
+#include "SoftmaxLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
@@ -53,11 +54,13 @@ TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
  
 }
 
+//MSE instead of CE Error, due to issues from stephis gui. Not renamed due to time constraints.
 std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels, output and currentSize 
 {
-  std::vector<float> result = std::vector<float>(target.size(), 0.0);
+  std::vector<float> result = std::vector<float>(target.size(), 0.0f);
   for (int b = 0; b < target.size(); b++) {
   	for (int i = 0; i < output_forward.size(); i++) {
+      //result[b] = fabs(target[b][0][0][i] - output_forward[b][0][0][i]);
       result[b] -= target[b][0][0][i] * log(output_forward[b][0][0][i]);
     }
   }
@@ -89,8 +92,15 @@ TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates)
   return output_backward;
 }
 
-void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {
-  if (device == DeviceType::CPP) {
-    layerStrategy = new SoftmaxLayerCPP();
-  }
+void SoftmaxLayer::setMode(DeviceType device) {
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new SoftmaxLayerCPP();
+        break;
+    case DeviceType::ASIC :
+        layerStrategy = new SoftmaxLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }

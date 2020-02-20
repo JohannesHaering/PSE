@@ -23,6 +23,8 @@ public:
 
     TENSOR(float) getTrainingBatchInput(int numb) override;
     TENSOR(float) getTrainingBatchOutput(int numb) override;
+    TENSOR(float) getTestBatchInput(int numb) override;
+    TENSOR(float) getTestBatchOutput(int numb) override;
 
 protected:
     MNISTDataParser* mnistDataParser;

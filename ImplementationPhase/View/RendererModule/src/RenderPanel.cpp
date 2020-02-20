@@ -25,19 +25,19 @@ RenderPanel::~RenderPanel()
 
 void RenderPanel::on_start_clicked()
 {
-//        ClassificationResultRenderer *rend = new ClassificationResultRenderer();
-//        ClassProbability *prob1 = new ClassProbability("pesho", 0.1);
-//        ClassProbability *prob2 = new ClassProbability("kari", 0.5);
-//        ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
-//        std::list<ClassProbability> *prob = new std::list<ClassProbability>;
-//      //std::list<ClassProbability>::iterator it;
-//        prob->push_back(*prob1);
-//        prob->push_back(*prob2);
-//        prob->push_back(*prob3);
-//        ClassificationResult result("1","2",*prob);
-//        pixmap = new QPixmap(rend->drawGraphic(result));
-//        drawRectangle(pixmap,30,50,30,40,"green");
-//        ui->img->setPixmap(*pixmap);
+        ClassificationResultRenderer *rend = new ClassificationResultRenderer();
+        ClassProbability *prob1 = new ClassProbability("pesho", 0.1);
+        ClassProbability *prob2 = new ClassProbability("kari", 0.5);
+        ClassProbability *prob3 = new ClassProbability("mitakaa", 0.7);
+        std::list<ClassProbability> *prob = new std::list<ClassProbability>;
+      //std::list<ClassProbability>::iterator it;
+        prob->push_back(*prob1);
+        prob->push_back(*prob2);
+        prob->push_back(*prob3);
+        ClassificationResult result("1","2",*prob);
+        pixmap = new QPixmap(rend->drawGraphic(result));
+        drawRectangle(pixmap,30,50,30,40,"green");
+        ui->img->setPixmap(*pixmap);
     ViewFacade *view = ViewFacade::getInstance();
     view->getImageClassification()->showError("asdf");
 
@@ -84,7 +84,7 @@ void RenderPanel::on_trainingsss_clicked()
 {
     TrainingRenderer* rend = new TrainingRenderer();
     std::vector<float> points = {0.1,0.2,0.5,0.9};
-    std::vector<float> points2 = {0.2,0.3,0.8,0.9};
+    std::vector<float> points2 = {0.1,0.2,0.5,0.9,0.7};
    pixmap = new QPixmap(rend->drawGraphic(points,points2));
    ui->img->setPixmap(*pixmap);
 
