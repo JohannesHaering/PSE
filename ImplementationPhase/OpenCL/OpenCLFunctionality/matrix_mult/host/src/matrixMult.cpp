@@ -10,46 +10,6 @@
 
 using namespace aocl_utils;
 
-#define MEM_SIZE (128)
-#define MAX_SOURCE_SIZE (0x100000)
-
-// OpenCL runtime configuration
-cl_platform_id platform = NULL;
-unsigned num_devices = 0;
-scoped_array<cl_device_id> device; // num_devices elements
-cl_context context = NULL;
-scoped_array<cl_command_queue> queue; // num_devices elements
-cl_program program = NULL;
-scoped_array<cl_kernel> kernel; // num_devices elements
-
-scoped_array<cl_mem> input_a_buf; // num_devices elements
-scoped_array<cl_mem> input_b_buf; // num_devices elements
-scoped_array<cl_mem> output_buf;  // num_devices elements
-
-// Problem data.
-unsigned A_height;
-unsigned A_width;
-unsigned B_height = A_width;
-unsigned B_width = 2;
-unsigned C_height = A_height;
-unsigned C_width = B_width;
-
-scoped_array<scoped_aligned_ptr<float>> input_a; // num_devices elements
-scoped_aligned_ptr<float> input_b;
-scoped_array<scoped_aligned_ptr<float>> output; // num_devices elements
-
-scoped_array<float> ref_output;
-scoped_array<unsigned> rows_per_device; // num_devices elements
-
-// Function prototypes
-bool init_opencl();
-void init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB);
-std::vector<float> run();
-void compute_reference();
-void verify();
-void cleanup();
-std::vector<std::vector<float>> multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB);
-
 // Entry point.
 int main(int argc, char **argv)
 {
@@ -82,7 +42,7 @@ int main(int argc, char **argv)
   return 0;
 }
 
-std::vector<std::vector<float>> multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
+std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
   A_height = matrixA.size();
   A_width = matrixA[0].size();
@@ -122,7 +82,7 @@ std::vector<std::vector<float>> multiply(std::vector<std::vector<float>> matrixA
 /////// HELPER FUNCTIONS ///////
 
 // Initializes the OpenCL objects.
-bool init_opencl()
+bool MatrixMultiplication::init_opencl()
 {
   cl_int status;
 
@@ -239,7 +199,7 @@ bool init_opencl()
 }
 
 // Initialize the data for the problem. Requires num_devices to be known.
-void init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
+void MatrixMultiplication::init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
   if (num_devices == 0)
   {
@@ -272,7 +232,7 @@ void init_problem(std::vector<std::vector<float>> matrixA, std::vector<std::vect
   }
 }
 
-std::vector<float> run()
+std::vector<float> MatrixMultiplication::run()
 {
   cl_int status;
 
@@ -394,66 +354,8 @@ std::vector<float> run()
   return result;
 }
 
-void compute_reference()
-{
-  // Compute the reference output.
-  printf("Computing reference output\n");
-  ref_output.reset(C_height * C_width);
-
-  for (unsigned y = 0, dev_index = 0; y < C_height; ++dev_index)
-  {
-    for (unsigned yy = 0; yy < rows_per_device[dev_index]; ++yy, ++y)
-    {
-      for (unsigned x = 0; x < C_width; ++x)
-      {
-        // Compute result for C(y, x)
-        float sum = 0.0f;
-        for (unsigned k = 0; k < A_width; ++k)
-        {
-          sum += input_a[dev_index][yy * A_width + k] * input_b[k * B_width + x];
-        }
-        ref_output[y * C_width + x] = sum;
-      }
-    }
-  }
-}
-
-void verify()
-{
-  printf("Verifying\n");
-
-  // Compute the L^2-Norm of the difference between the output and reference
-  // output matrices and compare it against the L^2-Norm of the reference.
-  float diff = 0.0f;
-  float ref = 0.0f;
-  for (unsigned y = 0, dev_index = 0; y < C_height; ++dev_index)
-  {
-    for (unsigned yy = 0; yy < rows_per_device[dev_index]; ++yy, ++y)
-    {
-      for (unsigned x = 0; x < C_width; ++x)
-      {
-        const float o = output[dev_index][yy * C_width + x];
-        const float r = ref_output[y * C_width + x];
-        const float d = o - r;
-        diff += d * d;
-        ref += r * r;
-      }
-    }
-  }
-
-  const float diff_l2norm = sqrtf(diff);
-  const float ref_l2norm = sqrtf(ref);
-  const float error = diff_l2norm / ref_l2norm;
-  const bool pass = error < 1e-6;
-  printf("Verification: %s\n", pass ? "PASS" : "FAIL");
-  if (!pass)
-  {
-    printf("Error (L^2-Norm): %0.3g\n", error);
-  }
-}
-
 // Free the resources allocated during initialization
-void cleanup()
+void MatrixMultiplication::cleanup()
 {
   for (unsigned i = 0; i < num_devices; ++i)
   {
