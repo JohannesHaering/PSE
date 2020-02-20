@@ -91,7 +91,7 @@ int* LayerParser::parseIntArray(std::string text)
 std::vector<float> LayerParser::parseFloatArray(std::string text)
 {
   std::cout << "parse1D: " << text << std::endl;
-  if (text[0] == ',')
+  while (text[0] == '[')
     text.erase(0,1);
   text = removeCharacter(text, VALUE_BEGIN);
   text = removeCharacter(text, VALUE_END);
@@ -140,6 +140,7 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 				currentArray = "";
 				--openBrackets;
 				state = 2;
+        charIt++;
 			}
 			else
 			{
@@ -194,6 +195,7 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 			{
 			  std::cout << "Pushed back 2DMatrix" << std::endl;
         tensor.push_back(parse2DFloatArray(currentArray));
+        currentArray = "";
 				++i;
 			}
 		}
