@@ -65,7 +65,6 @@ TENSOR(float) DenseLayer::forward(TENSOR(float) input_data)
                 output_forward[batchIteration][0][0][j] += weights[i][j] * input_data[batchIteration][0][0][i];
         }
     }
-    std::cout << "finished dense forward" << std::endl;
     return output_forward;
 }
 
