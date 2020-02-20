@@ -57,4 +57,5 @@ void Trainer::startTraining()
     }
   //  NeuralNetworkFacade* facade = new NeuralNetworkFacade();
    // facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.cfg");
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/trainednetwork.txt");
 }

@@ -12,6 +12,7 @@ DenseLayer::DenseLayer(int inputSize, int outputSize) : DenseLayer::DenseLayer(i
 DenseLayer::DenseLayer(int inputSize, int outputSize, float learningRate) : inputSize(inputSize), outputSize(outputSize), learningRate(learningRate)
 {
 	layerType = LayerType::DENSE;
+	
 	bias = std::vector<float>(outputSize, 0.1);
 	weights.resize(inputSize);
 	float r = sqrt(12.0 / (inputSize + outputSize));

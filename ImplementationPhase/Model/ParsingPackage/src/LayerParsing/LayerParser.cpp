@@ -240,11 +240,11 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	output += LayerParser::VALUE_BEGIN;
 	switch (layer->getLayerType())
 	{
-	case LayerType::ACTIVATION:
+	case LayerType::RELU:
+	case LayerType::LEAKYRELU:
+	case LayerType::SOFTMAX:
+	case LayerType::SIGMOID:
 		output += LayerParserDistribution().ACTIVATION;
-		break;
-	case LayerType::COLLECT_RESULTS:
-		output += LayerParserDistribution().COLLECT_RESULTS;
 		break;
 	case LayerType::CONVOLUTION:
 		output += LayerParserDistribution().CONVOLUTIONAL;
@@ -252,25 +252,14 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	case LayerType::DENSE:
 		output += LayerParserDistribution().DENSE;
 		break;
-	case LayerType::DROPOUT:
-		output += LayerParserDistribution().DROPOUT;
-		break;
 	case LayerType::FLATTEN:
 		output += LayerParserDistribution().FLATTEN;
-		break;
-	case LayerType::INCEPTION:
-		output += LayerParserDistribution().INCEPTION;
-		break;
-	case LayerType::LRN:
-		output += LayerParserDistribution().LOCAL_RESPONSE_NORMALIZATION;
-		break;
-	case LayerType::OUTPUT_STORAGE:
-		output += LayerParserDistribution().OUTPUT_STORAGE;
 		break;
 	case LayerType::POLLING:
 		output += LayerParserDistribution().POLLING;
 		break;
 	}
+	
 	output += LayerParser::VALUE_END;
 	output += "\n";
 	output += "\n";
