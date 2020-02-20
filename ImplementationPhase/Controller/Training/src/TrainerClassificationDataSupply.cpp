@@ -37,14 +37,22 @@ TrainerClassificationDataSupply::TrainerClassificationDataSupply(DATATYPE type, 
 	}
 	if (type == DATATYPE::MNIST)
 	{
-		MNISTDataParser* mnistDataParser = new MNISTDataParser(batchSize);		
+		 mnistDataParser = new MNISTDataParser(batchSize);		
 	}
 }
 
 TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput(int numb) {
-	return mnistDataParser.parseTraining();
+	return mnistDataParser->parseTraining();
 }
 
 TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int numb) {
-	return mnistDataParser.parseTrainingLabel();
+	return mnistDataParser->parseTrainingLabel();
+}
+
+TENSOR(float) TrainerClassificationDataSupply::getTestBatchInput(int numb) {
+	return mnistDataParser->parseTest();
+}
+
+TENSOR(float) TrainerClassificationDataSupply::getTestBatchOutput(int numb) {
+	return mnistDataParser->parseTestLabel();
 }

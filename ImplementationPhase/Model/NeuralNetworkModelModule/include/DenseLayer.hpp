@@ -28,7 +28,7 @@ public:
 	TENSOR(float) backprob(TENSOR(float) updates, float learningRate) override;
  	MATRIX_2D(float) get_weights();
 	std::vector<float> get_biase();
-	void setMode(DeviceType device, cl_int deviceID) override;
+	void setMode(DeviceType device) override;
 };
 #endif
 

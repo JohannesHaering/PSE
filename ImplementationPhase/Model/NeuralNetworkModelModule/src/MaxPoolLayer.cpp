@@ -1,5 +1,6 @@
 #include "MaxPoolLayer.hpp"
 #include "MatrixDefine.hpp"
+#include "MaxPoolLayerASIC.hpp"
 
 MaxPoolLayer::MaxPoolLayer() {
     layerType = LayerType::POLLING;
@@ -69,6 +70,14 @@ TENSOR(float) MaxPoolLayer::backprob(TENSOR(float) feedback, float learningRate)
     return output;
 }
 
-void MaxPoolLayer::setMode(DeviceType device, cl_int deviceID) {
-
+void MaxPoolLayer::setMode(DeviceType device) {
+    switch(device) {
+        case DeviceType::CPP :
+            break;
+        case DeviceType::ASIC :
+            layerStrategy = new MaxPoolLayerASIC();
+            break;
+        case DeviceType::CPU :
+            break;
+    }
 }

@@ -2,9 +2,10 @@
 #define MATRIXMULTIPLICATIONCPU_H_
 
 #include <vector>
+#include <CL/cl.h>
 
 class MatrixMultiplicationCPU {
 public:
-    static std::vector<std::vector<float>> mult(std::vector<std::vector<float>> A, std::vector<std::vector<float>> B);
+    std::vector<std::vector<float>> mult(std::vector<std::vector<float>> iA, std::vector<std::vector<float>> iB);
 };
 #endif

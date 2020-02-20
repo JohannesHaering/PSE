@@ -19,8 +19,8 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
     {
 		  output = (*layer)->forward(tmp);
 		  tmp = output;
-	  }
+    }
     std::cout << "returning from forward" << std::endl;
     return output;
-    
+
 }

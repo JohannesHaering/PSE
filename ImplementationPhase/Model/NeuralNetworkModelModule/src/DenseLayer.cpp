@@ -1,5 +1,6 @@
 #include "DenseLayer.hpp"
 #include "DenseLayerCPP.hpp"
+#include "DenseLayerASIC.hpp"
 #include <vector>
 #include <math.h>
 #include <vector>
@@ -63,11 +64,19 @@ TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 TENSOR(float) DenseLayer::backprob(TENSOR(float) feedback, float learningrate)
 {
 	output_backward = layerStrategy->backprob(feedback, learningrate, net);
-	return output_backward;
+
+  return output_backward;
 }
 
-void DenseLayer::setMode(DeviceType device, cl_int deviceID) {
-	if (device == DeviceType::CPP) {
-		layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
-	}
+void DenseLayer::setMode(DeviceType device) {
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
+        break;
+    case DeviceType::ASIC :
+     //   layerStrategy = new DenseLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }

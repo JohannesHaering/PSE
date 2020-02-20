@@ -11,7 +11,7 @@
 class Trainer
 {
 public:
-	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData);
+	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, float learningrate);
 	void startTraining();
 	static const int batchSize = 16;
 
@@ -24,7 +24,7 @@ private:
   std::string trainData;
 	float desiredPrecision;
 	std::vector<float> testAcc;
-	std::vector<float> trainingAcc;
+	std::vector<float> trainAcc;
 	NeuralNetworkAdapter* neuralNetwork;
 	CompleteTrainer trainer;
 	TrainerDataSupply* supplyer;

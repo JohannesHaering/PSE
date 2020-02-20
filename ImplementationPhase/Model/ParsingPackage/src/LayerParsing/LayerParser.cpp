@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <vector>
 #include <cstring>
+#include <iostream>
 
 // Format
 // inputDimensions={<int[]>}
@@ -239,7 +240,10 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	output += LayerParser::VALUE_BEGIN;
 	switch (layer->getLayerType())
 	{
-	case LayerType::ACTIVATION:
+	case LayerType::RELU:
+	case LayerType::LEAKYRELU:
+	case LayerType::SOFTMAX:
+	case LayerType::SIGMOID:
 		output += LayerParserDistribution().ACTIVATION;
 		break;
 	case LayerType::COLLECT_RESULTS:
@@ -270,8 +274,9 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 		output += LayerParserDistribution().POLLING;
 		break;
 	}
+	
 	output += LayerParser::VALUE_END;
-	output += "\n";
+	//output += "\n";
 	output += "\n";
 	output += BATCH_SIZE;
 	output += VALUE_TYPE_DELIMETER;
@@ -315,7 +320,8 @@ std::string LayerParser::saveFloatArray(std::vector<float> arr)
 	output += std::to_string(arr.at(0));
 	for (int i = 1; i < arr.size(); ++i)
 	{
-		output += VALUE_PARTS_DELIMETER;
+    //std::cout<<arr[i]<<std::endl;
+    output += VALUE_PARTS_DELIMETER;
 		output += std::to_string(arr.at(i));
 	}
 	output += (VALUE_END);

@@ -14,29 +14,23 @@ TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 
   for (std::list<NetworkLayer*>::iterator layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
   {
-    //std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
 		output =(*layer)->forward(tmp);
-    //std::cout << "layertype: " << layer->getLayerType() << std::endl;
-    //std::cout << "output size: " << output.size() << std::endl;
 		tmp = output;
 	}
-  std::cout << "returning from forward" << std::endl;
 	return output;
 }
 
 void CompleteTrainer::train(TENSOR(float) target)
 {
-  std::cout << std::endl << "train in completeTrainer " <<std::endl;
+  processedBatches++;
 	TENSOR(float) tmp = target;
   for (std::list<NetworkLayer*>::reverse_iterator layer = neuralNetwork->rbegin(); layer != neuralNetwork->rend(); layer++)
   {
-    //std::cout << "layer: " << i++ << "input size: " << tmp.size() << std::endl;
 		feedback = (*layer)->backprob(tmp, learningRate);
-    //std::cout << "layertype: " << layer->getLayerType() << std::endl;
-    //std::cout << "feedback size: " << feedback.size() << std::endl;
 		tmp = feedback;
 	}
-	learningRate *= 0.99;
+  if (processedBatches % 500)
+  	learningRate /= 2;
   std::cout << "returning from train" << std::endl;
 }
 

@@ -1,4 +1,5 @@
 #include "ConvolutionLayer.hpp"
+#include "LayerType.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <math.h>
@@ -7,11 +8,13 @@
 #include <iostream>
 #include <random>
 
-ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding) : stride(stride), padding(padding), numFilters(numFilters),
-                                                                                                                                 filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
+ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding) : 
+  stride(stride), padding(padding), numFilters(numFilters),
+  filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
 {
+  layerType = LayerType::CONVOLUTION;
   weightsTensor = TENSOR(float)(numFilters, MATRIX_3D(float)(filterSizeZ, MATRIX_2D(float)(filterSizeY, std::vector<float>(filterSizeX))));
-  float r = sqrt(12.0 / (filterSizeX * filterSizeY * filterSizeZ * numFilters));
+  float r = sqrt(12.0 / (filterSizeX * filterSizeY * filterSizeZ));
   //float r = sqrt(12.0 / (netSize + outputSize));
   //float r = 4 * sqrt(6.0 / (netSize + outputSize));
   std::random_device rand_dev;
@@ -37,6 +40,7 @@ ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterS
 
 ConvolutionLayer::ConvolutionLayer(TENSOR(float) filter, int stride, int padding) : stride(stride), padding(padding)
 {
+  layerType = LayerType::CONVOLUTION;
   weightsTensor = filter;
   numFilters = filter.size();
   filterSizeZ = filter[0].size();
@@ -99,20 +103,22 @@ ConvolutionLayer::forward(TENSOR(float) net)
 
 // Backprop from here on
 
-float ConvolutionLayer::calcWeightUpdate(TENSOR(float) feedback, int numFilters, int filterPosZ, int filterPosY, int filterPosX)
+float ConvolutionLayer::calcWeightUpdate(TENSOR(float) feedback, int filterNum, int filterPosZ, int filterPosY, int filterPosX)
 {
   float update = 0;
-  //std::cout << "sizes: " << net.size() << " " << feedback[0].size() << " "  << feedback[0][0].size() << " " << feedback[0][0][0].size() << std::endl;
+  if (net.size() != feedback.size()) 
+  {
+    std::cout << " batchSize(net) " << net.size() << " batchSize(feedback)" << feedback.size() << std::endl;
+    return (1/0);
+  }
   for (int b = 0; b < net.size(); b++)
   {
-    for (int ZPos = 0; ZPos < feedback[0].size(); ZPos++)
-      for (int YPos = 0; YPos < feedback[0][0].size(); YPos++)
-        for (int XPos = 0; XPos < feedback[0][0][0].size(); XPos++)
-        {
-          update += net[b][ZPos + filterPosZ][YPos + filterPosY][XPos + filterPosX] * feedback[b][ZPos][YPos][XPos];
-        }
+    for (int YPos = 0; YPos < feedback[0][0].size(); YPos++)
+      for (int XPos = 0; XPos < feedback[0][0][0].size(); XPos++)
+      {
+        update += net[b][filterPosZ][YPos + filterPosY][XPos + filterPosX] * feedback[b][filterNum][YPos][XPos];
+      }
   }
-  std::cout << "update in calcWeightUpdate: " << update << std::endl;
   return update;
 }
 
@@ -142,7 +148,7 @@ ConvolutionLayer::backprob(TENSOR(float) feedback, float learningRate)
   //calc output_backward new2
   for (int b = 0; b < output_backward.size(); b++)
     output_backward[b] = backpropError(feedback[b]);
-
+  
   //calc weight updates
   for (int filter = 0; filter < numFilters; filter++)
     for (int filterZ = 0; filterZ < filterSizeZ; filterZ++)
@@ -150,6 +156,7 @@ ConvolutionLayer::backprob(TENSOR(float) feedback, float learningRate)
         for (int filterX = 0; filterX < filterSizeX; filterX++)
         {
           // only update every weight once :)
+
           weightsTensor[filter][filterZ][filterY][filterX] -= calcWeightUpdate(feedback, filter, filterZ, filterY, filterX) * learningRate;
         }
 
@@ -167,8 +174,7 @@ void ConvolutionLayer::setStride(int stride) { this->stride = stride; }
 
 void ConvolutionLayer::setPadding(int padding) { this->padding = padding; }
 
-TENSOR(float)
-ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
+TENSOR(float) ConvolutionLayer::getWeightsTensor() { return weightsTensor; }
 
 int ConvolutionLayer::getStride() { return stride; }
 
@@ -179,6 +185,6 @@ int *ConvolutionLayer::getTensorDimensions()
   return new int[4]{(int)weightsTensor[0][0][0].size(), (int)weightsTensor[0][0].size(), (int)weightsTensor[0].size(), (int)weightsTensor.size()};
 }
 
-void ConvolutionLayer::setMode(DeviceType device, cl_int deviceID)
+void ConvolutionLayer::setMode(DeviceType device)
 {
 }

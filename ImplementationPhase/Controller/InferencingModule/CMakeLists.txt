@@ -46,7 +46,7 @@ target_link_libraries(NEURALNETWORKPAGER PUBLIC VIEW_MODULE)
 add_library(NEURALNETWORKSETTER "src/NeuralNetworkSetter.cpp" "include/NeuralNetworkSetter.hpp")
 target_include_directories(NEURALNETWORKSETTER PUBLIC "include/")
 target_link_libraries(NEURALNETWORKSETTER PUBLIC INFERENCER)
-#target_link_libraries(NEURALNETWORKSETTER PUBLIC NEURALNETWORKFACADE)
+target_link_libraries(NEURALNETWORKSETTER PUBLIC NEURALNETWORKFACADE)
 target_link_libraries(NEURALNETWORKSETTER PUBLIC NEURALNETWORKADAPTER)
 
 add_library(PAGER "src/Pager.cpp" "include/Pager.hpp")

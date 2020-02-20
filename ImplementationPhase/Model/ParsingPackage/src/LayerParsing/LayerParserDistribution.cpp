@@ -10,6 +10,10 @@
 #include "SigmoidLayer.hpp"
 #include "SoftmaxLayer.hpp"
 #include "ActivationLayerParser.hpp"
+#include "ConvolutionLayer.hpp"
+#include "ConvolutionalLayerParser.hpp"
+#include "FlattenLayerParser.hpp"
+#include "MaxPoolLayerParser.hpp"
 #include "MaxPoolLayer.hpp"
 
 #include <string>
@@ -46,6 +50,15 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	else if (firstLine.compare(MAXPOOL) == 0) {
 		return new MaxPoolLayer();
 	}
+	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
+		return ConvolutionalLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(FLATTEN) == 0) {
+		return FlattenLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(POLLING) == 0) {
+		return MaxPoolLayerParser().parse(toParse);
+	} 
 	else
 	{
 		throw std::invalid_argument("Wrong format");
@@ -71,6 +84,15 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
 		break;
 	case LayerType::SIGMOID:
 		output += ActivationLayerParser().parseBack(layer);
+		break;
+	case LayerType::CONVOLUTION:
+		output += ConvolutionalLayerParser().parseBack(layer);
+		break;
+	case LayerType::FLATTEN:
+		output += FlattenLayerParser().parseBack(layer);
+		break;	
+	case LayerType::POLLING:
+		output += MaxPoolLayerParser().parseBack(layer);
 		break;
 	}
 	return output;

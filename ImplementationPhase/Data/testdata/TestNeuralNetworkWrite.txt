@@ -1,8 +1,0 @@
-[nn]
-labels=name1,name2,name3
-height=64
-width=64
-channels=3
-[dropout]
-inputdim=[1,2,3]
-rate=0.100000
