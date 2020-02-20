@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 #include <math.h>
 #include <vector>
-#include <iostream>
 
 #include "matrixMult.h"
 #include "AOCLUtils/aocl_utils.h"
@@ -60,8 +60,9 @@ int main(int argc, char **argv)
   {
     for (int x = 0; x < A_width; x++)
     {
-      matrixA[y * A_width + x] = y +  x;
+      matrixA[y * A_width + x] = y * x;
     }
+    printf("Done row of A\n");
   }
 
   std::vector<float> matrixB = std::vector<float>(B_height * B_width);
@@ -69,8 +70,9 @@ int main(int argc, char **argv)
   {
     for (int x = 0; x < B_width; x++)
     {
-      matrixB[y * B_width + x] = y + x;
+      matrixB[y * B_width + x] = y * x;
     }
+    printf("Done row of B\n");
   }
 
   printf("done generating\n");
@@ -91,7 +93,7 @@ int main(int argc, char **argv)
   // Run the kernel.
   std::vector<float> matrixC = run();
 
-   std::cout << matrixC[0] << std::endl;
+  std::cout << matrixC[0] << std::endl;
   std::cout << matrixC[1] << std::endl;
   std::cout << matrixC[2] << std::endl;
   std::cout << matrixC[3] << std::endl;
@@ -352,8 +354,8 @@ std::vector<float> run()
   }
 
   // Verify results.
-  compute_reference();
-  verify();
+  //compute_reference();
+  //verify();
 
   std::vector<float> result = std::vector<float>(C_width * C_height);
   for (unsigned y = 0, dev_index = 0; y < C_height; ++dev_index)
@@ -366,7 +368,7 @@ std::vector<float> run()
       }
     }
   }
-  return result;
+  return result;  
 }
 
 void compute_reference()
@@ -414,12 +416,7 @@ void verify()
         ref += r * r;
       }
     }
-    std::cout << rows_per_device[dev_index] << std::endl;
-    std::cout << dev_index << std::endl;
   }
-  std::cout<< C_width << std::endl;
-  std::cout<< C_height << std::endl;
-
 
   const float diff_l2norm = sqrtf(diff);
   const float ref_l2norm = sqrtf(ref);
@@ -430,23 +427,6 @@ void verify()
   {
     printf("Error (L^2-Norm): %0.3g\n", error);
   }
-
-  std::cout << output[0][0] << std::endl;
-  std::cout <<output[0][1] << std::endl;
-  std::cout <<output[0][2] << std::endl;
-  std::cout <<output[0][3] << std::endl;
-  std::cout <<input_a[0][0] << std::endl;
-  std::cout <<input_a[0][1] << std::endl;
-  std::cout <<input_a[0][2] << std::endl;
-  std::cout <<input_a[0][3] << std::endl;
-  std::cout <<input_b[0] << std::endl;
-  std::cout <<input_b[1] << std::endl;
-  std::cout <<input_b[2] << std::endl;
-  std::cout <<input_b[3] << std::endl;
-  std::cout <<ref_output[0] << std::endl;
-  std::cout <<ref_output[1] << std::endl;
-  std::cout <<ref_output[2] << std::endl;
-  std::cout <<ref_output[3] << std::endl;
 }
 
 // Free the resources allocated during initialization
