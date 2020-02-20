@@ -28,7 +28,7 @@ TENSOR(float) ReLuLayerASIC::forward(TENSOR(float) net)
 
     InferenceEngine::CNNNetwork network (ng_function);
 
-    return OpenVino().inference(net, &network);
+    return OpenVino().inference({net}, &network);
 
 }
 

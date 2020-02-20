@@ -6,7 +6,7 @@ OpenVino::OpenVino()
 
 }
 
-TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork* network){
+TENSOR(float) OpenVino::inference(std::vector<TENSOR(float)> net, InferenceEngine::CNNNetwork* network){
     std::string pluginPath = "add here plugin path";
     InferenceEngine::PluginDispatcher dispatcher({pluginPath, ""});
     InferenceEngine::InferencePlugin plugin(dispatcher.getPluginByName("myriadPlugin"));
@@ -28,7 +28,7 @@ TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork
 
     auto input = infer_request.GetBlob(input_name);
     auto input_data = input->buffer().as<InferenceEngine::PrecisionTrait<InferenceEngine::Precision::U8>::value_type*>();
-
+    auto data = net[0];
     // Obtain input tensor
     InferenceEngine::SizeVector inputDims = input->getTensorDesc().getDims();
     int i = 0;
@@ -36,7 +36,7 @@ TENSOR(float) OpenVino::inference(TENSOR(float) net, InferenceEngine::CNNNetwork
         for (int z = 0; z < inputDims[2]; z++){
             for (int y = 0; y < inputDims[1]; y++){
                 for (int x = 0; x < inputDims[0]; x++){
-                                input_data[i] =	net[b][z][y][x];
+                                input_data[i] =	data[b][z][y][x];
                                 i++;
                 }
             }

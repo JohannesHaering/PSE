@@ -3,6 +3,7 @@
 #include "LeakyReLuLayerStrategy.hpp"
 #include "OpenVino.hpp"
 
+
 class LeakyReLuLayerASIC : public LeakyReLuLayerStrategy
 {
 public:

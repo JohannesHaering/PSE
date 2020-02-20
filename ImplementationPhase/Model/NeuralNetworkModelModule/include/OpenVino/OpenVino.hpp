@@ -7,7 +7,7 @@ class OpenVino
 {
 public:
     OpenVino();
-    TENSOR(float) inference(TENSOR(float) net, InferenceEngine::CNNNetwork* network);
+    TENSOR(float) inference(std::vector<TENSOR(float)> net, InferenceEngine::CNNNetwork* network);
 };
 
 #endif // OPENVINO_H_

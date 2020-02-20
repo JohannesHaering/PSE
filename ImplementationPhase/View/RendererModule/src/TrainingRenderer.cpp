@@ -23,7 +23,7 @@ QPixmap TrainingRenderer::drawGraphic(std::vector<float> pointsArrayTest, std::v
     int j = 0;
     for(std::vector<float>::iterator it = pointsArrayTraining.begin(); it != pointsArrayTraining.end(); ++it) {
         j++;
-        QPoint point(j*(width/(pointsArrayTest.size() + 1)), *it * 100);
+        QPoint point(j*(width/(pointsArrayTraining.size() + 1)), *it * 100);
         seriesTraining->append(point);
     }
     QChartView* chartView = new QChartView();
