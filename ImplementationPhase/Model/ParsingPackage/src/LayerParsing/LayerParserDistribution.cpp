@@ -15,7 +15,7 @@
 #include "FlattenLayerParser.hpp"
 #include "MaxPoolLayerParser.hpp"
 #include "MaxPoolLayer.hpp"
-
+#include <iostream>
 #include <string>
 #include <stdexcept>
 #include <algorithm>
@@ -30,22 +30,12 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	std::string extras = "[\n]";
 	// Remove first line
 	toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
-
-	if (firstLine.compare(DENSE) == 0)
+  if (firstLine.compare(DENSE) == 0)
 	{
 		return parseDenseLayer(toParse);
 	}
-	else if (firstLine.compare(SIGMOID) == 0) {
-		return ActivationLayerParser().parse(toParse);
-	}
-	else if (firstLine.compare(SOFTMAX) == 0) {
-		return ActivationLayerParser().parse(toParse);
-	}
-	else if (firstLine.compare(RELU) == 0) {
-		return ActivationLayerParser().parse(toParse);
-	}
-	else if (firstLine.compare(LEAKYRELU) == 0) {
-		return ActivationLayerParser().parse(toParse);
+	else if (firstLine.compare(ACTIVATION) == 0) {
+    return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(MAXPOOL) == 0) {
 		return new MaxPoolLayer();

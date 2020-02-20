@@ -5,7 +5,7 @@
 #include "FlattenLayer.hpp"
 #include "FlattenLayerFactory.hpp"
 #include "LayerParserDistribution.hpp"
-
+#include <iostream>
 #include <string>
 #include <list>
 #include <stdexcept>
@@ -19,7 +19,6 @@ NetworkLayer* FlattenLayerParser::parse(std::string toParse)
     //factory.setWidth(width);
     //factory.setHeight(height);
     //factory.setZ(z);
-
     return factory.buildLayer();
 }
 

@@ -34,7 +34,7 @@ void Trainer::startTraining()
   TENSOR(float) results;  
   TENSOR(float) testresults;
   TENSOR(float) testFeedback;
-  for(int b = 0; b < 1000; b++) //train on 5 batches
+  for(int b = 0; b < 500; b++) //train on 5 batches
   {
       auto t1 = std::chrono::high_resolution_clock::now();
 
@@ -90,5 +90,5 @@ void Trainer::startTraining()
     //ControllerFacade::getInstance()->newTrainStep(testAcc, trainAcc);   
 
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/trainednetwork.txt");
+    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Documents/trainednetworks/" + trainData + ".txt");
 }
