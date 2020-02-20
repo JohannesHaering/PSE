@@ -28,8 +28,7 @@ TENSOR(float) ReLuLayerASIC::forward(TENSOR(float) net)
 
     InferenceEngine::CNNNetwork network (ng_function);
 
-    return OpenVino().inference(net, &network);
-
+    return OpenVino().inference({std::pair(net, InferenceEngine::Layout::NHWC)}, &network);
 }
 
 TENSOR(float) ReLuLayerASIC::backprob(TENSOR(float) feedback)
