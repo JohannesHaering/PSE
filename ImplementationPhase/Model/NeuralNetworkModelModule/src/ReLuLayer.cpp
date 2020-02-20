@@ -32,7 +32,7 @@ TENSOR(float) ReLuLayer::backprob(TENSOR(float) feedback, float learningrate)
 	return output_backward;
 }
 
-void ReLuLayer::setMode(DeviceType device, cl_int deviceID) {
+void ReLuLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new ReLuLayerCPP();
@@ -44,4 +44,5 @@ void ReLuLayer::setMode(DeviceType device, cl_int deviceID) {
         break;
     }
 }
+
 

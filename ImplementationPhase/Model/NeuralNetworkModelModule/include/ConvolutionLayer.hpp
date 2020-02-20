@@ -38,7 +38,7 @@ class ConvolutionLayer  : public ConnectionLayer {
 	void setStride(int stride);
 	void setPadding(int padding);
     virtual int* getTensorDimensions(); 
-	void setMode(DeviceType device, cl_int deviceID) override;
+	void setMode(DeviceType device) override;
     // ~ConvolutionLayer();
 };
 #endif

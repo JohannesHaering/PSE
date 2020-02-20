@@ -48,7 +48,7 @@ target_link_libraries(ACTIVATIONLAYER PUBLIC NETWORKLAYER DEVICETYPE MATRIX_DEFI
 
 add_library(MAXPOOLLAYER "src/MaxPoolLayer.cpp" "include/MaxPoolLayer.hpp")
 target_include_directories(MAXPOOLLAYER PUBLIC "include/")
-target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE DEVICETYPE)
+target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE MAXPOOLSTRATEGY DEVICETYPE )
 
 #add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 add_library(DENSELAYER "src/TestDenseLayer.cpp" "include/TestDenseLayer.hpp")
@@ -93,7 +93,7 @@ add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.
 target_include_directories(RELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(RELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
 
-add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp")
+add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp"  "src/NetworkLayerStrategies/LeakyReLuLayerASIC.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerASIC.hpp")
 target_include_directories(LEAKYRELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
 
@@ -109,11 +109,15 @@ target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_
 #target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
 #target_link_libraries(DENSELAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY FUNCTIONALITY)
 
-add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp" "src/NetworkLayerStrategies/SoftmaxLayerASIC.cpp" "include/NetworkLayerStrategies/SoftmaxLayerASIC.hpp")
+add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp" "src/NetworkLayerStrategies/SoftmaxLayerASIC.cpp" "include/NetworkLayerStrategies/SoftmaxLayerASIC.hpp" )
 target_include_directories(SOFTMAXSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(SOFTMAXSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
 
-add_library(SIGMOIDLAYERSTRATEGY "include/NetworkLayerStrategies/SigmoidLayerStrategy.hpp" "src/NetworkLayerStrategies/SigmoidLayerCPP.cpp" "include/NetworkLayerStrategies/SigmoidLayerCPP.hpp" "src/NetworkLayerStrategies/SigmoidLayerASIC.cpp" "include/NetworkLayerStrategies/SigmoidLayerASIC.hpp")
+add_library(MAXPOOLSTRATEGY "include/NetworkLayerStrategies/MaxPoolLayerStrategy.hpp" "include/NetworkLayerStrategies/MaxPoolLayerASIC.hpp" "src/NetworkLayerStrategies/MaxPoolLayerASIC.cpp")
+target_include_directories(MAXPOOLSTRATEGY PUBLIC "include/NetworkLayerStrategies")
+target_link_libraries(MAXPOOLSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DEVICETYPE MATRIX_DEFINE OPENVINO)
+
+add_library(SIGMOIDLAYERSTRATEGY "include/NetworkLayerStrategies/SigmoidLayerStrategy.hpp" "src/NetworkLayerStrategies/SigmoidLayerCPP.cpp" "include/NetworkLayerStrategies/SigmoidLayerCPP.hpp" "src/NetworkLayerStrategies/SigmoidLayerASIC.cpp" "include/NetworkLayerStrategies/SigmoidLayerASIC.hpp" )
 target_include_directories(SIGMOIDLAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
 target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
 

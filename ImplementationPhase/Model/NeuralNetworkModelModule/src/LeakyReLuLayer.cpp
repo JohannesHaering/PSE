@@ -31,13 +31,13 @@ TENSOR(float) LeakyReLuLayer::backprob(TENSOR(float) feedback, float learningRat
 	return output_backward;
 }
 
-void LeakyReLuLayer::setMode(DeviceType device, cl_int deviceID) {
+void LeakyReLuLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new LeakyReLuLayerCPP();
         break;
     case DeviceType::ASIC :
-//        layerStrategy = new LeakyReLuLayerASIC();
+       layerStrategy = new LeakyReLuLayerASIC();
         break;
     case DeviceType::CPU :
         break;

@@ -84,7 +84,7 @@ void RenderPanel::on_trainingsss_clicked()
 {
     TrainingRenderer* rend = new TrainingRenderer();
     std::vector<float> points = {0.1,0.2,0.5,0.9};
-    std::vector<float> points2 = {0.2,0.3,0.8,0.9};
+    std::vector<float> points2 = {0.1,0.2,0.5,0.9,0.7};
    pixmap = new QPixmap(rend->drawGraphic(points,points2));
    ui->img->setPixmap(*pixmap);
 

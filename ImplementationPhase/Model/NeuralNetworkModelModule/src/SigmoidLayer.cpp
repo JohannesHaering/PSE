@@ -30,7 +30,7 @@ TENSOR(float) SigmoidLayer::backprob(TENSOR(float) feedback, float learningrate)
 	return output_backward;
 }
 
-void SigmoidLayer::setMode(DeviceType device, cl_int deviceID) {
+void SigmoidLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new SigmoidLayerCPP();
