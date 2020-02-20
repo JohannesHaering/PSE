@@ -11,7 +11,7 @@
 #include "SoftmaxLayer.hpp"
 #include "ActivationLayerParser.hpp"
 #include "ConvolutionLayer.hpp"
-#include "ConvolutionLayerParser.hpp"
+#include "ConvolutionalLayerParser.hpp"
 #include "FlattenLayerParser.hpp"
 #include "MaxPoolLayerParser.hpp"
 #include "MaxPoolLayer.hpp"
@@ -51,7 +51,7 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 		return new MaxPoolLayer();
 	}
 	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
-		return ConvolutionLayerParser().parse(toParse);
+		return ConvolutionalLayerParser().parse(toParse);
 	} 
 	else if (firstLine.compare(FLATTEN) == 0) {
 		return FlattenLayerParser().parse(toParse);
@@ -86,7 +86,7 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
 		output += ActivationLayerParser().parseBack(layer);
 		break;
 	case LayerType::CONVOLUTION:
-		output += ConvolutionLayerParser().parseBack(layer);
+		output += ConvolutionalLayerParser().parseBack(layer);
 		break;
 	case LayerType::FLATTEN:
 		output += FlattenLayerParser().parseBack(layer);

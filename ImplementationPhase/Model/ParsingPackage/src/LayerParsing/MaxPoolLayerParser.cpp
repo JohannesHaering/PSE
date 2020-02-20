@@ -1,4 +1,4 @@
-#include "MaxPoolLayParser.hpp"
+#include "MaxPoolLayerParser.hpp"
 #include "LayerParser.hpp"
 #include "MaxPoolLayer.hpp"
 
@@ -11,6 +11,7 @@ NetworkLayer *MaxPoolLayerParser::parse(std::string toParse)
 
     NetworkLayer* layer = new MaxPoolLayer();
     return layer;
+}
 
 std::string MaxPoolLayerParser::parseBack(NetworkLayer *layer)
 {
