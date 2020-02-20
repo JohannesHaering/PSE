@@ -1,4 +1,4 @@
-#include "../host/inc/matrixMult.hpp"
+#include "../host/inc/matrixMult.h"
 
 #ifndef SIMD_WORK_ITEMS
 #define SIMD_WORK_ITEMS 4 // default value

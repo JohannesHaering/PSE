@@ -21,11 +21,11 @@ cl_context context = NULL;
 scoped_array<cl_command_queue> queue; // num_devices elements
 cl_program program = NULL;
 scoped_array<cl_kernel> kernel; // num_devices elements
-#if USE_SVM_API == 0
+
 scoped_array<cl_mem> input_a_buf; // num_devices elements
 scoped_array<cl_mem> input_b_buf; // num_devices elements
 scoped_array<cl_mem> output_buf;  // num_devices elements
-#endif                            /* USE_SVM_API == 0 */
+
 // Problem data.
 unsigned A_height = 4;
 unsigned A_width = 4 ;
