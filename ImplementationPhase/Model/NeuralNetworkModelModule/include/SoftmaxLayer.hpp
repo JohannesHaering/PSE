@@ -12,6 +12,7 @@ class SoftmaxLayer : public ActivationLayer
 
 private:
     SoftmaxLayerStrategy *layerStrategy;
+    void calcMaxVec(std::vector<float> *maxVec);
 
 public:
     SoftmaxLayer();

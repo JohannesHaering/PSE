@@ -14,7 +14,7 @@ Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, st
 {
 
     NeuralNetworkFacade* facade = new NeuralNetworkFacade();
-    facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.txt");
+   // facade->saveNeuralNetwork(neuralNetwork->getNeuralNetwork(), "/home/pselabw1920/Downloads/network.txt");
    
     //trainer = CompleteTrainer(neuralNetwork, 0.01f, batchSize);  
     trainingAcc = std::vector<float>();
@@ -32,14 +32,21 @@ void Trainer::loadDataset()
 
 void Trainer::startTraining()
 {
-    for(int b = 0; b < 5; b++) //train on 5 batches
+  TENSOR(float) results;  
+  
+  for(int b = 0; b < 5; b++) //train on 5 batches
     {
       //supplier
       
       std::cout<<"Next batch"<<std::endl;
       trainer.forward(supplyer->getTrainingBatchInput(b));
       trainer.train(supplyer->getTrainingBatchOutput(b));
+      
+      results = trainer.calcCEError(supplyer->getTrainingBatchOutput(b));
+      for (int i = 0; i < results.size(); i++)
+        testAcc.push_back(results[i][0][0][0]);
       //trainer.forward(dataset_train_images[i]);
+      ControllerFacade::getInstance()->newTrainStep(trainingAcc, testAcc);   
       //trainer.train(dataset_train_labels[i]);
 
       /*if (i % 10 == 0){

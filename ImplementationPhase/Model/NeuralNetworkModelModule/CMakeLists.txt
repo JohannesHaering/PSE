@@ -26,7 +26,8 @@ add_library(MAXPOOLLAYER "src/MaxPoolLayer.cpp" "include/MaxPoolLayer.hpp")
 target_include_directories(MAXPOOLLAYER PUBLIC "include/")
 target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE DEVICETYPE)
 
-add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
+#add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
+add_library(DENSELAYER "src/TestDenseLayer.cpp" "include/TestDenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
 target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY DEVICETYPE MATRIX_DEFINE)
 

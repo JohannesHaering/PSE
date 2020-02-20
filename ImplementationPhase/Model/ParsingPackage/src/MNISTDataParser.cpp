@@ -24,7 +24,7 @@ MNISTDataParser::MNISTDataParser(int batchSize) : batchSize(batchSize)
   for (int i = 0; i < mnist_dataset.training_images.size(); i++) {
       for (int j = 0; j < 28; j++)
         for (int k = 0; k < 28; k++) 
-          dataset_train_images[i][0][j][k] = mnist_dataset.training_images[i][j*28 + k];
+          dataset_train_images[i][0][j][k] = mnist_dataset.training_images[i][j*28 + k] / 255.0f;
       for (int j = 0; j < 10; j++) 
               dataset_train_labels[i][0][0][j] = (mnist_dataset.training_labels[i] == j) ? 1.0f : 0.0f;
   }
@@ -32,7 +32,7 @@ MNISTDataParser::MNISTDataParser(int batchSize) : batchSize(batchSize)
   for (int i =0; i < mnist_dataset.test_images.size(); i++) {
       for (int j = 0; j < 28; j++)
         for (int k = 0; k < 28; k++) 
-          dataset_test_images[i][0][j][k] = mnist_dataset.training_images[i][j*28 + k];
+          dataset_test_images[i][0][j][k] = mnist_dataset.training_images[i][j*28 + k] / 255.0f;
       for (int j = 0; j < 10; j++) 
               dataset_test_labels[i][0][0][j] = (mnist_dataset.test_labels[i] == j) ? 1.0f : 0.0f;
   }

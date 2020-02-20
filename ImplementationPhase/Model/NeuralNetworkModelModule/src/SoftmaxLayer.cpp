@@ -3,6 +3,7 @@
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
+#include <iostream>
 
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 
@@ -12,11 +13,50 @@ SoftmaxLayer::SoftmaxLayer()
   layerStrategy = new SoftmaxLayerCPP();
 }
 
-TENSOR(float) SoftmaxLayer::forward(TENSOR(float) net)
+void SoftmaxLayer::calcMaxVec(std::vector<float> *maxVec)
 {
-  this->net = net;
-  output_forward = layerStrategy->forward(net);
-  return output_forward;
+  for (int b = 0; b < net.size(); b++)
+  { 
+      (*maxVec)[b] = net[b][0][0][0]; //def value
+      for (int z = 0; z < net[0].size(); z++)
+          for (int y = 0; y < net[0][0].size(); y++)
+              for (int x = 0; x < net[0][0][0].size(); x++)
+              {
+                if ( net[b][z][y][x] > (*maxVec)[b]) (*maxVec)[b] = net[b][z][y][x];
+              }
+  }
+}
+
+TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
+{
+    this->net = input_data;
+ 
+    output_forward = input_data;
+    std::vector<float> sum = std::vector<float>(input_data.size(), 0.0f);
+    std::vector<float> max = std::vector<float>(input_data.size());
+    calcMaxVec(&max);
+    for (int b = 0; b < input_data.size(); b++)
+        for (int z = 0; z < input_data[0].size(); z++)
+            for (int y = 0; y < input_data[0][0].size(); y++)
+                for (int x = 0; x < input_data[0][0][0].size(); x++)
+                    sum[b] += exp(input_data[b][z][y][x] - max[b]);
+    std::cout << "sum: 0 " << sum[0] << std::endl;   
+
+    for (int b = 0; b < input_data.size(); b++)
+        for (int z = 0; z < input_data[0].size(); z++)
+            for (int y = 0; y < input_data[0][0].size(); y++)
+                for (int x = 0; x < input_data[0][0][0].size(); x++)
+                {
+                  std::cout << "Zuerst: " << output_forward[b][z][y][x];
+                  output_forward[b][z][y][x] = exp(input_data[b][z][y][x] - max[b]) / sum[b] ;
+                  std::cout << " danach: " << output_forward[b][z][y][x] << std::endl;
+                }
+      for (int i = 0; i < output_forward[0][0][0].size(); i++){
+                  
+      //std::cout << output_forward[0][0][0][i] << " " << std::endl;
+    }
+    return output_forward;
+ 
 }
 
 std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels, output and currentSize 
@@ -36,10 +76,24 @@ TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
 	return output_backward;
 }
 
-TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback, float learningrate)
+TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates, float learningrate)
 {
-  output_backward = layerStrategy->backprob(feedback, output_forward);
-	return output_backward;
+  //output_backward = layerStrategy->backprob(feedback, output_forward);
+
+    output_backward = updates;
+    for (int b = 0; b < updates.size(); b++)
+      for (int z = 0; z < updates[0].size(); z++)
+          for (int y = 0; y < updates[0][0].size(); y++)
+              for (int x = 0; x < updates[0][0][0].size(); x++)
+                 output_backward[b][z][y][x] =  output_forward[b][z][y][x] - updates[b][z][y][x];
+ 
+  
+    for (int i = 0; i < output_forward[0][0][0].size(); i++){
+      std::cout << output_backward[0][0][0][i] << " " << std::endl;
+    }
+
+    std::cout << "Exptest: " << exp(5) << std::endl;
+  return output_backward;
 }
 
 void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {

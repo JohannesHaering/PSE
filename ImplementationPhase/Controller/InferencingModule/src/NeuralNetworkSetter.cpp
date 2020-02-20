@@ -33,25 +33,31 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
 
- // ConvolutionLayer* clayer1 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
-  //network.addLayer(clayer1);
+//  ConvolutionLayer* clayer1 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+ // network.addLayer(clayer1);
 
-  //LeakyReLuLayer* llayer = new LeakyReLuLayer();
-  //network.addLayer(llayer);
+  LeakyReLuLayer* llayer = new LeakyReLuLayer();
+ // network.addLayer(llayer);
 
-  //ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 32, 10, 1, 0);
-  //network.addLayer(clayer2);
+  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+  network.addLayer(clayer2);
 
-  //network.addLayer(llayer);
+  network.addLayer(llayer);
 
-  //FlattenLayer* flayer = new FlattenLayer();
-  //network.addLayer(flayer);
+  FlattenLayer* flayer = new FlattenLayer();
+  network.addLayer(flayer);
 
-  DenseLayer* dlayer = new DenseLayer(28 * 28, 10);
+  DenseLayer* dlayer = new DenseLayer(26 * 26, 320);
 	network.addLayer(dlayer);
+ 
+  network.addLayer(llayer);
+
+  DenseLayer* dlayer2 = new DenseLayer(320, 10);
+	network.addLayer(dlayer2);
 
   SoftmaxLayer* smlayer = new SoftmaxLayer();
   network.addLayer(smlayer);
+  
 /*
   NeuralNetwork network2 = NeuralNetwork("Das 2. beschte netz", 28, 28, 1);
   network2.setLabels(labels);
