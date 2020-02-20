@@ -14,9 +14,6 @@ using namespace aocl_utils;
 int main(int argc, char **argv)
 {
   printf("Generating input matrices\n");
-  input_a.reset(num_devices);
-  output.reset(num_devices);
-
   std::vector<std::vector<float>> matrixA = std::vector<std::vector<float>>(1024, std::vector<float>(1024));
   for (int y = 0; y < 1024; y++)
   {
@@ -31,13 +28,13 @@ int main(int argc, char **argv)
   {
     for (int x = 0; x < 1024; x++)
     {
-      matrixB[y][x] = y + x;
+     matrixB[y][x] = y + x;
     } 
   }
 
   printf("done generating\n");
 
-  multiply(matrixA, matrixB);
+  MatrixMultiplication().multiply(matrixA, matrixB);
 
   return 0;
 }
@@ -50,6 +47,11 @@ std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::
   B_width = matrixB.size();
   C_height = A_height;
   C_width = B_width;
+
+
+  input_a.reset(num_devices);
+  output.reset(num_devices);
+
 
   printf("Matrix sizes:\n  A: %d x %d\n  B: %d x %d\n  C: %d x %d\n",
          A_height, A_width, B_height, B_width, C_height, C_width);

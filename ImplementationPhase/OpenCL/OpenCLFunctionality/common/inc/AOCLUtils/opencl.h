@@ -10,8 +10,6 @@
 
 #include "CL/opencl.h"
 
-// This is assumed to be externally provided by the application.
-extern void cleanup();
 
 namespace aocl_utils {
 

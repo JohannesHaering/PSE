@@ -14,6 +14,18 @@
 #define MAX_SOURCE_SIZE (0x100000)
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <math.h>
+#include <vector>
+
+#include "matrixMult.h"
+#include "AOCLUtils/aocl_utils.h"
+#include "CL/cl.h"
+
+using namespace aocl_utils;
+
 class MatrixMultiplication
 {
 public:
