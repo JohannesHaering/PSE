@@ -40,11 +40,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "CL/opencl.h"
+#include "CL/cl.h"
 #include "AOCLUtils/aocl_utils.h"
 #include "matrixMult.h"
-
+#include <vector>
 using namespace aocl_utils;
+
+#define MEM_SIZE (128)
+#define MAX_SOURCE_SIZE (0x100000)
 
 // OpenCL runtime configuration
 cl_platform_id platform = NULL;
@@ -59,7 +62,6 @@ scoped_array<cl_mem> input_a_buf; // num_devices elements
 scoped_array<cl_mem> input_b_buf; // num_devices elements
 scoped_array<cl_mem> output_buf; // num_devices elements
 #endif /* USE_SVM_API == 0 */
-
 // Problem data.
 unsigned A_height = 32 * BLOCK_SIZE;
 unsigned A_width  = 16 * BLOCK_SIZE;
@@ -105,8 +107,7 @@ int main(int argc, char **argv) {
   printf("Matrix sizes:\n  A: %d x %d\n  B: %d x %d\n  C: %d x %d\n",
       A_height, A_width, B_height, B_width, C_height, C_width);
 
-  // Spot check matrix sizes. They all must be a multiple of BLOCK_SIZE,
-  // although it is relatively straightforward to handle non-multiples
+  // Spot check matrix sizes. They all must be a multiple of BLOCK_SIZE,  // although it is relatively straightforward to handle non-multiples
   // by adding padding. For simplicity, this example does not pad.
   if((A_height % BLOCK_SIZE) != 0 || (A_width % BLOCK_SIZE) != 0 ||
      (B_height % BLOCK_SIZE) != 0 || (B_width % BLOCK_SIZE) != 0 ||
@@ -151,14 +152,14 @@ bool init_opencl() {
   }
 
   // Get the OpenCL platform.
-  platform = findPlatform("Intel(R) FPGA SDK for OpenCL(TM)");
+  platform = findPlatform("Intel(R) CPU Runtime for OpenCL(TM)");
   if(platform == NULL) {
     printf("ERROR: Unable to find Intel(R) FPGA OpenCL platform.\n");
     return false;
   }
 
   // Query the available OpenCL device.
-  device.reset(getDevices(platform, CL_DEVICE_TYPE_ALL, &num_devices));
+  device.reset(getDevices(platform, CL_DEVICE_TYPE_CPU, &num_devices));
   printf("Platform: %s\n", getPlatformName(platform).c_str());
   printf("Using %d device(s)\n", num_devices);
   for(unsigned i = 0; i < num_devices; ++i) {
@@ -171,9 +172,28 @@ bool init_opencl() {
 
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
-  std::string binary_file = getBoardBinaryFile("matrix_mult", device[0]);
-  printf("Using AOCX: %s\n", binary_file.c_str());
-  program = createProgramFromBinary(context, binary_file.c_str(), device, num_devices);
+//  std::string binary_file = getBoardBinaryFile("matrix_mult", device[0]);
+//  printf("Using AOCX: %s\n", binary_file.c_str());
+//  program = createProgramFromBinary(context, binary_file.c_str(), device, num_devices);
+
+    /* Create Kernel Program from the source */
+
+    FILE *fp;
+    char fileName[] = "matrix_mult.cl";
+    char *source_str;
+    size_t source_size;
+    /* Load the source code containing the kernel*/
+    fp = fopen(fileName, "r");
+    if (!fp)
+    {
+      printf("Error with loading");
+        return 0;
+    }
+    source_str = (char *)malloc(MAX_SOURCE_SIZE);
+    source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
+    fclose(fp);
+  program = clCreateProgramWithSource(context, 1, (const char **)&source_str,
+                                        (size_t *)&source_size, &status);
 
   // Build the program that was just created.
   status = clBuildProgram(program, 0, NULL, "", NULL, NULL);
@@ -219,13 +239,13 @@ bool init_opencl() {
     // For matrix A, each device only needs the rows corresponding
     // to the rows of the output matrix. We specifically
     // assign this buffer to the first bank of global memory.
-    input_a_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_CHANNEL_1_INTELFPGA,
+    input_a_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY,
         rows_per_device[i] * A_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for input A");
 
     // For matrix B, each device needs the whole matrix. We specifically
     // assign this buffer to the second bank of global memory.
-    input_b_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_CHANNEL_2_INTELFPGA,
+    input_b_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY,
         B_height * B_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for input B");
 
@@ -234,7 +254,7 @@ bool init_opencl() {
     // although it is not material to performance to do so because
     // the reads from the input matrices are far more frequent than the
     // write to the output matrix.
-    output_buf[i] = clCreateBuffer(context, CL_MEM_WRITE_ONLY | CL_CHANNEL_1_INTELFPGA,
+    output_buf[i] = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
         rows_per_device[i] * C_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for output");
 #else
@@ -273,19 +293,38 @@ void init_problem() {
   printf("Generating input matrices\n");
   input_a.reset(num_devices);
   output.reset(num_devices);
+  std::vector<float> matrixA = std::vector<float>(A_height * A_width);
+  for(int y = 0;  y < A_height; y++){
+    for(int x = 0; x < A_width; x++){
+      matrixA[y*A_width + x] = y * x;
+    }
+    printf("Done row of A\n");
+  }
+  
+  std::vector<float> matrixB = std::vector<float>(B_height * B_width);
+  for(int y = 0;  y < B_height; y++){
+    for(int x = 0; x < B_width; x++){
+      matrixB[y* B_width +x] = y * x;
+    }
+    printf("Done row of B\n");
+  }
+
+  printf("done generating\n");
+
 #if USE_SVM_API == 0
+   
   for(unsigned i = 0; i < num_devices; ++i) {
     input_a[i].reset(rows_per_device[i] * A_width);
     output[i].reset(rows_per_device[i] * C_width);
 
     for(unsigned j = 0; j < rows_per_device[i] * A_width; ++j) {
-      input_a[i][j] = rand_float();
+      input_a[i][j] = matrixA[i* A_width + +   j] ;
     }
   }
 
   input_b.reset(B_height * B_width);
   for(unsigned i = 0; i < B_height * B_width; ++i) {
-    input_b[i] = rand_float();
+    input_b[i] = matrixB[i];
   }
 #else
   for(unsigned i = 0; i < num_devices; ++i) {
