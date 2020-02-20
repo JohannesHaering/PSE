@@ -11,7 +11,7 @@
 #include "DataType.hpp"
 #include <chrono> //for time measurement
 
-Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.1f))
+Trainer::Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData) : neuralNetwork(neuralNetwork), desiredPrecision(desiredPrecision), trainData(trainData), trainer(CompleteTrainer(neuralNetwork, 0.01f))
 {
 
     trainingAcc = std::vector<float>();
@@ -32,7 +32,7 @@ void Trainer::startTraining()
 {
   TENSOR(float) results;  
   
-  for(int b = 0; b < 2; b++) //train on 5 batches
+  for(int b = 0; b < 200; b++) //train on 5 batches
     {
       auto t1 = std::chrono::high_resolution_clock::now();
 

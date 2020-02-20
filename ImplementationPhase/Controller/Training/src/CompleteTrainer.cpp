@@ -28,7 +28,7 @@ void CompleteTrainer::train(TENSOR(float) target)
 		feedback = (*layer)->backprob(tmp, learningRate);
 		tmp = feedback;
 	}
-	learningRate *= 0.99;
+	learningRate *= 0.999;
   std::cout << "returning from train" << std::endl;
 }
 
