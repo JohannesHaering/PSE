@@ -46,6 +46,15 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	else if (firstLine.compare(MAXPOOL) == 0) {
 		return new MaxPoolLayer();
 	}
+	else if (firstLine.compare(CONVOLUTION) == 0) {
+		return ConvolutionLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(FLATTEN) == 0) {
+		return FlattenLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(POLLING) == 0) {
+		return MaxPoolLayerParser().parse(toParse);
+	} 
 	else
 	{
 		throw std::invalid_argument("Wrong format");
@@ -71,6 +80,15 @@ std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
 		break;
 	case LayerType::SIGMOID:
 		output += ActivationLayerParser().parseBack(layer);
+		break;
+	case LayerType::CONVOLUTION:
+		output += ConvolutionLayerParser().parseBack(layer);
+		break;
+	case LayerType::FLATTEN:
+		output += FlattenLayerParser().parseBack(layer);
+		break;	
+	case LayerType::POLLING:
+		output += MaxPoolLayerParser().parseBack(layer);
 		break;
 	}
 	return output;

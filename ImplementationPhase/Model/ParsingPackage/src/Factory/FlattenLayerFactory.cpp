@@ -5,10 +5,11 @@
 
 NetworkLayer* FlattenLayerFactory::buildLayer(){
     NetworkLayer* flattenLayer = new FlattenLayer();
+    /*
     flattenLayer->setBatchSize(batchSize);
     flattenLayer->setWidth(width);
     flattenLayer->setHeight(height);
-    flattenLayer->setZ(z);
+    flattenLayer->setZ(z);*/
 
     return flattenLayer;
 }

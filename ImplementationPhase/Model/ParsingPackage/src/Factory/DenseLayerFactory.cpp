@@ -7,7 +7,7 @@
 
 NetworkLayer* DenseLayerFactory::buildLayer()
 {   
-    DenseLayer* layer = new DenseLayer(sizeof(inputDimensions)/sizeof(int), matrix[0].size(), 0.1);
+    DenseLayer* layer = new DenseLayer(matrix.size(), matrix[0].size(), 0.1);
     layer->set_weights(matrix);
 	layer->set_bias(bias);
     return layer;

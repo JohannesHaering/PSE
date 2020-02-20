@@ -24,10 +24,11 @@ NetworkLayer* ActivationLayerFactory::buildLayer()
     default:
         layer = new SoftmaxLayer();
     }
+    /*
     layer->setBatchSize(batchSize);
     layer->setWidth(width);
     layer->setHeight(height);
-    layer->setZ(z);
+    layer->setZ(z);*/
     return layer;
 }
 
