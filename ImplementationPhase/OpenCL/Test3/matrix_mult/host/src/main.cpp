@@ -41,9 +41,8 @@ scoped_array<float> ref_output;
 scoped_array<unsigned> rows_per_device; // num_devices elements
 
 // Function prototypes
-float rand_float();
 bool init_opencl();
-void init_problem();
+void init_problem(std::vector<float> matrixA, std::vector<float> matrixB);
 void run();
 void compute_reference();
 void verify();
