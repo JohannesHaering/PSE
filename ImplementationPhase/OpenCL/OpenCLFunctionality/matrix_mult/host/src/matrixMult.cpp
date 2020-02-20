@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "matrixMult.h"
+#include "MatrixMultiplication.hpp"
 #include "AOCLUtils/aocl_utils.h"
 #include "CL/cl.h"
 
