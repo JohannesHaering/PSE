@@ -25,7 +25,7 @@ NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(in
 void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories) {
     std::vector<NeuralNetworkAdapter> neuralNetworks; 
 	
-	NeuralNetworkFacade neuralNetworkFacade;
+	//NeuralNetworkFacade neuralNetworkFacade;
   //NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork(directories[0]);
   //neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testnetwork.txt");
    // for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {

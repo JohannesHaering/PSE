@@ -64,13 +64,13 @@ std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels
 	return result;
 }
 
-TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback)
+TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) feedback, float learningRate)
 {
   output_backward = layerStrategy->backprob(feedback, output_forward);
 	return output_backward;
 }
 
-TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates, float learningrate)
+TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates)
 {
   //output_backward = layerStrategy->backprob(feedback, output_forward);
 
