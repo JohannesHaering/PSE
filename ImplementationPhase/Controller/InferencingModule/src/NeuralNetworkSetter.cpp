@@ -23,14 +23,34 @@ NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(in
 * -std::vector<std::string> directories: the directories of the neural networks
 */
 void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories) {
-    std::vector<NeuralNetworkAdapter> neuralNetworks; 
+  std::vector<NeuralNetworkAdapter> neuralNetworks; 
 	
-	//NeuralNetworkFacade neuralNetworkFacade;
-  //NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork(directories[0]);
-  //neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testnetwork.txt");
-   // for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
-    //    neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
-    //}  
+  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+  network.addLayer(clayer2);
+
+  network.addLayer(llayer);
+
+  FlattenLayer* flayer = new FlattenLayer();
+  network.addLayer(flayer);
+
+  DenseLayer* dlayer = new DenseLayer(26 * 26, 320);
+	network.addLayer(dlayer);
+ 
+  network.addLayer(llayer);
+
+  DenseLayer* dlayer2 = new DenseLayer(320, 10);
+	network.addLayer(dlayer2);
+
+  SoftmaxLayer* smlayer = new SoftmaxLayer();
+  network.addLayer(smlayer);
+
+	NeuralNetworkFacade neuralNetworkFacade;
+  neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testnetwork.txt");
+  NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork("/home/pselabw1920/Downloads/testnetwork.txt");
+  neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testbacknetwork.txt");
+    /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
+        neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
+    }  /*
 	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
 	network.setLabels(labels);
@@ -79,7 +99,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 */
   neuralNetworks.push_back(network);
  // neuralNetworks.push_back(network2);
-
+  neuralNetworks.push_back(network);
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
 }

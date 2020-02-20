@@ -276,7 +276,7 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 	}
 	
 	output += LayerParser::VALUE_END;
-	output += "\n";
+	//output += "\n";
 	output += "\n";
 	output += BATCH_SIZE;
 	output += VALUE_TYPE_DELIMETER;
