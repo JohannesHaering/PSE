@@ -6,7 +6,7 @@
 //ActivationFunctions work on net[j], so a size does not need to be set on init
 LeakyReLuLayer::LeakyReLuLayer()
 {
-  layerType = LayerType::RELU;
+  layerType = LayerType::LEAKYRELU;
   layerStrategy = new LeakyReLuLayerCPP();
 }
 
