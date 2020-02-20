@@ -1,4 +1,5 @@
 #include "ConvolutionLayer.hpp"
+#include "LayerType.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <math.h>
@@ -10,6 +11,7 @@
 ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterSizeZ, int numFilters, int stride, int padding) : stride(stride), padding(padding), numFilters(numFilters),
                                                                                                                                  filterSizeZ(filterSizeZ), filterSizeY(filterSizeY), filterSizeX(filterSizeX)
 {
+  layerType = LayerType::CONVOLUTION;
   weightsTensor = TENSOR(float)(numFilters, MATRIX_3D(float)(filterSizeZ, MATRIX_2D(float)(filterSizeY, std::vector<float>(filterSizeX))));
   float r = sqrt(12.0 / (filterSizeX * filterSizeY * filterSizeZ * numFilters));
   //float r = sqrt(12.0 / (netSize + outputSize));
@@ -37,6 +39,7 @@ ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterS
 
 ConvolutionLayer::ConvolutionLayer(TENSOR(float) filter, int stride, int padding) : stride(stride), padding(padding)
 {
+  layerType = LayerType::CONVOLUTION;
   weightsTensor = filter;
   numFilters = filter.size();
   filterSizeZ = filter[0].size();
