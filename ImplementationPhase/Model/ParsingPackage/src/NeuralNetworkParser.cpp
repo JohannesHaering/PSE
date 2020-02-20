@@ -101,7 +101,7 @@ std::string NeuralNetworkParser::removeCharacter(std::string text, char toErase)
 
 std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 {
-  std::cout<<"Start parse back"<<std::endl;
+  	std::cout<<"Start parse back"<<std::endl;
 	std::string output = "";
 	output += TYPE_BEGIN;
 	output += neuralNetwork.getName();
@@ -113,8 +113,8 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	auto labelIt = labels.begin();
 	output += *labelIt;
 	++labelIt;
-  std::cout<<"Start parse back of the labels"<<std::endl;
-  for (; labelIt != labels.end(); ++labelIt) {
+  	std::cout<<"Start parse back of the labels"<<std::endl;
+  	for (; labelIt != labels.end(); ++labelIt) {
 		output += VALUE_DELIMETER;
 		output += *labelIt;
 	}
@@ -132,10 +132,10 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
   
-  std::cout<<"Start parse back of the lauers"<<std::endl;
-  for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
-    output += LayerParserDistribution().parseBack(*it);
-  }
+	std::cout<<"Start parse back of the layers"<<std::endl;
+	for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
+		output += LayerParserDistribution().parseBack(*it);
+	}
 
 	return output;
 }
