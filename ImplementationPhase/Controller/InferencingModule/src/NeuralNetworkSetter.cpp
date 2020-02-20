@@ -23,7 +23,11 @@ NeuralNetworkSetter::NeuralNetworkSetter(Inferencer *inferencer) : inferencer(in
 * -std::vector<std::string> directories: the directories of the neural networks
 */
 void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories) {
+	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+	NeuralNetwork network = NeuralNetwork("Das beschte netz", 28, 28, 1);
+	network.setLabels(labels);
   std::vector<NeuralNetworkAdapter> neuralNetworks; 
+  LeakyReLuLayer* llayer = new LeakyReLuLayer();
 	
   ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
   network.addLayer(clayer2);
@@ -45,7 +49,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   network.addLayer(smlayer);
 
 	NeuralNetworkFacade neuralNetworkFacade;
-  neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testnetwork.txt");
+  neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Downloads/testnetwork.txt");
   NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork("/home/pselabw1920/Downloads/testnetwork.txt");
   neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testbacknetwork.txt");
     /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
