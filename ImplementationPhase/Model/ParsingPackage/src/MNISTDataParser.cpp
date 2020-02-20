@@ -20,7 +20,7 @@ MNISTDataParser::MNISTDataParser(int batchSize) : batchSize(batchSize)
 
   testImagePositions = std::vector<uint>(batchSize);
   trainImagePositions = std::vector<uint>(batchSize);
-    
+
   for (int i = 0; i < mnist_dataset.training_images.size(); i++) {
       for (int j = 0; j < 28; j++)
         for (int k = 0; k < 28; k++) 
@@ -85,4 +85,3 @@ TENSOR(float) MNISTDataParser::parseTestLabel()
   }
   return testLabelTensor;
 }
-

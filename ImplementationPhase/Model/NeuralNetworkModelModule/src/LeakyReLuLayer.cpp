@@ -1,4 +1,5 @@
 #include "LeakyReLuLayer.hpp"
+#include "LeakyReLuLayerASIC.hpp"
 #include <vector>
 #include "LeakyReLuLayerCPP.hpp"
 #include "MatrixDefine.hpp"
@@ -31,8 +32,15 @@ TENSOR(float) LeakyReLuLayer::backprob(TENSOR(float) feedback, float learningRat
 }
 
 void LeakyReLuLayer::setMode(DeviceType device, cl_int deviceID) {
-  if (device == DeviceType::CPP) {
-    layerStrategy = new LeakyReLuLayerCPP();
-  }
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new LeakyReLuLayerCPP();
+        break;
+    case DeviceType::ASIC :
+//        layerStrategy = new LeakyReLuLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }
 

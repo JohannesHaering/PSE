@@ -1,5 +1,6 @@
 #include "SoftmaxLayer.hpp"
 #include "SoftmaxLayerCPP.hpp"
+#include "SoftmaxLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
@@ -92,7 +93,14 @@ TENSOR(float) SoftmaxLayer::backprob(TENSOR(float) updates)
 }
 
 void SoftmaxLayer::setMode(DeviceType device, cl_int deviceID) {
-  if (device == DeviceType::CPP) {
-    layerStrategy = new SoftmaxLayerCPP();
-  }
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new SoftmaxLayerCPP();
+        break;
+    case DeviceType::ASIC :
+        layerStrategy = new SoftmaxLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }

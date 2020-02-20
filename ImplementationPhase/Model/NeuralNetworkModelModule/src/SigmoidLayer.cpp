@@ -1,5 +1,6 @@
 #include "SigmoidLayer.hpp"
 #include "SigmoidLayerCPP.hpp"
+#include "SigmoidLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
@@ -30,8 +31,15 @@ TENSOR(float) SigmoidLayer::backprob(TENSOR(float) feedback, float learningrate)
 }
 
 void SigmoidLayer::setMode(DeviceType device, cl_int deviceID) {
-	if (device == DeviceType::CPP) {
-		layerStrategy = new SigmoidLayerCPP();
-	}
+    switch(device) {
+    case DeviceType::CPP :
+        layerStrategy = new SigmoidLayerCPP();
+        break;
+    case DeviceType::ASIC :
+        layerStrategy = new SigmoidLayerASIC();
+        break;
+    case DeviceType::CPU :
+        break;
+    }
 }
 
