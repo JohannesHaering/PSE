@@ -48,3 +48,11 @@ TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchInput(int numb) {
 TENSOR(float) TrainerClassificationDataSupply::getTrainingBatchOutput(int numb) {
 	return mnistDataParser->parseTrainingLabel();
 }
+
+TENSOR(float) TrainerClassificationDataSupply::getTestBatchInput(int numb) {
+	return mnistDataParser->parseTest();
+}
+
+TENSOR(float) TrainerClassificationDataSupply::getTestBatchOutput(int numb) {
+	return mnistDataParser->parseTestLabel();
+}

@@ -29,15 +29,15 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   std::vector<NeuralNetworkAdapter> neuralNetworks; 
   LeakyReLuLayer* llayer = new LeakyReLuLayer();
 	
-  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
-  network.addLayer(clayer2);
+  //ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
+  //network.addLayer(clayer2);
 
-  network.addLayer(llayer);
+  //network.addLayer(llayer);
 
   FlattenLayer* flayer = new FlattenLayer();
   network.addLayer(flayer);
 
-  DenseLayer* dlayer = new DenseLayer(26 * 26, 320);
+  DenseLayer* dlayer = new DenseLayer(28 * 28, 320);
 	network.addLayer(dlayer);
  
   network.addLayer(llayer);
@@ -48,10 +48,10 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   SoftmaxLayer* smlayer = new SoftmaxLayer();
   network.addLayer(smlayer);
 
-	NeuralNetworkFacade neuralNetworkFacade;
-  neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Downloads/testnetwork.txt");
-  NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork("/home/pselabw1920/Downloads/testnetwork.txt");
-  neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testbacknetwork.txt");
+	//NeuralNetworkFacade neuralNetworkFacade;
+  //neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Downloads/testnetwork.txt");
+  //NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork("/home/pselabw1920/Downloads/testnetwork.txt");
+  //neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testbacknetwork.txt");
     /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
     }  /*
@@ -103,7 +103,6 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 */
   neuralNetworks.push_back(network);
  // neuralNetworks.push_back(network2);
-  neuralNetworks.push_back(network);
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
 }

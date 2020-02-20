@@ -15,6 +15,8 @@ class TrainerDataSupply
 public:
     virtual TENSOR(float) getTrainingBatchInput(int numb) = 0;
     virtual TENSOR(float) getTrainingBatchOutput(int numb) = 0;
+    virtual TENSOR(float) getTestBatchInput(int numb) = 0;
+    virtual TENSOR(float) getTestBatchOutput(int numb) = 0;
 
 protected:
     const float TRAINING_PART = 0.7f;

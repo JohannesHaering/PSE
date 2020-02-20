@@ -53,11 +53,13 @@ TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
  
 }
 
+//MSE instead of CE Error, due to issues from stephis gui. Not renamed due to time constraints.
 std::vector<float> SoftmaxLayer::calcCEError(TENSOR(float) target) //uses labels, output and currentSize 
 {
-  std::vector<float> result = std::vector<float>(target.size(), 0.0);
+  std::vector<float> result = std::vector<float>(target.size(), 0.0f);
   for (int b = 0; b < target.size(); b++) {
   	for (int i = 0; i < output_forward.size(); i++) {
+      //result[b] = fabs(target[b][0][0][i] - output_forward[b][0][0][i]);
       result[b] -= target[b][0][0][i] * log(output_forward[b][0][0][i]);
     }
   }

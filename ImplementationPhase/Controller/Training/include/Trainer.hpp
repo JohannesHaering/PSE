@@ -24,7 +24,7 @@ private:
   std::string trainData;
 	float desiredPrecision;
 	std::vector<float> testAcc;
-	std::vector<float> trainingAcc;
+	std::vector<float> trainAcc;
 	NeuralNetworkAdapter* neuralNetwork;
 	CompleteTrainer trainer;
 	TrainerDataSupply* supplyer;
