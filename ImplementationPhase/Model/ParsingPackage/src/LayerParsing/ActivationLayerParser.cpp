@@ -7,28 +7,22 @@
 #include "LayerParserDistribution.hpp"
 #include "Parser.hpp"
 #include "LineBreakParser.hpp"
-
+#include <iostream>
 #include <string>
 #include <stdexcept>
 
-NetworkLayer* ActivationLayerParser::parse(std::string toParse)
-{
+NetworkLayer* ActivationLayerParser::parse(std::string toParse){
     //LayerParser::extractGeneralInformation(toParse);
-
     ActivationLayerFactory factory = ActivationLayerFactory();
     //factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();
-    ++it;
     auto valueParts = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
-    ++it;
-
     if (*(valueParts.begin()) != USED_FUNCTION)
     {
         throw std::invalid_argument("Wrong format");
     }
-
     std::string switcher = *(--valueParts.end());
     if (switcher == SIGMOID)
     {
@@ -50,7 +44,6 @@ NetworkLayer* ActivationLayerParser::parse(std::string toParse)
     {
         factory.setActivation(LayerType::SIGMOID);
     }
-
     return factory.buildLayer();
 }
 

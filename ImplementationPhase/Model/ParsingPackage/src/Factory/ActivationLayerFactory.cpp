@@ -15,12 +15,16 @@ NetworkLayer* ActivationLayerFactory::buildLayer()
     switch (activation) {
     case LayerType::LEAKYRELU:
         layer = new LeakyReLuLayer();
+        break;
     case LayerType::RELU:
         layer = new ReLuLayer();
+        break;
     case LayerType::SOFTMAX:
         layer = new SoftmaxLayer();
+        break;
     case LayerType::SIGMOID:
         layer = new SigmoidLayer();
+        break;
     default:
         layer = new SoftmaxLayer();
     }

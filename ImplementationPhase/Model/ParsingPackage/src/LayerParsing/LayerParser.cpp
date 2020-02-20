@@ -90,23 +90,28 @@ int* LayerParser::parseIntArray(std::string text)
 
 std::vector<float> LayerParser::parseFloatArray(std::string text)
 {
-	text = removeCharacter(text, VALUE_BEGIN);
-	text = removeCharacter(text, VALUE_END);
-	std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
+  std::cout << "parse1D: " << text << std::endl;
+  if (text[0] == ',')
+    text.erase(0,1);
+  text = removeCharacter(text, VALUE_BEGIN);
+  text = removeCharacter(text, VALUE_END);
+  std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
 	std::vector<float> vector;
 	for (auto it = elements.begin(); it != elements.end(); ++it)
 	{
 		std::string value = *it;
 		vector.push_back(std::stof(value.c_str()));
+		//vector.push_back(1.f);
 	}
 	return vector;
 }
 
 std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 {
-	std::vector<std::vector<float>> tensor = std::vector<std::vector<float>>();
+  std::cout << "parse2D: " << text << std::endl;
+  std::vector<std::vector<float>> tensor = std::vector<std::vector<float>>();
 	int x = 0; // in which outerst vector we are
-	std::string currentArray = "";
+  std::string currentArray = "";
 	// 0 -> open bracket, next char can be a [ or a value
 	// 1 -> close bracket, next char can be ] or ,
 	// 2 -> expects close bracket or ,
@@ -138,7 +143,7 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 			}
 			else
 			{
-				currentArray += (*charIt);
+				//currentArray += (*charIt);
 			}
 			continue;
 		}
@@ -157,7 +162,7 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 				continue;
 			}
 
-			throw std::invalid_argument("Wrong format");
+		//	throw std::invalid_argument("Wrong format");
 		}
 	}
 	return tensor;
@@ -165,7 +170,8 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 
 std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std::string text)
 {
-	std::vector<std::vector<std::vector<float>>> tensor = std::vector<std::vector<std::vector<float>>>();
+  std::cout << text << std::endl;
+  std::vector<std::vector<std::vector<float>>> tensor = std::vector<std::vector<std::vector<float>>>();
 	int x = 0; // in which outerst vector we are
 	int y = 0; // in which middle vector we are
 	std::string currentArray = "";
@@ -186,7 +192,8 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 			currentArray += *it;
 			if (*it == VALUE_END)
 			{
-				tensor.push_back(parse2DFloatArray(currentArray));
+			  std::cout << "Pushed back 2DMatrix" << std::endl;
+        tensor.push_back(parse2DFloatArray(currentArray));
 				++i;
 			}
 		}
@@ -196,11 +203,8 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 
 std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFloatArray(std::string text)
 {
-	std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
-	auto sub1 = std::vector<std::vector<std::vector<float>>>();
-	auto sub2 = std::vector<std::vector<float>>();
-	auto sub3 = std::vector<float>();
-
+  std::cout << "tensor input: " << text << std::endl;
+  std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
 
 	std::string currentArray = "";
 
@@ -224,13 +228,18 @@ std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFl
 				currentArray += *it;
 				if (*it == VALUE_END)
 				{
-					tensor.push_back(parse3DFloatArray(currentArray));
-					++i;
+				  std::cout << "pushed back 3d" << std::endl;
+          if (currentArray[0] == ',') 
+	          currentArray.erase(0,1);
+
+          tensor.push_back(parse3DFloatArray(currentArray));
+					//++i;
+          currentArray = "";
 				}
 			}
 		}
 	}
-
+  std::cout << "returning tensor" << std::endl;
 	return tensor;
 }
 
@@ -337,7 +346,7 @@ std::string LayerParser::save2DFloatArray(std::vector<std::vector<float>> arr)
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += saveFloatArray(arr.at(0));
+		output += saveFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 
@@ -352,7 +361,7 @@ std::string LayerParser::save3DFloatArray(std::vector<std::vector<std::vector<fl
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += save2DFloatArray(arr.at(0));
+		output += save2DFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 
@@ -367,7 +376,7 @@ std::string LayerParser::save4DFloatArray(std::vector<std::vector<std::vector<st
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += save3DFloatArray(arr.at(0));
+		output += save3DFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 

@@ -8,6 +8,7 @@
 #include "LineBreakParser.hpp"
 #include "Parser.hpp"
 #include "MatrixDefine.hpp"
+#include <iostream>
 
 #include <string>
 #include <list>
@@ -16,14 +17,13 @@
 NetworkLayer* ConvolutionalLayerParser::parse(std::string toParse)
 {
     //LayerParser::extractGeneralInformation(toParse);
-
     ConvolutionalLayerFactory factory = ConvolutionalLayerFactory();
     //factory.setInputDimensions(LayerParser::inputDimensions);
     //factory.setBatchSize(batchSize);
 
     std::list<std::string> lines = LineBreakParser<NetworkLayer>::splitIntoLines(toParse);
     auto it = lines.begin();
-    ++it;
+  //  ++it;
 /*
 	std::list<std::string> val1 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 	std::list<std::string>::iterator parts1It = val1.begin();
@@ -39,16 +39,17 @@ NetworkLayer* ConvolutionalLayerParser::parse(std::string toParse)
     factory.setPadding(::atoi((*(++parts2It)).c_str()));
     ++it;
 */
-	std::list<std::string> val3 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
-	std::list<std::string>::iterator parts3It = val3.begin();
-    if(*parts3It != WEIGHTS_TENSOR)
-        throw std::invalid_argument("Wrong format");
-
+	  std::list<std::string> val3 = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	  std::list<std::string>::iterator parts3It = val3.begin();
+    if((*parts3It).compare(WEIGHTS_TENSOR) != 0){
+      std::cout << *parts3It << " does not equal " << WEIGHTS_TENSOR <<std::endl;  
+      throw std::invalid_argument("Wrong format");
+    }
     std::string valuePart = *(++parts3It);
     TENSOR(float) tensor = LayerParser::parse4DFloatArray(valuePart);
 
     factory.setWeightTensors(tensor);
-
+    std::cout << "Returning convlayer" << std::endl;
     return factory.buildLayer();
 }
 

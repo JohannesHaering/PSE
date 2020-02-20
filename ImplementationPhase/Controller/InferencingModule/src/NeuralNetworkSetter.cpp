@@ -8,7 +8,7 @@
 #include "ConvolutionLayer.hpp"
 #include "MaxPoolLayer.hpp"
 #include <vector>
-
+#include <iostream>
 
 /*
 * Creates a NeuralNetworkSetter.
@@ -29,21 +29,21 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   std::vector<NeuralNetworkAdapter> neuralNetworks; 
   LeakyReLuLayer* llayer = new LeakyReLuLayer();
 	
-  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
-  network.addLayer(clayer2);
+  //ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 3, 1, 0);
+  //network.addLayer(clayer2);
 
-  network.addLayer(llayer);
+  //network.addLayer(llayer);
 
-  FlattenLayer* flayer = new FlattenLayer();
-  network.addLayer(flayer);
+  //FlattenLayer* flayer = new FlattenLayer();
+  //network.addLayer(flayer);
 
-  DenseLayer* dlayer = new DenseLayer(26 * 26, 320);
+  DenseLayer* dlayer = new DenseLayer(3*3, 10);
 	network.addLayer(dlayer);
  
-  network.addLayer(llayer);
+  //network.addLayer(llayer);
 
-  DenseLayer* dlayer2 = new DenseLayer(320, 10);
-	network.addLayer(dlayer2);
+  //DenseLayer* dlayer2 = new DenseLayer(2, 10);
+	//network.addLayer(dlayer2);
 
   SoftmaxLayer* smlayer = new SoftmaxLayer();
   network.addLayer(smlayer);
@@ -51,6 +51,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	NeuralNetworkFacade neuralNetworkFacade;
   neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Downloads/testnetwork.txt");
   NeuralNetwork neuralNetwork = neuralNetworkFacade.loadNeuralNetwork("/home/pselabw1920/Downloads/testnetwork.txt");
+  std::cout << neuralNetwork.getLayerCount() << std::endl;
   neuralNetworkFacade.saveNeuralNetwork(neuralNetwork, "/home/pselabw1920/Downloads/testbacknetwork.txt");
     /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
         neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
