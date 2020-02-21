@@ -12,11 +12,14 @@
 #include "ResultFacade.hpp"
 #include "Executor.hpp"
 #include "MatrixDefine.hpp"
+#include "Device.hpp"
+#include "DeviceType.hpp"
 
 #include <inference_engine.hpp>
 #include <ie_core.hpp>
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
+#include <iostream>
 
 //DispatchManager::DispatchManager() {}
 //DispatchManager::DispatchManager(DispatchManager const& copy); //not implemented
@@ -47,13 +50,30 @@ std::list<Mode*> DispatchManager::getModeList()
 
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
 {
-  	std::list<Result*> resultList;
     ImageFacade* imagefacade = new ImageFacade();
-    ResultFacade* resultfacade = new ResultFacade();
     cv::Mat image;
     TENSOR(float) currentInput;
-    TENSOR(float) output;
+    TENSOR(float) output; std::list<Result*> resultList;
+    ResultFacade* resultfacade = new ResultFacade();
+    std::list<std::string> dirlist = std::list<std::string>(directories.begin(), directories.end());
+    
+    std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> distribution = mode->getImageDistribution(dirlist);
     Executor* executor;
+    
+    for (auto it : distribution) {
+      DeviceType type = std::get<0>(it);
+      NeuralNetworkAdapter network = std::get<1>(it);
+      TENSOR(float) input = std::get<2>(it);
+      std::vector<std::string> directories = std::get<3>(it);
+      network.setMode(type);
+      executor = new Executor(&network);
+      output = executor->execute(input);
+      for (int i = 0; i < directories.size(); i++) {
+        Result* newres = resultfacade->parseClassificationResult(directories[i], network.getName(), network.getLabels(), output[i][0][0]);
+        resultList.push_back(newres);
+      }
+    } 
+    /* 
     for (int i = 0; i < neuralNetworkList.size(); i++) {
       for (int j = 0; j < directories.size(); j++) {
         image = imagefacade->getImage(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
@@ -67,9 +87,16 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
         Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), output[0][0][0]);
         resultList.push_back(newres);
       }
-    }
-  	ResultManager resultMgr = ResultManager(resultList);
-  	return resultMgr;
+    }*/
+  	  ResultManager resultMgr = ResultManager(resultList);
+  /*	
+      std::cout << mode->getModeName() << " " << distribution.size() << std::endl;
+      for (auto it : distribution) {
+        std::cout << std::get<0>(it) << std::endl;
+        std::cout << std::get<1>(it).getName() << std::endl;
+        std::cout << std::get<2>(it).size() << std::endl;
+      }*/
+    return resultMgr;
 }
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
