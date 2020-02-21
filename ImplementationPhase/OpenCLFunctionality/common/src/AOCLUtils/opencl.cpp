@@ -21,16 +21,6 @@ static const char *const VERSION_STR = "161";
 // This is the minimum alignment requirement to ensure DMA can be used.
 const unsigned AOCL_ALIGNMENT = 64;
 
-
-#ifdef _WIN32 // Windows
-void *alignedMalloc(size_t size) {
-  return _aligned_malloc (size, AOCL_ALIGNMENT);
-}
-
-void alignedFree(void * ptr) {
-  _aligned_free(ptr);
-}
-#else          // Linux
 void *alignedMalloc(size_t size) {
   void *result = NULL;
   int rc;
@@ -41,7 +31,6 @@ void *alignedMalloc(size_t size) {
 void alignedFree(void * ptr) {
   free (ptr);
 }
-#endif
 
 ///////////////////////////////
 // Error functions
