@@ -5,6 +5,7 @@
 
 #include "Device.hpp"
 #include "NeuralNetworkAdapter.hpp"
+#include "ImageFacade.hpp"
 
 #include "Mode.hpp"
 
@@ -28,7 +29,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
     std::vector<cv::Mat> matVec = std::vector<cv::Mat>(matList.begin(), matList.end());
     TENSOR(float) tens = ImageFacade().createImageTensor(matVec, nnit.getWidth(), nnit.getHeight());
     
-    std::string dev = lowestPowerDevice->getType();
   
     DeviceType type = DeviceType::CPP;
 

@@ -14,6 +14,8 @@ HighPerformanceMode::HighPerformanceMode() : Mode("HighPerformanceMode") {}
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> HighPerformanceMode::getImageDistribution(std::list<std::string> imageList)
 {
   std::list<Device> deviceList = this->getAllowedDeviceList();
+  if (deviceList.size() == 0)
+    return getTrivialDistribution(imageList);
   int deviceAmount = deviceList.size();
   std::cout << deviceAmount << std::endl;
   int imageAmount = imageList.size();

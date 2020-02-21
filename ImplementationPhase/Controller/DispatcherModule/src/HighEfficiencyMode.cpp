@@ -11,9 +11,12 @@ HighEfficiencyMode::HighEfficiencyMode() : Mode("HighEfficiencyMode") {}
 //Basic implementation, assignes all images to the most efficient device.
 //Can be improved, e.g. by taking into consideration the host power usage and therefore using less efficient devices too.
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> HighEfficiencyMode::getImageDistribution(std::list<std::string> imageList)
-{
+{ 
   std::list<Device> deviceList = this->getAllowedDeviceList();
+  if (deviceList.size() == 0 || 1)
+    return getTrivialDistribution(imageList);
   std::list<std::string> deviceStringList;
+  /*
   for (auto it : deviceList)
   {
     deviceStringList.push_back(it.getName());
@@ -50,6 +53,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   result.push_back(*resultEntry);
 
   std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> result;
-  return result;
+  return result;*/
 }
 

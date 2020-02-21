@@ -16,6 +16,8 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
 {
 
   std::list<Device> deviceList = this->getAllowedDeviceList();
+  if (deviceList.size() == 0)
+    return getTrivialDistribution(imageList);
   std::list<std::string> deviceStringList;
   for (auto it : deviceList)
   {
