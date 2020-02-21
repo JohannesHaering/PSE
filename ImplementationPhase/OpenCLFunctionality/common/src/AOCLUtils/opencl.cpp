@@ -29,7 +29,7 @@ void *alignedMalloc(size_t size) {
 }
 
 void alignedFree(void * ptr) {
-  free (ptr);
+  // free (ptr);
 }
 
 ///////////////////////////////

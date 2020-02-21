@@ -15,8 +15,6 @@ DenseLayerCPU::DenseLayerCPU(DenseLayer* layer, int inputSize, int outputSize) :
 
 TENSOR(float) DenseLayerCPU::forward(TENSOR(float) input_data)
 {
-  std::cout << "It's the fucking CPU man!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
-
     TENSOR(float) output = TENSOR(float)(input_data.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(outputSize))));
     for (int b = 0; b < input_data.size(); b++)
     {
@@ -36,6 +34,9 @@ TENSOR(float) DenseLayerCPU::backprob(TENSOR(float) updates, float learningRate,
     std::vector<std::vector<float>> new_weights = layer->get_weights();
     std::vector<float> new_bias = layer->get_biase();
 	TENSOR(float) output = TENSOR(float)(updates.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(inputSize))));
+
+    std::vector<std::vector<float>> A = std::vector<std::vector<float>>{{1,2},{2, 4}};
+    std::vector<std::vector<float>> B = std::vector<std::vector<float>>{{1, 2},{3,4}};
 
     for (int batchIteration = 0; batchIteration < net.size(); batchIteration++) {
         //calc derivate for next Layers
