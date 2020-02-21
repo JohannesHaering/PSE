@@ -14,6 +14,7 @@
 #include "LeakyReLuLayer.hpp"
 #include "SoftmaxLayer.hpp"
 #include "SigmoidLayer.hpp"
+#include "DeviceType.hpp"
 
 class NeuralNetwork {
 
@@ -42,6 +43,7 @@ class NeuralNetwork {
     std::list<NetworkLayer*>::reverse_iterator rbegin();
     std::list<NetworkLayer*>::reverse_iterator rend();
     int getLayerCount();
+    void setMode(DeviceType type);
     ~NeuralNetwork();
 };
 #endif

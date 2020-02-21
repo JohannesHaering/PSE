@@ -19,3 +19,4 @@ std::list<NetworkLayer*>::reverse_iterator NeuralNetworkAdapter::rbegin() { retu
 std::list<NetworkLayer*>::reverse_iterator NeuralNetworkAdapter::rend() { return neuralNetwork.rend(); }
 int NeuralNetworkAdapter::getLayerCount() { return neuralNetwork.getLayerCount(); }
 NeuralNetwork NeuralNetworkAdapter:: getNeuralNetwork() {  return neuralNetwork; }
+void NeuralNetworkAdapter::setMode(DeviceType type) { neuralNetwork.setMode(type); }

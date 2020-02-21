@@ -34,7 +34,7 @@ void Trainer::startTraining()
   TENSOR(float) results;  
   TENSOR(float) testresults;
   TENSOR(float) testFeedback;
-  for(int b = 0; b < 500; b++) //train on 5 batches
+  for(int b = 0; b < 50; b++) //train on 5 batches
   {
       auto t1 = std::chrono::high_resolution_clock::now();
 
