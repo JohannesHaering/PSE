@@ -1,4 +1,4 @@
-#include "../host/inc/matrixMult.h"
+#include "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/matrix_mult/host/inc/matrixMult.h"
 
 #ifndef SIMD_WORK_ITEMS
 #define SIMD_WORK_ITEMS 4 // default value
@@ -14,8 +14,8 @@ void matrixMult( // Input and output matrices
                  // Widths of matrices.
                  int A_width, int B_width)
 {
-    int SIMD_WORK_ITEMS = 4;
-    int BLOCK_SIZE = 64;
+
+
     // Local storage for a block of input matrices A and B
     __local float A_local[BLOCK_SIZE][BLOCK_SIZE];
     __local float B_local[BLOCK_SIZE][BLOCK_SIZE];

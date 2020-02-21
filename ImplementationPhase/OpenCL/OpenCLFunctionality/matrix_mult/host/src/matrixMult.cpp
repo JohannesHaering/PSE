@@ -120,7 +120,7 @@ bool MatrixMultiplication::init_opencl()
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
   FILE *fp;
-  char fileName[] = "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/build/matrix_mult.cl";
+  char fileName[] = "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/matrix_mult/device/matrix_mult.cl";
   char *source_str;
   size_t source_size;
   fp = fopen(fileName, "r");
@@ -134,9 +134,26 @@ bool MatrixMultiplication::init_opencl()
   fclose(fp);
   program = clCreateProgramWithSource(context, 1, (const char **)&source_str,
                                       (size_t *)&source_size, &status);
+  
+
 
   // Build the program that was just created.
   status = clBuildProgram(program, 0, NULL, "", NULL, NULL);
+  
+  if (status == CL_BUILD_PROGRAM_FAILURE) {
+    // Determine the size of the log
+    size_t log_size;
+    clGetProgramBuildInfo(program, device[0], CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
+
+    // Allocate memory for the log
+    char *log = (char *) malloc(log_size);
+
+    // Get the log
+    clGetProgramBuildInfo(program, device[0], CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
+
+    // Print the log
+    printf("%s\n", log);
+}
   checkError(status, "Failed to build program");
 
   // Create per-device objects.

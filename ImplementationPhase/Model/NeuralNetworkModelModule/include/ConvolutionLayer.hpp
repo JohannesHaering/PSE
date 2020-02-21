@@ -1,4 +1,4 @@
-F #ifndef CONVOLUTIONLAYER_H_
+#ifndef CONVOLUTIONLAYER_H_
 #define CONVOLUTIONLAYER_H_
 
 #include <string>
