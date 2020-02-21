@@ -10,6 +10,7 @@
 #include "ImageFacade.hpp"
 #include <opencv2/opencv.hpp>
 #include "ControllerFacade.hpp"
+#include <iostream>
 
 /*
 * Creates a InferencingDistributor for Classification.
@@ -39,25 +40,27 @@ void InferencingDistributorClassification::startProcess()
     std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
-
+    std::cout << platformlist.size() << std::endl;
     int opMode = page->getOperatingMode();
     std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist, 0, 0, 0);
     images = std::vector<cv::Mat>(imglist.begin(), imglist.end());
 	Mode* mode;
 	if (opMode == 0) 
 	{
-		mode = new HighEfficiencyMode();
+		mode = new HighPerformanceMode();
 	}
 	else if (opMode == 1)
 	{
-		mode = new LowPowerMode();
+		mode = new HighEfficiencyMode();
 	}
 	else
 	{
-		mode = new HighPerformanceMode();
+		mode = new LowPowerMode();
 	}
 	mode->setAllowedDeviceList(platformlist);
-	//mode->setNeuralNetworkList(neuralNetworks);
+  std::list<NeuralNetworkAdapter> neuralNetworkList = std::list<NeuralNetworkAdapter>(neuralNetworks.begin(), neuralNetworks.end());
+  mode->setNeuralNetworkList(neuralNetworkList);
+
     dispatcher.setMode(mode);
     resultManager = dispatcher.dispatchImages(directories);
     ControllerFacade::getInstance()->newResultClassification();
@@ -67,11 +70,12 @@ void InferencingDistributorClassification::startProcess()
 * Sends the given result to the view. 
 */
 void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
-  std::cout << neuralNetworkId << imageId<<std::endl;
   std::string nn_id = neuralNetworks[neuralNetworkId].getName();
   std::string img_id = directories[imageId];
   ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
+  std::string id = result->getImageID();
   page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
+  
   page->saveResultEnable(true);
   page->update();
 }    

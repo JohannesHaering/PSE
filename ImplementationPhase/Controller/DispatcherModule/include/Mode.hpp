@@ -10,6 +10,7 @@
 
 #include "NeuralNetworkAdapter.hpp"
 #include "Device.hpp"
+#include "DeviceType.hpp"
 
 class Mode {
 	public: 
@@ -18,9 +19,9 @@ class Mode {
 		std::list<Device> getAllowedDeviceList();
 		void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
 		std::list<NeuralNetworkAdapter> getNeuralNetworkList();
+		virtual std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> getImageDistribution(std::list<std::string> imageList) = 0;
 	protected:
 		Mode(std::string modeName);
-		virtual std::list<std::tuple<Device, std::list<NeuralNetworkAdapter>, std::list<cv::Mat>>> getImageDistribution(std::list<cv::Mat>) = 0;
         std::string modeName;
         std::list<Device> deviceList;
         std::list<NeuralNetworkAdapter> neuralNetworkList;
