@@ -13,10 +13,13 @@ HighEfficiencyMode::HighEfficiencyMode() : Mode("HighEfficiencyMode") {}
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> HighEfficiencyMode::getImageDistribution(std::list<std::string> imageList)
 { 
   std::list<Device> deviceList = this->getAllowedDeviceList();
-  if (deviceList.size() == 0 || 1)
+  
+  return getTrivialDistribution(imageList);
+  /*if (deviceList.size() == 0)
     return getTrivialDistribution(imageList);
+  
   std::list<std::string> deviceStringList;
-  /*
+  
   for (auto it : deviceList)
   {
     deviceStringList.push_back(it.getName());
