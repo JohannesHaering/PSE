@@ -42,12 +42,19 @@ using namespace aocl_utils;
 
 std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::vector<float>> matrixA, std::vector<std::vector<float>> matrixB)
 {
-  A_height = matrixA.size();
+  A_height = 2;
+  A_width = 2;
+  B_height = 2;
+  B_width = 2;
+  C_height = 2;
+  C_width = 2;
+  
+  /*A_height = matrixA.size();
   A_width = matrixA[0].size();
   B_height = A_width;
   B_width = matrixB.size();
   C_height = A_height;
-  C_width = B_width;
+  C_width = B_width;*/
 
 
   input_a.reset(num_devices);
@@ -253,6 +260,10 @@ void MatrixMultiplication::init_problem(std::vector<std::vector<float>> matrixA,
   for (unsigned i = 0; i < num_devices; ++i)
   {
     std::cout << "set input a" << std::endl;
+    std::cout << "sizeof input_a[i]" << sizeof(input_a[i]) << std::endl;
+    std::cout << "rowsperdevice " << rows_per_device[i] << std::endl;
+    std::cout << "Awdith " << A_width << std::endl;
+
     input_a[i].reset(rows_per_device[i] * A_width);
 
     std::cout << "set output" << std::endl;
@@ -272,7 +283,7 @@ void MatrixMultiplication::init_problem(std::vector<std::vector<float>> matrixA,
     }
     ++currentRow;
   }
-
+  std::cout << "BAR" << std::endl;
   input_b.reset(B_height * B_width);
   for (unsigned i = 0; i < B_height * B_width; ++i)
   {

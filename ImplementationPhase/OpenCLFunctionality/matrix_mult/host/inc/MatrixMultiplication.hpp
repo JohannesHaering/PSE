@@ -21,7 +21,7 @@
 //#include "AOCLUtils/aocl_utils.h"
 #include "CL/cl.h"
 
-using namespace aocl_utils;;
+using namespace aocl_utils;
 
 class MatrixMultiplication
 {
@@ -48,10 +48,14 @@ public:
     // Problem data.
     unsigned A_height;
     unsigned A_width;
-    unsigned B_height = A_width;
-    unsigned B_width = 2;
-    unsigned C_height = A_height;
-    unsigned C_width = B_width;
+    unsigned B_height;
+    unsigned B_width ;
+    unsigned C_height;
+    unsigned C_width;
+    //unsigned B_height = A_width;
+    //unsigned B_width = 2;
+    //unsigned C_height = A_height;
+    //unsigned C_width = B_width;
 
     scoped_array<scoped_aligned_ptr<float>> input_a; // num_devices elements
     scoped_aligned_ptr<float> input_b;
