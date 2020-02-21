@@ -62,10 +62,12 @@ std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::
   {
     return std::vector<std::vector<float>>(0, std::vector<float>(0));
   }
-
+  
+  std::cout << " init_opencl() passed" << std::endl;
   // Initialize the problem data.
   // Requires the number of devices to be known.
   init_problem(matrixA, matrixB);
+  std::cout << "init_problem passed" << std::endl;
 
   // Run the kernel.
   std::vector<float> matrixC = run();
@@ -75,6 +77,7 @@ std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::
       result[y][x] = matrixC[y * C_width + x];
     }
   }
+  std::cout << "starting cleanup" << std::endl;
 
   // Free the resources allocated
   cleanup();
@@ -113,10 +116,13 @@ bool MatrixMultiplication::init_opencl()
     printf("  %s\n", getDeviceName(device[i]).c_str());
   }
 
+  
+  std::cout<< "Create Context" << std::endl;
   // Create the context.
   context = clCreateContext(NULL, num_devices, device, &oclContextCallback, NULL, &status);
   checkError(status, "Failed to create context");
 
+  std::cout << "Load kernel code " << std::endl;
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
   FILE *fp;
@@ -132,15 +138,19 @@ bool MatrixMultiplication::init_opencl()
   source_str = (char *)malloc(MAX_SOURCE_SIZE);
   source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
   fclose(fp);
+
+  std::cout << "Create program with source code" << std::endl;
   program = clCreateProgramWithSource(context, 1, (const char **)&source_str,
                                       (size_t *)&source_size, &status);
   
 
 
+  std::cout << "Build program" << std::endl;
   // Build the program that was just created.
   status = clBuildProgram(program, 0, NULL, "", NULL, NULL);
   
   if (status == CL_BUILD_PROGRAM_FAILURE) {
+    std::cout << "drin" << std::endl;
     // Determine the size of the log
     size_t log_size;
     clGetProgramBuildInfo(program, device[0], CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
@@ -152,8 +162,10 @@ bool MatrixMultiplication::init_opencl()
     clGetProgramBuildInfo(program, device[0], CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
 
     // Print the log
+    std::cout << log << std::endl;
     printf("%s\n", log);
-}
+  }
+  std::cout << "sucessfully passed clBuildProgramm" << std::endl;
   checkError(status, "Failed to build program");
 
   // Create per-device objects.
@@ -163,7 +175,7 @@ bool MatrixMultiplication::init_opencl()
   input_a_buf.reset(num_devices);
   input_b_buf.reset(num_devices);
   output_buf.reset(num_devices);
-
+  std::cout << "reseted stuff " << std::endl;
   const unsigned num_block_rows = C_height / BLOCK_SIZE;
 
   for (unsigned i = 0; i < num_devices; ++i)
@@ -172,15 +184,19 @@ bool MatrixMultiplication::init_opencl()
     queue[i] = clCreateCommandQueue(context, device[i], CL_QUEUE_PROFILING_ENABLE, &status);
     checkError(status, "Failed to create command queue");
 
+    std::cout << " in loop " << i << " called clCreateCommandQueue" << std::endl;
     // Kernel.
     const char *kernel_name = "matrixMult";
     kernel[i] = clCreateKernel(program, kernel_name, &status);
     checkError(status, "Failed to create kernel");
 
+    std::cout << " sucessfully called clCreateKernel" << std::endl;
+
     // Determine the number of rows processed by this device.
     // First do this computation in block-rows.
     rows_per_device[i] = num_block_rows / num_devices; // this is the number of block-rows
-
+  
+    std::cout << "11 " << std::endl;
     // Spread out the remainder of the block-rows over the first
     // N % num_devices.
     if (i < (num_block_rows % num_devices))
@@ -188,6 +204,7 @@ bool MatrixMultiplication::init_opencl()
       rows_per_device[i]++;
     }
 
+    std::cout << "22 " << std::endl;
     // Multiply by BLOCK_SIZE to get the actual number of rows.
     rows_per_device[i] *= BLOCK_SIZE;
 
@@ -198,12 +215,14 @@ bool MatrixMultiplication::init_opencl()
     input_a_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY,
                                     rows_per_device[i] * A_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for input A");
+    std::cout << "33 " << std::endl;
 
     // For matrix B, each device needs the whole matrix. We specifically
     // assign this buffer to the second bank of global memory.
     input_b_buf[i] = clCreateBuffer(context, CL_MEM_READ_ONLY,
                                     B_height * B_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for input B");
+    std::cout << "44 " << std::endl;
 
     // Output buffer. This is matrix C, for the rows that are computed by this
     // device. We assign this buffer to the first bank of global memory,
@@ -213,6 +232,7 @@ bool MatrixMultiplication::init_opencl()
     output_buf[i] = clCreateBuffer(context, CL_MEM_WRITE_ONLY,
                                    rows_per_device[i] * C_width * sizeof(float), NULL, &status);
     checkError(status, "Failed to create buffer for output");
+    std::cout << "55 " << std::endl;
   }
 
   return true;
@@ -226,16 +246,27 @@ void MatrixMultiplication::init_problem(std::vector<std::vector<float>> matrixA,
     checkError(-1, "No devices");
   }
   unsigned currentRow = 0;
+  
+  std::cout << "init data" << std::endl;
+  std::cout << A_width << std::endl;
+  std::cout << rows_per_device[0] << std::endl;
   for (unsigned i = 0; i < num_devices; ++i)
   {
+    std::cout << "set input a" << std::endl;
     input_a[i].reset(rows_per_device[i] * A_width);
+
+    std::cout << "set output" << std::endl;
     output[i].reset(rows_per_device[i] * C_width);
+
+    std::cout << sizeof(input_a[i])/sizeof(float) << std::endl;
 
     for (unsigned j = 0; j < rows_per_device[i]; ++j)
     {
+      std::cout << currentRow << std::endl;
       for (unsigned k = 0; k < A_width; ++k)
       {
-        input_a[i][j * A_width + k] = matrixA[currentRow][j];
+        std::cout <<k << std::endl;
+        input_a[i][j * A_width+ k] = matrixA[currentRow][j];
       }
       ++currentRow;
     }
