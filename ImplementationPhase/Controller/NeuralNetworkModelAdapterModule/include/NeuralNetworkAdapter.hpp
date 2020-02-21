@@ -4,6 +4,7 @@
 #include <string>
 #include "NetworkLayer.hpp"
 #include "NeuralNetwork.hpp"
+#include "DeviceType.hpp"
 
 class NeuralNetworkAdapter {
 
@@ -24,7 +25,7 @@ class NeuralNetworkAdapter {
         std::list<NetworkLayer*>::reverse_iterator rbegin();
         std::list<NetworkLayer*>::reverse_iterator rend();
         int getLayerCount();
-
+        void setMode(DeviceType type);
     protected: 
         NeuralNetwork neuralNetwork;    
         

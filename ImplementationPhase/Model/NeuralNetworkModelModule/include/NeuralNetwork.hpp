@@ -42,6 +42,7 @@ class NeuralNetwork {
     std::list<NetworkLayer*>::reverse_iterator rbegin();
     std::list<NetworkLayer*>::reverse_iterator rend();
     int getLayerCount();
+    void setMode(DeviceType device);
     ~NeuralNetwork();
 };
 #endif

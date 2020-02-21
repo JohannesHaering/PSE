@@ -44,8 +44,15 @@ std::list<NetworkLayer*>::reverse_iterator NeuralNetwork::rend() {
   return layers.rend();
 }
 
-int NeuralNetwork::NeuralNetwork::getLayerCount() { return layers.size(); }
+int NeuralNetwork::getLayerCount() { return layers.size(); }
 
+void NeuralNetwork::setMode(DeviceType device) {
+
+  for (auto it = layers.begin(); it != layers.end(); it++) {
+    (*it)->setMode(device);
+  }
+
+}
 
 NeuralNetwork::~NeuralNetwork() {
   layers.clear();
