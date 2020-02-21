@@ -43,7 +43,7 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   network.addLayer(slayer);
   
   neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Documents/randomnetworks/convconvnetwork.txt");
-  */
+  
 	NeuralNetwork network2 = NeuralNetwork("ConvConvDense", 28, 28, 1);
 	network2.setLabels(labels);
 
@@ -64,10 +64,10 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
   
   //neuralNetworks.push_back(network);
   neuralNetworks.push_back(network2);
-
-  /*for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
+*/
+  for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
      neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
-   }  */
+   }
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
 }

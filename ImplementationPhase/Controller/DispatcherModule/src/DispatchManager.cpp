@@ -66,6 +66,7 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
       TENSOR(float) input = std::get<2>(it);
       std::vector<std::string> directories = std::get<3>(it);
       network.setMode(type);
+      std::cout<< type << std::endl;
       executor = new Executor(&network);
       output = executor->execute(input);
       for (int i = 0; i < directories.size(); i++) {

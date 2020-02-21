@@ -30,7 +30,7 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
     TENSOR(float) tens = ImageFacade().createImageTensor(matVec, nnit.getWidth(), nnit.getHeight());
     
   
-    DeviceType type = DeviceType::CPP;
+    DeviceType type = DeviceType::CPU;
 
     auto res = std::make_tuple(type, nnit, tens, dirVector);
     result.push_back(res);
