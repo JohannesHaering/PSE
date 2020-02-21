@@ -6,7 +6,7 @@
 
 #include "matrixMult.h"
 #include "MatrixMultiplication.hpp"
-#include "AOCLUtils/aocl_utils.h"
+#include "aocl_utils.h"
 #include "CL/cl.h"
 
 using namespace aocl_utils;
@@ -120,7 +120,7 @@ bool MatrixMultiplication::init_opencl()
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
   FILE *fp;
-  char fileName[] = "matrix_mult.cl";
+  char fileName[] = "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/build/matrix_mult.cl";
   char *source_str;
   size_t source_size;
   fp = fopen(fileName, "r");
@@ -150,7 +150,7 @@ bool MatrixMultiplication::init_opencl()
   const unsigned num_block_rows = C_height / BLOCK_SIZE;
 
   for (unsigned i = 0; i < num_devices; ++i)
-  {
+    {
     // Command queue.
     queue[i] = clCreateCommandQueue(context, device[i], CL_QUEUE_PROFILING_ENABLE, &status);
     checkError(status, "Failed to create command queue");

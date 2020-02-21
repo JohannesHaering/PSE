@@ -16,8 +16,12 @@
 #include <vector>
 
 #include "matrixMult.h"
-#include "AOCLUtils/aocl_utils.h"
+#include "aocl_utils.h"
+
+//#include "AOCLUtils/aocl_utils.h"
 #include "CL/cl.h"
+
+using namespace aocl_utils;;
 
 class MatrixMultiplication
 {
