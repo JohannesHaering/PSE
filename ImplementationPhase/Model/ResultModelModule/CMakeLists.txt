@@ -21,3 +21,4 @@ target_include_directories(DETECTIONRESULT PUBLIC "include/")
 add_library(RESULTMANAGER "src/ResultManager.cpp" "include/ResultManager.hpp")
 target_include_directories(RESULTMANAGER PUBLIC "include/")
 target_link_libraries(RESULTMANAGER PUBLIC RESULT)
+

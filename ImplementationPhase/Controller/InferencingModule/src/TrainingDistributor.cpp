@@ -16,8 +16,7 @@ TrainingDistributor::TrainingDistributor() {
  */
 void TrainingDistributor::TrainingDistributor::startProcess() {
 	float desprecision = page->getPrecision();
-    //TODO
-    Trainer trainer = Trainer(&(neuralNetworks[0]), desprecision, directories[0]);
+ 	 Trainer trainer = Trainer(&(neuralNetworks[0]), desprecision, page->getName(), page->getLearningRate());
 	trainer.startTraining();
 }
 
@@ -25,7 +24,7 @@ void TrainingDistributor::TrainingDistributor::startProcess() {
  * Checks if all needed data is given to start the process. 
  */
 bool TrainingDistributor::canStart() {
-    if (neuralNetworks.size() == 0 || directories.size() == 0) {
+    if (neuralNetworks.size() == 0) {
 		return false;
 	}
 	return true; 

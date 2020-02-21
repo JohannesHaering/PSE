@@ -6,6 +6,7 @@
 
 #include <string>
 #include <list>
+#include <iostream>
 
 NeuralNetwork NeuralNetworkFacade::loadNeuralNetwork(std::string path)
 {
@@ -26,8 +27,8 @@ std::list<NeuralNetwork> NeuralNetworkFacade::loadNeuralNetworks(std::list<std::
 
 bool NeuralNetworkFacade::saveNeuralNetwork(NeuralNetwork neuralNetwork, std::string path)
 {
-    auto output = NeuralNetworkParser().parseBack(neuralNetwork);
-    return TextFileIO().writeFile(path, Data(output));
+    std::string output = NeuralNetworkParser().parseBack(neuralNetwork);
+    return TextFileIO().writeFile(path, Data<std::string>(output));
 }
 
 bool NeuralNetworkFacade::saveNeuralNetworks(std::list<NeuralNetwork> neuralNetworks, std::list<std::string> paths)

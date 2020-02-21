@@ -4,17 +4,23 @@
 #include <vector>
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-//Instanz, initiated with vector<Layer>. 
-//has a .train(std::vector<float> input, std::vector<int> target) function and a .infer(std::vector<float> input) function. 
+#include "MatrixDefine.hpp"
 
 class CompleteTrainer
 {
 public:
 	CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate);
-	void train(std::vector<float> target);
+	TENSOR(float) forward(TENSOR(float) input);
+	void train(TENSOR(float) target);
+	TENSOR(float) calcCEError(TENSOR(float) target);
+
 private:
+  long processedBatches;
+	TENSOR(float) output;
+	TENSOR(float) feedback;
+
+	int batchSize;
 	float learningRate;
 	NeuralNetworkAdapter* neuralNetwork;
-	std::vector<float> forward(std::vector<float> input);
 };
 #endif

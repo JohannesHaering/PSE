@@ -7,6 +7,6 @@
 class FlattenLayerFactory : public LayerFactory
 {
 public:
-    NetworkLayer buildLayer() override;
+    NetworkLayer* buildLayer() override;
 };
 #endif

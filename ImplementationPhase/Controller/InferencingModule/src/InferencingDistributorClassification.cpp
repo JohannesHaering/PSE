@@ -9,6 +9,8 @@
 #include "ResultManager.hpp"
 #include "ImageFacade.hpp"
 #include <opencv2/opencv.hpp>
+#include "ControllerFacade.hpp"
+#include <iostream>
 
 /*
 * Creates a InferencingDistributor for Classification.
@@ -33,42 +35,49 @@ void InferencingDistributorClassification::enableStart(){
 */
 void InferencingDistributorClassification::startProcess()
 {
-	std::list<NeuralNetworkAdapter> nnlist(neuralNetworks.begin(), neuralNetworks.end());
     DispatchManager& dispatcher = DispatchManager::getInstance();
-    dispatcher.setNeuralNetworkList(nnlist);
+    dispatcher.setNeuralNetworkList(neuralNetworks);
     std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
+    std::cout << platformlist.size() << std::endl;
     int opMode = page->getOperatingMode();
     std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist, 0, 0, 0);
     images = std::vector<cv::Mat>(imglist.begin(), imglist.end());
 	Mode* mode;
 	if (opMode == 0) 
 	{
-		mode = new HighEfficiencyMode();
+		mode = new HighPerformanceMode();
 	}
 	else if (opMode == 1)
 	{
-		mode = new LowPowerMode();
+		mode = new HighEfficiencyMode();
 	}
 	else
 	{
-		mode = new HighPerformanceMode();
+		mode = new LowPowerMode();
 	}
 	mode->setAllowedDeviceList(platformlist);
-	mode->setNeuralNetworkList(nnlist);
+  std::list<NeuralNetworkAdapter> neuralNetworkList = std::list<NeuralNetworkAdapter>(neuralNetworks.begin(), neuralNetworks.end());
+  mode->setNeuralNetworkList(neuralNetworkList);
+
     dispatcher.setMode(mode);
     resultManager = dispatcher.dispatchImages(directories);
+    ControllerFacade::getInstance()->newResultClassification();
 }
 
 /*
 * Sends the given result to the view. 
 */
 void InferencingDistributorClassification::drawResult(int neuralNetworkId, int imageId) {
-	std::string nn_id = neuralNetworks[neuralNetworkId].getName();
-	std::string img_id = directories[imageId].erase(0, directories[imageId].find_last_of("/")).erase(directories[imageId].find_last_of("."));
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
-    page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
+  std::string nn_id = neuralNetworks[neuralNetworkId].getName();
+  std::string img_id = directories[imageId];
+  ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
+  std::string id = result->getImageID();
+  page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
+  
+  page->saveResultEnable(true);
+  page->update();
 }    
     
 
@@ -81,8 +90,8 @@ void InferencingDistributorClassification::drawResult(int neuralNetworkId, int i
 void InferencingDistributorClassification::saveResult(int neuralNetworkId, int imageId, std::string path)
 {
 	std::string nn_id = neuralNetworks[neuralNetworkId].getName();
-	std::string img_id = directories[imageId].erase(0, directories[imageId].find_last_of("/")).erase(directories[imageId].find_last_of("."));
-	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(nn_id, img_id);
+	std::string img_id = directories[imageId];
+	ClassificationResult* result = (ClassificationResult*)resultManager.getSingleResult(img_id, nn_id);
 	ResultFacade model = ResultFacade();
 	model.writeClassificationResult(*result, path);
 }

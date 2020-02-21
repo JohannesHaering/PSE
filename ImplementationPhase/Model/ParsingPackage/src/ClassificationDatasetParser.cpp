@@ -18,5 +18,5 @@ ClassificationResult ClassificationDatasetParser::parse(std::string toParse)
         parsedProbabilities.push_back(probabilityParser.parse(*probabilitiesIterator));
     }
 
-    return ClassificationResultFactory().build("", "", parsedProbabilities);
+    return *(ClassificationResultFactory().build("", "", parsedProbabilities));
 }

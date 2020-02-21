@@ -5,24 +5,28 @@
 #include <string>
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-//Instanz, initiated with vector<Layer>. 
-//has a .train(std::vector<float> input, std::vector<int> target) function and a .infer(std::vector<float> input) function. 
+#include "CompleteTrainer.hpp"
+#include "TrainerDataSupply.hpp"
 
 class Trainer
 {
 public:
-	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData);
+	Trainer(NeuralNetworkAdapter* neuralNetwork, float desiredPrecision, std::string trainData, float learningrate);
 	void startTraining();
-	void train(std::vector<float> target);
+	static const int batchSize = 16;
+
 private:
-	void loadDataset();
-	float desiredPrecision;
-	NeuralNetworkAdapter* neuralNetwork;
-	std::string trainData;
-	float testAcc;
-	float trainingsAcc;
 	void saveNewNeuralNetwork();
 	float getNewTrainingsAccuracy();
 	float getNewTestAccuracy();
+	void loadDataset();
+
+  std::string trainData;
+	float desiredPrecision;
+	std::vector<float> testAcc;
+	std::vector<float> trainAcc;
+	NeuralNetworkAdapter* neuralNetwork;
+	CompleteTrainer trainer;
+	TrainerDataSupply* supplyer;
 };
 #endif

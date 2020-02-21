@@ -1,38 +1,54 @@
 #include "CompleteTrainer.hpp"
 #include "NetworkLayer.hpp"
 #include <vector>
-//Instanz, initiated with vector<Layer>. 
-//has a .train(std::vector<float> input, std::vector<int> target) function and a .infer(std::vector<float> input) function. 
-
+#include <iostream>
+#include <cmath>
+#include "LayerType.hpp"
+#include "MatrixDefine.hpp"
 
 CompleteTrainer::CompleteTrainer(NeuralNetworkAdapter* neuralNetwork, float learningRate) : neuralNetwork(neuralNetwork), learningRate(learningRate) {}
 
-
-void CompleteTrainer::train(std::vector<float> target)
+TENSOR(float) CompleteTrainer::forward(TENSOR(float) input)
 {
-	std::vector<float> output;
-	std::vector<float> tmp = target;
-	NetworkLayer* lastlayer = neuralNetwork->getLastLayer();
+	TENSOR(float) tmp = input;
 
-	for (auto layer = neuralNetwork->getFirstLayer(); layer != lastlayer; layer = neuralNetwork->getNextLayer()) 
-	{
-		output = layer->backprob(target, learningRate);
-		tmp = output;
-	}
-	learningRate *= 0.99;
-}
-
-
-std::vector<float> CompleteTrainer::forward(std::vector<float> input)
-{
-	std::vector<float> tmp = input;
-	std::vector<float> output;
-	NetworkLayer* lastlayer = neuralNetwork->getLastLayer();
-
-	for (NetworkLayer* layer = neuralNetwork->getFirstLayer(); layer != lastlayer; layer = neuralNetwork->getNextLayer())
-	{
-		output = layer->forward(input);
+  for (std::list<NetworkLayer*>::iterator layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
+  {
+		output =(*layer)->forward(tmp);
 		tmp = output;
 	}
 	return output;
+}
+
+void CompleteTrainer::train(TENSOR(float) target)
+{
+  processedBatches++;
+	TENSOR(float) tmp = target;
+  for (std::list<NetworkLayer*>::reverse_iterator layer = neuralNetwork->rbegin(); layer != neuralNetwork->rend(); layer++)
+  {
+		feedback = (*layer)->backprob(tmp, learningRate);
+		tmp = feedback;
+	}
+  if (processedBatches % 500)
+  	learningRate /= 2;
+  std::cout << "returning from train" << std::endl;
+}
+
+TENSOR(float) CompleteTrainer::calcCEError(TENSOR(float) target)
+{
+  TENSOR(float) result = TENSOR(float)(target.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(1, 0.0f))));
+  if (target.size() != output.size()) {
+    std::cout << "error, batchsize of target Tensor and output Tensor mismatch! target vs output : " << target.size() << " " << output.size() << std::endl;
+
+    result[0][0][0][0]=0.0f;
+    return result;
+  }
+  for (int b = 0; b < target.size(); b++)
+  {
+	  for (int i = 0; i < target[0][0][0].size(); i++)
+    {
+      result[b][0][0][0] -= target[b][0][0][i] * output[b][0][0][i];
+    }
+  }
+	return result;
 }

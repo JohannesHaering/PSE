@@ -97,7 +97,7 @@ Network</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>80</y>
+     <y>110</y>
      <width>250</width>
      <height>250</height>
     </rect>

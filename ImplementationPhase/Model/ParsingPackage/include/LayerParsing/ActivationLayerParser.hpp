@@ -11,8 +11,8 @@
 class ActivationLayerParser : public LayerParser
 {
 public:
-    NetworkLayer parse(std::string toParse) override;
-    std::string parseBack(ActivationLayer layer);
+    NetworkLayer* parse(std::string toParse) override;
+    std::string parseBack(NetworkLayer* layer) override;
 
 private:
     float extractAlpha(std::string alphaString);

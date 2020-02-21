@@ -5,7 +5,7 @@
 #include <string>
 #include <list>
 
-ClassificationResult ClassificationResultFactory::build(std::string imageId, std::string neuralNetworkId, std::list<ClassProbability> probabilities)
+ClassificationResult* ClassificationResultFactory::build(std::string imageId, std::string neuralNetworkId, std::list<ClassProbability> probabilities)
 {
-    return ClassificationResult(imageId, neuralNetworkId, probabilities);
+    return new  ClassificationResult(imageId, neuralNetworkId, probabilities);
 }

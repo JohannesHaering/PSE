@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <vector>
 #include <cstring>
+#include <iostream>
 
 // Format
 // inputDimensions={<int[]>}
@@ -17,15 +18,45 @@
 void LayerParser::extractGeneralInformation(std::string toParse)
 {
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
-	auto it = lines.begin();
-	auto firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+	std::list<std::string>::iterator it = lines.begin();
+	std::list<std::string> firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
-	if (*firstLine.begin() != INPUT_DIMENSIONS)
+	++it;
+	std::list<std::string> secondLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*secondLine.begin()).compare(BATCH_SIZE))
 		throw std::invalid_argument("Wrong format");
 
-	auto valuePart = *(--firstLine.end());
+	std::string batchSizeString = *(--secondLine.end());
+	batchSize = ::atoi(batchSizeString.c_str());
 
-	inputDimensions = parseIntArray(valuePart);
+	++it;
+	std::list<std::string> thirdLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*thirdLine.begin()).compare(WIDTH))
+		throw std::invalid_argument("Wrong format");
+
+	std::string widthString = *(--thirdLine.end());
+	width = ::atoi(widthString.c_str());
+
+	++it;
+	std::list<std::string> fourthLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*fourthLine.begin()).compare(HEIGHT))
+		throw std::invalid_argument("Wrong format");
+
+	std::string heightString = *(--fourthLine.end());
+	height = ::atoi(heightString.c_str());
+
+	++it;
+	std::list<std::string> fithLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
+
+	if (!(*fithLine.begin()).compare(Z))
+		throw std::invalid_argument("Wrong format");
+
+	std::string zString = *(--fithLine.end());
+	z = ::atoi(zString.c_str());
+
 }
 
 std::string LayerParser::removeCharacter(std::string text, char toErase)
@@ -59,23 +90,28 @@ int* LayerParser::parseIntArray(std::string text)
 
 std::vector<float> LayerParser::parseFloatArray(std::string text)
 {
-	text = removeCharacter(text, VALUE_BEGIN);
-	text = removeCharacter(text, VALUE_END);
-	std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
+  std::cout << "parse1D: " << text << std::endl;
+  while (text[0] == '[')
+    text.erase(0,1);
+  text = removeCharacter(text, VALUE_BEGIN);
+  text = removeCharacter(text, VALUE_END);
+  std::list<std::string> elements = Parser::splitBySymbol(text, VALUE_PARTS_DELIMETER);
 	std::vector<float> vector;
 	for (auto it = elements.begin(); it != elements.end(); ++it)
 	{
 		std::string value = *it;
 		vector.push_back(std::stof(value.c_str()));
+		//vector.push_back(1.f);
 	}
 	return vector;
 }
 
 std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 {
-	std::vector<std::vector<float>> tensor = std::vector<std::vector<float>>();
+  std::cout << "parse2D: " << text << std::endl;
+  std::vector<std::vector<float>> tensor = std::vector<std::vector<float>>();
 	int x = 0; // in which outerst vector we are
-	std::string currentArray = "";
+  std::string currentArray = "";
 	// 0 -> open bracket, next char can be a [ or a value
 	// 1 -> close bracket, next char can be ] or ,
 	// 2 -> expects close bracket or ,
@@ -104,10 +140,11 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 				currentArray = "";
 				--openBrackets;
 				state = 2;
+        charIt++;
 			}
 			else
 			{
-				currentArray += (*charIt);
+				//currentArray += (*charIt);
 			}
 			continue;
 		}
@@ -126,7 +163,7 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 				continue;
 			}
 
-			throw std::invalid_argument("Wrong format");
+		//	throw std::invalid_argument("Wrong format");
 		}
 	}
 	return tensor;
@@ -134,14 +171,15 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 
 std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std::string text)
 {
-	std::vector<std::vector<std::vector<float>>> tensor = std::vector<std::vector<std::vector<float>>>();
+  std::cout << text << std::endl;
+  std::vector<std::vector<std::vector<float>>> tensor = std::vector<std::vector<std::vector<float>>>();
 	int x = 0; // in which outerst vector we are
 	int y = 0; // in which middle vector we are
 	std::string currentArray = "";
 	// 0 -> open bracket, next char can be a [ or a value
 	// 1 -> close bracket, next char can be ] or ,
 	// 2 -> expects close bracket or ,
- 	int state = 0;
+	int state = 0;
 	int i = 0;
 	int openBrackets = 0;
 	for (auto it = ++text.begin(); it != text.end(); ++it)
@@ -155,7 +193,9 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 			currentArray += *it;
 			if (*it == VALUE_END)
 			{
-				tensor.push_back(parse2DFloatArray(currentArray));
+			  std::cout << "Pushed back 2DMatrix" << std::endl;
+        tensor.push_back(parse2DFloatArray(currentArray));
+        currentArray = "";
 				++i;
 			}
 		}
@@ -165,11 +205,8 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 
 std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFloatArray(std::string text)
 {
-	std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
-	auto sub1 = std::vector<std::vector<std::vector<float>>>();
-	auto sub2 = std::vector<std::vector<float>>();
-	auto sub3 = std::vector<float>();
-
+  std::cout << "tensor input: " << text << std::endl;
+  std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
 
 	std::string currentArray = "";
 
@@ -193,23 +230,31 @@ std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFl
 				currentArray += *it;
 				if (*it == VALUE_END)
 				{
-					tensor.push_back(parse3DFloatArray(currentArray));
-					++i;
+				  std::cout << "pushed back 3d" << std::endl;
+          if (currentArray[0] == ',') 
+	          currentArray.erase(0,1);
+
+          tensor.push_back(parse3DFloatArray(currentArray));
+					//++i;
+          currentArray = "";
 				}
 			}
 		}
 	}
-
+  std::cout << "returning tensor" << std::endl;
 	return tensor;
 }
 
-std::string LayerParser::saveGeneralInformation(NetworkLayer layer)
+std::string LayerParser::saveGeneralInformation(NetworkLayer* layer)
 {
 	std::string output = "";
 	output += LayerParser::VALUE_BEGIN;
-	switch (layer.getLayerType())
+	switch (layer->getLayerType())
 	{
-	case LayerType::ACTIVATION:
+	case LayerType::RELU:
+	case LayerType::LEAKYRELU:
+	case LayerType::SOFTMAX:
+	case LayerType::SIGMOID:
 		output += LayerParserDistribution().ACTIVATION;
 		break;
 	case LayerType::COLLECT_RESULTS:
@@ -240,11 +285,27 @@ std::string LayerParser::saveGeneralInformation(NetworkLayer layer)
 		output += LayerParserDistribution().POLLING;
 		break;
 	}
+	
 	output += LayerParser::VALUE_END;
+	//output += "\n";
 	output += "\n";
-	output += INPUT_DIMENSIONS + VALUE_TYPE_DELIMETER;
-	output += saveIntArray(layer.getInputDimensions());
+	output += BATCH_SIZE;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getBatchSize());
 	output += "\n";
+	output += WIDTH;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getWidth());
+	output += "\n";
+	output += HEIGHT;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getHeight());
+	output += "\n";
+	output += Z;
+	output += VALUE_TYPE_DELIMETER;
+	output += std::to_string(layer->getZ());
+	output += "\n";
+
 	return output;
 }
 
@@ -270,7 +331,8 @@ std::string LayerParser::saveFloatArray(std::vector<float> arr)
 	output += std::to_string(arr.at(0));
 	for (int i = 1; i < arr.size(); ++i)
 	{
-		output += VALUE_PARTS_DELIMETER;
+    //std::cout<<arr[i]<<std::endl;
+    output += VALUE_PARTS_DELIMETER;
 		output += std::to_string(arr.at(i));
 	}
 	output += (VALUE_END);
@@ -286,7 +348,7 @@ std::string LayerParser::save2DFloatArray(std::vector<std::vector<float>> arr)
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += saveFloatArray(arr.at(0));
+		output += saveFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 
@@ -301,7 +363,7 @@ std::string LayerParser::save3DFloatArray(std::vector<std::vector<std::vector<fl
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += save2DFloatArray(arr.at(0));
+		output += save2DFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 
@@ -316,7 +378,7 @@ std::string LayerParser::save4DFloatArray(std::vector<std::vector<std::vector<st
 	for (int i = 1; i < arr.size(); ++i)
 	{
 		output += VALUE_PARTS_DELIMETER;
-		output += save3DFloatArray(arr.at(0));
+		output += save3DFloatArray(arr.at(i));
 	}
 	output += (VALUE_END);
 

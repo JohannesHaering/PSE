@@ -9,7 +9,7 @@
 class LayerParserDistribution : public LineBreakParser<NetworkLayer>
 {
 public:
-    NetworkLayer parse(std::string toParse);
+    NetworkLayer* parse(std::string toParse);
     std::string parseBack(NetworkLayer *layer);
 
     const char TYPE_BEGIN = '[';
@@ -29,17 +29,18 @@ public:
     const std::string SOFTMAX = "softmax";
     const std::string RELU = "relu";
     const std::string LEAKYRELU = "leakyrelu";
+    const std::string MAXPOOL = "maxpool";
 
 private:
-    NetworkLayer parseConvolutionalLayer(std::string toParse);
-    NetworkLayer parseActivationLayer(std::string toParse);
-    NetworkLayer parsePollingLayer(std::string toParse);
-    NetworkLayer parseLocalResponseNormalizationLayer(std::string toParse);
-    NetworkLayer parseDenseLayer(std::string toParse);
-    NetworkLayer parseFlattenLayer(std::string toParse);
-    NetworkLayer parseDropoutLayer(std::string toParse);
-    NetworkLayer parseCollectResultLayer(std::string toParse);
-    NetworkLayer parseOutputStorageLayer(std::string toParse);
-    NetworkLayer parseInceptionLayer(std::string toParse);
+    NetworkLayer* parseConvolutionalLayer(std::string toParse);
+    NetworkLayer* parseActivationLayer(std::string toParse);
+    NetworkLayer* parsePollingLayer(std::string toParse);
+    NetworkLayer* parseLocalResponseNormalizationLayer(std::string toParse);
+    NetworkLayer* parseDenseLayer(std::string toParse);
+    NetworkLayer* parseFlattenLayer(std::string toParse);
+    NetworkLayer* parseDropoutLayer(std::string toParse);
+    NetworkLayer* parseCollectResultLayer(std::string toParse);
+    NetworkLayer* parseOutputStorageLayer(std::string toParse);
+    NetworkLayer* parseInceptionLayer(std::string toParse);
 };
 #endif

@@ -5,68 +5,45 @@
 #include "ActivationLayerFactory.hpp"
 #include "ActivationLayer.hpp"
 #include "LayerParserDistribution.hpp"
-#include "Activation.hpp"
 #include "Parser.hpp"
 #include "LineBreakParser.hpp"
-
+#include <iostream>
 #include <string>
 #include <stdexcept>
 
-NetworkLayer ActivationLayerParser::parse(std::string toParse)
-{
-    LayerParser::extractGeneralInformation(toParse);
-
+NetworkLayer* ActivationLayerParser::parse(std::string toParse){
+    //LayerParser::extractGeneralInformation(toParse);
     ActivationLayerFactory factory = ActivationLayerFactory();
-    factory.setName(LayerParserDistribution().ACTIVATION);
-    factory.setInputDimensions(LayerParser::inputDimensions);
+    //factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();
-    ++it;
     auto valueParts = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
-    ++it;
-
     if (*(valueParts.begin()) != USED_FUNCTION)
     {
         throw std::invalid_argument("Wrong format");
     }
-
     std::string switcher = *(--valueParts.end());
     if (switcher == SIGMOID)
     {
-        factory.setActivation(Activation::SIGMOID);
-    }
-    else if (switcher == TANH)
-    {
-        factory.setActivation(Activation::TANH);
+        factory.setActivation(LayerType::SIGMOID);
     }
     else if (switcher == RELU)
     {
-        factory.setActivation(Activation::RELU);
+        factory.setActivation(LayerType::RELU);
     }
     else if (switcher == LEAKING_RELU)
     {
-        factory.setActivation(Activation::LEAKING_RELU);
-        factory.setAlpha(extractAlpha(*it));
-    }
-    else if (switcher == PARAMETRIC_RELU)
-    {
-        factory.setActivation(Activation::PARAMETRIC_RELU);
-        factory.setAlpha(extractAlpha(*it));
+        factory.setActivation(LayerType::LEAKYRELU);
     }
     else if (switcher == SOFTMAX)
     {
-        factory.setActivation(Activation::SOFTMAX);
-    }
-    else if (switcher == SWISH)
-    {
-        factory.setActivation(Activation::SWISH);
+        factory.setActivation(LayerType::SOFTMAX);
     }
     else
     {
-        factory.setActivation(Activation::SIGMOID);
+        factory.setActivation(LayerType::SIGMOID);
     }
-
     return factory.buildLayer();
 }
 
@@ -86,43 +63,30 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
     }
 }
 
-std::string ActivationLayerParser::parseBack(ActivationLayer layer)
+std::string ActivationLayerParser::parseBack(NetworkLayer* layer)
 {
-    std::string output = "";
-    output += LayerParser::saveGeneralInformation(layer);
+    std::string output = "[activation]\n";
+    //output += LayerParser::saveGeneralInformation(layer);
+
     output += USED_FUNCTION;
     output += LayerParser::VALUE_TYPE_DELIMETER;
 
-    switch (layer.getFunction())
+    switch (layer->getLayerType())
     {
-    case Activation::SIGMOID:
+    case LayerType::SIGMOID:
         output += SIGMOID;
         output += "\n";
         break;
-    case Activation::TANH:
-        output += TANH;
-        output += "\n";
-        break;
-    case Activation::RELU:
+    case LayerType::RELU:
         output += RELU;
         output += "\n";
         break;
-    case Activation::LEAKING_RELU:
+    case LayerType::LEAKYRELU:
         output += LEAKING_RELU;
         output += "\n";
-        output += saveAlpha(layer.getAlpha());
         break;
-    case Activation::PARAMETRIC_RELU:
-        output += PARAMETRIC_RELU;
-        output += "\n";
-        output += saveAlpha(layer.getAlpha());
-        break;
-    case Activation::SOFTMAX:
+    case LayerType::SOFTMAX:
         output += SOFTMAX;
-        output += "\n";
-        break;
-    case Activation::SWISH:
-        output += SWISH;
         output += "\n";
         break;
     }

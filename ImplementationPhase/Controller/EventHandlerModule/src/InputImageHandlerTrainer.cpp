@@ -14,4 +14,5 @@ std::vector<std::string> InputImageHandlerTrainer::fetchDirectory()
 
 void InputImageHandlerTrainer::sendDirectory(std::vector<std::string> dir) {
     trainingdistributor->setInput(dir);
+    trainingdistributor->enableStart();
 }

@@ -10,6 +10,7 @@
 #include <list>
 #include <algorithm>
 #include <stdexcept>
+#include "iostream"
 
 NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 {
@@ -21,10 +22,19 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 
 	NeuralNetworkFactory factory = NeuralNetworkFactory();
 	factory.setName(name);
-
+  
 	++it;
 
-	// parse height of neural network
+  // Extract labels
+	std::list<std::string> parts = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
+	auto partsIt = parts.begin();
+	if(*partsIt != LABELS)
+		throw std::invalid_argument("Wrong format");
+	++partsIt;
+	std::list<std::string> labels = Parser::splitBySymbol(*partsIt, VALUE_DELIMETER);
+	factory.setLabels(labels);
+
+  ++it;
 	std::list<std::string> val = Parser::splitBySymbol(*it, VALUE_PART_DELIMETER);
 	auto parts1It = val.begin();
 	if (*parts1It != HEIGHT)
@@ -51,31 +61,32 @@ NeuralNetwork NeuralNetworkParser::parse(std::string toParse)
 	factory.setChannels(std::atoi(parts3It->c_str()));
 
 	++it;
-
 	// Here the layer configurations are comming
-	std::list<NetworkLayer> layers;
+	std::list<NetworkLayer*> layers;
 	std::string currentLayerBlock = "";
 	// 0 -> adding lines
 	int currentState = 0;
-	for (; it != lines.end(); ++it)
+  for (; it != lines.end(); ++it)
 	{
-		if (*it == "")
+		if (currentLayerBlock == ""){
+		  currentLayerBlock.append(*it);
+		  currentLayerBlock.append("\n"); // because the line breaks were erased when the string was split
 			continue;
+    }
 
 		if (*(*it).begin() == TYPE_BEGIN && currentLayerBlock != "")
 		{
-			LayerParserDistribution().parse(currentLayerBlock);
+      layers.push_back(LayerParserDistribution().parse(currentLayerBlock));
 			currentLayerBlock = "";
 		}
 
 		currentLayerBlock.append(*it);
 		currentLayerBlock.append("\n"); // because the line breaks were erased when the string was split
 	}
-
 	// Because behind the last layer isnt the opening of a new layer
 	if (currentLayerBlock != "")
 	{
-		LayerParserDistribution().parse(currentLayerBlock);
+		layers.push_back(LayerParserDistribution().parse(currentLayerBlock));
 		currentLayerBlock = "";
 	}
 
@@ -97,6 +108,17 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += neuralNetwork.getName();
 	output += TYPE_END;
 	output += "\n";
+	output += LABELS;
+	output += VALUE_PART_DELIMETER;
+	std::list<std::string> labels = neuralNetwork.getLabels();
+	auto labelIt = labels.begin();
+	output += *labelIt;
+	++labelIt;
+ 	for (; labelIt != labels.end(); ++labelIt) {
+		output += VALUE_DELIMETER;
+		output += *labelIt;
+  }
+	output += "\n";
 	output += HEIGHT;
 	output += VALUE_PART_DELIMETER;
 	output += std::to_string(neuralNetwork.getHeight());
@@ -109,11 +131,10 @@ std::string NeuralNetworkParser::parseBack(NeuralNetwork neuralNetwork)
 	output += VALUE_PART_DELIMETER;
 	output += std::to_string(neuralNetwork.getChannels());
 	output += "\n";
-
-	auto it = neuralNetwork.getFirstLayer();
-	do {
-		output += LayerParserDistribution().parseBack(it);
-	} while (it != neuralNetwork.getLastLayer());
+  
+	for(std::list<NetworkLayer*>::iterator it = neuralNetwork.begin(); it != neuralNetwork.end(); ++it) {
+		output += LayerParserDistribution().parseBack(*it);
+	}
 
 	return output;
 }

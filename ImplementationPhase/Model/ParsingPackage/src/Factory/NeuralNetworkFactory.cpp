@@ -10,10 +10,10 @@ NeuralNetwork NeuralNetworkFactory::buildNeuralNetwork()
     NeuralNetwork neuralNetwork(name, width, height, channels);
     for (auto it = layers.begin(); it != layers.end(); ++it)
     {
-        auto layer = *it;
-        neuralNetwork.addLayer(&layer);
+        auto layer = it;
+        neuralNetwork.addLayer(*layer);
     }
-
+    neuralNetwork.setLabels(labels);
     return neuralNetwork;
 }
 
@@ -23,7 +23,7 @@ NeuralNetworkFactory NeuralNetworkFactory::setName(std::string name)
     return *this;
 }
 
-NeuralNetworkFactory NeuralNetworkFactory::setLayers(std::list<NetworkLayer> layers)
+NeuralNetworkFactory NeuralNetworkFactory::setLayers(std::list<NetworkLayer*> layers)
 {
     this->layers = layers;
     return *this;
@@ -44,5 +44,10 @@ NeuralNetworkFactory NeuralNetworkFactory::setWidth(int width)
 NeuralNetworkFactory NeuralNetworkFactory::setChannels(int channels)
 {
     this->channels = channels;
+    return *this;
+}
+
+NeuralNetworkFactory NeuralNetworkFactory::setLabels(std::list<std::string> labels) {
+    this->labels = labels;
     return *this;
 }

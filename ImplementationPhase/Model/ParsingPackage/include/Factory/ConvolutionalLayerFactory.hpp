@@ -3,19 +3,20 @@
 
 #include "LayerFactory.hpp"
 #include "NetworkLayer.hpp"
+#include "MatrixDefine.hpp"
 
 #include <vector>
 
 class ConvolutionalLayerFactory : public LayerFactory
 {
 public:
-    NetworkLayer buildLayer() override;
-    ConvolutionalLayerFactory setWeightTensors(std::vector<std::vector<std::vector<std::vector<float>>>> weightTensors);
-    ConvolutionalLayerFactory setStride(int stride);
-    ConvolutionalLayerFactory setPadding(int padding);
+    NetworkLayer* buildLayer() override;
+    ConvolutionalLayerFactory* setWeightTensors(TENSOR(float) weightTensors);
+    ConvolutionalLayerFactory* setStride(int stride);
+    ConvolutionalLayerFactory* setPadding(int padding);
 
 private:
-    std::vector<std::vector<std::vector<std::vector<float>>>> weightTensors;
+    TENSOR(float) weightTensors;
     int stride;
     int padding;
 };

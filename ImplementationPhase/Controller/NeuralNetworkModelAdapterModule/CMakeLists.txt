@@ -5,5 +5,5 @@ project(NeuralNetworkModelAdapterModule C CXX)
 
 add_library(NEURALNETWORKADAPTER "src/NeuralNetworkAdapter.cpp" "include/NeuralNetworkAdapter.hpp")
 target_include_directories(NEURALNETWORKADAPTER PUBLIC "include/")
-target_link_libraries(NEURALNETWORKADAPTER PUBLIC NEURALNETWORK)
+target_link_libraries(NEURALNETWORKADAPTER PUBLIC NEURALNETWORK DEVICETYPE)
 #target_link_libraries(NEURALNETWORKADAPTER PUBLIC NETWORKLAYER)

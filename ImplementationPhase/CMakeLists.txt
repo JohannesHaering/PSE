@@ -36,6 +36,11 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Charts)
+find_package(OpenCL REQUIRED)
+
+set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Charts)
+
 set(IMAGE_CLASSIFICATION_TARGET ${CMAKE_PROJECT_NAME})
 
 include_directories(
@@ -47,6 +52,7 @@ include_directories(
 
 add_subdirectory(Model)
 add_subdirectory(Controller)
+add_subdirectory(OpenCLFunctionality)
 add_subdirectory(View)
 #add_subdirectory(test)
 
