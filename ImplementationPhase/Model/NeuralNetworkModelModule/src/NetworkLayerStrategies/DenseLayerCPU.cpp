@@ -1,11 +1,11 @@
 #include "DenseLayerCPU.hpp"
 #include "DenseLayerStrategy.hpp"
 #include "MatrixDefine.hpp"
-#include "MatrixMultiplicationCPU.hpp"
-#include "VectorAdditionCPU.hpp"
+#include "MatrixMultiplication.hpp"
 #include "DenseLayer.hpp"
 
 #include <vector>
+#include <iostream>
 
 DenseLayerCPU::DenseLayerCPU(DenseLayer* layer, int inputSize, int outputSize) : layer(layer)
 {
@@ -15,15 +15,21 @@ DenseLayerCPU::DenseLayerCPU(DenseLayer* layer, int inputSize, int outputSize) :
 
 TENSOR(float) DenseLayerCPU::forward(TENSOR(float) input_data)
 {
+  std::cout << "It's the fucking CPU man!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+
     TENSOR(float) output = TENSOR(float)(input_data.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(outputSize))));
     for (int b = 0; b < input_data.size(); b++)
     {
-        std::vector<std::vector<float>> product = MatrixMultiplicationCPU::mult(layer->get_weights(), input_data[b][0]);
-        output[b][0][0] = VectorAdditionCPU::addVector(product[0], layer->get_biase());
+        std::vector<std::vector<float>> product = MatrixMultiplication().multiply(layer->get_weights(), input_data[b][0]);
+        for( int x = 0;  x < product[0].size(); x++){
+          output[b][0][0][x] = product[0][x] + (layer->get_biase())[x];
+        }
     }
 
     return output;
 }
+
+TENSOR(float) DenseLayerCPU::backprob(TENSOR(float) updates) { }
 
 TENSOR(float) DenseLayerCPU::backprob(TENSOR(float) updates, float learningRate, TENSOR(float) net)
 {

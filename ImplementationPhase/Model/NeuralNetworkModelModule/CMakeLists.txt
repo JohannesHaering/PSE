@@ -51,9 +51,9 @@ target_include_directories(MAXPOOLLAYER PUBLIC "include/")
 target_link_libraries(MAXPOOLLAYER PUBLIC NETWORKLAYER MATRIX_DEFINE MAXPOOLSTRATEGY DEVICETYPE )
 
 #add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
-add_library(DENSELAYER "src/TestDenseLayer.cpp" "include/TestDenseLayer.hpp")
+add_library(DENSELAYER "src/DenseLayer.cpp" "include/DenseLayer.hpp")
 target_include_directories(DENSELAYER PUBLIC "include/")
-target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY DEVICETYPE MATRIX_DEFINE)
+target_link_libraries(DENSELAYER PUBLIC NETWORKLAYER DENSELAYERSTRATEGY DEVICETYPE MATRIX_DEFINE DENSELAYERCPU)
 
 add_library(SOFTMAXLAYER "src/SoftmaxLayer.cpp" "include/SoftmaxLayer.hpp")
 target_include_directories(SOFTMAXLAYER PUBLIC "include/")
@@ -105,9 +105,9 @@ target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_
 #target_include_directories(RELULAYERCPU PUBLIC "include/NetworkLayerSrategies")
 #target_link_libraries(RELULAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY)
 
-#add_library(DENSELAYERCPU "src/NetworkLayerStrategies/DenseLayerCPU.cpp" "include/NetworkLayerStrategies/DenseLayerCPU.hpp")
-#target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
-#target_link_libraries(DENSELAYERCPU PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE RELULAYERSTRATEGY FUNCTIONALITY)
+add_library(DENSELAYERCPU "src/NetworkLayerStrategies/DenseLayerCPU.cpp" "include/NetworkLayerStrategies/DenseLayerCPU.hpp")
+target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
+target_link_libraries(DENSELAYERCPU PUBLIC DENSELAYERSTRATEGY MATRIX_DEFINE MATRIXMULTIPLICATION) 
 
 add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp" "src/NetworkLayerStrategies/SoftmaxLayerASIC.cpp" "include/NetworkLayerStrategies/SoftmaxLayerASIC.hpp" )
 target_include_directories(SOFTMAXSTRATEGY PUBLIC "include/NetworkLayerStrategies")

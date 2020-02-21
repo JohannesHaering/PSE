@@ -26,6 +26,7 @@ class NeuralNetworkAdapter {
         std::list<NetworkLayer*>::reverse_iterator rend();
         int getLayerCount();
         void setMode(DeviceType type);
+  
     protected: 
         NeuralNetwork neuralNetwork;    
         

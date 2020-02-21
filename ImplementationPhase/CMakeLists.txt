@@ -52,6 +52,7 @@ include_directories(
 
 add_subdirectory(Model)
 add_subdirectory(Controller)
+add_subdirectory(OpenCLFunctionality)
 add_subdirectory(View)
 #add_subdirectory(test)
 
