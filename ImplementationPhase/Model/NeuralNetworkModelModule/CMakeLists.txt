@@ -73,7 +73,7 @@ target_link_libraries(RELULAYER PUBLIC ACTIVATIONLAYER RELULAYERSTRATEGY DEVICET
 
 add_library(FLATTENLAYER "src/FlattenLayer.cpp" "include/FlattenLayer.hpp")
 target_include_directories(FLATTENLAYER PUBLIC "include/")
-target_link_libraries(FLATTENLAYER PUBLIC DEVICETYPE)
+target_link_libraries(FLATTENLAYER PUBLIC DEVICETYPE NETWORKLAYER)
 
 add_library(TYPE_ENUMERATIONS_NN INTERFACE)
 target_sources(TYPE_ENUMERATIONS_NN INTERFACE "include/LayerType.hpp" "include/Activation.hpp")

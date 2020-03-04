@@ -1,26 +1,26 @@
 #include <gtest/gtest.h>
 #include "ConvolutionLayer.hpp"
 
-struct ConvolutionLayerTest : testing::Test
+struct ConvolutionTest : testing::Test
 {
 
-	ConvolutionLayer* maxLayer;
+	ConvolutionLayer* layer;
 
-	ConvolutionLayerTest() {
-		layer = new ConvolutionLayer(TENSOR(float){{{{.3f, 0.5f}}}};);
+	ConvolutionTest() {
+		layer = new ConvolutionLayer(TENSOR(float){{{{.3f, 0.5f}}}}, 1, 0);
 	}
 
-	~ConvolutionLayerTest() {
+	~ConvolutionTest() {
 		delete layer;
 	}
 
 };
 
-TEST_F(ConvolutionLayerTest, ConvolutionForwardTest)
+TEST_F(ConvolutionTest, ConvolutionForwardTest)
 {
     TENSOR(float) input = TENSOR(float){{{{1,2,3}}}};
     TENSOR(float) output = layer->forward(input);
-    TESNOR(float) expectedOutput = TENSOR(float){{{{1.3f, 2.1f}}}};
+    TENSOR(float) expectedOutput = TENSOR(float){{{{1.3f, 2.1f}}}};
     for (int b = 0; b < output[0].size(); b++) {
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
@@ -32,13 +32,13 @@ TEST_F(ConvolutionLayerTest, ConvolutionForwardTest)
     }
 }
 
-TEST_F(ConvolutionLayerTest, ConvolutionForwardTest)
+TEST_F(ConvolutionTest, ConvolutionBackwardTest)
 {
     TENSOR(float) input = TENSOR(float){{{{1,2,3}}}};
     layer->forward(input);
     TENSOR(float) feedback = TENSOR(float){{{{-0.1f, 0.2f}}}};
-    TENSOR(float) output = layer->backward(feedback);
-    TESNOR(float) expectedOutput = TENSOR(float){{{{−0.03f,0.01f,0.1f}}}};
+    TENSOR(float) output = layer->backprob(feedback, 0.1f);
+    TENSOR(float) expectedOutput = TENSOR(float){{{{-0.03f,0.01f,0.1f}}}};
     for (int b = 0; b < output[0].size(); b++) {
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
