@@ -1,6 +1,5 @@
 #include "SigmoidLayer.hpp"
 #include "SigmoidLayerCPP.hpp"
-#include "SigmoidLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
@@ -34,9 +33,6 @@ void SigmoidLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new SigmoidLayerCPP();
-        break;
-    case DeviceType::ASIC :
-        layerStrategy = new SigmoidLayerASIC();
         break;
     case DeviceType::CPU :
         break;

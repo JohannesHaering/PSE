@@ -15,7 +15,6 @@
 #include "Device.hpp"
 #include "DeviceType.hpp"
 
-#include <ie_core.hpp>
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
 #include <iostream>

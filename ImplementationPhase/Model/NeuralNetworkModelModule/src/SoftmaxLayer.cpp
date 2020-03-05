@@ -1,6 +1,5 @@
 #include "SoftmaxLayer.hpp"
 #include "SoftmaxLayerCPP.hpp"
-#include "SoftmaxLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 #include <cmath>
@@ -96,9 +95,6 @@ void SoftmaxLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new SoftmaxLayerCPP();
-        break;
-    case DeviceType::ASIC :
-        layerStrategy = new SoftmaxLayerASIC();
         break;
     case DeviceType::CPU :
         break;
