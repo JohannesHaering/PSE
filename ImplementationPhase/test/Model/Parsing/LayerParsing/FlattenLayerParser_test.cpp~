@@ -12,15 +12,16 @@
 
 TEST(LayerParserTest, valid)
 {
-  std::string in = "";
-  NeuralNetworkLayer* layer = FlattenLayerParser().parse(in);
-  EXPECT_EQ(LayerType::FLATTEN, layer->getLayerType());
+  std::string in = "inputdim=[1,2,3]";
+  auto layer = FlattenLayerParser().parse(in);
+  EXPECT_EQ(LayerType::FLATTEN, layer.getLayerType());
 }
 
 TEST(LayerBackParserTest, valid)
 {
-   FlattenLayer* layer = new FlattenLayer();
-   EXPECT_EQ("[flatten]\n", FlattenLayerParser().parseBack(layer));
+  int dim[] = {1, 2, 3};
+   auto layer = FlattenLayer("name", dim);
+   EXPECT_EQ("[flatten]\ninputdim=[1,2,3]\n", FlattenLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

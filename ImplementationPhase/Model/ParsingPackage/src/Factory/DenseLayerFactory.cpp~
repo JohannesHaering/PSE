@@ -13,13 +13,13 @@ NetworkLayer* DenseLayerFactory::buildLayer()
     return layer;
 }
 
-DenseLayerFactory *DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
+DenseLayerFactory DenseLayerFactory::setMatrix(std::vector<std::vector<float>> matrix)
 {
     this -> matrix = matrix;
-    return this;
+    return *this;
 }
 
-DenseLayerFactory *DenseLayerFactory::setBiases(std::vector<float> bias) {
+DenseLayerFactory DenseLayerFactory::setBiases(std::vector<float> bias) {
     this->bias = bias;
-    return this;
+    return *this;
 }

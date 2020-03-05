@@ -4,17 +4,29 @@
 
 #include "NetworkLayer.hpp"
 #include "LayerType.hpp"
-#include "Activation.hpp"
 #include "ActivationLayer.hpp"
 #include "ActivationLayerFactory.hpp"
+#include "SoftmaxLayer.hpp"
+#include "LeakyReLuLayer.hpp"
+#include "ReLuLayer.hpp"
+#include "SigmoidLayer.hpp"
 
-TEST(BuildTest, valid){
-    int dim[] = {1,2,3};
-    std::string name = "nn";
-    auto layer = ActivationLayerFactory().setActivation(Activation::SOFTMAX).setAlpha(0.5f).setInputDimensions(dim)->setName(name)->buildLayer();
-    EXPECT_EQ(LayerType::ACTIVATION, layer.getLayerType());
-    EXPECT_EQ(name, layer.getName());
-    EXPECT_EQ(dim[0], layer.getInputDimensions()[0]);
+
+TEST(Softmax, valid){
+    NetworkLayer* layer = ActivationLayerFactory().setActivation(LayerType::SOFTMAX)->buildLayer();
+    EXPECT_EQ(LayerType::SOFTMAX, layer->getLayerType());
+}
+TEST(Sigmoid, valid){
+    NetworkLayer *layer = ActivationLayerFactory().setActivation(LayerType::SIGMOID)->buildLayer();
+    EXPECT_EQ(LayerType::SIGMOID, layer->getLayerType());
+}
+TEST(RELU, valid){
+    NetworkLayer *layer = ActivationLayerFactory().setActivation(LayerType::RELU)->buildLayer();
+    EXPECT_EQ(LayerType::RELU, layer->getLayerType());
+}
+TEST(LEAKYRELU, valid){
+    NetworkLayer *layer = ActivationLayerFactory().setActivation(LayerType::LEAKYRELU)->buildLayer();
+    EXPECT_EQ(LayerType::LEAKYRELU, layer->getLayerType());
 }
 
 int main(int argc, char **argv) {
