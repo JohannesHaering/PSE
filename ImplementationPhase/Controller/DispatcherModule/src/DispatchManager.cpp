@@ -1,6 +1,5 @@
 #include "DispatchManager.hpp"
 #include <vector>
-#include "Channel.hpp"
 #include "Mode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "LowPowerMode.hpp"
@@ -85,14 +84,5 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
 		}
 	}
-<<<<<<< HEAD
-	InferenceEngine::Core core;
-	std::vector<std::string> asicDevices= core.GetAvailableDevices();
-  for(std::vector<std::string>::iterator it = asicDevices.begin(); it != asicDevices.end(); ++it) {
-    devices.push_back(Device(*it,*it,24,1.0));
-  }
   return devices;
-=======
-    return devices;
->>>>>>> d685cd2f6b5bbdf500eef1804aa9c596f13ccae4
 }

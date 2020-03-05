@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "DispatchManager.hpp"
+#include "Executor.hpp"
 #include "Mode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "HighEfficiencyMode.hpp"
