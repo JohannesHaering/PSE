@@ -19,7 +19,7 @@ TEST(Parse, valid)
 TEST(ParseBack, invalid)
 {
 	NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
-	ReluLayer* layer = new ReLuLayer();
+	ReLuLayer* layer = new ReLuLayer();
 	network.addLayer(layer);
 	std::list<std::string> labels = std::list<std::string>();
 	labels.push_back("name1");

@@ -31,14 +31,14 @@ NetworkLayer* ActivationLayerFactory::buildLayer()
     return layer;
 }
 
-ActivationLayerFactory +ActivationLayerFactory::setActivation(LayerType activation)
+ActivationLayerFactory *ActivationLayerFactory::setActivation(LayerType activation)
 {
     this -> activation = activation;
-    return *this;
+    return this;
 }
 
 ActivationLayerFactory *ActivationLayerFactory::setAlpha(float alpha)
 {
     this -> alpha = alpha;
-    return *this;
+    return this;
 }

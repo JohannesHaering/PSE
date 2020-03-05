@@ -13,7 +13,7 @@
 TEST(LayerParserTest, valid)
 {
   std::string in = "";
-  NeuralNetworkLayer* layer = FlattenLayerParser().parse(in);
+NetworkLayer* layer = FlattenLayerParser().parse(in);
   EXPECT_EQ(LayerType::FLATTEN, layer->getLayerType());
 }
 
