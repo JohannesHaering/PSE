@@ -8,7 +8,7 @@
 TEST(ParseTest, correctBox)
 {
     std::string toParse = "name:1";
-    auto out = ClassProbabilityParser().parse(toParse);
+    ClassProbability out = ClassProbabilityParser().parse(toParse);
     EXPECT_EQ(out.getClassName(), "name");
     EXPECT_EQ(out.getProbability(), 1);
 }
@@ -21,7 +21,7 @@ TEST(ParseTest, notValid)
 
 TEST(ParseBackTest, valid)
 {
-    auto in = ClassProbability("name", 1);
+    ClassProbability in = ClassProbability("name", 1);
     EXPECT_EQ("name:1.000000", ClassProbabilityParser().parseBack(in));
 }
 

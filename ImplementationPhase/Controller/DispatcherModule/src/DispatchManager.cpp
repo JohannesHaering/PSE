@@ -8,15 +8,13 @@
 #include "NeuralNetworkAdapter.hpp"
 #include "Executor.hpp"
 #include "ClassificationResult.hpp"
-#include "ImageFacade.hpp" 
+#include "ImageFacade.hpp"
 #include "ResultFacade.hpp"
 #include "Executor.hpp"
 #include "MatrixDefine.hpp"
 #include "Device.hpp"
 #include "DeviceType.hpp"
 
-#include <inference_engine.hpp>
-#include <ie_core.hpp>
 #include <opencv2/opencv.hpp>
 #include <CL/cl2.hpp>
 #include <iostream>
@@ -39,7 +37,7 @@ void DispatchManager::setNeuralNetworkList(std::vector<NeuralNetworkAdapter> neu
 
 std::vector<NeuralNetworkAdapter> DispatchManager::getNeuralNetworkList() { return neuralNetworkList; }
 
-std::list<Mode*> DispatchManager::getModeList() 
+std::list<Mode*> DispatchManager::getModeList()
 {
 	std::list<Mode*> modeList;
     modeList.push_back(new LowPowerMode());
@@ -48,16 +46,16 @@ std::list<Mode*> DispatchManager::getModeList()
 	return modeList;
 }
 
-ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories) 
+ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories)
 {
     TENSOR(float) output; 
     std::list<Result*> resultList;
     ResultFacade* resultfacade = new ResultFacade();
     std::list<std::string> dirlist = std::list<std::string>(directories.begin(), directories.end());
-    
+
     std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> distribution = mode->getImageDistribution(dirlist);
     Executor* executor;
-    
+
     for (auto it : distribution) {
       DeviceType type = std::get<0>(it);
       NeuralNetworkAdapter network = std::get<1>(it);
@@ -87,10 +85,14 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
 		}
 	}
+<<<<<<< HEAD
 	InferenceEngine::Core core;
 	std::vector<std::string> asicDevices= core.GetAvailableDevices();
   for(std::vector<std::string>::iterator it = asicDevices.begin(); it != asicDevices.end(); ++it) {
     devices.push_back(Device(*it,*it,24,1.0));
   }
   return devices;
+=======
+    return devices;
+>>>>>>> d685cd2f6b5bbdf500eef1804aa9c596f13ccae4
 }

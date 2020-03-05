@@ -1,5 +1,4 @@
 #include "LeakyReLuLayer.hpp"
-#include "LeakyReLuLayerASIC.hpp"
 #include <vector>
 #include "LeakyReLuLayerCPP.hpp"
 #include "MatrixDefine.hpp"
@@ -35,9 +34,6 @@ void LeakyReLuLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new LeakyReLuLayerCPP();
-        break;
-    case DeviceType::ASIC :
-       layerStrategy = new LeakyReLuLayerASIC();
         break;
     case DeviceType::CPU :
         break;

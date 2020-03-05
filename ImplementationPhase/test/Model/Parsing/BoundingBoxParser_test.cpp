@@ -9,8 +9,8 @@
 
 TEST(ParseTest, valid)
 {
-    auto in = "0.2$0.3$0.4$0.5$name1:1/name2:0";
-    auto out = BoundingBoxParser().parse(in);
+    std::string in = "0.2$0.3$0.4$0.5$name1:1/name2:0";
+    BoundingBox out = BoundingBoxParser().parse(in);
     EXPECT_NEAR(0.2f, out.getX(), 0.01);
     EXPECT_NEAR(0.3f, out.getY(), 0.01);
     EXPECT_NEAR(0.4f, out.getWidth(), 0.01);
@@ -20,15 +20,15 @@ TEST(ParseTest, valid)
 
 TEST(ParseTest, invalid)
 {
-    auto in = "0.2$0.3$0.4$name1:1/name2:0";
+    std::string in = "0.2$0.3$0.4$name1:1/name2:0";
     EXPECT_THROW(BoundingBoxParser().parse(in), std::invalid_argument);
 }
 
 TEST(ParseBackTest, valid)
 {
-    auto list = std::list<ClassProbability>();
+    std::list<ClassProbability> list = std::list<ClassProbability>();
     list.push_back(ClassProbability("name", 1));
-    auto out = BoundingBoxParser().parseBack(BoundingBox(0.2f, 0.3f, 0.4f, 0.5f, list));
+    std::string out = BoundingBoxParser().parseBack(BoundingBox(0.2f, 0.3f, 0.4f, 0.5f, list));
     EXPECT_EQ("0.200000$0.300000$0.400000$0.500000$name:1.000000", out);
 }
 
