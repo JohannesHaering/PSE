@@ -54,7 +54,7 @@ add_subdirectory(Model)
 add_subdirectory(Controller)
 add_subdirectory(OpenCLFunctionality)
 add_subdirectory(View)
-#add_subdirectory(test)
+add_subdirectory(test)
 
 add_executable(${IMAGE_CLASSIFICATION_TARGET} "View/src/main.cpp")
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} VIEW_MODULE)

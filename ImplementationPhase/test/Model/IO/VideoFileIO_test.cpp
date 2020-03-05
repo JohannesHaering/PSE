@@ -9,23 +9,23 @@
 
 TEST(readFileTest, emptyPath)
 {
-	auto io = VideoFileIO();
-	auto input = io.readFile("");
+	VideoFileIO io = VideoFileIO();
+	Data<cv::VideoCapture> input = io.readFile("");
 	cv::VideoCapture mat = input.getData();
 	EXPECT_EQ(false, mat.isOpened());
 }
 
 TEST(readFileTest, noImageFile)
 {
-	auto io = VideoFileIO();
-	auto input = io.readFile("..\\..\\Data\\testTXT.txt");
+	VideoFileIO io = VideoFileIO();
+	Data<cv::VideoCapture> input = io.readFile("..\\..\\Data\\testTXT.txt");
 	cv::VideoCapture mat = input.getData();
 	EXPECT_EQ(false, mat.isOpened());
 }
 
 TEST(readFileTest, notExisting)
 {
-	auto io = VideoFileIO();
+	VideoFileIO io = VideoFileIO();
 	EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.avi"), std::ifstream::failure);
 }
 
