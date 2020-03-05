@@ -6,8 +6,8 @@
 
 TEST (SplitLinesTest, twoParts) {
     ImageLocationParser parser = ImageLocationParser();
-    auto in = "foo\nbar";
-    auto out = parser.parse(in);
+    std::string in = "foo\nbar";
+    std::list<std::string> out = parser.parse(in);
     EXPECT_EQ(2, out.size());
     EXPECT_EQ("foo", *(out.begin()));
     EXPECT_EQ("bar", *(--out.end()));
