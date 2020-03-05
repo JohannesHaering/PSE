@@ -8,7 +8,7 @@ struct NeuralNetworkPagerTests : testing::Test
 	Pager* pager;
 
 	NeuralNetworkPagerTests() {
-		pager = new NeuralNetworkPager(2, ViewFacade::getInstance().getClassificationPage());
+		pager = new NeuralNetworkPager(2, ViewFacade::getInstance()->getImageClassification());
 	}
 
 	~NeuralNetworkPagerTests() {

@@ -43,7 +43,7 @@ struct StartHandlerTests : testing::Test
 	StartHandlerTests() 
 	{
 		page = new InferencerPredictionMock();
-		handler = new PredictionHandler(*page);
+		handler = new PredictionHandler(page);
 	}
 
 	~StartHandlerTests() 

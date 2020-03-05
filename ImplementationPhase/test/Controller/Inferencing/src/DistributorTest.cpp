@@ -1,13 +1,15 @@
 #include <gtest/gtest.h>
 #include "Distributor.hpp"
+#include "InferencingDistributorClassification.hpp"
+#include "ViewFacade.hpp"
 
 struct DistributorTests : testing::Test
 {
 
-	Distributor* distributor;
+  InferencingDistributorClassification* distributor;
 
 	DistributorTests() {
-		distributor = new Distributor();
+		distributor = new InferencingDistributorClassification(ViewFacade::getInstance()->getImageClassification());
 	}
 
 	~DistributorTests() {

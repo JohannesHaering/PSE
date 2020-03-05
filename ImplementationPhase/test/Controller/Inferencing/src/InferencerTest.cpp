@@ -1,13 +1,40 @@
 #include <gtest/gtest.h>
-#include "Inferencer.hpp"
+#include "InferencingDistributorClassification.hpp"
+
+class ClassificationPageMock : public InferencePageAdapter {
+
+public:
+	bool getShowResults()
+	{
+		return showResults;
+	}
+	bool getSaveResults()
+	{
+		return saveResults;
+	}
+	void setShowResults(bool enable)
+	{
+		showResults = enable;
+	}
+	void setSaveResults(bool enable)
+	{
+		saveResults = enable;
+	}
+
+private:
+	bool showResults;
+	bool saveResults;
+
+};
 
 struct InferencerTest : testing::Test 
 {
 	
-	Inferencer* inferencer;
+	InferencingDistributorClassification* inferencer;
 
 	InferencerTest() {
-		inferencer = new Inferencer();
+	  ClassificationPageMock* page = new ClassificationPageMock();
+    inferencer = new InferencingDistributorClassification(page);
 	}
 
 	~InferencerTest() {

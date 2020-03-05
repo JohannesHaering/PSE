@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
 #include "NeuralNetworkSetter.hpp"
+#include "InferencingDistributorClassification.hpp"
+#include "ViewFacade.hpp"
 
 struct NeuralNetworkSetterTests : testing::Test 
 {
@@ -8,8 +10,8 @@ struct NeuralNetworkSetterTests : testing::Test
 	Inferencer* inferencer;
 
 	NeuralNetworkSetterTests() {
-		inferencer = new Inferencer();
-		setter = new NeuralNetworkSetter(*inferencer);
+		inferencer = new InferencingDistributorClassification(ViewFacade::getInstance()->getImageClassification());
+		setter = new NeuralNetworkSetter(inferencer);
 	}
 
 	~NeuralNetworkSetterTests() {

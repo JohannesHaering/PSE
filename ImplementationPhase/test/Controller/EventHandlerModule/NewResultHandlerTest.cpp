@@ -13,10 +13,10 @@ struct NewResultHandlerTests : testing::Test
 	NewResultHandler* handler;
 
 	NewResultHandlerTests() {
-		InferencePageAdapter classificationPage = *ViewFacade::getInstance()->getImageClassification();
+		InferencePageAdapter* classificationPage = ViewFacade::getInstance()->getImageClassification();
 		neuralNetworkPager = new NeuralNetworkPager(2, classificationPage);
 		imagePager = new ImagePager(2, classificationPage);
-		handler = new NewResultHandler(new InferencingDistributorClassification(classificationPage), *neuralNetworkPager, *imagePager);
+		handler = new NewResultHandler(new InferencingDistributorClassification(classificationPage), neuralNetworkPager, imagePager);
 	}
 
 	~NewResultHandlerTests() {

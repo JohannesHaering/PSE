@@ -37,7 +37,7 @@ struct InferencingDistributorTests : testing::Test
 
 	InferencingDistributorTests() {
 		page = new ClassificationPageMock();
-		inferencer = new InferencingDistributorClassification(*page);
+		inferencer = new InferencingDistributorClassification(page);
 	}
 
 	~InferencingDistributorTests() {
