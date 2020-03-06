@@ -12,26 +12,27 @@
 
 TEST(LayerParserTest, valid)
 {
-  std::string in = "inputdim=[1,2,3]\ntensor=[[1]]";
-  auto layer = DenseLayerParser().parse(in);
-  EXPECT_EQ(LayerType::DENSE, layer.getLayerType());
+  std::string in = "tensor=[[1]]\nbias=[1]";
+  NetworkLayer* layer = DenseLayerParser().parse(in);
+  EXPECT_EQ(LayerType::DENSE, layer->getLayerType());
 }
 
 TEST(LayerParserTest, invalid)
 {
-  std::string in = "inputdim=[1,2,3]\nteor=[[1]]";
+  std::string in = "\nteor=[[1]]";
   EXPECT_THROW(DenseLayerParser().parse(in), std::invalid_argument);
 }
 
 TEST(LayerBackParserTest, valid)
 {
-  int dim[] = {1, 2, 3};
   auto tensor = std::vector<std::vector<float>>();
   auto sub1 = std::vector<float>();
   sub1.push_back(1);
   tensor.push_back(sub1);
-  auto layer = DenseLayer("", dim, tensor);
-  EXPECT_EQ("[dense]\ninputdim=[1,2,3]\ntensor=[[1.000000]]\n", DenseLayerParser().parseBack(layer));
+  DenseLayer* layer = new DenseLayer(1,1, 1);
+  layer->set_bias(sub1);
+  layer->set_weights(tensor);
+  EXPECT_EQ("[dense]\ntensor=[[1.000000]]\nbias=[1.000000]\n", DenseLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

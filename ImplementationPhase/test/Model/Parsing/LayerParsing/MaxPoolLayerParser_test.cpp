@@ -7,20 +7,20 @@
 #include "LayerParser.hpp"
 #include "LayerType.hpp"
 #include "NetworkLayer.hpp"
-#include "FlattenLayerParser.hpp"
-#include "FlattenLayer.hpp"
+#include "MaxPoolLayerParser.hpp"
+#include "MaxPoolLayer.hpp"
 
 TEST(LayerParserTest, valid)
 {
   std::string in = "";
-NetworkLayer* layer = FlattenLayerParser().parse(in);
-  EXPECT_EQ(LayerType::FLATTEN, layer->getLayerType());
+NetworkLayer* layer = MaxPoolLayerParser().parse(in);
+  EXPECT_EQ(LayerType::POLLING, layer->getLayerType());
 }
 
 TEST(LayerBackParserTest, valid)
 {
-   FlattenLayer* layer = new FlattenLayer();
-   EXPECT_EQ("[flatten]\n", FlattenLayerParser().parseBack(layer));
+   MaxPoolLayer* layer = new MaxPoolLayer();
+   EXPECT_EQ("[maxpool]\n", MaxPoolLayerParser().parseBack(layer));
 }
 
 int main(int argc, char **argv)

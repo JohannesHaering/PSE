@@ -12,9 +12,7 @@
 #include <stdexcept>
 
 NetworkLayer* ActivationLayerParser::parse(std::string toParse){
-    //LayerParser::extractGeneralInformation(toParse);
     ActivationLayerFactory factory = ActivationLayerFactory();
-    //factory.setInputDimensions(LayerParser::inputDimensions);
 
     std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
     auto it = lines.begin();
@@ -66,7 +64,6 @@ float ActivationLayerParser::extractAlpha(std::string alphaString)
 std::string ActivationLayerParser::parseBack(NetworkLayer* layer)
 {
     std::string output = "[activation]\n";
-    //output += LayerParser::saveGeneralInformation(layer);
 
     output += USED_FUNCTION;
     output += LayerParser::VALUE_TYPE_DELIMETER;
