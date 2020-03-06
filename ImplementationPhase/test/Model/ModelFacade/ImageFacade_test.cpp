@@ -50,7 +50,14 @@ TEST(ImageGreyScale, valid){
 
 TEST(ImageTensor, valid){
   ImageFacade facade = ImageFacade();
-
+  cv::Mat input = facade.getImage("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp", 64,64,1);
+  std::vector<cv::Mat> images = std::vector<cv::Mat>();
+  images.push_back(input);
+  TENSOR(float) tensor = createImageTensor(images, 28,28);
+  EXPECT_EQ(tensor.size(), 1);
+  EXPECT_EQ(tensor[0].size(), 1);
+  EXPECT_EQ(tensor[1].size(), 28);
+  EXPECT_EQ(tensor[2].size(), 28);
 }
 
 int main(int argc, char **argv) {
