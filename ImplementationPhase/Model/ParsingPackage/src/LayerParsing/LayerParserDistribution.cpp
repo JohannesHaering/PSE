@@ -26,7 +26,7 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	auto firstLine = *(lines.begin());
 	firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_BEGIN), firstLine.end());
 	firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_END), firstLine.end());
-
+  std::cout << firstLine << std::endl;
 	std::string extras = "[\n]";
 	// Remove first line
 	toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
@@ -34,25 +34,40 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	{
 		return parseDenseLayer(toParse);
 	}
-	else if (firstLine.compare(ACTIVATION) == 0) {
-    return ActivationLayerParser().parse(toParse);
-	}
-	else if (firstLine.compare(MAXPOOL) == 0) {
-		return new MaxPoolLayer();
-	}
-	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
-		return ConvolutionalLayerParser().parse(toParse);
-	} 
-	else if (firstLine.compare(FLATTEN) == 0) {
-		return FlattenLayerParser().parse(toParse);
-	} 
-	else if (firstLine.compare(POLLING) == 0) {
-		return MaxPoolLayerParser().parse(toParse);
-	} 
-	else
-	{
-		throw std::invalid_argument("Wrong format");
-	}
+	else{
+    std::cout<<firstLine<<std::endl;
+    if (firstLine.compare(ACTIVATION) == 0) {
+       return ActivationLayerParser().parse(toParse);
+	  }
+	  else{
+    std::cout<<firstLine<<std::endl;
+      if (firstLine.compare(MAXPOOL) == 0) {
+		    return new MaxPoolLayer();
+	    } 
+      else{
+        std::cout << firstLine <<  "here" << CONVOLUTIONAL  << std::endl;
+        if (firstLine.compare(CONVOLUTIONAL) == 0) 
+        {
+          std::cout<< "here2" << std::endl;
+  		    return ConvolutionalLayerParser().parse(toParse);
+        }
+        else{
+          if (firstLine.compare(FLATTEN) == 0) {
+		        return FlattenLayerParser().parse(toParse);
+	        }  
+	        else{
+            if (firstLine.compare(POLLING) == 0) {
+		          return MaxPoolLayerParser().parse(toParse);
+	          }
+	          else
+	          {   
+		          throw std::invalid_argument(firstLine + "  " + CONVOLUTIONAL);
+	          }
+          }
+        } 
+      }
+    }
+  }
 }
 
 std::string LayerParserDistribution::parseBack(NetworkLayer* layer)

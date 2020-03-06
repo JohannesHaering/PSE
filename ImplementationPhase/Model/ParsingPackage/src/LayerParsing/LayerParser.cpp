@@ -17,6 +17,7 @@
 // other information
 void LayerParser::extractGeneralInformation(std::string toParse)
 {
+  std::cout<<"STARTED"<<std::endl;
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
 	std::list<std::string>::iterator it = lines.begin();
 	std::list<std::string> firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
@@ -25,7 +26,7 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 	std::list<std::string> secondLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
 	if (!(*secondLine.begin()).compare(BATCH_SIZE))
-		throw std::invalid_argument("Wrong format");
+		throw std::invalid_argument("Wrong format batch");
 
 	std::string batchSizeString = *(--secondLine.end());
 	batchSize = ::atoi(batchSizeString.c_str());
@@ -34,7 +35,7 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 	std::list<std::string> thirdLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
 	if (!(*thirdLine.begin()).compare(WIDTH))
-		throw std::invalid_argument("Wrong format");
+		throw std::invalid_argument("Wrong format width");
 
 	std::string widthString = *(--thirdLine.end());
 	width = ::atoi(widthString.c_str());
@@ -43,7 +44,7 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 	std::list<std::string> fourthLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
 	if (!(*fourthLine.begin()).compare(HEIGHT))
-		throw std::invalid_argument("Wrong format");
+		throw std::invalid_argument("Wrong format height");
 
 	std::string heightString = *(--fourthLine.end());
 	height = ::atoi(heightString.c_str());
@@ -52,11 +53,11 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 	std::list<std::string> fithLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
 
 	if (!(*fithLine.begin()).compare(Z))
-		throw std::invalid_argument("Wrong format");
+		throw std::invalid_argument("Wrong format Z");
 
 	std::string zString = *(--fithLine.end());
 	z = ::atoi(zString.c_str());
-
+  std::cout<<"GENERAL PARSED"<<std::endl;
 }
 
 std::string LayerParser::removeCharacter(std::string text, char toErase)
@@ -90,7 +91,6 @@ int* LayerParser::parseIntArray(std::string text)
 
 std::vector<float> LayerParser::parseFloatArray(std::string text)
 {
-  std::cout << "parse1D: " << text << std::endl;
   while (text[0] == '[')
     text.erase(0,1);
   text = removeCharacter(text, VALUE_BEGIN);
@@ -108,7 +108,6 @@ std::vector<float> LayerParser::parseFloatArray(std::string text)
 
 std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 {
-  std::cout << "parse2D: " << text << std::endl;
   std::vector<std::vector<float>> tensor = std::vector<std::vector<float>>();
 	int x = 0; // in which outerst vector we are
   std::string currentArray = "";
@@ -171,7 +170,6 @@ std::vector<std::vector<float>> LayerParser::parse2DFloatArray(std::string text)
 
 std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std::string text)
 {
-  std::cout << text << std::endl;
   std::vector<std::vector<std::vector<float>>> tensor = std::vector<std::vector<std::vector<float>>>();
 	int x = 0; // in which outerst vector we are
 	int y = 0; // in which middle vector we are
@@ -193,7 +191,6 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 			currentArray += *it;
 			if (*it == VALUE_END)
 			{
-			  std::cout << "Pushed back 2DMatrix" << std::endl;
         tensor.push_back(parse2DFloatArray(currentArray));
         currentArray = "";
 				++i;
@@ -205,7 +202,6 @@ std::vector<std::vector<std::vector<float>>> LayerParser::parse3DFloatArray(std:
 
 std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFloatArray(std::string text)
 {
-  std::cout << "tensor input: " << text << std::endl;
   std::vector<std::vector<std::vector<std::vector<float>>>> tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
 
 	std::string currentArray = "";
@@ -230,7 +226,6 @@ std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFl
 				currentArray += *it;
 				if (*it == VALUE_END)
 				{
-				  std::cout << "pushed back 3d" << std::endl;
           if (currentArray[0] == ',') 
 	          currentArray.erase(0,1);
 
@@ -241,7 +236,6 @@ std::vector<std::vector<std::vector<std::vector<float>>>> LayerParser::parse4DFl
 			}
 		}
 	}
-  std::cout << "returning tensor" << std::endl;
 	return tensor;
 }
 
@@ -331,7 +325,6 @@ std::string LayerParser::saveFloatArray(std::vector<float> arr)
 	output += std::to_string(arr.at(0));
 	for (int i = 1; i < arr.size(); ++i)
 	{
-    //std::cout<<arr[i]<<std::endl;
     output += VALUE_PARTS_DELIMETER;
 		output += std::to_string(arr.at(i));
 	}
