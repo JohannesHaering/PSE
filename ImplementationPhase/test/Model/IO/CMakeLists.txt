@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(DataTest "Data_test.cpp")
-target_link_libraries(DataTest PUBLIC DATA)
+#add_executable(DataTest "Data_test.cpp")
+#target_link_libraries(DataTest PUBLIC DATA)
 
 add_executable(ImageFileIOTest "ImageFileIO_test.cpp")
 target_link_libraries(ImageFileIOTest PUBLIC DATA ${OpenCV_LIBS} IO)

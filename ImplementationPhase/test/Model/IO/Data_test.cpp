@@ -12,12 +12,7 @@ TEST (DataTest, stringO) {
 
 TEST (DataTest, floatO) {
     Data<float> data = Data<float>(3.1);
-    EXPECT_NEAR(3.1, data.getData(), 0.01);
-}
-
-TEST (DataTest, nullO) {
-    Data<std::string*> data = Data<std::string*>(nullptr);
-    EXPECT_EQ(nullptr, data.getData());
+    EXPECT_NEAR(3.1f, data.getData(), 0.01);
 }
 
 int main(int argc, char **argv) {
