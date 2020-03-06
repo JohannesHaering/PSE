@@ -5,6 +5,7 @@
 
 #include "NeuralNetworkFacade.hpp"
 #include "NeuralNetwork.hpp"
+#include "ReLuLayer.hpp"
 
 TEST(LoadNeuralNetworkTest, valid)
 {
@@ -25,9 +26,8 @@ TEST(LoadNeuralNetworksTest, valid)
 TEST(SaveNeuralNetworkTest, valid)
 {
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
-    int dim[] = {1, 2, 3};
-    DropoutLayer layer = DropoutLayer("", dim, 0.1);
-    network.addLayer(&layer);
+    ReLuLayer*layer = new ReLuLayer();
+    network.addLayer(layer);
     auto path = "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\TestNeuralNetworkWrite.txt";
     auto succes = NeuralNetworkFacade().saveNeuralNetwork(network, path);
     EXPECT_EQ(true, succes);
@@ -38,9 +38,8 @@ TEST(SaveNeuralNetworksTest, valid)
     auto nns = std::list<NeuralNetwork>();
     auto paths = std::list<std::string>();
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
-    int dim[] = {1, 2, 3};
-    DropoutLayer layer = DropoutLayer("", dim, 0.1);
-    network.addLayer(&layer);
+    ReLuLayer*layer = new ReLuLayer();
+    network.addLayer(layer);
     auto path = "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\TestNeuralNetworkWrite.txt";
     nns.push_back(network);
     paths.push_back(path);

@@ -5,12 +5,12 @@
 #include <opencv2/opencv.hpp>
 
 #include "ImageFacade.hpp"
+#include "MatrixDefine.hpp"
 
 TEST(GetImage, valid){
     auto facade = ImageFacade();
-    auto input = facade.getImage("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp", 64,64,1);
-    cv::Mat mat = input;
-    EXPECT_EQ(64*64, mat.total());
+    cv::Mat input = facade.getImage("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp", 64,64,1);
+    EXPECT_EQ(64*64, input.total());
 }
 
 TEST(GetImages, valid){
@@ -40,6 +40,17 @@ TEST(writeImage, valid)
     cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
     bool success = facade.writeImage("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPWrite.bmp", mat);
     EXPECT_EQ(true, success);
+}
+
+TEST(ImageGreyScale, valid){
+  ImageFacade facade = ImageFacade();
+  std::vector<float> image = facade.getImageGreyScale("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp", 64,64,1);
+  EXPECT_EQ(64*64, image.size());
+}
+
+TEST(ImageTensor, valid){
+  ImageFacade facade = ImageFacade();
+
 }
 
 int main(int argc, char **argv) {
