@@ -53,7 +53,7 @@ TEST(ImageTensor, valid){
   cv::Mat input = facade.getImage("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp", 64,64,1);
   std::vector<cv::Mat> images = std::vector<cv::Mat>();
   images.push_back(input);
-  TENSOR(float) tensor = createImageTensor(images, 28,28);
+  TENSOR(float) tensor = facade.createImageTensor(images, 28,28);
   EXPECT_EQ(tensor.size(), 1);
   EXPECT_EQ(tensor[0].size(), 1);
   EXPECT_EQ(tensor[1].size(), 28);

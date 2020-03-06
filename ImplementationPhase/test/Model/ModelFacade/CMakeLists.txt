@@ -13,4 +13,4 @@ add_executable(ModelFacadeTest "ModelFacade_test.cpp")
 target_link_libraries(ModelFacadeTest PUBLIC MODELFACADE)
 
 add_executable(NeuralNetworkFacadeTest "NeuralNetworkFacade_test.cpp" )
-target_link_libraries(NeuralNetworkFacadeTest PUBLIC NEURALNETWORKFACADE NEURALNETWORK DROPOUTLAYER)
+target_link_libraries(NeuralNetworkFacadeTest PUBLIC NEURALNETWORKFACADE NEURALNETWORK)
