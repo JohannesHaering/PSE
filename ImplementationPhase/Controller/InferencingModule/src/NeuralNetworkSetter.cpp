@@ -8,7 +8,7 @@
 #include "ConvolutionLayer.hpp"
 #include "MaxPoolLayer.hpp"
 #include <vector>
-#include <iostream>
+#include <stdexcept>
 
 /*
 * Creates a NeuralNetworkSetter.
@@ -28,46 +28,12 @@ void NeuralNetworkSetter::setNeuralNetwork(std::vector<std::string> directories)
 	std::list<std::string> labels = std::list<std::string>{ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 	NeuralNetwork network = NeuralNetwork("ConvConv", 28, 28, 1);
 	network.setLabels(labels);
-  /*
-  LeakyReLuLayer* llayer = new LeakyReLuLayer();
-	
-  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 1, 32, 1, 0);
-  network.addLayer(clayer2);
-
-  network.addLayer(llayer);
-  
-  ConvolutionLayer* clayer = new ConvolutionLayer(3,3,32,32,1,0);
-  network.addLayer(clayer);
-
-  SoftmaxLayer* slayer = new SoftmaxLayer();
-  network.addLayer(slayer);
-  
-  neuralNetworkFacade.saveNeuralNetwork(network, "/home/pselabw1920/Documents/randomnetworks/convconvnetwork.txt");
-  
-	NeuralNetwork network2 = NeuralNetwork("ConvConvDense", 28, 28, 1);
-	network2.setLabels(labels);
-
-  LeakyReLuLayer* llayer = new LeakyReLuLayer();
-  ConvolutionLayer* clayer = new ConvolutionLayer(3,3,1,32,1,0);
-  ConvolutionLayer* clayer2 = new ConvolutionLayer(3, 3, 32, 32, 1, 0);
-  DenseLayer* dlayer = new DenseLayer(24 * 24 * 32, 10);
-  SoftmaxLayer* slayer = new SoftmaxLayer();
-  network2.addLayer(clayer);
-  network2.addLayer(llayer);
-  network2.addLayer(clayer2);
-  network2.addLayer(llayer);
-	dlayer->setMode(DeviceType::CPU);
-  network2.addLayer(dlayer);
-  network2.addLayer(slayer);
-
-  neuralNetworkFacade.saveNeuralNetwork(network2, "/home/pselabw1920/Documents/randomnetworks/convconvdensenetwork.txt");
-  
-  //neuralNetworks.push_back(network);
-  neuralNetworks.push_back(network2);
-*/
   for(std::vector<std::string>::iterator it = directories.begin(); it != directories.end(); ++it) {
      neuralNetworks.push_back(neuralNetworkFacade.loadNeuralNetwork(*it));
-   }
+  }
+  if (neuralNetworks.size()== 0) {
+    throw std::invalid_argument( "No neural networks chosen!" );
+  }
   inferencer->addNeuralNetwork(neuralNetworks);
   inferencer->enableStart();
 }

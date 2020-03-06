@@ -18,6 +18,7 @@ TENSOR(float) FlattenLayer::forward(TENSOR(float) input) {
             for (int y = 0; y < oldy; y++) {
                 for (int x = 0; x < oldx; x++) {
                     output[b][0][0][x + y * oldx + z * oldx * oldy] = input[b][z][y][x];
+                   // output[b][0][0][z + y * oldx + x * oldx * oldy] = input[b][x][y][z];
                 }
             }
         }
@@ -25,6 +26,28 @@ TENSOR(float) FlattenLayer::forward(TENSOR(float) input) {
 
     return output;
 }
+
+/*
+TENSOR(float) FlattenLayer::forward(TENSOR(float) input) {
+    oldx = input[0].size();
+    oldy = input[0][0].size();
+    oldz = input[0][0][0].size();
+
+    TENSOR(float) output = TENSOR(float)(input.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(oldz * oldy * oldx))));
+
+    for (int b = 0; b < input.size(); b++) {
+        for (int x = 0; x < oldx; x++) {
+            for (int y = 0; y < oldy; y++) {
+                for (int z = 0; z < oldz; z++) {
+                    output[b][0][0][x *oldy * oldx + y * oldz + z] = input[b][x][y][z];
+                }
+            }
+        }
+    }
+
+    return output;
+}
+*/
 
 
 TENSOR(float) FlattenLayer::backprob(TENSOR(float) updates, float learningrate) {

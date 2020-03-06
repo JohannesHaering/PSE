@@ -77,9 +77,9 @@ ConvolutionLayer::Convolute(MATRIX_3D(float) net, MATRIX_3D(float) filter, int s
 TENSOR(float)
 ConvolutionLayer::forward(TENSOR(float) net)
 {
-  this->net = net; //store it for backprop
   if (net[0].size() != filterSizeZ)
-    std::cout << "ERROR, Z-DIMMENSION MISMATCH!" << std::endl;
+    throw std::invalid_argument( "ERROR, Z-DIMMENSION MISMATCH!" );
+  this->net = net; //store it for backprop
 
   if (padding == 0 && stride == 1)
   { //first 2 Dimensions indipendent of stride and padding

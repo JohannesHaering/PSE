@@ -64,6 +64,9 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
       DeviceType type = std::get<0>(it);
       NeuralNetworkAdapter network = std::get<1>(it);
       TENSOR(float) input = std::get<2>(it);
+      if (input.size() == 0) {
+        throw std::invalid_argument( "Can't dispatch no images." );
+      }
       std::vector<std::string> directories = std::get<3>(it);
       network.setMode(type);
       std::cout<< type << std::endl;

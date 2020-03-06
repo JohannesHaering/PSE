@@ -57,6 +57,8 @@ std::vector<float> DenseLayer::get_biase()
 
 TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 {
+  if (net[0][0][0].size() != weights[0].size())
+    throw std::invalid_argument( "ERROR, Z-DIMMENSION MISMATCH!" );
 	net = new_input;//store it for backprop
 	output_forward = layerStrategy->forward(new_input);
 	return output_forward;

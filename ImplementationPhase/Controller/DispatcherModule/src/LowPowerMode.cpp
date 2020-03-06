@@ -15,6 +15,9 @@ LowPowerMode::LowPowerMode() : Mode("LowPowerMode") {}
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> LowPowerMode::getImageDistribution(std::list<std::string> imageList)
 {
 
+  if (imageList.size() == 0) {
+    throw std::invalid_argument( "Cant split zero images" );
+  }
   std::list<Device> deviceList = this->getAllowedDeviceList();
   if (deviceList.size() == 0)
     return getTrivialDistribution(imageList);

@@ -22,6 +22,9 @@ std::list<NeuralNetworkAdapter> Mode::getNeuralNetworkList() { return neuralNetw
 //std::list<Device, std::list<NeuralNetworkAdapter>, std::list<image>> Mode::getImageDistribution(std::list<cv::Mat>) = 0;
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> Mode::getTrivialDistribution(std::list<std::string> imageList){
   
+  if (imageList.size() == 0) {
+    throw std::invalid_argument( "Cant split zero images" );
+  }
   std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> result;
   for (auto nnit : neuralNetworkList) {
     std::vector<std::string> dirVector = std::vector<std::string>(imageList.begin(), imageList.end());
