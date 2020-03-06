@@ -73,27 +73,6 @@ std::list<cv::Mat> ImageFacade::getImagesFromTxtFile(std::string path, int width
 	return getImages(paths, width, height, channelNumb);
 }
 
-cv::Mat ImageFacade::getImageFromCamera(int deviceId, int width, int height, int channelNumb)
-{
-	auto cameraHandler = CameraHandler(deviceId, 30);
-	cv::Mat capturedImage = cameraHandler.getNextFrame();
-	cv::Mat parsedCapturedImage = ImageParserWithSizing(width, height, channelNumb).parse(capturedImage);
-	return parsedCapturedImage;
-}
-
-std::list<cv::Mat> ImageFacade::getImagesFromVideo(std::string path, int width, int height, int channelNumb)
-{
-	auto video = VideoFileIO().readFile(path).getData();
-	auto videoHandler = VideoHandler(1);
-	std::list<cv::Mat> frames = videoHandler.handleVideo(video);
-	std::list<cv::Mat> parsedFrames;
-	for (auto it = frames.begin(); it != frames.end(); ++it)
-	{
-		parsedFrames.push_back(ImageParserWithSizing(width, height, channelNumb).parse(*it));
-	}
-	return parsedFrames;
-}
-
 bool ImageFacade::writeImage(std::string path, cv::Mat image)
 {
 	return ImageFileIO().writeFile(Data<cv::Mat>(image), path);
@@ -116,7 +95,7 @@ TENSOR(float) ImageFacade::createImageTensor(std::vector<cv::Mat> images, int wi
 		std::vector<float> image = ImageParserWithSizing(width, height, 1).parseFloatsGreyScale(images[i]);
     std::cout<<"Parsed Image" <<std::endl;
     std::cout<<"Width"<<width<<" Height" << height << std::endl;
-    std::cout<<image.size()<<std::endl;   
+    std::cout<<image.size()<<std::endl;
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
         std::cout << "Copying at" << y << x << std::endl;
