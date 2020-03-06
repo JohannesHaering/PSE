@@ -30,7 +30,7 @@ DenseLayer::DenseLayer(int inputSize, int outputSize, float learningRate) : inpu
 	float sum = 0;
 	for (int i = 0; i < inputSize; i++)
 		for (int j = 0; j < outputSize; j++) sum += weights[i][j];
-	std::cout << "init sum: " << sum << std::endl;
+//	std::cout << "init sum: " << sum << std::endl;
 
 	layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
 }
@@ -57,8 +57,6 @@ std::vector<float> DenseLayer::get_biase()
 
 TENSOR(float) DenseLayer::forward(TENSOR(float) new_input)
 {
-  if (net[0][0][0].size() != weights[0].size())
-    throw std::invalid_argument( "ERROR, Z-DIMMENSION MISMATCH!" );
 	net = new_input;//store it for backprop
 	output_forward = layerStrategy->forward(new_input);
 	return output_forward;

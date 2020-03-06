@@ -17,7 +17,6 @@
 // other information
 void LayerParser::extractGeneralInformation(std::string toParse)
 {
-  std::cout<<"STARTED"<<std::endl;
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
 	std::list<std::string>::iterator it = lines.begin();
 	std::list<std::string> firstLine = Parser::splitBySymbol(*it, VALUE_TYPE_DELIMETER);
@@ -57,7 +56,6 @@ void LayerParser::extractGeneralInformation(std::string toParse)
 
 	std::string zString = *(--fithLine.end());
 	z = ::atoi(zString.c_str());
-  std::cout<<"GENERAL PARSED"<<std::endl;
 }
 
 std::string LayerParser::removeCharacter(std::string text, char toErase)

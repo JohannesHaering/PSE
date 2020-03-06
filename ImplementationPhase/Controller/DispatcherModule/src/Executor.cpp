@@ -14,11 +14,12 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
 
     TENSOR(float) tmp = input;
     TENSOR(float) output;
-
+    std::cout << "started" << std::endl;
     for (std::list<NetworkLayer*>::iterator layer = neuralNetwork->begin(); layer != neuralNetwork->end(); layer++)
     {
 		  output = (*layer)->forward(tmp);
 		  tmp = output;
+      std::cout << "durchgang durch"<< std::endl;
     }
     std::cout << "returning from forward" << std::endl;
     return output;

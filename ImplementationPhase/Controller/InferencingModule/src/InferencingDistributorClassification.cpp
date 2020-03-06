@@ -40,7 +40,7 @@ void InferencingDistributorClassification::startProcess()
     std::vector<Device> platforms = page->getDevices();
 	std::list<Device> platformlist(platforms.begin(), platforms.end());
 	std::list<std::string> dirlist(directories.begin(), directories.end());
-    std::cout << platformlist.size() << std::endl;
+    std::cout << "Platforms" <<platformlist.size() << std::endl;
     int opMode = page->getOperatingMode();
     std::list<cv::Mat> imglist = ImageFacade().getImages(dirlist, 0, 0, 0);
     images = std::vector<cv::Mat>(imglist.begin(), imglist.end());

@@ -69,7 +69,6 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
       }
       std::vector<std::string> directories = std::get<3>(it);
       network.setMode(type);
-      std::cout<< type << std::endl;
       executor = new Executor(&network);
       output = executor->execute(input);
       for (int i = 0; i < directories.size(); i++) {

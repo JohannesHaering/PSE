@@ -87,8 +87,7 @@ ConvolutionLayer::forward(TENSOR(float) net)
   }
   else
   {
-    std::cout << "not supporting stride != 1 or padding != 0" << std::endl;
-    return output_forward;
+    throw std::invalid_argument( "not supporting stride != 1 or padding != 0");
   }
   for (int b = 0; b < net.size(); b++)
   {

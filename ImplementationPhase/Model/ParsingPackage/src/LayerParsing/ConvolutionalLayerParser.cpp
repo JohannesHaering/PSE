@@ -49,7 +49,6 @@ NetworkLayer* ConvolutionalLayerParser::parse(std::string toParse)
     TENSOR(float) tensor = LayerParser::parse4DFloatArray(valuePart);
 
     factory.setWeightTensors(tensor);
-    std::cout << "Returning convlayer" << std::endl;
     return factory.buildLayer();
 }
 

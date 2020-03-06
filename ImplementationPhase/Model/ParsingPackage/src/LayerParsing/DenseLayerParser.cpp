@@ -14,7 +14,6 @@
 
 NetworkLayer* DenseLayerParser::parse(std::string toParse)
 {
-  std::cout << "Starting dense" << std::endl;
   //LayerParser::extractGeneralInformation(toParse);
   DenseLayerFactory factory = DenseLayerFactory();
 	//factory.setInputDimensions(LayerParser::inputDimensions);
@@ -30,19 +29,15 @@ NetworkLayer* DenseLayerParser::parse(std::string toParse)
 		throw std::invalid_argument("Wrong format");
   }
   ++parts1It;
-  std::cout << "before mat" << std::endl;
 	factory.setMatrix(LayerParser::parse2DFloatArray(*parts1It));
-  std::cout << "after mat" << std::endl;
 	++it;
 
 	std::list<std::string> val2 = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
 	auto parts2It = val2.begin();
-  std::cout << *parts2It << std::endl;
 	if (*parts2It != BIASES)
 		throw std::invalid_argument("Wrong format");
 	++parts2It;
   factory.setBiases(LayerParser::parseFloatArray(*parts2It));
-  std::cout << "Returning dense" << std::endl;
   return factory.buildLayer();
 }
 
