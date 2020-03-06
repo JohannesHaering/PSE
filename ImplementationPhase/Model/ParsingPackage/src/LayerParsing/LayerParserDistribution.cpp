@@ -35,10 +35,10 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 		return parseDenseLayer(toParse);
 	}
 	else if (firstLine.compare(ACTIVATION) == 0) {
-    return ActivationLayerParser().parse(toParse);
+    		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(MAXPOOL) == 0) {
-		return new MaxPoolLayer();
+		return MaxPoolLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
 		return ConvolutionalLayerParser().parse(toParse);
