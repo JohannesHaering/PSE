@@ -14,7 +14,7 @@
 
 TEST(ActivationLayerParserTest, valid)
 {
-  std::string in = "inputdim=[1,2,3]\nfunction=relu";
+  std::string in = "function=relu";
   NetworkLayer* layer = ActivationLayerParser().parse(in);
   EXPECT_EQ(LayerType::RELU, layer->getLayerType());
 }

@@ -14,10 +14,10 @@ TEST(DetectionResultFactoryTest, valid)
   std::list<ClassProbability> probabilities = std::list<ClassProbability>();
   probabilities.push_back(ClassProbability("name", 0.1));
   BoundingBox boundingBox = BoundingBoxFactory().build(0.1, 0.1, 0.1, 0.1, probabilities);
-  EXPECT_EQ(0.1, boundingBox.getX());
-  EXPECT_EQ(0.1, boundingBox.getY());
-  EXPECT_EQ(0.1, boundingBox.getWidth());
-  EXPECT_EQ(0.1, boundingBox.getHeight());
+  EXPECT_NEAR(0.1, boundingBox.getX(), 0.001);
+  EXPECT_NEAR(0.1, boundingBox.getY(), 0.001);
+  EXPECT_NEAR(0.1, boundingBox.getWidth(),0.001);
+  EXPECT_NEAR(0.1, boundingBox.getHeight(), 0.001);
   EXPECT_EQ(probabilities.size(), boundingBox.getProbabilities().size());
   std::list<BoundingBox> bbs = std::list<BoundingBox>();
   bbs.push_back(boundingBox);
