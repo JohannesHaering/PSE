@@ -55,9 +55,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   DeviceType type;
   if (dev.compare("CPU") == 0){
     type = DeviceType::CPU;
-  } 
-  else if (dev.compare("ASIC") == 0) {
-    type = DeviceType::ASIC;
   } else {
      type = DeviceType::CPP; 
   }

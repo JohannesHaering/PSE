@@ -3,8 +3,7 @@
 
 enum DeviceType {
   CPP,
-  CPU,
-  ASIC
+  CPU
 };
 
 #endif

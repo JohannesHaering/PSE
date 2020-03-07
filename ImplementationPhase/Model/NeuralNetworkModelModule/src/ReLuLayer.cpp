@@ -1,6 +1,5 @@
 #include "ReLuLayer.hpp"
 #include "ReLuLayerCPP.hpp"
-#include "ReLuLayerASIC.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 
@@ -36,9 +35,6 @@ void ReLuLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new ReLuLayerCPP();
-        break;
-    case DeviceType::ASIC :
-        layerStrategy = new ReLuLayerASIC();
         break;
     case DeviceType::CPU :
         break;
