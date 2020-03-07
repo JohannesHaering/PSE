@@ -36,9 +36,3 @@ TEST(LayerBackParserTest, valid)
   ConvolutionalLayer *layer = new ConvolutionLayer(tensor, 0, 0);
   EXPECT_EQ("[convolutional]\ntensor=[[[[1.000000]]]]\n", ConvolutionalLayerParser().parseBack(layer));
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

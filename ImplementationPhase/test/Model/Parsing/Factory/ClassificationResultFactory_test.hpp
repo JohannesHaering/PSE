@@ -16,9 +16,3 @@ TEST(FactoryTest, valid)
   EXPECT_EQ("nn", result->getNeuralNetworkID());
   EXPECT_EQ(1, result->getProbabilities().size());
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

@@ -22,9 +22,3 @@ TEST(LayerBackParserTest, valid)
    MaxPoolLayer* layer = new MaxPoolLayer();
    EXPECT_EQ("[maxpool]\n", MaxPoolLayerParser().parseBack(layer));
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

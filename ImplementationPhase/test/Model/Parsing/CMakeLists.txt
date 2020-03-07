@@ -1,61 +1,32 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(BoundingBoxParserTest "BoundingBoxParser_test.cpp")
-target_link_libraries(BoundingBoxParserTest PUBLIC BOUNDINGBOXPARSER BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULTPARSER PARSER)
-
-add_executable(ClassificationResultParserTest "ClassificationResultParser_test.cpp")
-target_link_libraries(ClassificationResultParserTest PUBLIC CLASSIFICATIONRESULTPARSER PARSER FACTORY CLASSIFICATIONRESULT CLASSPROBABILITY CLASSPROBABILITYPARSER)
-
-add_executable(ClassProbabbilityParserTest "ClassProbabilityParser_test.cpp")
-target_link_libraries(ClassProbabbilityParserTest PUBLIC CLASSPROBABILITYPARSER PARSER FACTORY CLASSPROBABILITY)
-
-add_executable(DetectionResultParserTest "DetectionResultParser_test.cpp")
-target_link_libraries(DetectionResultParserTest PUBLIC DETECTIONRESULTPARSER FACTORY PARSER BOUNDINGBOXPARSER DETECTIONRESULT)
-
-add_executable(DetectionDataParserTest "DetectionDataParser_test.cpp")
-target_link_libraries(DetectionDataParserTest PUBLIC DETECTIONDATAPARSER PARSER DETECTIONDATA FACTORY)
-
-add_executable(ImageLocationParserTest "ImageLocationParser_test.cpp")
-target_link_libraries(ImageLocationParserTest PUBLIC IMAGEPARSING)
-
-add_executable(LineBreakParserTest "LineBreakParser_test.cpp")
-target_link_libraries(LineBreakParserTest PUBLIC LINEBREAKPARSER)
-
-add_executable(ParserTest "Parser_test.cpp")
-target_link_libraries(ParserTest PUBLIC PARSER)
-
-add_executable(SingleDetectionDatasetParserTest "SingleDetectionDatasetParser_test.cpp")
-target_link_libraries(SingleDetectionDatasetParserTest PUBLIC DETECTIONDATAPARSER PARSER DETECTIONDATA)
-
-add_executable(ActivationLayerFactoryTest "Factory/ActivationLayerFactory_test.cpp")
-target_link_libraries(ActivationLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER ACTIVATIONLAYER)
-
-add_executable(ConvolutionalFactoryTest "Factory/ConvolutionalLayerFactory_test.cpp")
-target_link_libraries(ConvolutionalFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER CONVOLUTIONLAYER)
-
-add_executable(DenseLayerFactoryTest "Factory/DenseLayerFactory_test.cpp")
-target_link_libraries(DenseLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER DENSELAYER)
-
-add_executable(FlattenLayerFactoryTest "Factory/FlattenLayerFactory_test.cpp")
-target_link_libraries(FlattenLayerFactoryTest PUBLIC NEURALNETWORKFACTORY NETWORKLAYER FLATTENLAYER)
-
-add_executable(BoundingBoxFactoryTest "Factory/BoundingBoxFactory_test.cpp")
-target_link_libraries(BoundingBoxFactoryTest PUBLIC FACTORY BOUNDINGBOX CLASSPROBABILITY CLASSIFICATIONRESULT)
-
-add_executable(ClassificationResultFactoryTest "Factory/ClassificationResultFactory_test.cpp")
-target_link_libraries(ClassificationResultFactoryTest PUBLIC FACTORY CLASSPROBABILITY CLASSIFICATIONRESULT)
-
-add_executable(ActivationLayerParserTest "LayerParsing/ActivationLayerParser_test.cpp")
-target_link_libraries(ActivationLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER ACTIVATIONLAYER)
-
-add_executable(DenseLayerParserTest "LayerParsing/DenseLayerParser_test.cpp")
-target_link_libraries(DenseLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER DENSELAYER)
-
-add_executable(FlattenLayerParserTest "LayerParsing/FlattenLayerParser_test.cpp")
-target_link_libraries(FlattenLayerParserTest PUBLIC LAYERPARSER NETWORKLAYER FLATTENLAYER)
-
-add_executable(NeuralNetworkParserTest "NeuralNetworkParser_test.cpp")
-target_link_libraries(NeuralNetworkParserTest PUBLIC NETWORKLAYER NEURALNETWORKPARSER NEURALNETWORK RELULAYER)
-
-add_executable(ImageParserWithSizingTest "ImageParserWithSizing_test.cpp")
-target_link_libraries(ImageParserWithSizingTest PUBLIC IMAGEPARSING ${OpenCV_LIBS})
+add_executable(ParsingPackageTest "ParsingPackageTest.cpp")
+target_link_libraries(ParsingPackageTest PUBLIC CLASSIFICATIONRESULTPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC CLASSPROBABILITYPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC DETECTIONRESULTPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC IMAGEPARSING)
+target_link_libraries(ParsingPackageTest PUBLIC LINEBREAKPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC PARSER)
+target_link_libraries(ParsingPackageTest PUBLIC DETECTIONDATAPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC ACTIVATIONLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC CONVOLUTIONLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC DENSELAYER)
+target_link_libraries(ParsingPackageTest PUBLIC FLATTENLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC ACTIVATIONLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC DENSELAYER)
+target_link_libraries(ParsingPackageTest PUBLIC FLATTENLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC RELULAYER)
+target_link_libraries(ParsingPackageTest PUBLIC ${OpenCV_LIBS})
+target_link_libraries(ParsingPackageTest PUBLIC NEURALNETWORKFACTORY)
+target_link_libraries(ParsingPackageTest PUBLIC NETWORKLAYER)
+target_link_libraries(ParsingPackageTest PUBLIC NEURALNETWORKPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC NEURALNETWORK)
+target_link_libraries(ParsingPackageTest PUBLIC LAYERPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC FACTORY)
+target_link_libraries(ParsingPackageTest PUBLIC BOUNDINGBOX)
+target_link_libraries(ParsingPackageTest PUBLIC CLASSPROBABILITY)
+target_link_libraries(ParsingPackageTest PUBLIC CLASSIFICATIONRESULT)
+target_link_libraries(ParsingPackageTest PUBLIC DETECTIONDATA)
+target_link_libraries(ParsingPackageTest PUBLIC BOUNDINGBOXPARSER)
+target_link_libraries(ParsingPackageTest PUBLIC DETECTIONRESULT)
+target_link_libraries(ParsingPackageTest PUBLIC CLASSPROBABILITYPARSER)

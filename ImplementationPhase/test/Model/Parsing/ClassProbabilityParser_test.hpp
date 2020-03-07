@@ -24,9 +24,3 @@ TEST(ParseBackTest, valid)
     ClassProbability in = ClassProbability("name", 1);
     EXPECT_EQ("name:1.000000", ClassProbabilityParser().parseBack(in));
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

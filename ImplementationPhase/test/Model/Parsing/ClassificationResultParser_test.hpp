@@ -30,9 +30,3 @@ TEST(ParseBackTest, valid)
     std::string out = ClassificationResultParser().parseBack(in);
     EXPECT_EQ("i#nn#name1:1.000000", out);
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

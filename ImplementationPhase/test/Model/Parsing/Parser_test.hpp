@@ -16,9 +16,3 @@ TEST(SplitSymbolTest, twoParts)
   EXPECT_EQ("foo", val1);
   EXPECT_EQ("bar", val2);
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

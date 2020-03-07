@@ -31,9 +31,3 @@ TEST(LayerBackParserTest, valid)
   auto out = ActivationLayerParser().parseBack(layer);
   EXPECT_EQ("[activation]\nfunction=relu\n", out);
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

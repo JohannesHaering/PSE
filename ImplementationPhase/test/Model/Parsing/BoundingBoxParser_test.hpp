@@ -31,9 +31,3 @@ TEST(ParseBackTest, valid)
     std::string out = BoundingBoxParser().parseBack(BoundingBox(0.2f, 0.3f, 0.4f, 0.5f, list));
     EXPECT_EQ("0.200000$0.300000$0.400000$0.500000$name:1.000000", out);
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

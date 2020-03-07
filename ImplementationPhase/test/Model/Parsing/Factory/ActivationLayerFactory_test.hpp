@@ -28,8 +28,3 @@ TEST(LEAKYRELU, valid){
     NetworkLayer *layer = ActivationLayerFactory().setActivation(LayerType::LEAKYRELU)->buildLayer();
     EXPECT_EQ(LayerType::LEAKYRELU, layer->getLayerType());
 }
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

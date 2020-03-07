@@ -34,9 +34,3 @@ TEST(LayerBackParserTest, valid)
   layer->set_weights(tensor);
   EXPECT_EQ("[dense]\ntensor=[[1.000000]]\nbias=[1.000000]\n", DenseLayerParser().parseBack(layer));
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

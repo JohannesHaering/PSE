@@ -15,9 +15,3 @@ TEST(BuildTest, valid)
  NetworkLayer* layer = DenseLayerFactory().setMatrix(weights)->setBiases(biases)->buildLayer();
   EXPECT_EQ(LayerType::DENSE, layer->getLayerType());
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

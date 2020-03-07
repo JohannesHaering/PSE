@@ -18,8 +18,3 @@ TEST(BuildTest, valid){
     NetworkLayer* layer = ConvolutionalLayerFactory().setPadding(1)->setStride(1)->setWeightTensors(weights)->buildLayer();
     EXPECT_EQ(LayerType::CONVOLUTION, layer->getLayerType());
 }
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

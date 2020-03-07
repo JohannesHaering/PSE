@@ -18,9 +18,3 @@ TEST(FactoryTest, valid)
   EXPECT_NEAR(0.1, boundingBox.getHeight(), 0.01);
   EXPECT_EQ(1, boundingBox.getProbabilities().size());
 }
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
