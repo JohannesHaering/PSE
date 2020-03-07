@@ -11,18 +11,18 @@
 
 TEST(DetectionResultFactoryTest, valid)
 {
-  auto probabilities = std::list<ClassProbability>();
+  std::list<ClassProbability> probabilities = std::list<ClassProbability>();
   probabilities.push_back(ClassProbability("name", 0.1));
-  auto boundingBox = BoundingBoxFactory().build(0.1, 0.1, 0.1, 0.1, probabilities);
+  BoundingBox boundingBox = BoundingBoxFactory().build(0.1, 0.1, 0.1, 0.1, probabilities);
   EXPECT_EQ(0.1, boundingBox.getX());
   EXPECT_EQ(0.1, boundingBox.getY());
   EXPECT_EQ(0.1, boundingBox.getWidth());
   EXPECT_EQ(0.1, boundingBox.getHeight());
-  EXPECT_EQ(probabilities, boundingBox.getProbabilities());
-  auto bbs = std::list<BoundingBox>();
+  EXPECT_EQ(probabilities.size(), boundingBox.getProbabilities().size());
+  std::list<BoundingBox> bbs = std::list<BoundingBox>();
   bbs.push_back(boundingBox);
-  auto result = DetectionResultFactory().build("i", "nn", bbs);
+  DetectionResult result = DetectionResultFactory().build("i", "nn", bbs);
   EXPECT_EQ("i", result.getImageID());
   EXPECT_EQ("nn", result.getNeuralNetworkID());
-  EXPECT_EQ(bbs, result.getBoundingBoxes());
+  EXPECT_EQ(bbs.size(), result.getBoundingBoxes().size());
 }

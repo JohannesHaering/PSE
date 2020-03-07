@@ -1,10 +1,12 @@
+#pragma once
+
 #include <string>
 #include <list>
 #include <gtest/gtest.h>
 
 #include "LineBreakParser.hpp"
 
-TEST(SplitLinesTest, twoParts)
+TEST(BreakLinesTest, twoParts)
 {
   LineBreakParser<std::string> parser = LineBreakParser<std::string>();
   std::string in = "foo\nbar";

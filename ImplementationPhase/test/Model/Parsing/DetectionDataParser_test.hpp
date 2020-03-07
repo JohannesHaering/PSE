@@ -1,5 +1,7 @@
-#include <gtest/gtest.h>
+#pragma once
+
 #include <string>
+#include <gtest/gtest.h>
 #include <stdexcept>
 #include <list>
 

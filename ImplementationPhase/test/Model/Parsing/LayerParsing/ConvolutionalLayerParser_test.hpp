@@ -33,6 +33,6 @@ TEST(ConvLayerBackParserTest, valid)
   sub2.push_back(sub3);
   sub1.push_back(sub2);
   tensor.push_back(sub1);
-  ConvolutionalLayer *layer = new ConvolutionLayer(tensor, 0, 0);
+  ConvolutionLayer *layer = new ConvolutionLayer(tensor, 0, 0);
   EXPECT_EQ("[convolutional]\ntensor=[[[[1.000000]]]]\n", ConvolutionalLayerParser().parseBack(layer));
 }

@@ -5,6 +5,7 @@
 #include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 #include "ConvolutionalLayerFactory.hpp"
+#include "ConvolutionLayer.hpp"
 
 TEST(ConvBuildTest, valid){
     std::vector<std::vector<std::vector<std::vector<float>>>> weights =std::vector<std::vector<std::vector<std::vector<float>>>>();
