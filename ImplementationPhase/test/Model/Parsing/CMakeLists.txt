@@ -18,11 +18,11 @@ target_link_libraries(DetectionDataParserTest PUBLIC DETECTIONDATAPARSER PARSER 
 add_executable(ImageLocationParserTest "ImageLocationParser_test.cpp")
 target_link_libraries(ImageLocationParserTest PUBLIC IMAGEPARSING)
 
-add_executable(LineBreakParserTest "LineBreakParser_test.cpp")
-target_link_libraries(LineBreakParserTest PUBLIC LINEBREAKPARSER)
+#add_executable(LineBreakParserTest "LineBreakParser_test.cpp")
+#target_link_libraries(LineBreakParserTest PUBLIC LINEBREAKPARSER)
 
 add_executable(ParserTest "Parser_test.cpp")
-target_link_libraries(ParserTest PUBLIC PARSER)
+target_link_libraries(ParserTest PUBLIC PARSER LINEBREAKPARSER)
 
 add_executable(SingleDetectionDatasetParserTest "SingleDetectionDatasetParser_test.cpp")
 target_link_libraries(SingleDetectionDatasetParserTest PUBLIC DETECTIONDATAPARSER PARSER DETECTIONDATA)
