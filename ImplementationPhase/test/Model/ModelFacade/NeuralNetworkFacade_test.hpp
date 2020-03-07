@@ -46,9 +46,3 @@ TEST(SaveNeuralNetworksTest, valid)
     auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
     EXPECT_EQ(true, succes);
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

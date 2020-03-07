@@ -59,8 +59,3 @@ TEST(ImageTensor, valid){
   EXPECT_EQ(tensor[1].size(), 28);
   EXPECT_EQ(tensor[2].size(), 28);
 }
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

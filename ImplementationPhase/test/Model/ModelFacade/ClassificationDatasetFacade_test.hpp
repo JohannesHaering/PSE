@@ -12,8 +12,3 @@ TEST(ClassificationDatasetFacade, valid){
     std::list<ClassificationResult> dataset = ClassificationDatasetFacade().loadDataset(path);
     EXPECT_EQ(2, dataset.size());
 }
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
