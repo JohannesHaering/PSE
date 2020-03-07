@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include "Parser.hpp"
+#include "LineBreakParser_test.hpp"
 
 TEST(SplitSymbolTest, twoParts)
 {
