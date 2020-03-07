@@ -7,7 +7,7 @@
 #include "NetworkLayer.hpp"
 #include "LayerType.hpp"
 
-TEST(BuildTest, valid)
+TEST(FlattenBuildTest, valid)
 {
   NetworkLayer* layer = FlattenLayerFactory().buildLayer();
   EXPECT_EQ(LayerType::FLATTEN, layer->getLayerType());

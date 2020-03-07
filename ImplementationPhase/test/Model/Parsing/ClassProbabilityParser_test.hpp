@@ -5,7 +5,7 @@
 #include "ClassProbabilityParser.hpp"
 #include "ClassProbability.hpp"
 
-TEST(ParseTest, correctBox)
+TEST(ClassProbabilityParseTest, correctBox)
 {
     std::string toParse = "name:1";
     ClassProbability out = ClassProbabilityParser().parse(toParse);
@@ -13,13 +13,13 @@ TEST(ParseTest, correctBox)
     EXPECT_EQ(out.getProbability(), 1);
 }
 
-TEST(ParseTest, notValid)
+TEST(ClassProbabilityParseTest, notValid)
 {
     std::string toParse = "name1";
     EXPECT_THROW(ClassProbabilityParser().parse(toParse), std::invalid_argument);
 }
 
-TEST(ParseBackTest, valid)
+TEST(ClassProbabilityParseBackTest, valid)
 {
     ClassProbability in = ClassProbability("name", 1);
     EXPECT_EQ("name:1.000000", ClassProbabilityParser().parseBack(in));

@@ -4,7 +4,7 @@
 
 #include "ImageLocationParser.hpp"
 
-TEST(SplitLinesTest, twoParts)
+TEST(ImageLocationParserTest, twoParts)
 {
   ImageLocationParser parser = ImageLocationParser();
   std::string in = "foo\nbar";

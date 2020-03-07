@@ -10,20 +10,20 @@
 #include "ConvolutionalLayerParser.hpp"
 #include "ConvolutionLayer.hpp"
 
-TEST(LayerParserTest, valid)
+TEST(ConvLayerParserTest, valid)
 {
   std::string in = "tensor=[[[[1]]]]";
   NetworkLayer* layer = ConvolutionalLayerParser().parse(in);
   EXPECT_EQ(LayerType::CONVOLUTION, layer->getLayerType());
 }
 
-TEST(LayerParserTest, invalid)
+TEST(ConvLayerParserTest, invalid)
 {
   std::string in = "tesor=[[[[1]]]]";
   EXPECT_THROW(ConvolutionalLayerParser().parse(in), std::invalid_argument);
 }
 
-TEST(LayerBackParserTest, valid)
+TEST(ConvLayerBackParserTest, valid)
 {
   auto tensor = std::vector<std::vector<std::vector<std::vector<float>>>>();
   auto sub1 = std::vector<std::vector<std::vector<float>>>();

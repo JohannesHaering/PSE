@@ -3,7 +3,7 @@
 
 #include "ImageParserWithSizing.hpp"
 
-TEST(ParserTest, valid)
+TEST(ImageParserTest, valid)
 {
   cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
   ImageParserWithSizing parser = ImageParserWithSizing(24, 24, 3);

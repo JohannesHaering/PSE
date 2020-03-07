@@ -12,20 +12,20 @@
 #include "ActivationLayerParser.hpp"
 #include "ReLuLayer.hpp"
 
-TEST(LayerParserTest, valid)
+TEST(ActivationLayerParserTest, valid)
 {
   std::string in = "inputdim=[1,2,3]\nfunction=relu";
   NetworkLayer* layer = ActivationLayerParser().parse(in);
   EXPECT_EQ(LayerType::RELU, layer->getLayerType());
 }
 
-TEST(LayerParserTest, invalid)
+TEST(ActivationLayerParserTest, invalid)
 {
   std::string in = "x=[1,2,3]\nfunction=reu";
   EXPECT_THROW(ActivationLayerParser().parse(in), std::invalid_argument);
 }
 
-TEST(LayerBackParserTest, valid)
+TEST(ActivationLayerBackParserTest, valid)
 {
   NetworkLayer* layer = new ReLuLayer();
   auto out = ActivationLayerParser().parseBack(layer);

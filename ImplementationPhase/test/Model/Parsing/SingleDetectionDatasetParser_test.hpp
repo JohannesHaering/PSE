@@ -10,7 +10,7 @@
 #include "SingleDetectionDataset.hpp"
 #include "SingleDetectionDatasetParser.hpp"
 
-TEST(ParseTest, valid)
+TEST(SingleDetectionDatasetParseTest, valid)
 {
     std::string in = "image\npath\n0.1|0.2$0.3$0.4$0.5$name1:1/name2:0";
     SingleDetectionDataset out = SingleDetectionDatasetParser().parse(in);

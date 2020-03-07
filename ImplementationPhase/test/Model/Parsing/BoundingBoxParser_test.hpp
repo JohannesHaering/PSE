@@ -7,7 +7,7 @@
 #include "BoundingBox.hpp"
 #include "ClassProbability.hpp"
 
-TEST(ParseTest, valid)
+TEST(BoundingBoxParseTest, valid)
 {
     std::string in = "0.2$0.3$0.4$0.5$name1:1/name2:0";
     BoundingBox out = BoundingBoxParser().parse(in);
@@ -18,13 +18,13 @@ TEST(ParseTest, valid)
     EXPECT_EQ(out.getProbabilities().size(), 2);
 }
 
-TEST(ParseTest, invalid)
+TEST(BoundingBoxParseTest, invalid)
 {
     std::string in = "0.2$0.3$0.4$name1:1/name2:0";
     EXPECT_THROW(BoundingBoxParser().parse(in), std::invalid_argument);
 }
 
-TEST(ParseBackTest, valid)
+TEST(BoundingBoxParseBackTest, valid)
 {
     std::list<ClassProbability> list = std::list<ClassProbability>();
     list.push_back(ClassProbability("name", 1));

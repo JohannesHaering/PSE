@@ -8,7 +8,7 @@
 #include "ClassProbability.hpp"
 #include "DetectionResultParser.hpp"
 
-TEST(ParseTest, valid)
+TEST(DetectionResultParseTest, valid)
 {
     std::string in = "i#nn#0.2$0.3$0.4$0.5$name1:1/name2:0|0.2$0.3$0.4$0.5$name1:1/name2:0";
     DetectionResult out = DetectionResultParser().parse(in);
@@ -17,13 +17,13 @@ TEST(ParseTest, valid)
     EXPECT_EQ(2, out.getBoundingBoxes().size());
 }
 
-TEST(ParseTest, invalid)
+TEST(DetectionResultParseTest, invalid)
 {
     std::string in = "i#nn#0.2$0.3$0.5$name1:1/name2:0";
     EXPECT_THROW(DetectionResultParser().parse(in), std::invalid_argument);
 }
 
-TEST(ParseBackTest, valid)
+TEST(DetectionResultParseBackTest, valid)
 {
     std::list<ClassProbability> list = std::list<ClassProbability>();
     list.push_back(ClassProbability("name", 1));

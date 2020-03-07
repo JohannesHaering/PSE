@@ -10,14 +10,14 @@
 #include "MaxPoolLayerParser.hpp"
 #include "MaxPoolLayer.hpp"
 
-TEST(LayerParserTest, valid)
+TEST(MaxPoolLayerParserTest, valid)
 {
   std::string in = "";
 NetworkLayer* layer = MaxPoolLayerParser().parse(in);
   EXPECT_EQ(LayerType::POLLING, layer->getLayerType());
 }
 
-TEST(LayerBackParserTest, valid)
+TEST(MaxPoolLayerBackParserTest, valid)
 {
    MaxPoolLayer* layer = new MaxPoolLayer();
    EXPECT_EQ("[maxpool]\n", MaxPoolLayerParser().parseBack(layer));

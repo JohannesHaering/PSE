@@ -7,7 +7,7 @@
 #include "NeuralNetworkParser.hpp"
 #include "ReLuLayer.hpp"
 
-TEST(Parse, valid)
+TEST(NeuralNetworkParse, valid)
 {
 	std::string in = "[nn]\nlabels=name1,name2\nheight=64\nwidth=64\nchannels=3\n[activation]\nfunction=relu\n";
 	auto network = NeuralNetworkParser().parse(in);
@@ -16,7 +16,7 @@ TEST(Parse, valid)
 	EXPECT_EQ(3, network.getChannels());
 }
 
-TEST(ParseBack, invalid)
+TEST(NeuralNetworkParseBack, invalid)
 {
 	NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
 	ReLuLayer* layer = new  ReLuLayer();

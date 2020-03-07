@@ -8,7 +8,7 @@
 #include "LayerType.hpp"
 #include "MatrixDefine.hpp"
 
-TEST(BuildTest, valid)
+TEST(DenseBuildTest, valid)
 {
     MATRIX_2D(float) weights = MATRIX_2D(float)(5, std::vector<float>(5));
     std::vector<float> biases = std::vector<float>(5);

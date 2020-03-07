@@ -6,7 +6,7 @@
 #include "LayerType.hpp"
 #include "ConvolutionalLayerFactory.hpp"
 
-TEST(BuildTest, valid){
+TEST(ConvBuildTest, valid){
     std::vector<std::vector<std::vector<std::vector<float>>>> weights =std::vector<std::vector<std::vector<std::vector<float>>>>();
     std::vector<std::vector<std::vector<float>>> sub1 = std::vector<std::vector<std::vector<float>>>();
     std::vector<std::vector<float>> sub2 = std::vector<std::vector<float>>();

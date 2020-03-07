@@ -10,14 +10,14 @@
 #include "FlattenLayerParser.hpp"
 #include "FlattenLayer.hpp"
 
-TEST(LayerParserTest, valid)
+TEST(FlattenLayerParserTest, valid)
 {
   std::string in = "";
 NetworkLayer* layer = FlattenLayerParser().parse(in);
   EXPECT_EQ(LayerType::FLATTEN, layer->getLayerType());
 }
 
-TEST(LayerBackParserTest, valid)
+TEST(FlattenLayerBackParserTest, valid)
 {
    FlattenLayer* layer = new FlattenLayer();
    EXPECT_EQ("[flatten]\n", FlattenLayerParser().parseBack(layer));

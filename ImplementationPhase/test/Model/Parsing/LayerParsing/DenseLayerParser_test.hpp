@@ -10,20 +10,20 @@
 #include "DenseLayerParser.hpp"
 #include "DenseLayer.hpp"
 
-TEST(LayerParserTest, valid)
+TEST(DenseLayerParserTest, valid)
 {
   std::string in = "tensor=[[1]]\nbias=[1]";
   NetworkLayer* layer = DenseLayerParser().parse(in);
   EXPECT_EQ(LayerType::DENSE, layer->getLayerType());
 }
 
-TEST(LayerParserTest, invalid)
+TEST(DenseLayerParserTest, invalid)
 {
   std::string in = "\nteor=[[1]]";
   EXPECT_THROW(DenseLayerParser().parse(in), std::invalid_argument);
 }
 
-TEST(LayerBackParserTest, valid)
+TEST(DenseLayerBackParserTest, valid)
 {
   auto tensor = std::vector<std::vector<float>>();
   auto sub1 = std::vector<float>();

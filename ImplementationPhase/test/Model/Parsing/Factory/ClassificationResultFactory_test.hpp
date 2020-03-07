@@ -7,7 +7,7 @@
 #include "ClassProbability.hpp"
 #include "ClassificationResult.hpp"
 
-TEST(FactoryTest, valid)
+TEST(ClassificationResultFactoryTest, valid)
 {
   std::list<ClassProbability> probabilities = std::list<ClassProbability>();
   probabilities.push_back(ClassProbability("name", 0.1));

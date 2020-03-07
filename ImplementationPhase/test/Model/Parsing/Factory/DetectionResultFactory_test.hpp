@@ -9,7 +9,7 @@
 #include "BoundingBox.hpp"
 #include "DetectionResult.hpp"
 
-TEST(FactoryTest, valid)
+TEST(DetectionResultFactoryTest, valid)
 {
   auto probabilities = std::list<ClassProbability>();
   probabilities.push_back(ClassProbability("name", 0.1));
