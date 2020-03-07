@@ -7,7 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
-TEST(readFileTest, emptyPath)
+TEST(readImageFileTest, emptyPath)
 {
     auto io = ImageFileIO();
     auto input = io.readFile("");
@@ -15,7 +15,7 @@ TEST(readFileTest, emptyPath)
     EXPECT_EQ(0, mat.total());
 }
 
-TEST(readFileTest, file)
+TEST(readImageFileTest, file)
 {
     auto io = ImageFileIO();
     auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp");
@@ -23,7 +23,7 @@ TEST(readFileTest, file)
     EXPECT_EQ(64*64, mat.total());
 }
 
-TEST(readFileTest, noImageFile)
+TEST(readImageFileTest, noImageFile)
 {
     auto io = ImageFileIO();
     auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testTXT.txt");
@@ -31,7 +31,7 @@ TEST(readFileTest, noImageFile)
 	EXPECT_EQ(0, mat.total());
 }
 
-TEST(readFileTest, notExisting)
+TEST(readImageFileTest, notExisting)
 {
     auto io = ImageFileIO();
 	auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\NotExisting.bmp");
@@ -40,7 +40,7 @@ TEST(readFileTest, notExisting)
 	EXPECT_EQ(0, mat.total());
 }
 
-TEST(writeFileTest, emptyPath)
+TEST(writeImageFileTest, emptyPath)
 {
     auto io = ImageFileIO();
     cv::Mat mat;
@@ -48,7 +48,7 @@ TEST(writeFileTest, emptyPath)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, emptyData)
+TEST(writeImageFileTest, emptyData)
 {
     auto io = ImageFileIO();
     cv::Mat mat;
@@ -56,7 +56,7 @@ TEST(writeFileTest, emptyData)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, file)
+TEST(writeImageFileTest, file)
 {
     auto io = ImageFileIO();
     cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
@@ -64,7 +64,7 @@ TEST(writeFileTest, file)
     EXPECT_EQ(true, success);
 }
 
-TEST(writeFileTest, noTextFile)
+TEST(writeImageFileTest, noTextFile)
 {
     auto io = ImageFileIO();
     cv::Mat mat(64, 64, CV_32F);

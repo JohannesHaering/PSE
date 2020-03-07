@@ -8,7 +8,7 @@
 #include <vector>
 #include <list>
 
-TEST(readFileTest, emptyPath)
+TEST(readImageFilesTest, emptyPath)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -18,7 +18,7 @@ TEST(readFileTest, emptyPath)
     EXPECT_EQ(0, mat.total());
 }
 
-TEST(readFileTest, file)
+TEST(readImageFilesTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -28,7 +28,7 @@ TEST(readFileTest, file)
     EXPECT_EQ(64*64, mat.total());
 }
 
-TEST(readFileTest, noImageFile)
+TEST(readImageFilesTest, noImageFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -38,7 +38,7 @@ TEST(readFileTest, noImageFile)
     EXPECT_EQ(0, mat.total());
 }
 
-TEST(readFileTest, notExisting)
+TEST(readImageFilesTest, notExisting)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -48,7 +48,7 @@ TEST(readFileTest, notExisting)
 	EXPECT_EQ(0, mat.total());
 }
 
-TEST(writeFileTest, emptyPath)
+TEST(writeImageFilesTest, emptyPath)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -60,7 +60,7 @@ TEST(writeFileTest, emptyPath)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, emptyData)
+TEST(writeImageFilesTest, emptyData)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -72,7 +72,7 @@ TEST(writeFileTest, emptyData)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, file)
+TEST(writeImageFilesTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
@@ -84,7 +84,7 @@ TEST(writeFileTest, file)
     EXPECT_EQ(true, success);
 }
 
-TEST(writeFileTest, noTextFile)
+TEST(writeImageFilesTest, noTextFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;

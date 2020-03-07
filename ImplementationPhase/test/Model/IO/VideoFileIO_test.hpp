@@ -7,7 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
-TEST(readFileTest, emptyPath)
+TEST(readVideoFileTest, emptyPath)
 {
 	VideoFileIO io = VideoFileIO();
 	Data<cv::VideoCapture> input = io.readFile("");
@@ -15,7 +15,7 @@ TEST(readFileTest, emptyPath)
 	EXPECT_EQ(false, mat.isOpened());
 }
 
-TEST(readFileTest, noImageFile)
+TEST(readVideoFileTest, noVideoFile)
 {
 	VideoFileIO io = VideoFileIO();
 	Data<cv::VideoCapture> input = io.readFile("..\\..\\Data\\testTXT.txt");
@@ -23,7 +23,7 @@ TEST(readFileTest, noImageFile)
 	EXPECT_EQ(false, mat.isOpened());
 }
 
-TEST(readFileTest, notExisting)
+TEST(readVideoFileTest, notExisting)
 {
 	VideoFileIO io = VideoFileIO();
 	EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.avi"), std::ifstream::failure);

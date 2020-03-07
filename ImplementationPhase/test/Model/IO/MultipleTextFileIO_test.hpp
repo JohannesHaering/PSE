@@ -6,7 +6,7 @@
 #include "Data.hpp"
 #include <list>
 
-TEST(readFileTest, emptyPath)
+TEST(readTextFilesTest, emptyPath)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -15,7 +15,7 @@ TEST(readFileTest, emptyPath)
     EXPECT_EQ("", *(input.getData().begin()));
 }
 
-TEST(readFileTest, file)
+TEST(readTextFilesTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -24,7 +24,7 @@ TEST(readFileTest, file)
     EXPECT_EQ("foo\n", *(input.getData().begin()));
 }
 
-TEST(readFileTest, noTextFile)
+TEST(readTextFilesTest, noTextFile)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -33,7 +33,7 @@ TEST(readFileTest, noTextFile)
     EXPECT_EQ("", *(input.getData().begin()));
 }
 
-TEST(writeFileTest, emptyPath)
+TEST(writeTextFilesTest, emptyPath)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -44,7 +44,7 @@ TEST(writeFileTest, emptyPath)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, emptyData)
+TEST(writeTextFilesTest, emptyData)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -55,7 +55,7 @@ TEST(writeFileTest, emptyData)
     EXPECT_EQ(false, success);
 }
 
-TEST(writeFileTest, file)
+TEST(writeTextFilesTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
@@ -66,7 +66,7 @@ TEST(writeFileTest, file)
     EXPECT_EQ(true, success);
 }
 
-TEST(writeFileTest, noTextFile)
+TEST(writeTextFilesTest, noTextFile)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
