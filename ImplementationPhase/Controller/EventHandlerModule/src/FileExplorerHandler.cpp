@@ -10,17 +10,19 @@
 void FileExplorerHandler::onAction(){
     try {
         std::vector<std::string> res = fetchDirectory();
-        std::cout << "jop" << std::endl;
-        if (res.size() == 0) {
+        std::cout << res.size() << std::endl;
+        for (int i = 0; i < res.size(); i++){
+        if (res[i].compare("") == 0) {
           std::cout << "lul" << std::endl;
           throw std::invalid_argument( "Nothing chosen" );
           std::cout << "lul?" << std::endl;
+        }
         }
         sendDirectory(res);
     }
     catch (const std::invalid_argument& ia)
     {
-        page->showError(ia.what());
+      std::cout<<"caught"<<std::endl;
     }
 }
 

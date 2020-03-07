@@ -43,7 +43,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
     }
     ++deviceIterator;
   }	  
-  std::cout << "Low" << std::endl;
 
   for (auto nnit : neuralNetworkList) {
   std::vector<std::string> dirVector = std::vector<std::string>(imageList.begin(), imageList.end());
@@ -52,7 +51,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   TENSOR(float) tens = ImageFacade().createImageTensor(matVec, nnit.getWidth(), nnit.getHeight());
     
   std::string dev = lowestPowerDevice->getType();
-  std::cout << "Got this" << std::endl;
   
   DeviceType type;
   if (dev.compare("CPU") == 0){
@@ -66,14 +64,12 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   type = DeviceType::CPP;
 
   //std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>* resultEntry;
-  std::cout << "JOJOJO" << std::endl;
   //std::get<0>(*resultEntry) = type;
   //std::get<1>(*resultEntry) = nnit;
   //std::get<2>(*resultEntry) = tens;
   //std::get<3>(*resultEntry) = dirVector;
 
   auto res = std::make_tuple(type, nnit, tens, dirVector);
-  std::cout << "set" << std::endl;
   result.push_back(res);
   }
   return result;
