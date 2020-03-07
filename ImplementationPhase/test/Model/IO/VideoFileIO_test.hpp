@@ -29,8 +29,3 @@ TEST(readFileTest, notExisting)
 	EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.avi"), std::ifstream::failure);
 }
 
-int main(int argc, char** argv)
-{
-	::testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

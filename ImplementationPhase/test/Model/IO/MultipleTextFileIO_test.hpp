@@ -76,10 +76,3 @@ TEST(writeFileTest, noTextFile)
     auto success = io.writeFile(paths, Data<std::list<std::string>>(strings));
     EXPECT_EQ(false, success);
 }
-
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

@@ -50,8 +50,3 @@ TEST(writeFileTest, noTextFile){
     auto success = io.writeFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testBMP.bmp", Data<std::string>("foo"));
     EXPECT_EQ(false, success);
 }
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

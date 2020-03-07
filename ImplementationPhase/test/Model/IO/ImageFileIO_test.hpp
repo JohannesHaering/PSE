@@ -71,9 +71,3 @@ TEST(writeFileTest, noTextFile)
     auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
     EXPECT_EQ(false, success);
 }
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
