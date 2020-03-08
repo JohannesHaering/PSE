@@ -50,6 +50,11 @@ include_directories(
   ${Qt5Widgets_INCLUDE_DIRS}
 )
 
+# set directory for the test Data
+set(TEST_DIR ${CMAKE_CURRENT_BINARY_DIR}/../Data)
+add_definitions( -D_TESTDIR=${TEST_DIR} )
+
+
 add_subdirectory(Model)
 add_subdirectory(Controller)
 add_subdirectory(OpenCLFunctionality)

@@ -1,3 +1,5 @@
+#define TESTDIR _TESTDIR
+
 #include <gtest/gtest.h>
 #include <string>
 #include <vector>
@@ -8,7 +10,7 @@
 
 
 TEST(ClassificationDatasetFacade, valid){
-    std::string path = "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\TestClassificationDataset";
+    std::string path = TESTDIR + "\\readdir\\TestClassificationDataset";
     std::list<ClassificationResult> dataset = ClassificationDatasetFacade().loadDataset(path);
     EXPECT_EQ(2, dataset.size());
 }
