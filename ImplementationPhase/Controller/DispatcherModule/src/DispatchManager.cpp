@@ -53,6 +53,8 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
     ImageFacade* imagefacade = new ImageFacade();
     cv::Mat image;
     TENSOR(float) currentInput;
+
+
     TENSOR(float) output; std::list<Result*> resultList;
     ResultFacade* resultfacade = new ResultFacade();
     std::list<std::string> dirlist = std::list<std::string>(directories.begin(), directories.end());
@@ -68,6 +70,18 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
         throw std::invalid_argument( "Can't dispatch no images." );
       }
       std::vector<std::string> directories = std::get<3>(it);
+    for (int i = 0; i < input[0][0].size(); i++) {
+      for (int j = 0; j < input[0][0][0].size(); j++) {
+        if (input[0][0][j][i] < 0.5f){
+          std::cout << "0" << " | ";
+        }
+        else {
+           //std::cout << round(input[0][0][i][j] * 1000) / 1000<< " | ";
+            std::cout << "1" << " | ";
+        }
+      }
+      std::cout << std::endl;
+    }
       network.setMode(type);
       executor = new Executor(&network);
       output = executor->execute(input);
