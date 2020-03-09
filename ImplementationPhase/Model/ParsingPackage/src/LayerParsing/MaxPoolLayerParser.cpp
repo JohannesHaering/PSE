@@ -7,16 +7,13 @@
 
 NetworkLayer *MaxPoolLayerParser::parse(std::string toParse)
 {
-    LayerParser::extractGeneralInformation(toParse);
-
     NetworkLayer* layer = new MaxPoolLayer();
     return layer;
 }
 
 std::string MaxPoolLayerParser::parseBack(NetworkLayer *layer)
 {
-    std::string output = "";
-    output += saveGeneralInformation(layer);
-
+    std::string output = "[maxpool]";
+    output += "\n";
     return output;
 }

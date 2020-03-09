@@ -1,7 +1,6 @@
 #include "DenseLayer.hpp"
 #include "DenseLayerCPP.hpp"
 #include "DenseLayerCPU.hpp"
-#include "DenseLayerASIC.hpp"
 #include <vector>
 #include <math.h>
 #include <vector>
@@ -73,9 +72,6 @@ void DenseLayer::setMode(DeviceType device) {
     switch(device) {
     case DeviceType::CPP :
         layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
-        break;
-    case DeviceType::ASIC :
-     //   layerStrategy = new DenseLayerASIC();
         break;
     case DeviceType::CPU :
         layerStrategy = new DenseLayerCPU(this, inputSize, outputSize);

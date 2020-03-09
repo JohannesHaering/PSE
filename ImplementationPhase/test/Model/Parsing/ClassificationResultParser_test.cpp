@@ -10,10 +10,10 @@
 TEST(ParseTest, correctBox)
 {
     std::string toParse = "i#nn#name1:1/name2:0";
-    auto out = ClassificationResultParser().parse(toParse);
-    EXPECT_EQ(out.getImageID(), "i");
-    EXPECT_EQ(out.getNeuralNetworkID(), "nn");
-    EXPECT_EQ(out.getProbabilities().size(), 2);
+    ClassificationResult *out = ClassificationResultParser().parse(toParse);
+    EXPECT_EQ(out->getImageID(), "i");
+    EXPECT_EQ(out->getNeuralNetworkID(), "nn");
+    EXPECT_EQ(out->getProbabilities().size(), 2);
 }
 
 TEST(ParseTest, notValid)
@@ -24,10 +24,10 @@ TEST(ParseTest, notValid)
 
 TEST(ParseBackTest, valid)
 {
-    auto list = std::list<ClassProbability>();
+    std::list<ClassProbability> list = std::list<ClassProbability>();
     list.push_back(ClassProbability("name1", 1));
-    auto in = ClassificationResult("i", "nn", list);
-    auto out = ClassificationResultParser().parseBack(in);
+    ClassificationResult in = ClassificationResult("i", "nn", list);
+    std::string out = ClassificationResultParser().parseBack(in);
     EXPECT_EQ("i#nn#name1:1.000000", out);
 }
 

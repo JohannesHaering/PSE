@@ -3,36 +3,12 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(NeuralNetworkModulePackage C CXX)
 
-set(InferenceEngine_DIR "/opt/intel/openvino/inference_engine/share")
-set(Ngraph_DIR "/opt/intel/openvino/deployment_tools/ngraph/cmake")
-
-get_filename_component(CMAKE_PREFIX_PATH "${InferenceEngine_DIR}" ABSOLUTE)
-
-message(STATUS "Looking for inference engine configuration file at: ${CMAKE_PREFIX_PATH}")
-find_package(InferenceEngine 1.1)
-
-get_filename_component(CMAKE_PREFIX_PATH "${Ngraph_DIR}" ABSOLUTE)
-message(STATUS "Looking for ngraph configuration file at: ${CMAKE_PREFIX_PATH}")
-find_package(ngraph)
-
-if (NOT InferenceEngine_FOUND)
-    message(FATAL_ERROR "Inference Engine was not found")
-endif()
-
-if (NOT ngraph_FOUND)
-    message(FATAL_ERROR "Inference Engine was not found")
-endif()
-
 add_library(LAYERTYPE "include/LayerType.hpp")
 target_include_directories(LAYERTYPE PUBLIC "include/")
 
 add_library(NEURALNETWORK "src/NeuralNetwork.cpp" "include/NeuralNetwork.hpp")
 target_include_directories(NEURALNETWORK PUBLIC "include/")
 target_link_libraries(NEURALNETWORK PUBLIC MATRIX_DEFINE NETWORKLAYER ACTIVATIONLAYER DENSELAYER LEAKYRELULAYER RELULAYER SIGMOIDLAYER SOFTMAXLAYER MAXPOOLLAYER FLATTENLAYER CONVOLUTIONLAYER)
-
-add_library(OPENVINO "src/OpenVino/OpenVino.cpp" "include/OpenVino/OpenVino.hpp")
-target_include_directories(OPENVINO PUBLIC "include/OpenVino/")
-target_link_libraries(OPENVINO PUBLIC MATRIX_DEFINE "${NGRAPH_LIBRARIES}" "${InferenceEngine_LIBRARIES}")
 
 add_library(NETWORKLAYER "src/NetworkLayer.cpp" "include/NetworkLayer.hpp")
 target_include_directories(NETWORKLAYER PUBLIC "include/")
@@ -85,17 +61,17 @@ add_library(NETWORKLAYERSTRATEGY "include/NetworkLayerStrategies/NetworkLayerStr
 target_include_directories(NETWORKLAYERSTRATEGY PUBLIC "include/" )
 target_link_libraries(NETWORKLAYERSTRATEGY PUBLIC MATRIX_DEFINE)
 
-add_library(DENSELAYERSTRATEGY "include/NetworkLayerStrategies/DenseLayerStrategy.hpp" "src/NetworkLayerStrategies/DenseLayerCPP.cpp" "include/NetworkLayerStrategies/DenseLayerCPP.hpp" "src/NetworkLayerStrategies/DenseLayerASIC.cpp" "include/NetworkLayerStrategies/DenseLayerASIC.hpp")
+add_library(DENSELAYERSTRATEGY "include/NetworkLayerStrategies/DenseLayerStrategy.hpp" "src/NetworkLayerStrategies/DenseLayerCPP.cpp" "include/NetworkLayerStrategies/DenseLayerCPP.hpp")
 target_include_directories(DENSELAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DENSELAYER MATRIX_DEFINE OPENVINO)
+target_link_libraries(DENSELAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DENSELAYER MATRIX_DEFINE)
 
-add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp" "src/NetworkLayerStrategies/ReLuLayerASIC.cpp" "include/NetworkLayerStrategies/ReLuLayerASIC.hpp")
+add_library(RELULAYERSTRATEGY "include/NetworkLayerStrategies/ReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/ReLuLayerCPP.cpp" "include/NetworkLayerStrategies/ReLuLayerCPP.hpp")
 target_include_directories(RELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(RELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
+target_link_libraries(RELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
-add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp"  "src/NetworkLayerStrategies/LeakyReLuLayerASIC.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerASIC.hpp")
+add_library(LEAKYRELULAYERSTRATEGY "include/NetworkLayerStrategies/LeakyReLuLayerStrategy.hpp" "src/NetworkLayerStrategies/LeakyReLuLayerCPP.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPP.hpp")
 target_include_directories(LEAKYRELULAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
+target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
 #add_library(LEAKYRELULAUERCPU "src/NetworkLayerStrategies/LeakyReLuLayerCPU.cpp" "include/NetworkLayerStrategies/LeakyReLuLayerCPU.hpp")
 #target_include_directories(LEAKYRELULAUERCPU PUBLIC "include/NetworkLayerSrategies")
@@ -107,19 +83,19 @@ target_link_libraries(LEAKYRELULAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_
 
 add_library(DENSELAYERCPU "src/NetworkLayerStrategies/DenseLayerCPU.cpp" "include/NetworkLayerStrategies/DenseLayerCPU.hpp")
 target_include_directories(DENSELAYERCPU PUBLIC "include/NetworkLayerSrategies")
-target_link_libraries(DENSELAYERCPU PUBLIC DENSELAYERSTRATEGY MATRIX_DEFINE MATRIXMULTIPLICATION) 
+target_link_libraries(DENSELAYERCPU PUBLIC DENSELAYERSTRATEGY MATRIX_DEFINE MATRIXMULTIPLICATION)
 
-add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp" "src/NetworkLayerStrategies/SoftmaxLayerASIC.cpp" "include/NetworkLayerStrategies/SoftmaxLayerASIC.hpp" )
+add_library(SOFTMAXSTRATEGY "include/NetworkLayerStrategies/SoftmaxLayerStrategy.hpp" "src/NetworkLayerStrategies/SoftmaxLayerCPP.cpp" "include/NetworkLayerStrategies/SoftmaxLayerCPP.hpp")
 target_include_directories(SOFTMAXSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(SOFTMAXSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
+target_link_libraries(SOFTMAXSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
-add_library(MAXPOOLSTRATEGY "include/NetworkLayerStrategies/MaxPoolLayerStrategy.hpp" "include/NetworkLayerStrategies/MaxPoolLayerASIC.hpp" "src/NetworkLayerStrategies/MaxPoolLayerASIC.cpp")
+add_library(MAXPOOLSTRATEGY "include/NetworkLayerStrategies/MaxPoolLayerStrategy.hpp")
 target_include_directories(MAXPOOLSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(MAXPOOLSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DEVICETYPE MATRIX_DEFINE OPENVINO)
+target_link_libraries(MAXPOOLSTRATEGY PUBLIC NETWORKLAYERSTRATEGY DEVICETYPE MATRIX_DEFINE)
 
-add_library(SIGMOIDLAYERSTRATEGY "include/NetworkLayerStrategies/SigmoidLayerStrategy.hpp" "src/NetworkLayerStrategies/SigmoidLayerCPP.cpp" "include/NetworkLayerStrategies/SigmoidLayerCPP.hpp" "src/NetworkLayerStrategies/SigmoidLayerASIC.cpp" "include/NetworkLayerStrategies/SigmoidLayerASIC.hpp" )
+add_library(SIGMOIDLAYERSTRATEGY "include/NetworkLayerStrategies/SigmoidLayerStrategy.hpp" "src/NetworkLayerStrategies/SigmoidLayerCPP.cpp" "include/NetworkLayerStrategies/SigmoidLayerCPP.hpp")
 target_include_directories(SIGMOIDLAYERSTRATEGY PUBLIC "include/NetworkLayerStrategies")
-target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE OPENVINO)
+target_link_libraries(SIGMOIDLAYERSTRATEGY PUBLIC NETWORKLAYERSTRATEGY MATRIX_DEFINE)
 
 #add_library(FUNCTIONALITY "include/NetworkLayerStrategies/MatrixMultiplicationCPU.hpp" "src/NetworkLayerStrategies/MatrixMultiplicationCPU.cpp" "include/NetworkLayerStrategies/VectorAdditionCPU.hpp" "src/NetworkLayerStrategies/VectorAdditionCPU.cpp")
 #target_include_directories(FUNCTIONALITY PUBLIC "include/NetworkLayerStrategies")

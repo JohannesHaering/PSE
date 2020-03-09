@@ -6,8 +6,8 @@
 
 TEST (SplitLinesTest, twoParts) {
     LineBreakParser<std::string> parser = LineBreakParser<std::string>();
-    auto in = "foo\nbar";
-    auto out = parser.splitIntoLines(in);
+    std::string in = "foo\nbar";
+    std::list<std::string> out = parser.splitIntoLines(in);
     EXPECT_EQ(2, out.size());
     EXPECT_EQ("foo", *out.begin());
     EXPECT_EQ("bar", *(--out.end()));

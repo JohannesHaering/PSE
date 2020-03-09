@@ -32,37 +32,25 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
   if (firstLine.compare(DENSE) == 0)
 	{
 		return parseDenseLayer(toParse);
+	}	else if (firstLine.compare(ACTIVATION) == 0) {
+    		return ActivationLayerParser().parse(toParse);
 	}
-	else{
-    if (firstLine.compare(ACTIVATION) == 0) {
-       return ActivationLayerParser().parse(toParse);
-	  }
-	  else{
-      if (firstLine.compare(MAXPOOL) == 0) {
-		    return new MaxPoolLayer();
-	    } 
-      else{
-        if (firstLine.compare(CONVOLUTIONAL) == 0) 
-        {
-  		    return ConvolutionalLayerParser().parse(toParse);
-        }
-        else{
-          if (firstLine.compare(FLATTEN) == 0) {
-		        return FlattenLayerParser().parse(toParse);
-	        }  
-	        else{
-            if (firstLine.compare(POLLING) == 0) {
-		          return MaxPoolLayerParser().parse(toParse);
-	          }
-	          else
-	          {   
-		          throw std::invalid_argument(firstLine + "  " + CONVOLUTIONAL);
-	          }
-          }
-        } 
-      }
-    }
-  }
+	else if (firstLine.compare(MAXPOOL) == 0) {
+		return MaxPoolLayerParser().parse(toParse);
+	}
+	else if (firstLine.compare(CONVOLUTIONAL) == 0) {
+		return ConvolutionalLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(FLATTEN) == 0) {
+		return FlattenLayerParser().parse(toParse);
+	} 
+	else if (firstLine.compare(POLLING) == 0) {
+		return MaxPoolLayerParser().parse(toParse);
+	} 
+	else
+	{
+		throw std::invalid_argument("Wrong format");
+	}
 }
 
 std::string LayerParserDistribution::parseBack(NetworkLayer* layer)
