@@ -5,6 +5,8 @@
 #include <vector>
 #include <CL/cl.h>
 
+#include <iostream>
+
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
 
@@ -24,15 +26,17 @@ std::vector<std::vector<float>> MatrixMultiplicationCPU::mult(std::vector<std::v
     int heightC = iA.size();
 
     std::vector<std::vector<float>> result = std::vector<std::vector<float>>(heightC, std::vector<float>(widthC));
-
+    std::cout << "Dimensions of C" << std::endl;
+    std::cout << heightC << std::endl;
+    std::cout << widthC << std::endl;
     // feed in the input
     for (int y = 0; y < iA.size(); y++)
         for (int x = 0; x < iA[y].size(); x++)
-            A[y * iA.size() + x] = iA[y][x];
+            A[y * iA[0].size() + x] = iA[y][x];
 
     for (int y = 0; y < iB.size(); y++)
         for (int x = 0; x < iB[y].size(); x++)
-            B[y * iB.size() + x] = iB[y][x];
+            B[y * iB[0].size() + x] = iB[y][x];
 
     cl_device_id device_id = NULL;
     cl_context context = NULL;
