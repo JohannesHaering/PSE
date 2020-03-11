@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(RESULTMODELTEST "ResultModelTest.cpp")
+add_library(RESULTMODELTEST "ResultModelTest.hpp")
 target_link_libraries(RESULTMODELTEST RESULT)
 target_link_libraries(RESULTMODELTEST CLASSPROBABILITY)
 target_link_libraries(RESULTMODELTEST CLASSIFICATIONRESULT)
