@@ -12,20 +12,13 @@
 
 NetworkLayer* FlattenLayerParser::parse(std::string toParse)
 {
-    //LayerParser::extractGeneralInformation(toParse);
     FlattenLayerFactory factory = FlattenLayerFactory();
-    //factory.setInputDimensions(LayerParser::inputDimensions);
-    //factory.setBatchSize(batchSize);
-    //factory.setWidth(width);
-    //factory.setHeight(height);
-    //factory.setZ(z);
     return factory.buildLayer();
 }
 
 std::string FlattenLayerParser::parseBack(NetworkLayer* layer)
 {
     std::string output = "[flatten]\n";
-    //output += LayerParser::saveGeneralInformation(layer);
 
     return output;
 }
