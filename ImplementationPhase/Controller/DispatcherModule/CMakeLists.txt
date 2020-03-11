@@ -21,6 +21,8 @@ target_link_libraries(DISPATCHMANAGER PUBLIC NEURALNETWORKADAPTER)
 target_link_libraries(DISPATCHMANAGER PUBLIC OpenCL::OpenCL)
 target_link_libraries(DISPATCHMANAGER PUBLIC CLASSIFICATIONRESULT)
 target_link_libraries(DISPATCHMANAGER PUBLIC EXECUTOR MATRIX_DEFINE)
+target_link_libraries(DISPATCHMANAGER PUBLIC MNISTDATAPARSER)
+
 
 add_library(EXECUTOR "include/Executor.hpp" "src/Executor.cpp")
 target_include_directories(EXECUTOR PUBLIC "include/")

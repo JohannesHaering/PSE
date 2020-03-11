@@ -40,17 +40,20 @@ TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
             for (int y = 0; y < input_data[0][0].size(); y++)
                 for (int x = 0; x < input_data[0][0][0].size(); x++)
                     sum[b] += exp(input_data[b][z][y][x] - max[b]);
-    std::cout << "SoftmaxLayer: sum: 0 " << sum[0] << std::endl;   
-
+    std::cout << "SoftmaxLayer: sum: batchElement 0 " << sum[0] << std::endl;   
+    
     for (int b = 0; b < input_data.size(); b++)
         for (int z = 0; z < input_data[0].size(); z++)
             for (int y = 0; y < input_data[0][0].size(); y++)
                 for (int x = 0; x < input_data[0][0][0].size(); x++)
                 {
                   output_forward[b][z][y][x] = exp(input_data[b][z][y][x] - max[b]) / sum[b] ;
+                  //std::cout << " batch Element: " << b << " z " << z << " y " << y << " x " << x <<" has value: " << output_forward[b][z][y][x] << std::endl;
                 }
+
+    for(int i = 0; i < 10; i++)
+        std::cout << "input " << input_data[0][0][0][i] << " output " << output_forward[0][0][0][i] << std::endl;
     return output_forward;
- 
 }
 
 //MSE instead of CE Error, due to issues from stephis gui. Not renamed due to time constraints.

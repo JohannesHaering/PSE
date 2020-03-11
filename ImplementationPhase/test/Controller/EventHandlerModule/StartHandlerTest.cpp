@@ -1,10 +1,12 @@
 #include <gtest/gtest.h>
 #include "StartHandler.hpp"
+#include "InferencingDistributorClassification.hpp"
+#include "ViewFacade.hpp"
 
-class InferencerMock : public Inferencer {
+class InferencerMock : public InferencingDistributorClassification {
 
 public:
-	InferencerMock()
+	InferencerMock() : InferencingDistributorClassification(ViewFacade::getInstance()->getImageClassification())
 	{
 		startSignalGiven = false;
 	}
@@ -30,7 +32,7 @@ struct StartHandlerTests : testing::Test
 
 	StartHandlerTests() {
 		this->inferencer = new InferencerMock();
-		this->handler = new StartHandler(*inferencer);
+		this->handler = new StartHandler(inferencer);
 	}
 
 	~StartHandlerTests() {
