@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
 #include "Model/ModelTest.hpp"
-#include "Controller/ControllerTest.hpp"
 
 #include <sys/types.h>
 #include <sys/stat.h>
