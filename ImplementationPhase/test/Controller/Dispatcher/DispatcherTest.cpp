@@ -1,4 +1,4 @@
-#include <gtest/getest.h>
+#include <gtest/gtest.h>
 
 #include "Device_test.hpp"
 #include "DispatchManager_test.hpp"
@@ -8,7 +8,7 @@
 #include "Device.hpp"
 #include "DispatchManager.hpp"
 #include "Executor.hpp"
-#include "HighPerformanceMode"
+#include "HighPerformanceMode.hpp"
 
 int main(int argc, char **argv)
 {

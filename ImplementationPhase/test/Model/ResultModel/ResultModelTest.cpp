@@ -1,4 +1,4 @@
-#include <gtest/getest.h>
+#include <gtest/gtest.h>
 
 #include "BoundingBox_test.hpp"
 #include "ClassificationResult_test.hpp"
@@ -7,6 +7,11 @@
 #include "ResultManager_test.hpp"
 #include "Result_test.hpp"
 
+
+#include "Result.hpp"
+#include "ResultManager.hpp"
+#include "ClassProbability.hpp"
+#include "ClassificationResult.hpp"
 
 int main(int argc, char **argv)
 {

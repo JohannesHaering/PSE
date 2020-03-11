@@ -5,7 +5,7 @@
 #include "HighEfficiencyMode.hpp"
 #include "LowPowerMode.hpp"
 
-TEST(DispatchManagerTest, emptyConstructor) {
+TEST(ExecutorTest, emptyConstructor) {
     DispatchManager& mgr = DispatchManager::getInstance();
     Mode * hp = new HighPerformanceMode();
     mgr.setMode(hp);
@@ -13,7 +13,7 @@ TEST(DispatchManagerTest, emptyConstructor) {
     EXPECT_EQ(mgr.getMode(), hp);
 }
 
-TEST(DispatchManagerTest, setModes) {
+TEST(ExecutorTest, setModes) {
     DispatchManager& mgr = DispatchManager::getInstance();
     Mode * hp = new HighPerformanceMode();
     Mode * he = new HighEfficiencyMode();

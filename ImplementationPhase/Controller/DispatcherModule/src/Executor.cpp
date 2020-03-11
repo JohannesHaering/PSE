@@ -2,10 +2,9 @@
 #include "ControllerFacade.hpp"
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include <vector>
-#include "Executor.hpp"
 #include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 #include "MatrixDefine.hpp"
+#include <vector>
 
 Executor::Executor(NeuralNetworkAdapter* neuralNetwork) : neuralNetwork(neuralNetwork) {}
 
