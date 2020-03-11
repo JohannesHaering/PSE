@@ -20,6 +20,7 @@ ResultManager::ResultManager(std::list<Result*> resultList) //: resultList(resul
 Result* ResultManager::getSingleResult(std::string imageID, std::string neuralNetworkID) 
 {
 	auto it = resultMap.find(neuralNetworkID + imageID);
+  std::cout << "printing key " <<neuralNetworkID + imageID << " key ended" << std::endl;
 	if (it != resultMap.end()) {
 		return it->second;
 	}

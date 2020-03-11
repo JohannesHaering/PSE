@@ -1,6 +1,5 @@
 #include "DispatchManager.hpp"
 #include <vector>
-#include "Channel.hpp"
 #include "Mode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "LowPowerMode.hpp"
@@ -48,10 +47,8 @@ std::list<Mode*> DispatchManager::getModeList()
 
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories)
 {
-    ImageFacade* imagefacade = new ImageFacade();
-    cv::Mat image;
-    TENSOR(float) currentInput;
-    TENSOR(float) output; std::list<Result*> resultList;
+    TENSOR(float) output; 
+    std::list<Result*> resultList;
     ResultFacade* resultfacade = new ResultFacade();
     std::list<std::string> dirlist = std::list<std::string>(directories.begin(), directories.end());
 
@@ -71,36 +68,14 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
         Result* newres = resultfacade->parseClassificationResult(directories[i], network.getName(), network.getLabels(), output[i][0][0]);
         resultList.push_back(newres);
       }
-    }
-    /*
-    for (int i = 0; i < neuralNetworkList.size(); i++) {
-      for (int j = 0; j < directories.size(); j++) {
-        image = imagefacade->getImage(directories[j], neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight(), neuralNetworkList[i].getChannels());
-        std::cout<<"loaded image" << std::endl;
-        std::vector<cv::Mat> images = std::vector<cv::Mat>();
-        images.push_back(image);
-        currentInput = imagefacade->createImageTensor( images, neuralNetworkList[i].getWidth(), neuralNetworkList[i].getHeight());
-        std::cout<<"OK"<<std::endl;
-        executor = new Executor(&neuralNetworkList[i]);
-        output = executor->execute(currentInput);
-        Result* newres = resultfacade->parseClassificationResult(directories[j], neuralNetworkList[i].getName(), neuralNetworkList[i].getLabels(), output[0][0][0]);
-        resultList.push_back(newres);
-      }
-    }*/
-  	  ResultManager resultMgr = ResultManager(resultList);
-  /*
-      std::cout << mode->getModeName() << " " << distribution.size() << std::endl;
-      for (auto it : distribution) {
-        std::cout << std::get<0>(it) << std::endl;
-        std::cout << std::get<1>(it).getName() << std::endl;
-        std::cout << std::get<2>(it).size() << std::endl;
-      }*/
+    } 
+  	ResultManager resultMgr = ResultManager(resultList);
     return resultMgr;
 }
 
 std::vector<Device> DispatchManager::getAvailableDevices() {
 	std::vector<Device> devices;
-    Device cpu = Device("CPU", "generic cpu", 24, 1.0);
+  Device cpu = Device("CPU", "generic cpu", 24, 1.0);
 	std::vector<cl::Platform> platforms;
 	cl::Platform::get(&platforms);
 	for (auto &p : platforms) {
@@ -109,5 +84,5 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
 		}
 	}
-    return devices;
+  return devices;
 }

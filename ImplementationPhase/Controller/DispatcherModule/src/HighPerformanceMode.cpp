@@ -30,8 +30,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   {
     for (auto  nnit : neuralNetworkList) {
       std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float)>* resultEntry;
-      //std::get<0>(*resultEntry) = new Device(it.getType(), it.getName(), 10,10);
-      //std::get<1>(*resultEntry) = nnit;
       int roundingErrorExists = 0;
       if (roundingError > 0) 
       {
@@ -67,4 +65,3 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   }
   return result;
 }
-
