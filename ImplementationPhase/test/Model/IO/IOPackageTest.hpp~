@@ -1,3 +1,5 @@
+#define TESTDIR _TESTDIR
+
 #include <gtest/gtest.h>
 
 #include "TextFileIO_test.hpp"

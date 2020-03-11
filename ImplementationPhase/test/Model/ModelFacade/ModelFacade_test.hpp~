@@ -8,6 +8,6 @@
 TEST(readDirectories, valid)
 {
     auto facade = ModelFacade();
-    std::list<std::string> directory = facade.readDirectory("~/Documents/PSE/ImplementationPhase/build/testdata/readdir");
+    std::list<std::string> directory = facade.readDirectory(TESTDIR + "\\readdir");
     EXPECT_EQ(8, directory.size());
 }

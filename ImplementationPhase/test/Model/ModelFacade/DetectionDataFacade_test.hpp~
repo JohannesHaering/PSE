@@ -1,3 +1,5 @@
+#define TESTDIR _TESTDIR
+
 #include <gtest/gtest.h>
 #include <vector>
 #include <string>
@@ -9,7 +11,7 @@
 
 
 TEST(DetectionnDataFacade, valid){
-    std::string path = "~/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestDetectionData";
+    std::string path = TESTDIR + "readdir\\TestDetectionData";
     DetectionData dataset = DetectionDataFacade().loadDetectionData(path);
     EXPECT_EQ(2, dataset.getDataset().size());
 }
