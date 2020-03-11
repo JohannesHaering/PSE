@@ -38,10 +38,7 @@ TENSOR(float) CompleteTrainer::calcCEError(TENSOR(float) target)
 {
   TENSOR(float) result = TENSOR(float)(target.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(1, 0.0f))));
   if (target.size() != output.size()) {
-    std::cout << "error, batchsize of target Tensor and output Tensor mismatch! target vs output : " << target.size() << " " << output.size() << std::endl;
-
-    result[0][0][0][0]=0.0f;
-    return result;
+    throw std::invalid_argument("Batchsize of target Tensor and output Tensor mismatch! target vs output : " + std::to_string(target.size()) + " " + std::to_string(output.size()));
   }
   for (int b = 0; b < target.size(); b++)
   {
