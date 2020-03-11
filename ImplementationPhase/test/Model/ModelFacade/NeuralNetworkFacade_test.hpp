@@ -26,11 +26,12 @@ TEST(LoadNeuralNetworksTest, valid)
 TEST(SaveNeuralNetworkTest, valid)
 {
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
-    ReLuLayer*layer = new ReLuLayer();
+    ReLuLayer* layer = new ReLuLayer();
     network.addLayer(layer);
     auto path = "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/TestNeuralNetworkWrite.txt";
     auto succes = NeuralNetworkFacade().saveNeuralNetwork(network, path);
     EXPECT_EQ(true, succes);
+    free(layer);
 }
 
 TEST(SaveNeuralNetworksTest, valid)
@@ -40,9 +41,10 @@ TEST(SaveNeuralNetworksTest, valid)
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
     ReLuLayer*layer = new ReLuLayer();
     network.addLayer(layer);
-    auto path = "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkWrite.txt";
+    auto path = "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/TestNeuralNetworkWrite.txt";
     nns.push_back(network);
     paths.push_back(path);
     auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
     EXPECT_EQ(true, succes);
+    free(layer);
 }

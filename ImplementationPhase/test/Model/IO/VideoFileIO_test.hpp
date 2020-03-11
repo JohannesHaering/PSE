@@ -23,9 +23,3 @@ TEST(readVideoFileTest, noVideoFile)
 	EXPECT_EQ(false, mat.isOpened());
 }
 
-TEST(readVideoFileTest, notExisting)
-{
-	VideoFileIO io = VideoFileIO();
-	EXPECT_THROW(io.readFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/NotExisting.avi"), std::ifstream::failure);
-}
-

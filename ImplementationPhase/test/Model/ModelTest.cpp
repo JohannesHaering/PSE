@@ -43,7 +43,7 @@ void SetupModelFacadeTests()
             paths.push_back(path);
             auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
         }
-        if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
+        if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) != 0)
         {
             mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
         }
@@ -69,11 +69,11 @@ void setupIOTests()
       auto io = TextFileIO();
       io.writeFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt", Data<std::string>("foo"));
 
-      auto io = ImageFileIO();
+      auto imageIo = ImageFileIO();
       cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
-      io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPWrite.bmp");
+      imageIo.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPWrite.bmp");
     }
-    if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
+    if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) != 0)
     {
       mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
     }
