@@ -9,7 +9,7 @@
 
 
 TEST(DetectionnDataFacade, valid){
-    std::string path = "~/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestDetectionData";
+    std::string path = "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestDetectionData";
     DetectionData dataset = DetectionDataFacade().loadDetectionData(path);
     EXPECT_EQ(2, dataset.getDataset().size());
 }

@@ -9,14 +9,14 @@
 
 TEST(LoadNeuralNetworkTest, valid)
 {
-    std::string path = "~/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkRead.txt";
+    std::string path = "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkRead.txt";
     NeuralNetwork neuralNetwork = NeuralNetworkFacade().loadNeuralNetwork(path);
     EXPECT_EQ("nn", neuralNetwork.getName());
 }
 
 TEST(LoadNeuralNetworksTest, valid)
 {
-    auto path = "~/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkRead.txt";
+    auto path = "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkRead.txt";
     std::list<std::string> paths = std::list<std::string>();
     paths.push_back(path);
     NeuralNetwork neuralNetwork = *NeuralNetworkFacade().loadNeuralNetworks(paths).begin();
@@ -28,7 +28,7 @@ TEST(SaveNeuralNetworkTest, valid)
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
     ReLuLayer*layer = new ReLuLayer();
     network.addLayer(layer);
-    auto path = "~/Documents/PSE/ImplementationPhase/build/testdata/writedir/TestNeuralNetworkWrite.txt";
+    auto path = "/home/Documents/PSE/ImplementationPhase/build/testdata/writedir/TestNeuralNetworkWrite.txt";
     auto succes = NeuralNetworkFacade().saveNeuralNetwork(network, path);
     EXPECT_EQ(true, succes);
 }
@@ -40,7 +40,7 @@ TEST(SaveNeuralNetworksTest, valid)
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
     ReLuLayer*layer = new ReLuLayer();
     network.addLayer(layer);
-    auto path = "~/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkWrite.txt";
+    auto path = "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkWrite.txt";
     nns.push_back(network);
     paths.push_back(path);
     auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
