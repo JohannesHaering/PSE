@@ -1,30 +1,28 @@
 #include <gtest/gtest.h>
 #include "Executor.hpp"
-#include "Mode.hpp"
-#include "HighPerformanceMode.hpp"
-#include "HighEfficiencyMode.hpp"
-#include "LowPowerMode.hpp"
 
-TEST(ExecutorTest, emptyConstructor) {
-    DispatchManager& mgr = DispatchManager::getInstance();
-    Mode * hp = new HighPerformanceMode();
-    mgr.setMode(hp);
-    ASSERT_NE(mgr.getMode(), nullptr);
-    EXPECT_EQ(mgr.getMode(), hp);
+#include "MatrixDefine.hpp"
+#include "NeuralNetworkFacade.hpp"
+#include "NeuralNetworkAdapter.hpp"
+#include "NeuralNetwork.hpp"
+#include "MNISTDataParser.hpp"
+
+#define TestNeuralNetworkPath "/home/pselabw1920/Documents/trainednetworks/DenseSmall.txt"
+
+TEST(ExecutorTest, ConstructorTest) {
+    NeuralNetworkFacade NNFacade = NeuralNetworkFacade();
+    NeuralNetworkAdapter neuralNetwork = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
+    Executor *executor = new Executor(&neuralNetwork);
+    ASSERT_NE(executor, nullptr);
 }
 
 TEST(ExecutorTest, setModes) {
-    DispatchManager& mgr = DispatchManager::getInstance();
-    Mode * hp = new HighPerformanceMode();
-    Mode * he = new HighEfficiencyMode();
-    Mode * lp = new LowPowerMode();
-    mgr.setMode(hp);
-    ASSERT_NE(mgr.getMode(), nullptr);
-    EXPECT_EQ(mgr.getMode(), hp);
-    mgr.setMode(lp);
-    ASSERT_NE(mgr.getMode(), nullptr);
-    EXPECT_EQ(mgr.getMode(), lp);
-    mgr.setMode(he);
-    ASSERT_NE(mgr.getMode(), nullptr);
-    EXPECT_EQ(mgr.getMode(), he);
+    NeuralNetworkFacade NNFacade = NeuralNetworkFacade();
+    NeuralNetworkAdapter neuralNetwork = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
+    MNISTDataParser MNISTGen = MNISTDataParser();
+    Executor executor = Executor(&neuralNetwork);
+    TENSOR(float) input = MNISTGen.parseTraining();
+    TENSOR(float) output = executor.execute(input);
+    ASSERT_NE(&input, nullptr);
+    EXPECT_EQ(input.size(), output.size()); //batchSize should stay constant
 }

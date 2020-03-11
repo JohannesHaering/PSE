@@ -1,8 +1,6 @@
 #include "Executor.hpp"
-#include "ControllerFacade.hpp"
 #include "NetworkLayer.hpp"
 #include "NeuralNetworkAdapter.hpp"
-#include "/home/pselabw1920/Documents/mnist/include/mnist/mnist_reader.hpp"
 #include "MatrixDefine.hpp"
 #include <vector>
 
@@ -19,7 +17,6 @@ TENSOR(float) Executor::execute(TENSOR(float) input) {
 		  output = (*layer)->forward(tmp);
 		  tmp = output;
     }
-    std::cout << "returning from forward" << std::endl;
     return output;
 
 }
