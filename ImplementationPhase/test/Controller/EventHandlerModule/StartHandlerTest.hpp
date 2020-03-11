@@ -1,3 +1,5 @@
+#pragma once
+
 #include <gtest/gtest.h>
 #include "StartHandler.hpp"
 #include "InferencingDistributorClassification.hpp"
@@ -24,24 +26,24 @@ private:
 
 };
 
-struct StartHandlerTests : testing::Test 
+struct FStartHandlerTests : testing::Test 
 {
 	
 	StartHandler* handler;
 	InferencerMock* inferencer;
 
-	StartHandlerTests() {
+	FStartHandlerTests() {
 		this->inferencer = new InferencerMock();
 		this->handler = new StartHandler(inferencer);
 	}
 
-	~StartHandlerTests() {
+	~FStartHandlerTests() {
 		delete handler;
 	}
 
 };
 
-TEST_F(StartHandlerTests, ActionTest)
+TEST_F(FStartHandlerTests, ActionTest)
 {
 	EXPECT_FALSE(inferencer->getStartSignalGiven());
 	handler->onAction();

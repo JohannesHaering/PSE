@@ -1,9 +1,11 @@
+#pragma once
+
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
 #include "InferencePageAdapter.hpp"
 
-class ClassificationPageMock : public InferencePageAdapter {
+class DClassificationPageMock : public InferencePageAdapter {
 
 public:
 	bool getShowResults()
@@ -33,10 +35,10 @@ struct InferencingDistributorTests : testing::Test
 {
 	
 	InferencingDistributor* inferencer;
-	ClassificationPageMock* page;
+	DClassificationPageMock* page;
 
 	InferencingDistributorTests() {
-		page = new ClassificationPageMock();
+		page = new DClassificationPageMock();
 		inferencer = new InferencingDistributorClassification(page);
 	}
 
