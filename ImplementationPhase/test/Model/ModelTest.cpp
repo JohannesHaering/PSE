@@ -1,20 +1,21 @@
 #define TESTDIR _TESTDIR
 
 #include <gtest/gtest.h>
+#include "IOPackageTest.hpp"
+#include "ParsingPackageTest.hpp"
+#include "ModelFacadepackageTest.hpp"
 
-#include "ClassificationDatasetFacade_test.hpp"
-#include "DetectionDataFacade.hpp"
-#include "ImageFacade_test.hpp"
-#include "ModelFacade_test.hpp"
-#include "NeuralNetworkFacade_test.hpp"
+#include "TextFileIO.hpp"
+#include "ImageFileIO.hpp"
 #include "NeuralNetworkFacade.hpp"
+#include "Data.hpp"
 #include "NeuralNetwork.hpp"
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <iostream>
 
-int main(int argc, char **argv)
+void SetupModelFacadeTests()
 {
     struct stat info;
 
@@ -49,6 +50,43 @@ int main(int argc, char **argv)
             mkdir(TESTDIR + "\\writedir", 0);
         }
     }
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+}
+
+void setupIOTests()
+{
+  struct stat info;
+
+  if (stat(TESTDIR, &info) != 0)
+  {
+    mkdir(TESTDIR, 0);
+    mkdir(TESTDIR + "\\readdir", 0);
+    mkdir(TESTDIR + "\\writedir", 0);
+  }
+  else
+  {
+    if (stat(TESTDIR + "\\readdir", &info) != 0)
+    {
+      mkdir(TESTDIR + "\\readdir", 0);
+
+      auto io = TextFileIO();
+      io.writeFile(TESTDIR + "\\readdir\\testTXT.txt", Data<std::string>("foo"));
+
+      auto io = ImageFileIO();
+      cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
+      io.writeFile(Data<cv::Mat>(mat), TESTDIR + "\\readir\\testBMPWrite.bmp");
+    }
+    if (stat(TESTDIR + "\\writedir", &info) !=)
+    {
+      mkdir(TESTDIR + "\\writedir", 0);
+    }
+  }
+}
+
+
+int main(int argc, char **argv) {
+  SetupModelFacadeTests();
+  setupIOTests();
+
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
