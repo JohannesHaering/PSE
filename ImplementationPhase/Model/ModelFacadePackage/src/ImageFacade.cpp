@@ -22,7 +22,7 @@ cv::Mat ImageFacade::getImage(std::string path, int width, int height, int chann
 	if (width != 0){
     for (int y = 0; y < height; y++){
       for(int x  = 0; x < width; x++){
-        std::cout << (float) image.data[y * height + x] << " | ";
+        std::cout << (float) image.data[y * width + x] << " | ";
       }
       std::cout << std::endl;
     }
@@ -31,7 +31,7 @@ cv::Mat ImageFacade::getImage(std::string path, int width, int height, int chann
     parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
     for (int y = 0; y < height; y++){
       for(int x  = 0; x < width; x++){
-        std::cout << (float) image.data[y * height + x] << " | ";
+        std::cout << (float) image.data[y * width + x] << " | ";
       }
       std::cout << std::endl;
     }
