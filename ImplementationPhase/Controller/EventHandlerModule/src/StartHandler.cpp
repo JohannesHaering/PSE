@@ -15,7 +15,7 @@ StartHandler::StartHandler(Inferencer *inferencer) : inferencer(inferencer) { }
 void StartHandler::onAction()
 {
     try {
-    inferencer->startProcess();
+        inferencer->startProcess();
 	  }
     catch (const std::invalid_argument& ia)
 	  {
