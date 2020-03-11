@@ -56,8 +56,3 @@ TEST_F(NeuralNetworkPagerTests, ResetTest)
 	EXPECT_FALSE(pager->nextEnable());
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

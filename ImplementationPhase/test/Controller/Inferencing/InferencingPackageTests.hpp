@@ -1,15 +1,9 @@
 #include <gtest/gtest.h>
 
-#include "InferencerTest.cpp"
-#include "DistributorTest.cpp"
-#include "TopologyInferencerTest.cpp"
-#include "TrainingDistributorTest.cpp"
-#include "InferencingDistributorClassificationTest.cpp"
-#include "PagerTest.cpp"
-#include "NeuralNetworkSetterTest.cpp"
-
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+#include "src/InferencerTest.hpp"
+#include "src/DistributorTest.hpp"
+#include "src/TopologyInferencerTest.hpp"
+#include "src/TrainingDistributorTest.hpp"
+#include "src/InferencingDistributorClassificationTest.hpp"
+#include "src/PagerTest.hpp"
+#include "src/NeuralNetworkSetterTest.hpp"
