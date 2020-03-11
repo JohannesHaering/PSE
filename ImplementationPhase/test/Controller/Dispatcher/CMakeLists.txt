@@ -1,1 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
+
+add_executable(DispatchManagerTest "DispatcherTest.cpp")
+target_link_libraries(DispatchManagerTest DISPATCHMANAGER)
+target_link_libraries(DispatchManagerTest DEVICE)
+target_link_libraries(DispatchManagerTest EXECUTOR)
+target_link_libraries(DispatchManagerTest MODE)
