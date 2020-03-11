@@ -5,3 +5,5 @@ add_subdirectory(IO)
 add_subdirectory(ModelFacade)
 #add_subdirectory(NeuralNetworkModel)
 add_subdirectory(Parsing)
+
+add_executable(ModelTest "ModelTest.cpp")
