@@ -7,3 +7,6 @@ add_subdirectory(ModelFacade)
 add_subdirectory(Parsing)
 
 add_executable(ModelTest "ModelTest.cpp")
+target_link_libraries(ModelTest PUBLIC ModelFacadePackageTest)
+target_link_libraries(ModelTest PUBLIC ParsingPackageTest)
+target_link_libraries(ModelTest PUBLIC IOPackageTest)

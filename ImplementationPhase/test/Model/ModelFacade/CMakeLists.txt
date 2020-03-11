@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(ModelFacadePackageTest "ModelFacadePackageTest.cpp")
+add_library(ModelFacadePackageTest "ModelFacadePackageTest.hpp")
 target_link_libraries(ModelFacadePackageTest PUBLIC CLASSIFICATIONDATASETFACADE)
 target_link_libraries(ModelFacadePackageTest PUBLIC CLASSIFICATIONRESULT)
 target_link_libraries(ModelFacadePackageTest PUBLIC DETECTIONDATAFACADE)

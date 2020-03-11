@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
-#include "IO/IOPackageTest.hpp"
-#include "Parsing/ParsingPackageTest.hpp"
+#include "IOPackageTest.hpp"
+#include "ParsingPackageTest.hpp"
+#include "ModelFacadepackageTest.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
