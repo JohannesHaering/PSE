@@ -23,7 +23,7 @@ TEST(LoadNeuralNetworksTest, valid)
     EXPECT_EQ("nn", neuralNetwork.getName());
 }
 
-TEST(SaveNeuralNetworkTest, valid)
+/*TEST(SaveNeuralNetworkTest, valid)
 {
     NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
     ReLuLayer* layer = new ReLuLayer();
@@ -47,4 +47,4 @@ TEST(SaveNeuralNetworksTest, valid)
     auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
     EXPECT_EQ(true, succes);
     free(layer);
-}
+}*/
