@@ -48,6 +48,25 @@ std::list<Mode*> DispatchManager::getModeList()
 	return modeList;
 }
 
+void printMatrix(MATRIX_3D(float) input)
+{
+      
+  for (int i = 0; i < input[0].size(); i++) {
+    for (int j = 0; j < input[0][0].size(); j++) {
+      if (input[0][i][j] < 0.5f){
+        std::cout << "0" << " | ";
+      }
+      else {
+         //std::cout << round(input[0][0][i][j] * 1000) / 1000<< " | ";
+          std::cout << "1" << " | ";
+      }
+    }
+    std::cout << std::endl << std::endl;
+  }
+
+
+}
+
 ResultManager DispatchManager::dispatchImages(std::vector<std::string> directories)
 {
     ImageFacade* imagefacade = new ImageFacade();
@@ -63,9 +82,7 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
     Executor* executor;
 
 
-    if (1==1){
-      MNISTDataParser gen = MNISTDataParser(-1); //-1 gives all testimages in one batch
-    }
+    MNISTDataParser gen = MNISTDataParser(-1); //-1 gives all testimages in one batch
 
     for (auto it : distribution) {
       DeviceType type = std::get<0>(it);
@@ -76,32 +93,28 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
         throw std::invalid_argument( "Can't dispatch no images." );
       }
       std::vector<std::string> directories = std::get<3>(it);
-      /*
-      for (int i = 0; i < input[0][0].size(); i++) {
-        for (int j = 0; j < input[0][0][0].size(); j++) {
-          if (input[0][0][i][j] < 0.5f){
-            std::cout << "0" << " | ";
-          }
-          else {
-             //std::cout << round(input[0][0][i][j] * 1000) / 1000<< " | ";
-              std::cout << "1" << " | ";
-          }
-        }
-        std::cout << std::endl;
-      }*/
       network.setMode(type);
       executor = new Executor(&network);
       output = executor->execute(input);
-      float TENSOR(float) testOutput = executor->execute(gen.getTest());
-      float TENSOR(float) testLabels = gen.getTestLabels();
+      std::cout << "RUNNING MNIST" << std::endl;
+      TENSOR(float) MNISTInput = gen.parseTest();
+      TENSOR(float) testLabels = gen.parseTestLabel();
+      TENSOR(float) testOutput = executor->execute(MNISTInput);
       int numCorrect = 0;
       for (int i = 0; i < testLabels.size(); i++) {
         int maxPos = 0;
         int correctPos;
         for (int j = 0; j < 10; j++) {
-          if (testOutput[j] > testOutput[maxPos]) maxPos = j;
-          if (testLabels[j] == 1) correctPos = j;
+          if (testOutput[i][0][0][j] > testOutput[i][0][0][maxPos]) maxPos = j;
+          if (testLabels[i][0][0][j] == 1) correctPos = j;
         }
+        if (i % 100 == 0) {
+          std::cout << "printint Labels" << std::endl;
+          for (int j = 0; j < 10; j++) std::cout << j << " " << testLabels[i][0][0][j] << " ";
+          std::cout << std::endl << "correctPos is: " << correctPos << std::endl;
+          printMatrix(MNISTInput[i]);
+        }
+        //std:: cout << "testrun acc: is " << maxPos << " should be: " << correctPos << std::endl;
         if (maxPos == correctPos) numCorrect++;
       }
       std::cout << "TEST ACCURACY ON ALL MNIST TEST IMAGES IS: " << (numCorrect * 1.0f) / testLabels.size() << std::endl;

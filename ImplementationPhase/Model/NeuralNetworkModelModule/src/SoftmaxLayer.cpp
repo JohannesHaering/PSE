@@ -48,8 +48,7 @@ TENSOR(float) SoftmaxLayer::forward(TENSOR(float) input_data)
                 for (int x = 0; x < input_data[0][0][0].size(); x++)
                 {
                   output_forward[b][z][y][x] = exp(input_data[b][z][y][x] - max[b]) / sum[b] ;
-                  //output_forward[b][z][y][x] = exp(input_data[b][z][y][x] - max[b]) / sum[b] ;
-                  std::cout << " batch Element: " << b << " z " << z << " y " << y << " x " << x <<" has value: " << output_forward[b][z][y][x] << std::endl;
+                  //std::cout << " batch Element: " << b << " z " << z << " y " << y << " x " << x <<" has value: " << output_forward[b][z][y][x] << std::endl;
                 }
     return output_forward;
  
