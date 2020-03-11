@@ -1,9 +1,9 @@
 #define TESTDIR _TESTDIR
 
 #include <gtest/gtest.h>
-#include "IOPackageTest.hpp"
-#include "ParsingPackageTest.hpp"
-#include "ModelFacadepackageTest.hpp"
+#include "IO/IOPackageTest.hpp"
+#include "Parsing/ParsingPackageTest.hpp"
+#include "ModelFacade/ModelFacadePackageTest.hpp"
 
 #include "TextFileIO.hpp"
 #include "ImageFileIO.hpp"
