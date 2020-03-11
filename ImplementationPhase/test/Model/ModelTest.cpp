@@ -3,6 +3,7 @@
 #include "Parsing/ParsingPackageTest.hpp"
 #include "ModelFacade/ModelFacadePackageTest.hpp"
 #include "ResultModel/ResultModelTest.hpp"
+#include "NeuralNetworkModel/NeuralNetworkModelTest.hpp"
 
 #include "TextFileIO.hpp"
 #include "ImageFileIO.hpp"
