@@ -17,35 +17,35 @@ void SetupModelFacadeTests()
 {
     struct stat info;
 
-    if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata", &info) != 0)
+    if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata", &info) != 0)
     {
-        mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata", 0);
-        mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
-        mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
+        mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata", 0);
+        mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
+        mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
     }
     else
     {
-        if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", &info) != 0)
+        if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", &info) != 0)
         {
-            mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
+            mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
 
             auto io = ImageFileIO();
             cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
-            io.writeFile(Data<cv::Mat>(mat), "/home/Documents/PSE/ImplementationPhase/build/testdata/readir/testBMPWrite.bmp");
+            io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readir/testBMPWrite.bmp");
 
             auto nns = std::list<NeuralNetwork>();
             auto paths = std::list<std::string>();
             NeuralNetwork network = NeuralNetwork("nn", 64, 64, 3);
             ReLuLayer *layer = new ReLuLayer();
             network.addLayer(layer);
-            auto path = "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkWrite.txt";
+            auto path = "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/TestNeuralNetworkWrite.txt";
             nns.push_back(network);
             paths.push_back(path);
             auto succes = NeuralNetworkFacade().saveNeuralNetworks(nns, paths);
         }
-        if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
+        if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
         {
-            mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
+            mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
         }
     }
 }
@@ -54,28 +54,28 @@ void setupIOTests()
 {
   struct stat info;
 
-  if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata", &info) != 0)
+  if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata", &info) != 0)
   {
-    mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata", 0);
-    mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
-    mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
+    mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata", 0);
+    mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
+    mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
   }
   else
   {
-    if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", &info) != 0)
+    if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", &info) != 0)
     {
-      mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
+      mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir", 0);
 
       auto io = TextFileIO();
-      io.writeFile("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt", Data<std::string>("foo"));
+      io.writeFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt", Data<std::string>("foo"));
 
       auto io = ImageFileIO();
       cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
-      io.writeFile(Data<cv::Mat>(mat), "/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPWrite.bmp");
+      io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPWrite.bmp");
     }
-    if (stat("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
+    if (stat("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", &info) !=)
     {
-      mkdir("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
+      mkdir("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir", 0);
     }
   }
 }

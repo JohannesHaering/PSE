@@ -22,7 +22,7 @@ TEST(readImageFilesTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPRead.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPRead.bmp");
     auto input = io.readFile(paths);
     auto mat = *input.getData().begin();
     EXPECT_EQ(64*64, mat.total());
@@ -32,7 +32,7 @@ TEST(readImageFilesTest, noImageFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt");
     auto input = io.readFile(paths);
 	cv::Mat mat = *input.getData().begin();
     EXPECT_EQ(0, mat.total());
@@ -42,7 +42,7 @@ TEST(readImageFilesTest, notExisting)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/readdir/NotExisting.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/NotExisting.bmp");
 	auto input = io.readFile(paths);
 	cv::Mat mat = *input.getData().begin();
 	EXPECT_EQ(0, mat.total());
@@ -64,7 +64,7 @@ TEST(writeImageFilesTest, emptyData)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMPWrite.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMPWrite.bmp");
     cv::Mat mat;
     std::list<cv::Mat> images;
     images.push_back(mat);
@@ -76,7 +76,7 @@ TEST(writeImageFilesTest, file)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMP.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMP.bmp");
     cv::Mat mat(64, 64, CV_32F, cv::Scalar(0,0,0));
     std::list<cv::Mat> images;
     images.push_back(mat);
@@ -88,7 +88,7 @@ TEST(writeImageFilesTest, noTextFile)
 {
     auto io = MultipleImageFileIO();
     std::list<std::string> paths;
-    paths.push_back("/home/Documents/PSE/ImplementationPhase/build/testdata/writedir/testTXT.txt");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testTXT.txt");
     std::vector<float> data;
     for (int i = 0; i < 64; i++)
     {
