@@ -9,7 +9,7 @@ add_subdirectory(ModelFacade)
 add_subdirectory(NeuralNetworkModel)
 add_subdirectory(Parsing)
 
-add_executable(ModelTest "ModelTest.cpp")
+add_library(ModelTest "ModelTest.hpp")
 target_link_libraries(ModelTest PUBLIC ${OpenCV_LIBS})
 target_link_libraries(ModelTest PUBLIC DATA)
 target_link_libraries(ModelTest PUBLIC  IO)
