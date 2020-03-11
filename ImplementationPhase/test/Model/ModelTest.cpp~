@@ -2,7 +2,6 @@
 #include "IO/IOPackageTest.hpp"
 #include "Parsing/ParsingPackageTest.hpp"
 #include "ModelFacade/ModelFacadePackageTest.hpp"
-#include "ResultModel/ResultModelTest.hpp"
 
 #include "TextFileIO.hpp"
 #include "ImageFileIO.hpp"
