@@ -12,24 +12,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <chrono>
 
-
-void printMatrix(MATRIX_3D(float) input)
-{
-      
-  for (int i = 0; i < input[0].size(); i++) {
-    for (int j = 0; j < input[0][0].size(); j++) {
-      if (input[0][i][j] < 0.5f){
-        std::cout << "0" << " | ";
-      } else {
-        std::cout << "1" << " | ";
-      }
-    }
-    std::cout << std::endl << std::endl;
-  }
-
-
-}
 
 int main(int argc, char** argv)
 {
@@ -42,7 +26,8 @@ int main(int argc, char** argv)
       TestNeuralNetworkPath = "/home/pselabw1920/Documents/trainednetworks/DenseSmall.txt";
     }
     NeuralNetworkFacade NNFacade = NeuralNetworkFacade();
-    NeuralNetworkAdapter network = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
+    NeuralNetworkAdapter networkCPP = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
+    NeuralNetworkAdapter networkOpenCL = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
     
     // Set Number of Testimages to calc accuracy
     int batchSize;
@@ -50,26 +35,37 @@ int main(int argc, char** argv)
       batchSize = std::stoi(argv[2]); 
       if (batchSize > 10000) batchSize = 10000;
     } else {
-      batchSize = -1;
+      batchSize = -1; //-1 gives all testimages
     }
+    MNISTDataParser gen = MNISTDataParser(batchSize);
 
     // Set Device/Calculationtype : OpenCL on CPU | C++ on CPU
-    DeviceType type;
-    if (argc > 3 && argv[3] == "OPENCL") {
-      type = DeviceType::CPU;
-    } else {
-      type = DeviceType::CPP;
-    }
-    network.setMode(type);    
+    DeviceType CPP = DeviceType::CPP;
+    DeviceType OpenCL = DeviceType::CPU;
+    networkCPP.setMode(CPP);    
+    networkOpenCL.setMode(OpenCL);
 
     // Creating Executor, Running inference on testImages
-    Executor* executor = new Executor(&network);
-    MNISTDataParser gen = MNISTDataParser(batchSize); //-1 gives all testimages in one batch
+    Executor* OpenCLExecutor = new Executor(&networkOpenCL);
+    Executor* CPPExecutor = new Executor(&networkCPP);
     std::cout << "RUNNING MNIST" << std::endl;
     TENSOR(float) MNISTInput = gen.parseTest();
     TENSOR(float) testLabels = gen.parseTestLabel();
-    TENSOR(float) testOutput = executor->execute(MNISTInput);
+    TENSOR(float) testOutput;
     
+    auto startCL = std::chrono::high_resolution_clock::now();
+    testOutput = OpenCLExecutor->execute(MNISTInput);
+    auto finishCL = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsedCL = finishCL - startCL;
+    std::cout << "Elapsed time OpenCL: " << elapsedCL.count() << std::endl;
+
+    auto start = std::chrono::high_resolution_clock::now();
+    testOutput = CPPExecutor->execute(MNISTInput);
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout << "Elapsed time c++: " << elapsed.count() << std::endl;
+
+
     // Calculating Accuracy
     int numCorrect = 0;
     for (int i = 0; i < testLabels.size(); i++) {
