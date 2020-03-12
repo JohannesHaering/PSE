@@ -13,11 +13,13 @@ HighPerformanceMode::HighPerformanceMode() : Mode("HighPerformanceMode") {}
 //Can be vastly improved
 std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vector<std::string>>> HighPerformanceMode::getImageDistribution(std::list<std::string> imageList)
 {
+  if (imageList.size() == 0) {
+    throw std::invalid_argument( "Cant split zero images" );
+  }
   std::list<Device> deviceList = this->getAllowedDeviceList();
   if (deviceList.size() == 0)
     return getTrivialDistribution(imageList);
   int deviceAmount = deviceList.size();
-  std::cout << deviceAmount << std::endl;
   int imageAmount = imageList.size();
   int imagesPerDevice = imageAmount / deviceAmount; //take care of rounding
   int roundingError = imageAmount - imagesPerDevice * deviceAmount;
@@ -30,8 +32,6 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   {
     for (auto  nnit : neuralNetworkList) {
       std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float)>* resultEntry;
-      //std::get<0>(*resultEntry) = new Device(it.getType(), it.getName(), 10,10);
-      //std::get<1>(*resultEntry) = nnit;
       int roundingErrorExists = 0;
       if (roundingError > 0) 
       {
@@ -67,4 +67,3 @@ std::list<std::tuple<DeviceType, NeuralNetworkAdapter, TENSOR(float), std::vecto
   }
   return result;
 }
-

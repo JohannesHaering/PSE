@@ -9,6 +9,7 @@ TrainingDistributor::TrainingDistributor() {
 	this->page = ViewFacade::getInstance()->getTrainingPanel();
     this->neuralNetworks = std::vector<NeuralNetworkAdapter>();
     this->directories = std::vector<std::string>();
+    enableStart();
 }
 
 /*
@@ -25,7 +26,7 @@ void TrainingDistributor::TrainingDistributor::startProcess() {
  */
 bool TrainingDistributor::canStart() {
     if (neuralNetworks.size() == 0) {
-		return false;
+		  return false;
 	}
 	return true; 
 }

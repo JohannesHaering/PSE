@@ -27,7 +27,7 @@ void NeuralNetworkHandler::sendDirectory(std::vector<std::string> directories)
 	}
 	catch (const std::invalid_argument& ia)
 	{
-        neuralnetworksetter->getInferencer()->getPage()->showError("Invalid neural network");
+        neuralnetworksetter->getInferencer()->getPage()->showError(ia.what());
 	}
 }
 

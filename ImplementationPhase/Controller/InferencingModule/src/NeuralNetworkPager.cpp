@@ -10,6 +10,7 @@
 NeuralNetworkPager::NeuralNetworkPager(int maxPage, InferencePageAdapter *page) {
     this->maxPage = maxPage;
     this->page = page;
+    this->currentPage = 0;
 }
 
 /*

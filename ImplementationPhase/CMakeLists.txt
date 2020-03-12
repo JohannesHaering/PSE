@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g --coverage -O0")
+set(CMAKE_CXX_FLAGS "-g --coverage -O0")
 
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
@@ -50,11 +52,16 @@ include_directories(
   ${Qt5Widgets_INCLUDE_DIRS}
 )
 
+# set directory for the test Data
+set(TEST_DIR ${CMAKE_CURRENT_BINARY_DIR}/../Data)
+add_definitions( -D_TESTDIR=${TEST_DIR} )
+
+
 add_subdirectory(Model)
 add_subdirectory(Controller)
 add_subdirectory(OpenCLFunctionality)
 add_subdirectory(View)
-#add_subdirectory(test)
+add_subdirectory(test)
 
 add_executable(${IMAGE_CLASSIFICATION_TARGET} "View/src/main.cpp")
 target_link_libraries(${IMAGE_CLASSIFICATION_TARGET} VIEW_MODULE)

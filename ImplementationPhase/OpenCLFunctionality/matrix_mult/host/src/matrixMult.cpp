@@ -45,11 +45,10 @@ std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::
 {
   A_height = matrixA[0].size();
   A_width = matrixA.size();
-  B_height = A_width;
+  B_height = matrixB[0].size();
   B_width = matrixB.size();
   C_height = A_height;
   C_width = B_width;
-
 
   input_a.reset(num_devices);
   output.reset(num_devices);
@@ -72,12 +71,14 @@ std::vector<std::vector<float>> MatrixMultiplication::multiply(std::vector<std::
   // Run the kernel.
   std::vector<float> matrixC = run();
   std::vector<std::vector<float>> result = std::vector<std::vector<float>>(C_height, std::vector<float>(C_width));
+  
+  std::cout << C_height << " " << C_width << std::endl;
   for(int y = 0; y < C_height; y++){
     for(int x = 0;  x < C_width; x++){
-      result[y][x] = matrixC[y * C_width + x];
+      result[y][x] = (matrixC[y * C_width + x]);
     }
   }
-
+  
   // Free the resources allocated
   cleanup();
   
@@ -102,7 +103,7 @@ bool MatrixMultiplication::init_opencl()
   platform = findPlatform("Intel(R) CPU Runtime for OpenCL(TM)");
   if (platform == NULL)
   {
-    printf("ERROR: Unable to find Intel(R) FPGA OpenCL platform.\n");
+    printf("ERROR: Unable to find Intel(R) CPU Runtime for OpenCL platform.\n");
     return false;
   }
 
@@ -122,7 +123,7 @@ bool MatrixMultiplication::init_opencl()
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
   FILE *fp;
-  char fileName[] = "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/matrix_mult/device/matrix_mult.cl";
+  char fileName[] = "/home/pselabw1920/Documents/PSE/ImplementationPhase/OpenCLFunctionality/matrix_mult/device/matrix_mult.cl";
   char *source_str;
   size_t source_size;
   fp = fopen(fileName, "r");
@@ -230,29 +231,28 @@ void MatrixMultiplication::init_problem(std::vector<std::vector<float>> matrixA,
   unsigned currentRow = 0;
   for (unsigned i = 0; i < num_devices; ++i)
   {
-    std::cout << rows_per_device[i] << std::endl;
-    std::cout << A_width << std::endl;
-    std::cout << "input_a" << sizeof(input_a[i]) << std::endl;
     input_a[i].reset(rows_per_device[i] * A_width);
     output[i].reset(rows_per_device[i] * C_width);
-    
+    std::cout << "Numb rows " << rows_per_device[i] << std::endl;
+    std::cout << "Width " << matrixA[0].size() << " Height " << matrixA.size() << std::endl;
     for (unsigned j = 0; j < rows_per_device[i]; ++j)
     {
       for (unsigned k = 0; k < A_width; ++k)
       {
-        input_a[i][j * A_width + k] = matrixA[currentRow][j];
+        input_a[i][j * A_width + k] = matrixA[k][currentRow];
       }
       ++currentRow;
     }
     ++currentRow;
   }
 
+  std::cout << "Width " << matrixB[0].size() << " Height " << matrixB.size() << std::endl;
   input_b.reset(B_height * B_width);
   for (unsigned i = 0; i < B_height * B_width; ++i)
   {
     for (unsigned j = 0; j < B_width; ++j)
     {
-      input_b[i] = matrixB[j][i];
+      input_b[i*B_width + j] = matrixB[j][i];
     }
   }
 }

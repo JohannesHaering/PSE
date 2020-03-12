@@ -18,9 +18,14 @@ TENSOR(float) DenseLayerCPU::forward(TENSOR(float) input_data)
     TENSOR(float) output = TENSOR(float)(input_data.size(), MATRIX_3D(float)(1, MATRIX_2D(float)(1, std::vector<float>(outputSize))));
     for (int b = 0; b < input_data.size(); b++)
     {
+      std::cout << "Start product" << std::endl;
         std::vector<std::vector<float>> product = MatrixMultiplication().multiply(layer->get_weights(), input_data[b][0]);
-        for( int x = 0;  x < product[0].size(); x++){
-          output[b][0][0][x] = product[0][x] + (layer->get_biase())[x];
+        //std::cout << product.size() << " - " << product[0].size() << std::endl;
+        std::cout << product.size()<< std::endl;
+        for( int y = 0;  y < product.size(); y++)
+        {
+          std::cout << "After product " <<  product[y][0] << std::endl;
+          output[b][0][0][y] = product[y][0] + (layer->get_biase())[y];
         }
     }
 
