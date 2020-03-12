@@ -1,16 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(ClassifcationDatasetFacadeTest "ClassificationDatasetFacade_test.cpp")
-target_link_libraries(ClassifcationDatasetFacadeTest PUBLIC CLASSIFICATIONDATASETFACADE CLASSIFICATIONRESULT)
-
-add_executable(DetectionDataFacdeTest "DetectionDataFacde_test.cpp")
-target_link_libraries(DetectionDataFacdeTest PUBLIC DETECTIONDATAFACADE DETECTIONDATA)
-
-add_executable(ImageFacadeTest "ImageFacade_test.cpp")
-target_link_libraries(ImageFacadeTest PUBLIC ${OpenCV_LIBS} IMAGEFACADE)
-
-add_executable(ModelFacadeTest "ModelFacade_test.cpp")
-target_link_libraries(ModelFacadeTest PUBLIC MODELFACADE)
-
-add_executable(NeuralNetworkFacadeTest "NeuralNetworkFacade_test.cpp" )
-target_link_libraries(NeuralNetworkFacadeTest PUBLIC NEURALNETWORKFACADE NEURALNETWORK DROPOUTLAYER)
+add_library(ModelFacadePackageTest "ModelFacadePackageTest.hpp")
+target_link_libraries(ModelFacadePackageTest PUBLIC CLASSIFICATIONDATASETFACADE)
+target_link_libraries(ModelFacadePackageTest PUBLIC CLASSIFICATIONRESULT)
+target_link_libraries(ModelFacadePackageTest PUBLIC DETECTIONDATAFACADE)
+target_link_libraries(ModelFacadePackageTest PUBLIC DETECTIONDATA)
+target_link_libraries(ModelFacadePackageTest PUBLIC ${OpenCV_LIBS})
+target_link_libraries(ModelFacadePackageTest PUBLIC IMAGEFACADE)
+target_link_libraries(ModelFacadePackageTest PUBLIC MODELFACADE)
+target_link_libraries(ModelFacadePackageTest PUBLIC NEURALNETWORKFACADE)
+target_link_libraries(ModelFacadePackageTest PUBLIC NEURALNETWORK)

@@ -14,14 +14,10 @@
 
 NetworkLayer* DenseLayerParser::parse(std::string toParse)
 {
-  //LayerParser::extractGeneralInformation(toParse);
   DenseLayerFactory factory = DenseLayerFactory();
-	//factory.setInputDimensions(LayerParser::inputDimensions);
-	//factory.setBatchSize(batchSize);
 
 	std::list<std::string> lines = LineBreakParser::splitIntoLines(toParse);
 	std::list<std::string>::iterator it = lines.begin();
-//	++it;
 
 	std::list<std::string> val = Parser::splitBySymbol(*it, LayerParser::VALUE_TYPE_DELIMETER);
 	auto parts1It = val.begin();
@@ -45,7 +41,6 @@ std::string DenseLayerParser::parseBack(NetworkLayer* layer)
 {
 	DenseLayer* denselayer = (DenseLayer*)layer;
 	std::string output = "";
-	//output += saveGeneralInformation(layer);
 	output += "[dense]\n";
 	output += WEIGHTS_TENSOR;
 	output += LayerParser::VALUE_TYPE_DELIMETER;

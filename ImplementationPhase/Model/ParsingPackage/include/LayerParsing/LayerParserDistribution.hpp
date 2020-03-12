@@ -14,7 +14,7 @@ public:
 
     const char TYPE_BEGIN = '[';
     const char TYPE_END = ']';
-    
+
     const std::string CONVOLUTIONAL = "convolutional";
     const std::string POLLING = "polling";
     const std::string ACTIVATION = "activation";

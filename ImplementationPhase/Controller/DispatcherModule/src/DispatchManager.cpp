@@ -1,6 +1,5 @@
 #include "DispatchManager.hpp"
 #include <vector>
-#include "Channel.hpp"
 #include "Mode.hpp"
 #include "HighPerformanceMode.hpp"
 #include "LowPowerMode.hpp"
@@ -74,7 +73,8 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
     TENSOR(float) currentInput;
 
 
-    TENSOR(float) output; std::list<Result*> resultList;
+    TENSOR(float) output; 
+  std::list<Result*> resultList;
     ResultFacade* resultfacade = new ResultFacade();
     std::list<std::string> dirlist = std::list<std::string>(directories.begin(), directories.end());
 
@@ -138,5 +138,5 @@ std::vector<Device> DispatchManager::getAvailableDevices() {
 			devices.push_back(Device(p.getInfo<CL_PLATFORM_PROFILE>(), p.getInfo<CL_PLATFORM_NAME>(), 24, 1.0));
 		}
 	}
-    return devices;
+  return devices;
 }

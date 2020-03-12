@@ -21,7 +21,7 @@ class InferencingDistributor : public Distributor {
 
     protected: 
 		InferencePageAdapter* page;
-        ResultManager resultManager;
+    ResultManager resultManager;
 
 };
 #endif
