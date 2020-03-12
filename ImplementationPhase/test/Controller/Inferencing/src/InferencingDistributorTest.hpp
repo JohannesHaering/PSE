@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
-
 struct InferencingDistributorTests : testing::Test 
 {
 	

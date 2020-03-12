@@ -2,7 +2,7 @@
 #include "StartHandler.hpp"
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
-
+#include <QApplication>
 class InferencerMock : public InferencingDistributorClassification {
 
 public:
@@ -47,3 +47,4 @@ TEST_F(StartHandlerTests, ActionTest)
 	handler->onAction();
 	EXPECT_TRUE(inferencer->getStartSignalGiven());
 }
+

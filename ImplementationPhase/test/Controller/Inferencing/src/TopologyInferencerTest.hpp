@@ -18,7 +18,7 @@ struct TopologyInferencerTests : testing::Test
 
 TEST_F(TopologyInferencerTests, TopologyBeginStartTest)
 {
-	EXPECT_FALSE(inferencer->canStart());
+	EXPECT_TRUE(inferencer->canStart());
 }
 
 TEST_F(TopologyInferencerTests, TopologyCanStartTest)

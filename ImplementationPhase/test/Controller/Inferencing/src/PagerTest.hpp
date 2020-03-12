@@ -5,7 +5,7 @@
 struct NeuralNetworkPagerTests : testing::Test 
 {
 	
-	Pager* pager;
+	NeuralNetworkPager* pager;
 
 	NeuralNetworkPagerTests() {
 		pager = new NeuralNetworkPager(2, ViewFacade::getInstance()->getImageClassification());
@@ -30,7 +30,7 @@ TEST_F(NeuralNetworkPagerTests, PagerMinimumTest)
 TEST_F(NeuralNetworkPagerTests, PagerMaximumTest)
 {
 	pager->next();
-	pager->next();
+//	pager->next();
 	EXPECT_FALSE(pager->nextEnable());
 }
 
@@ -50,7 +50,7 @@ TEST_F(NeuralNetworkPagerTests, PagerPrevTest)
 
 TEST_F(NeuralNetworkPagerTests, ResetTest)
 {
-	pager->reset(1);
+	pager->reset(2);
 	EXPECT_EQ(pager->getCurrentPage(), 0);
 	pager->next();
 	EXPECT_FALSE(pager->nextEnable());

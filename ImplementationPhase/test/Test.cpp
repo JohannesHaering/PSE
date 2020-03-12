@@ -7,6 +7,8 @@
 #include <sys/stat.h>
 #include <iostream>
 
+#include <QApplication>
+
 void SetupModelFacadeTests()
 {
     struct stat info;
@@ -78,7 +80,7 @@ void setupIOTests()
 int main(int argc, char **argv) {
   SetupModelFacadeTests();
   setupIOTests();
-
+  QApplication a(argc, argv);
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

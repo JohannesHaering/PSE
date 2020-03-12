@@ -2,7 +2,7 @@
 #include "ViewFacade.hpp"
 
 TopologyInferencer::TopologyInferencer() : page(ViewFacade::getInstance()->getTopologyPanel()) {
-  this->neuralNetwork = NeuralNetworkAdapter();
+  //this->neuralNetwork = NeuralNetworkAdapter();
 }
 
 /*
@@ -27,5 +27,5 @@ bool TopologyInferencer::canStart() {
 * Enables or disables the Start button accordingly.
 */
 void TopologyInferencer::enableStart() {
-	//page.startEnable(canStart());
+//	page.startEnable(canStart());
 }

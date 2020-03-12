@@ -4,41 +4,16 @@
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
 #include "InferencePageAdapter.hpp"
-
-class DClassificationPageMock : public InferencePageAdapter {
-
-public:
-	bool getShowResults()
-	{
-		return showResults;
-	}
-	bool getSaveResults()
-	{
-		return saveResults;
-	}
-	void setShowResults(bool enable)
-	{
-		showResults = enable;
-	}
-	void setSaveResults(bool enable)
-	{
-		saveResults = enable;
-	}
-
-private:
-	bool showResults;
-	bool saveResults;
-
-};
+#include "ClassificationPageMock.cpp"
 
 struct InferencingDistributorTests : testing::Test 
 {
 	
-	InferencingDistributor* inferencer;
-	DClassificationPageMock* page;
+	InferencingDistributorClassification* inferencer;
+	ClassificationPageMock* page;
 
 	InferencingDistributorTests() {
-		page = new DClassificationPageMock();
+		page = new ClassificationPageMock();
 		inferencer = new InferencingDistributorClassification(page);
 	}
 
@@ -56,7 +31,7 @@ TEST_F(InferencingDistributorTests, InferencerShowSaveFalseStartTest)
 	inferencer->addNeuralNetwork(neuralNetworks);
 	std::vector<std::string> paths = { "FOO", "FOO" };
 	inferencer->setInput(paths);
-	EXPECT_FALSE(inferencer->canStart());
+	EXPECT_TRUE(inferencer->canStart());
 }
 
 TEST_F(InferencingDistributorTests, TopologyCanStartTest)

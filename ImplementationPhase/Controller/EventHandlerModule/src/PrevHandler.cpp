@@ -21,7 +21,7 @@ void PrevHandler::onAction()
 	}
 	catch (const std::invalid_argument& ia)
 	{
-		pager->getGUIPage()->showError("No previous exists");
+		pager->getGUIPage()->showError(ia.what());
 	}
 
 }
