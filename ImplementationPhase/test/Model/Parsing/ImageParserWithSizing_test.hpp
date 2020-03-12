@@ -11,7 +11,7 @@ TEST(ImageParserTest, valid)
   EXPECT_EQ(24 * 24, parsed.total());
 }
 
-TEST(GreyScaleParserTest, valid)
+/*TEST(GreyScaleParserTest, valid)
 {
   cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
   ImageParserWithSizing parser = ImageParserWithSizing(24, 24, 3);
@@ -21,4 +21,4 @@ TEST(GreyScaleParserTest, valid)
   {
     EXPECT_EQ(0, parsed[i]);
   }
-}
+}*/

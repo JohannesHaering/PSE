@@ -20,6 +20,8 @@ TENSOR(float) DenseLayerCPU::forward(TENSOR(float) input_data)
     {
       std::cout << "Start product" << std::endl;
         std::vector<std::vector<float>> product = MatrixMultiplication().multiply(layer->get_weights(), input_data[b][0]);
+        //std::cout << product.size() << " - " << product[0].size() << std::endl;
+        std::cout << product.size()<< std::endl;
         for( int y = 0;  y < product.size(); y++)
         {
           std::cout << "After product " <<  product[y][0] << std::endl;

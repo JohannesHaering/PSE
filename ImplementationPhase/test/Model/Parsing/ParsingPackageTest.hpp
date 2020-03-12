@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 #include "SingleDetectionDatasetParser_test.hpp"
-#include "Parser_test.hpp"
+#include "Parser_test.cpp"
 #include "NeuralNetworkParser_test.hpp"
 #include "LineBreakParser_test.hpp"
 #include "ImageLocationParser_test.hpp"

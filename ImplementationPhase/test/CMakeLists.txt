@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 
+
+#set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
+#set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE 1)
+#set(CMAKE_CPP_FLAGS "-fprofile-arcs -ftest-coverage")
+#set(CMAK_E_LD_FLAGS)
+
 link_libraries(gtest)
 link_libraries(gtest_main)
 
-add_subdirectory(Model)
-#add_subdirectory(View)
-#add_subdirectory(Controller)
 
 add_executable(TestNN "TestNNAccuracy.cpp")
 target_link_libraries(TestNN PUBLIC EXECUTOR MATRIX_DEFINE MNISTDATAPARSER DEVICETYPE MNISTDATAPARSER)
@@ -15,7 +18,7 @@ target_link_libraries(TestNN PUBLIC NEURALNETWORKADAPTER NEURALNETWORKFACADE)
 add_executable(ProjectTest "Test.cpp")
 target_link_libraries(ProjectTest PUBLIC ${OpenCV_LIBS})
 target_link_libraries(ProjectTest PUBLIC DATA)
-target_link_libraries(ProjectTest PUBLIC  IO)
+target_link_libraries(ProjectTest PUBLIC IO)
 target_link_libraries(ProjectTest PUBLIC CLASSIFICATIONRESULTPARSER)
 target_link_libraries(ProjectTest PUBLIC CLASSPROBABILITYPARSER)
 target_link_libraries(ProjectTest PUBLIC DETECTIONRESULTPARSER)

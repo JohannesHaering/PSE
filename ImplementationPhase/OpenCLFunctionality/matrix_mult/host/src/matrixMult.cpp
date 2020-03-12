@@ -103,7 +103,7 @@ bool MatrixMultiplication::init_opencl()
   platform = findPlatform("Intel(R) CPU Runtime for OpenCL(TM)");
   if (platform == NULL)
   {
-    printf("ERROR: Unable to find Intel(R) FPGA OpenCL platform.\n");
+    printf("ERROR: Unable to find Intel(R) CPU Runtime for OpenCL platform.\n");
     return false;
   }
 
@@ -123,7 +123,7 @@ bool MatrixMultiplication::init_opencl()
   // Create the program for all device. Use the first device as the
   // representative device (assuming all device are of the same type).
   FILE *fp;
-  char fileName[] = "/home/pselabw1920/Documents/PSE2/PSE/ImplementationPhase/OpenCL/OpenCLFunctionality/matrix_mult/device/matrix_mult.cl";
+  char fileName[] = "/home/pselabw1920/Documents/PSE/ImplementationPhase/OpenCLFunctionality/matrix_mult/device/matrix_mult.cl";
   char *source_str;
   size_t source_size;
   fp = fopen(fileName, "r");

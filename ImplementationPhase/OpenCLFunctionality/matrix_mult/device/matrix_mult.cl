@@ -1,4 +1,4 @@
-#include "/home/pselabw1920/Documents/PSEJohannes/PSE/ImplementationPhase/OpenCLFunctionality/matrix_mult/host/inc/matrixMult.h"
+#include "/home/pselabw1920/Documents/PSE/ImplementationPhase/OpenCLFunctionality/matrix_mult/host/inc/matrixMult.h"
 
 #ifndef SIMD_WORK_ITEMS
 #define SIMD_WORK_ITEMS 4 // default value

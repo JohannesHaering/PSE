@@ -8,7 +8,7 @@
 
 NetworkLayer* ConvolutionalLayerFactory::buildLayer()
 {
-    ConvolutionLayer* layer = new ConvolutionLayer(weightTensors, stride, padding);
+    ConvolutionLayer* layer = new ConvolutionLayer(weightTensors, 1, 0);
     
     return layer;
 }

@@ -19,10 +19,10 @@ TEST(ExecutorTest, ConstructorTest) {
 TEST(ExecutorTest, setModes) {
     NeuralNetworkFacade NNFacade = NeuralNetworkFacade();
     NeuralNetworkAdapter neuralNetwork = NeuralNetworkAdapter(NNFacade.loadNeuralNetwork(TestNeuralNetworkPath));
-    MNISTDataParser MNISTGen = MNISTDataParser();
+    MNISTDataParser MNISTGen = MNISTDataParser(1);
     Executor executor = Executor(&neuralNetwork);
     TENSOR(float) input = MNISTGen.parseTraining();
-    TENSOR(float) output = executor.execute(input);
     ASSERT_NE(&input, nullptr);
+    TENSOR(float) output = executor.execute(input);
     EXPECT_EQ(input.size(), output.size()); //batchSize should stay constant
 }
