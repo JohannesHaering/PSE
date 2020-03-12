@@ -20,7 +20,6 @@ InputImageHandler::InputImageHandler(Distributor *distributor) : distributor(dis
 void InputImageHandler::sendDirectory(std::vector<std::string> directories)
 {
     distributor->setInput(directories);
-    std::cout<<directories[0]<<std::endl;
     distributor->enableStart();
 }
 
@@ -34,7 +33,6 @@ std::vector<std::string> InputImageHandler::fetchDirectory()
             return {page->getFileFromExplorer(validformatsmanual)};
         }
         else if (mode == 1) {
-            // TODO
             return {page->getFilesFromExplorer(validformatsmanual)};
         }
         else if (mode == 2)
@@ -42,7 +40,6 @@ std::vector<std::string> InputImageHandler::fetchDirectory()
             return page->getFilesFromExplorer(validformatstxt);
         }
         else {
-            // TODO
             return {page->getFilesFromExplorer(validformatsmanual)};
         }
 }

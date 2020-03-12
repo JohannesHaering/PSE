@@ -19,7 +19,7 @@ TEST(readTextFilesTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXTRead.txt");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXTRead.txt");
     auto input = io.readFile(paths);
     EXPECT_EQ("foo\n", *(input.getData().begin()));
 }
@@ -28,7 +28,7 @@ TEST(readTextFilesTest, noTextFile)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMP.bmp");
     auto input = io.readFile(paths);
     EXPECT_EQ("", *(input.getData().begin()));
 }
@@ -48,7 +48,7 @@ TEST(writeTextFilesTest, emptyData)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testTXT.txt");
     auto strings = std::list<std::string>();
     strings.push_back("");
     auto success = io.writeFile(paths,Data<std::list<std::string>>(strings));
@@ -59,7 +59,7 @@ TEST(writeTextFilesTest, file)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXTWrite.txt");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testTXT.txt");
     auto strings = std::list<std::string>();
     strings.push_back("foo");
     auto success = io.writeFile(paths,Data<std::list<std::string>>(strings));
@@ -70,7 +70,7 @@ TEST(writeTextFilesTest, noTextFile)
 {
     auto io = MultipleTextFileIO();
     auto paths = std::list<std::string>();
-    paths.push_back("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    paths.push_back("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMP.bmp");
     auto strings = std::list<std::string>();
     strings.push_back("foo");
     auto success = io.writeFile(paths, Data<std::list<std::string>>(strings));

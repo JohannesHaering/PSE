@@ -26,15 +26,13 @@ NetworkLayer* LayerParserDistribution::parse(std::string toParse)
 	auto firstLine = *(lines.begin());
 	firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_BEGIN), firstLine.end());
 	firstLine.erase(std::remove(firstLine.begin(), firstLine.end(), TYPE_END), firstLine.end());
-
 	std::string extras = "[\n]";
 	// Remove first line
 	toParse = toParse.substr(firstLine.size() + extras.size(), toParse.size());
   if (firstLine.compare(DENSE) == 0)
 	{
 		return parseDenseLayer(toParse);
-	}
-	else if (firstLine.compare(ACTIVATION) == 0) {
+	}	else if (firstLine.compare(ACTIVATION) == 0) {
     		return ActivationLayerParser().parse(toParse);
 	}
 	else if (firstLine.compare(MAXPOOL) == 0) {

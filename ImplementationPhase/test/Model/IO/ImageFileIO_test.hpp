@@ -18,7 +18,7 @@ TEST(readImageFileTest, emptyPath)
 TEST(readImageFileTest, file)
 {
     auto io = ImageFileIO();
-    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPRead.bmp");
+    auto input = io.readFile( "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testBMPRead.bmp");
     cv::Mat mat = input.getData();
     EXPECT_EQ(64*64, mat.total());
 }
@@ -26,7 +26,7 @@ TEST(readImageFileTest, file)
 TEST(readImageFileTest, noImageFile)
 {
     auto io = ImageFileIO();
-    auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testTXT.txt");
+    auto input = io.readFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdatareaddir/testTXT.txt");
 	cv::Mat mat = input.getData();
 	EXPECT_EQ(0, mat.total());
 }
@@ -34,7 +34,7 @@ TEST(readImageFileTest, noImageFile)
 TEST(readImageFileTest, notExisting)
 {
     auto io = ImageFileIO();
-	auto input = io.readFile("C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\NotExisting.bmp");
+	auto input = io.readFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/NotExisting.bmp");
 	cv::Mat mat = input.getData();
 	EXPECT_EQ(0, mat.total());
 	EXPECT_EQ(0, mat.total());
@@ -52,7 +52,7 @@ TEST(writeImageFileTest, emptyData)
 {
     auto io = ImageFileIO();
     cv::Mat mat;
-    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMP.bmp");
+    auto success = io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMP.bmp");
     EXPECT_EQ(false, success);
 }
 
@@ -60,7 +60,7 @@ TEST(writeImageFileTest, file)
 {
     auto io = ImageFileIO();
     cv::Mat mat(64, 64, CV_32F, cv::Scalar(0, 0, 0));
-    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testBMPWrite.bmp");
+    auto success = io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testBMPWrite.bmp");
     EXPECT_EQ(true, success);
 }
 
@@ -68,6 +68,6 @@ TEST(writeImageFileTest, noTextFile)
 {
     auto io = ImageFileIO();
     cv::Mat mat(64, 64, CV_32F);
-    auto success = io.writeFile(Data<cv::Mat>(mat), "C:\\Users\\Johannes\\Documents\\Projekte\\Uni\\PSE\\ImplementationPhase\\Data\\testdata\\testTXT.txt");
+    auto success = io.writeFile(Data<cv::Mat>(mat), "/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/writedir/testTXT.txt");
     EXPECT_EQ(false, success);
 }

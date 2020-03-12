@@ -29,7 +29,7 @@ DenseLayer::DenseLayer(int inputSize, int outputSize, float learningRate) : inpu
 	float sum = 0;
 	for (int i = 0; i < inputSize; i++)
 		for (int j = 0; j < outputSize; j++) sum += weights[i][j];
-	std::cout << "init sum: " << sum << std::endl;
+//	std::cout << "init sum: " << sum << std::endl;
 
 	layerStrategy = new DenseLayerCPP(this, inputSize, outputSize);
 }

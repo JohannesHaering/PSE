@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(ParsingPackageTest "ParsingPackageTest.cpp")
+add_library(ParsingPackageTest "ParsingPackageTest.hpp")
 target_link_libraries(ParsingPackageTest PUBLIC CLASSIFICATIONRESULTPARSER)
 target_link_libraries(ParsingPackageTest PUBLIC CLASSPROBABILITYPARSER)
 target_link_libraries(ParsingPackageTest PUBLIC DETECTIONRESULTPARSER)

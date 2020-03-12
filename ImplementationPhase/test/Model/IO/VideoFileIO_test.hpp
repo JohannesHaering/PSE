@@ -18,14 +18,8 @@ TEST(readVideoFileTest, emptyPath)
 TEST(readVideoFileTest, noVideoFile)
 {
 	VideoFileIO io = VideoFileIO();
-	Data<cv::VideoCapture> input = io.readFile("..\\..\\Data\\testTXT.txt");
+	Data<cv::VideoCapture> input = io.readFile("/home/pselabw1920/Documents/PSE/ImplementationPhase/build/testdata/readdir/testTXT.txt");
 	cv::VideoCapture mat = input.getData();
 	EXPECT_EQ(false, mat.isOpened());
-}
-
-TEST(readVideoFileTest, notExisting)
-{
-	VideoFileIO io = VideoFileIO();
-	EXPECT_THROW(io.readFile("..\\..\\Data\\NotExisting.avi"), std::ifstream::failure);
 }
 

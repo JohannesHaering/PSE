@@ -14,7 +14,6 @@ class Channel {
   public:
     Channel(Device connectedDevice);
     Channel(Device connectedDevice, std::list<NeuralNetworkAdapter> neuralNetworkList);
-    //void setNeuralNetworkList(std::list<NeuralNetworkAdapter> neuralNetworkList);
     std::list<Result> sendImageList(std::list<cv::Mat> imageList);
 
   protected:

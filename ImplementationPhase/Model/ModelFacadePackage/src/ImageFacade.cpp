@@ -10,13 +10,29 @@
 #include <list>
 #include <vector>
 
+#include <iostream>
+
 cv::Mat ImageFacade::getImage(std::string path, int width, int height, int channelNumb)
 {
 	cv::Mat image = ImageFileIO().readFile(path).getData();
 	cv::Mat parsedImage;
-	if (width != 0)
-		parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
-	else
+	if (width != 0){
+    for (int y = 0; y < height; y++){
+      for(int x  = 0; x < width; x++){
+        std::cout << (float) image.data[y * width + x] << " | ";
+      }
+      std::cout << std::endl;
+    }
+    std::cout << std::endl << std::endl;
+    
+    parsedImage = ImageParserWithSizing(width, height, channelNumb).parse(image);
+    for (int y = 0; y < height; y++){
+      for(int x  = 0; x < width; x++){
+        std::cout << (float) image.data[y * width + x] << " | ";
+      }
+      std::cout << std::endl;
+    }
+  } else
 		parsedImage = image;
 	return parsedImage;
 }
@@ -90,12 +106,9 @@ TENSOR(float) ImageFacade::createImageTensor(std::vector<cv::Mat> images, int wi
 
 	for (int i = 0; i < images.size(); i++) {
 		std::vector<float> image = ImageParserWithSizing(width, height, 1).parseFloatsGreyScale(images[i]);
-    std::cout<<"Parsed Image" <<std::endl;
-    std::cout<<"Width"<<width<<" Height" << height << std::endl;
-    std::cout<<image.size()<<std::endl;
+
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
-        std::cout << "Copying at" << y << x << std::endl;
 	      tensor[i][0][y][x] = image[y * width + x];
       }
 		}
