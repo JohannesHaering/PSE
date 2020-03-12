@@ -9,6 +9,7 @@ TrainingDistributor::TrainingDistributor() {
 	this->page = ViewFacade::getInstance()->getTrainingPanel();
     this->neuralNetworks = std::vector<NeuralNetworkAdapter>();
     this->directories = std::vector<std::string>();
+    enableStart();
 }
 
 /*
