@@ -2,7 +2,7 @@
 #include "StartHandler.hpp"
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
-
+#include <QApplication>
 class InferencerMock : public InferencingDistributorClassification {
 
 public:
@@ -48,8 +48,3 @@ TEST_F(StartHandlerTests, ActionTest)
 	EXPECT_TRUE(inferencer->getStartSignalGiven());
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

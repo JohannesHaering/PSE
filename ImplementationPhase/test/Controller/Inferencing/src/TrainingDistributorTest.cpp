@@ -32,7 +32,7 @@ TEST_F(TrainingDistributorTests, TrainingNetworkStartTest)
 {
 	std::vector<NeuralNetworkAdapter> neuralNetworks = { NeuralNetworkAdapter(NeuralNetwork()) };
 	distributor->addNeuralNetwork(neuralNetworks);
-	EXPECT_FALSE(distributor->canStart());
+	EXPECT_TRUE(distributor->canStart());
 }
 
 
@@ -45,8 +45,3 @@ TEST_F(TrainingDistributorTests, TrainingCanStartTest)
 	EXPECT_TRUE(distributor->canStart());
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

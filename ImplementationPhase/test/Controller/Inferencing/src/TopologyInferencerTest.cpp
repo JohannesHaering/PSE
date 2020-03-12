@@ -18,7 +18,7 @@ struct TopologyInferencerTests : testing::Test
 
 TEST_F(TopologyInferencerTests, TopologyBeginStartTest)
 {
-	EXPECT_FALSE(inferencer->canStart());
+	EXPECT_TRUE(inferencer->canStart());
 }
 
 TEST_F(TopologyInferencerTests, TopologyCanStartTest)
@@ -28,8 +28,3 @@ TEST_F(TopologyInferencerTests, TopologyCanStartTest)
 	EXPECT_TRUE(inferencer->canStart());
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

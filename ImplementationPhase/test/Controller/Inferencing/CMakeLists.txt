@@ -1,25 +1,25 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_executable(INFERENCERTEST "src/InferencerTest.cpp")
+add_library(INFERENCERTEST "src/InferencerTest.cpp")
 target_link_libraries(INFERENCERTEST PUBLIC INFERENCER INFERENCINGDISTRIBUTORCLASSIFICATION)
 
-add_executable(DISTRIBUTORTEST "src/DistributorTest.cpp")
+add_library(DISTRIBUTORTEST "src/DistributorTest.cpp")
 target_link_libraries(DISTRIBUTORTEST PUBLIC DISTRIBUTOR INFERENCINGDISTRIBUTORCLASSIFICATION VIEW_MODULE)
 
-add_executable(TOPOLOGYINFERENCERTEST "src/TopologyInferencerTest.cpp")
+add_library(TOPOLOGYINFERENCERTEST "src/TopologyInferencerTest.cpp")
 target_link_libraries(TOPOLOGYINFERENCERTEST PUBLIC TOPOLOGYINFERENCER)
 
-add_executable(TRAININGDISTRIBUTORTEST "src/TrainingDistributorTest.cpp")
+add_library(TRAININGDISTRIBUTORTEST "src/TrainingDistributorTest.cpp")
 target_link_libraries(TRAININGDISTRIBUTORTEST PUBLIC TRAININGDISTRIBUTOR)
 
-add_executable(INFERENCINGDISTRIBUTORCLASSIFICATIONTEST "src/InferencingDistributorClassificationTest.cpp")
+add_library(INFERENCINGDISTRIBUTORCLASSIFICATIONTEST "src/InferencingDistributorClassificationTest.cpp")
 target_link_libraries(INFERENCINGDISTRIBUTORCLASSIFICATIONTEST PUBLIC INFERENCINGDISTRIBUTORCLASSIFICATION)
 
-add_executable(PAGERTEST "src/PagerTest.cpp")
+add_library(PAGERTEST "src/PagerTest.cpp")
 target_link_libraries(PAGERTEST PUBLIC NEURALNETWORKPAGER)
 target_link_libraries(PAGERTEST PUBLIC VIEW_MODULE)
 
-add_executable(NEURALNETWORKSETTERTEST "src/NeuralNetworkSetterTest.cpp")
+add_library(NEURALNETWORKSETTERTEST "src/NeuralNetworkSetterTest.cpp")
 target_link_libraries(NEURALNETWORKSETTERTEST PUBLIC NEURALNETWORKSETTER INFERENCINGDISTRIBUTORCLASSIFICATION VIEW_MODULE)
 
 add_executable(INFERENCINGPACKAGETESTS "InferencingPackageTests.cpp")
@@ -30,3 +30,7 @@ target_link_libraries(INFERENCINGPACKAGETESTS PUBLIC TRAININGDISTRIBUTORTEST)
 target_link_libraries(INFERENCINGPACKAGETESTS PUBLIC TOPOLOGYINFERENCERTEST)
 target_link_libraries(INFERENCINGPACKAGETESTS PUBLIC DISTRIBUTORTEST)
 target_link_libraries(INFERENCINGPACKAGETESTS PUBLIC INFERENCERTEST)
+
+add_library(CLASSIFICATIONMOCK "src/ClassificationPageMock.cpp")
+target_link_libraries(CLASSIFICATIONMOCK PUBLIC VIEW_MODULE)
+

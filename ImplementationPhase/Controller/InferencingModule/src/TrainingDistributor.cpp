@@ -25,7 +25,7 @@ void TrainingDistributor::TrainingDistributor::startProcess() {
  */
 bool TrainingDistributor::canStart() {
     if (neuralNetworks.size() == 0) {
-		return false;
+		  return false;
 	}
 	return true; 
 }

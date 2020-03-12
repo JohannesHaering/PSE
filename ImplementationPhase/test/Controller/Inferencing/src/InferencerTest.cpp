@@ -1,31 +1,6 @@
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
-
-class ClassificationPageMock : public InferencePageAdapter {
-
-public:
-	bool getShowResults()
-	{
-		return showResults;
-	}
-	bool getSaveResults()
-	{
-		return saveResults;
-	}
-	void setShowResults(bool enable)
-	{
-		showResults = enable;
-	}
-	void setSaveResults(bool enable)
-	{
-		saveResults = enable;
-	}
-
-private:
-	bool showResults;
-	bool saveResults;
-
-};
+#include "ClassificationPageMock.cpp"
 
 struct InferencerTest : testing::Test 
 {
@@ -55,9 +30,3 @@ TEST_F(InferencerTest, SettingNeuralNetworkTest)
 	EXPECT_EQ(inferencer->getAmountNeuralNetworks(), 1);
 }
 
-int main(int argc, char* argv[])
-{
-//  QApplication a(argc, argv);
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

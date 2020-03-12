@@ -7,7 +7,7 @@ struct NeuralNetworkSetterTests : testing::Test
 {
 	
 	NeuralNetworkSetter* setter;
-	Inferencer* inferencer;
+	InferencingDistributorClassification* inferencer;
 
 	NeuralNetworkSetterTests() {
 		inferencer = new InferencingDistributorClassification(ViewFacade::getInstance()->getImageClassification());
@@ -23,13 +23,8 @@ struct NeuralNetworkSetterTests : testing::Test
 
 TEST_F(NeuralNetworkSetterTests, SetNeuralNetwork)
 {
-	std::vector<std::string> paths = { "FOO", "FOO" };
+	std::vector<std::string> paths = { "/home/pselabw1920/Documents/trainednetworks/DenseSmall.txt" };
 	setter->setNeuralNetwork(paths);
-	EXPECT_EQ(inferencer->getAmountNeuralNetworks(), 2);
+	EXPECT_EQ(inferencer->getAmountNeuralNetworks(), 1);
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}
