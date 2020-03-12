@@ -1,4 +1,4 @@
-#include "Dispatcher/DispatcherTest.hpp"
+#include "Dispatcher/DispatcherTest.cpp"
 #include "Inferencing/InferencingPackageTests.cpp"
 #include "EventHandlerModule/EventHandlerModuleTests.cpp"
 
