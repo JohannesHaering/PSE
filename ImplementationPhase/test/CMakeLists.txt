@@ -7,6 +7,11 @@ add_subdirectory(Model)
 #add_subdirectory(View)
 #add_subdirectory(Controller)
 
+add_executable(TestNN "TestNNAccuracy.cpp")
+target_link_libraries(TestNN PUBLIC EXECUTOR MATRIX_DEFINE MNISTDATAPARSER DEVICETYPE MNISTDATAPARSER)
+target_link_libraries(TestNN PUBLIC NEURALNETWORKADAPTER NEURALNETWORKFACADE)
+
+
 add_executable(ProjectTest "Test.cpp")
 target_link_libraries(ProjectTest PUBLIC ${OpenCV_LIBS})
 target_link_libraries(ProjectTest PUBLIC DATA)
