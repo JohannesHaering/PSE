@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
 #include "Parser.hpp"
-#include "LineBreakParser_test.hpp"
 #include <string>
 #include <list>
 

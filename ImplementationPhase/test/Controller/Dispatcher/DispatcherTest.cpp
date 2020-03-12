@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 
-#include "Device_test.hpp"
-#include "DispatchManager_test.hpp"
-#include "Executor_test.hpp"
-#include "HighPerformanceMode_test.hpp"
+#include "Device_test.cpp"
+#include "DispatchManager_test.cpp"
+#include "Executor_test.cpp"
+#include "HighPerformanceMode_test.cpp"
 
 #include "Device.hpp"
 #include "DispatchManager.hpp"
