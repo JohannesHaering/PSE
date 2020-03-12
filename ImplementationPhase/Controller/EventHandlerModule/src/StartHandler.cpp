@@ -1,7 +1,7 @@
 #include "EventHandler.hpp"
 #include "Inferencer.hpp"
 #include "StartHandler.hpp"
-
+#include <iostream>
 /**
  * Creates a StartHandler.
  * Parameters:
@@ -16,7 +16,7 @@ void StartHandler::onAction()
 {
     try {
         inferencer->startProcess();
-	  }
+    }
     catch (const std::invalid_argument& ia)
 	  {
         inferencer->getPage()->showError(ia.what());
