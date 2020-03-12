@@ -1,26 +1,26 @@
 #include <gtest/gtest.h>
-#include "FlattenLayer.hpp"
+#include "MaxPoolLayer.hpp"
 
-struct FlattenTest : testing::Test
+struct MaxPoolTest : testing::Test
 {
 
-	FlattenLayer* layer;
+	MaxPoolLayer* maxLayer;
 
-	FlattenTest() {
-		layer = new FlattenLayer();
+	MaxPoolTest() {
+		maxLayer = new MaxPoolLayer();
 	}
 
-	~FlattenTest() {
-		delete layer;
+	~MaxPoolTest() {
+		delete maxLayer;
 	}
 
 };
 
-TEST_F(FlattenTest, FlattenForwardTest)
+TEST_F(MaxPoolTest, MaxPoolForwardTest)
 {
     TENSOR(float) input = TENSOR(float){{{{1,2,1,0}, {0,2,0,0}, {1,2,0,0}, {0,0,0,3}}}};
-    TENSOR(float) output = layer->forward(input);
-    TENSOR(float) expectedOutput = TENSOR(float){{{{1,2,1,0,0,2,0,0,1,2,0,0,0,0,0,3}}}};
+    TENSOR(float) output = maxLayer->forward(input);
+    TENSOR(float) expectedOutput = TENSOR(float){{{{2,2}, {2,3}}}};
     for (int b = 0; b < output[0].size(); b++) {
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
@@ -32,13 +32,13 @@ TEST_F(FlattenTest, FlattenForwardTest)
     }
 }
 
-TEST_F(FlattenTest, FlattenBackwardTest)
+TEST_F(MaxPoolTest, MaxPoolBackwardTest)
 {
     TENSOR(float) input = TENSOR(float){{{{1,2,1,0}, {0,2,0,0}, {1,2,0,0}, {0,0,0,3}}}};
-    layer->forward(input);
-    TENSOR(float) feedback = TENSOR(float){{{{1,2,1,0,0,2,0,0,1,2,0,0,0,0,0,3}}}};
-    TENSOR(float) output = layer->backprob(feedback, 0.1f);
-    TENSOR(float) expectedOutput = TENSOR(float){{{{1,2,1,0}, {0,2,0,0}, {1,2,0,0}, {0,0,0,3}}}};
+    maxLayer->forward(input);
+    TENSOR(float) feedback = TENSOR(float){{{{2,2}, {2,3}}}};
+    TENSOR(float) output = maxLayer->backprob(feedback, 0.1f);
+    TENSOR(float) expectedOutput = TENSOR(float){{{{0,1 + 1/3,0,0}, {0,2 + 1/3,0,0}, {0,2 + 1/3,0,0}, {0,0,0,3}}}};
     for (int b = 0; b < output[0].size(); b++) {
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
@@ -50,8 +50,3 @@ TEST_F(FlattenTest, FlattenBackwardTest)
     }
 }
 
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <gtest/gtest.h>
 #include "InferencingDistributorClassification.hpp"
 #include "ViewFacade.hpp"
@@ -42,4 +44,3 @@ TEST_F(InferencingDistributorTests, TopologyCanStartTest)
 	inferencer->setInput(paths);
 	EXPECT_TRUE(inferencer->canStart());
 }
-

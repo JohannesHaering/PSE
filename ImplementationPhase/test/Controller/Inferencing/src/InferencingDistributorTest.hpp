@@ -26,4 +26,3 @@ TEST_F(InferencingDistributorTests, TopologyCanStartTest)
 	inferencer->addNeuralNetwork(neuralNetworks);
 	EXPECT_TRUE(inferencer->canStart());
 }
-

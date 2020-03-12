@@ -29,4 +29,3 @@ TEST_F(DistributorTests, SettingImagesTest)
 	distributor->setInput(paths);
 	EXPECT_EQ(distributor->getAmountImages(), 2);
 }
-
