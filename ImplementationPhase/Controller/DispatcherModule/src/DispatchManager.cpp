@@ -82,13 +82,10 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
     Executor* executor;
 
 
-    MNISTDataParser gen = MNISTDataParser(-1); //-1 gives all testimages in one batch
-
     for (auto it : distribution) {
       DeviceType type = std::get<0>(it);
       NeuralNetworkAdapter network = std::get<1>(it);
       TENSOR(float) input = std::get<2>(it);
-      //TODO overwrite input with all MNIST test images
       if (input.size() == 0) {
         throw std::invalid_argument( "Can't dispatch no images." );
       }
@@ -96,28 +93,6 @@ ResultManager DispatchManager::dispatchImages(std::vector<std::string> directori
       network.setMode(type);
       executor = new Executor(&network);
       output = executor->execute(input);
-      std::cout << "RUNNING MNIST" << std::endl;
-      TENSOR(float) MNISTInput = gen.parseTest();
-      TENSOR(float) testLabels = gen.parseTestLabel();
-      TENSOR(float) testOutput = executor->execute(MNISTInput);
-      int numCorrect = 0;
-      for (int i = 0; i < testLabels.size(); i++) {
-        int maxPos = 0;
-        int correctPos;
-        for (int j = 0; j < 10; j++) {
-          if (testOutput[i][0][0][j] > testOutput[i][0][0][maxPos]) maxPos = j;
-          if (testLabels[i][0][0][j] == 1) correctPos = j;
-        }
-        if (i % 100 == 0) {
-          std::cout << "printint Labels" << std::endl;
-          for (int j = 0; j < 10; j++) std::cout << j << " " << testLabels[i][0][0][j] << " ";
-          std::cout << std::endl << "correctPos is: " << correctPos << std::endl;
-          printMatrix(MNISTInput[i]);
-        }
-        //std:: cout << "testrun acc: is " << maxPos << " should be: " << correctPos << std::endl;
-        if (maxPos == correctPos) numCorrect++;
-      }
-      std::cout << "TEST ACCURACY ON ALL MNIST TEST IMAGES IS: " << (numCorrect * 1.0f) / testLabels.size() << std::endl;
       for (int i = 0; i < directories.size(); i++) {
         Result* newres = resultfacade->parseClassificationResult(directories[i], network.getName(), network.getLabels(), output[i][0][0]);
         resultList.push_back(newres);
