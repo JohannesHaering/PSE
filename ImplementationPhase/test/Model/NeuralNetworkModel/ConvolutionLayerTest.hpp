@@ -25,7 +25,7 @@ TEST_F(ConvolutionTest, ConvolutionForwardTest)
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
                 for (int x = 0; x < output[0][0][0].size(); x++) {
-                    EXPECT_EQ(output[b][z][y][x], expectedOutput[b][z][y][x]);
+                    EXPECT_TRUE(abs(output[b][z][y][x] - expectedOutput[b][z][y][x]) < 0.1f);
                 }
             }
         }
@@ -43,7 +43,7 @@ TEST_F(ConvolutionTest, ConvolutionBackwardTest)
         for (int z = 0; z < output[0].size(); z++) {
             for (int y = 0; y < output[0][0].size(); y++) {
                 for (int x = 0; x < output[0][0][0].size(); x++) {
-                    EXPECT_EQ(output[b][z][y][x], expectedOutput[b][z][y][x]);
+                    EXPECT_TRUE(abs(output[b][z][y][x] - expectedOutput[b][z][y][x]) < 0.1f);
                 }
             }
         }
