@@ -10,7 +10,6 @@
 void FileExplorerHandler::onAction(){
     try {
         std::vector<std::string> res = fetchDirectory();
-        std::cout << res.size() << std::endl;
         for (int i = 0; i < res.size(); i++){
         if (res[i].compare("") == 0) {
           throw std::invalid_argument( "Nothing chosen" );
