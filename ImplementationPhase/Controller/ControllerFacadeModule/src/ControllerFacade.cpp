@@ -36,7 +36,7 @@ ControllerFacade* ControllerFacade::getInstance() {
 
 
 // Classification Methods
-void ControllerFacade::startProcessClassification(){ classificationInferencer->startProcess(); }
+void ControllerFacade::startProcessClassification(){ startHandlerClassification->onAction(); }
 
 void ControllerFacade::saveResultsClassification(){ saveHandlerClassification->onAction(); }
 

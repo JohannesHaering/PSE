@@ -75,7 +75,7 @@ void InferencingDistributorClassification::drawResult(int neuralNetworkId, int i
   std::string id = result->getImageID();
   page->resultsChanged(result->getNeuralNetworkID(), result->getImageID(), images[imageId], *result);
   
-  page->saveResultEnable(true);
+  //page->saveResultEnable(true);
   page->update();
 }    
     

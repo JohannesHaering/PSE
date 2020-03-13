@@ -7,5 +7,6 @@ int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     ControllerFacade::getInstance();
     ViewFacade::getInstance()->getMainMenu()->show();
-    return a.exec();
+    a.exec();
+    return 0;
 }

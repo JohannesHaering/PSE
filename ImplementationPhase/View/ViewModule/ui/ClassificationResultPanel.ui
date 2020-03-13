@@ -120,6 +120,9 @@ Network</string>
    </property>
   </widget>
   <widget class="QPushButton" name="saveResultButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>220</x>
