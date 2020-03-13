@@ -26,17 +26,17 @@ std::vector<float> ImageParserWithSizing::parseFloatsGreyScale(cv::Mat toParse) 
     toParse = greyMat;
     for(int y = 0; y < height; y++){
       for(int x = 0; x < width; x++){
-        std::cout <<(float) toParse.data[y * width + x] << "|";
+    //    std::cout <<(float) toParse.data[y * width + x] << "|";
       }
-      std::cout << std::endl;
+//      std::cout << std::endl;
     }
     std::cout << std::endl << std::endl;
     cv::resize(toParse, temp, size);
     for(int y = 0; y < height; y++){
       for(int x = 0; x < width; x++){
-        std::cout <<(float) toParse.data[y * width + x] << "|";
+//        std::cout <<(float) toParse.data[y * width + x] << "|";
       }
-      std::cout << std::endl;
+  //    std::cout << std::endl;
     }
 
 
