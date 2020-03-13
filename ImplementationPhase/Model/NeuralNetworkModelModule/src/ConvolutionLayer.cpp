@@ -33,7 +33,7 @@ ConvolutionLayer::ConvolutionLayer(int filterSizeX, int filterSizeY, int filterS
       for (int y = 0; y < filterSizeY; y++)
         for (int x = 0; x < filterSizeX; x++)
           sum += weightsTensor[filter][z][y][x];
-  std::cout << "init sum: " << sum << std::endl;
+//  std::cout << "init sum: " << sum << std::endl;
 
   //layerStrategy = DenseLayerCPP(&weights, &bias, &learningRate, &netSize, &outputSize);
 }
@@ -107,8 +107,7 @@ float ConvolutionLayer::calcWeightUpdate(TENSOR(float) feedback, int filterNum, 
   float update = 0;
   if (net.size() != feedback.size()) 
   {
-    std::cout << " batchSize(net) " << net.size() << " batchSize(feedback)" << feedback.size() << std::endl;
-    return (1/0);
+		throw std::invalid_argument("Wrong dimensions of feedback.");
   }
   for (int b = 0; b < net.size(); b++)
   {
